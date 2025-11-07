@@ -1,0 +1,193 @@
+00:00:00 - 00:00:16, Tiếp theo chúng ta sẽ cùng ôm tập toán giải tích
+00:00:16 - 00:00:22, nếu như đại số tiên tính là công cụ để giúp chúng ta có thể biến đổi dữ liệu
+00:00:22 - 00:00:29, thì giải tích là cung cấp cho chúng ta một cái công cụ để biểu diễn các cái chuỗi, các phép biến đổi
+00:00:29 - 00:00:34, và đồng thời đó là một cái công cụ để giúp chúng ta giải quyết các cái bài toán foo u
+00:00:39 - 00:00:44, và đặc biệt trong cái môn này của chúng ta, đó là máy học nâng cao
+00:00:44 - 00:00:47, chúng ta sẽ dựa trên các cái mô hình dựa Radian
+00:00:47 - 00:00:54, tức là dùng vector đạo hàng để mà chúng ta đi cập nhật tham số và hút luyện mô hình
+00:00:54 - 00:01:04, khi đó là chúng ta sẽ có một cái công cụ nữa đó chính là đạo hàng
+00:01:04 - 00:01:09, và đạo hàng thì ban đầu sẽ giúp chúng ta khảo xác cái hàm số
+00:01:09 - 00:01:13, rồi sau đó sẽ giúp chúng ta tìm được các cái điểm cực tiểu hoặc là cực đại
+00:01:13 - 00:01:20, thì chi tiết những cái kiến thức nào của toán giải tích sẽ được tìm hiểu trong những phòng tiếp theo
+00:01:20 - 00:01:25, đầu tiên chúng ta sẽ có cái khái niệm hàm hợp
+00:01:25 - 00:01:33, hàm thì dễ rồi, đó là một sự ánh xạ từ x sang cái fx
+00:01:33 - 00:01:39, nhưng mà khi chúng ta muốn làm với những cái hàm phức tạp hơn
+00:01:39 - 00:01:42, trong đó có nhiều phép biến đổi nối tiếp nhau
+00:01:42 - 00:01:45, thì chúng ta sẽ dùng cái khái niệm gọi là hàm hợp
+00:01:45 - 00:01:49, và ký hiệu đó là y sẽ là bằng g, chọn f
+00:01:49 - 00:01:54, trong đó f và g là hai cái hàm thành phần, còn y sẽ là một cái hàm hợp
+00:01:54 - 00:02:00, của hai cái hàm thành phần đó là f và g
+00:02:00 - 00:02:06, thì khi đó là chúng ta ký hiệu như thế này, hoặc ghi dạng liên tục thì là như thế này
+00:02:06 - 00:02:09, là y bằng g của fx
+00:02:09 - 00:02:14, tức là fx chúng ta tính xong, chúng ta sẽ làm cái đầu vào cho hàm g
+00:02:14 - 00:02:18, và đây là một số cái ví dụ về hàm hợp
+00:02:18 - 00:02:22, ví dụ như fx là bằng x bình phương cổng một, gx là bằng sin x
+00:02:22 - 00:02:30, thì khi đó là hàm hợp sẽ là của g và f sẽ là bằng sin của x bình cổng một
+00:02:30 - 00:02:40, tương tự như vậy, chúng ta sẽ có các bài tập để chúng ta ôm lại hiểu thức về hàm hợp
+00:02:40 - 00:02:45, khá niệm tiếp theo và cực kì quan trọng đó chính là đạo hàm
+00:02:45 - 00:02:51, thì đạo hàm của mình trong giải tích là một công cụ để giúp chúng ta biết
+00:02:51 - 00:02:55, đó là sự biến thiên của hàm số tại một cái điểm nào đó
+00:02:55 - 00:03:02, là một công cụ để mô tả sự biến thiên của hàm tại một cái điểm nào đó
+00:03:02 - 00:03:06, ví dụ như trong cái hàm này chúng ta thấy là hàm y bằng fx
+00:03:06 - 00:03:11, thì tại vị trí x0 chúng ta thấy là cái hàm của mình, cái đội dốc của mình
+00:03:11 - 00:03:15, là nó đang hướng lên, tức là nó đang đồng biến
+00:03:15 - 00:03:23, thế thì đây là một công cụ để giúp chúng ta biết trạng thái của hàm tại vị trí x0
+00:03:23 - 00:03:27, là nó đang đi lên hay đi xuống, hoặc là đi ngang
+00:03:27 - 00:03:33, ví dụ như tại cái vị trí này, chúng ta thấy là nó đang đi ngang
+00:03:36 - 00:03:40, tóm lại đó là một công cụ để mô tả sự biến thiên
+00:03:40 - 00:03:47, và nó ý nghĩa là thể số gốc hay là đội dốc của cái hàm tại cái vị trí đó
+00:03:47 - 00:03:52, và nhờ có đạo hàm thì giúp chúng ta khảo sát và tìm ra được các cái điểm cực tiểu
+00:03:52 - 00:03:56, ví dụ như là điểm ở đây, hoặc là các cái điểm cực đại
+00:03:56 - 00:04:00, thì đây là một cái công cụ rất là hiểu, thủ hiệu để giúp chúng ta
+00:04:00 - 00:04:03, có thể tối ưu hóa một cái hàm số phức tạp
+00:04:03 - 00:04:07, và chúng ta sẽ có cái khái niệm đó là hàm đơn biến
+00:04:07 - 00:04:11, thì ở đây là một cái ví dụ về hàm đơn biến
+00:04:11 - 00:04:15, trong đó là chúng ta sẽ có một cái hàm F như thế này
+00:04:15 - 00:04:19, và khi chúng ta khảo sát cái hàm số này thì chúng ta sẽ thấy là
+00:04:19 - 00:04:23, có một cái điểm x để cho cái đạo hàm của mình bằng 0
+00:04:23 - 00:04:26, ví dụ như trong trường hợp này là x bằng 1
+00:04:26 - 00:04:28, thì đạo hàm của mình sẽ là bằng 0
+00:04:28 - 00:04:32, và nó sẽ là khi thế vô cái F phải
+00:04:32 - 00:04:35, thì tại đây là bằng 0
+00:04:35 - 00:04:39, và bên trái sẽ là dấu âm và bên phải là dấu dương
+00:04:39 - 00:04:44, thì khi chúng ta khảo sát cái hướng di chuyển thì nó sẽ đi xuống và đi lên
+00:04:44 - 00:04:48, thì từ cái sự khảo sát này, nó sẽ giúp chúng ta xác định được là
+00:04:48 - 00:04:55, hàm của mình sẽ đạt được cái giá trị cực tiểu khi nó đi qua cái điểm x bằng 1
+00:04:55 - 00:04:59, tại vị trí này là đạo hàm của mình bằng 0
+00:05:00 - 00:05:04, thì đây là một cái ví dụ để minh họa cho cái việc là
+00:05:04 - 00:05:12, dùng đạo hàm để khảo sát hàm số và sẽ giúp chúng ta xác định được cái vị trí có cái điểm tối thư cực tiểu hoặc là tối thư cực đại
+00:05:12 - 00:05:15, thì đây là một cái ví dụ
+00:05:15 - 00:05:18, với cái đạo hàm F phải của mình là bằng
+00:05:18 - 00:05:21, của cái hàm này thì F phải của mình sẽ là bằng x chiều 1
+00:05:21 - 00:05:26, và khi chúng ta giải ra được thì tương đương là x bằng 1
+00:05:26 - 00:05:29, x bằng 1, tức là cái giá trị ở đây
+00:05:33 - 00:05:36, rồi tiếp theo đó là đạo hàm của hàm hợp
+00:05:36 - 00:05:39, vừa rồi là đạo hàm của một cái hàm đơn biến
+00:05:39 - 00:05:44, còn đối với hàm hợp thì chúng ta sẽ có cái sự phối hợp của nhiều hàm nối tiếp nhau
+00:05:44 - 00:05:47, và để giải được, khi quyết được cái vấn đề này thì chúng ta sẽ có các cái đạo hàm
+00:05:47 - 00:05:50, công thức của đạo hàm hàm hợp như sau
+00:05:50 - 00:05:53, đối với cái trường hợp mà Fx và x là một cái biến số
+00:05:53 - 00:05:56, tức là hàm bình thường của mình
+00:05:56 - 00:05:59, thì đạo hàm của một cái hàm bật một
+00:05:59 - 00:06:02, nó sẽ là như thế này, đạo hàm cũng là hàm đa thức
+00:06:02 - 00:06:05, rồi đạo hàm có hàm căng, hàm sinh, cốt, tan, v.v.
+00:06:05 - 00:06:08, còn bên phải đó là cái đạo hàm của một cái hàm số
+00:06:08 - 00:06:11, mà dạng hàm hợp, ví dụ như k nhân quế u
+00:06:11 - 00:06:14, trong đó u là một cái hàm hợp của x
+00:06:14 - 00:06:18, theo x, thì khi đó là nó sẽ là bằng k nhân u phải
+00:06:18 - 00:06:21, rồi sinh của u
+00:06:21 - 00:06:24, u của hợp đạo hàm của nó sẽ là bằng cốt u
+00:06:24 - 00:06:27, sau đó nhân cho đạo hàm của u phải tính theo biến x
+00:06:27 - 00:06:30, lưu ý u ở đây là một cái hàm phụ thuộc bình thường của biến x
+00:06:30 - 00:06:33, thì đạo hàm của cái hàm này theo biến x
+00:06:33 - 00:06:36, thì nó sẽ là bằng cốt u nhân quế lại
+00:06:36 - 00:06:39, u, ux, đạo hàm của u phải x
+00:06:41 - 00:06:44, thì đây là cái bảng tra
+00:06:44 - 00:06:47, và phục vụ cho chúng ta rất là hữu quả trong cái việc là tính đạo hàm của hàm hợp
+00:06:47 - 00:06:50, và cái công thức này thì có thể là được áp dụng
+00:06:50 - 00:06:53, để thử nghiệm và chúng ta có thể làm bài tập để ương tập
+00:06:53 - 00:06:56, với các cái hàm sau
+00:06:56 - 00:06:59, thì đây có những cái hàm từ dạng đơn giản như là đa thức
+00:06:59 - 00:07:02, cho đến những cái hàm phức tạp hơn
+00:07:02 - 00:07:05, thì chúng ta sẽ dựa vào cái bảng tra này
+00:07:05 - 00:07:08, để mà chúng ta có thể tính được đạo hàm
+00:07:08 - 00:07:11, của các cái hàm hợp phức tạp này
+00:07:15 - 00:07:18, rồi, và sau đó thì chúng ta sẽ cùng tìm hiểu về cái khái niệm đạo hàm
+00:07:18 - 00:07:21, của hàm riêng
+00:07:21 - 00:07:24, tức là trong trường hợp cái hàm f của mình
+00:07:24 - 00:07:27, nó không phải phụ thuộc một biến x, mà nó phụ thuộc vào cả biến y
+00:07:27 - 00:07:30, biến z, ví dụ vậy, nhiều biến
+00:07:30 - 00:07:33, thì khi đó chúng ta sẽ có cái khái niệm là
+00:07:33 - 00:07:36, đạo hàm của f theo biến x
+00:07:36 - 00:07:39, đạo hàm của f theo biến y
+00:07:39 - 00:07:42, và đạo hàm của f theo biến z
+00:07:42 - 00:07:45, tức là chúng ta sẽ tính trên từng cái biến thành phần
+00:07:45 - 00:07:48, để xem xét sự phụ thuộc của hàm số theo
+00:07:48 - 00:07:51, các cái biến số một cách độc lập
+00:07:51 - 00:07:54, tức là chúng ta sẽ xem cho x, f biến thi như thế nào
+00:07:54 - 00:07:57, theo một biến x
+00:07:57 - 00:08:00, f biến thi như thế nào, theo một biến y
+00:08:00 - 00:08:03, f biến thi như thế nào, theo một biến z
+00:08:03 - 00:08:06, và đây là cái công thức đạo hàm riêng bật 1
+00:08:06 - 00:08:09, thì nhờ có cái đạo hàm riêng bật 1 này
+00:08:09 - 00:08:12, thì chúng ta có thể tính toán được
+00:08:12 - 00:08:15, cho các cái nguyên hàm
+00:08:15 - 00:08:18, tuy nhiên trong cái phạm vi của môn này
+00:08:18 - 00:08:21, là chúng ta sẽ không sử dụng nhiều đến các cái
+00:08:21 - 00:08:24, tích phân hoặc là nguyên hàm
+00:08:24 - 00:08:27, đó có chăng là trong cái phần của mô hình
+00:08:27 - 00:08:30, diffusion thì chúng ta phải nhắc lại cái khái niệm tích phân một chút xíu
+00:08:30 - 00:08:33, nhưng mà ở góc độ là lập trình
+00:08:33 - 00:08:36, thì chúng ta sẽ không cần dùng đến tích phân
+00:08:36 - 00:08:39, mà chúng ta dùng nhiều đến cái hàm tính tổng
+00:08:39 - 00:08:42, trên những cái giải giá trị
+00:08:42 - 00:08:45, cái miền giá trị
+00:08:45 - 00:08:48, thì ở đây chúng ta sẽ có một cái ví dụ
+00:08:48 - 00:08:51, hàm fxi là một cái hàm như thế này
+00:08:51 - 00:08:54, và chúng ta sẽ đi tính đạo hàm của fxi này
+00:08:54 - 00:08:57, theo x thì nó sẽ là bằng
+00:08:57 - 00:09:00, 4x và đạo hàm của f theo y
+00:09:00 - 00:09:03, thì nó sẽ là bằng trừ 3
+00:09:03 - 00:09:06, cuối cùng đó là chúng ta sẽ cùng tìm hiểu
+00:09:06 - 00:09:09, đến cái khái niệm radian
+00:09:09 - 00:09:12, toàn bộ môn này thì đều dựa trên radian
+00:09:12 - 00:09:15, để chúng ta xây dựng mô hình
+00:09:15 - 00:09:18, nó gọi là mô hình dựa trên radian
+00:09:23 - 00:09:26, tức là các cái mô hình này đều sử dụng radian
+00:09:26 - 00:09:29, như là một cái công cụ để cho chúng ta tối ưu hóa
+00:09:29 - 00:09:32, và huấn luyện mô hình
+00:09:32 - 00:09:35, vậy thì khái niệm radian là gì?
+00:09:35 - 00:09:38, từ một cái không gian vector n chiều
+00:09:38 - 00:09:41, về một cái giá trị scalar là r
+00:09:41 - 00:09:44, là số thực
+00:09:44 - 00:09:47, thì radian là cái vector n phần tử
+00:09:47 - 00:09:50, nó là một cái vector n phần tử
+00:09:50 - 00:09:53, bao gồm các cái đạo hàm riêng của nó
+00:09:53 - 00:09:56, ví dụ f của mình là một cái hàm theo
+00:09:56 - 00:09:59, một cái tham số theta là một cái theta
+00:09:59 - 00:10:02, trong đó theta là thuộc r
+00:10:02 - 00:10:05, thì khi đó radian
+00:10:05 - 00:10:08, của f theo theta
+00:10:08 - 00:10:11, nó sẽ là bằng một cái vector
+00:10:11 - 00:10:14, bồm đạo hàm của f theo biến theta
+00:10:14 - 00:10:17, 1... đạo hàm của f theo theta
+00:10:17 - 00:10:20, đạo hàm của f theo theta n
+00:10:20 - 00:10:23, thì trong các cái mô hình mấy học
+00:10:23 - 00:10:26, thì chúng ta xây dựng là cái tham số đạo theta
+00:10:26 - 00:10:29, nhưng mà để sử dụng cái mô hình mấy học
+00:10:29 - 00:10:32, thì chúng ta sẽ dùng biến f và biến x ở đây
+00:10:32 - 00:10:35, thì ở đây chúng ta sẽ có một cái ví dụ là fxi
+00:10:35 - 00:10:38, là bằng cái gì? hàm như cho trên
+00:10:38 - 00:10:41, thì radian của f theo x
+00:10:41 - 00:10:44, thì nó sẽ là bằng một cái vector
+00:10:44 - 00:10:47, của hàm f
+00:10:47 - 00:10:50, đạo hàm của f theo biến x
+00:10:50 - 00:10:53, và đạo hàm của f theo biến y
+00:10:53 - 00:10:56, và đạo hàm của f theo biến y
+00:10:56 - 00:10:59, thì đạo hàm của x theo y sẽ là bằng 5i
+00:10:59 - 00:11:02, trừ cho 14x
+00:11:02 - 00:11:05, còn đây là hàng số đối với x
+00:11:05 - 00:11:08, nên nó sẽ bỏ đi, cộng 3
+00:11:08 - 00:11:11, còn đạo hàm của f theo y thì sẽ là bằng 5x
+00:11:11 - 00:11:14, đối với y thì đây là hàng số
+00:11:14 - 00:11:17, do đó chúng ta sẽ là đạo hàm 1n bằng 0
+00:11:17 - 00:11:20, trừ cho 2i và trừ 6
+00:11:20 - 00:11:23, và đạo hàm của x theo y sẽ là bằng 5i
+00:11:23 - 00:11:26, trừ cho 2i và trừ 6
+00:11:26 - 00:11:29, thì đây chính là vector radian theo biến x và y
+00:11:29 - 00:11:32, đây là x và y
+00:11:32 - 00:11:35, rồi
+00:11:35 - 00:11:38, thì đây là kết quả của mình
+00:11:43 - 00:11:46, và các mô hình học sâu của chúng ta
+00:11:46 - 00:11:49, thì đều dựa trên lý thuyết
+00:11:49 - 00:11:52, hoặc dựa trên ký hiệu của radian
+00:11:52 - 00:11:55, mục tiêu của radian là xác định xem
+00:11:55 - 00:11:58, từng thành phần vector của mình
+00:11:58 - 00:12:01, từng thành phần x1, x2 cho đến xn
+00:12:01 - 00:12:04, nó ảnh hưởng như thế nào
+00:12:04 - 00:12:07, lên trên sự tăng giảm của hàng số
+00:12:07 - 00:12:10, và khi chúng ta xác định được sự ảnh hưởng đó rồi
+00:12:10 - 00:12:13, thì chúng ta sẽ cập nhật lại x1, x2, xn sau cho f của mình
+00:12:13 - 00:12:16, tiến về giá trị cực tiểu
+00:12:16 - 00:12:19, hoặc giá trị cực đại
+00:12:19 - 00:12:22, và tăng giảm của radian trong mô hợp này

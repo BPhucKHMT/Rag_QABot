@@ -1,0 +1,199 @@
+0:00:14 - 0:00:16, VGG đã có những cải tiến gì?
+0:00:16 - 0:00:18, so với AlexNet
+0:00:18 - 0:00:20, đó là
+0:00:20 - 0:00:22, thay thế các cái
+0:00:22 - 0:00:24, filter có kích thước lớn
+0:00:24 - 0:00:26, ví dụ như là 5577 trở lên
+0:00:26 - 0:00:28, bằng các cái bộ lọc 3x3
+0:00:28 - 0:00:30, được thực hiện một cách liên tiếp
+0:00:30 - 0:00:32, thì như đã nói
+0:00:32 - 0:00:34, trong phần trước là việc thực hiện
+0:00:34 - 0:00:36, các cái bộ lọc 33 liên tiếp
+0:00:36 - 0:00:38, thì nó sẽ có cái receptive field
+0:00:38 - 0:00:40, tương ứng với lại các cái vùng là 5x5
+0:00:40 - 0:00:42, hoặc là 7x7
+0:00:42 - 0:00:44, sau đó thì VGG
+0:00:44 - 0:00:56, thì ta tìm cách vì việc thay các kernel kích thước là 5 x 5 và 7 x 7 bằng các kernel có kích thước là 3 x 3 liên tiếp
+0:00:56 - 0:01:00, thì dẫn đến là nó sẽ khiến mạng của mình sẽ sâu hơn
+0:01:02 - 0:01:12, khi mạng của mình càng sâu hơn thì các tác giả mới nhận thấy rằng là từ VGG 11 tăng lên VGG 13
+0:01:12 - 0:01:19, Độ chính xác tăng lên, lên VGG16 độ chính xác tăng lên, đến 19 thì cũng vậy.
+0:01:19 - 0:01:25, Tuy nhiên nó sẽ có vấn đề đó là sự tăng này dần bão hòa.
+0:01:25 - 0:01:33, Vì việc dần bão hòa có nguyên nhân gì thì chúng ta sẽ cùng giải thích trong phần tiếp theo.
+0:01:33 - 0:01:38, Trong sơ đồ này chúng ta thấy là những layer, những đặc trưng mà màu hồng
+0:01:38 - 0:01:48, đó là những lần chúng ta down sampling xuống, pooling để giảm số chiều, giảm kích thước của ảnh xuống
+0:01:48 - 0:01:55, và trước đó chúng ta thấy có 2 cái layer liên tiếp, 2 cái layer liên tiếp
+0:01:55 - 0:02:03, nó đặt tương đương với lại 1 cái vùng có kích thước là receptive field là 5x5
+0:02:03 - 0:02:06, do chúng ta sử dụng 2 cái filter là 3x3 liên tiếp
+0:02:06 - 0:02:16, Sau đó, chúng ta thấy là có vùng là 4 đặc trưng, 1, 2, 3, 4 đặc trưng 3 x 3 liên tiếp
+0:02:16 - 0:02:22, Thì như vậy là nó làm cho chúng ta tạo ra các đặc trưng mà có receptive field lớn
+0:02:22 - 0:02:40, Để hy vọng rằng các đặc trưng có thể bao quát trên vùng có diện tích lớn để có tính toàn cục
+0:02:40 - 0:02:44, Đó chính là những cải tiến lớn của VGG
+0:02:44 - 0:02:55, Rồi, thế thì một cái cải tiến tiếp theo đó chính là ResNet, Residual Network
+0:02:55 - 0:03:00, và nó giải quyết cái vấn đề gì của kiến trúc mạng trước đó là VGG
+0:03:00 - 0:03:09, đó là khi tăng số layer lên, cụ thể là trên 16 layer thì độ chính xác nó không còn tăng đáng kể
+0:03:09 - 0:03:12, Tức là nó có tăng nhưng mà nó tăng không đáng kể
+0:03:13 - 0:03:19, và không đáng kể so với lại số lượng tham số cũng như là công tính toán của mình
+0:03:19 - 0:03:25, Thậm chí là khi tăng hơn 20 layer thì nó có dấu hiệu là có thể giảm
+0:03:26 - 0:03:28, Vì vậy thì nguyên nhân ở đây là gì?
+0:03:28 - 0:03:33, Đó là do hiện tượng tiêu biến đạo hàm mà chúng ta đã đề cập trong những phần trước
+0:03:33 - 0:03:38, Khi số lớp biến đổi càng nhiều thì hiện tượng tiêu biến đạo hàm
+0:03:38 - 0:03:42, nó sẽ xảy ra càng mạnh mẽ hơn
+0:03:42 - 0:03:46, mặc dù là chúng ta đã sử dụng Rectify Linear Unit
+0:03:46 - 0:03:50, nhưng đây không phải là một liều thuốc toàn năng
+0:03:50 - 0:03:53, mà có thể giải quyết được triệt để vấn đề vanishing gradient
+0:03:53 - 0:03:59, tại vì nó vẫn sẽ có... với Rectify Linear Unit
+0:03:59 - 0:04:05, tức là của hàm Z, là bằng max của 0 và Z
+0:04:05 - 0:04:13, khi đó đạo hàm của Relu, thì nó sẽ hoặc là bằng 0 hoặc là bằng 1
+0:04:13 - 0:04:20, thì một cách trung dung sẽ có những tình huống lớn hơn không
+0:04:20 - 0:04:25, sẽ có tình huống bằng 0 hoặc là bằng 1
+0:04:25 - 0:04:29, do đó thì một cách trung dung sẽ là con số ở giữa là khoảng 0.5
+0:04:29 - 0:04:36, Như vậy thì cách làm này nó sẽ còn chưa đạt được một cách triệt để trong việc là
+0:04:36 - 0:04:44, cái đạo hàm của Relu là một cái con số ổn định và con số là hài hòa cân bằng.
+0:04:44 - 0:04:51, Thì cái cải tiến lớn nhất của Residual Neural Network, ResNet nó chính là
+0:04:51 - 0:04:55, tạo ra các cái nối tắt hay còn gọi là Skip Connection
+0:04:55 - 0:04:59, để hạn chế hiện tượng vanishing gradient
+0:04:59 - 0:05:04, thì cái này chúng ta đã đề cập ở trong phần vanishing gradient rồi
+0:05:04 - 0:05:08, nhờ có cái hàm hx là bằng fx
+0:05:08 - 0:05:13, fx này tức là cái thao tác mà rút trích đặc trưng của mình
+0:05:13 - 0:05:16, rồi sau đó chúng ta sẽ cộng thêm cho x
+0:05:16 - 0:05:19, thì khi chúng ta tính đạo hàm
+0:05:19 - 0:05:22, thì nó sẽ là bằng f và x
+0:05:22 - 0:05:32, Cộng cho 1, cho dù thành phần này nó có lớn hay nhỏ hơn không, thì khi chúng ta tính một cách trung bình
+0:05:32 - 0:05:39, thì h-x này sẽ dao động xoay xung quanh con số 1, nó có thể bên trái và bên phải số 1
+0:05:39 - 0:05:49, nhưng mà một cách trung dung và hài hòa nhất thì nó sẽ xoay xung quanh số 1 dẫn đến ổn định đạo hàm
+0:05:49 - 0:05:52, Để ổn định đạo hàm
+0:05:57 - 0:06:05, Còn đối với Relu, chúng ta thấy trung dung nhất là 0.5, vẫn là một con số bé hơn 1
+0:06:05 - 0:06:11, Rồi, chúng ta sẽ cùng đến với một biến thể nữa, đó là MobileNet
+0:06:11 - 0:06:18, MobileNet, khi nói đến từ Mobile này, chúng ta sẽ hình dung ngay là nó nhằm cải tiến tốc độ
+0:06:18 - 0:06:27, để hy vọng rằng các mạng convolution neural network có thể chạy được trên các thiết bị di động
+0:06:27 - 0:06:30, chạy được trên di động
+0:06:30 - 0:06:42, Thế thì làm sao có thể cải tiến được? Đó là do chúng ta phải phân tích vấn đề của nó là nguyên nhân tại sao chúng ta chọn
+0:06:42 - 0:06:52, Đó là cùng một receptive field là 3x3xD, nhưng số lượng tham số và tính toán của mình là lớn
+00:06:52 - 0:06:59, số lượng tham số tính toán và số lượng tham số và số phép toán là lớn
+0:06:59 - 0:07:06, MobileNet sẽ thay convolution bằng Depth-wise Separable Convolution DSC
+0:07:06 - 0:07:12, Thì Depth-wise Separable Convolution sẽ gồm 2 bước tính toán
+0:07:12 - 0:07:14, Bước đầu tiên là Depth-wise
+0:07:14 - 0:07:28, thì chúng ta sẽ có một cái filter và chúng ta sẽ thực hiện nó trên toàn bộ cái độ sâu của cái feature này
+0:07:28 - 0:07:34, thì chúng ta thấy là khi chúng ta áp dụng cái Depth-wise Convolution
+0:07:34 - 0:07:38, thì cái kích thước của cái độ sâu này không thay đổi thì trước và sau
+0:07:38 - 0:07:45, nếu như ở trước là d chiều là có độ sâu ở d thì phía sau độ sâu cũng là d
+0:07:45 - 0:07:51, trong khi đó nếu chúng ta áp dụng cái phép biến đổi convolution bình thường
+0:07:51 - 0:07:57, thì rõ ràng là nó sẽ đưa về một cái feature map có cái depth là bằng một
+0:07:57 - 0:08:01, thì ở đây cái depth này của mình là giữ nguyên
+0:08:01 - 0:08:04, depth này là giữ nguyên
+0:08:04 - 0:08:07, Còn phép convolution bình thường thì depth của mình nó sẽ đưa về bằng 1
+0:08:09 - 0:08:13, Rồi, thì ở đây chúng ta sẽ thấy có một cái lợi điểm nữa đó là số lượng tham số
+0:08:13 - 0:08:18, Vì chúng ta thực hiện depth-wise convolution nên cái filter này nó sẽ không có depth
+0:08:18 - 0:08:22, Nó không có độ sâu, nó chỉ có kích thước là 3 x 3 thôi, ví dụ vậy
+00:08:22 - 0:08:26, Sau khi chúng ta đã thực hiện ra được, tạo ra được các feature map này
+00:08:26 - 0:08:30, Thì chúng ta sẽ tiến đến cái bước là Point-wise convolution
+00:08:30 - 0:08:38, và chúng ta sẽ stack, chúng ta trồng các feature map này lên và tiến hành 1 nhân 1 convolution
+00:08:38 - 0:08:44, nhân với 1 nhân 1 convolution để tạo ra 1 feature map mới
+0:08:44 - 0:08:53, thì cái 1 nhân 1 này, bề ngang và bề cao của mình nó sẽ có kích thước là 1
+00:08:53 - 0:08:55, đều có kích thước là 1
+00:08:55 - 0:08:57, nhưng mà cái độ sâu của mình
+00:08:57 - 0:09:01, thì lúc này nó sẽ là d
+00:09:01 - 0:09:03, thì nếu như chúng ta áp dụng
+00:09:03 - 0:09:07, ca cái filter
+0:09:07 - 0:09:11, 1x1 convolution thì ở đây
+00:09:11 - 0:09:13, depth của mình nó sẽ ra là ca
+00:09:13 - 0:09:17, như vậy thì chúng ta sẽ xem giữa 2 cách
+00:09:17 - 0:09:21, thì cách thông thường sẽ là đâu đó xấp xỉ
+0:09:21 - 0:09:33, Ví dụ như chúng ta cho input là 32 kênh, output là 64 kênh, kernel của mình kích thước là 3 x 3, số tham số sẽ là bao nhiêu?
+0:09:33 - 0:09:48, đối với phép Convolution bình thường, chúng ta sử dụng kernel có kích thước 3 x 3
+0:09:48 - 0:09:54, và số kênh đầu vào là 32, nên depth sẽ là 32
+0:09:54 - 0:10:01, và chúng ta muốn cái output của mình có 64 kênh thì chúng ta phải nhân cái này lên 64 lần
+0:10:01 - 0:10:03, do đó thì là...
+0:10:03 - 0:10:10, convolution thường nó sẽ tốn cái số lượng tham số là 32 x 3 x 3 x 4
+0:10:10 - 0:10:15, thì đâu đó là khoảng 18.000 tham số
+0:10:15 - 0:10:24, nếu chúng ta áp dụng DSC thì ở lớp biến đổi đầu tiên chỉ có kích thước là 3x3
+0:10:24 - 0:10:35, đối với phép biến đổi thứ 2, đó là Point-wise Convolution
+0:10:35 - 0:10:40, thì chúng ta sẽ có input của mình là depth là 32
+0:10:40 - 0:10:42, vẫn là 32
+0:10:42 - 0:10:45, nhưng mà chúng ta sẽ nhân với convolution 1 nhân 1
+0:10:45 - 0:10:47, và chúng ta muốn output có 64 kênh
+0:10:47 - 0:10:51, thì khi đó chúng ta sẽ nhân với 64
+0:10:51 - 0:10:54, thì cái kết quả ở đây đâu đó nó sẽ ra khoảng là
+0:10:54 - 0:10:56, 2003
+0:10:56 - 0:11:01, rồi thì
+0:11:01 - 0:11:17, Vì có 32 kênh, thì có 32 kênh
+0:11:17 - 0:11:34, Chia ra tỷ lệ là 2.000 x 18.000 là 1.9%
+0:11:34 - 0:11:42, hay nói cách khác, đó là chúng ta có thể giảm được 9 lần tốc độ tính toán
+0:11:42 - 0:11:50, xin lỗi 1 lần, là giảm 9 lần số phép toán và giảm được 9 lần số tham số
+0:11:50 - 0:11:56, thế thì chúng ta sẽ đến với 1 kiến trúc hiện đại hơn, đó là ConvNeXt
+0:11:56 - 0:12:02, ConvNeXt đã ra đời từ sau năm 2000
+0:12:02 - 0:12:12, Khi vào thời điểm 2020, khi kiến trúc Transformer đã tương đối trưởng thành
+0:12:12 - 0:12:16, khi nó đã có được 3 năm phát triển
+0:012:16 - 0:12:24, ConvNeXt mục tiêu của nó là muốn kế thừa những thành tựu của Transformer
+0:012:24 - 0:12:28, nhưng vẫn giữ kiến trúc cũ của Convolution
+0:012:28 - 0:12:35, nó chỉ mượn những cái trick, những cái mẹo huấn luyện của Transformer để đưa vào cái mạng CNN
+0:012:35 - 0:12:39, thì đó chính là những cái vấn đề
+0:012:39 - 0:12:42, thứ nhất đó là cái Relu của mình
+0:012:42 - 0:12:46, nó sẽ bị triệt tiêu đạo hàm khi tín hiệu của mình có cái đầu vào là âm
+0:012:46 - 0:12:50, tại vì chúng ta nhìn thấy cái sơ đồ của cái hàm Relu
+0:012:50 - 0:12:52, thì với những cái đặc trưng mà dương
+0:012:52 - 0:12:58, thì nó sẽ nhận giá trị đúng bằng x của mình luôn
+0:012:58 - 0:13:02, nhưng đối với đặc trưng âm thì nó sẽ triệt tiêu, cái đường nằm ngang này là triệt tiêu
+0:013:02 - 0:13:08, thế thì ReLU nó sẽ không khai thác được những gradient của đặc trưng âm
+0:013:08 - 0:13:13, và nếu như chúng ta chỉ bám vào những mạng CNN
+0:013:13 - 0:13:18, thì chúng ta không kế thừa được những mẹo khi huấn luyện các mô hình với transformer
+0:013:18 - 0:13:23, 4 nổi đình nổi đám với độ chính xác rất là cao
+0:013:23 - 0:13:29, và nó sẽ có 1 biến thể cho lĩnh vực về thị giác máy tính đó là VIT
+0:013:29 - 0:13:31, là Vision Transformer
+0:013:31 - 0:13:34, Vậy thì ConvNeXt đã có những cái cải tiến gì?
+0:013:34 - 0:13:36, Đầu tiên đó là ở hàm kích hoạt
+0:013:36 - 0:13:41, thay vì chúng ta sử dụng Relu tức là cái đường màu cam chúng ta thấy nó bị gãy ở đây
+0:013:41 - 0:13:49, thì chúng ta dùng Relu nó sẽ tạo ra đường màu xanh này, nó sẽ là mượt mà hơn
+0:013:49 - 0:13:59, sẽ khiến cho việc huấn luyện của mình dễ dàng hơn và nó chống được hiện tượng vanishing gradient
+0:013:59 - 0:14:12, Cái việc huấn luyện của mình nó cũng sẽ trơn tru và dễ dàng hơn. Thế thì, đồng thời là cũng sẽ khai thác một cái loại optimizer mới vào những năm 2000.
+0:014:12 - 0:14:22, Đó chính là Adam W. Adam W là một cái biến thể khác của Adam nhưng mà được sử dụng trong lĩnh vực xử lý ngôn ngữ tự nhiên với cái kiến trúc là Transformer.
+0:014:22 - 0:14:29, Thế thì cái mạng ConvNeXt này nó cũng đã thay Adam bằng Adam W
+0:014:29 - 0:14:33, Đồng thời cũng sử dụng những phương pháp tăng cường dữ liệu hiện đại hơn
+0:014:33 - 0:14:37, Ví dụ như random augment, mixup, cutmix
+0:014:37 - 0:14:42, thì đây là 2 kỹ thuật để mà blend các đặc trưng lại với nhau
+0:014:42 - 0:14:46, và tạo ra những đối tượng mà có tính outlier rất là cao
+0:14:46 - 0:15:00, tức là để tăng tính phổ quát của đặc trưng, tạo ra những cái hard sample, mẫu dữ liệu khó để khiến cho phân bố của dữ liệu càng mở rộng
+0:15:00 - 0:15:04, để hồng giúp cho mô hình của mình có tính tổng quát hơn.
+0:15:04 - 0:15:13, Hay nói cái khác, đó là nó sẽ giúp cho chúng ta chống được hiện tượng Overfitting, chống Overfitting một cách hiệu quả hơn.
+0:15:13 - 0:15:19, Ngoài ra thì nó sẽ thay thế các BatchNorm bằng LayerNorm
+0:15:19 - 0:15:26, Tại vì khi chúng ta sử dụng BatchNorm thì đối với những patchsize nhỏ, đặc biệt khi chúng ta làm với dữ liệu lớn
+0:15:26 - 0:15:33, thì patchsize nhỏ sẽ khiến cho gradient của mình bị phập phù
+0:15:33 - 0:15:35, Tức là nó sẽ không ổn định
+0:15:35 - 0:15:38, Nó sẽ là không ổn định
+0:15:38 - 0:15:45, Cái Gradient khi cái Batch của mình bé
+0:15:45 - 0:15:53, Thì cái việc mà dùng BatchNorm này nó sẽ khiến cho cái việc huấn luyện nó không có tính ổn định
+0:15:53 - 0:15:58, Khi Batch lớn thì tốt nhưng khi BatchSize mà nhỏ thì Gradient nó thiếu tính ổn định
+0:15:58 - 0:16:01, Do đó thì chúng ta thay bằng LayerNorm
+0:16:01 - 0:16:05, và ngoài ra nó sẽ hơi ngược với lại VGG
+0:16:05 - 0:16:09, đó là sẽ dùng kernel kích thước là 7 x 7
+0:16:09 - 0:16:13, để hy vọng rằng là nó học được bối cảnh xa hơn
+0:16:13 - 0:16:17, trong sơ đồ ở đây chúng ta thấy bên trái là ResNet Block
+0:16:17 - 0:16:21, và bên phải là Convolution ConvNeXt Block
+0:16:21 - 0:16:27, sự khác biệt nữa của ConvNet so với ResNet đó chính là
+0:16:27 - 0:16:36, ResNet thì chúng ta sẽ tìm cách đi reduce, tức là chúng ta đi co lại các feature map
+0:16:36 - 0:16:45, chúng ta giảm các số lượng đặc trưng lại vì chúng ta áp dụng cái 1 nhân 1
+0:16:45 - 0:16:58, Convolution sẽ khiến feature map co lại và đặc trưng co sẽ tạo ra bottleneck
+0:16:58 - 0:17:17, Trái ngược lại, ConnextBlock dùng kernel kích thước 7x7 và vẫn giữ nguyên
+0:17:17 - 0:17:27, Độ sâu là 96, kênh đầu vào của mình là 96, qua lớp biến đổi đầu tiên nó vẫn giữ nguyên
+0:17:27 - 0:17:36, Điểm co lại ở bên ResNet thì đã được đảo ngược lại
+0:17:36 - 0:17:41, Thay vì chúng ta đưa từ 256 chiều, rớt xuống còn 64
+0:17:41 - 0:17:53, thì ở đây, ConvNeXt làm điều ngược lại trước, đó là chúng ta từ 96, chúng ta tăng lên 384, tức là tăng cái số đặc trưng lên.
+0:17:57 - 0:18:03, Thì theo giải thích của các tác giả, khi chúng ta nới rộng cái số đặc trưng lên, nó tạo ra cái không gian của mình nó thoáng hơn
+0:18:03 - 0:18:10, và khi đó cái Gradient của mình nó truyền, nó sẽ hiệu quả hơn, không có bị hiện tượng Vanishing Gradient.
+0:18:10 - 0:18:19, Còn nếu chúng ta co bóp nó lại để còn có 64, thì khi gradient của mình đi qua những khu vực bottleneck
+0:18:19 - 0:18:26, thì nó sẽ bị nghẽn, nghẽn gradient và dẫn đến là gradient của mình được lan truyền không có hiệu quả.
+0:18:26 - 0:18:40, Đối với ResNet, chúng ta thực hiện công việc đó là giảm xong rồi từ 64 chúng ta lại tăng lên là thành 256, giảm xong tăng.
+0:18:40 - 0:18:45, hoặc là giảm rồi mở rộng
+0:18:45 - 0:18:52, còn ConvNeXt thì làm điều ngược lại, đó là chúng ta tăng trước
+0:18:52 - 0:18:58, sau đó có nhiều dư địa rồi thì chúng ta sẽ giảm lại sau
+0:18:58 - 0:19:01, giảm sau
+0:19:01 - 0:19:07, từ 96 lên 384 rồi từ 344 về lại 96
+0:19:07 - 0:19:21, Đây là 2 chiến lược đối lược nhau và một trong những tính chất hiệu quả đó chính là dùng inverted residual block này.
+0:19:21 - 0:19:24, Tức là nó làm điều ngược lại sau với ResNet.
+0:19:24 - 0:19:33, Như vậy thì trong phần này chúng ta đã cùng tìm hiểu qua những biến thể của mạng CNN theo chuỗi lịch sử.
+0:19:33 - 0:19:43, và với mỗi một cái kiến trúc mạng thì đâu đó nó sẽ có những cái vấn đề cơ bản cần giải quyết và đề xuất ra một cái giải pháp phù hợp.
+0:19:43 - 0:19:55, Thì cái biến thể ConvNeXt là một trong những cái biến thể khá là hiện đại và gần đây và nó khai thác được rất nhiều những cái thành tựu của các cái mô hình trước đây.
+0:19:55 - 0:20:04, đặc biệt là nó sẽ kết hợp với lại mẹo huấn luyện của Transformer để tạo ra tổ hợp,
+0:20:04 - 0:20:11, những ưu điểm vừa giải quyết được hiện tượng Overfitting và vừa giải quyết được hiện tượng Vanishing Gradient.
+0:20:11 - 0:20:21, Trong phần này, chúng ta đã áp dụng các kỹ thuật để giải quyết hiện tượng Overfitting và Vanishing Gradient
+0:20:21 - 0:20:29, cho vanishing gradient vào các biến thể của vanishing gradient để chúng ta thấy được sự tiến hóa của nó và có những lý do của nó.

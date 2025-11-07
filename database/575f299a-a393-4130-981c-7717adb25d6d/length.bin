@@ -1,0 +1,1 @@
+Chúng ta sẽ cùng tìm hiểu về mô hình khuếch tán diffusion model và sự khác biệt giữa diffusion model so với mô hình variational autoencoder ra sao, quá trình khuếch tán được thực hiện như thế nào. Chúng ta sẽ nhắc lại công thức của mô hình xác suất đằng trước, đó là log P của x sẽ là bằng tổng của hai kỳ vọng này.

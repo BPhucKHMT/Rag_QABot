@@ -1,0 +1,75 @@
+0:00:14 - 0:00:19, Chúng ta sẽ tiến hành cài đặt một cái mạng Neural Network.
+0:00:19 - 0:00:26, Đặc tính của cái mạng Neural Network là nó sẽ giúp chúng ta giải quyết được các bài toán non-linear.
+0:00:27 - 0:00:37, Và trong trường hợp này, chúng ta sẽ lấy tình huống đơn giản nhất của non-linear đó chính là các tập điểm hình tam giác và hình tròn.
+0:00:37 - 0:00:44, Thì hai tập điểm này không thể nào chia tách ra được bởi một đường thẳng.
+0:00:44 - 0:00:54, Do đó thì đường đúng sẽ phải là một đường tròn như thế này, thì nó mới có thể phân ra làm hai phần riêng biệt được.
+0:00:54 - 0:00:56, Thì đây là một cái bài toán phi tuyến.
+0:00:56 - 0:01:02, Và để giải quyết bài toán này thì chúng ta cũng không cần thiết phải sử dụng một cái mạng Neural Network quá phức tạp.
+0:01:02 - 0:01:05, Thì ở đây nó chỉ cần có một lớp ẩn thôi.
+0:01:05 - 0:01:10, Ở đây là một hidden layer.
+0:01:10 - 0:01:17, Cái mạng Neural Network đúng của chúng ta thì nó có thể có một, hai hoặc là rất nhiều hidden layer.
+0:01:17 - 0:01:21, Nhưng trong trường hợp này thì chúng ta chỉ cần minh họa với một hidden layer.
+0:01:21 - 0:01:26, Cái thứ hai đó là tập điểm này chỉ có hai thành phần.
+0:01:26 - 0:01:32, Do đó thì ở đây chúng ta sẽ có duy nhất một cái node Output cuối cùng.
+0:01:32 - 0:01:41, Ở đây là chúng ta sẽ có một lớp input, một cái hidden layer và một cái Output.
+0:01:41 - 0:01:50, Và cái Output này thì do là cái giá trị của mình nó chỉ có một, nó chỉ có một phần lớp, xin lỗi nó có hai phần lớp.
+0:01:50 - 0:01:56, Nên ở đây chúng ta không có sử dụng hàm SIP, mà chúng ta sẽ sử dụng một cái hàm SIGMOID.
+0:01:56 - 0:02:01, Tại vì SIGMOID nó sẽ đưa cái miền giá trị của mình về cái đoạn từ 0 cho đến 1.
+0:02:01 - 0:02:09, Và lúc này thì cái giá trị Y và Y ngã này thì mình sẽ sử dụng cái độ đo là Binary Cross entropy.
+0:02:09 - 0:02:13, Thì đây là một cái biến thể đơn giản của mạng Neural Network.
+0:02:13 - 0:02:18, Tiếp theo thì chúng ta sẽ tiến hành cài đặt cho cái ví dụ này.
+0:02:22 - 0:02:31, Rồi thì cũng tương tự chúng ta sẽ có cái đoạn code để khởi tạo cho các tập điểm nằm trong và nằm bên ngoài hình tròn.
+0:02:31 - 0:02:35, Thì ở đây chúng ta có một cái thư viện là Scikit-learn.
+0:02:35 - 0:02:39, Nó sẽ có cái hàm make_circles.
+0:02:39 - 0:02:46, Và cái hàm make_circles này thì nó sẽ giúp cho chúng ta tạo ra các cái điểm nằm trong và nằm ngoài hình tròn.
+0:02:46 - 0:02:54, Rồi, các cái điểm nằm trong thì chúng ta sẽ được đánh dấu bằng màu đỏ.
+0:02:54 - 0:02:59, Và các cái điểm nằm trong thì được đánh dấu bằng các cái điểm màu xanh lá.
+0:02:59 - 0:03:03, Và cái điểm nằm ngoài thì được đánh dấu bằng các điểm màu đỏ.
+0:03:03 - 0:03:08, Và những cái điểm nào màu đỏ thì được sẽ gắn nhãn là bằng 0.
+0:03:08 - 0:03:14, Và những cái điểm nào màu xanh lá thì sẽ được gắn nhãn là bằng 1.
+0:03:14 - 0:03:18, Và tất cả thì đều được ép về kiểu số thật.
+0:03:18 - 0:03:26, Rồi, thì x của mình, tọa độ x của mình nó chính là tập dữ liệu tọa độ theo trục x1 và x2.
+0:03:26 - 0:03:28, Tức là 2 bao gồm 2 chiều.
+0:03:28 - 0:03:35, y thì nó sẽ là cái nhãn hoặc là nhận giá trị 0 hoặc là nhận giá trị là 1.
+0:03:35 - 0:03:39, Rồi, bây giờ về cái phần cài đặt thuật toán.
+0:03:39 - 0:03:45, Thì cũng tương tự cho các cái mô hình linear, logistic và softmax regression.
+0:03:45 - 0:03:53, Và ở đây thì chúng ta sẽ có 1 cái hàm nữa đó là hàm get_weights.
+0:03:53 - 0:04:00, Trên cái hàm get_weights này thì chúng ta sẽ phải viết lại so với cái linear regression.
+0:04:00 - 0:04:06, Tại vì trong cái mạng neural network thì chúng ta sẽ có nhiều layer.
+0:04:06 - 0:04:10, Và như vậy thì nếu chúng ta muốn quan sát cái layer, cái tham số của layer nào,
+0:04:10 - 0:04:14, thì chúng ta phải truyền thêm cái chỉ số của layer đó vào.
+0:04:14 - 0:04:18, Vậy thì chúng ta sẽ có thêm 1 cái phương thức này nữa.
+0:04:18 - 0:04:20, Viết lại cái phương thức này.
+0:04:20 - 0:04:28, Rồi, bây giờ đối với build thì ở đây chúng ta sẽ có input và output dimension.
+0:04:28 - 0:04:40, Thì chúng ta cũng tương tự sẽ cài đặt là input với shape là bằng input.
+0:04:44 - 0:04:49, Tiếp theo, đó là chúng ta sẽ có cái lớp hidden layer.
+0:04:49 - 0:04:51, Chúng ta sẽ có 1 cái lớp hidden layer.
+0:04:51 - 0:04:54, Như vậy ở đây sẽ để là hidden.
+0:04:54 - 0:05:02, Rồi, lớp hidden layer này thì nó sẽ được thực hiện bởi một cái phép biến đổi là fully connected.
+0:05:02 - 0:05:07, Tại vì từ cái lớp input sang cái lớp hidden này thì nó được kết nối đầy đủ.
+0:05:07 - 0:05:15, Và chúng ta lưu ý là activation của mình thì chúng ta sẽ sử dụng hàm sigmoid.
+0:05:15 - 0:05:19, Và đồng thời là chúng ta có sử dụng bias.
+0:05:19 - 0:05:24, Vậy thì ở đây sẽ là layer, sẽ là dense.
+0:05:24 - 0:05:29, Rồi, output của mình thì nó sẽ có nhiều nodes.
+0:05:29 - 0:05:32, Giả sử ở đây chúng ta có 8 nodes thôi.
+0:05:32 - 0:05:36, Số nodes ở giữa ở đây chúng ta có 8 nodes.
+0:05:36 - 0:05:44, Rồi, activation thì chúng ta sẽ để là sigmoid.
+0:05:44 - 0:05:51, Rồi, use bias thì chúng ta sẽ để là true.
+0:05:51 - 0:05:58, Và chúng ta sẽ phải truyền cái lớp input cho nó chính là input ở đây.
+0:05:58 - 0:06:01, Rồi, chúng ta sẽ có cái output là hidden.
+0:06:01 - 0:06:06, Và với output là hidden, chúng ta lại một lần nữa, chúng ta...
+0:06:08 - 0:06:12, Một lần nữa thì chúng ta sẽ đưa qua cái lớp biến đổi là fully connected.
+0:06:12 - 0:06:19, Tại vì bản chất ở đây tất cả các cái node đầu vào và cái node đầu ra thì nó kết nối đầy đủ với nhau.
+0:06:19 - 0:06:22, Do đó thì ở đây nó cũng là một cái dense.
+0:06:22 - 0:06:27, Và cái dense này thì cái output của mình nó chỉ có duy nhất một node.
+0:06:27 - 0:06:31, Tại sao một node? Tại vì ở đây chúng ta phân lớp nhị phân.
+0:06:33 - 0:06:39, Rồi, ở đây sẽ có là output là bằng dense.
+0:06:39 - 0:06:46, Trong đó chỉ có một node activation thì chúng ta sẽ để là sigmoid.
+0:06:49 - 0:06:53, Rồi, sử dụng bias bằng true.
+0:06:53 - 0:06:58, Và input của nó chính là cái hidden ở phía trước.
+0:07:00 - 0:07:06, Rồi, bây giờ chúng ta sẽ đóng gói cả cái này vào trong cái biến là model.
+0:07:10 - 0:07:15, Và chúng ta sẽ trả về cho cell.model.
+0:07:15 - 0:07:20, Ở đây thì chúng ta sẽ không cần phải return cái gì ra bên ngoài.
+0:07:20 - 0:07:36, Rồi, tương tự như vậy ở đây chúng ta sẽ có optimizer sẽ là bằng tf.keras.optimizer.stochastic gradient descent
+0:07:36 - 0:07:41, Với learning rate là bằng 0.1 để train cho nó nhanh.
+0:07:41 - 0:07:45, Và ở đây chúng ta sẽ có sử dụng momentum

@@ -1,0 +1,499 @@
+00:00:00 - 00:00:19, Tiếp theo, chúng ta sẽ cùng tìm về phần 2 của mô hình ngôn ngữ Thiat
+00:00:19 - 00:00:28, Trong phần trước, chúng ta đã tìm hiểu về mô hình rounded image
+00:00:28 - 00:00:45, Đồ vào có 1 câu prompt, nó sẽ kết hợp với 1 tấm ảnh để đồ ra
+00:00:45 - 00:01:00, Nhưng nó sẽ dừng ở BalinkBox, kết hợp với className
+00:01:00 - 00:01:10, Đây là bài tán dạng Zero-Sort, tức là chúng ta không hướng luyện đối tượng này
+00:01:10 - 00:01:18, Trong phần 2, chúng ta sẽ giải quyết bài toán cũng gần như tương tự
+00:01:18 - 00:01:25, Nhưng output của chúng ta không phải là BalinkBox, mà sẽ là một cái segment, cái mask
+00:01:25 - 00:01:38, Nó sẽ chi tích hơn, không phải là một cái đường bao xung quanh đối tượng
+00:01:38 - 00:01:45, Mô hình ở đây chúng ta sẽ nghiên cứu, đó chính là 2 mô hình RoundingDino và Sim
+00:01:46 - 00:01:53, Sau đó chúng ta sẽ mở rộng ra mô hình ngôn ngữ LM cho bài tán hiểu nội dung ảnh
+00:01:53 - 00:02:04, Và một trong những mô hình có mục tiêu tương tự như GBT, VV, đó chính là mô hình Lava
+00:02:04 - 00:02:09, Sau đó chúng ta sẽ cùng tìm hiểu qua một số biến thể của mô hình này
+00:02:10 - 00:02:13, Đầu tiên chúng ta sẽ nói về RoundingDino
+00:02:13 - 00:02:22, Trước RoundingDino thì đã có một cái mô hình nổi đỉnh nổi đám của Meta, MetaAI
+00:02:22 - 00:02:24, Đó chính là SegmentAnything, Sim
+00:02:24 - 00:02:32, Ý tưởng của cái mô hình này đó là, đầu tiên họ xây dựng một cái bộ data set lên đến hàng tỷ ảnh
+00:02:33 - 00:02:43, Và trong data set này thì nó sẽ chứa cái mask của các đối tượng, tức là ảnh, cộng với cái mask
+00:02:43 - 00:02:48, Và cái mask này thì được đảm bảo là cái chất lượng của nó rất là cao
+00:02:48 - 00:02:54, Tức là nó sẽ phủ đúng những đối tượng ở có bên trong ảnh
+00:02:55 - 00:03:02, Đồng thời nó sẽ phủ đầy đủ, không chỉ phủ đúng mà phủ đầy đủ các cái bộ phận
+00:03:02 - 00:03:09, Thậm chí là ví dụ chúng trong cái hình này chúng ta thấy là nó sẽ có thể phủ được đến cái mức độ chân của cái tripod này
+00:03:09 - 00:03:11, Thì đó là về data set
+00:03:11 - 00:03:14, Sau đó họ hướng luyện cái mô hình SegmentAnything
+00:03:14 - 00:03:18, Và ý tưởng của cái mô hình SegmentAnything đó là
+00:03:18 - 00:03:23, Đầu vào sẽ có một cái tấm ảnh, rồi qua một cái image encoder
+00:03:24 - 00:03:26, Thì nó sẽ ra một cái embedding
+00:03:26 - 00:03:31, Cái embedding này là cái vector biểu diễn của cái tấm hình
+00:03:31 - 00:03:36, Và đầu vào thì nó sẽ có là prompt
+00:03:36 - 00:03:43, Nhưng mà chúng ta lưu ý là cái prompt của SAM đó là special prompt
+00:03:43 - 00:03:49, Tức là những cái prompt mang tính chất gọi là có thông tin về mặt tạo độ
+00:03:49 - 00:03:53, Ví dụ như là các cái điểm bounding box hoặc là mask
+00:03:53 - 00:03:58, Thế thì ý nghĩa của nó là gì? Ví dụ như trong hình tay phải chúng ta thấy cái prompt của mình
+00:03:58 - 00:04:01, Cái chỉ dẫn của mình nó ở dạng là
+00:04:01 - 00:04:06, Dạng điểm hay gọi là point
+00:04:10 - 00:04:16, Nghĩa là chúng ta sẽ chấm vô đây và cho cái mô hình nó biết là cái đối tượng mà chúng ta cần phải segment
+00:04:16 - 00:04:19, Nó sẽ có ở cái vị trí này
+00:04:19 - 00:04:22, Tương tự như vậy chúng ta cũng sẽ chấm vô đây
+00:04:23 - 00:04:28, Để cho cái mô hình biết là cái đối tượng của mình muốn lấy ra có cả cái ở vị trí này
+00:04:28 - 00:04:33, Với 2 cái dúng chấm này nó sẽ giúp chúng ta khoanh vùng
+00:04:33 - 00:04:36, Và cái khoanh vùng nó sẽ được vẽ bằng cái đường bao màu xanh ở đây
+00:04:36 - 00:04:38, Thì nó sẽ tách ra cái đối tượng này
+00:04:38 - 00:04:42, Như vậy thì keep prompt của mình nó sẽ là 1 cái special prompt
+00:04:42 - 00:04:48, Là cái prompt ở dạng điểm bounding box hoặc là mask
+00:04:48 - 00:04:53, Tương tự như vậy nếu như chúng ta khoanh vùng 1 cái bounding box như thế này
+00:04:53 - 00:04:58, Thì nó sẽ vẽ cho chúng ta cái đường bao chi tiết xung quanh cái đối tượng của mình
+00:04:58 - 00:05:04, Như vậy cái input của mình là không phải ở dạng text
+00:05:04 - 00:05:08, Và với cái prompt này thì nó sẽ qua 1 cái prompt encoder
+00:05:08 - 00:05:14, Rồi sau đó nó sẽ qua cái module gọi là mask decoder
+00:05:14 - 00:05:17, Để kết hợp cái thông tin của cái prompt
+00:05:17 - 00:05:19, Tức là cái special prompt
+00:05:19 - 00:05:23, Và cái image embedding, cái vector biểu diễn của tấm ảnh
+00:05:23 - 00:05:26, Để từ đó nó tạo ra cái mask
+00:05:26 - 00:05:33, Và cái mask này sẽ là cái mask xoay xung quanh cái đối tượng được chỉ dẫn bởi cái prompt ở trên đây
+00:05:33 - 00:05:38, Thì cái hình bên đây đó là mình hòa là cái mask này được decode ra
+00:05:38 - 00:05:41, Với 2 cái chỉ dẫn tại from point ở dạng điểm
+00:05:41 - 00:05:45, Như vậy thì làm sao chúng ta có thể giải quyết được cái bài tán này
+00:05:46 - 00:05:54, Giải quyết được cái bài tán đó là referencing segmentation
+00:05:56 - 00:06:05, Tức là chúng ta sẽ đưa cho nó một cái dạng là ngôn ngữ để cho nó hiểu được cái đối tượng
+00:06:05 - 00:06:13, Ví dụ như ở đây chúng ta cung cấp cho nó 1 cái prompt là a cat is hitting another cat
+00:06:13 - 00:06:17, Thì một cái con mèo nó đang đá một cái con mèo khác
+00:06:17 - 00:06:19, Thì nó sẽ hiểu là chúng ta sẽ khoanh vùng này
+00:06:19 - 00:06:21, Thay vì chúng ta chấm 2 cái điểm ở đây
+00:06:21 - 00:06:28, Thì đây chính là cái mục tiêu của cái model đó là routing deno
+00:06:28 - 00:06:36, Thì đó chính là làm sao đưa vào, đầu vào cho prompt làm một cái ngôn ngữ mô tả
+00:06:36 - 00:06:42, Thế thì cái ý tưởng đó là chúng ta sẽ dùng một cái mô hình phát hiện đối tượng khác
+00:06:42 - 00:06:45, Có sẵn để lấy cái bounding box của nó ra
+00:06:45 - 00:06:48, Tức là chúng ta sẽ có một cái object detector
+00:06:48 - 00:06:54, Và chúng ta sẽ đưa vào một cái từ khóa
+00:06:54 - 00:06:59, Rồi sau đó nó sẽ tìm ra ví dụ như chúng ta có thể sử dụng mô hình là clip hoặc là glip
+00:07:01 - 00:07:03, Cái này là viết tắt, cái này là glip
+00:07:03 - 00:07:09, Rồi thì khi chúng ta đưa vô cái mô hình kiểu như là ví dụ như clip
+00:07:09 - 00:07:13, Thì input của mình nó sẽ là một cái prompt
+00:07:13 - 00:07:17, Và output của mình nó sẽ ra được một cái bounding box
+00:07:17 - 00:07:21, Và prompt này là ở dạng text
+00:07:21 - 00:07:32, Thế thì điều gì xảy ra nếu như cái mô hình của mình nó không thấy được cái đối tượng hoặc là cái đối tượng của mình đó là cái đối tượng mới hoàn toàn
+00:07:32 - 00:07:34, Không có trong cái tập data set
+00:07:34 - 00:07:38, Thì khi đó là cái phương phán A này là không ổn
+00:07:38 - 00:07:43, Là do nó không thể hiểu được cái từ khóa
+00:07:43 - 00:07:47, Hiểu được cái đối tượng mà thể hiện ở trong cái câu mô tả này
+00:07:47 - 00:07:51, Vậy thì chúng ta sẽ có thể đề xuất một cái giải pháp B
+00:07:51 - 00:07:57, Đó là huấn luyện lại SAM với cái bộ dữ liệu về ngôn ngữ
+00:07:57 - 00:08:00, Tuy nhiên cái việc này thì nó cũng sẽ có vấn đề
+00:08:01 - 00:08:06, Nó sẽ có vấn đề đó là data set của SAM
+00:08:06 - 00:08:11, Data set mà lên thậm chí là lên đến hàng tỷ mẫu
+00:08:11 - 00:08:13, Là lên đến hàng tỷ mẫu
+00:08:13 - 00:08:18, Thì nó chỉ có thông tin về mặt không gian
+00:08:18 - 00:08:22, Chứ nó không có thông tin về mặt ngôn ngữ
+00:08:22 - 00:08:27, Thì đó chính là cái vấn đề khi chúng ta sẽ train lại SAM với dữ liệu ngôn ngữ
+00:08:28 - 00:08:34, Tuy bản chất data của mình nó đã không có dữ liệu văn bản
+00:08:39 - 00:08:46, Mà nó chỉ có dữ liệu dạng thông tin không gian
+00:08:46 - 00:08:49, Ví dụ như là bowling box hoặc là cái mask thôi
+00:08:49 - 00:08:54, Thì đó chính là những cái đào cản khiến chúng ta xây dựng một cái mô hình
+00:08:55 - 00:08:58, Để đầu vào của mình sẽ nhận là một cái ngôn ngữ mô tả
+00:08:58 - 00:09:01, Và đầu ra của mình sẽ ra được một cái bowling box
+00:09:01 - 00:09:08, Vậy thì ở đây chúng ta sẽ cùng nói về lý do tại sao chúng ta làm cái bài tỏa này
+00:09:08 - 00:09:17, Thì từ trái sang phải chúng ta sẽ có hai loại bài tỏa đó là object localization và text understanding
+00:09:17 - 00:09:22, Thì đối với cái 1A thì nó sẽ nằm trong cái nhóm gọi là Closet Object Detection
+00:09:22 - 00:09:28, Tức là ví dụ như ở đây chúng ta sẽ có cái bench là cái ghế ở đây
+00:09:28 - 00:09:33, Thì là một cái dataset đã được định nghĩa trước trong một cái dataset cho trước
+00:09:33 - 00:09:38, Rồi person thì cũng tương tự như vậy
+00:09:38 - 00:09:42, Đó là đây là một cái nó sẽ dựa trên một cái thực tán object detection
+00:09:42 - 00:09:44, Đó chính là cái phương pháp A ở đây chúng ta đang nói
+00:09:45 - 00:09:55, Với cái phương pháp A này thì nó chỉ có thể hoạt động được khi cái prompt của mình nó có chứa những cái từ khóa
+00:09:55 - 00:09:58, Chứa những cái đối tượng mà được định nghĩa trước
+00:09:58 - 00:10:05, Còn nếu không được định nghĩa trước thì nó sẽ không thuộc set của cái nhóm đó là Closet này
+00:10:05 - 00:10:09, Mà nó sẽ sang cái nhóm gọi là Open Set Object Detection
+00:10:09 - 00:10:11, Tức là nhãn không được định nghĩa trước
+00:10:12 - 00:10:15, Nghẹn không được định nghĩa, cố định như trước
+00:10:15 - 00:10:20, Thì ở đây là có hai cái ví dụ ở cục thứ 2, ở giữa và cục bên phải
+00:10:20 - 00:10:23, Ở giữa thì chúng ta sẽ có các từ vận đơn
+00:10:23 - 00:10:26, Ví dụ như là Ear, Lion, Bench
+00:10:26 - 00:10:32, Thì đây là những cái câu mô tả nhưng mà nó chỉ có chứa các cái đối tượng chúng ta cần tìm thôi
+00:10:32 - 00:10:34, Nó không có phức tạp
+00:10:34 - 00:10:37, Nó gọi là Human Noble Category
+00:10:37 - 00:10:40, Tức là có chứa những cái Category thôi
+00:10:42 - 00:10:45, Của những cái đối tượng mới Noble Category
+00:10:47 - 00:10:50, Ví dụ như ở đây nó có cái từ khóa là World Cup
+00:10:50 - 00:10:55, Thì đây là một cái từ khóa mới mà trong tập Closet trước đây nó chưa từng thấy
+00:10:57 - 00:11:02, Và Ear ở đây chính là cái tai của con sư tử chứ không phải là ear
+00:11:02 - 00:11:05, Một tai của một con người
+00:11:05 - 00:11:12, Nhưng ở cái cục ngoài cùng thì nó là Human Reference Sentences
+00:11:12 - 00:11:17, Thì đó là cái câu mô tả của chúng ta chứ nó không phải là những cái Category
+00:11:17 - 00:11:19, Tức là một cái từ đơn
+00:11:19 - 00:11:21, Nó sẽ là một câu mô tả dài
+00:11:21 - 00:11:23, Và thì đây là một cái mô tả dài
+00:11:26 - 00:11:30, Nó có chứa các cái thông tin ví dụ như là về mặt vị trí
+00:11:30 - 00:11:32, Về tên của đối tượng
+00:11:32 - 00:11:34, Và thậm chí là màu sắc thuộc tính
+00:11:34 - 00:11:39, Ví dụ như ở trong hình cuối chúng ta thấy là nó khá là phức tạp
+00:11:39 - 00:11:42, Đó là The Bot of Man with His Head Up
+00:11:42 - 00:11:45, Tức là nó đang nói cái người này
+00:11:45 - 00:11:47, Đang nói cái người này
+00:11:50 - 00:11:53, Thì rõ ràng đây là một cái đoạn mô tả rất là phức tạp
+00:11:53 - 00:11:55, Nó chỉ không phải là một cái từ đơn
+00:11:55 - 00:11:57, Giống như bên đây là World Cup Ear
+00:11:57 - 00:11:59, Hay là Lion Bench
+00:11:59 - 00:12:01, Thế thì tại sao chúng ta lại làm bài tỏa này
+00:12:01 - 00:12:04, Thì đó là liên quan đến cái dụ tố ứng dụng
+00:12:04 - 00:12:07, Thực phụ cho cái bài tỏán đó là Image Editing
+00:12:07 - 00:12:09, Là chỉnh sử hình ảnh
+00:12:09 - 00:12:12, Thì đầu vào chúng ta sẽ có cái Prom
+00:12:12 - 00:12:14, Là The Dot
+00:12:14 - 00:12:16, Đó là chúng ta sẽ tương tác cái mô
+00:12:16 - 00:12:18, Cái mask của mình
+00:12:18 - 00:12:21, Với lại cái mô hình Stable Diffusion
+00:12:21 - 00:12:29, Thì Stable Diffusion là một trong những cái mô hình mà được sử dụng để tạo sinh hình ảnh
+00:12:32 - 00:12:37, Và khi chúng ta yêu cầu với cái mask này
+00:12:37 - 00:12:41, Rồi chúng ta đưa vào kèm theo cái Prom đó là Dot
+00:12:41 - 00:12:44, Thì nó đã thay cái con lion này
+00:12:44 - 00:12:46, Cái con sư tử này thành cái con chó
+00:12:46 - 00:12:48, Tương tự như vậy
+00:12:48 - 00:12:50, Nó sẽ có cái Prom
+00:12:50 - 00:12:52, Own People Around World Cup
+00:12:52 - 00:12:54, The World Cheer chứ
+00:12:54 - 00:12:56, Own People Around The World Cheer
+00:12:56 - 00:12:58, With The World Cup
+00:12:58 - 00:13:00, Thì tất cả mọi người ở đây
+00:13:00 - 00:13:04, Đều đưa lên cái hành vi là an mừng cái chí cup này
+00:13:04 - 00:13:08, Thì ở đây nó sẽ có cái từ khóa World Cup
+00:13:08 - 00:13:10, Nó sẽ xuất hiện ở đây
+00:13:10 - 00:13:14, Và để hỗ trợ cho cái việc là chỉnh sửa cái tấm hình này
+00:13:14 - 00:13:18, Đó là cái động cơ về mặt ứng dụng
+00:13:18 - 00:13:20, Vậy thì cái giải pháp của chúng ta ở đây
+00:13:20 - 00:13:22, Đó chính là Routing Dino
+00:13:22 - 00:13:24, Thì đây là một cái mô hình
+00:13:24 - 00:13:26, Giúp cho chúng ta chuyển thể
+00:13:26 - 00:13:28, Từ cái câu
+00:13:28 - 00:13:30, Prom là dạng text
+00:13:30 - 00:13:32, Dạng văn bản
+00:13:32 - 00:13:34, Sang cái Bounding Box
+00:13:34 - 00:13:36, Chúng ta sẽ trả lại cái Bounding Box
+00:13:38 - 00:13:40, Ví dụ trong một cái tấm ảnh lớn
+00:13:40 - 00:13:42, Rồi thì cái Prom này
+00:13:42 - 00:13:44, Tương ứng sẽ là cái vị trí
+00:13:44 - 00:13:46, Ở trên, cái Bounding Box trên
+00:13:48 - 00:13:50, Rồi thì cái ý tưởng của
+00:13:50 - 00:13:52, Routing Dino đó là thứ nhất
+00:13:52 - 00:13:54, Nó sẽ khai thác text backbone
+00:13:54 - 00:13:56, Và image backbone
+00:13:56 - 00:13:58, Vì đó sẽ có các đặc trưng văn bản
+00:13:58 - 00:14:00, Và đặc trưng hình ảnh
+00:14:00 - 00:14:02, Và bước tiếp theo
+00:14:02 - 00:14:04, Đó là thực hiện các phương thức
+00:14:04 - 00:14:06, Attention giữa các loại đặc trưng
+00:14:06 - 00:14:08, Để kết hợp với Dino
+00:14:08 - 00:14:10, Để mà đưa ra cái đầu ra
+00:14:10 - 00:14:12, Là các object được phát hiện ra
+00:14:12 - 00:14:14, Object Detection
+00:14:14 - 00:14:16, Và ở trên cùng
+00:14:16 - 00:14:18, Đó là ngoài cái việc mà dùng cái Loss Hồi Huy
+00:14:18 - 00:14:20, Là Localize Recent Loss
+00:14:20 - 00:14:22, Để phục vụ cho cái việc dự đoán
+00:14:22 - 00:14:24, Dự đoán cái Bounding Box
+00:14:30 - 00:14:32, Thì chúng ta có sử dụng
+00:14:32 - 00:14:34, Contrast Depots
+00:14:34 - 00:14:36, Mục đích đó là
+00:14:36 - 00:14:38, Để phân biệt cái loại đối tượng
+00:14:38 - 00:14:40, Thế thì cái ý tưởng của
+00:14:40 - 00:14:42, Contrast Depots chúng ta đã tìm hiểu
+00:14:42 - 00:14:44, Trong những phần trước
+00:14:44 - 00:14:46, Đó là đưa những đặc trưng ảnh
+00:14:46 - 00:14:48, Và ngôn ngữ của cùng một loại object
+00:14:48 - 00:14:50, Về gần nhau hơn
+00:14:50 - 00:14:52, Về gần nhau hơn
+00:14:52 - 00:14:54, Và ngược lại đó là những cái object
+00:14:54 - 00:14:56, Và những cái đặc trưng hình ảnh
+00:14:56 - 00:14:58, Và ngôn ngữ mà không cùng loại
+00:14:58 - 00:15:00, Thì nó sẽ bị đẩy ra xa
+00:15:00 - 00:15:02, Thì đó chính là
+00:15:02 - 00:15:04, Những cái ý tưởng chính của Rounding Dino
+00:15:04 - 00:15:06, Chúng ta sẽ đến
+00:15:06 - 00:15:08, Từng cái module ở đây
+00:15:08 - 00:15:10, Đầu tiên đó là cái module
+00:15:10 - 00:15:12, Liên quan đến cái việc gọi là
+00:15:12 - 00:15:14, Chirp Rift Đặc Trưng
+00:15:14 - 00:15:16, Hình ảnh văn bảng
+00:15:16 - 00:15:18, Thì đối với hình ảnh
+00:15:18 - 00:15:20, V securities vi T
+00:15:20 - 00:15:22, hoặc là một cái mạng CNN nào đó
+00:15:22 - 00:15:24, Bí dụ như là Restnet 101
+00:15:24 - 00:15:26, Để chúng ta
+00:15:26 - 00:15:28, Rút trích đặc trưng
+00:15:28 - 00:15:30, Và giả sử như cái đặc trưng này
+00:15:30 - 00:15:32, Nó có kích thước đa là dv nhân h
+00:15:32 - 00:15:34, Nhân w, thì trong đó
+00:15:34 - 00:15:36, Hai chiều h và w là hai chiều
+00:15:36 - 00:15:38, Trong cái chuột không gian
+00:15:38 - 00:15:40, Bí dụ như là 16
+00:15:40 - 00:15:42, Còn cái dv
+00:15:42 - 00:15:44, Đó chính là chiều
+00:15:44 - 00:15:46, Của đặc trưng của mình
+00:15:46 - 00:15:49, và đồ sâu của mình sẽ là 256
+00:15:49 - 00:15:51, tức là mỗi một cái vector
+00:15:51 - 00:15:54, biểu diễn cho một cái khu vực
+00:15:54 - 00:15:56, ví dụ như ở đây
+00:15:56 - 00:16:00, là khu vực ở phía dưới
+00:16:00 - 00:16:03, và đồ sâu của mình sẽ là 256
+00:16:03 - 00:16:06, và đồ sâu của mình sẽ là 256
+00:16:06 - 00:16:09, tức là mỗi một cái vector
+00:16:09 - 00:16:12, biểu diễn cho một cái khu vực
+00:16:12 - 00:16:15, là khu vực ở phía dưới
+00:16:15 - 00:16:19, bên tay phải của tấm ảnh
+00:16:19 - 00:16:22, thì nó sẽ biểu diễn với một vector 256
+00:16:22 - 00:16:25, và khi đó chúng ta chia lưới
+00:16:25 - 00:16:28, cái tấm ảnh này ra
+00:16:28 - 00:16:31, thì cứ mỗi một cái mắt lưới này
+00:16:31 - 00:16:35, thì chúng ta sẽ có một vector dài là 256
+00:16:35 - 00:16:38, đối với đặc trưng văn bản
+00:16:38 - 00:16:40, thì chúng ta cũng có thể sử dụng các mô hình
+00:16:40 - 00:16:43, như trên Transformer Retraining Model
+00:16:43 - 00:16:46, những mô hình hướng lĩnh sẵn của Transformer
+00:16:46 - 00:16:49, ví dụ như là BERT, GBT
+00:16:49 - 00:16:52, để trích xuất ra thành là DT nhân dạy N
+00:16:52 - 00:16:55, trong đó N là số lượng token
+00:16:55 - 00:16:58, ví dụ như văn bản của mình có N token
+00:16:58 - 00:17:01, thì đặc trưng văn bản của mình
+00:17:01 - 00:17:04, sẽ có thành phần này là N
+00:17:04 - 00:17:07, còn DT tương ứng là số chiều
+00:17:07 - 00:17:10, ví dụ như trong hình này
+00:17:10 - 00:17:13, thì đây chính là DT
+00:17:13 - 00:17:16, còn chiều này sẽ là N
+00:17:16 - 00:17:19, chiều này sẽ là N
+00:17:19 - 00:17:22, và chúng ta lưu ý
+00:17:22 - 00:17:25, đó là bước số 1 này
+00:17:25 - 00:17:28, các đặc trưng văn bản và text đó là độc lập nhau
+00:17:28 - 00:17:31, hay còn gọi là Uni Model
+00:17:31 - 00:17:34, tức là nó độc lập nhau, tách biệt nhau
+00:17:34 - 00:17:37, do đó chúng ta phải qua mô đoán mô đoán số 2
+00:17:37 - 00:17:40, đó là Feature Enhancer
+00:17:40 - 00:17:43, sử dụng Cross Attention
+00:17:43 - 00:17:46, bước này mục tiêu của mình là trao đổi thông tin
+00:17:46 - 00:17:49, giữa đặc trưng văn bản và trực trưng ảnh
+00:17:49 - 00:17:52, nếu như ở bước trước đó
+00:17:52 - 00:17:55, văn bản và ảnh là các đặc trưng được tạo ra độc lập nhau
+00:17:55 - 00:17:58, và chưa có sự tương tác với nhau
+00:17:58 - 00:18:01, thì mô đoán Feature Enhancer sẽ giúp cho chúng ta trao đổi thông tin
+00:18:01 - 00:18:04, và cách thực hiện đó là chúng ta sẽ sử dụng Cross Attention
+00:18:04 - 00:18:07, với vai trò wikav được thay đổi
+00:18:07 - 00:18:10, thì đầu tiên chúng ta sẽ đưa Feature ảnh vào
+00:18:10 - 00:18:13, nó sẽ thực hiện bước Self Attention
+00:18:13 - 00:18:16, Self Attention là một bước để học ra
+00:18:16 - 00:18:19, các đặc trưng trong nội bộ thể thức dữ liệu của mình
+00:18:19 - 00:18:22, ví dụ như Self Attention ở đây
+00:18:22 - 00:18:25, là để tạo ra các đặc trưng
+00:18:25 - 00:18:28, trong nội bộ dữ liệu văn bản
+00:18:28 - 00:18:31, Deformable Self Attention là tạo ra các đặc trưng
+00:18:31 - 00:18:34, mà có sự tương tác trong nội bộ
+00:18:34 - 00:18:37, giữa các đặc trưng của ảnh
+00:18:37 - 00:18:40, sau đó chúng ta sẽ đến mô đoán Image to Text Cross Attention
+00:18:40 - 00:18:43, với Query của mình là đến từ nhánh Image
+00:18:43 - 00:18:46, tức là nhánh thị giác
+00:18:46 - 00:18:49, và Key value đến từ nhánh văn bản
+00:18:49 - 00:18:52, sau đó chúng ta lại tiếp tục thực hiện
+00:18:52 - 00:18:55, thông tin của mô đoán
+00:18:55 - 00:18:58, sau đó chúng ta lại tiếp tục thực hiện
+00:18:58 - 00:19:01, kết quả vừa rồi để lấy kết Query
+00:19:01 - 00:19:04, là từ phía văn bản
+00:19:04 - 00:19:07, và Key value là đến từ phía hình ảnh
+00:19:07 - 00:19:10, thì mô đoán này gọi là Text to Image Cross Attention
+00:19:10 - 00:19:13, và cuối cùng chúng ta sẽ thực hiện
+00:19:13 - 00:19:16, 2 bước phi tiến hóa các đặc trưng này
+00:19:16 - 00:19:19, Feedforward FW để cho đặc trưng của mình
+00:19:19 - 00:19:22, nó có tính High Level cao hơn
+00:19:22 - 00:19:25, và kết hợp đặc trưng đã có
+00:19:25 - 00:19:28, các môn đoàn Text to Image và Image to Text
+00:19:28 - 00:19:31, trước đó
+00:19:31 - 00:19:34, thì Output ở đây có số chiều tương tự
+00:19:34 - 00:19:37, như Input
+00:19:37 - 00:19:40, ví dụ đối với Text Feature
+00:19:40 - 00:19:43, thì Updated Text Feature có số chiều giống nhau
+00:19:43 - 00:19:46, thì chiều ngang của mình sẽ là N
+00:19:46 - 00:19:49, và chiều dọc
+00:19:49 - 00:19:52, thì lưu ý là nó sẽ có cái kích thước
+00:19:52 - 00:19:55, giống với lại cái kích thước này
+00:19:55 - 00:19:58, lúc này thì nó sẽ không còn tách ra là
+00:19:58 - 00:20:01, ở đây là DT
+00:20:01 - 00:20:04, tức là Dimension của Text, ở đây là DV
+00:20:04 - 00:20:07, tức là Dimension của ổ ảnh
+00:20:07 - 00:20:10, mà nó sẽ đưa về chung, đó là D chiều
+00:20:10 - 00:20:13, qua cái môn đoàn Feature Enhancer
+00:20:13 - 00:20:16, còn số chiều theo chục ngang và chục dọc
+00:20:16 - 00:20:19, thì nó vẫn giữ nguyên là H
+00:20:19 - 00:20:22, và W
+00:20:22 - 00:20:25, thế thì chúng ta sẽ sang cái bước số 3
+00:20:25 - 00:20:28, đó là Language Guided Query Selection
+00:20:28 - 00:20:31, thì mục tiêu của bước này
+00:20:31 - 00:20:34, đó là chúng ta sẽ lọc ra
+00:20:34 - 00:20:37, trong cái Image Feature, tức là những đặc trưng ảnh này
+00:20:37 - 00:20:40, thì những đặc trưng nào
+00:20:40 - 00:20:43, là thật sự có liên quan đến Text Feature
+00:20:43 - 00:20:46, có liên quan đến Text Feature
+00:20:49 - 00:20:52, chọn ra các cái vector gần với văn bảng thua vào nhất
+00:20:52 - 00:20:55, thì kết quả đầu ra, thay vì chúng ta ở đây có 16
+00:20:55 - 00:20:58, nhân 16 Feature, 16 chiều dọc
+00:20:58 - 00:21:01, và 16 chiều ngang, thì ở đây chúng ta rút lại
+00:21:01 - 00:21:04, chỉ còn ca
+00:21:04 - 00:21:07, ở đây sẽ là ca Feature thôi
+00:21:07 - 00:21:10, và ca Feature này là có liên quan đến Text Feature
+00:21:10 - 00:21:13, ở bên trái
+00:21:13 - 00:21:16, thế thì các bước thực hiện của bước số 3
+00:21:16 - 00:21:19, đầu tiên đó là cái văn bảng của mình
+00:21:19 - 00:21:22, thì nó sẽ có là N
+00:21:22 - 00:21:25, và D
+00:21:25 - 00:21:28, rồi đặc trưng ảnh thì ở đây chúng ta
+00:21:28 - 00:21:31, sẽ flatten nó ra, chúng ta sẽ flatten nó ra
+00:21:31 - 00:21:34, theo cái chục gọi là chục không gian thôi
+00:21:34 - 00:21:37, còn cái chục của đặc trưng D
+00:21:37 - 00:21:40, thì vẫn giữ nguyên
+00:21:40 - 00:21:43, và h, đây là W, thì chúng ta sẽ rả ra
+00:21:43 - 00:21:46, tạo thành cái, giống như là hình tượng, giống các vector
+00:21:46 - 00:21:49, như thế này, và cái độ dài của mình
+00:21:49 - 00:21:52, nó sẽ là h nhân chọn W
+00:21:52 - 00:21:55, sau đó chúng ta sẽ tính tích
+00:21:55 - 00:21:58, tính cái độ tương đồng bằng tích của hướng
+00:21:58 - 00:22:01, giữa từng cái Feature của Text
+00:22:01 - 00:22:04, với lại các Feature của ảnh
+00:22:04 - 00:22:07, thì khi chúng ta tính xong, chúng ta sẽ ra được cái ma trận là
+00:22:07 - 00:22:10, N nhân HW
+00:22:10 - 00:22:13, tại vì D nhân N nhân với lại cái ma trận
+00:22:13 - 00:22:16, D HW thì nó sẽ ra ma trận N
+00:22:16 - 00:22:19, nhân HW, thì cái ma trận này
+00:22:19 - 00:22:22, nó sẽ thể hiện cái sự tương đồng của
+00:22:22 - 00:22:25, mỗi cái đặc trưng văn bảng
+00:22:25 - 00:22:28, đến tất cả những cái đặc trưng
+00:22:28 - 00:22:31, của hình ảnh sau khi chúng ta đã dũi ra
+00:22:31 - 00:22:34, thành H nhân W, cái thành phần như thế này
+00:22:34 - 00:22:37, và sau đó thì trong cái ma trận này
+00:22:37 - 00:22:40, cái ma trận này có kích thước
+00:22:40 - 00:22:43, là N và HW
+00:22:43 - 00:22:46, thì ở đây chúng ta sẽ lọc ra
+00:22:46 - 00:22:49, với mỗi hàng chúng ta sẽ lấy ra cái phần tự lớn nhất
+00:22:49 - 00:22:52, ví dụ đây là phần tự lớn nhất, rồi với hàng tiếp theo
+00:22:52 - 00:22:55, đây là phần tự lớn nhất, với hàng tiếp theo
+00:22:55 - 00:22:58, đây là phần tự lớn nhất, vâng vâng, thì nó sẽ tạo ra
+00:22:58 - 00:23:01, output của mình
+00:23:01 - 00:23:04, đó là HW
+00:23:04 - 00:23:07, lưu ý đó là chúng ta sẽ tìm cái vị trí
+00:23:07 - 00:23:10, có cái độ tương đồng cao nhất
+00:23:10 - 00:23:13, cho mỗi cái token ảnh
+00:23:13 - 00:23:16, lưu ý ở đây là cái khái niệm token ảnh chứ không phải là token văn bảng
+00:23:16 - 00:23:19, nếu là token văn bảng thì nó sẽ là
+00:23:19 - 00:23:22, là N, còn ở đây là token ảnh
+00:23:22 - 00:23:25, do đó thì ở đây chúng ta sửa lại một chút xíu
+00:23:25 - 00:23:28, ở trên hình đó là chúng ta đang lấy token theo văn bảng
+00:23:28 - 00:23:31, còn nếu lấy theo token ảnh
+00:23:31 - 00:23:34, thì chúng ta sẽ
+00:23:34 - 00:23:37, chia ra theo chiều dọc như thế này
+00:23:40 - 00:23:43, và nó sẽ lấy cái từ
+00:23:43 - 00:23:46, cái token nào trong văn bảng
+00:23:46 - 00:23:49, mà có độ tương đồng cao nhất
+00:23:49 - 00:23:52, với cái token ảnh ở đây
+00:23:52 - 00:23:55, vì chiều ngang của chúng ta là
+00:23:55 - 00:23:58, có kích thước là HW
+00:23:58 - 00:24:01, khi đó với mỗi một cái token
+00:24:01 - 00:24:04, trong ảnh chúng ta sẽ lấy ra cái phần tự lớn nhất
+00:24:04 - 00:24:07, do đó output của mình sẽ là một cái vector
+00:24:07 - 00:24:10, có độ dài là HW
+00:24:10 - 00:24:13, trong đó cái giá trị này
+00:24:13 - 00:24:16, trong đó thì cái thành phần này
+00:24:16 - 00:24:19, sẽ là cái vị trí
+00:24:19 - 00:24:22, chứa cái vị trí
+00:24:22 - 00:24:25, của cái token text mà có tương đồng cao nhất
+00:24:25 - 00:24:28, với cái token ảnh ở vị trí này
+00:24:28 - 00:24:31, do đó thì chúng ta sẽ sang
+00:24:31 - 00:24:34, sau đó chúng ta sẽ lọc ra
+00:24:34 - 00:24:37, ca cái
+00:24:39 - 00:24:42, chúng ta sẽ lọc ra ca cái đặc trưng ảnh
+00:24:42 - 00:24:45, tương đồng cao nhất
+00:24:45 - 00:24:48, thì ví dụ như 3 cái phần tử mà
+00:24:48 - 00:24:51, cho cái độ tương đồng cao nhất là ở đây
+00:24:51 - 00:24:54, ở đây, ở đây
+00:24:54 - 00:24:57, thì chúng ta sẽ lấy lại trong cái đặc trưng đầu tiên
+00:24:57 - 00:25:00, ở những cái vị trí nào thì chúng ta sẽ
+00:25:00 - 00:25:03, lọc ra ví dụ như tại vị trí này
+00:25:03 - 00:25:06, tại vị trí này, tại vị trí này
+00:25:06 - 00:25:09, thì HW bắt đầu nó sẽ được dũi ra
+00:25:09 - 00:25:12, sau khi chúng ta đã tìm ra được những cái vị trí
+00:25:12 - 00:25:15, cho cái sự tương đồng cao nhất với văn bảng
+00:25:15 - 00:25:18, thì chúng ta đã đi ngược trở lại
+00:25:18 - 00:25:21, trên cái tensor này
+00:25:21 - 00:25:24, để trích ra
+00:25:24 - 00:25:27, ca đặc trưng trong cái ảnh này
+00:25:27 - 00:25:30, có cái độ tương đồng cao nhất với text feature ở bên đây
+00:25:30 - 00:25:33, thì đó chính là cái bước language guided
+00:25:33 - 00:25:36, query selection
+00:25:36 - 00:25:39, vậy như vậy, cái đầu ra của chúng ta sẽ là
+00:25:39 - 00:25:42, D nhân ca, trong đó trục D chính là
+00:25:42 - 00:25:45, cái chiều đặc trưng của mình
+00:25:45 - 00:25:48, và giá trị thì chúng ta được trích xuất ra từ trong cái image feature
+00:25:48 - 00:25:51, tức là nó không biến đổi
+00:25:51 - 00:25:54, mà nó chỉ là select, nó chỉ chọn ra
+00:25:54 - 00:25:57, ca, cái vị trí
+00:25:57 - 00:26:00, mà có cái sự tương đồng cao nhất với văn bảng
+00:26:00 - 00:26:03, cái đặc trưng văn bảng
+00:26:03 - 00:26:06, chúng ta sẽ đến cái bước cuối cùng, đó là với cái cross modality query ở đây
+00:26:06 - 00:26:09, chúng ta sẽ qua cái cross modality decoder
+00:26:09 - 00:26:12, và đây là cái pseudo
+00:26:12 - 00:26:15, với mỗi một cái vị trí đặc trưng ở đây
+00:26:15 - 00:26:18, chúng ta đưa vào, thì chúng ta sẽ đi tính
+00:26:18 - 00:26:21, cell attention
+00:26:21 - 00:26:24, sau đó chúng ta sẽ đi
+00:26:24 - 00:26:27, cross attention với đặc trưng ảnh
+00:26:27 - 00:26:30, trong đó query sẽ lấy từ một cái đặc trưng ở đây
+00:26:30 - 00:26:33, và sau đó chúng ta lại đi cross attention
+00:26:33 - 00:26:36, với lại text feature
+00:26:36 - 00:26:39, và một cái updated
+00:26:39 - 00:26:42, cross modality query
+00:26:42 - 00:26:45, như vậy thì chiếu lại sang cái hình ban đầu
+00:26:45 - 00:26:48, thì như vậy là với mỗi một cái
+00:26:48 - 00:26:51, đặc trưng ở đây, chúng ta sẽ update lại
+00:26:51 - 00:26:54, mỗi đặc trưng ở đây chúng ta sẽ update lại
+00:26:54 - 00:26:57, và sau đó chúng ta sẽ dùng
+00:26:57 - 00:27:00, các cái đặc trưng update để đi tính
+00:27:00 - 00:27:03, các cái loss, thì các cái loss của mình
+00:27:03 - 00:27:06, có hai loại loss, đối với cái localization loss
+00:27:06 - 00:27:09, thì chúng ta có thể sử dụng cái L1
+00:27:09 - 00:27:12, hoặc là kết hợp với lại ZILU loss
+00:27:12 - 00:27:15, cho cái size số của cái bounding box
+00:27:15 - 00:27:18, và đối với cái phần về
+00:27:18 - 00:27:21, nhãn của đối tượng thì chúng ta sẽ dùng cái
+00:27:21 - 00:27:24, contrast loss cho cái loại object
+00:27:24 - 00:27:27, của mỗi bounding box của mình là gì
+00:27:27 - 00:27:30, thì đây chính là các cái bước thực hiện của
+00:27:30 - 00:27:33, cái mô hình routing Dino
+00:27:36 - 00:27:39, và cái kết quả đạt được khi chúng ta
+00:27:39 - 00:27:42, chạy cái tập toán routing Dino là như sau
+00:27:42 - 00:27:45, ví dụ như bên trái là cái tấm ảnh đầu vào
+00:27:45 - 00:27:48, và có thêm cái ROM của mình đó là
+00:27:48 - 00:27:51, Green Mountain thì nó đã chỉ ra được cái bounding box
+00:27:51 - 00:27:54, chỉ ra được hai cái bounding box
+00:27:56 - 00:27:59, và sau đó chúng ta sẽ đưa hai cái bounding box này
+00:27:59 - 00:28:02, vào segment anything để nó tạo ra cái mask
+00:28:02 - 00:28:05, ví dụ như chúng ta
+00:28:05 - 00:28:08, tạo ra cái mask đó là
+00:28:12 - 00:28:15, cái mask chi tiết hơn
+00:28:16 - 00:28:19, nó tạo ra cái mask màu vàng như thế này
+00:28:19 - 00:28:22, là nhờ có mô hình SAM
+00:28:22 - 00:28:25, rồi ở đây tương tự như vậy thì chúng ta cũng có
+00:28:25 - 00:28:28, cái ROM đó là pandas
+00:28:28 - 00:28:31, là các cái con gấu pandas thì nó sẽ tạo ra
+00:28:31 - 00:28:34, các cái bounding box và khi chúng ta đưa qua mô hình SAM
+00:28:34 - 00:28:37, thì nó sẽ khoanh vùng
+00:28:37 - 00:28:40, chính xác theo từng pixel các cái con gấu trúc này
+00:28:41 - 00:28:44, rồi ấn tượng nhất đó là chúng ta thấy trong
+00:28:44 - 00:28:47, một rừng cái con mèo này thì nó tìm ra
+00:28:47 - 00:28:50, là black cat
+00:28:50 - 00:28:53, nhưng mà đương nhiên là nó vẫn bỏ sót
+00:28:53 - 00:28:56, một vài cái con mèo ha dường như là nó bỏ sót cái con mèo này
+00:28:56 - 00:28:59, rồi và cuối cùng đó là
+00:28:59 - 00:29:02, running girl, tức là nó cũng đã chỉ ra được cái
+00:29:02 - 00:29:05, cô gái đang chạy ở đây và khi chúng ta đưa qua
+00:29:05 - 00:29:08, cái mô đồ segment anything thì nó sẽ giúp cho chúng ta
+00:29:08 - 00:29:11, segment chính xác đến cái cấp độ là pixel
+00:29:11 - 00:29:14, thì trên đây đó là cái mô hình
+00:29:14 - 00:29:17, routing mino, đầu vào của chúng ta
+00:29:17 - 00:29:20, sẽ nhận vào một cái ROM và đầu ra chúng ta
+00:29:20 - 00:29:23, sẽ ra được một cái bounding box và từ cái bounding box này
+00:29:23 - 00:29:26, thì chúng ta sẽ đưa qua mô hình SAM để
+00:29:26 - 00:29:29, có thể khoanh vùng chính xác cái đối tượng của mình

@@ -1,0 +1,193 @@
+0:00:14 - 0:00:16, Tiếp theo chúng ta sẽ cùng ôn tập toán giải tích
+0:00:16 - 0:00:22, nếu như đại số tuyến tính là công cụ để giúp chúng ta có thể biến đổi dữ liệu
+0:00:22 - 0:00:29, thì giải tích là cung cấp cho chúng ta một cái công cụ để biểu diễn các cái chuỗi, các phép biến đổi
+0:00:29 - 0:00:34, và đồng thời đó là một cái công cụ để giúp chúng ta giải quyết các cái bài toán tối ưu
+0:00:39 - 0:00:44, và đặc biệt trong cái môn này của chúng ta, đó là máy học nâng cao
+0:00:44 - 0:00:47, chúng ta sẽ dựa trên các cái mô hình dựa Gradient
+0:00:47 - 0:00:54, tức là dùng vector đạo hàm để mà chúng ta đi cập nhật tham số và huấn luyện mô hình
+0:00:54 - 0:01:04, khi đó là chúng ta sẽ có một cái công cụ nữa đó chính là đạo hàm
+0:01:04 - 0:01:09, và đạo hàm thì ban đầu sẽ giúp chúng ta khảo sát cái hàm số
+0:01:09 - 0:01:13, rồi sau đó sẽ giúp chúng ta tìm được các cái điểm cực tiểu hoặc là cực đại
+0:01:13 - 0:01:20, thì chi tiết những cái kiến thức nào của toán giải tích sẽ được tìm hiểu trong những phần tiếp theo
+0:01:20 - 0:01:25, đầu tiên chúng ta sẽ có cái khái niệm hàm hợp
+0:01:25 - 0:01:33, hàm thì dễ rồi, đó là một sự ánh xạ từ x sang cái fx
+0:01:33 - 0:01:39, nhưng mà khi chúng ta muốn làm với những cái hàm phức tạp hơn
+0:01:39 - 0:01:42, trong đó có nhiều phép biến đổi nối tiếp nhau
+0:01:42 - 0:01:45, thì chúng ta sẽ dùng cái khái niệm gọi là hàm hợp
+0:01:45 - 0:01:49, và ký hiệu đó là y sẽ là bằng g, chọn f
+0:01:49 - 0:01:54, trong đó f và g là hai cái hàm thành phần, còn y sẽ là một cái hàm hợp
+0:01:54 - 0:02:00, của hai cái hàm thành phần đó là f và g
+0:02:00 - 0:02:06, thì khi đó là chúng ta ký hiệu như thế này, hoặc ghi dạng liên tục thì là như thế này
+0:02:06 - 0:02:09, là y bằng g của fx
+0:02:09 - 0:02:14, tức là fx chúng ta tính xong, chúng ta sẽ làm cái đầu vào cho hàm g
+0:02:14 - 0:02:18, và đây là một số cái ví dụ về hàm hợp
+0:02:18 - 0:02:22, ví dụ như fx là bằng x bình phương cộng một, gx là bằng sin x
+0:02:22 - 0:02:30, thì khi đó là hàm hợp sẽ là của g và f sẽ là bằng sin của x bình cộng một
+0:02:30 - 0:02:40, tương tự như vậy, chúng ta sẽ có các bài tập để chúng ta ôn lại kiến thức về hàm hợp
+0:02:40 - 0:02:45, khái niệm tiếp theo và cực kỳ quan trọng đó chính là đạo hàm
+0:02:45 - 0:02:51, thì đạo hàm của mình trong giải tích là một công cụ để giúp chúng ta biết
+0:02:51 - 0:02:55, đó là sự biến thiên của hàm số tại một cái điểm nào đó
+0:02:55 - 0:03:02, là một công cụ để mô tả sự biến thiên của hàm tại một cái điểm nào đó
+0:03:02 - 0:03:06, ví dụ như trong cái hàm này chúng ta thấy là hàm y bằng fx
+0:03:06 - 0:03:11, thì tại vị trí x0 chúng ta thấy là cái hàm của mình, cái độ dốc của mình
+0:03:11 - 0:03:15, là nó đang hướng lên, tức là nó đang đồng biến
+0:03:15 - 0:03:23, thế thì đây là một công cụ để giúp chúng ta biết trạng thái của hàm tại vị trí x0
+0:03:23 - 0:03:27, là nó đang đi lên hay đi xuống, hoặc là đi ngang
+0:03:27 - 0:03:33, ví dụ như tại cái vị trí này, chúng ta thấy là nó đang đi ngang
+0:03:36 - 0:03:40, tóm lại đó là một công cụ để mô tả sự biến thiên
+0:03:40 - 0:03:47, và nó ý nghĩa là hệ số góc hay là độ dốc của cái hàm tại cái vị trí đó
+0:03:47 - 0:03:52, và nhờ có đạo hàm thì giúp chúng ta khảo sát và tìm ra được các cái điểm cực tiểu
+0:03:52 - 0:03:56, ví dụ như là điểm ở đây, hoặc là các cái điểm cực đại
+0:03:56 - 0:04:00, thì đây là một cái công cụ rất là hữu hiệu để giúp chúng ta
+0:04:00 - 0:04:03, có thể tối ưu hóa một cái hàm số phức tạp
+0:04:03 - 0:04:07, và chúng ta sẽ có cái khái niệm đó là hàm đơn biến
+0:04:07 - 0:04:11, thì ở đây là một cái ví dụ về hàm đơn biến
+0:04:11 - 0:04:15, trong đó là chúng ta sẽ có một cái hàm F như thế này
+0:04:15 - 0:04:19, và khi chúng ta khảo sát cái hàm số này thì chúng ta sẽ thấy là
+0:04:19 - 0:04:23, có một cái điểm x để cho cái đạo hàm của mình bằng 0
+0:04:23 - 0:04:26, ví dụ như trong trường hợp này là x bằng 1
+0:04:26 - 0:04:28, thì đạo hàm của mình sẽ là bằng 0
+0:04:28 - 0:04:32, và nó sẽ là khi thế vô cái F phải
+0:04:32 - 0:04:35, thì tại đây là bằng 0
+0:04:35 - 0:04:39, và bên trái sẽ là dấu âm và bên phải là dấu dương
+0:04:39 - 0:04:44, thì khi chúng ta khảo sát cái hướng di chuyển thì nó sẽ đi xuống và đi lên
+0:04:44 - 0:04:48, thì từ cái sự khảo sát này, nó sẽ giúp chúng ta xác định được là
+0:04:48 - 0:04:55, hàm của mình sẽ đạt được cái giá trị cực tiểu khi nó đi qua cái điểm x bằng 1
+0:04:55 - 0:04:59, tại vị trí này là đạo hàm của mình bằng 0
+0:05:00 - 0:05:04, thì đây là một cái ví dụ để minh họa cho cái việc là
+0:05:04 - 0:05:12, dùng đạo hàm để khảo sát hàm số và sẽ giúp chúng ta xác định được cái vị trí có cái điểm tối ưu cực tiểu hoặc là tối ưu cực đại
+0:05:12 - 0:05:15, thì đây là một cái ví dụ
+0:05:15 - 0:05:18, với cái đạo hàm F phải của mình là bằng
+0:05:18 - 0:05:21, của cái hàm này thì F phải của mình sẽ là bằng x trừ 1
+0:05:21 - 0:05:26, và khi chúng ta giải ra được thì tương đương là x bằng 1
+0:05:26 - 0:05:29, x bằng 1, tức là cái giá trị ở đây
+0:05:33 - 0:05:36, rồi tiếp theo đó là đạo hàm của hàm hợp
+0:05:36 - 0:05:39, vừa rồi là đạo hàm của một cái hàm đơn biến
+0:05:39 - 0:05:44, còn đối với hàm hợp thì chúng ta sẽ có cái sự phối hợp của nhiều hàm nối tiếp nhau
+0:05:44 - 0:05:47, và để giải được, giải quyết được cái vấn đề này thì chúng ta sẽ có các cái đạo hàm
+0:05:47 - 0:05:50, công thức của đạo hàm hàm hợp như sau
+0:05:50 - 0:05:53, đối với cái trường hợp mà Fx và x là một cái biến số
+0:05:53 - 0:05:56, tức là hàm bình thường của mình
+0:05:56 - 0:05:59, thì đạo hàm của một cái hàm bậc một
+0:05:59 - 0:06:02, nó sẽ là như thế này, đạo hàm cũng là hàm đa thức
+0:06:02 - 0:06:05, rồi đạo hàm có hàm căn, hàm sin, cos, tan, v.v.
+0:06:05 - 0:06:08, còn bên phải đó là cái đạo hàm của một cái hàm số
+0:06:08 - 0:06:11, mà dạng hàm hợp, ví dụ như k nhân với u
+0:06:11 - 0:06:14, trong đó u là một cái hàm hợp của x
+0:06:14 - 0:06:18, theo x, thì khi đó là nó sẽ là bằng k nhân u phải
+0:06:18 - 0:06:21, rồi sin của u
+0:06:21 - 0:06:24, u của hợp đạo hàm của nó sẽ là bằng cos u
+0:06:24 - 0:06:27, sau đó nhân cho đạo hàm của u phải tính theo biến x
+0:06:27 - 0:06:30, lưu ý u ở đây là một cái hàm phụ thuộc của biến x
+0:06:30 - 0:06:33, thì đạo hàm của cái hàm này theo biến x
+0:06:33 - 0:06:36, thì nó sẽ là bằng cos u nhân với lại
+0:06:36 - 0:06:39, u, u', đạo hàm của u phải x
+0:06:41 - 0:06:44, thì đây là cái bảng tra
+0:06:44 - 0:06:47, và phục vụ cho chúng ta rất là hiệu quả trong cái việc là tính đạo hàm của hàm hợp
+0:06:47 - 0:06:50, và cái công thức này thì có thể là được áp dụng
+0:06:50 - 0:06:53, để thử nghiệm và chúng ta có thể làm bài tập để ôn tập
+0:06:53 - 0:06:56, với các cái hàm sau
+0:06:56 - 0:06:59, thì đây có những cái hàm từ dạng đơn giản như là đa thức
+0:06:59 - 0:07:02, cho đến những cái hàm phức tạp hơn
+0:07:02 - 0:07:05, thì chúng ta sẽ dựa vào cái bảng tra này
+0:07:05 - 0:07:08, để mà chúng ta có thể tính được đạo hàm
+0:07:08 - 0:07:11, của các cái hàm hợp phức tạp này
+0:07:15 - 0:07:18, rồi, và sau đó thì chúng ta sẽ cùng tìm hiểu về cái khái niệm đạo hàm
+0:07:18 - 0:07:21, của hàm riêng
+0:07:21 - 0:07:24, tức là trong trường hợp cái hàm f của mình
+0:07:24 - 0:07:27, nó không phải phụ thuộc một biến x, mà nó phụ thuộc vào cả biến y
+0:07:27 - 0:07:30, biến z, ví dụ vậy, nhiều biến
+0:07:30 - 0:07:33, thì khi đó chúng ta sẽ có cái khái niệm là
+0:07:33 - 0:07:36, đạo hàm của f theo biến x
+0:07:36 - 0:07:39, đạo hàm của f theo biến y
+0:07:39 - 0:07:42, và đạo hàm của f theo biến z
+0:07:42 - 0:07:45, tức là chúng ta sẽ tính trên từng cái biến thành phần
+0:07:45 - 0:07:48, để xem xét sự phụ thuộc của hàm số theo
+0:07:48 - 0:07:51, các cái biến số một cách độc lập
+0:07:51 - 0:07:54, tức là chúng ta sẽ xem cho x, f biến thiên như thế nào
+0:07:54 - 0:07:57, theo một biến x
+0:07:57 - 0:08:00, f biến thiên như thế nào, theo một biến y
+0:08:00 - 0:08:03, f biến thiên như thế nào, theo một biến z
+0:08:03 - 0:08:06, và đây là cái công thức đạo hàm riêng bậc 1
+0:08:06 - 0:08:09, thì nhờ có cái đạo hàm riêng bậc 1 này
+0:08:09 - 0:08:12, thì chúng ta có thể tính toán được
+0:08:12 - 0:08:15, cho các cái nguyên hàm
+0:08:15 - 0:08:18, tuy nhiên trong cái phạm vi của môn này
+0:08:18 - 0:08:21, là chúng ta sẽ không sử dụng nhiều đến các cái
+0:08:21 - 0:08:24, tích phân hoặc là nguyên hàm
+0:08:24 - 0:08:27, đó có chăng là trong cái phần của mô hình
+0:08:27 - 0:08:30, diffusion thì chúng ta phải nhắc lại cái khái niệm tích phân một chút xíu
+0:08:30 - 0:08:33, nhưng mà ở góc độ là lập trình
+0:08:33 - 0:08:36, thì chúng ta sẽ không cần dùng đến tích phân
+0:08:36 - 0:08:39, mà chúng ta dùng nhiều đến cái hàm tính tổng
+0:08:39 - 0:08:42, trên những cái dải giá trị
+0:08:42 - 0:08:45, cái miền giá trị
+0:08:45 - 0:08:48, thì ở đây chúng ta sẽ có một cái ví dụ
+0:08:48 - 0:08:51, hàm fxi là một cái hàm như thế này
+0:08:51 - 0:08:54, và chúng ta sẽ đi tính đạo hàm của fxi này
+0:08:54 - 0:08:57, theo x thì nó sẽ là bằng
+0:08:57 - 0:09:00, 4x và đạo hàm của f theo y
+0:09:00 - 0:09:03, thì nó sẽ là bằng trừ 3
+0:09:03 - 0:09:06, cuối cùng đó là chúng ta sẽ cùng tìm hiểu
+0:09:06 - 0:09:09, đến cái khái niệm gradient
+0:09:09 - 0:09:12, toàn bộ môn này thì đều dựa trên gradient
+0:09:12 - 0:09:15, để chúng ta xây dựng mô hình
+0:09:15 - 0:09:18, nó gọi là mô hình dựa trên gradient
+0:09:23 - 0:09:26, tức là các cái mô hình này đều sử dụng gradient
+0:09:26 - 0:09:29, như là một cái công cụ để cho chúng ta tối ưu hóa
+0:09:29 - 0:09:32, và huấn luyện mô hình
+0:09:32 - 0:09:35, vậy thì khái niệm gradient là gì?
+0:09:35 - 0:09:38, từ một cái không gian vector n chiều
+0:09:38 - 0:09:41, về một cái giá trị scalar là r
+0:09:41 - 0:09:44, là số thực
+0:09:44 - 0:09:47, thì gradient là cái vector n phần tử
+0:09:47 - 0:09:50, nó là một cái vector n phần tử
+0:09:50 - 0:09:53, bao gồm các cái đạo hàm riêng của nó
+0:09:53 - 0:09:56, ví dụ f của mình là một cái hàm theo
+0:09:56 - 0:09:59, một cái tham số theta là một cái theta
+0:09:59 - 0:10:02, trong đó theta là thuộc r
+0:10:02 - 0:10:05, thì khi đó gradient
+0:10:05 - 0:10:08, của f theo theta
+0:10:08 - 0:10:11, nó sẽ là bằng một cái vector
+0:10:11 - 0:10:14, gồm đạo hàm của f theo biến theta
+0:10:14 - 0:10:17, 1... đạo hàm của f theo theta
+0:10:17 - 0:10:20, đạo hàm của f theo theta n
+0:10:20 - 0:10:23, thì trong các cái mô hình máy học
+0:10:23 - 0:10:26, thì chúng ta xây dựng là cái tham số theta
+0:10:26 - 0:10:29, nhưng mà để sử dụng cái mô hình máy học
+0:10:29 - 0:10:32, thì chúng ta sẽ dùng biến f và biến x ở đây
+0:10:32 - 0:10:35, thì ở đây chúng ta sẽ có một cái ví dụ là fxi
+0:10:35 - 0:10:38, là bằng cái gì? hàm như đã cho trên
+0:10:38 - 0:10:41, thì gradient của f theo x
+0:10:41 - 0:10:44, thì nó sẽ là bằng một cái vector
+0:10:44 - 0:10:47, của hàm f
+0:10:47 - 0:10:50, đạo hàm của f theo biến x
+0:10:50 - 0:10:53, và đạo hàm của f theo biến y
+0:10:53 - 0:10:56, và đạo hàm của f theo biến y
+0:10:56 - 0:10:59, thì đạo hàm của x theo y sẽ là bằng 5y
+0:10:59 - 0:11:02, trừ cho 14x
+0:11:02 - 0:11:05, còn đây là hằng số đối với x
+0:11:05 - 0:11:08, nên nó sẽ bỏ đi, cộng 3
+0:11:08 - 0:11:11, còn đạo hàm của f theo y thì sẽ là bằng 5x
+0:11:11 - 0:11:14, đối với y thì đây là hằng số
+0:11:14 - 0:11:17, do đó chúng ta sẽ là đạo hàm bằng 0
+0:11:17 - 0:11:20, trừ cho 2y và trừ 6
+0:11:20 - 0:11:23, và đạo hàm của x theo y sẽ là bằng 5y
+0:11:23 - 0:11:26, trừ cho 2y và trừ 6
+0:11:26 - 0:11:29, thì đây chính là vector gradient theo biến x và y
+0:11:29 - 0:11:32, đây là x và y
+0:11:32 - 0:11:35, rồi
+0:11:35 - 0:11:38, thì đây là kết quả của mình
+0:11:43 - 0:11:46, và các mô hình học sâu của chúng ta
+0:11:46 - 0:11:49, thì đều dựa trên lý thuyết
+0:11:49 - 0:11:52, hoặc dựa trên ký hiệu của gradient
+0:11:52 - 0:11:55, mục tiêu của gradient là xác định xem
+0:11:55 - 0:11:58, từng thành phần vector của mình
+0:11:58 - 0:12:01, từng thành phần x1, x2 cho đến xn
+0:12:01 - 0:12:04, nó ảnh hưởng như thế nào
+0:12:04 - 0:12:07, lên trên sự tăng giảm của hàm số
+0:12:07 - 0:12:10, và khi chúng ta xác định được sự ảnh hưởng đó rồi
+0:12:10 - 0:12:13, thì chúng ta sẽ cập nhật lại x1, x2, xn sau cho f của mình
+0:12:13 - 0:12:16, tiến về giá trị cực tiểu
+0:12:16 - 0:12:19, hoặc giá trị cực đại
+0:12:19 - 0:12:22, và tăng giảm của gradient trong mô hình này

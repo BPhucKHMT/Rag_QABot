@@ -1,0 +1,128 @@
+00:00:00 - 00:00:21, Chúng ta đã cùng tìm hiểu về mô hình dự trên gradient tổn quát và chúng ta có 3 công việc cần phải làm.
+00:00:21 - 00:00:42, Công việc đầu tiên là xác định hàm dự đáng y ngã là bằng f x theta, sau đó xác định hàm lỗi là g của theta, trong đó nhận dự kiện xi, chính là dự liệu ứu luyện.
+00:00:42 - 00:00:54, Công việc cuối cùng là tìm theta sau cho hàm j là nhỏ nhất.
+00:00:54 - 00:01:06, Công việc số 3 này đã có 1 công cụ là gradient descent và thuộc toán backpropagation.
+00:01:06 - 00:01:18, Công việc 2 này đã được tích hợp trong deep learning framework.
+00:01:18 - 00:01:28, Từ nay về sau, chúng ta chỉ tập trung vào 2 công việc đầu, đó là thiết kế và xác định hàm đổ lỗi.
+00:01:28 - 00:01:34, Một số hàm dự trên gradient cơ bản chúng ta có thể liệt kê ở đây.
+00:01:34 - 00:01:48, Đầu tiên là mô hình dự liệu đầu ra, nó có mối quan hệ phụ thuộc một cách tiến tính x, nó chia ra làm 2 loại bài toán.
+00:01:48 - 00:01:58, Bài toán đầu tiên là hồi quy. Hồi quy thì nếu như một số tài liệu hoặc là một số bạn có thể phát biểu đó là
+00:01:58 - 00:02:07, giá trị đầu ra của mình là giá trị liên tục, còn bài toán phân loại thì giá trị đầu ra y của mình sẽ là giá trị rời rạt.
+00:02:07 - 00:02:14, Tuy nhiên cách định nghĩa như vậy sẽ không toàn diện và khó cho chúng ta trong một số tình huống.
+00:02:14 - 00:02:20, Ví dụ như bài toán đoán tuổi, chúng ta sẽ không biết đó là bài toán hồi quy hay đó là bài toán phân loại.
+00:02:20 - 00:02:27, Tại vì tuổi của mình có thể là một số thuộc một tập hợp từ 0 cho đến 200. Ví dụ vậy.
+00:02:27 - 00:02:37, Thế thì chúng ta sẽ có một cách định nghĩa khác, nó sẽ tổn bát hơn. Đó là bài toán hồi quy là bài toán đầu ra của mình là y.
+00:02:37 - 00:02:45, Nếu như chúng ta có hai giá trị y1 và y2 mà chúng ta thấy nó có tính thứ tự thì đó là bài toán hồi quy.
+00:02:45 - 00:02:51, Thế nào có tính thứ tự? Chúng ta có thể đặt được các dấu bé, dấu lớn và dấu bằng.
+00:02:51 - 00:03:00, Ví dụ bài toán đoán tuổi thì chúng ta có thể đặt các dấu đó là 6 tuổi thì là bé hơn 12 tuổi.
+00:03:00 - 00:03:06, 6 tuổi thì lớn hơn 3 tuổi, ví dụ vậy. Đó là giá trị output của mình có tính thứ tự.
+00:03:06 - 00:03:19, Thì đó là bài toán hồi quy. Còn nếu cái output của mình, nếu hai giá trị y1 và y2 mà nó chỉ có thể đặt được dấu bằng hoặc dấu khác thì lúc đó là không có tính thứ tự.
+00:03:19 - 00:03:27, Ví dụ như bài toán dự đoán đồ vật là chó, mèo, gà, vịch thì mèo thì là bằng mèo.
+00:03:27 - 00:03:32, Mèo sẽ khác chó chứ không thể nào mà mèo nhỏ hơn chó hoặc là mèo lớn hơn chó.
+00:03:32 - 00:03:37, Thì đó là cái cách mèo để chúng ta có thể biết đó là bài toán hồi quy hay bài toán tiến tính.
+00:03:37 - 00:03:44, Thì đối với cái bài toán hồi quy thì chúng ta sẽ có cái mô hình là hồi quy tiến tính hay còn gọi là linear regression.
+00:03:44 - 00:03:47, Và đối với cái bài toán phân loại thì chúng ta sẽ có hai tình huống.
+00:03:47 - 00:03:53, Tình huống đầu tiên đó là phân loại dị phân, tức là cái số phân lớp ca của mình là có hai phân lớp.
+00:03:53 - 00:03:59, Và chúng ta sẽ có cái mô hình đó là hồi quy logistic hay là logistic regression.
+00:03:59 - 00:04:08, Đối với trường hợp mà ca lớn hơn 2 thì đó sẽ là chúng ta sẽ có cái mô hình đó là hồi quy swap max hay còn gọi là swap max regression.
+00:04:08 - 00:04:22, Còn trong cái trường hợp mà cái mô hình của mình phi tiến tính thì chúng ta sẽ có rất nhiều những cái mô hình hiện đại tập trung vào giải quyết cái bài toán mà y của mình phụ thuộc một cách phi tiến tính với là x đo vào.
+00:04:22 - 00:04:31, Và một trong những cái mô hình đầu tiên mà giải quyết cái bài toán mà có tính chất phi tiến tính đó là mô hình Neural Network.
+00:04:37 - 00:04:41, Neural Network hay còn gọi là mạng Neural Nhân tạo, ANN.
+00:04:42 - 00:04:51, Thì đây có thể nói là một trong những cái mô hình đầu tiên để đặt nền móng cho học sâu.
+00:04:51 - 00:04:57, Và các cái mô hình về sau thì chúng ta thấy nó có cái chữ A, có cái chữ NN, ví dụ như là CNN.
+00:04:57 - 00:05:00, Thì cái chữ NN ở đây nó cũng chính là Neural Network.
+00:05:00 - 00:05:05, Và còn ANN thì nó cũng có cái chữ NN là Neural Network.
+00:05:05 - 00:05:14, Và thậm chí là Transformer thì rất nhiều những cái, kể cả Transformer thì rất nhiều những cái module ở trong Transformer
+00:05:14 - 00:05:18, nó cũng dựa trên cái kiến trúc của Neural Network.
+00:05:18 - 00:05:26, Do đó thì chúng ta mới gọi Neural Network là một trong những cái mô hình nền tảng đầu tiên về học sâu.
+00:05:27 - 00:05:30, Và chúng ta sẽ đến với cái mô hình đầu tiên.
+00:05:30 - 00:05:36, Đó là mô hình tuyến tính và giải quyết cho bài tán hồi quy.
+00:05:36 - 00:05:38, Cụ thể đó là mô hình hồi quy tuyến tính.
+00:05:38 - 00:05:48, Thì đây là cái dạng đồ thị của cái mạng, đây là cái dạng đồ thị của cái mô hình Linear Regression hồi quy tuyến tính.
+00:05:48 - 00:05:51, Trong đó dự kiện đầu vào sẽ là các cái đặc trưng.
+00:05:51 - 00:05:57, Thì đặc biệt ở đây chúng ta sẽ thấy có một cái số 1, nó là tượng trưng cho cái bias,
+00:05:57 - 00:06:00, cái giá trị bias.
+00:06:00 - 00:06:05, Còn x1, x2, xm đó là các cái đặc trưng đầu vào,
+00:06:05 - 00:06:12, các cái đặc trưng đầu vào để giúp cho chúng ta dự đoán cái giá trị đầu ra.
+00:06:12 - 00:06:16, Thế thì câu hỏi là tại sao chúng ta phải có bias?
+00:06:16 - 00:06:26, Bias sẽ đại diện cho toàn bộ những cái đặc trưng mà chúng ta không biết và không thống kê được trong mờ đặc trưng ở đây.
+00:06:26 - 00:06:30, Tức là ngoài mờ đặc trưng này, nó sẽ có những cái đặc trưng nào đó nữa mà chúng ta không biết.
+00:06:30 - 00:06:34, Thế thì tất cả những cái đặc trưng mà góp phần đưa ra cái giá trị dự đoán,
+00:06:34 - 00:06:37, nó sẽ gom vào một cái đại lượng gọi là bias.
+00:06:37 - 00:06:42, Ngoài ra với bias thì nó sẽ giúp cho mình chúng ta có khả năng biểu diễn ninh hoạt hơn
+00:06:42 - 00:06:48, với rất nhiều những cái dạng giá trị khác nhau, rất nhiều những cái dạng đường thẳng khác nhau.
+00:06:48 - 00:06:57, Và cái hàm mô hình của mình là y ngã sẽ là bằng fθx, là nó sẽ có cái công thức đó là bằng theta chuyển vị nhân với x.
+00:06:57 - 00:07:01, Thì đây chính là cái công thức mà dạng tiến tín.
+00:07:01 - 00:07:09, Trong đó thì cái đầu ra nó sẽ được nhân trọng số với các cái giá trị, với các cái đặc trưng đầu vào.
+00:07:09 - 00:07:17, Thì ở đây chúng ta thấy là theta chính là cái tham số của cái mô hình là đặc trưng, là trọng số tương ứng với các cái đặc trưng.
+00:07:17 - 00:07:21, Ví dụ theta ở đây nó sẽ là một cái vector.
+00:07:21 - 00:07:30, Và vector này thì nó sẽ bao gồm là m cộng 1 chiều là theta 0 theta 1 do đến theta m.
+00:07:30 - 00:07:45, Thì theta 0 tương ứng là cái trọng số với bias, theta 1 là trọng số với đặc trưng x1, theta 2 tương ứng với trọng số x2,
+00:07:45 - 00:07:49, và theta m là cái trọng số với đặc trưng xm.
+00:07:49 - 00:07:55, Thì đây chính là cái công thức tổng, tổng có trọng số, chúng ta dùng cái ký hiệu tổng ở đây.
+00:07:55 - 00:08:03, Và với cái giá trị đầu dự đoán y ngã thì chúng ta sẽ đi so sánh nó với lại cái y.
+00:08:03 - 00:08:08, Chúng ta sẽ đi so sánh và chúng ta luôn mong muốn cái giá trị dự đoán này xấp xỉy đi.
+00:08:08 - 00:08:18, Thì cái công thức thể hiện cái dự đoán, cái sai số giữa cái dự đoán và cái thực tế thì chúng ta sẽ dùng cái công thức đó là tổng bình phương.
+00:08:19 - 00:08:27, Với cái hàm lỗi này, chúng ta sẽ sử dụng cái thuật toán Backpropagation để đi huấn luyện.
+00:08:27 - 00:08:32, Chúng ta sẽ có cái lỗi, từ hai cái này chúng ta sẽ tính ra được cái lỗi là G.
+00:08:32 - 00:08:40, Từ G chúng ta sẽ lang truyền ngược đến đây, đến các cái trọng số này, để từ đó chúng ta sẽ cập nhật các cái trọng số.
+00:08:40 - 00:08:51, Thế thì để làm việc chuyện đó chúng ta sẽ dùng công cụn đào hàm và việc thiết kế cái mô hình của mình nó cũng phải đảm bảo nó có khả năng tính đào hàm được.
+00:08:51 - 00:09:03, Thì ở đây chúng ta thấy các thao tác là theta chuyển vị nhân với x, rồi theta x trừ y, đây đều là những cái hàm mà khả vi và có thể tính đào hàm được.
+00:09:03 - 00:09:07, Dẫn đến là thuật toán Backpropagation nó sẽ chạy được.
+00:09:08 - 00:09:17, Rồi bây giờ chúng ta sẽ đến một cái tình huống trực quan, đó là giả xử như cái dữ liệu đầu vào của chúng ta chỉ có một đặc trưng là x thôi.
+00:09:17 - 00:09:22, Và y của mình thì nó sẽ phụ thuộc một cách tuyến tính, đó là một cái hàm đồng biến.
+00:09:22 - 00:09:33, Thì qua cái hàm này chúng ta sẽ tìm, nếu mà sau khi chúng ta huấn luyện xong và chúng ta tìm được thì chúng ta sẽ có được một cái đường đi xuyên qua các cái điểm dữ liệu này.
+00:09:33 - 00:09:38, Và để đại diện cho cái đường này thì nó sẽ cần có cái tham số theta ở đây.
+00:09:38 - 00:09:48, Tức là cái phương trình đường thẳng, cái phương trình đường thẳng này sẽ là cái phương trình dựa trên cái tham số ở bên đây.
+00:09:48 - 00:10:00, Cụ thể đó là theta 0 cộng cho theta 1 x 1 cộng cho theta 2 x 2 v.v. là bằng 0.
+00:10:00 - 00:10:10, Trong trường hợp này chúng ta chỉ có duy nhất một biến số, do đó thì nó sẽ là theta 0 cộng cho theta 1 x x bằng 0.
+00:10:10 - 00:10:18, Thì đây chính là cái phương trình đường thẳng của cái đường mô hình đi qua các cái điểm khi mà đã được huấn luyện xong.
+00:10:18 - 00:10:28, Thì trọng số, các cái trọng số này sẽ là cái trọng số, là cái tham số của cái phương trình đường thẳng này.
+00:10:35 - 00:10:40, Rồi, chúng ta sẽ đến với cái mô hình thứ hai, đó là mô hình Logistic Regression.
+00:10:40 - 00:10:45, Đây là một cái dạng mô hình tiến tín dùng cho cái bài toán đó là phân loại, nhưng mà phân loại nhị phân.
+00:10:45 - 00:10:48, Tức là số dạng đầu ra sẽ là 2.
+00:10:49 - 00:10:53, Và mô hình này thì nó có dạng đồ thị như sau.
+00:10:55 - 00:10:58, Và đây là cái đồ thị tín toán.
+00:11:01 - 00:11:07, Rồi, thì cái y ngã, tức là cái giá trị dự đoán, nó sẽ là bằng sigmoid của theta x.
+00:11:07 - 00:11:15, Thì chúng ta chú ý là trong cái Linear Regression, thì nó sẽ dừng ở đây.
+00:11:17 - 00:11:22, Nhưng đối với mô hình Logistic Regression, nó sẽ có thêm một cái hàm sigmoid ở đây.
+00:11:24 - 00:11:34, Thì nhờ có cái hàm sigmoid này, nó sẽ đưa cái giá trị output của mình về cái giải giá trị từ 0 cho đến 1.
+00:11:35 - 00:11:43, Thì nếu như cái giá trị y ngã này thuộc về lớp 0, gần tiến gần về 0, thì nó sẽ thuộc về một lớp số 0.
+00:11:44 - 00:11:49, Và nếu y ngã này lớn hơn 0.5, tiến về 1, thì cái nhãn của mình sẽ là 1.
+00:11:50 - 00:11:59, Thì nhờ cái hàm sigmoid này, nó sẽ đưa về hai cái thái cực đó là 0 và 1 để giúp cho chúng ta phân loại đối tượng với đặc trưng đồ vào.
+00:11:59 - 00:12:06, Thì cũng tương tự như là Linear Regression, chúng ta sẽ có BIOS và chúng ta sẽ có các đặc trưng input.
+00:12:07 - 00:12:18, Và khi chúng ta đã tính ra được cái y ngã này rồi, thì chúng ta sẽ dùng cái công thức đó là tham loss, tham đổ lỗi là bằng binary cross entropy.
+00:12:19 - 00:12:24, Cái này là viết tắc của chữ binary cross entropy.
+00:12:29 - 00:12:37, Giữa cái giá trị dự đoán, thì sigmoid của theta chuyển bị nhân x chính là giá trị dự đoán và cái giá trị thực tác.
+00:12:38 - 00:12:49, Thế thì cái công thức binary cross entropy của mình, nếu như ở đây chúng ta ký hiệu gọn lại là y ngã, thì bce của y ngã và y,
+00:12:49 - 00:13:01, thì nó sẽ có công thức đó là bằng trừ của y, log y ngã, cộng cho 1 trừ y nhân cho log của 1 trừ y ngã.
+00:13:05 - 00:13:10, Và thì đây chính là cái công thức binary cross entropy, cái hàm loss, hàm đổ của binary cross entropy.
+00:13:10 - 00:13:24, Và khi chúng ta sử dụng cái mô hình logistic, hồi quy logistic thì các trọng số theta 0, theta 1, theta 2, theta m,
+00:13:25 - 00:13:30, nó chính là trọng số để tạo ra phương trình đường thẳng này.
+00:13:30 - 00:13:42, Và cụ thể luôn, cái phương trình đường thẳng này nó sẽ có cái giảng thức đó là theta 0, cộng cho theta 1, x1, cộng cho theta 2, x2.
+00:13:43 - 00:13:55, Thì ở đây chúng ta có 2 cái đặc trưng thôi, nên chúng ta sẽ ghi công thức với 2 đặc trưng, nhưng mà một cách tổng quát thì nó có thể kéo đến theta m, xm là x bằng 0.
+00:13:55 - 00:14:06, Và tất cả những cái điểm nào thuộc về một phía này thì khi chúng ta thế vào cái phương trình này, thế các cái đặc trưng x1 và x2 v.v. vào thì nó sẽ cùng dấu.
+00:14:06 - 00:14:13, Ví dụ như ở đây sẽ là cùng dấu lớn hơn 0 và các cái điểm màu cam khi thế vào cái phương trình này thì nó sẽ là v.v.v.
+00:14:13 - 00:14:22, Và những cái điểm nào nằm trên cái đường phân biện, phân cách này nè, cái đường phân loại 2 tập điểm này nè, thì nó sẽ là bằng 0.
+00:14:22 - 00:14:31, Vì đó chính là cái ý nghĩa của mô hình Logistic Regression, ý nghĩa của các thăm số liên quan đến cái đường boundary, cái đường phân biện giữa 2 tập điểm.
+00:14:32 - 00:14:41, Và mô hình thứ 3, đó là cái mô hình tuyến tính và cho phân loại nhiều hơn 2 lớp, k lớn 2, thì chúng ta sẽ có môn shop mark regression.
+00:14:41 - 00:14:49, Và thay vì chúng ta có k phân lớp thì chúng ta sẽ có k giá trị, k giá trị là từ z1 cho đến zk.
+00:14:49 - 00:14:55, Và ở đây sẽ có các lớp biến đổi tuyến tính làm tổng trọng số.
+00:14:55 - 00:15:07, Tuy nhiên sau đó thì chúng ta sẽ qua 1 cái hàm shop mark, k cái giá trị đầu vào qua cái hàm shop mark, nó sẽ tạo ra k cái giá trị đầu ra là y ngã 1 cho đến y ngã k.
+00:15:07 - 00:15:17, Và y ngã 1 cho đến y ngã k qua cái hàm shop mark thì nó sẽ thoải mảng tính chất đó là y ngã, y ngã k nhỏ thì lớn hơn 0 và bé hơn 1.
+00:15:17 - 00:15:27, Và tổng của y ngã k thì là bằng 1 với k dạy từ 1 cho đến k lớn, k lớn là số phân lớp của mình.
+00:15:27 - 00:15:31, Thì đây chính là một cái biểu diễn cho cái không gian sát xuất.
+00:15:31 - 00:15:41, Trong cái không gian sát xuất thì các cái giá trị của mình nó sẽ nhận giá trị từ 0 cho đến 1 và tổng là bằng 1.
+00:15:41 - 00:15:47, Thế thì nếu giá trị nào lớn nhất thì đó sẽ thuộc về cái lớp tương ứng.
+00:15:47 - 00:15:50, Và cái hàm lỗi ở đây chúng ta sẽ đi so sánh.
+00:15:50 - 00:15:57, Chúng ta sẽ mong muốn là k cái giá trị này nó sẽ xấp xỉ với lại y1, y2 và yk.
+00:15:57 - 00:16:03, Thế thì để cho k cái giá trị này nó xấp xỉ nhau thì chúng ta sẽ sử dụng hàm gross entropy.
+00:16:04 - 00:16:12, Thế thì giả sử như cái source max của cái theta chuyển vị, theta chuyển vị nhân x thì chúng ta ký hiệu là y ngã hơn.
+00:16:12 - 00:16:26, Thì khi đó chúng ta sẽ có công thức đó là gross entropy của y ngã và y thì nó sẽ là bằng trừ của tổng với k dạy từ 1 cho đến k lớn.
+00:16:26 - 00:16:34, K lớn chính là source class và y lốc y ngã kứ k.
+00:16:34 - 00:16:42, Thì đây chính là cái công thức gross entropy với y ngã là cái công thức mà ký gọn lại của source max theta chuyển vị k.
+00:16:42 - 00:16:52, Thế thì về mặt trực quan thì trong trường hợp mà chúng ta có nhiều cái phân lớp thì cái đường boundary mà giúp cho chúng ta phân biệt 4 cái lớp này.
+00:16:52 - 00:17:04, Cái đường như thế này nó sẽ tắt ra làm 4 phần thì nó sẽ không có tình trạng 1 điểm thì nó sẽ không thuộc về cái phần nào.
+00:17:04 - 00:17:12, Ví dụ như với 1 điểm ở đây thì chúng ta dựa trên cái đường phân biệt này chúng ta sẽ biết nó sẽ thuộc về cái lớp xanh lá.
+00:17:12 - 00:17:16, Rồi cái điểm ở đây thì nó sẽ thuộc về cái lớp bộ vàng.
+00:17:16 - 00:17:20, Thì đó chính là hồi quy source max.

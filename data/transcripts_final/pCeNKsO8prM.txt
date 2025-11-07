@@ -1,0 +1,247 @@
+0:00:14 - 0:00:18, Chúng ta sẽ cùng tìm hiểu về thuật toán Gradient Descent
+0:00:18 - 0:00:23, Đây có thể nói là một trong những thuật toán rất là hiệu quả trong việc tối ưu hóa
+0:00:23 - 0:00:25, Một cái hàm khả vi
+0:00:25 - 0:00:29, Và các mô hình máy học mà dựa trên Gradient hiện đại
+0:00:29 - 0:00:33, Ví dụ như là học sâu, các mô hình ngôn ngữ lớn
+0:00:33 - 0:00:39, Đều dựa trên ý tưởng của thuật toán Gradient Descent
+0:00:39 - 0:00:43, Như vậy, vai trò của thuật toán Gradient Descent là gì?
+0:00:43 - 0:00:49, Và các bước thực hiện ra sao? Chúng ta sẽ cùng tìm hiểu trong những phần tiếp theo
+0:00:49 - 0:00:53, Chúng ta sẽ nhắc lại một chút xíu về mô hình dựa trên Gradient Descent
+0:00:53 - 0:00:59, Đó là chúng ta sẽ dựa trên dữ liệu x để đưa ra giá trị dự đoán
+0:00:59 - 0:01:03, Và dựa trên giá trị thực tế chúng ta sẽ có đạo hàm
+0:01:03 - 0:01:11, Mục tiêu của mình là chúng ta sẽ đi tìm tham số theta sao là một tham số tối ưu
+0:01:11 - 0:01:15, Sao cho giá trị hàm lỗi này là nhỏ nhất
+0:01:15 - 0:01:22, Tức là sai số giữa y ngã và dự đoán y ngã và thực tế y là thấp nhất
+0:01:22 - 0:01:27, Vậy thì đây có lẽ là một trong những công việc chúng ta phải thực hiện thường xuyên
+0:01:27 - 0:01:30, Khi chúng ta huấn luyện một mô hình máy học
+0:01:30 - 0:01:33, Do đó chúng ta sẽ bắt đầu tại công việc này
+0:01:33 - 0:01:38, Đó là làm sao chúng ta có thể tìm được giá trị nhỏ nhất của một hàm số
+0:01:39 - 0:01:45, Thế thì ở đây là một hình tượng là giả sử chúng ta đang đứng trên một đỉnh núi
+0:01:45 - 0:01:53, Và chúng ta đang muốn tìm đường để đến giá trị nhỏ nhất, tức là chân núi
+0:01:53 - 0:01:59, Ý tưởng đó là mình sẽ tìm cách để cập nhật và giảm độ cao
+0:01:59 - 0:02:01, Chúng ta sẽ tiếp tục giảm độ cao
+0:02:01 - 0:02:05, Rồi đến một những ngọn núi thấp hơn, chúng ta lại tiếp tục giảm độ cao
+0:02:05 - 0:02:07, Đến những ngọn núi thấp hơn nữa
+0:02:07 - 0:02:13, Và giảm cho đến khi nào chúng ta không thể giảm được nữa thì đó là nơi mà chúng ta cần đến
+0:02:13 - 0:02:22, Đây là một hình minh họa vui để cho thấy chúng ta phải cập nhật liên tục
+0:02:22 - 0:02:30, Đây là một quá trình lặp để tìm được giá trị cực tiểu
+0:02:30 - 0:02:34, Vậy thì Gradient Descent là gì?
+0:02:34 - 0:02:46, Gradient Descent là một thuật toán nằm trong nhóm tối ưu hóa để tìm giá trị cực tiểu của hàm khả vi
+0:02:46 - 0:02:50, Hàm khả vi là một hàm có khả năng tính đạo hàm được
+0:02:56 - 0:03:01, Như vậy thì thuật toán này chỉ có thể chạy được với những hàm có thể tính đạo hàm được
+0:03:01 - 0:03:05, Và ở đây chúng ta sẽ có hai dạng hàm cơ bản
+0:03:05 - 0:03:11, Đó là dạng hàm lõm và hàm lồi
+0:03:11 - 0:03:19, Cả hai dạng hàm này đều là hai dạng cơ bản trong giải tích
+0:03:19 - 0:03:23, Ngoài ra chúng ta có những dạng hàm phối hợp
+0:03:23 - 0:03:26, Tức là một hàm sẽ vừa có lõm và vừa có phần lồi
+0:03:26 - 0:03:33, Đối với phần lồi thì chúng ta sẽ tìm được giá trị cực đại
+0:03:33 - 0:03:39, Còn đối với hàm lõm thì chúng ta sẽ tìm được giá trị cực tiểu
+0:03:39 - 0:03:43, Còn hàm lõm thì chúng ta sẽ tìm được giá trị cực đại
+0:03:43 - 0:03:47, Nó gọi là localMaximum
+0:03:49 - 0:03:51, Còn đây là localMinimum
+0:03:57 - 0:04:05, Sự khác biệt ở đây là đối với hàm lồi và hàm lõm
+0:04:05 - 0:04:11, Tại một vị trí này chúng ta thấy là hướng của mình đang hướng đi lên
+0:04:11 - 0:04:19, Thì đạo hàm của mình sẽ hướng cho chúng ta để tìm được cái điểm cực tiểu
+0:04:19 - 0:04:23, Cái điểm cực đại của bộ
+0:04:23 - 0:04:28, Trong khi đó ngược lại, đối với giá trị localMinimum
+0:04:28 - 0:04:34, Thì đạo hàm của mình sẽ hướng ngược lại
+0:04:34 - 0:04:39, Hướng ngược lại, lẽ ra chúng ta sẽ phải đi xuống
+0:04:39 - 0:04:42, Thì đạo hàm lại hướng chúng ta đi lên
+0:04:42 - 0:04:46, Đạo hàm lại hướng chúng ta đi lên, giống như tình huống bên này
+0:04:46 - 0:04:50, Vậy thì để tìm giá trị nhỏ nhất thì chúng ta sẽ phải
+0:04:50 - 0:04:55, Cập nhật theo hướng ngược với hướng của đạo hàm
+0:04:55 - 0:05:03, Sau đây là chi tiết cho các bước thực hiện trong thuật toán Gradient Descent
+0:05:03 - 0:05:07, Đầu tiên là chúng ta sẽ khởi tạo tham số
+0:05:07 - 0:05:15, Xác suất để giá trị theta mà chúng ta khởi tạo được mà trùng
+0:05:15 - 0:05:18, Theta này là theta mà chúng ta khởi tạo
+0:05:18 - 0:05:22, Theta old, nó trùng với theta sao này
+0:05:22 - 0:05:25, Xác suất của chúng ta là cực kỳ thấp
+0:05:25 - 0:05:29, Do đó chúng ta sẽ phải tìm cách dựa trên đạo hàm
+0:05:29 - 0:05:34, Dựa trên đạo hàm giống như là một chỉ báo để cho chúng ta biết
+0:05:34 - 0:05:39, Đi về hướng nào là sẽ tìm được đến điểm cực tiểu
+0:05:39 - 0:05:43, Khi có tính đạo hàm thì chúng ta sẽ update và cập nhật từ từ
+0:05:43 - 0:05:46, Theta old này bằng một theta new
+0:05:46 - 0:05:49, Và cứ như vậy là update update
+0:05:49 - 0:05:56, Và ở bên dưới sẽ là cái minh họa cho cái mô hình
+0:05:56 - 0:05:59, Đây chính là cái mô hình của mình
+0:05:59 - 0:06:06, Khi ban đầu khởi tạo tham số của mình thì mô hình của mình đoán rất tệ
+0:06:06 - 0:06:09, Do đó nó sẽ không khớp với lại tập điểm này
+0:06:09 - 0:06:12, Nhưng khi chúng ta bắt đầu tính đạo hàm
+0:06:12 - 0:06:14, Chúng ta sẽ bắt đầu tính đạo hàm
+0:06:14 - 0:06:17, Thì đạo hàm có định nghĩa
+0:06:17 - 0:06:20, Đạo hàm của một hàm z theo biến theta
+0:06:20 - 0:06:24, Thì nó sẽ có định nghĩa là bằng f của theta cộng h
+0:06:24 - 0:06:29, Trừ cho f theta khi h tiến đến 0
+0:06:29 - 0:06:32, Thì đây là đạo hàm một phía
+0:06:32 - 0:06:34, Nhưng mà chúng ta làm như vậy để cho nó đơn giản
+0:06:34 - 0:06:36, Đạo hàm một phía
+0:06:36 - 0:06:39, Rồi chúng ta thấy là tại vị trí này
+0:06:39 - 0:06:43, Đạo hàm của mình sẽ là dương
+0:06:43 - 0:06:45, Tức là nó hướng lên
+0:06:45 - 0:06:48, Hướng này là hướng dương hay là hướng đi lên
+0:06:48 - 0:06:50, Tại sao nó có cái dấu mũi tên đi lên này
+0:06:50 - 0:06:56, Là vì đạo hàm nó còn có một ý nghĩa là tiếp tuyến tại vị trí của mình
+0:06:56 - 0:06:58, Tại cái biến số của mình
+0:06:58 - 0:06:59, Tiếp tuyến tại đây
+0:06:59 - 0:07:01, Nhưng mà nó sẽ có hướng
+0:07:01 - 0:07:03, Thì hướng này sẽ là hướng đồng biến tức là hướng đi lên
+0:07:03 - 0:07:07, Trong khi đó lẽ ra cái điểm cực tiểu của mình
+0:07:07 - 0:07:09, Thì nó nằm ở phía ngược lại
+0:07:09 - 0:07:11, Lẽ ra chúng ta phải đi về cái hướng ngược lại
+0:07:11 - 0:07:16, Thì đó là lý do tại sao ở đây chúng ta thấy là nó có cái dấu trừ
+0:07:16 - 0:07:19, Có cái dấu trừ để đi ngược
+0:07:19 - 0:07:21, Với lại cái hướng của đạo hàm
+0:07:21 - 0:07:23, Đi ngược hướng
+0:07:31 - 0:07:35, Rồi sau khi chúng ta đã tính được cái đạo hàm là cái
+0:07:35 - 0:07:39, Thể hiện bởi cái mũi tên màu xanh là hướng lên như thế này
+0:07:39 - 0:07:43, Còn nếu mà xét về cái việc mà cập nhật đi tới hay đi lui
+0:07:43 - 0:07:45, Thì chúng ta dùng cái dấu mũi tên này
+0:07:45 - 0:07:47, Tức là dấu cộng là dương
+0:07:47 - 0:07:50, Thì chúng ta sẽ tiến hành cái bước số 3
+0:07:50 - 0:07:52, Đó là chúng ta sẽ cập nhật lại cái tham số của mình
+0:07:52 - 0:07:54, Cập nhật lại cái tham số
+0:07:54 - 0:07:57, Và chúng ta sẽ đi ngược hướng
+0:07:57 - 0:07:59, Chúng ta sẽ đi ngược hướng với cái hướng của đạo hàm
+0:07:59 - 0:08:01, Tức là chúng ta sẽ đi xuống
+0:08:01 - 0:08:04, Và ngược hướng thể hiện ở cái dấu dấu trừ
+0:08:04 - 0:08:09, Ở đây là dùng cái ký hiệu nabla cho nó tổng quát
+0:08:09 - 0:08:12, Do đó là tại sao chúng ta dùng nabla
+0:08:12 - 0:08:14, Là vì đây là cái...
+0:08:14 - 0:08:17, Một cách tổng quát thì theta của chúng ta
+0:08:17 - 0:08:19, Có thể là một vector
+0:08:19 - 0:08:22, Nó sẽ là một vector gồm nhiều cái đĩa thành phần
+0:08:22 - 0:08:28, Rồi, và ở đây nó sẽ có một cái siêu tham số đó là alpha
+0:08:28 - 0:08:30, Thì tên của cái siêu tham số này á
+0:08:30 - 0:08:32, Nó gọi là learning rate
+0:08:32 - 0:08:36, Nếu mà dịch xác nghĩa sang tiếng Việt đó là hệ số học
+0:08:36 - 0:08:40, Tuy nhiên mình có suy nghĩ và đặt cho nó một cái tên
+0:08:40 - 0:08:42, Mà mình nghĩ là phù hợp
+0:08:42 - 0:08:44, Nó sẽ không xác nghĩa với cái từ learning rate
+0:08:44 - 0:08:47, Nhưng mà nó thể hiện được cái bản chất của cái mô hình của mình
+0:08:47 - 0:08:49, Đó chính là hệ số dò dẫm
+0:08:49 - 0:08:52, Hay viết gọn lại đó là hệ số dò
+0:08:52 - 0:08:56, Tại sao được gọi là hệ số dò?
+0:08:56 - 0:08:58, Khi chúng ta tính đạo hàm
+0:08:58 - 0:09:01, Thì đạo hàm là một hệ số dò dẫm
+0:09:01 - 0:09:06, Đạo hàm nhìn chung là nó chỉ giúp cho chúng ta biết cái hướng đi thôi
+0:09:06 - 0:09:08, Hướng đi tại cái vị trí này
+0:09:08 - 0:09:12, Thì đối với cái vị trí này đạo hàm của mình là hướng đi lên
+0:09:12 - 0:09:15, Tức là nó đang hướng dương
+0:09:15 - 0:09:21, Nhưng chúng ta sẽ phải đi cái hướng ngược lại với nó để tìm được cái
+0:09:21 - 0:09:26, Cái giá trị nhỏ nhất của mình để tìm được đến cái điểm cực tiểu của mình
+0:09:26 - 0:09:29, Chúng ta sẽ phải đi theo cái hướng ngược lại là hướng âm
+0:09:29 - 0:09:34, Nhưng cái độ lớn của đạo hàm thì không có lý thuyết nào chứng minh được rằng là
+0:09:34 - 0:09:37, Khi chúng ta đi đúng một cái đại lượng bằng độ lớn của đạo hàm
+0:09:37 - 0:09:44, Thì nó sẽ giúp cho chúng ta đến được ngay cái điểm theta sao ở đây
+0:09:44 - 0:09:49, Tức là không có lý thuyết nào nói cái độ dài này đúng bằng đạo hàm
+0:09:49 - 0:09:52, Do đó thì nó cũng có khả năng đạo hàm của mình
+0:09:52 - 0:09:56, Nó sẽ kéo chúng ta đi lố qua cái theta sao này
+0:09:56 - 0:09:58, Chúng ta biết là phải đi hướng ngược lại
+0:09:58 - 0:10:01, Nhưng mà nếu đi đúng theo cái giá trị đạo hàm này
+0:10:01 - 0:10:04, Thì có thể chúng ta sẽ đi lố qua bên này
+0:10:04 - 0:10:08, Do đó thì chúng ta sẽ đi một cách từ tốn, đi một cách từ từ
+0:10:08 - 0:10:13, Theta old ở đây sẽ được cập nhật một cách từ từ
+0:10:13 - 0:10:17, Cho đến lúc nào mà chạm được đến cái theta sao
+0:10:17 - 0:10:21, Thế thì để mà đi từ từ ở đây thì chúng ta sẽ phải nhân với một cái đại lượng
+0:10:21 - 0:10:27, Một cái siêu tham số alpha và alpha này thường là một con số rất là bé
+0:10:27 - 0:10:33, Thì nếu chúng ta không biết alpha là bao nhiêu thì mặc định trong các cái mẹo
+0:10:33 - 0:10:37, Đó là chúng ta sẽ chọn alpha đâu đó là khoảng 10 mũ trừ 4
+0:10:37 - 0:10:41, Tại sao nó lại là cái con số rất là bé như thế này
+0:10:41 - 0:10:45, Lý do đó là vì trong các cái mô hình mà phức tạp
+0:10:45 - 0:10:49, Thì cái độ dốc của cái hàm của mình nó rất là cao
+0:10:49 - 0:10:50, Độ dốc này rất là cao
+0:10:50 - 0:10:54, Do đó cái giá trị đạo hàm của mình nó rất là lớn
+0:10:54 - 0:10:59, Nó có thể là kéo đến đây dẫn đến là chúng ta sẽ đi lố
+0:10:59 - 0:11:03, Khi chúng ta đi hướng ngược lại chúng ta sẽ đi lố qua cái điểm cực tiểu
+0:11:03 - 0:11:11, Thì theta với alpha mà nhỏ thì nó sẽ có thể có một cái điểm yếu đó là nó sẽ đi rất là chậm
+0:11:11 - 0:11:14, Nhưng bù lại đó là nó sẽ đi chắc chắn
+0:11:14 - 0:11:16, Chúng ta cứ đi một chút rồi chúng ta cập nhật
+0:11:16 - 0:11:18, Đi một chút rồi chúng ta sẽ cập nhật
+0:11:19 - 0:11:23, Rồi và ở cái hướng ngược lại
+0:11:23 - 0:11:29, Nếu như chúng ta ở bên tay trái thì đạo hàm của mình nó sẽ là hướng âm
+0:11:29 - 0:11:33, Tức là nó đang đi xuống đúng không là đạo hàm của mình sẽ là hướng âm
+0:11:33 - 0:11:37, Thì mình sẽ đi theo cái hướng ngược với nó đó là hướng dương
+0:11:37 - 0:11:42, Thì cho dù là nằm bên trái hay bên phải cái điểm cực tiểu của bộ
+0:11:42 - 0:11:50, Thì đạo hàm đều có chung một quyết nguyên tắc đó là chỉ ngược hướng với cái điểm cực tiểu của bộ của mình
+0:11:50 - 0:11:55, Do đó thì dù bên trái hay bên phải chúng ta vẫn luôn để cái dấu ở đây là dấu trừ
+0:11:55 - 0:11:57, Tức là đi ngược hướng với đạo hàm
+0:11:57 - 0:12:03, Và khi chúng ta cập nhật cái tham số
+0:12:03 - 0:12:09, Thì ở bước tiếp theo là cái điểm của chúng ta nó đã rớt xuống
+0:12:09 - 0:12:13, Và khi đó cái mô hình của mình nó cũng tiến gần hơn
+0:12:13 - 0:12:17, Nó sẽ có xu hướng tiến gần hơn về các điểm dữ liệu của mình
+0:12:17 - 0:12:19, Xấp xỉ với điểm dữ liệu của mình
+0:12:19 - 0:12:24, Thì chúng ta sẽ quay ngược trở lại để tính đạo hàm
+0:12:26 - 0:12:34, Và khi chúng ta tính đạo hàm thì một lần nữa đạo hàm lại thể hiện cái hướng ngược với lại cái hướng có cái điểm cực tiểu
+0:12:34 - 0:12:39, Chúng ta lại tiếp tục cập nhật tham số để đi cái hướng ngược lại
+0:12:39 - 0:12:45, Và khi chúng ta cập nhật cái tham số mới
+0:12:45 - 0:12:52, Thì cái hàm, cái đường quyết định, cái decision boundary
+0:12:52 - 0:12:59, Đường biên quyết định nó sẽ càng tiệm cận và nó sẽ xấp xỉ vào bên trong cái điểm dữ liệu của mình
+0:12:59 - 0:13:07, Thì đây chính là mô phỏng cho thuật toán Gradient Descent thực hiện từng bước lặp đi lặp lại
+0:13:07 - 0:13:11, Và cái việc này chúng ta sẽ dừng khi nào
+0:13:11 - 0:13:13, Thì chúng ta sẽ có hai cách
+0:13:13 - 0:13:21, Một, đó là dừng khi cái F' theta là bằng 0
+0:13:21 - 0:13:26, Hoặc là đây là trường hợp là hàm đơn biến
+0:13:26 - 0:13:33, Hoặc là trị tuyệt đối của NABLA của J
+0:13:33 - 0:13:41, Theo biến theta là bằng 0
+0:13:46 - 0:13:48, Hoặc là bé hơn một cái ngưỡng nào đó
+0:13:48 - 0:13:51, Thông thường cái khả năng mà bằng 0 rất là thấp
+0:13:51 - 0:13:54, Và chúng ta chỉ xét một cái ngưỡng nào đó thôi
+0:13:54 - 0:13:56, Nhưng cái cách này thì rất là khó
+0:13:56 - 0:14:00, Tại vì khi chúng ta theta mà bằng 0
+0:14:00 - 0:14:03, Hoặc là rất là bé mà chúng ta dừng
+0:14:03 - 0:14:05, Thì có khả năng là nó sẽ mắc kẹt ở những điểm cục bộ
+0:14:05 - 0:14:07, Do đó nó có một kiểu dừng thứ hai
+0:14:07 - 0:14:13, Đó là khi chúng ta lặp đủ nhiều
+0:14:13 - 0:14:16, Khi chúng ta lặp đủ nhiều thì chúng ta sẽ dừng
+0:14:16 - 0:14:20, Thì đây là cái giải pháp phổ biến hơn
+0:14:20 - 0:14:24, Mà thường các mô hình máy học hay sử dụng
+0:14:24 - 0:14:29, Ở đây chúng ta có một cái lưu ý là F ở đây là hàm G
+0:14:29 - 0:14:32, Tức là hàm lỗi của mình
+0:14:32 - 0:14:34, Rồi
+0:14:34 - 0:14:37, Thì ở trong cái sơ đồ này
+0:14:37 - 0:14:39, Đó là chúng ta sẽ có các cái khái niệm
+0:14:39 - 0:14:43, Khái niệm đầu tiên, đây chính là khái niệm gradient
+0:14:43 - 0:14:47, Tức là cái đạo hàm theo một cái vector tham số theta của mình
+0:14:47 - 0:14:52, Đạo hàm của hàm lỗi theo cái tham số theta
+0:14:52 - 0:14:55, Cái thứ hai, đó là cái initial weight
+0:14:55 - 0:14:57, Tức là cái điểm khởi tạo
+0:14:57 - 0:15:01, Tham số mầm khởi tạo mặc định ban đầu
+0:15:01 - 0:15:03, Rồi cái incremental step
+0:15:03 - 0:15:05, Tức là cái bước nhảy của mình
+0:15:05 - 0:15:09, Đó là một cái bước nhảy từng bước như thế này
+0:15:09 - 0:15:11, Thì đây là một cái bước nhảy nhỏ
+0:15:11 - 0:15:13, Và cái minimal cost
+0:15:13 - 0:15:17, Tức là cái vị trí mà cái hàm lỗi của mình
+0:15:17 - 0:15:20, Nó đạt được cái giá trị cực tiểu
+0:15:20 - 0:15:24, Và trong cái này thì chúng ta sẽ thấy có hai cái trục
+0:15:24 - 0:15:26, Một trục là trục về trọng số
+0:15:26 - 0:15:28, Là cái tham số theta
+0:15:28 - 0:15:30, Cái trọng số của mô hình
+0:15:30 - 0:15:35, Tức là cái tham số theta F của cái hàm mô hình
+0:15:37 - 0:15:39, Và một cái trục là chiều cao
+0:15:39 - 0:15:41, Và cái trục tung của mình chính là cái cost
+0:15:41 - 0:15:44, Là biểu diễn cho J của theta
+0:15:44 - 0:15:52, Là cái sai số của mô hình khi tại một cái vị trí theta
+0:15:52 - 0:15:56, Thì đây chính là những cái khái niệm mà chúng ta cần phải nắm vững
+0:15:56 - 0:15:59, Khi chúng ta làm việc với thuật toán gradient descent
+0:15:59 - 0:16:03, Và nó sẽ có một cái tình huống đó là
+0:16:03 - 0:16:05, Khi chúng ta cập nhật theta là bằng theta
+0:16:05 - 0:16:09, Trừ cho alpha nhân đạo hàm của hàm J
+0:16:09 - 0:16:14, Thì cái hệ số learning rate này là alpha
+0:16:14 - 0:16:18, Mà quá thấp, low learning rate
+0:16:18 - 0:16:20, Thì chúng ta sẽ thấy các cái bước đi của mình nó rất là chậm
+0:16:20 - 0:16:22, Nó rất là ngắn
+0:16:22 - 0:16:27, Mà ngắn tức là nó sẽ đi rất là nhiều lần
+0:16:27 - 0:16:31, Nhiều lần, tức là rất là lâu
+0:16:31 - 0:16:36, Trong khi đó, nếu như mà cái learning rate của mình nó quá cao
+0:16:36 - 0:16:40, Thì có khả năng là nó sẽ đi và nó lố qua
+0:16:40 - 0:16:42, Cái điểm cực tiểu ở đây
+0:16:42 - 0:16:44, Nó sẽ đi lố qua luôn
+0:16:44 - 0:16:48, Thế thì một cái learning rate mà phù hợp
+0:16:48 - 0:16:51, Đó là một cái learning rate mà nó sẽ đi đủ nhanh
+0:16:51 - 0:16:54, Nhưng mà sẽ không đi lố qua được cái điểm cực tiểu
+0:16:54 - 0:16:57, Nhưng mà để mà có được cái learning rate đó
+0:16:57 - 0:17:00, Thì chúng ta cũng sẽ có rất nhiều những cái phiên bản
+0:17:00 - 0:17:02, Có những cái chiến thuật
+0:17:02 - 0:17:06, Có những cái chiến thuật để chọn learning rate
+0:17:08 - 0:17:12, Thì chúng ta sẽ tìm hiểu trong những cái phần tiếp theo

@@ -1,0 +1,55 @@
+0:00:14 - 0:00:21, Trong phần tiếp theo, chúng ta sẽ cùng trực quan hóa quá trình thuật toán này đã chạy như thế nào
+0:00:21 - 0:00:30, Đầu tiên chúng ta sẽ tiến hành vẽ hàm số
+0:00:30 - 0:00:42, Để vẽ đồ thị hàm số, chúng ta phải dùng một thư viện, đó là matplotlib.pyplot.plt
+0:00:42 - 0:00:48, Sau đó chúng ta sẽ khởi tạo các giá trị theo trục hoành và trục tung
+0:00:48 - 0:00:56, Để khởi tạo các giá trị theo trục hoành, chúng ta không sử dụng lại biến theta nữa, tại vì đó là tham số của một mô hình cần huấn luyện
+0:00:56 - 0:01:08, Chúng ta chỉ cần lấy một cái biến x là bằng np.arange, chúng ta sẽ cho nó chạy từ trừ 10 cho đến 10 và có thể bước nhảy đó là 0.5
+0:01:08 - 0:01:19, Sau đó chúng ta sẽ chạy plt.plot.x và J của x
+0:01:19 - 0:01:30, Sau đó là plt.show, bây giờ chúng ta sẽ xem thử chương trình này chạy như thế nào
+0:01:30 - 0:01:50, Chúng ta thấy nó đã bị lệch đi một phần, để cho nó cân đối hơn, chúng ta sẽ cho giá trị bên phải là 13 hoặc là 12 để cho nó trùng với giá trị
+0:01:50 - 0:01:56, Bây giờ chúng ta sẽ lưu lại và chạy, nó đã cân đối hơn
+0:01:56 - 0:02:02, Bây giờ chúng ta sẽ vẽ điểm theta lên trên đồ thị
+0:02:02 - 0:02:16, Lưu ý, khi chúng ta vẽ điểm này, chúng ta sẽ dùng một cái màu khác, chúng ta sẽ dùng một cái điểm màu đỏ
+0:02:16 - 0:02:22, và ký hiệu điểm này sẽ là một dấu chấm, chúng ta sẽ để chữ o, chúng ta sẽ lưu và chạy
+0:02:23 - 0:02:30, Thì nó đã vẽ được tham số chúng ta khởi tạo là bằng 12
+0:02:30 - 0:02:41, Bây giờ chúng ta sẽ trực quan hóa, trong vòng lặp cập nhật theta này, cứ mỗi lần cập nhật theta mới
+0:02:41 - 0:02:47, chúng ta sẽ vẽ đồ thị và điểm theta của mình lên
+0:02:47 - 0:02:54, Thế thì ở đây chúng ta sẽ đóng gói cái này lại thành một cái hàm, đó là plot J
+0:02:54 - 0:03:00, Sau đó chúng ta sẽ đưa toàn bộ cái này vào bên trong cái hàm plot J
+0:03:00 - 0:03:09, Theta ở đây thì đang để là tham số toàn cục, chúng ta sẽ cục bộ hóa nó bằng cách truyền một cái biến theta
+0:03:09 - 0:03:14, và nó sẽ lấy từ cái biến từ bên ngoài truyền vào để cho nó tổng quát
+0:03:14 - 0:03:26, Sau đó chúng ta sẽ trực quan hóa là gọi hàm plot J, chúng ta sẽ truyền biến theta vào
+0:03:26 - 0:03:30, và lưu rồi chạy
+0:03:30 - 0:03:38, Thế thì ở đây khi chúng ta vào trong vòng lặp, nó đã vẽ lên, chúng ta đóng cái cửa sổ này lại
+0:03:38 - 0:03:43, Thì nó sẽ mở cửa sổ mới để vẽ những cái điểm tiếp theo, thực hiện vòng lặp
+0:03:43 - 0:03:49, Như vậy thì nó sẽ hơi bị mất công, do đó chúng ta sẽ không có dùng cái hàm PLT show
+0:03:49 - 0:03:55, mà chúng ta sẽ cho nó tạm dừng thôi, tạm dừng khoảng 0.5 giây, chúng ta dùng cái hàm pause
+0:03:55 - 0:03:59, Sau đó chúng ta lưu lại và chạy
+0:04:01 - 0:04:07, Thế thì nó đã tạo ra được cái animation rồi, tuy nhiên mỗi lần lặp thì cái đường này đã dùng một cái màu mới
+0:04:07 - 0:04:14, Do đó để cố định nó, chúng ta sẽ dùng một cái màu đó là màu xanh, là B
+0:04:14 - 0:04:20, Thế thì ở đây chúng ta vẽ đường nên chúng ta sẽ không có cái ký hiệu của thứ hai
+0:04:20 - 0:04:25, giống như ở bên dưới, ở bên dưới là chúng ta chỉ vẽ một điểm thôi, đó là ro
+0:04:25 - 0:04:30, Còn ở phía trên chúng ta vẽ đường nói tiếp nhau, do đó chúng ta để cái tham số là B, tức là blue
+0:04:30 - 0:04:34, Rồi, và bây giờ chúng ta sẽ chạy
+0:04:34 - 0:04:38, Thì quan sát cái kết quả chúng ta thấy là
+0:04:38 - 0:04:44, Ban đầu chúng ta thấy là vì cái độ dốc của cái hàm của mình đó rất là cao
+0:04:44 - 0:04:49, Thì khi đó cái điểm màu đỏ của mình nó rớt xuống rất là nhanh
+0:04:49 - 0:04:53, Cái điểm màu đỏ rớt xuống, các bạn thấy là cái khoảng cách này rất là dài
+0:04:53 - 0:04:57, Nhưng mà càng xuống dưới các bạn thấy là cái khoảng cách bắt đầu càng nhỏ dần
+0:04:57 - 0:05:02, Và đến đây là nó chi chít các điểm luôn, thì nguyên nhân đó là do đâu?
+0:05:02 - 0:05:07, Nguyên nhân đó là vì khi chúng ta càng xuống dưới điểm cực tiểu cục bộ
+0:05:07 - 0:05:13, Thì cái giá trị đạo hàm của mình nó sẽ càng lúc càng tiến về 0
+0:05:13 - 0:05:17, Tại vì nó càng lúc nó càng song song với lại cái trục hoành
+0:05:17 - 0:05:21, Đúng không? Ban đầu nó ở trên nó rất là dốc, nhưng mà xuống dưới nó bớt dốc đi
+0:05:21 - 0:05:24, Nên cái việc cập nhật của mình cũng sẽ chậm hơn
+0:05:24 - 0:05:27, Tại vì trong cái công thức của mình thì chúng ta thấy đó là
+0:05:27 - 0:05:29, Chúng ta sẽ phải đi tính đạo hàm
+0:05:29 - 0:05:34, Mà đạo hàm càng xuống dưới càng nhỏ, tức là cái biến derivative này càng nhỏ
+0:05:34 - 0:05:37, Biến derivative này càng nhỏ thì dẫn đến theta
+0:05:37 - 0:05:41, Sẽ là bằng theta trừ cho cái đại lượng rất là nhỏ
+0:05:41 - 0:05:46, Thì dẫn đến đó là nó sẽ cập nhật rất là chậm
+0:05:46 - 0:05:51, Thì đó chính là cái đặc điểm của Gradient Descent khi mà nó càng tiến gần đến
+0:05:51 - 0:05:53, Cái điểm cực tiểu cục bộ
+0:05:53 - 0:05:57, Và đó cũng là cái lý do khiến cho cái thuật toán của mình
+0:05:57 - 0:06:00, Thuật toán của mình nó sẽ không thoát ra khỏi được cái điểm cực tiểu
+0:06:00 - 0:06:04, Do đó để giải quyết vấn đề này thì chúng ta sẽ dùng thuật toán momentum

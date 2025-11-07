@@ -1,0 +1,236 @@
+0:00:14 - 0:00:30, Cho đến thời điểm này, mạng RNN, cho dù với các biến thể như Deep Stack, hay Bi-directional thì nó vẫn còn bị một cái điểm yếu rất là lớn đó chính là vấn đề về điểm nghẽn thông tin, hay còn gọi là Bottleneck
+0:00:30 - 0:00:37, Thì đây là cái hiện tượng gì? Chúng ta sẽ cùng xem một vài cái ví dụ để minh họa
+0:00:37 - 0:00:44, Trên đây, đó là một cái kiến trúc ANN được sử dụng để encode một cái câu văn bản nguồn
+0:00:44 - 0:00:49, Và decode ANN thì dùng để dịch sang một cái văn bản đích
+0:00:49 - 0:00:54, Ví dụ như đây là chúng ta dịch từ tiếng Anh sang tiếng Pháp
+0:00:54 - 0:00:59, Thế thì cái điểm nghẽn thông tin nó sẽ thể hiện ở cái bottleneck này
+0:00:59 - 0:01:12, Tại vị trí cuối cùng mà chúng ta encode câu văn bản nguồn thì mọi thông tin của văn bản nguồn đều được chứa trong duy nhất một vector này.
+0:01:12 - 0:01:23, Và đây chính là cái điểm nghẽn của mình, khiến cho mô hình của mình không đủ thông tin toàn cục
+0:01:23 - 0:01:29, và thông tin cần thiết tại một thời điểm để chúng ta dịch ra
+0:01:29 - 0:01:33, ví dụ tại cái vector này, chúng ta muốn dịch ra cái từ rơ
+0:01:33 - 0:01:40, thì có thể cái thông tin của cái từ i là cái từ quan trọng nhất để giúp chúng ta dịch cái từ rơ này nè
+0:01:40 - 0:01:45, thì cái hàm lượng thông tin của nó đã bị mai một rất là nhiều rồi
+0:01:45 - 0:01:49, vì từ i khi đến được cái điểm nghẽn này nè
+0:01:49 - 0:01:53, thì nó đã bị biến đổi một lần, hai lần, ba lần, bốn lần và năm lần
+0:01:53 - 0:01:56, và đây là một cái ví dụ rất là bé
+0:01:56 - 0:01:58, trong những cái bài toán phức tạp hơn
+0:01:58 - 0:02:01, ví dụ như là bài toán tóm tắt văn bản
+0:02:01 - 0:02:04, thì để kể từ lúc chúng ta đọc hết cái văn bản
+0:02:04 - 0:02:06, cho đến lúc chúng ta bắt đầu tóm tắt
+0:02:06 - 0:02:08, nó có thể lên đến hàng trăm
+0:02:08 - 0:02:11, hoặc thậm chí là hàng ngàn chữ
+0:02:11 - 0:02:12, hàng ngàn cái token
+0:02:12 - 0:02:15, thì dẫn đến là cái từ ở đầu tiên
+0:02:15 - 0:02:17, nó đến cái chỗ điểm nghẽn này nè
+0:02:17 - 0:02:19, nó đã bị quên
+0:02:19 - 0:02:25, từ ai đã bị quên nhiều
+0:02:25 - 0:02:36, mình nói nó quên hết thì cũng không đúng, tại vì có thể chúng ta sử dụng một số biến thể như LSTM để giúp chúng ta lưu được những thông tin quan trọng
+0:02:36 - 0:02:40, nhưng mà đâu đó nó vẫn sẽ bị quên
+0:02:40 - 0:02:44, quên đi, một phần, quên nhiều
+0:02:44 - 0:02:52, khi từ ai này bị quên nhiều, đến lúc chúng ta cần dịch ra từ r, chúng ta bắt đầu từ start là bắt đầu quá trình decode
+0:02:52 - 0:02:58, thì khả năng chúng ta ra từ r này là thấp
+0:02:58 - 0:03:05, trong khi đó nếu chúng ta bắt đầu dịch, mà sau khi chúng ta vừa đọc xong từ ai
+0:03:05 - 0:03:12, thì xác suất chúng ta dịch ra được từ r, từ r trong tiếng Pháp là từ ai của mình, thì nó sẽ cao hơn
+0:03:12 - 0:03:18, đó chính là mô tả cho hiện tượng là điểm nghẽn thông tin
+0:03:18 - 0:03:33, khi chúng ta dự đoán đến từ xua thì rõ ràng là thông tin của từ xua ban đầu ở đây
+0:03:33 - 0:03:40, khi chúng ta lan truyền đến từ xua này cũng hoàn toàn tương tự, nó đã bị mất thông tin rất nhiều rồi
+0:03:40 - 0:03:45, Do đó, điểm nghẽn thông tin này cần phải giải quyết.
+0:03:45 - 0:03:50, Cơ chế để giải quyết là cơ chế Attention.
+0:03:50 - 0:03:59, Chốc nữa chúng ta sẽ cùng lý giải tại sao Attention có thể giúp chúng ta giải quyết được vấn đề điểm nghẽn về mất thông tin.
+0:03:59 - 0:04:05, Còn đầu tiên chúng ta sẽ tìm hiểu thế nào là Attention và cách thức thực hiện của nó là gì.
+0:04:05 - 0:04:13, Đầu tiên là chúng ta sẽ có các vector hidden là s
+0:04:13 - 0:04:22, Khi quá trình decode bắt đầu thì chúng ta nạp vào từ start
+0:04:22 - 0:04:28, Đây là một từ token để đánh dấu quá trình decode
+0:04:28 - 0:04:31, thì chúng ta sẽ tiến hành lấy cái h
+0:04:31 - 0:04:33, t1 này nè
+0:04:33 - 0:04:35, tức là cái vector
+0:04:35 - 0:04:39, đánh dấu cái quá trình dịch
+0:04:39 - 0:04:41, lấy cái h này đi so sánh
+0:04:41 - 0:04:47, với lại các cái vector ẩn của encoder
+0:04:47 - 0:04:50, để xem, để tính cái attention score
+0:04:50 - 0:04:56, để cho biết là tại cái thời điểm này nè
+0:04:56 - 0:04:57, là t bằng 1
+0:04:57 - 0:05:04, chúng ta sẽ attend, chúng ta sẽ quan tâm đến cái từ nào, cái token nào
+0:05:06 - 0:05:10, thì để tính cái attention score thì chúng ta dùng cái phép biến đổi đó là
+0:05:10 - 0:05:14, tích vô hướng, lấy cái ht này, nhân tích vô hướng với lại cái s
+0:05:14 - 0:05:21, ví dụ như tại đây là ht với s1, tại đây là ht với s2
+0:05:21 - 0:05:27, thì mỗi cái giá trị vô hướng này nó sẽ là một giá trị, một cái tích vô hướng này là một cái scalar
+0:05:27 - 0:05:36, Rt là 1 vector, kích thước của nó là n
+0:05:36 - 0:05:40, kích thước của nó là đúng bằng n
+0:05:40 - 0:05:46, Rt là 1 vector n chiều
+0:05:46 - 0:05:55, Tiếp theo, vì tích vô hướng này có giá trị rất lớn từ trừ vô cùng cho đến cộng vô cùng
+0:05:55 - 0:06:00, Do đó chúng ta phải chuẩn hóa bằng hàm Softmax
+0:06:00 - 0:06:04, Qua việc chuẩn hóa chúng ta sẽ ra được xác suất là
+0:06:04 - 0:06:10, Từ ht này đang attend 90%
+0:06:10 - 0:06:13, 90% đến từ ai
+0:06:13 - 0:06:17, Còn các từ còn lại đều là dưới 10%
+0:06:17 - 0:06:21, Vì vậy nó đang tập trung nhiều vào từ i
+0:06:21 - 0:06:27, Và alpha t sẽ là trọng số của các từ này
+0:06:27 - 0:06:33, Thế qua hàm Softmax chúng ta biết rằng là nó không thay đổi kích thước của vector đầu vào
+0:06:33 - 0:06:40, Do đó nếu rt là vector n chiều thì alpha t cũng là vector n chiều
+0:06:40 - 0:06:49, sau khi chúng ta biết là chúng ta phải attend vào từ i nhiều rồi thì chúng ta sẽ tính attention output
+0:06:49 - 0:06:54, bằng cách là nhân các trọng số ở attention distribution ở đây
+0:06:54 - 0:07:02, với chính các vector có chứa thông tin đầy đủ nhất của các từ này, đó là s1, s2 cho đến sn
+0:07:02 - 0:07:16, Như vậy thì bước tiếp theo là chúng ta sẽ tính tổng trọng số alpha với các cái vector ẩn chứa thông tin của các từ ở đây
+0:07:16 - 0:07:19, thì chúng ta sẽ ra được context vector
+0:07:21 - 0:07:27, Và context vector này ứng với ví dụ này thì nó đang chứa 90%
+0:07:27 - 0:07:34, thông tin của từ quan trọng nhất của mình
+0:07:34 - 0:07:36, tại thời điểm hiện tại đó là từ ai
+0:07:36 - 0:07:39, thì khi đó vector C này
+0:07:39 - 0:07:42, nó sẽ giúp chúng ta đi decode chính xác hơn
+0:07:42 - 0:07:46, để xác suất để mà nó ra được từ R, sẽ là cao hơn
+0:07:46 - 0:07:52, do đó chúng ta sẽ lấy vectorCT này, con cat với lại ht ở trước đó
+0:07:52 - 0:07:58, thì thật sự mà nói, cái thông tin chính để giúp chúng ta decode, nó nằm ở đây
+00:07:58 - 0:08:03, còn cái ht này, như đã nói, khi đã bị biến đổi rất nhiều rồi
+00:08:03 - 0:08:10, thì hàm lượng thông tin của từ i trong ht này rất là ít
+00:08:10 - 0:08:18, Trong khi thông tin của từ i tại vector CT này sẽ nhiều hơn
+00:08:18 - 0:08:25, Tại vì 90% của s1 là tỷ trọng cực kỳ cao
+00:08:25 - 0:08:29, Tại vì s1 chứa thông tin của từ i là nhiều nhất
+00:08:29 - 0:08:34, Sau khi đã concat được vector này
+00:08:34 - 0:08:39, Chúng ta sẽ bắt đầu decode để đi tính ra cái output dự đoán
+00:08:41 - 0:08:45, Chúng ta sẽ tính hoàn toàn tương tự như không có attention, có nghĩa là gì?
+00:08:46 - 0:08:48, Hai cái vector này chúng ta ghép lại với nhau, đúng không?
+00:08:48 - 0:08:51, Thì sau đó chúng ta sẽ nhân với lại một cái vector V
+00:08:52 - 0:08:57, V nhân với lại CT và HT
+00:08:59 - 0:09:01, Rồi, sau đó qua cái hàm Softmax
+00:09:01 - 0:09:08, để chúng ta tính xác suất của từ nào trong từ tiếng Pháp tương ứng
+00:09:08 - 0:09:11, thì tương tự như là attention, không có attention
+0:09:11 - 0:09:15, và ở đây chúng ta có một chú ý đó là ct
+00:09:15 - 0:09:19, nó có kích thước là bao nhiêu?
+00:09:19 - 0:09:23, thì ct nó sẽ có kích thước giống với kích thước của S
+00:09:23 - 0:09:25, mà S chúng ta biết rồi
+00:09:25 - 0:09:28, đó là một vector d chiều
+00:09:28 - 0:09:34, tất cả S và H đều là vector d chiều do đó ở đây sẽ là vector d
+00:09:34 - 0:09:39, sau khi chúng ta concat lại CT với ht
+00:09:39 - 0:09:42, thì ở đây nó sẽ ra vector đó là 2d
+00:09:42 - 0:09:46, tại vì CT là vector d chiều
+00:09:46 - 0:09:49, còn H cũng là vector d chiều
+00:09:49 - 0:09:52, cộng lại thì sẽ là vector 2d
+00:09:52 - 0:09:59, Như vậy thì chúng ta đã cùng tìm hiểu qua kiến trúc ANN Kết hợp với Attention
+00:09:59 - 0:10:07, Thì ANN Kết hợp với Attention nếu mà chúng ta biểu diễn gọn lại bằng sơ đồ ở đây thì chúng ta thấy
+0:00:00 - 0:10:11, kể cả khi cái văn bản này của chúng ta rất là dài
+0:10:13 - 0:10:19, Ví dụ là có 1000, mình có 1000 cái token đầu vào
+0:10:19 - 0:10:23, 1.000 từ
+0:10:27 - 0:10:32, khi bắt đầu quá trình dịch là tại đây
+0:10:32 - 0:10:37, không, khi bắt đầu quá trình là encode, ví dụ như tại vị trí thứ T tại đây
+0:10:37 - 0:10:44, chúng ta đến đây và đi truy vấn trong 1.000 từ này
+0:10:44 - 0:10:48, xem từ nào là từ được quan tâm tại thời điểm hiện tại
+0:10:48 - 0:10:52, sau đó chúng ta sẽ tổng hợp để ra một vector như thế này
+0:10:52 - 0:11:01, như vậy nếu đi theo đường như cũ thì từ thứ 2, giả sử như từ đang cần decode là từ thứ 2
+0:11:01 - 0:11:05, thì sẽ phải đi lần lượt qua rất nhiều
+0:11:05 - 0:11:09, chúng ta sẽ phải đi qua ít nhất là 1000 từ
+0:11:09 - 0:11:12, tức là chúng ta sẽ phải biến đổi 1000 lần
+0:11:12 - 0:11:17, trong khi đó nếu chúng ta đi theo con đường 1 xanh lá ở đây
+0:11:17 - 0:11:27, Từ đây lên đây, xong từ đây, chúng ta đi dự đoán cái giá trị tiếp theo thì nó chỉ mất có 2 lần biến đổi
+00:00:00 - 0:11:37, như vậy là 2 so với 10.000 lần thì rõ ràng là cái 2 nó sẽ có chứa thông tin và nó sẽ ít bị mất thông tin hơn
+0:11:37 - 0:11:53, Vì vậy, có thể thấy là ANN với Attention là biến thể rất quan trọng để giúp cho chúng ta ít bị mất mát thông tin
+0:11:53 - 0:11:58, Nhờ các kết nối tắt này, khi chúng ta huấn luyện, chúng ta có y ngã ở đây
+0:11:58 - 0:12:03, Nhờ các kết nối tắt, chúng ta đi ngược lại, chúng ta đi ngược lại
+0:12:03 - 0:12:06, và chúng ta lại đi ngược lại
+0:12:06 - 0:12:14, Vì việc chúng ta cập nhật tham số ở những cái tình huống là cái chữ đầu tiên
+0:12:14 - 0:12:17, nó sẽ không bị hiện tượng là vanishing gradient
+0:12:17 - 0:12:22, Tuy nhiên, với attention thì nó vẫn sẽ có những cái điểm yếu
+0:12:22 - 0:12:24, Vậy thì vấn đề của nó là gì?
+0:12:24 - 0:12:28, Thứ nhất, đó là chúng ta tính tuần tự từ trái sang phải
+0:12:30 - 0:12:38, Vì tính tuần tự, hoặc là chúng ta đi theo chiều ngược lại cũng như vậy
+0:12:38 - 0:12:42, thì tính tuần tự đến từ bên trái trước rồi mới đến bên phải sau
+0:12:42 - 0:12:45, nó sẽ không thể song song hóa được tính toán
+0:12:45 - 0:12:49, Và chính cái việc này sẽ gây ra việc lãng phí về JBL
+00:00:00 - 0:13:00, Tại vì đến thời điểm mà Attention ra thì các mạng học sâu của CNN đã khai thác sức mạnh GPU để tính toán song song và tăng tốc độ huấn luyện lên rất là nhiều lần rồi
+0:13:00 - 0:13:09, Nhưng mà nếu vẫn còn encoder theo kiểu như thế này thì chúng ta sẽ rất khó khai thác sức mạnh của GPU
+0:13:09 - 0:13:17, Các vector biểu diễn từ encoder chưa thực sự tương tác với nhau
+0:13:17 - 0:13:29, Ví dụ chúng ta thấy, cái sự tương tác ở đây nếu có chỉ là giữa hai cái từ, ví dụ như là hai từ xt và xt cộng một
+0:13:33 - 0:13:42, Thì chúng ta thấy là nó chỉ có sự tương tác giữa hai cái từ liên tiếp, ví dụ như là xt và xt cộng một, nó có tương tác qua lại
+0:13:42 - 0:13:47, Còn nó sẽ không có tương tác một cách trực tiếp với những từ ở xa hơn
+0:13:47 - 0:13:52, Thì nó sẽ thiếu tính tương tác giữa các từ để tạo ra những đặc trưng mới
+0:13:52 - 0:13:57, Chưa tận dụng được các mẹo của các mô hình học sâu hiện đại
+0:13:57 - 0:14:05, Rõ ràng trong tiến trình phát triển của các mô hình học sâu có rất nhiều mẹo đã được tìm ra để nhằm
+0:14:05 - 0:14:08, giải quyết vấn đề Overfitting và Vanishing Gradient
+0:14:08 - 0:14:12, nhưng mà biến thể này chưa khai thác được nhiều
+0:14:12 - 0:14:14, thì chúng ta sẽ cùng đến với
+0:14:14 - 0:14:18, một trong những biến thể rất là nổi tiếng
+0:14:18 - 0:14:20, đó là Transformer
+0:14:20 - 0:14:22, thì Transformer
+0:14:22 - 0:14:26, nó kế thừa được rất nhiều mẹo trong mô hình học sâu
+0:14:26 - 0:14:29, đầu tiên, chúng ta sẽ
+0:14:29 - 0:14:31, xem đến yếu tố từ trái sang phải
+0:14:31 - 0:14:33, nếu như trong ANN
+0:14:33 - 0:14:45, chúng ta encode tính thứ tự này để nhằm đảm bảo phân biệt được từ do you understand
+0:14:47 - 0:14:53, với lại từ you do understand là hai câu khác nhau
+0:14:53 - 0:14:59, nó sẽ xử lý từ Do trước xong rồi đến từ U
+0:14:59 - 0:15:05, dẫn đến là thông tin của từ Do sẽ nhiều hơn so với thông tin của từ Do
+0:15:05 - 0:15:15, việc chúng ta có dấu mũi tay này là để phục vụ cho thể loại dữ liệu có tính thứ tự của văn bản
+0:15:15 - 0:15:20, bây giờ Transformer đã giải quyết vấn đề này như thế nào?
+0:15:20 - 0:15:23, đó là dùng cái Positional Embedding.
+0:15:32 - 0:15:33, tức là
+0:15:33 - 0:15:36, ví dụ như khi chúng ta có một cái từ ở đây
+0:15:36 - 0:15:38, một cái nó ra đây
+0:15:38 - 0:15:42, rồi sau đó thì chúng ta sẽ đưa vào một cái tính toán
+0:15:42 - 0:15:47, và nếu như chúng ta để cái dấu mũi tay này thì nó sẽ tạo ra sự phụ thuộc lẫn nhau
+0:15:47 - 0:15:49, giữa từ trước với từ sau
+0:15:49 - 0:15:54, và chúng ta sẽ gắn thêm vào một position
+0:15:54 - 0:15:57, ví dụ như ở đây là từ Do
+0:15:57 - 0:16:01, chúng ta sẽ gắn thêm cái thông tin về mặt vị trí
+0:16:01 - 0:16:03, đó là vị trí số 1
+0:16:03 - 0:16:08, rồi, tiếp theo đó là từ u
+0:16:08 - 0:16:12, chúng ta sẽ gắn thêm cái vị trí là số 2
+0:16:12 - 0:16:19, Vì việc gắn này sẽ nhờ module positional embedding.
+0:16:19 - 0:16:24, Từ Do sẽ được biến thành một vector biểu diễn.
+0:16:24 - 0:16:26, Từ Do sẽ là v của do.
+0:16:26 - 0:16:34, Còn số 1 sẽ là positional embedding của số 1.
+0:16:34 - 0:16:36, Đây là một vector.
+0:16:36 - 0:16:41, và hai cái vector này cộng lại với nhau để nó vừa có chứa được thông tin của từ Do
+0:16:41 - 0:16:44, mà vừa có chứa được thông tin của số 1
+0:16:44 - 0:16:48, thì cái Positional Embedding này chúng ta có thể sử dụng một công thức cố định
+0:16:48 - 0:16:51, hoặc là chúng ta sẽ huấn luyện luôn cái phần này
+0:16:51 - 0:16:55, để cho khi chúng ta gặp cái vị trí số 1 thì chúng ta sẽ dùng một vector
+0:16:55 - 0:16:59, khi chúng ta đến cái vị trí số 2 chúng ta sẽ dùng một cái vector khác
+0:16:59 - 0:17:02, và hai cái vector đó sẽ đại diện cho hai cái thứ tự khác nhau
+0:17:02 - 0:17:06, thì đó chính là hai cái Positional Embedding
+0:17:06 - 0:17:16, Và đây chính là cái module mà mình nghĩ là rất là quan trọng để giúp chúng ta đoạn tuyệt với kiến trúc ANN trước đây.
+0:17:16 - 0:17:21, Các kiến trúc ANN trước đây bị một cái rào cản đó chính là cái tính thứ tự đó.
+0:17:21 - 0:17:25, Nó sẽ khiến chúng ta không khai thác được cái GPU.
+0:17:25 - 0:17:35, Và nếu bỏ được cái này thì cái việc tính toán Do cộng 1 và U cộng 1 hay là vector biểu diễn của Do cộng vector biểu diễn của 1
+0:17:35 - 0:17:41, và nó sẽ độc lập với nhau thì khi đó chúng ta sẽ xử lý song song được.
+0:17:41 - 0:17:52, Ngoài ra thì Transformer còn rất nhiều những cái khai thác đến những cái mẹo của các mô hình trước đây.
+0:17:52 - 0:17:57, Ví dụ cái Add này, đây là một cái Skip Connection.
+0:17:57 - 0:18:07, Skip Connection sẽ giúp chúng ta giải quyết vấn đề Vanishing Gradient
+0:18:07 - 0:18:19, Còn cái norm giúp chúng ta chống hiện tượng Overfitting
+0:18:19 - 0:18:32, Multihead Attention sẽ giải quyết vấn đề trước đây, đó chính là các từ không có tính tương tác nhau
+0:18:32 - 0:18:39, các vector biểu diễn của từ ở encoder này, nó thiếu tính tương tác nhau
+0:18:39 - 0:18:53, MultiHeadAttention sẽ giúp chúng ta tương tác đặc trưng giữa các từ đầu vào
+0:18:53 - 0:18:58, Chúng ta dùng từ là token, giữa token đầu vào
+0:18:58 - 0:19:10, Nhằm giúp tạo ra các đặc trưng có tính gọi là phân loại cao hơn, các đặc trưng cấp cao hơn
+0:19:10 - 0:19:17, Nếu như chúng ta thực hiện cái Multihead Attention này thì bản chất chỉ là cộng trọng số
+0:19:17 - 0:19:23, nó chỉ là cộng trọng số, do đó nó sẽ không giải quyết được các bài toán phi tuyến tính
+0:19:23 - 0:19:28, để phi tuyến tính hóa thì chúng ta sẽ phải có lớp FeedForward này
+0:19:28 - 0:19:31, thì đây là giúp cho chúng ta nonlinear
+0:19:31 - 0:19:35, giải quyết các bài toán nonlinear
+0:19:35 - 0:19:37, Add & Norm cũng tương tự như ở dưới
+0:19:37 - 0:19:42, Rồi, ở đây chúng ta sẽ thấy là nó sẽ có biến thể của Stack
+0:19:42 - 0:19:44, ở đây
+0:19:44 - 0:19:46, Stack layer
+0:19:46 - 0:19:59, Mục đích của stack layer này, ví dụ là lặp lại 6 lần này để giúp chúng ta tạo ra các đặc trưng học sâu, giúp chúng ta giải quyết được các bài toán phức tạp.
+0:19:59 - 0:20:09, Ở nhánh decoder cũng hoàn toàn có các kỹ thuật tương tự nhưng nó có duy nhất một cái module khác biệt đó chính là cross attention.
+0:20:09 - 0:20:12, Tại sao chúng ta dùng từ Cross?
+0:20:12 - 0:20:18, Là vì có sự băng qua từ encoder sang decoder
+0:20:18 - 0:20:25, Nhờ có sự tổng hợp thông tin từ encoder
+0:20:25 - 0:20:32, chúng ta sẽ đưa vào decoder để giúp chúng ta dự đoán các từ trong chuỗi của mình
+0:20:32 - 0:20:38, Chúng ta có 3 dấu mũi tên tương ứng là Query, Key và Value.
+0:20:38 - 0:20:49, Trong đó, chúng ta sẽ tương tác giữa Query, query của mình, nó sẽ đến từ decoder này.
+0:20:49 - 0:20:54, Còn Key và Value là 2 dấu mũi tên đến từ decoder.
+0:20:54 - 0:21:03, Rồi, và cuối cùng là qua cái lớp linear và softmax thì hoàn toàn tương tự như cho cái biến thể ANN
+0:21:03 - 0:21:12, đó là V của cái output này, output tại thời điểm này là Decoded, tại thời điểm T, sau đó là softmax
+0:21:12 - 0:21:23, thì nó sẽ ra được cái output xác suất. Như vậy thì chúng ta đã cùng lướt qua những cái biến thể
+0:21:23 - 0:21:29, của mô hình dữ liệu dạng có thứ tự.
+0:21:29 - 0:21:35, Chúng ta đã thấy là Transformer là một mô hình sinh sau đẻ muộn
+0:21:35 - 0:21:41, và nó đã tận dụng được rất nhiều thành tựu của các mô hình trước đó.
+0:21:41 - 0:21:49, Bên cạnh những về mặt kiến trúc, Transformer còn sử dụng optimizer
+0:21:49 - 0:22:08, Optimizer là sử dụng AdamW, đây là một optimizer mới cho việc hội tụ tốt hơn, sử dụng hàm kích hoạt, norm cũng hiện đại hơn,
+0:22:08 - 0:22:13, sẽ giúp cho mạng transformer được huấn luyện tốt hơn và tận dụng hơn.
+0:22:13 - 0:22:20, Đó chính là sơ lược các mô hình học sâu trong dữ liệu là chuỗi.
+0:22:20 - 0:22:25, Hi vọng là chúng ta sẽ nắm bắt được việc áp dụng
+0:22:25 - 0:22:28, trong giải quyết các vấn đề vanishing gradient,
+0:22:28 - 0:22:31, vấn đề giải quyết vấn đề về overfitting
+0:22:31 - 0:22:35, để tiếp tục phát triển các mô hình học sâu này.
+0:22:38 - 0:22:48, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

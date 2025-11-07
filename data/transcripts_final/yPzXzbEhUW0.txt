@@ -1,0 +1,82 @@
+0:00:14 - 0:00:27, Chúng ta sẽ cùng tìm hiểu về cách sử dụng một cái mô hình clip đã được tiền huấn luyện trên một bộ dữ liệu vô cùng lớn của OpenAI.
+0:00:27 - 0:00:44, Vì vậy, tự huấn luyện được môn clip là khá là không khả thi, vì nó cần lượng data cực kỳ lớn, tài nguyên tính toán, xử lý song song, GPU cũng cực kỳ mắc tiền.
+0:00:44 - 0:00:52, Vì vậy, khả duy nhất của chúng ta lúc này là chúng ta sẽ sử dụng một cái môn pre-drain để đi giải quyết những cái tác vụ đã có.
+0:00:52 - 0:01:03, Thế thì, đầu tiên chúng ta sẽ cài đặt một số cái thư viện cũng như là đưa cái môn clip, cái thư viện của clip về.
+0:01:03 - 0:01:20, Sau đó thì chúng ta sẽ thử xem cái phiên bản hiện tại là gì. Chúng ta lưu ý đó là mình sẽ chọn cái runtime của mình, đó là T4, có GPU.
+0:01:20 - 0:01:42, Rồi, tiếp theo thì chúng ta sẽ load cái mô hình lên, thế thì để xem xem có hiện giờ là đang có những cái mô hình nào tiền huấn luyện có thể available để cho chúng ta có thể tải về.
+0:01:42 - 0:01:46, Vì vậy, chúng ta sẽ sử dụng cái hạng available model.
+0:01:46 - 0:02:02, Và ở đây thì chúng ta thấy là đã có 9 cái mô hình, thì chúng ta có thể sử dụng ResNet 50 để cho nó nhẹ cũng được.
+0:02:02 - 0:02:08, Không thì dùng VIT B32 cũng được. Ở đây chúng ta sẽ sử dụng ResNet 50.
+0:02:15 - 0:02:21, Rồi, tiếp theo thì chúng ta sẽ chuẩn bị cái hạng để tiền sử dụng ảnh, đó chính là hạng Pre-process.
+0:02:21 - 0:02:26, Thì hạng này mục tiêu đó là để chuẩn hóa cái dữ liệu ảnh đầu vào của mình.
+0:02:26 - 0:02:34, Ban đầu ảnh của mình có thể ở rất nhiều những cái định dạng khác nhau và kích thước khác nhau.
+0:02:34 - 0:02:39, Rồi, do đó thì chúng ta sẽ có các cái thao tác tiền xử lý.
+0:02:39 - 0:02:49, Thì các cái thao tác tiền xử lý bao gồm là Resize trên tấm ảnh về 224 x 224, rồi crop cái vùng ở giữa để làm sao cho đạt được cái kích thước là 224.
+0:02:49 - 0:02:53, Rồi sau đó chúng ta sẽ đưa về cái tensor và chuẩn hóa.
+0:02:53 - 0:02:59, Thì các cái bộ trọng số này là những cái bộ trọng số đã được chuẩn bị trước.
+0:02:59 - 0:03:08, Trong cái quá trình tiền huấn luyện của OpenAI thì họ đã ra được những cái bộ giá trị mean và standard deviation này.
+0:03:08 - 0:03:16, Sau đó thì đối với hạng ảnh thì chúng ta chỉ đơn giản đó là Resize, Crop vùng ở giữa, sau đó Convert và Chuẩn hóa.
+0:03:16 - 0:03:21, Còn đối với văn bản thì chúng ta sẽ có một cái bước gọi là Tokenization.
+0:03:21 - 0:03:28, Thì Tokenization là chúng ta thay vì chúng ta sử dụng gốc ban đầu là từ Hello và từ World.
+0:03:28 - 0:03:39, Thì thực tế là nó sẽ có một cái bộ token để mà chúng ta đưa cái chuỗi văn bản gốc ban đầu về cái danh sách các cái token đó.
+0:03:40 - 0:03:49, Và mặc định thì chúng ta sẽ để cái danh sách các cái token mà chúng ta xử lý tối đa đó là 70 token.
+0:03:49 - 0:03:53, Cho dù câu ngắn hay câu dài nó cũng sẽ đưa về 70 token.
+0:03:53 - 0:03:56, Thì đây là cái định dạng mà clip yêu cầu.
+0:03:56 - 0:03:59, Sau đó thì chúng ta sẽ cấu hình.
+0:03:59 - 0:04:04, Ví dụ như ở đây chúng ta sẽ chọn cái đường dẫn ảnh đến cái thư mục hiện tại.
+0:04:04 - 0:04:07, Thì cái thư mục hiện tại là, chúng ta xem cái thư mục gì ha?
+0:04:07 - 0:04:08, Thì là Content.
+0:04:08 - 0:04:12, Do đó cái DataDir chúng ta sẽ để là Content.
+0:04:13 - 0:04:16, Rồi, ở hiện giờ thì chưa có hình.
+0:04:16 - 0:04:18, Chúng ta sẽ tải các cái hình này về.
+0:04:18 - 0:04:21, Thì ở đây tôi có chuẩn bị sẵn 3 cái tấm hình.
+0:04:23 - 0:04:25, Ví dụ đây là cháo bún ha.
+0:04:25 - 0:04:26, Rồi.
+0:04:31 - 0:04:33, Tiếp theo đó là hình của một cái chú gà.
+0:04:37 - 0:04:39, Rồi, ở đây chúng ta rename lại.
+0:04:41 - 0:04:43, Đây là Chicken.
+0:04:46 - 0:04:48, Rồi, đây là...
+0:04:52 - 0:04:53, Đó.
+0:04:55 - 0:04:56, Rồi.
+0:04:56 - 0:04:59, Thì không biết sao cái ảnh thứ ở giữa chưa có chạy được.
+0:04:59 - 0:05:01, Thì chúng ta sẽ xem thử ha.
+0:05:01 - 0:05:03, Rồi, cái hình này là...
+0:05:04 - 0:05:07, không có tải về được bằng lệnh Wget.
+0:05:07 - 0:05:11, Do đó chúng ta sẽ sử dụng một cái hình khác.
+0:05:11 - 0:05:13, Chúng ta sẽ sử dụng một cái hình khác.
+0:05:13 - 0:05:15, Ví dụ như ở đây là chúng ta...
+0:05:16 - 0:05:18, thử tải cái này về.
+0:05:22 - 0:05:23, Bằng cái link khác.
+0:05:23 - 0:05:26, Rồi, ở đây chúng ta sẽ tải về.
+0:05:26 - 0:05:28, Rồi, ở đây chúng ta sẽ tải về.
+0:05:28 - 0:05:30, Rồi, ở đây chúng ta sẽ tải về.
+0:05:30 - 0:05:31, Bằng cái link khác.
+0:05:31 - 0:05:33, À, cái link này chính là cái link ban đầu hồi nãy.
+0:05:33 - 0:05:36, Rồi, chúng ta sẽ name là Elephant.
+0:05:40 - 0:05:42, Rồi, ở đây là...
+0:05:42 - 0:05:44, lấy tấm hình này đi.
+0:05:48 - 0:05:50, Rồi, chúng ta sẽ lấy cái đường dẫn trên.
+0:05:51 - 0:05:54, Và đưa cái link ảnh vào.
+0:05:56 - 0:05:58, Rồi, chúng ta đã tải được.
+0:05:58 - 0:06:01, Và chúng ta sẽ sửa lại là Elephant.
+0:06:08 - 0:06:11, Rồi, như vậy chúng ta đã có 3 cái công cụ này.
+0:06:15 - 0:06:17, Bây giờ, đối với cái phần văn bản,
+0:06:17 - 0:06:19, thì chúng ta sẽ có cái định dạng...
+0:06:19 - 0:06:21, chúng ta chuẩn bị trước cái định dạng đó là...
+0:06:21 - 0:06:23, tên của cái file của mình.
+0:06:23 - 0:06:25, Và cái câu mô tả...
+0:06:25 - 0:06:27, tương ứng với cái nội dung đó.
+0:06:27 - 0:06:28, Cái nội dung trong văn bản.
+0:06:28 - 0:06:31, Ví dụ như ở đây chúng ta có tên file là Chicken.
+0:06:35 - 0:06:38, Rồi, thì ở đây trong cái hình này Chicken.
+0:06:57 - 0:07:00, Rồi, chúng ta có thể xem trực tiếp cái hình...
+0:07:02 - 0:07:04, là cái...
+0:07:04 - 0:07:06, con gà ở trên...
+0:07:06 - 0:07:08, chiếc ghế.
+0:07:16 - 0:07:18, Tokenization.
+0:07:18 - 0:07:21, Rồi, sau đó thì chúng ta sẽ tạo ra thêm...
+0:07:21 - 0:07:23, 3 cái đối tượng còn lại.
+0:07:23 - 0:07:25, Ví dụ như ở đây là...
+0:07:25 - 0:07:27, thì chúng ta sẽ xem coi cái nội dung của nó là gì.
+0:07:29 - 0:07:31, The dog is on the grass.
+0:07:37 - 0:07:39, Và cuối cùng đó

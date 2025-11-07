@@ -1,0 +1,59 @@
+00:00:00 - 00:00:19, Chúng ta sẽ đến với mô hình hồi quy logistic hay còn gọi là mô hình hồi quy luận lý
+00:00:19 - 00:00:28, Nhánh đi của chúng ta là nằm trong nhánh tuyến tính và phân loại, nhưng cho bài toán phân loại nhị phân
+00:00:28 - 00:00:33, Tức là đầu ra của chúng ta sẽ có 2 phân lớp mà thôi
+00:00:33 - 00:00:39, Mô hình biểu diễn dưới dạng đồ thị của chúng ta sẽ là như sau
+00:00:39 - 00:00:46, Đầu vào của chúng ta sẽ bao gồm là 1 thành phần số 1 tượng trưng cho BIOS
+00:00:46 - 00:00:53, Tức là tất cả những đặc trưng nào chúng ta không biết, không kiểm soát được thì nó sẽ đưa nằm trong BIOS
+00:00:53 - 00:00:58, X1, X2, NXM đó là những input feature
+00:00:58 - 00:01:05, Tức là những đặc trưng đầu vào để phục vụ cho việc dự đoán giá trị đầu ra
+00:01:05 - 00:01:15, Và mô hình của mình thì công thức của chúng ta sẽ có dạng như sau, đó là Fθx là bằng sigmoid của theta x
+00:01:15 - 00:01:24, Thế thì trong mô hình hồi quy tuyến tính thì công thức của chúng ta đó là theta chuyển vị nhân vết
+00:01:24 - 00:01:31, Theta chuyển vị nhân vết thì miền giá trị của mình đó là từ trừ vô cùng cho đến cộng vô cùng
+00:01:31 - 00:01:38, Trong khi đó đối với bài toán phân loại dị phân thì đầu ra của chúng ta chỉ có 2 phân lớp thôi
+00:01:38 - 00:01:44, Do đó chúng ta có thể mã hóa đầu ra của mình là bằng 2 giá trị đó là 0 và 1
+00:01:44 - 00:01:53, Như vậy thì làm sao để mình có thể đưa một giá trị theta x từ miền giá trị trừ vô cùng cộng vô cùng
+00:01:53 - 00:01:58, Về khoảng từ 0 cho đến 1 thì chúng ta có cái hàm sigmoid
+00:01:59 - 00:02:03, Sơ đồ thị của hàm sigmoid sẽ có dạng như sau
+00:02:07 - 00:02:14, Thì giá trị nhỏ nhất của mình đó là bằng 0 và giá trị lớn nhất của mình đó là khi bằng 1
+00:02:14 - 00:02:20, Như vậy là nó đã ép miền giá trị của theta chuyển vị x từ trừ vô cùng cộng vô cùng
+00:02:20 - 00:02:23, Về cái đoạn là từ 0 đến 1 thông qua hàm sigmoid này
+00:02:24 - 00:02:31, Mà khác cái hàm sigmoid này thì nó cũng có một tính chất khá là thú vị đó là đạo hàm của nó tính cũng rất là dễ dàng
+00:02:31 - 00:02:41, Cụ thể là đạo hàm của sigmoid thì là bằng sigmoid z nhân với lại 1 trừ sigmoid
+00:02:44 - 00:02:48, Thì cái công thức này nó cũng tương đối là gọn gàng
+00:02:49 - 00:02:53, Và hàm này nó cũng có một tính chất nữa đó là nó sẽ khả vi và liên tục
+00:02:53 - 00:02:58, Do đó thì việc chọn nửa cái hàm này nó sẽ đạt được 2 mục đích
+00:02:58 - 00:03:04, Vừa đưa về cái miền giá trị từ 0 đến 1 là trùng với lại cái nhãn mà chúng ta muốn cái output cho cái đầu ra
+00:03:04 - 00:03:12, Của một cái mô hình là hồi quy tiến tính, mô hình phân loại nhị phân
+00:03:12 - 00:03:20, Và cái giá trị của cái hàm dự đoán của mình đó cũng là một cái hàm liên tục và có đạo hàm
+00:03:20 - 00:03:28, Sau khi chúng ta đã có được cái hàm dự đoán thì chúng ta sẽ tiến đến là thiết kế cái hàm lỗi
+00:03:28 - 00:03:37, Thì hàm lỗi của mình trong trường hợp này đó chính là hàm binary cross entropy là của sigmoid của theta x y
+00:03:37 - 00:03:48, Thì cái công thức của binary cross entropy nếu mà chúng ta xem cái thành phần sigmoid của theta x là y ngã
+00:03:48 - 00:04:05, Thế thì cái công thức của mình nó sẽ là bằng trừ của log i y ngã cộng cho 1 trừ i log của 1 trừ y ngã
+00:04:06 - 00:04:09, Và tất cả cái này thì đặt trong cái dấu mặt vuông
+00:04:09 - 00:04:14, Thế thì tại sao chúng ta lại có cái công thức này
+00:04:14 - 00:04:23, Thì cái công thức này nó sẽ giúp cho chúng ta khuất đại được cái sai số khi i và y ngã khác nhau
+00:04:23 - 00:04:29, Trong trường hợp mà i mà bằng y ngã ví dụ vậy thì cái sai số này nó là bằng 0
+00:04:29 - 00:04:32, Ví dụ i bằng y ngã mà bằng 1
+00:04:32 - 00:04:43, Thì khi chúng ta thế cái con số 1 này vào đây thì chúng ta thấy là cái binary cross entropy của 1 và 1 là bằng 0
+00:04:43 - 00:04:46, Tức là nếu dự đáng đúng thì chúng ta sẽ không bị phạt cái gì
+00:04:46 - 00:04:55, Nhưng ngược lại nếu chúng ta đáng sai lấy ví dụ như i của chúng ta là bằng 1 nhưng mà i ngã của chúng ta thì lại bằng 0
+00:04:55 - 00:05:06, Thì khi chúng ta thế vào cái công thức ở trên thì binary cross entropy của 1 y ngã trước là số 0
+00:05:06 - 00:05:14, Còn i phía sau là số 1 thì nó sẽ là bằng thế vào đây thì chúng ta có thể tính ra được là bằng cộng bổ cụn
+00:05:14 - 00:05:23, Thì cái việc mà cái giá trị của BCE, cái sai số khi chúng ta dự đáng sai nó rất là lớn thì nó sẽ khuyến khích cho mô hình học nhanh hơn
+00:05:25 - 00:05:33, Và cái lý do đằng sau đó là vì cái đạo hàm của mình, cái đội giốc của đạo hàm của mình nó lớn
+00:05:33 - 00:05:43, Thì dẫn đến là khi chúng ta cập nhật theta là bằng theta trừ cho alpha nhân cho đạo hàm của hàm loss theo theta
+00:05:43 - 00:05:48, Thì vì cái đội giốc của cái hàm BCE này nó lớn dẫn đến là cái giá trị này nó lớn
+00:05:48 - 00:05:56, Mà giá trị này lớn thì cái bước nhảy cập nhật của mình sẽ càng lớn hơn do đó nó sẽ cập nhật cái tham số chính xác hơn
+00:05:56 - 00:06:05, Như vậy tổng kết lại thì mô hình hồi quy logistic của chúng ta thì ở đây các trọng số của mô hình hồi quy logistic
+00:06:05 - 00:06:15, Ví dụ như ở đây chúng ta phân rã cái theta, cái vector theta này ra thì đó là bằng theta 0, theta 1, theta 2 và cho đến theta m
+00:06:15 - 00:06:27, Về mặt ý nghĩa các trọng số theta 0, theta 1 cho đến theta m ở đây nó chính là cái tham số của phương trình đường thẳng mà phân tách 2 tập này
+00:06:27 - 00:06:40, Cụ thể là phương trình đường thẳng nó sẽ có dạng là theta 0 cộng cho theta 1 x1 cộng cho theta 2 x2 là bằng 0
+00:06:41 - 00:06:48, Và trong trường hợp này thì chúng ta có 2 cái biến là x1 và x2 còn một cách tổng quát
+00:06:48 - 00:07:11, Thì cái ý nghĩa của cái tham số này đó sẽ là cái tham số của phương trình đường thẳng là theta 0 cộng theta 1 x1 cộng cho theta 2 x2 và cộng cho... cho đến theta m xm là bằng 0
+00:07:11 - 00:07:15, Thì đây là cái công thức phương trình đường thẳng tổng quát
+00:07:15 - 00:07:26, Thì những cái điểm màu xanh và những cái điểm màu cam khi chúng ta lấy cái tọa độ của nó chúng ta thế vào thì nó sẽ là cùng giống với nhau đối với những cái điểm mà cùng một phần lớp
+00:07:26 - 00:07:36, Ví dụ như tất cả những cái điểm màu xanh ở đây nếu chúng ta lấy cái giá trị tọa độ, cái đặc trưng thế vào thì nó sẽ cùng dương hết
+00:07:36 - 00:07:45, Ví dụ như đây là theta 0 cộng theta 1 x1 cộng cho theta 2 x2 thì đều cùng dương
+00:07:45 - 00:07:53, Thì nếu như những cái tọa độ này mà thế vào đây mà cùng dương thì những cái điểm màu cam khi chúng ta thế vào thì nó sẽ là cùng âm
+00:07:58 - 00:07:59, Đều vẻ không?
+00:07:59 - 00:08:06, Và thì đây chính là cái tính chất về mặt thay học giải tích của cái mô hình hội quy logistic

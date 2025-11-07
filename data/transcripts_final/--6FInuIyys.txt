@@ -1,0 +1,50 @@
+0:00:14 - 0:00:21, Như vậy thì trong phần số 2 này thì chúng ta đã cùng tìm hiểu về những chủ đề sau.
+0:00:21 - 0:00:28, Đầu tiên là chúng ta tìm hiểu về maximum likelihood cho cái log của PX.
+0:00:28 - 0:00:37, Chúng ta mong muốn có được một mô hình để tạo ra một cái ảnh x giống thật, giống với lại cái Pdata.
+0:00:37 - 0:00:45, Thế thì để đạt được cái việc này thì cái likelihood của log P này phải là lớn nhất.
+0:00:45 - 0:00:58, Và khi đưa cái log của PX này lên cực đại thì nó sẽ đưa đến một cái giải pháp, đó là chúng ta sẽ đẩy cái chặn dưới của log P.
+0:00:58 - 0:01:06, Thì đó chính là cái ELBO là evidence lower bound. Đẩy cái ELBO này lên, maximum ELBO này lên.
+0:01:06 - 0:01:16, Và khi chúng ta maximum ELBO này lên thì chúng ta sẽ có hai cái mô hình, đó là VAE và mô hình diffusion.
+0:01:16 - 0:01:23, Và đối với cái mô hình diffusion thì chúng ta sẽ có cái bước gọi là khuếch tán thuận.
+0:01:23 - 0:01:27, Và trong cái khuếch tán thuận này thì chúng ta sẽ thêm nhiễu vào cái ảnh của mình.
+0:01:27 - 0:01:35, Và ở đây là chúng ta không có tham số để học, không có tham số huấn luyện.
+0:01:35 - 0:01:47, Cái điều này nó giúp cho chúng ta đơn giản hóa cái việc huấn luyện của cái mô hình diffusion mà chỉ dành cái dư địa để huấn luyện cho cái phần denoising, phần khử nhiễu.
+0:01:47 - 0:01:51, Chúng ta chỉ học khử nhiễu và học bằng cả ba cách.
+0:01:51 - 0:02:00, Cách đầu tiên đó là chúng ta sẽ tối ưu để sao cho cái x mũ theta xấp xỉ với lại x0.
+0:02:00 - 0:02:09, Cách thứ hai đó là chúng ta tối ưu cái epsilon theta sao cho xấp xỉ với lại cái epsilon.
+0:02:09 - 0:02:26, Và cách số ba đó là chúng ta sẽ tối ưu để cho cái x mũ theta xấp xỉ với lại cái gradient của log p theta.
+0:02:26 - 0:02:29, Thì đây giống như là cái hướng để khử nhiễu của mình.
+0:02:29 - 0:02:31, Thì đây là ba cái cách.
+0:02:31 - 0:02:38, Và sau đó thì chúng ta đã tìm hiểu về cách để điều hướng với hai kỹ thuật đó là classifier guidance.
+0:02:38 - 0:02:50, Với mỗi một cái condition mới, thì một cái condition chúng ta sẽ ra một cái classifier.
+0:02:50 - 0:02:59, Như vậy thì nó sẽ không có linh động trong cái việc là update hoặc là thay cái condition.
+0:02:59 - 0:03:04, Chúng ta sẽ có kỹ thuật khác cải tiến đó chính là classifier free guidance.
+0:03:04 - 0:03:12, Tức là chúng ta sẽ bỏ luôn cái classifier này mà chúng ta chỉ đi fine-tune lại cái mô hình diffusion.
+0:03:12 - 0:03:22, Chỉ fine-tune lại diffusion, không có dùng thêm cái classifier nào để cho nó có thể là train được từ đầu, fine-tune từ đầu đến cuối.
+0:03:22 - 0:03:31, Sau đó chúng ta đã nói qua những cái vấn đề về độ phân giải khi chúng ta làm việc với latent, xin lỗi khi làm việc với diffusion.
+0:03:31 - 0:03:35, Và cái kỹ thuật mà cascade diffusion thì nó rất là cồng kềnh.
+0:03:35 - 0:03:43, Vì nó phải sử dụng đến hai ba cái mô hình nối tiếp nhau và độc lập nhau.
+0:03:43 - 0:03:47, Nó không có end to end, tức là kết nối từ đầu đến cuối.
+0:03:47 - 0:03:54, Do đó thì chúng ta có cái mô hình latent diffusion và mở ra một cái hướng nó gọi là end to end diffusion.
+0:03:55 - 0:04:06, Thì latent diffusion có thể nói là một trong những cái mô hình mà cho cái impact rất là lớn trong cộng đồng nghiên cứu.
+0:04:06 - 0:04:16, Là vì nó đã giúp cho chúng ta tính toán nhanh, rồi cái mô hình của mình đạt được cái độ phân giải rất là cao, chất lượng rất là tốt.
+0:04:16 - 0:04:21, Mặc dù là chúng ta chỉ tính trên cái không gian latent chứ không phải tính trên cái không gian ảnh gốc.
+0:04:21 - 0:04:25, Sau đó thì chúng ta quan tâm đến cái vấn đề về tốc độ tạo sinh.
+0:04:25 - 0:04:30, Thì thay vì chúng ta dùng một cái mô hình probabilistic là ddpm.
+0:04:30 - 0:04:34, Ddpm là cái mô hình mà chúng ta đã tìm hiểu trong phần lý thuyết.
+0:04:34 - 0:04:42, Thì chúng ta dùng một cái mô hình implicit model sampler để thay vì chúng ta từng bước là từ xt đến xt trừ 1.
+0:04:42 - 0:04:46, Hoặc từ xt trừ 1 về xt.
+0:04:46 - 0:04:50, Hoặc là tính từ xt trừ 1 rồi mới đến xt.
+0:04:50 - 0:04:59, Thì chúng ta có thể trực tiếp đi từ x0, từ xt trừ 1 về xt.
+0:04:59 - 0:05:03, Hoặc ngược lại là từ x0 đến trực tiếp xt.
+0:05:03 - 0:05:10, Thì cái việc này tạo ra một cái công thức mà không phụ thuộc vô một cái yếu tố ngẫu nhiên nào.
+0:05:10 - 0:05:16, Dẫn đến là mô hình bỏ qua được các cái bước ở giữa.
+0:05:16 - 0:05:21, Progressive distillation, tức là chúng ta tạo ra những cái mô hình student.
+0:05:21 - 0:05:27, Hoặc là guided distillation, tức là tạo ra những cái mô hình mà nó đi tắt.
+0:05:27 - 0:05:30, Thay vì chúng ta đi từng bước từng bước từng bước từng bước.
+0:05:30 - 0:05:34, Thì chúng ta sẽ đi tắt như thế này.
+0:05:34 - 0:05:38, Đi tắt đến đến mà không qua các cái bước trung gian.
+0:05:38 - 0:05:45, Và cái độ chính xác, cái chất lượng của hình ảnh vẫn rất là tốt, tương đương với những trạng thái ban đầu.
+0:05:45 - 0:05:52, Và tương tự như vậy cho cái mô hình consistency là có kết hợp với cả Latent Diffusion.
+0:05:56 - 0:06:07, Để mà cho cái chất lượng vừa tốt mà tốc độ vừa nhanh, thì trên đây đó là chúng ta đã tổng kết những cái gì đã học trong phần các mô hình tạo sinh học sâu.
+0:06:07 - 0:06:08, Tạm biệt.

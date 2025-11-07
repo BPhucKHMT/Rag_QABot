@@ -1,0 +1,118 @@
+0:00:14 - 0:00:25, Chúng ta sẽ cùng tìm hiểu về một số thách thức của thuật toán Gradient Descent khi chúng ta áp dụng vào trong thực tế huấn luyện các mô hình máy học.
+0:00:25 - 0:00:38, Nếu như trong những phần trước, chúng ta nhìn phác thảo hàm lỗi của mình hoặc là Log Landscape ở dưới dạng là một hàm đơn biến.
+0:00:41 - 0:00:45, Và hàm của mình cũng không có tính chất phức tạp.
+0:00:45 - 0:01:00, Với điểm khởi tạo màu đen, sau khi cập nhật và lặp, nó sẽ đến được điểm cực tiểu toàn cục.
+0:01:00 - 0:01:09, Tuy nhiên, điều này rất hiếm khi nào xảy ra trong thực tế mà thường nó gặp phải những thách thức rất phức tạp.
+0:01:09 - 0:01:24, Vì vậy, trong hình minh họa này, đây là một trực quan hóa cho hàm loss, hàm lỗi khi áp dụng trong thực tế, và thậm chí có thể còn phức tạp hơn.
+0:01:24 - 0:01:33, Vì vậy, giả sử như điểm khởi tạo của mình nằm ở đây, để mà đạt được điểm tối ưu toàn cục ở đây,
+0:01:33 - 0:01:41, thì trong quá trình di chuyển, nó sẽ phải đi qua rất nhiều những chướng ngại vật để mà có thể đến được điểm này.
+0:01:41 - 0:01:49, Thì những cái chướng ngại đó là gì và tại sao những cái điểm đó nó lại gây ra cái việc huấn luyện khó khăn,
+0:01:49 - 0:01:59, thì chúng ta sẽ cùng lấy một số ví dụ. Cái chướng ngại đầu tiên đó là những cái điểm cực tiểu cục bộ hay còn gọi là local minimum.
+0:01:59 - 0:02:08, Vì vậy, giả sử như chúng ta bắt đầu tại cái điểm ở đây, thì trong cái quá trình di chuyển, nếu như hoàn hảo,
+0:02:08 - 0:02:16, thì chúng ta sẽ đạt được cái điểm này, đó là cái điểm global minimum.
+0:02:19 - 0:02:26, Nhưng mà thực tế thì không phải vậy. Nó hoàn toàn có khả năng là trong quá trình di chuyển,
+0:02:26 - 0:02:30, nó có thể rớt vào một cái điểm ở cái điểm ở đây, tức là tương ứng ở đây.
+0:02:30 - 0:02:35, Vì đây chính là một cái điểm local minimum.
+0:02:40 - 0:02:46, Và khi chúng ta rớt vào cái điểm ở đây, thì nó sẽ bị bắt kẹt và nó sẽ không thoát ra được,
+0:02:46 - 0:02:49, để mà có thể đến được cái điểm tối ưu toàn cục.
+0:02:51 - 0:02:58, Cái tình huống thứ hai đó là cái điểm yên ngựa. Thì điểm yên ngựa là những cái điểm đặc biệt. Lấy ví dụ ở đây.
+0:02:58 - 0:03:08, Điểm yên ngựa thì nó sẽ có cái đạo hàm bằng không tại cái vị trí đó, và nó sẽ đạo hàm bằng không tại nhiều hướng.
+0:03:08 - 0:03:17, Ví dụ như là theo cái hướng này, chúng ta thấy là nó đi xuống rồi đi lên, thì tại cái vị trí này là đạo hàm bằng không.
+0:03:18 - 0:03:23, Mặt khác, theo cái hướng trực giao với nó là hướng này.
+0:03:23 - 0:03:27, Chúng ta sẽ vẽ bằng một cái đường màu khác, xanh lá đi.
+0:03:28 - 0:03:31, Màu này sẽ không có hiển thị nổi bật.
+0:03:32 - 0:03:42, Rồi, thì khi chúng ta đi theo cái hướng khác, lấy ví dụ như là hướng này,
+0:03:42 - 0:03:52, thì nó sẽ có cái đạo hàm bằng không theo cái hướng màu đen, cái cung màu đen.
+0:03:52 - 0:04:01, Như vậy thì điểm yên ngựa là những cái điểm mà nó sẽ có cái tính chất đó là nó sẽ có đạo hàm bằng không trên nhiều hướng.
+0:04:01 - 0:04:03, Cụ thể ở đây là hai hướng.
+0:04:04 - 0:04:08, Thì những cái điểm yên ngựa này nó sẽ gây ra cái hiện tượng gì?
+0:04:12 - 0:04:21, Nó sẽ gây ra cái hiện tượng đó là khi cái điểm của mình rớt đến cái điểm yên ngựa thì nó sẽ bị lừng chừng.
+0:04:21 - 0:04:23, Nó không biết là sẽ phải đi về hướng nào.
+0:04:25 - 0:04:31, Đó, ví dụ như rớt ở đây, rồi sau đó nó đi lên, sau đó lại rớt xuống.
+0:04:31 - 0:04:33, Nó không biết là phải đi hướng nào.
+0:04:33 - 0:04:36, Tại vì đạo hàm ở nhiều hướng là bằng không.
+0:04:36 - 0:04:44, Tại vì đạo hàm theo cái hướng bên đây cũng bằng không nên nó sẽ không có đi rớt xuống đây, không đi về hướng bên này.
+0:04:44 - 0:04:51, Còn nó cũng không thể đi lên được tại vì đạo hàm ở đây bằng không thì theo cái hướng này nó cũng không thể đi lên.
+0:04:51 - 0:04:56, Thì đó chính là cái tình trạng mắc kẹt tại cái điểm Saddle Point.
+0:04:58 - 0:05:05, Và cái tình huống thứ ba, đó là cái tình huống mà ở những cái điểm thung lũng hay còn gọi là valley.
+0:05:05 - 0:05:09, Ở đây chúng ta thấy là nó sẽ có một cái thung lũng là cái rãnh.
+0:05:12 - 0:05:13, Nó là một cái rãnh.
+0:05:13 - 0:05:17, Tức là ở hai bên là nó sẽ là dốc cao.
+0:05:17 - 0:05:20, Còn ở giữa nó sẽ có một cái lõm cái rãnh ở đây.
+0:05:20 - 0:05:25, Thì đối với những cái điểm ở cái rãnh thì nó cũng tương tự như Saddle Point.
+0:05:25 - 0:05:31, Nhưng mà nó khác ở chỗ đó là thay vì một cái đường đi trực tiếp.
+0:05:32 - 0:05:36, Đi theo cái rãnh này để đi xuống thì nó sẽ đi zigzag.
+0:05:36 - 0:05:44, Thì chút nữa chúng ta sẽ cùng giải thích xem tại sao cái điểm thung lũng, tại sao tại cái vùng thung lũng
+0:05:44 - 0:05:47, thì nó khiến cho cái mô hình của mình nó đi zigzag.
+0:05:47 - 0:05:54, Và nó sẽ hội tụ chậm hơn so với lại những cái điểm vị trí khác.
+0:05:54 - 0:06:01, Thì chúng ta sẽ nhắc lại đến cái thuật toán đó là Batch Gradient Descent.
+0:06:01 - 0:06:06, Thì ưu điểm của nó đó là nó sẽ tính toán hiệu quả.
+0:06:06 - 0:06:10, Tức là tại một lần tính toán thì nó sẽ tính trên full toàn bộ dữ liệu của mình.
+0:06:10 - 0:06:13, Nó sẽ xử lý hết dữ liệu cùng một lúc.
+0:06:13 - 0:06:17, Và cái vector gradient của nó thì rất là ổn định.
+0:06:17 - 0:06:20, Dẫn đến là cái đường hội tụ của mình cũng sẽ là ổn định.
+0:06:20 - 0:06:25, Là vì nó được tính trên toàn bộ tập dữ liệu của mình.
+0:06:25 - 0:06:28, Khuyết điểm của nó đó là nó sẽ chậm.
+0:06:28 - 0:06:31, Lý do đó là vì tính toán trên nhiều dữ liệu.
+0:06:31 - 0:06:36, Thì tính trên một dữ liệu thì lúc nào nó cũng sẽ nhanh hơn tính trên full toàn bộ dữ liệu.
+0:06:36 - 0:06:39, Và đồng thời là nó sẽ tốn bộ nhớ.
+0:06:39 - 0:06:42, Tại vì nó phải nhớ hết các cái dữ liệu.
+0:06:42 - 0:06:47, Và nó có thể mắc kẹt ở những cái điểm cực tiểu cục bộ.
+0:06:47 - 0:06:53, Thì cái nguyên nhân đó là vì nó thiếu những cái bước nhảy vọt để thoát ra.
+0:06:53 - 0:07:01, Thì chút nữa chúng ta sẽ cùng phân tích là cái thiếu bước nhảy vọt này nó thể hiện như thế nào.
+0:07:05 - 0:07:14, Trong stochastic gradient descent thì nó có những cái ưu điểm vượt trội so với lại cái thuật toán Batch gradient descent.
+0:07:14 - 0:07:20, Tuy nhiên là cái điểm yếu của nó vẫn là nó phải tính toán nhiều lần.
+0:07:20 - 0:07:23, Nhưng mà bù lại thì nó sẽ là tính nhanh.
+0:07:23 - 0:07:30, Tại vì tại một thời điểm thì nó chỉ tính có trên một mẫu dữ liệu thôi.
+0:07:30 - 0:07:33, Thì tính toán trên một mẫu dữ liệu nó sẽ nhanh hơn.
+0:07:33 - 0:07:39, Nhưng mà nó sẽ chậm là ở yếu tố đó là nó sẽ chậm hội tụ hơn.
+0:07:39 - 0:07:41, Nó sẽ chậm hội tụ hơn.
+0:07:41 - 0:07:48, Cho cái vector gradient thì tại một thời điểm là nó sẽ tối ưu cho một mẫu dữ liệu ngẫu nhiên.
+0:07:48 - 0:07:53, Còn Batch gradient descent thì nó lại tối ưu cho toàn bộ dữ liệu.
+0:07:53 - 0:07:56, Nên nó sẽ hội tụ nhanh hơn và trơn tru hơn.
+0:07:56 - 0:08:14, Nhưng tuy nhiên mặc dù là nó hội tụ chậm nhưng mà bù lại là nó sẽ ưu tiên hội tụ về những điểm cực tiểu tốt hay gọi là generalization minimum do yếu tố ngẫu nhiên.
+0:08:14 - 0:08:16, Tại sao lại như vậy?
+0:08:16 - 0:08:24, Thì chúng ta tham khảo một cái bài báo về On-Large Batch Training for Deep Learning.
+0:08:24 - 0:08:31, Ở đây sẽ xuất hiện hai khái niệm đó là flat minimum và sharp minimum.
+0:08:31 - 0:08:36, Flat minimum là chúng ta thấy là đây là một điểm cực tiểu.
+0:08:36 - 0:08:43, Tuy nhiên nó sẽ rộng. Cái khu vực này chúng ta thấy là nó sẽ rất rộng.
+0:08:43 - 0:08:57, Thì nó gọi là flat. Còn sharp minimum tức là nhọn thì vì nó nhọn nên cái khoảng cách từ bên trái sang bên phải này chúng ta thấy nó rất là hẹp.
+0:08:57 - 0:09:03, Thì hai cái flat minimum và sharp minimum thì nó sẽ có cái tính chất gì?
+0:09:03 - 0:09:11, Ở đây chúng ta thấy là cái đường màu đen liên tục nó chính là cái đại diện cho cái hàm loss của tập dữ liệu training.
+0:09:11 - 0:09:16, Còn đối với tập dữ liệu test thì chắc chắn nó sẽ có một cái hiện tượng gọi là data shift.
+0:09:16 - 0:09:23, Thì nó shift từ tập training sang tập test.
+0:09:23 - 0:09:43, Tuy nhiên cái việc shift này thì chúng ta sẽ thấy rằng là đối với flat minimum thì chúng ta thấy rằng sai số của nó sẽ là thấp khi mà shift từ tập training sang tập test.
+0:09:43 - 0:09:53, Còn đối với cái tập mà đối với cái khu vực mà sharp minimum thì chúng ta thấy là chỉ cần dịch chuyển một ít thôi.
+0:09:53 - 0:09:59, Chỉ cần dịch chuyển một ít thôi thì cái sai số của mình rất là lớn.
+0:09:59 - 0:10:07, Còn ở đây khi chúng ta dịch chuyển một ít thì cái sai số của mình ví dụ dịch qua trái một ít đúng không?
+0:10:07 - 0:10:18, Hoặc là dịch qua phải một ít thì chúng ta thấy rằng là gần như cái độ cao này, sự sai lệch về giá trị độ lỗi này là rất là thấp.
+0:10:18 - 0:10:26, Trong khi đó ở đây chúng ta chỉ cần dịch chuyển một ít thì cái sai số của mình rất là cao.
+0:10:26 - 0:10:36, Vì vậy các mô hình máy học sẽ tìm cách là tiến đến những cái điểm flat minimum.
+0:10:36 - 0:10:47, Và nhờ có cái yếu tố ngẫu nhiên của các mẫu dữ liệu huấn luyện, khi chúng ta huấn luyện thì chúng ta sẽ random chọn ra các điểm dữ liệu.
+0:10:47 - 0:10:58, Chắc chắn trong đó nó sẽ có một cái đại lượng nhiễu thì nhờ cái nhiễu này nó sẽ giúp chúng ta nhảy ra và thoát ra khỏi local, cái sharp minimum.
+0:10:58 - 0:11:08, Ví dụ ban đầu chúng ta rớt vào đây, chúng ta rớt nơi đây, rồi.
+0:11:09 - 0:11:19, Thì chỉ cần một cái bước nhảy nhỏ thôi, chỉ cần một cái sai số nhỏ thôi, thì nó có thể thoát ra khỏi bên đây, tức là nó sẽ nhảy qua cái khu bên đây.
+0:11:22 - 0:11:28, Nhờ cái sai số đó chúng ta có thể thoát vào đây, hoặc chúng ta có thể thoát vào bên đây.
+0:11:28 - 0:11:37, Ví dụ như ở đây chúng ta lại có một cái hàm tối ưu ngoài, nó sẽ, vì nó là sharp minimum, thì khi chúng ta nhảy qua đây,
+0:11:44 - 0:11:56, thì chiếu lên trên cái hàm loss, nó sẽ giúp cho chúng ta thoát ra khỏi được cái điểm sharp minimum này, và sau đó lại tiếp tục trượt xuống dưới.
+0:11:56 - 0:12:08, Và tóm lại, đó là stochastic gradient descent, nó sẽ khuyến khích cái tham số của mình, nó sẽ tiến về những cái khu vực flat minimum.
+0:12:08 - 0:12:16, Và với những cái khu vực mà flat minimum, thì cái mô hình của mình nó sẽ có cái tính tổng quát cao hơn.
+0:12:16 - 0:12:33, Tại sao nó tổng quát cao hơn? Tại vì chỉ cần có một cái sự dịch chuyển nhẹ của cái tham số, thì cái loss của mình nó cũng không thay đổi đáng kể.
+0:12:33 - 0:12:43, Các bạn thấy là dịch chuyển qua đây, hoặc là chúng ta dịch chuyển qua đây, thì cái cao độ của cái loss của mình trên cái tập test là rất là thấp, không đáng kể.
+0:12:43 - 0:12:55, Ý đó là cái mô hình của mình, khi chúng ta huấn luyện trên cái tập trend và sau đó test, thì cái sai số nếu có nó sẽ không có chênh lệch nhiều.
+0:12:57 - 0:13:05, Tức là nó không có bị overfitting, nếu trên tập trend độ chính xác tốt, thì tập test độ chính xác cũng tốt.
+0:13:05 - 0:13:21, Nhưng đối với những cái sharp minimum, thì cái sai lệch này nó sẽ khiến cho cái độ chính xác trên cái tập test sẽ rất là đáng kể.
+0:13:21 - 0:13:34, Ví dụ chúng ta thấy là tại cái điểm local minimum của tập trend, khi chúng ta ánh xạ lên trên tập test, thì chúng ta thấy là cái độ cao này rất là cao.
+0:13:35 - 0:13:53, Trong khi đó, chúng ta sẽ nhắc lại. Trong khi đó, với cái điểm local minimum của tập trend khi chúng ta chiếu lên tập test, thì cái sai số này, cái độ cao này, độ chênh lệch này rất là thấp.
+0:13:54 - 0:14:00, Vì nó thấp, nên nó độ chính xác cho tập test sẽ là cao.
+0:14:00 - 0:14:11, Còn cái hàm độ lỗi của tập test, trong trường hợp là sharp minimum là cao, tức là cái độ chính xác của nó giảm đột ngột, giảm đáng kể so với tập trend.
+0:14:14 - 0:14:25, Và một cái thách thức đối với thuật toán stochastic gradient descent chính là khi nó rớt vào những cái vùng nó gọi là valley, tức là những cái vùng thung lũng,
+0:14:25 - 0:14:37, thì khi mà nó từ cái điểm trên cao rớt xuống thì thay vì là nó sẽ đi dọc theo cái thung lũng một cách nhanh chóng thì đằng này nó cứ dập qua dập lại.
+0:14:38 - 0:14:41, Nó dập qua dập lại dẫn đến cái việc mà cập nhật này rất là chậm.
+0:14:41 - 0:14:53, Thì ở đây đó chính là cái hiện tượng có cái độ dốc bất thường. Ở đây chúng ta thấy là có cái độ dốc đi xuống nè, nhưng ngay lập tức nó lại đi lên.
+0:14:54 - 0:14:57, Ngay lập tức nó lại đi lên thì đó chính là cái sự bất thường.
+0:14:59 - 0:15:06, Thì những cái, đây chính là những cái vùng mà có cái sự thay đổi lớn về độ dốc theo các cái chiều, theo các cái chiều.
+0:15:07 - 0:15:15, Và tham số của mình thì nó sẽ liên tục nhảy qua, và nó sẽ liên tục nhảy qua, rồi lại nhảy lại, nhảy qua, rồi lại nhảy lại.
+0:15:16 - 0:15:20, Khiến cho cái việc mà tiến đến cái việc, tiến đến cái điểm cực tiểu là chậm.
+0:15:21 - 0:15:31, Còn nếu như chúng ta đi theo một cách gọi là hoàn hảo thì chúng ta sẽ đi dọc theo cái rãnh này để tiếp tục đi, tìm đến cái điểm local minimum.
+0:15:36 - 0:15:46, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

@@ -1,0 +1,187 @@
+0:00:14 - 0:00:18, Chúng ta sẽ cùng đến với bài tutorial bài thực hành về mạng GAN.
+0:00:18 - 0:00:22, Trên hình là một số thành tựu của GAN trong vài năm gần đây.
+0:00:22 - 0:00:31, Nếu như năm 2014, chất lượng hình ảnh của mình rất tệ và không màu,
+0:00:31 - 0:00:35, sau 1 năm sau đó hình ảnh của mình đã có màu.
+0:00:35 - 0:00:42, Và đến năm 2018, hình ảnh của mình đã có độ phân giải rất cao và gần như là thật.
+0:00:43 - 0:00:53, Với công nghệ Insight Cogam, nó cũng có thể cho phép chúng ta chuyển đổi qua lại giữa 2 cái thế giới ảnh, 2 cái không gian ảnh khác nhau.
+0:00:53 - 0:00:57, Ví dụ như chuyển từ phong cách ảnh Monet sang ảnh đời thực,
+0:00:57 - 0:01:04, hoặc là chuyển từ ảnh ngựa vằn sang ngựa bình thường, cũng như là chuyển từ ngựa bình thường sang ngựa vằn.
+0:01:04 - 0:01:09, Hoặc là biến ảnh từ mùa hè sang mùa đông.
+0:01:09 - 0:01:12, Trên đây là 1 số thành tựu của mạng GAN.
+0:01:12 - 0:01:20, Về kiến trúc, tổng thể của GAN sẽ bao gồm 2 mô-đun chính, đó là Generator và Discriminator.
+0:01:20 - 0:01:27, Generator sẽ nhận đầu vào 1 vector latent z và tạo ra 1 fake sample.
+0:01:27 - 0:01:34, Kết hợp với real sample ở đây, chúng ta sẽ qua Discriminator để huấn luyện
+0:01:34 - 0:01:38, nhằm làm sao có thể phân biệt được ảnh real, ảnh thật và ảnh giả.
+0:01:40 - 0:01:44, Và sau đó thì chúng ta sẽ có một loss để huấn luyện 2 cái mạng này.
+0:01:45 - 0:01:47, Thế thì chi tiết chúng ta có thể đọc thêm ở đây.
+0:01:48 - 0:01:58, Và cài đặt thì chúng ta sẽ khởi tạo 1 số cái hàm và đối tượng của torch phục vụ cho những cái phần cài đặt phía sau.
+0:01:59 - 0:02:03, Về chi tiết của cái kiến trúc mạng GAN thì nó sẽ có kiến trúc như sau.
+0:02:04 - 0:02:09, Đầu tiên đó là cái vector z, là cái random noise của mình sẽ là 1 vector 100 chiều
+0:02:09 - 0:02:11, theo cái phân bố Gaussian.
+0:02:12 - 0:02:18, Và nó sẽ biến thành cái vector 128 chiều rồi 784 chiều.
+0:02:18 - 0:02:28, Thì 784 chiều này chính là cái kích thước mà khi chúng ta flatten từ 1 cái tấm ảnh hoặc là kích thước 28 x 28.
+0:02:28 - 0:02:37, Về discriminator thì chúng ta sẽ từ vector 784 xuống vector 128 và xuống vector 1 chiều.
+0:02:37 - 0:02:39, Hay là scalar.
+0:02:39 - 0:02:40, Tại sao lại như vậy?
+0:02:40 - 0:02:44, Tại vì ở đây discriminator chỉ phân biệt 2 trạng thái là real or fake.
+0:02:44 - 0:02:50, Do đó chúng ta chỉ cần 1 neuron là có thể đưa về 2 trạng thái là 0 và 1 là được rồi.
+0:02:50 - 0:02:55, Thế thì bây giờ chúng ta sẽ tiến hành cài đặt cái discriminator.
+0:02:56 - 0:02:58, Thì cái discriminator là cái phần màu xanh ở đây.
+0:02:58 - 0:03:02, Đầu vào sẽ là 1 cái ảnh có kích thước là 784.
+0:03:06 - 0:03:10, Và nó sẽ biến thành vector 128 chiều thông qua cái lớp linear.
+0:03:11 - 0:03:14, Sau đó thì chúng ta sẽ có 1 cái hàm activation function.
+0:03:14 - 0:03:16, Nó như đây là Leaky ReLU.
+0:03:18 - 0:03:21, Tạo ra 1 cái vector 128 chiều.
+0:03:21 - 0:03:25, Rồi vector 128 chiều sẽ biến thành 1 cái neuron 1 chiều.
+0:03:26 - 0:03:30, Thông qua cái lớp biến đổi linear luôn.
+0:03:30 - 0:03:35, Thế thì cái hàm forward của mình nhận đầu vào là x là 1 cái tấm ảnh.
+00:03:35 - 0:03:43, Thì nó sẽ chuyển đổi về cái vector là 784.
+0:03:43 - 0:03:46, Thành vector 784.
+0:03:46 - 0:03:49, Và BS ở đây chính là cái batch size của mình.
+0:03:49 - 0:03:51, Đây chính là cái batch size của mình.
+0:03:51 - 0:03:54, Là số mẫu dữ liệu được huấn luyện tại 1 thời điểm.
+0:03:54 - 0:04:01, Sau đó chúng ta chuyển x vào cái lớp FC1 và non-linearity để tạo ra h.
+0:04:01 - 0:04:05, Thì h trong trường hợp này là vector 128 chiều.
+0:04:05 - 0:04:09, H sau đó được nối tiếp và qua cái FC để tạo ra cái output.
+0:04:09 - 0:04:16, Cái output này sau đó sẽ được qua cái hàm sigmoid để đưa về cái không gian xác suất từ 0 cho đến 1.
+0:04:16 - 0:04:18, Sau đó chúng ta sẽ return cái output.
+0:04:18 - 0:04:23, Thì cái output của mình nó sẽ là cái xác suất để cho biết có thuộc về lớp số 1 hay không.
+0:04:24 - 0:04:30, Đối với generator thì chúng ta làm hoàn toàn cũng tương tự.
+0:04:30 - 0:04:33, Chúng ta sẽ có cái lớp FC để từ cái zdim.
+0:04:33 - 0:04:36, Cụ thể ở đây zdim là bằng 100.
+0:04:36 - 0:04:40, Biến thành vector 128.
+0:04:40 - 0:04:43, Vector 128 sau đó sẽ qua cái Leaky ReLU.
+0:04:43 - 0:04:47, Rồi sau đó sẽ là biến thành vector 784.
+0:04:47 - 0:04:50, Thì đây là cái hàm forward.
+0:04:50 - 0:04:53, Từ cái input của mình là cái latent z.
+0:04:53 - 0:04:56, Sau đó sẽ qua cái FC và non-linearity.
+00:04:56 - 0:05:00, Rồi sau đó qua cái FC2 và hàm tanh.
+0:05:00 - 0:05:04, Thì hàm tanh ở đây là dải giá trị từ trừ 1 cho đến 1.
+0:05:04 - 0:05:07, Nó có chứa cái giá trị từ 0 cho đến 1.
+0:05:07 - 0:05:13, Tức là cái miền giá trị của cái ảnh của mình.
+0:05:13 - 0:05:17, Không có nghĩa là đen và 1 không có nghĩa là sáng.
+0:05:18 - 0:05:24, Rồi sau đó chúng ta sẽ biến thành cái ảnh kích thước 28x28 và trả về.
+0:05:24 - 0:05:28, Thì chúng ta sẽ chạy 2 cái code block này.
+0:05:28 - 0:05:34, Rồi sau khi chạy xong thì chúng ta sẽ tiến hành load dữ liệu MNIST.
+0:05:34 - 0:05:37, Và chúng ta sẽ show 1 cái tấm hình.
+0:05:37 - 0:05:42, Ví dụ như chúng ta show cái hình là 1, 4, 5.
+0:05:42 - 0:05:44, Thì đây là 1 chiếc giày.
+0:05:44 - 0:05:46, Ví dụ như là 1, 2, 3.
+0:05:46 - 0:05:48, Đây là chiếc áo.
+0:05:50 - 0:05:54, Rồi tiếp theo thì chúng ta sẽ kiểm tra xem cái batch size của mình.
+0:05:54 - 0:05:58, À cái discriminator của mình là có ổn hay không.
+0:05:58 - 0:06:02, Chúng ta sẽ truyền vào cái batch và xem cái kích thước.
+0:06:02 - 0:06:06, Thì cái batch size của mình nó sẽ có kích thước đó là 64.
+0:06:06 - 0:06:10, Và ảnh của mình đó là 28x28.
+0:06:10 - 0:06:16, Rồi sau khi chúng ta qua cái discriminator thì nó sẽ tạo ra 1 cái tensor có kích thước là 64.
+0:06:16 - 0:06:18, Trong đó 64 chính là batch size.
+0:06:18 - 0:06:22, Và 1 chính là cái kích thước ảnh của mình.
+0:06:22 - 0:06:24, Rồi, xin lỗi ảnh.
+0:06:24 - 0:06:28, 1 chính là cái output, cái xác suất của mình.
+0:06:28 - 0:06:32, Rồi sau đó chúng ta sẽ show cái tấm ảnh này lên.
+0:06:32 - 0:06:34, Thì đây là cái dataset.
+0:06:34 - 0:06:40, Và những cái ảnh mà có cái vật phẩm thời trang.
+0:06:40 - 0:06:46, Ví dụ như là giày, quần, áo, quần.
+0:06:46 - 0:06:50, Thế thì bây giờ chúng ta sẽ tiến hành huấn luyện 1 cái mạng GAN.
+0:06:50 - 0:06:54, Thì mạng GAN của mình, lý thuyết đó chính là bài toán Mini-Max Game.
+0:06:54 - 0:07:00, Thì đây là cái công thức của cái hàm biến đổi để huấn luyện.
+0:07:00 - 0:07:04, Đầu tiên cái vế bên trong cùng đó là hàm max.
+0:07:04 - 0:07:06, Tức là chúng ta sẽ đi huấn luyện D trước.
+0:07:06 - 0:07:08, Tức là Discriminator trước.
+0:07:08 - 0:07:12, Discriminator nó phải có khả năng phân biệt đối tượng 1 cách chắc chắn.
+0:07:12 - 0:07:18, Thì khi đó nó mới có thể thách thức cái G.
+0:07:18 - 0:07:20, Sao cho nó khó được.
+0:07:20 - 0:07:24, Do đó thì ở đây chúng ta sẽ sử dụng, ở đây nhìn chung.
+0:07:24 - 0:07:29, Nhìn chung đó là chúng ta công thức tương tự như công thức của Binary Cross entropy.
+0:07:29 - 0:07:34, Là so sánh giữa cái giá trị dự đoán và giá trị thực tế.
+0:07:34 - 0:07:41, Thì chúng ta sẽ sử dụng cái hàm Criterion này để huấn luyện cái mô hình ở bên dưới.
+0:07:41 - 0:07:45, Rồi, bây giờ chúng ta sẽ kiểm tra xem cái thiết bị của mình ở đây.
+0:07:45 - 0:07:46, Đó là thiết bị gì?
+0:07:46 - 0:07:48, Thì đây là GPU.
+0:07:48 - 0:07:55, Và mỗi chúng ta sẽ tạo ra đối tượng đó là Discriminator và Generator.
+0:07:55 - 0:07:57, Và đẩy nó vào GPU.
+0:07:57 - 0:08:05, Rồi, với mỗi một cái optimizer G và D, chúng ta sẽ đi train cho G và D ở đây.
+0:08:05 - 0:08:13, Tức là mỗi một cái mô-đun Discriminator và Generator sẽ dùng một cái optimizer riêng, chứ không phải dùng chung.
+0:08:13 - 0:08:17, Và dữ liệu label real và label fake.
+0:08:17 - 0:08:22, Label real thì sẽ có nhãn là 1 và label fake thì sẽ có nhãn là 0.
+0:08:22 - 0:08:27, Sau đó thì chúng ta sẽ fix cái noise của mình.
+0:08:27 - 0:08:34, Là cái random noise là từ... là 64 và kích thước đó là 100.
+0:08:34 - 0:08:36, Epoch là 10.
+0:08:36 - 0:08:39, Thì ở đây chúng ta sẽ lần lượt huấn luyện.
+0:08:39 - 0:08:43, Step số 1 là chúng ta sẽ đi tối ưu Discriminator trước.
+0:08:43 - 0:08:49, Tức là huấn luyện cho bộ phân loại này có khả năng phân loại được ảnh thật và ảnh giả trước.
+0:08:49 - 0:08:55, Sau đó chúng ta mới sang Step số 2 để đi huấn luyện cho Generator.
+0:08:55 - 0:09:01, Rồi, thì ở đây chúng ta sẽ lấy ra cái Xreel và truyền vào GPU.
+0:09:01 - 0:09:06, Rồi sau đó chúng ta sẽ khởi tạo cái optimizer D.
+0:09:06 - 0:09:10, Và chúng ta sẽ truyền cái Xreel này vào cái Discriminator.
+0:09:10 - 0:09:12, Thì đây chính là cái xác suất.
+0:09:12 - 0:09:15, Đây chính là cái xác suất thuộc về lớp Reel.
+0:09:15 - 0:09:23, Và lossD của Reel tức là cái giá trị loss cho cái Discriminator.
+0:09:23 - 0:09:34, Đối với cái phần dữ liệu Reel là dữ liệu thật thì chúng ta sẽ truyền vào cái giá trị dự đoán và cái nhãn của mình là label Reel.
+0:09:34 - 0:09:38, Thì mục tiêu là làm sao cho cái giá trị này là nhỏ nhất.
+0:09:41 - 0:09:48, Mặt khác thì chúng ta sẽ truyền cái dữ liệu giả vào.
+0:09:48 - 0:09:50, Và dữ liệu giả này từ đâu ra?
+0:09:50 - 0:09:57, Nó là từ 1 random noise, batch size là 64 và vector random noise này có kích thước là 100 chiều.
+0:09:57 - 0:10:02, Rồi sau đó chúng ta sẽ gọi cái hàm G để tạo ra cái X_fake.
+0:10:02 - 0:10:07, Vì cái X_fake của mình trong trường hợp này đó chính là cái...
+0:10:07 - 0:10:10, X_fake của mình đó chính là cái ảnh fake.
+0:10:10 - 0:10:16, Rồi, bây giờ chúng ta sẽ truyền cái X_fake này vào Discriminator.
+0:10:16 - 0:10:22, Thì cái DGZ này chính là cái xác suất thuộc về cái lớp Reel.
+0:10:22 - 0:10:26, Và khi tính hàm loss thì chúng ta sẽ...
+0:10:26 - 0:10:35, Cái hàm loss cho Fake thì chúng ta sẽ truyền vào DGZ và truyền vào cái label Fake.
+0:10:37 - 0:10:39, Thì cái nhãn của mình sẽ là nhãn Fake.
+0:10:39 - 0:10:45, Và mục tiêu của mình sẽ là làm sao cho cái loss này là nhỏ nhất.
+0:10:45 - 0:10:50, Kết hợp với cái loss ở trên, chúng ta sẽ có cái loss tổng là D.
+0:10:50 - 0:10:55, Thế thì câu hỏi là tại sao ở trong cái công thức này thì người ta lại đi tìm Max.
+0:10:55 - 0:10:59, Mà phía dưới thì chúng ta lại đi tìm Min.
+0:10:59 - 0:11:02, Tại vì chúng ta dùng cái hàm loss Binary Cross entropy.
+0:11:02 - 0:11:08, Thì bản chất ở đây là một, khi chúng ta tìm Max cái công thức loss này...
+0:11:08 - 0:11:16, Thì nó tương đương với cái việc là Cross entropy của hai cái thành phần Reel và Fake bên dưới là thấp nhất.
+0:11:16 - 0:11:26, Khi cái thằng này, loss D này càng tiến về 1, xác suất 1 thì cái loss này sẽ càng tiến về 0.
+0:11:26 - 0:11:35, Và ngược lại, cái thành phần này cũng vậy. Tiến về 0 thì 1 trừ cho 0 sẽ là bằng 1.
+0:11:35 - 0:11:37, Tức là cái loss này cũng bằng 0.
+0:11:37 - 0:11:43, Thì thay vì tìm Max ở cái trạng thái như thế này để mà nó đạt được là bằng 0.
+0:11:43 - 0:11:47, Vì vậy chúng ta sẽ tìm Min với Binary Cross entropy.
+0:11:47 - 0:11:51, Tức là chúng ta đi tìm cái ngược lại của nó.
+0:11:51 - 0:11:55, Do đó cái công thức này nó là hoàn toàn tương đương.
+0:11:55 - 0:12:00, Và chúng ta sẽ chạy thuật toán Backpropagation và cập nhật lại cái tham số cho D.
+0:12:00 - 0:12:08, Sau đó chúng ta sẽ sang bước số 2 là khởi tạo optimizer cho G, generator.
+0:12:08 - 0:12:13, Bước đầu tiên đó là chúng ta sẽ tạo ra cái dữ liệu từ noise.
+0:12:13 - 0:12:18, Thì chúng ta sẽ bắt chước cái code ở trên.
+0:12:18 - 0:12:21, Chúng ta sẽ bắt chước cái code ở trên.
+0:12:21 - 0:12:29, Rồi, thì ở đây chúng ta sẽ có là xgen là bằng G của noise.
+0:12:29 - 0:12:32, Rồi, chấm detach.
+0:12:39 - 0:12:42, Ở đây thì chúng ta chưa có detach.
+0:12:44 - 0:12:53, Rồi, sau đó thì chúng ta sẽ tạo ra cái kết quả dự đoán dựa trên dữ liệu.
+0:12:53 - 0:13:10, Thì ở đây chúng ta sẽ gọi cái hàm đó là D của xgen và nó chính là D của G của noise.
+0:13:10 - 0:13:13, Đấy, giống như cái công thức ở đây.
+0:13:13 - 0:13:15, Sau đó chúng ta sẽ truyền vào.
+0:13:15 - 0:13:18, Thế thì cái sự khác biệt ở đây là gì?
+0:13:18 - 0:13:23, Nếu như ở trên là chúng ta tìm cách phân biệt đúng và sai.
+0:13:23 - 0:13:28, Thì ở phía dưới cũng là binary cross entropy nhưng mà chúng ta sẽ phải đảo ngược lại cái nhãn.
+0:13:28 - 0:13:35, Ở đây là dữ liệu fake nhưng mà chúng ta muốn ép cái mô hình G.
+0:13:35 - 0:13:43, Ép cái mô hình G tạo ra cái dữ liệu giống thật nên chúng ta sẽ cho cái nhãn của mình là nhãn thật.
+0:13:43 - 0:13:48, Đây chính là cái sự khác biệt.
+0:13:48 - 0:13:54, Và ngoài ra thì trong cái công thức ở trên chúng ta thấy là có cái thành phần log của D.
+0:13:54 - 0:14:00, Nhưng mà khi chúng ta tối ưu G thì D ở đây nó là hằng số.
+0:14:00 - 0:14:05, Nó không phải là một cái hàm cố định nên nó sẽ không tham gia vào cái quá trình huấn luyện G.
+0:14:05 - 0:14:07, Do đó chúng ta có thể bỏ đi cái thành phần này.
+0:14:08 - 0:14:19, Rồi, do đó loss G nó chỉ có thành phần là dGz tức là cái loss cho cái dữ liệu của mình, dữ liệu fake của mình.
+0:14:19 - 0:14:24, Rồi sau đó chúng ta sẽ gọi hàm backpropagation và chúng ta train.
+0:14:24 - 0:14:30, Thì cái quá trình train này nó có thể tốn của chúng ta khoảng 5-10 phút.
+0:14:30 - 0:14:35, Tùy vào cái sức mạnh tính toán của cái máy của mình.
+0:14:36 - 0:14:44, Rồi thì sau khi đã huấn luyện xong đầy đủ với 10 epoch thì nó sẽ ra được cái ảnh như thế này.
+0:14:44 - 0:14:57, Thì chúng ta thấy là cái ảnh mà khi chúng ta tái tạo lại thì chúng ta thấy cái bóng dáng của áo, của quần, của giày, v.v.
+0:14:57 - 0:15:06, Thì bây giờ để trực quan chúng ta sẽ show cái quá trình mà huấn luyện từ đầu cho đến lúc mà chúng ta dừng cái quá trình huấn luyện.
+0:15:06 - 0:15:17, Thì ở những cái vòng lặp đầu tiên chúng ta thấy là nó sẽ ra cái random noise, giống như thế này.
+0:15:17 - 0:15:19, Nó sẽ ra cái random noise.
+0:15:19 - 0:15:25, Sau đó thì sang vòng lặp tiếp theo thì nó đã ra có hình thù hơn.
+0:15:25 - 0:15:30, Có điều là một số khu vực nó vẫn còn mờ.
+0:15:30 - 0:15:39, Sau đó đến những epoch cuối cùng thì chúng ta đã thấy là nó ra hình hài tốt hơn.
+0:15:39 - 0:15:42, Có giày, có quần áo.
+0:15:42 - 0:15:50, Thì ở trong cái ví dụ này là cho chúng ta thấy cái mạng GAN nó đã dần học được phân bố của dữ liệu thật của mình.
+0:15:50 - 0:15:59, Thế thì để cải tiến cái mạng GAN này chúng ta có rất nhiều giải pháp như là cải tiến các siêu tham số hoặc là thay đổi cái kiến trúc hàm.
+0:15:59 - 0:16:08, Nhưng mà một trong những cái cải tiến mà quan trọng chúng ta cần phải cài đặt đó là chúng ta sử dụng cái CNN.
+0:16:08 - 0:16:18, Cụ thể là chúng ta sử dụng cái 2D Transposed Convolution để làm cái Generator và sử dụng mạng CNN cho cái Discriminator.
+0:16:18 - 0:16:30, Thì chúng ta sẽ tham khảo thêm trong các link ở đây để có thể hoàn tất và cài đặt cái phần cài đặt của cái mạng GAN khi sử dụng cái Convolution Neural Network.
+0:16:38 - 0:16:44, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

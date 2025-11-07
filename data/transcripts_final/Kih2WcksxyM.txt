@@ -1,0 +1,165 @@
+0:00:14 - 0:00:19, Chúng ta sẽ cùng đến với kiến trúc mạng rất là nổi tiếng là AlexNet.
+0:00:19 - 0:00:25, Và đây có thể nói là một cái cột mốc quan trọng trong lĩnh vực học sâu.
+0:00:25 - 0:00:34, Vì vào năm 2012, khi mà các mô hình máy học đều dựa trên những đặc trưng handcrafted features,
+0:00:34 - 0:00:45, tức là các đặc trưng mà được tạo bởi các tri thức chuyên gia để giúp chúng ta giải quyết các vấn đề,
+0:00:45 - 0:00:52, thì vào thời điểm năm 2012, kiến trúc mạng AlexNet là một trong những kiến trúc mạng CNN,
+0:00:52 - 0:01:00, một trong những kiến trúc mạng học sâu mà có kết quả vượt trội so với những mô hình sử dụng handcrafted features,
+0:01:00 - 0:01:09, đánh dấu cho giai đoạn đó là mô hình của mình có khả năng tự học được những đặc trưng cấp cao mà không cần có sự can thiệp của chuyên gia.
+0:01:09 - 0:01:13, Thì đây chính là một cái cột mốc quan trọng của deep learning.
+0:01:16 - 0:01:24, Nếu nói về lịch sử thì không phải CNN tại thời điểm này mới ra, mà nó có từ trước những năm 2000, trước những năm 1998,
+0:01:24 - 0:01:34, nhưng đến năm 2012 thì thành tựu của CNN vượt trội so với các mô hình truyền thống nên nó là một cái cột mốc đáng chú ý.
+0:01:34 - 0:01:43, Thế thì cái vấn đề của những CNN đời đầu đó là gì? Để mà mãi đến năm 2022 thì nó mới có sự đột phá.
+0:01:43 - 0:01:50, Cái vấn đề đầu tiên đó là cái hàm kích hoạt của những CNN đời đầu là dùng hàm sigmoid.
+0:01:50 - 0:01:56, Sigmoid z là bằng một, chia cho một cộng e mũ trừ z.
+0:01:56 - 0:02:05, Thì cái hàm này, đạo hàm của hàm này là nó bé hơn hoặc bằng 0.5, 0.25.
+0:02:05 - 0:02:16, Và nếu như cái mạng CNN của chúng ta càng dài, càng nhiều lớp thì cái việc chúng ta tính đạo hàm này chúng ta sẽ phải nhân nhiều lần khi thực hiện cái chain rule
+0:02:16 - 0:02:21, hay là cái quy tắc chuỗi trong cái việc mà tính đạo hàm.
+0:02:22 - 0:02:31, Thì cái việc này nó sẽ hội tụ, khiến cho cái đạo hàm của hàm loss theo cái theta, theta y là nó sẽ tiến về 0.
+0:02:31 - 0:02:34, Đối với những cái theta mà ở những cái lớp đầu tiên.
+0:02:38 - 0:02:42, Đó, thì dẫn đến là cái việc hội tụ nó chậm.
+0:02:42 - 0:02:48, Và chúng ta sẽ xem lại cái vấn đề này trong cái mục gọi là vấn đề của vanishing gradient.
+0:02:48 - 0:02:56, Và ngoài ra thì khi tăng cái số lượng layer của mô hình lên, thì cái độ chính xác của mình, người ta quan sát thấy là có tăng lên.
+0:02:56 - 0:02:59, Có tăng lên khi cái số layer tăng lên.
+0:02:59 - 0:03:06, Tại vì nó tạo ra những cái đặc trưng, nhiều mức độ khác nhau để có thể giải được nhiều cái loại bài toán và nhiều loại đối tượng.
+0:03:06 - 0:03:11, Nhưng khi đó lại xảy ra cái vấn đề, đó là vấn đề về overfitting.
+0:03:11 - 0:03:20, Khi tăng cái số lượng layer lên, thì đồng nghĩa chúng ta cũng sẽ tăng cái số lượng tham số làm cho cái mô hình nó phức tạp.
+0:03:20 - 0:03:25, Thì nó sẽ gây ra cái hiện tượng là overfitting.
+0:03:25 - 0:03:34, Và để chống cái hiện tượng overfitting này, thì cũng đã có một số cái nghiên cứu là họ tìm cách tăng cường dữ liệu.
+0:03:34 - 0:03:36, Họ tìm cách tăng cường dữ liệu.
+0:03:36 - 0:03:40, Nhưng mà cái việc tăng cường dữ liệu thì đúng là có làm giảm overfitting.
+0:03:40 - 0:03:44, Nhưng mà nó lại khiến cho cái tốc độ tính toán rất là chậm.
+0:03:44 - 0:03:54, Thì đó là những cái yếu tố tác động đến cái mạng CNN đầu đời, mà khiến cho nó không có thể phát triển được.
+0:03:54 - 0:03:59, Thì cũng vì cái giai đoạn mà đầu đời, tức là trước những năm 2000,
+0:03:59 - 0:04:09, CPU là một cái tài nguyên không quá phổ biến và người ta cũng chưa có sử dụng nó, cũng như là chưa có nhiều thư viện để hỗ trợ lập trình với GPU.
+0:04:09 - 0:04:14, Nên giai đoạn này thì GPU chỉ dùng để chơi game chứ không có dùng để nghiên cứu.
+0:04:14 - 0:04:19, Thì đó chính là cái bối cảnh lịch sử trước khi mà AlexNet ra đời.
+0:04:19 - 0:04:24, Thế thì AlexNet nó đã có một số cái cải tiến chính.
+0:04:24 - 0:04:28, Đầu tiên, đó là thay vì dùng Sigmoid, thì chúng ta sẽ dùng ReLU.
+0:04:28 - 0:04:33, Và cái điều này thì nó sẽ giúp chúng ta giải quyết vấn đề về vanishing gradient.
+0:04:38 - 0:04:43, Rồi, khi cái mô hình sâu hơn thì chúng ta sẽ tìm cách tăng cường cái dữ liệu nhiều hơn
+0:04:43 - 0:04:47, thông qua các phép biến đổi, các phép transformation.
+0:04:47 - 0:04:51, Ví dụ như là xoay tỷ lệ tịnh tiến, thêm nhiễu hoặc là random crop.
+0:04:51 - 0:04:56, Và cái việc này thì nó sẽ giúp chúng ta giải quyết vấn đề.
+0:04:56 - 0:05:01, Ở trên là giảm vấn đề vanishing, thì ở dưới sẽ giảm vấn đề về overfitting.
+0:05:05 - 0:05:09, Nhưng khi tăng cái dữ liệu lên thì tốc độ tính toán chậm.
+0:05:09 - 0:05:13, Do đó thì đây là cái nhóm mà có sử dụng GPU để tăng tốc độ.
+0:05:13 - 0:05:17, Và tốc độ ở đây là tăng đến 50 lần.
+0:05:17 - 0:05:21, Thì ở đây nó sẽ giúp chúng ta giảm được latency.
+0:05:21 - 0:05:25, Tức là giảm cái thời gian tính toán.
+0:05:25 - 0:05:29, Và cuối cùng, đó là kỹ thuật dropout.
+0:05:29 - 0:05:33, Khai thác kỹ thuật dropout để chống hiện tượng overfitting.
+0:05:33 - 0:05:38, Thì cái hiện tượng mà overfitting, thì nó sẽ giảm vấn đề vấn đề.
+0:05:38 - 0:05:43, Và cái giải pháp sử dụng dropout thì chúng ta đã được đề cập trong những phần trước.
+0:05:43 - 0:05:49, Thì dưới đây chính là cái sơ đồ kiến trúc của AlexNet.
+0:05:49 - 0:05:52, Thì nó cũng sẽ có các cái layer.
+0:05:52 - 0:05:57, Ví dụ như đây là 1 layer, 2 layer, 5.
+0:05:57 - 0:06:02, Nếu tính luôn cả các cái layer cuối thì nó có khoảng là 7 layer.
+0:06:03 - 0:06:05, Rồi.
+0:06:05 - 0:06:12, Và tiếp theo thì chúng ta sẽ tìm cách trực quan hóa cái mạng CNN.
+0:06:12 - 0:06:21, Tức là sau khi cái thành tựu của AlexNet đã vượt trội so với các cái phương pháp mà truyền thống trước đó.
+0:06:21 - 0:06:25, Thì người ta mới tìm cách trực quan hóa cái mạng CNN này.
+0:06:25 - 0:06:29, Bằng cách đó là người ta sẽ lấy ra 1 cái lát cắt.
+0:06:29 - 0:06:34, Thì nguyên cái này người ta gọi là feature map.
+0:06:39 - 0:06:43, Còn 1 cái lát cắt này thì nó gọi là 1 feature.
+0:06:43 - 0:06:45, Nó là 1 feature.
+0:06:49 - 0:06:50, Rồi.
+0:06:50 - 0:06:52, Và cái cách trực quan cũng cực kỳ đơn giản.
+0:06:52 - 0:06:55, Đó là chúng ta sẽ lấy cái lát cắt này.
+0:06:55 - 0:06:58, Rồi sau đó chúng ta vẽ lên trên 1 cái ma trận.
+0:06:58 - 0:07:02, Thì cứ mỗi 1 cái ô trong cái ma trận này nó chính là 1 cái lát cắt.
+0:07:02 - 0:07:06, Dạ như cái này sẽ là 1 cái lát cắt gần hạng.
+0:07:08 - 0:07:09, Rồi.
+0:07:09 - 0:07:12, Thì đây chính là cái cách mà trực quan hóa.
+0:07:12 - 0:07:19, Và với cái cách trực quan hóa này thì người ta mới phát hiện ra đó là 1 số cái tính chất quan trọng của feature map thứ nhất.
+0:07:19 - 0:07:21, Đó là feature map.
+0:07:24 - 0:07:27, Nó bảo tồn được yếu tố không gian.
+0:07:28 - 0:07:29, Rồi.
+0:07:33 - 0:07:37, Tức là nếu như cái đối tượng của mình nó nằm bên tay trái.
+0:07:37 - 0:07:39, Nếu như đối tượng nằm ở bên tay trái.
+0:07:39 - 0:07:44, Thì cái feature map tương ứng với cái đối tượng đó cũng sẽ nằm phía bên tay trái.
+0:07:46 - 0:07:50, Và nó bảo tồn được cái yếu tố về thời gian không gian.
+0:07:50 - 0:07:53, Xin lỗi, nó bảo tồn được cái yếu tố về không gian.
+0:07:53 - 0:07:56, Thì những cái đối tượng nào mà nằm ở phía trên.
+0:07:56 - 0:08:03, Thì khi lên feature map nếu như nó có respond tức là có thể hiện cái đặc trưng thì nó cũng sẽ nằm phía trên.
+0:08:04 - 0:08:08, Đó chính là cái đặc điểm quan trọng của cái feature map.
+0:08:08 - 0:08:17, Và nó được sử dụng để phục vụ cho các cái bài toán nâng cao về sau ví dụ như là phát hiện đối tượng.
+0:08:18 - 0:08:25, Hoặc thậm chí là phân tích ngữ nghĩa là semantic.
+0:08:25 - 0:08:27, Segmentation.
+0:08:29 - 0:08:36, Thì các cái mô hình hiện đại là đều sử dụng cái feature map của mạng CNN để giải quyết các cái bài toán này.
+0:08:37 - 0:08:40, Thế thì cái vấn đề của AlexNet là gì?
+0:08:41 - 0:08:44, Đầu tiên đó là với cùng một cái Receptive Field.
+0:08:44 - 0:08:48, Thì chúng ta sẽ có cái khái niệm là Receptive Field.
+0:08:48 - 0:08:51, Tức là cái trường cảm nhận thông tin.
+0:08:51 - 0:08:55, Thì nó sẽ là cái vùng đặc trưng đầu vào để tạo ra một cái đặc trưng mới.
+0:08:55 - 0:09:02, Ví dụ, chúng ta có một cái feature map như thế này.
+0:09:05 - 0:09:07, Rồi, thì ở đây là trục không gian.
+0:09:07 - 0:09:09, Là HW.
+0:09:10 - 0:09:13, Thì trường tiếp nhận đó là gì?
+0:09:14 - 0:09:17, HW là cái trường cảm nhận thông tin.
+0:09:17 - 0:09:20, Rồi, thì ở đây là trường cảm nhận thông tin.
+0:09:20 - 0:09:24, Rồi, khi chúng ta thực hiện với cái phép biến đổi convolution,
+0:09:24 - 0:09:29, thì chúng ta sẽ có một cái kernel, một cái filter có kích thước như thế này.
+0:09:29 - 0:09:31, Và nó sẽ tạo ra một cái điểm.
+0:09:31 - 0:09:34, Tức là với một cái kernel này, một cái filter này,
+0:09:34 - 0:09:38, khi áp lên trên cái trường tiếp nhận, đây chỉ là Receptive Field,
+0:09:38 - 0:09:40, tức là RF,
+0:09:40 - 0:09:43, thì nó sẽ tạo ra một cái điểm đặc trưng ở đây.
+0:09:43 - 0:09:46, Và chúng ta lấy cái filter này chúng ta trượt trên toàn bộ tấm hình,
+0:09:46 - 0:09:51, thì chúng ta sẽ tạo ra được một cái feature.
+0:09:51 - 0:09:53, Nó là một cái dạng ma trận.
+0:09:56 - 0:09:58, Và đối với cái Receptive Field này,
+00:09:58 - 0:10:01, thì có thể nếu chúng ta dùng cái phép biến đổi bình thường,
+0:10:01 - 0:10:03, convolution bình thường,
+0:10:03 - 0:10:05, thì ở đây nó sẽ có cái độ sâu.
+0:10:05 - 0:10:07, Ví dụ ở đây độ sâu là D,
+0:10:07 - 0:10:09, thì ở đây độ sâu cũng là D.
+0:10:09 - 0:10:12, Rồi, thì cái Receptive Field chính là cái vùng này.
+0:10:12 - 0:10:14, Là cái vùng đầu vào.
+0:10:14 - 0:10:16, Đây là cái vùng đầu vào.
+0:10:18 - 0:10:21, Được sử dụng để tạo ra một cái đặc trưng mới.
+0:10:21 - 0:10:25, Vậy thì khi cái mạng của mình nó có nhiều layer,
+0:10:25 - 0:10:28, thì các cái feature map sau,
+0:10:28 - 0:10:31, nó sẽ có cái Receptive Field càng lớn.
+0:10:31 - 0:10:37, Do đó thì tại sao chúng ta lại phải cần có cái 5x5 và 7x7,
+0:10:37 - 0:10:39, thì cái điều này có nghĩa là sao?
+0:10:39 - 0:10:43, Ví dụ chúng ta có một cái feature map như thế này.
+0:10:43 - 0:10:49, Chúng ta nhân với lại một cái kernel có kích thước là 3x3.
+0:10:51 - 0:10:55, Rồi thì nó sẽ tạo ra một cái feature map mới.
+0:10:56 - 0:11:01, Rồi, sau đó lại tiếp tục nhân với lại một cái kernel là 3x3.
+0:11:04 - 0:11:07, Rồi, nó sẽ tạo ra một cái
+0:11:07 - 0:11:09, feature map mới.
+0:11:09 - 0:11:12, Thế thì ở những cái feature map sau,
+0:11:12 - 0:11:14, đây là cái feature map sau này.
+0:11:18 - 0:11:20, Một cái điểm đặc trưng ở đây,
+0:11:20 - 0:11:24, nó được tạo bởi một cái vùng có kích thước là 3x3 ở phía trước.
+0:11:28 - 0:11:31, Sau đó, và lưu ý là đây lại là một cái feature.
+0:11:31 - 0:11:32, Đây là một cái feature.
+0:11:32 - 0:11:34, Với mỗi điểm ở đây,
+0:11:34 - 0:11:37, nó lại tạo ra bởi một cái vùng 3x3 phía trước.
+0:11:42 - 0:11:44, Rồi cái điểm tiếp theo,
+0:11:44 - 0:11:47, nó lại là một cái vùng có kích thước là 3x3,
+0:11:47 - 0:11:53, nhưng nó sẽ có overlap với lại cái vùng receptive field của cái điểm bên trái một chút.
+0:11:53 - 0:11:57, Do đó thì nó sẽ nới ra thêm một pixel nữa.
+0:11:59 - 0:12:03, Rồi, thêm cái điểm nữa thì nó lại tiếp tục nó nới ra.
+0:12:05 - 0:12:09, Thì chúng ta thấy là với cái vùng 3x3 bên đây,
+0:12:09 - 0:12:15, thì nó sẽ tạo ra cái bề ngang của mình là 1, 2, 3, 4, 5.
+0:12:15 - 0:12:20, Tức là cái vùng nếu mà chúng ta đi xuống các cái điểm ở phía dưới nữa,
+0:12:20 - 0:12:24, thì nó sẽ tạo ra một cái vùng đó là 5x5.
+0:12:24 - 0:12:36, Như vậy thì, hai cái feature map phía sau, đúng không?
+0:12:36 - 0:12:43, Nó đã tổng hợp được đầy đủ thông tin đối với cái kernel nhỏ, đó là 3x3.
+0:12:43 - 0:12:49, Còn cái feature map phía sau, nó lại là một cái vùng,
+0:12:49 - 0:12:54, xin lỗi, nó lại là tạo ra một cái vùng là kích thước là 5x5.
+0:12:56 - 0:13:02, Rõ ràng là với cùng một cái receptive field là 5x5,
+0:13:02 - 0:13:07, thì thay vì chúng ta sử dụng cái filter kích thước là 5x5,
+0:13:07 - 0:13:11, thì chúng ta sẽ sử dụng hai cái phép biến đổi,
+0:13:11 - 0:13:14, hai cái phép convolution 3x3 liên tiếp nhau,
+0:13:14 - 0:13:19, thì nó sẽ tương đương hai cái layer mà 3x3,
+0:13:19 - 0:13:25, thì nó sẽ tương đương với một cái layer bằng 5x5.
+0:13:25 - 0:13:30, Về mặt tính lượng thì cái giải pháp nào nó sẽ có lợi hơn?
+0:13:30 - 0:13:33, Nếu như chúng ta dùng hai cái layer 3x3,
+0:13:33 - 0:13:37, thì ở đây cái số tham số của mình sẽ là 2x3,
+0:13:37 - 0:13:44, 3 là bằng 18, trong khi đó một cái 5x5 thì nó lên đến là 25 tham số,
+0:13:44 - 0:13:48, thì rõ ràng là 18 tham số nó sẽ ít hơn 25 tham số,
+0:13:48 - 0:13:53, thì việc này nó có thể giúp chúng ta, nếu như mà cùng một cái độ sâu,
+0:13:53 - 0:13:57, thì nó sẽ giúp chúng ta giải quyết được hiện tượng convolution.
+0:14:07 - 0:14:11, Cảm ơn các bạn đã xem video hấp dẫn.

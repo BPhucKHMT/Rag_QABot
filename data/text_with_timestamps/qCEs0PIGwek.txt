@@ -1,0 +1,117 @@
+00:00:00 - 00:00:29, Chúng ta sẽ cùng tìm hiểu về mô hình khuất tán diffusion model và sự khác biệt giữa diffusion model so với mô hình variational autoencoder ra sao, quá trình khuất tán được thực hiện như thế nào.
+00:00:29 - 00:00:40, Chúng ta sẽ nhắc lại công thức của mô hình sát xuất đằng trước, đó là log P của x sẽ là bằng tổng của hai kỳ vọng này.
+00:00:40 - 00:00:52, Thì thành phần số 2, bản chất của nó chính là công thức của KL diversion của phân bố V, z cho trước x và P của z cho trước x.
+00:00:52 - 00:01:07, Đây là kỳ vọng của một câu số lớn hơn bằng 0, do đó chúng ta sẽ có cái chặn dưới của mình, đó chính là số hạng bên tay trái.
+00:01:07 - 00:01:16, Cái số hạng bên tay trái, kỳ vọng này gọi là evidence lower bound, tức là cái chặn dưới của log Px.
+00:01:16 - 00:01:31, Khi chúng ta hướng luyện, chúng ta sẽ tìm cách để vì chúng ta muốn cực đại hóa log Px, chúng ta sẽ đem cái chặn dưới, chúng ta cũng cực đại hóa nó luôn.
+00:01:31 - 00:01:36, Khi chúng ta nâng cái chặn dưới lên thì đồng thời nó cũng sẽ nâng cái Px lên.
+00:01:36 - 00:01:42, Và công thức này sau khi chúng ta biến đổi thì nó sẽ ra cái biểu thức bên tay phải.
+00:01:42 - 00:01:59, Thì ở đây cụ thể là gì? Kỳ vọng của Qz cho trước x, log P của x và z sẽ là bằng P của x cho trước z, nhân với lại P của z.
+00:01:59 - 00:02:03, Chia cho Qz của x.
+00:02:03 - 00:02:05, Thì chúng ta sẽ tách cái thành phần này ra.
+00:02:05 - 00:02:23, Chúng ta sẽ tách ra thì nó sẽ là bằng kỳ vọng của Qz cho trước x và log của Px cho trước z.
+00:02:23 - 00:02:35, Sau đó chúng ta sẽ cộng cho cái log của tích của thành phần này và cái thành phần bên tay phải.
+00:02:35 - 00:02:39, Thì chúng ta tách nó ra, log của tích sẽ là bằng tổng của 2 log.
+00:02:39 - 00:02:52, Do đó nó sẽ là bằng cộng cho Qz cho trước x và log của Pz chia cho Qz cho trước x.
+00:02:52 - 00:02:57, X sẽ là bằng log của Pz.
+00:02:57 - 00:03:11, Sau đó là trừ cho kỳ vọng của Qz.
+00:03:11 - 00:03:21, Rồi, kỳ vọng của log của Qz cho trước x.
+00:03:21 - 00:03:31, Rồi, thế thì ở đây chúng ta có thể đảo thứ tự của nó lại.
+00:03:31 - 00:03:38, Chúng ta đảo thứ tự lại bằng cách đó là cái vế này thì tương đương với lại cái biểu thức ở bên tay trái.
+00:03:38 - 00:03:41, Còn cái vế này thì chúng ta sẽ đảo thứ tự lại.
+00:03:41 - 00:03:49, Nó sẽ là bằng trừ của kỳ vọng của Qz cho trước x,
+00:03:49 - 00:04:10, trừ cho kỳ vọng của Qz cho trước x,
+00:04:10 - 00:04:18, nhân cho Pz.
+00:04:18 - 00:04:28, Rồi, thì cái công thức này thì nó sẽ là bằng trừ của kỳ vọng của Qz cho trước x,
+00:04:28 - 00:04:37, nhân cho log của Qz cho trước x, chia cho Pz.
+00:04:37 - 00:04:45, Thì bản chất của cái công thức này, Q của x, log của Q của z cho trước x, chia cho x,
+00:04:45 - 00:04:51, thì đây chính là kldi version này.
+00:04:51 - 00:04:58, Là kldi version của Qz cho trước x.
+00:04:58 - 00:05:05, Rồi, với cái Pz, vế bên trái là giống và vế bên phải cũng giống luôn.
+00:05:05 - 00:05:06, Chúng ta có cái giống trừ ở đằng trước.
+00:05:06 - 00:05:12, Như vậy thì chúng ta đã chứng minh được cái công thức của cái elbow này.
+00:05:12 - 00:05:16, Thế thì bây giờ, cái ý nghĩa của cái công thức này đó là gì?
+00:05:16 - 00:05:20, Thì chúng ta sẽ cùng tìm hiểu trong cái phần tiếp theo.
+00:05:29 - 00:05:33, Rồi, thì ở đây chính là chúng ta sẽ có cái mô hình đầu tiên,
+00:05:33 - 00:05:36, đó là mô hình Variational Autoencoder.
+00:05:36 - 00:05:43, Với cái công thức này, thì chúng ta sẽ thấy là 2 vế và ý nghĩa của 2 vế đó là gì?
+00:05:52 - 00:05:59, Rồi, thì đối với cái vế bên trái, ý nghĩa của nó đó là khi chúng ta từ cái z,
+00:05:59 - 00:06:00, tức là cho trước z nè.
+00:06:00 - 00:06:03, Z là một cái vector trong không gian ẩn của mình.
+00:06:03 - 00:06:06, Nó là một cái random variable.
+00:06:06 - 00:06:11, Nhưng nó sẽ được tính ra cái P.
+00:06:11 - 00:06:16, Thì bản chất của cái này đó chính là cái sát xuất của x.
+00:06:16 - 00:06:18, Là sát xuất của x cho trước z.
+00:06:18 - 00:06:25, Thì cái ý nghĩa của nó đó là cái giá trị mà mình tạo ra x từ z.
+00:06:25 - 00:06:28, Cái giá trị của x tạo ra từ z.
+00:06:28 - 00:06:34, Nó sẽ giống với lại cái ảnh ban đầu, giống với lại cái ảnh góc.
+00:06:34 - 00:06:44, Thì cái mô hình Variational Autoencoder, nó đã đưa cái việc đó là chúng ta cực đại hóa cái công thức này.
+00:06:44 - 00:06:50, Thì khi cực đại hóa, thì tức là cái thành phần này sẽ là giá trị lớn nhất.
+00:06:50 - 00:06:55, Mà cái sát xuất để cho cái x lớn nhất khi cho trước z,
+00:06:55 - 00:07:00, nó chính là chúng ta tạo ra một cái tấm hình giống với cảnh ban đầu.
+00:07:00 - 00:07:05, Từ z, chúng ta tạo ra x.
+00:07:05 - 00:07:09, Thì làm sao cho cái x này nó giống với lại cảnh ban đầu nhất.
+00:07:09 - 00:07:13, Thì đó chính là cái ý nghĩa của cái công thức log của Px cho trước z.
+00:07:13 - 00:07:15, Ở đây chúng ta đừng quan tâm cái log nữa,
+00:07:15 - 00:07:20, tại vì khi chúng ta cực đại hóa cái hiệu này,
+00:07:20 - 00:07:28, thì chúng ta sẽ cực đại hóa cái thành phần này và cực tiểu hóa cái thành phần KL Divergent này.
+00:07:28 - 00:07:32, Tại vì ở đây có dấu trường nên chúng ta sẽ đi cực tiểu hóa.
+00:07:32 - 00:07:38, Còn cực tiểu hóa của một cái hàm log thì nó sẽ tương đương với việc là mình đi cực tiểu hóa cái Px.
+00:07:38 - 00:07:47, Tại vì log là một cái hàm đồng biến, nên chúng ta đi tìm giá trị log của một cái biểu thức fx.
+00:07:47 - 00:07:53, Thì nó sẽ tương đương, chúng ta đi tìm cái việc chúng ta tìm max của cái log của fx,
+00:07:53 - 00:07:58, thì nó sẽ tương đương với việc chúng ta đi tìm max của fx.
+00:07:58 - 00:08:07, Do đó thì cái việc mà đi cực đại hóa cái này tương đương với cái việc là chúng ta đi cực đại hóa P của x cho trước z.
+00:08:07 - 00:08:14, Và chúng ta cho trước cái z của mình là đi nằm trong cái phân bố của Quay Zx.
+00:08:14 - 00:08:23, Quay Zx của mình chính là cái kết quả của quá trình encode.
+00:08:23 - 00:08:29, Tức là chúng ta biến từ cái ảnh góc ban đầu về cái vector z trong phong gian lây tành.
+00:08:29 - 00:08:34, Và cái z này thì nó sẽ tương theo cái phân bố này.
+00:08:34 - 00:08:38, Cái z này nó sẽ là phân bố Quay.
+00:08:38 - 00:08:45, Thế thì khi chúng ta lấy mẫu hết tất cả các z, lấy mẫu hết z theo cái phân bố Quay này,
+00:08:45 - 00:08:48, chúng ta đi decode để tạo ra cái x mũ này.
+00:08:48 - 00:08:54, Thì cái x mũ này nó phải giống, nó giống thật nhất.
+00:08:54 - 00:09:01, Vâng, thì cái Px cho trước z chính là làm sao cho cái x mũ này là giống thật nhất, giống ảnh góc.
+00:09:01 - 00:09:07, Còn cái thành phần thứ hai thì thay vì chúng ta đi cực đại hóa cái dấu trừ này,
+00:09:07 - 00:09:17, thay vì chúng ta đi cực đại hóa cái vế bên tay phải thì tương đương với việc là chúng ta sẽ đi cực tệ hóa cái thành phần KLD version thôi.
+00:09:17 - 00:09:23, Thì đây chính là cái thành phần chính quy trong cái mô hình Variational Autoencoder.
+00:09:23 - 00:09:31, Và cái Pz này, cái Pz này là một cái phân bố tì nghiệm.
+00:09:31 - 00:09:43, Và chúng ta mong muốn cái phân bố tì nghiệm này, nó sẽ là một cái normal Gaussian.
+00:09:43 - 00:09:51, Thì là một cái phân bố chuẩn Gaussian N01.
+00:09:51 - 00:09:58, Rồi, thì đây chính là cái mô hình Variational Autoencoder.
+00:09:58 - 00:10:10, Và ý nghĩa của nó đó là từ x, chúng ta sẽ qua cái encode, chúng ta sẽ tạo ra được một cái phân bố, ra một cái phân bố sát xuất là qi, phi, zx.
+00:10:10 - 00:10:13, Thì phi ở đây là cái tham số của encoder.
+00:10:13 - 00:10:21, Và từ cái qi này chúng ta sẽ sample, chúng ta sẽ sample, thì khi chúng ta sample thì chúng ta sẽ có được hết cái kỳ vọng này, tính được cái kỳ vọng này.
+00:10:21 - 00:10:25, Chúng ta sample một cái z và chúng ta decode để tạo ra cái x mũ.
+00:10:25 - 00:10:34, Thì chúng ta luôn mong muốn là cái x mũ này giống thật, nó thể hiện qua cái việc là cực đại hóa cái P của s cho trước z.
+00:10:34 - 00:10:46, Rồi, thì so sánh cái mô hình Variational Autoencoder với môn diffusion, thì Variational Autoencoder là một pháp một, là từ cái ảnh góc x,
+00:10:46 - 00:10:55, nó encode thành một cái vector z, một cái không gian nhĩu, một cái phân bố nhĩu.
+00:10:55 - 00:11:00, Và cái phân bố nhĩu này chúng ta sẽ sample ra để có được cái vector z này.
+00:11:00 - 00:11:06, Thì đây là cái hình ảnh minh họa của cái vector z. Đó là một cái nhĩu.
+00:11:06 - 00:11:14, Qua cái hàm decode thì chúng ta sẽ tạo ra được một cái phân bố sát xuất là P theta x cho trước z.
+00:11:14 - 00:11:17, Và chúng ta lấy mẫu để có được cái x mũ này.
+00:11:17 - 00:11:23, Thì trong cái mô hình Variational Autoencoder là decode nó sẽ tạo ra cái x mũ.
+00:11:23 - 00:11:31, Và chúng ta sẽ mong muốn cho cái x mũ này sắp xỉ với lại cái ảnh góc ban đầu, đó là cái vế thứ nhất.
+00:11:31 - 00:11:41, Cái vế thứ hai đó là cái thành phần chính quy hóa là cái nhĩu này, thì nó sẽ tuân theo cái phân bố 0.1.
+00:11:42 - 00:11:46, Còn đối với cái mô hình diffusion ở dưới đây thì thay vì một bước,
+00:11:46 - 00:11:52, Thứ nhất, cái sự khác biệt thứ nhất đó là thay vì một bước thì ở đây chúng ta sẽ có nhiều bước encoding,
+00:11:52 - 00:11:55, nhiều bước nhỏ encoding.
+00:11:55 - 00:12:03, Và cuối cùng chúng ta cũng đến được cái random noise như thế này theo cái phân bố normal distribution.
+00:12:03 - 00:12:13, Nhưng cái sự khác biệt thứ hai đó là trong mô hình VAE thì nó sẽ có tham số, có cái tham số phi.
+00:12:13 - 00:12:17, Còn ở đây là không có tham số, các encoding này là không có tham số.
+00:12:22 - 00:12:30, Thì đó chính là cái sự khác biệt lớn nhất mà chúng ta thấy được giữa hai cái mô hình VAE và AE.
+00:12:30 - 00:12:37, VEAE thì sẽ có tham số và chỉ có một bước, một bước nhảy là đến được cái random noise.
+00:12:37 - 00:12:45, Thế thì chúng ta thấy là cái việc mà chúng ta ánh sạ trực tiếp từ ảnh thế giới thực sang cái random noise này mà chỉ qua một bước,
+00:12:45 - 00:12:49, thì đây là một cái bài tán khó.
+00:12:49 - 00:12:56, Và chưa kể khi chúng ta decode ngược trở lại từ cái random noise này thì đây cũng là một cái bài tán khó.
+00:12:56 - 00:13:03, Tuy nhiên khi thay vì chúng ta giải một cái bài tán khó với một cái encoder thì chúng ta sẽ chia nhỏ nó ra thành nhiều bước.
+00:13:03 - 00:13:09, Thì những cái bước encoding này nó sẽ là một cái mô hình dễ hơn, dễ hơn rất là nhiều.
+00:13:09 - 00:13:16, Chúng ta phung một ít nhĩu lên trên cái X0 để được cái X1, rồi sau đó phung một ít nhĩu lên để thành X2.
+00:13:16 - 00:13:25, Và cái ảnh của mình dần dần nó đã bị mất hết cái đối tượng góc ban đầu.
+00:13:25 - 00:13:32, Và khi chúng ta phung đến cái bước thứ T thì ở đây là nó sắp xỉ với một cái normal distribution.
+00:13:32 - 00:13:41, Thì chút nữa chúng ta cũng sẽ có cái phần chứng minh cái ảnh này nó sẽ tiến về cái normal distribution.
+00:13:41 - 00:13:47, Sau đó chúng ta giải mã thì cái việc chúng ta giải mã decoding từ những cái bước nhỏ này,
+00:13:47 - 00:13:52, thì cái mô hình của mình nó sẽ dễ học hơn, dễ học để tìm ra được cái theta.
+00:13:52 - 00:13:57, Tức là thay vì chúng ta giải quyết một bài tán khó, mô hình phức tạp để có thể giải mã được,
+00:13:57 - 00:14:03, thì những cái bài tán dễ như thế này thì chúng ta sẽ cần cái số hưởng tham số nó ít hơn,
+00:14:03 - 00:14:08, cái tính khả thi của nó nó cao hơn và chất lượng hình ảnh của nó cũng sẽ cao hơn.
+00:14:08 - 00:14:13, Thì đó chính là cái sự khác biệt giữa VAE và AE.
+00:14:22 - 00:14:27, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

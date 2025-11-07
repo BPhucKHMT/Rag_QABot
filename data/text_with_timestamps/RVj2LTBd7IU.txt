@@ -1,0 +1,156 @@
+00:00:00 - 00:00:19, Chúng ta sẽ cùng tìm hiểu về một số biểu thệ của mạng GAN và ứng dụng của nó.
+00:00:19 - 00:00:27, GAN sẽ bao gồm hai generator và discriminator.
+00:00:27 - 00:00:32, Tuy nhiên, khi chúng ta xin ảnh với độ phân giải rất cao,
+00:00:32 - 00:00:35, cụ thể là độ phân giải HD,
+00:00:35 - 00:00:39, thì nó sẽ gặp một số vấn đề thách thức,
+00:00:39 - 00:00:43, ví dụ như tốc độ hướng luyện, khó hồi tụ,
+00:00:43 - 00:00:44, hoặc bị overfitting.
+00:00:44 - 00:00:47, Thế thì, cái giải pháp của chúng ta đó là
+00:00:47 - 00:00:51, thay vì chúng ta sử dụng một cái kiến trúc phức tạp
+00:00:51 - 00:00:53, từ độ phân giải thấp lên độ phân giải cao,
+00:00:53 - 00:00:55, tức là một cái randomNoisey,
+00:00:55 - 00:00:58, từ độ phân giải thấp lên độ phân giải cao,
+00:00:58 - 00:01:00, sau đó từ cao xuống thấp,
+00:01:00 - 00:01:02, chúng ta chỉ hướng luyện với một cái mạng như thế này,
+00:01:02 - 00:01:04, thì chúng ta sẽ hướng luyện từ từ.
+00:01:04 - 00:01:08, Thì cái quá trình training process chúng ta thấy là từ trái sang phải,
+00:01:08 - 00:01:12, là chúng ta đang đi từ độ phân giải thấp,
+00:01:12 - 00:01:15, đi tiến đến cái độ phân giải cao.
+00:01:15 - 00:01:17, Với cái độ phân giải thấp,
+00:01:17 - 00:01:22, thì chúng ta sẽ học về những cái concept chung của tấm hình.
+00:01:22 - 00:01:25, Ví dụ như ở đây chúng ta có cái vector latency,
+00:01:25 - 00:01:31, được random sampling theo nhễu normal01,
+00:01:31 - 00:01:35, thì chúng ta sẽ biến đổi nó thành một cái tấm ảnh có độ phân giải,
+00:01:35 - 00:01:37, đó là 4x4.
+00:01:37 - 00:01:41, Cái module này thì giúp chúng ta tạo ra tấm ảnh có độ phân giải là 4x4.
+00:01:41 - 00:01:44, Và kết hợp với lại cái ảnh thật,
+00:01:44 - 00:01:48, thì chúng ta sẽ qua cái discriminator,
+00:01:48 - 00:01:51, và dành cho cái ảnh có kích thước là 4x4.
+00:01:51 - 00:01:56, Thì chúng ta thấy là với cái mô hình tạo sinh và phân biệt,
+00:01:56 - 00:01:58, phân ngoại, ảnh thật, ảnh giả,
+00:01:58 - 00:02:00, mà với độ phân giải thấp,
+00:02:00 - 00:02:02, thì cái số lượng time số nó sẽ rất là ít,
+00:02:02 - 00:02:05, do đó cái hội tụ, tốc độ hội tụ nó sẽ nhanh hơn,
+00:02:05 - 00:02:06, nó dễ hội tụ hơn.
+00:02:06 - 00:02:09, Khi chúng ta lên cái độ phân giải cao hơn,
+00:02:09 - 00:02:16, chúng ta sẽ chồng thêm các lớp biến đổi để từ ảnh có độ phân giải 4x4 lên 8x8.
+00:02:16 - 00:02:21, Và với cảnh này thì chúng ta thấy nó đã miệt hơn một chút,
+00:02:21 - 00:02:23, nó đã miệt hơn,
+00:02:23 - 00:02:26, so với lại cảnh ở phía trước là 4x4.
+00:02:26 - 00:02:28, Tương tự như vậy, kết hợp với ảnh thật,
+00:02:28 - 00:02:34, thì chúng ta sẽ đi qua một bộ phân loại,
+00:02:34 - 00:02:36, ảnh thật, ảnh giả,
+00:02:36 - 00:02:38, từ 8x8 về lại 4x4.
+00:02:38 - 00:02:40, Và cứ như vậy,
+00:02:40 - 00:02:45, thì chúng ta nâng dần cái độ phân giải của ảnh lên,
+00:02:45 - 00:02:49, từ 4x4 lên 1024 x 1024,
+00:02:49 - 00:02:53, thì tạo ra một ảnh có độ phân giải rất là cao.
+00:02:53 - 00:02:55, Độ phân giải cao.
+00:02:55 - 00:03:02, Và từ cái độ phân giải cao này, chúng ta đưa qua cái mô hình phân loại,
+00:03:02 - 00:03:07, thì chúng ta sẽ ra được cái mô hình có khả năng phân biệt được ảnh hay là ảnh thập,
+00:03:07 - 00:03:08, hay ảnh giả,
+00:03:08 - 00:03:13, thì ở bên tay phải, chúng ta thấy đó là cái kết quả là ảnh có độ phân giải rất là cao.
+00:03:13 - 00:03:16, Và khi chúng ta tạo sinh hình ảnh,
+00:03:16 - 00:03:19, thì chúng ta sẽ sử dụng cái mô hình G này,
+00:03:19 - 00:03:23, chúng ta sẽ sử dụng cái mô hình G có cái độ phân giải cao này.
+00:03:23 - 00:03:30, Và ứng dụng của nó thì chúng ta biết rằng là ở trong cái StyleGan,
+00:03:31 - 00:03:33, StyleGan 2,
+00:03:33 - 00:03:38, thì có công bố một cái trang web đó là Dispersion Derogation Assist,
+00:03:38 - 00:03:44, thì mục tiêu đó là nó tạo ra ngộn nhiên một cái ảnh người nhưng mà không có thật.
+00:03:44 - 00:03:49, Và chúng ta có thể sử dụng cái ảnh này để phục vụ cho cái việc là làm những cái ví dụ nâng hoạn
+00:03:49 - 00:03:53, mà không ri phạm các cái bến đề về quyền viên tư.
+00:03:55 - 00:03:58, Một cái biến thể khác cũng rất là nổi tiếng của GAN,
+00:03:58 - 00:04:01, đó chính là ConditionalGan hay là GAN có điều kiện.
+00:04:01 - 00:04:07, Trước đây thì chúng ta từ một cái vector nhễu G, chúng ta tạo ra một cái tấm ảnh,
+00:04:07 - 00:04:11, nhưng mà cái ảnh này là chúng ta không thể đoán trước được,
+00:04:11 - 00:04:13, hoặc là chúng ta không thể kiểm soát được,
+00:04:13 - 00:04:18, không thể kiểm soát được cái đầu ra của mình, đó là cái ảnh như thế nào.
+00:04:18 - 00:04:23, Thế thì bây giờ chúng ta muốn tăng cái khả năng kiểm soát cái tính chất của ảnh đầu ra,
+00:04:23 - 00:04:28, thì chúng ta có thể thêm một cái vector điều kiện là vector C.
+00:04:28 - 00:04:38, Vector C này có thể hiện, nó có thể là những cái tính chất ví dụ như là độ tuổi của cái người được tạo ra,
+00:04:38 - 00:04:47, ví dụ như là trẻ em, hoặc là thanh niên, hoặc là người trung niên.
+00:04:48 - 00:04:56, Hoặc cái Conditional này nó cũng có thể là tính chất của mặt, ví dụ như là có đeo cẩu trang hay không,
+00:04:56 - 00:05:05, rồi có đeo mắt kiến hay không, rồi có râu hoa nón hay không, ví dụ vậy.
+00:05:05 - 00:05:11, Đó thì đây là những cái, hai cái này sẽ là những cái ví dụ cho cái vector điều kiện.
+00:05:11 - 00:05:18, Và cái vector điều kiện này thì chúng ta cũng sẽ đưa vào bên trong cái Dispromenator để giúp cho phân biệt cái ảnh thật hay giả.
+00:05:18 - 00:05:23, Tức là cái này nó sẽ cung cấp thêm thông tin để cho chúng ta phân biệt.
+00:05:23 - 00:05:32, Thì biến thể GAN có điều kiện hay Conditional GAN là một trong những biến thể rất là hiệu quả và nổi tiếng.
+00:05:32 - 00:05:36, Bên cạnh Conditional GAN thì chúng ta còn có mô hình là PictoPict.
+00:05:36 - 00:05:40, PictoPict thì đây chính là những mô hình mà biến đội ảnh theo cặp.
+00:05:40 - 00:05:45, Có nghĩa là bình thường thì chúng ta chỉ có một tập các cái ảnh.
+00:05:45 - 00:05:49, Bình thường là chúng ta chỉ có tập các cái ảnh.
+00:05:55 - 00:06:00, Nhưng mà chúng ta sẽ không có cái ảnh đích, cái ảnh mà chúng ta muốn tạo thành.
+00:06:00 - 00:06:08, Còn kiến trúc của PictoPict tức là nó biến một cái picture thành một cái picture.
+00:06:08 - 00:06:16, Vâng, thì nó đòi hỏi chúng ta sẽ phải có một cặp ảnh để huấn luyện.
+00:06:16 - 00:06:37, Vì vậy, chúng ta sẽ có một cái cặp ảnh đó là ảnh thật và một cái ảnh mà có cái phân đoạt, semanthic map.
+00:06:37 - 00:06:43, Thì đây là một cái cặp ảnh và nó tham gia vào quá trình huấn luyện cũng tương tự như Gantt.
+00:06:43 - 00:06:46, Nó có generator và discriminator.
+00:06:46 - 00:06:51, Thì cái bài toán này đó là gì? Thay vì đồ vào của chúng ta là một cái randomNoisey,
+00:06:51 - 00:06:54, thì đồ vào của chúng ta là một cái semantic map.
+00:06:54 - 00:07:00, Và từ cái semantic map này, thì chúng ta sẽ tạo ra cái khung ảnh thật.
+00:07:00 - 00:07:05, Ví dụ như đây là đường phố, đây là xe cổ, đây là cây cối, đây là bầu trời,
+00:07:05 - 00:07:09, thì nó sẽ tạo ra một cái khung ảnh có cái concept giống như ở đây.
+00:07:09 - 00:07:19, Và ứng dụng của nó đó là dùng cho cái việc biến từ label sang cái street scene,
+00:07:19 - 00:07:23, tức là cái khung ảnh đường phố để giúp cho chúng ta có thể tăng cường dữ liệu.
+00:07:24 - 00:07:28, Hoặc là trong các ứng dụng liên quan đến bản đồ chẳng hạn,
+00:07:28 - 00:07:35, thì từ một cái bản đồ ở bên trái chúng ta có thể tạo ra một cái ảnh không ảnh,
+00:07:35 - 00:07:38, nhìn từ trên cao, hoặc ngược lại.
+00:07:38 - 00:07:43, Cái này có lẽ là ứng dụng nhiều hơn, đó là chúng ta chụp ảnh từ ảnh vệ tinh,
+00:07:43 - 00:07:46, sau đó chúng ta sẽ biến thành cái ảnh bản đồ.
+00:07:46 - 00:07:49, Và nếu được thì với cái ảnh bản đồ này,
+00:07:49 - 00:07:56, thì chúng ta có thể số hóa nó để tạo ra một cái trang tương tự như là Google Maps.
+00:07:58 - 00:08:03, Một cái biến thể khác cũng rất là nổi tiếng và có nhiều cái ứng dụng
+00:08:03 - 00:08:08, cũng như là phù hợp trong cái việc thực tiễn, đó là Psychogan.
+00:08:08 - 00:08:18, Psychogan là cho phép chúng ta học các phép biến đổi giữa các miền dữ liệu với nhau.
+00:08:18 - 00:08:22, Và ở đây là dữ liệu của mình là không bắt cặp,
+00:08:22 - 00:08:26, nghĩa là trong cái mô hình Big2Big, ví dụ vậy,
+00:08:26 - 00:08:30, thì chúng ta đòi hỏi phải có một cặp ảnh.
+00:08:30 - 00:08:35, Chúng ta phải có một cái cặp ảnh, x và y là một cặp ảnh.
+00:08:36 - 00:08:39, Ví dụ như đây là ảnh x nè.
+00:08:39 - 00:08:45, Và cái output của cái generator của mình là x phải.
+00:08:47 - 00:08:49, Thì đó là một cặp ảnh.
+00:08:51 - 00:09:00, Được rồi, còn như cái chi phí để chúng ta tạo ra một cái cặp ảnh này là tốn kém.
+00:09:01 - 00:09:08, Hoặc thậm chí, ví dụ như trong cái trường hợp mà từ ảnh vệ tinh sang ảnh bản đồ,
+00:09:08 - 00:09:12, chúng ta phải thuê người để mà vẽ cái bản đồ ra.
+00:09:12 - 00:09:19, Hoặc thậm chí là có nhiều tình huống chúng ta không có tồn tại cái ảnh đó.
+00:09:19 - 00:09:24, Tức là chúng ta không thể tạo ra được cái ảnh x phải một cách gọi là chi tiết.
+00:09:24 - 00:09:28, Thì chúng ta chỉ có thể là cái dữ liệu không bắt cặp.
+00:09:28 - 00:09:37, Tức là đầu vào của mình sẽ là có một tập hợp các cái ảnh nguồn và đầu ra của mình thì nó sẽ có một tập hợp các cái ảnh đích.
+00:09:37 - 00:09:46, Ví dụ như chúng ta sẽ có đầu vào sẽ là tập hợp những cái ảnh của những cái con ngựa bình thường.
+00:09:46 - 00:09:52, Và đầu ra thì chúng ta sẽ tập hợp những cái ảnh có ngựa vàng.
+00:09:52 - 00:10:05, Thế thì nếu mà chúng ta đi cán nhãn hết những cái ảnh mà có con ngựa thật và con ngựa bằng như thế,
+00:10:05 - 00:10:10, và thực tế là chúng ta không thể có với cùng một cái khung cảnh này mà thay con ngựa bằng,
+00:10:10 - 00:10:14, thay con ngựa thật thành ngựa bằng thì chúng ta không có thể làm được cái chuyện đó.
+00:10:14 - 00:10:21, Tại vì thực tế nó không thể xảy ra cái hình con ngựa bằng mà đứng ngay cái vị trí này, đứng ngay cái vị trí này, đứng cái bốn cảnh này, khung cảnh này.
+00:10:21 - 00:10:31, Do đó cái việc tìm ra cái cặp ảnh là không thể, nhưng mà chúng ta vẫn có thể biến đổi cái con ngựa thật này thành ngựa bằng,
+00:10:31 - 00:10:41, nhờ cái thực toán Psychogan. Psychogan là nó sẽ đi theo một cái chương trình, biến từ cái domain DX sang cái domain DI,
+00:10:41 - 00:10:45, và sau đó chúng ta sẽ có một cái hàm biến đổi ngược lại.
+00:10:45 - 00:10:56, Thì lúc này chúng ta sẽ có cái gọi là Cyclops để đảm bảo rằng là cái ảnh tạo ra bởi cái không gian đích là Y,
+00:10:56 - 00:11:07, nó phải giống thật nhưng đồng thời ở ký khía cạnh ngược lại là từ cái không gian Y về lại X, thì cái DX này cũng phải là một cái ảnh giống thật.
+00:11:08 - 00:11:12, Thì Psychogan là một cái biến thể rất là thú vị.
+00:11:12 - 00:11:20, Thì nếu như Gan là chúng ta ánh sạ từ một cái random noise sang một cái không gian ảnh,
+00:11:20 - 00:11:29, thì Psychogan là biến đổi từ hai cái miền dựng được X và Y cho nhau, biến dựng được từ miền dựng được X sang miền dựng được Y.
+00:11:29 - 00:11:33, Ví dụ như trong ví dụ vừa rồi, X của mình chính là ngựa thường.
+00:11:34 - 00:11:38, Còn Y ở bên đây đó là ngựa vàng.
+00:11:41 - 00:11:43, Và cái này là không ghét cặp.
+00:11:46 - 00:11:51, Nhưng nó vẫn có thể học được các cái phân bố của hai cái domain X và Y này.
+00:11:52 - 00:12:02, Như vậy tổng kết lại, trong phần này thì chúng ta đã cùng tìm hiểu về hai cái nhóm mô hình tạo sinh quan trọng,
+00:12:02 - 00:12:07, đó chính là autoencoder và biến thể variational autoencoder.
+00:12:08 - 00:12:14, Mục đích của variational autoencoder đó là chúng ta sẽ học cái không gian ẩn,
+00:12:15 - 00:12:21, chúng ta sẽ học cái không gian tìm ẩn có số chiều thấp hơn so với dữ liệu đầu vào.
+00:12:22 - 00:12:32, Và khi chúng ta lấy mẫu Y, thì nó sẽ tái tạo lại qua cái hàm decoder để tái tạo lại cái X mẫu này.
+00:12:33 - 00:12:38, Và chúng ta luôn mong muốn cái X mẫu xấp xỉ với lại X.
+00:12:40 - 00:12:46, Còn đối với GAN là một cái mạng tạo sinh đối kháng, thì chúng ta không có cái công đoạn né ngảnh này,
+00:12:46 - 00:12:52, mà chúng ta từ một cái vector random noise Z, chúng ta sẽ tạo ra một cái ảnh xFact.
+00:12:54 - 00:12:59, Nhưng mà đương nhiên trong cái quá trình huấn luyện, khi G mà nó càng tốt,
+00:13:00 - 00:13:04, thì cái xFact này nó sẽ có xu hướng là càng giống với là xReal, tức là x giống thật.
+00:13:05 - 00:13:11, Thế thì đối với mạng GAN, mặc dù nó không có cái công đoạn nén,
+00:13:11 - 00:13:18, nó không có cái công đoạn là nén, nhưng mà nó có một cái module tương tự như vậy, đó là discriminator.
+00:13:19 - 00:13:24, Là một cái module để giúp phân biệt ảnh thật và ảnh giả.
+00:13:25 - 00:13:31, Thế thì tưởng là chúng ta có thể tránh cái việc phải không có dùng một cái mạng generator,
+00:13:31 - 00:13:41, dùng một cái mạng encoder, nhưng cuối cùng thì cái D này, discriminator này nó sẽ tương đương với lại một cái mạng encoder.
+00:13:43 - 00:13:53, Như vậy thì chúng ta đã cùng tìm hiểu qua hai cái kiến trúc rất là kinh điển và vẫn có rất nhiều những cái ứng dụng hiện nay, đó chính là VIA và GAN.
+00:13:53 - 00:14:03, Trong phần tiếp theo, phần các cái mô hình tạo sinh học sâu, thứ hai thì chúng ta sẽ được tìm hiểu về mô hình diffusion.
+00:14:04 - 00:14:09, Đây cũng là một trong những cái mô hình mà có rất nhiều những cái ứng dụng trong thực tế.
+00:14:23 - 00:14:27, Cảm ơn các bạn đã xem video.
+00:14:28 - 00:14:32, Hãy đăng ký kênh để xem video mới nhất.

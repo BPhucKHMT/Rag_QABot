@@ -1,0 +1,156 @@
+0:00:14 - 0:00:19, Chúng ta sẽ cùng tìm hiểu về một số biến thể của mạng GAN và ứng dụng của nó.
+0:00:19 - 0:00:27, GAN sẽ bao gồm hai generator và discriminator.
+0:00:27 - 0:00:32, Tuy nhiên, khi chúng ta sinh ảnh với độ phân giải rất cao,
+0:00:32 - 0:00:35, cụ thể là độ phân giải HD,
+0:00:35 - 0:00:39, thì nó sẽ gặp một số vấn đề thách thức,
+0:00:39 - 0:00:43, ví dụ như tốc độ huấn luyện, khó hội tụ,
+0:00:43 - 0:00:44, hoặc bị overfitting.
+0:00:44 - 0:00:47, Thế thì, cái giải pháp của chúng ta đó là
+0:00:47 - 0:00:51, thay vì chúng ta sử dụng một cái kiến trúc phức tạp
+0:00:51 - 0:00:53, từ độ phân giải thấp lên độ phân giải cao,
+0:00:53 - 0:00:55, tức là một cái random noise,
+0:00:55 - 0:00:58, từ độ phân giải thấp lên độ phân giải cao,
+0:00:58 - 0:01:00, sau đó từ cao xuống thấp,
+0:01:00 - 0:01:02, chúng ta chỉ huấn luyện với một cái mạng như thế này,
+0:01:02 - 0:01:04, thì chúng ta sẽ huấn luyện từ từ.
+0:01:04 - 0:01:08, Thì cái quá trình training process chúng ta thấy là từ trái sang phải,
+0:01:08 - 0:01:12, là chúng ta đang đi từ độ phân giải thấp,
+0:01:12 - 0:01:15, đi tiến đến cái độ phân giải cao.
+0:01:15 - 0:01:17, Với cái độ phân giải thấp,
+0:01:17 - 0:01:22, thì chúng ta sẽ học về những cái concept chung của tấm hình.
+0:01:22 - 0:01:25, Ví dụ như ở đây chúng ta có cái vector latent,
+0:01:25 - 0:01:31, được random sampling theo nhiễu normal 01,
+0:01:31 - 0:01:35, thì chúng ta sẽ biến đổi nó thành một cái tấm ảnh có độ phân giải,
+0:01:35 - 0:01:37, đó là 4x4.
+0:01:37 - 0:01:41, Cái module này thì giúp chúng ta tạo ra tấm ảnh có độ phân giải là 4x4.
+0:01:41 - 0:01:44, Và kết hợp với lại cái ảnh thật,
+0:01:44 - 0:01:48, thì chúng ta sẽ qua cái discriminator,
+0:01:48 - 0:01:51, và dành cho cái ảnh có kích thước là 4x4.
+0:01:51 - 0:01:56, Thì chúng ta thấy là với cái mô hình tạo sinh và phân biệt,
+0:01:56 - 0:01:58, phân loại, ảnh thật, ảnh giả,
+0:01:58 - 0:02:00, mà với độ phân giải thấp,
+0:02:00 - 0:02:02, thì cái số lượng tham số nó sẽ rất là ít,
+0:02:02 - 0:02:05, do đó cái hội tụ, tốc độ hội tụ nó sẽ nhanh hơn,
+0:02:05 - 0:02:06, nó dễ hội tụ hơn.
+0:02:06 - 0:02:09, Khi chúng ta lên cái độ phân giải cao hơn,
+0:02:09 - 0:02:16, chúng ta sẽ chồng thêm các lớp biến đổi để từ ảnh có độ phân giải 4x4 lên 8x8.
+0:02:16 - 0:02:21, Và với ảnh này thì chúng ta thấy nó đã mượt hơn một chút,
+0:02:21 - 0:02:23, nó đã mượt hơn,
+0:02:23 - 0:02:26, so với lại ảnh ở phía trước là 4x4.
+0:02:26 - 0:02:28, Tương tự như vậy, kết hợp với ảnh thật,
+0:02:28 - 0:02:34, thì chúng ta sẽ đi qua một bộ phân loại,
+0:02:34 - 0:02:36, ảnh thật, ảnh giả,
+0:02:36 - 0:02:38, từ 8x8 về lại 4x4.
+0:02:38 - 0:02:40, Và cứ như vậy,
+0:02:40 - 0:02:45, thì chúng ta nâng dần cái độ phân giải của ảnh lên,
+0:02:45 - 0:02:49, từ 4x4 lên 1024 x 1024,
+0:02:49 - 0:02:53, thì tạo ra một ảnh có độ phân giải rất là cao.
+0:02:53 - 0:02:55, Độ phân giải cao.
+0:02:55 - 0:03:02, Và từ cái độ phân giải cao này, chúng ta đưa qua cái mô hình phân loại,
+0:03:02 - 0:03:07, thì chúng ta sẽ ra được cái mô hình có khả năng phân biệt được ảnh hay là ảnh thật,
+0:03:07 - 0:03:08, hay ảnh giả,
+0:03:08 - 0:03:13, thì ở bên tay phải, chúng ta thấy đó là cái kết quả là ảnh có độ phân giải rất là cao.
+0:03:13 - 0:03:16, Và khi chúng ta tạo sinh hình ảnh,
+0:03:16 - 0:03:19, thì chúng ta sẽ sử dụng cái mô hình G này,
+0:03:19 - 0:03:23, chúng ta sẽ sử dụng cái mô hình G có cái độ phân giải cao này.
+0:03:23 - 0:03:30, Và ứng dụng của nó thì chúng ta biết rằng là ở trong cái StyleGAN,
+0:03:31 - 0:03:33, StyleGAN 2,
+0:03:33 - 0:03:38, thì có công bố một cái trang web đó là This Person Does Not Exist,
+0:03:38 - 0:03:44, thì mục tiêu đó là nó tạo ra ngẫu nhiên một cái ảnh người nhưng mà không có thật.
+0:03:44 - 0:03:49, Và chúng ta có thể sử dụng cái ảnh này để phục vụ cho cái việc là làm những cái ví dụ nâng cao
+0:03:49 - 0:03:53, mà không vi phạm các cái vấn đề về quyền riêng tư.
+0:03:55 - 0:03:58, Một cái biến thể khác cũng rất là nổi tiếng của GAN,
+0:03:58 - 0:04:01, đó chính là Conditional GAN hay là GAN có điều kiện.
+0:04:01 - 0:04:07, Trước đây thì chúng ta từ một cái vector nhiễu Z, chúng ta tạo ra một cái tấm ảnh,
+0:04:07 - 0:04:11, nhưng mà cái ảnh này là chúng ta không thể đoán trước được,
+0:04:11 - 0:04:13, hoặc là chúng ta không thể kiểm soát được,
+0:04:13 - 0:04:18, không thể kiểm soát được cái đầu ra của mình, đó là cái ảnh như thế nào.
+0:04:18 - 0:04:23, Thế thì bây giờ chúng ta muốn tăng cái khả năng kiểm soát cái tính chất của ảnh đầu ra,
+0:04:23 - 0:04:28, thì chúng ta có thể thêm một cái vector điều kiện là vector C.
+0:04:28 - 0:04:38, Vector C này có thể hiện, nó có thể là những cái tính chất ví dụ như là độ tuổi của cái người được tạo ra,
+0:04:38 - 0:04:47, ví dụ như là trẻ em, hoặc là thanh niên, hoặc là người trung niên.
+0:04:48 - 0:04:56, Hoặc cái Conditional này nó cũng có thể là tính chất của mặt, ví dụ như là có đeo khẩu trang hay không,
+0:04:56 - 0:05:05, rồi có đeo mắt kính hay không, rồi có râu hay nón hay không, ví dụ vậy.
+0:05:05 - 0:05:11, Đó thì đây là những cái, hai cái này sẽ là những cái ví dụ cho cái vector điều kiện.
+0:05:11 - 0:05:18, Và cái vector điều kiện này thì chúng ta cũng sẽ đưa vào bên trong cái discriminator để giúp cho phân biệt cái ảnh thật hay giả.
+0:05:18 - 0:05:23, Tức là cái này nó sẽ cung cấp thêm thông tin để cho chúng ta phân biệt.
+0:05:23 - 0:05:32, Thì biến thể GAN có điều kiện hay Conditional GAN là một trong những biến thể rất là hiệu quả và nổi tiếng.
+0:05:32 - 0:05:36, Bên cạnh Conditional GAN thì chúng ta còn có mô hình là Pix2Pix.
+0:05:36 - 0:05:40, Pix2Pix thì đây chính là những mô hình mà biến đổi ảnh theo cặp.
+0:05:40 - 0:05:45, Có nghĩa là bình thường thì chúng ta chỉ có một tập các cái ảnh.
+0:05:45 - 0:05:49, Bình thường là chúng ta chỉ có tập các cái ảnh.
+0:05:55 - 0:06:00, Nhưng mà chúng ta sẽ không có cái ảnh đích, cái ảnh mà chúng ta muốn tạo thành.
+0:06:00 - 0:06:08, Còn kiến trúc của Pix2Pix tức là nó biến một cái picture thành một cái picture.
+0:06:08 - 0:06:16, Vâng, thì nó đòi hỏi chúng ta sẽ phải có một cặp ảnh để huấn luyện.
+0:06:16 - 0:06:37, Vì vậy, chúng ta sẽ có một cái cặp ảnh đó là ảnh thật và một cái ảnh mà có cái phân đoạn, semantic map.
+0:06:37 - 0:06:43, Thì đây là một cái cặp ảnh và nó tham gia vào quá trình huấn luyện cũng tương tự như GAN.
+0:06:43 - 0:06:46, Nó có generator và discriminator.
+0:06:46 - 0:06:51, Thì cái bài toán này đó là gì? Thay vì đầu vào của chúng ta là một cái random noise,
+0:06:51 - 0:06:54, thì đầu vào của chúng ta là một cái semantic map.
+0:06:54 - 0:07:00, Và từ cái semantic map này, thì chúng ta sẽ tạo ra cái khung ảnh thật.
+0:07:00 - 0:07:05, Ví dụ như đây là đường phố, đây là xe cộ, đây là cây cối, đây là bầu trời,
+0:07:05 - 0:07:09, thì nó sẽ tạo ra một cái khung ảnh có cái concept giống như ở đây.
+0:07:09 - 0:07:19, Và ứng dụng của nó đó là dùng cho cái việc biến từ label sang cái street scene,
+0:07:19 - 0:07:23, tức là cái khung ảnh đường phố để giúp cho chúng ta có thể tăng cường dữ liệu.
+0:07:24 - 0:07:28, Hoặc là trong các ứng dụng liên quan đến bản đồ chẳng hạn,
+0:07:28 - 0:07:35, thì từ một cái bản đồ ở bên trái chúng ta có thể tạo ra một cái khung ảnh,
+0:07:35 - 0:07:38, nhìn từ trên cao, hoặc ngược lại.
+0:07:38 - 0:07:43, Cái này có lẽ là ứng dụng nhiều hơn, đó là chúng ta chụp ảnh từ ảnh vệ tinh,
+0:07:43 - 0:07:46, sau đó chúng ta sẽ biến thành cái ảnh bản đồ.
+0:07:46 - 0:07:49, Và nếu được thì với cái ảnh bản đồ này,
+0:07:49 - 0:07:56, thì chúng ta có thể số hóa nó để tạo ra một cái trang tương tự như là Google Maps.
+0:07:58 - 0:08:03, Một cái biến thể khác cũng rất là nổi tiếng và có nhiều cái ứng dụng
+0:08:03 - 0:08:08, cũng như là phù hợp trong cái việc thực tiễn, đó là CycleGAN.
+0:08:08 - 0:08:18, CycleGAN là cho phép chúng ta học các phép biến đổi giữa các miền dữ liệu với nhau.
+0:08:18 - 0:08:22, Và ở đây là dữ liệu của mình là không bắt cặp,
+0:08:22 - 0:08:26, nghĩa là trong cái mô hình Pix2Pix, ví dụ vậy,
+0:08:26 - 0:08:30, thì chúng ta đòi hỏi phải có một cặp ảnh.
+0:08:30 - 0:08:35, Chúng ta phải có một cái cặp ảnh, x và y là một cặp ảnh.
+0:08:36 - 0:08:39, Ví dụ như đây là ảnh x nè.
+0:08:39 - 0:08:45, Và cái output của cái generator của mình là x phẩy.
+0:08:47 - 0:08:49, Thì đó là một cặp ảnh.
+0:08:51 - 0:09:00, Được rồi, còn như cái chi phí để chúng ta tạo ra một cái cặp ảnh này là tốn kém.
+0:09:01 - 0:09:08, Hoặc thậm chí, ví dụ như trong cái trường hợp mà từ ảnh vệ tinh sang ảnh bản đồ,
+0:09:08 - 0:09:12, chúng ta phải thuê người để mà vẽ cái bản đồ ra.
+0:09:12 - 0:09:19, Hoặc thậm chí là có nhiều tình huống chúng ta không có tồn tại cái ảnh đó.
+0:09:19 - 0:09:24, Tức là chúng ta không thể tạo ra được cái ảnh x phẩy một cách gọi là chi tiết.
+0:09:24 - 0:09:28, Thì chúng ta chỉ có thể là cái dữ liệu không bắt cặp.
+0:09:28 - 0:09:37, Tức là đầu vào của mình sẽ là có một tập hợp các cái ảnh nguồn và đầu ra của mình thì nó sẽ có một tập hợp các cái ảnh đích.
+0:09:37 - 0:09:46, Ví dụ như chúng ta sẽ có đầu vào sẽ là tập hợp những cái ảnh của những cái con ngựa bình thường.
+0:09:46 - 0:09:52, Và đầu ra thì chúng ta sẽ tập hợp những cái ảnh có ngựa vằn.
+0:09:52 - 0:10:05, Thế thì nếu mà chúng ta đi gán nhãn hết những cái ảnh mà có con ngựa thật và con ngựa vằn như thế,
+0:10:05 - 0:10:10, và thực tế là chúng ta không thể có với cùng một cái khung cảnh này mà thay con ngựa vằn,
+0:10:10 - 0:10:14, thay con ngựa thật thành ngựa vằn thì chúng ta không có thể làm được cái chuyện đó.
+0:10:14 - 0:10:21, Tại vì thực tế nó không thể xảy ra cái hình con ngựa vằn mà đứng ngay cái vị trí này, đứng ngay cái vị trí này, đứng cái bối cảnh này, khung cảnh này.
+0:10:21 - 0:10:31, Do đó cái việc tìm ra cái cặp ảnh là không thể, nhưng mà chúng ta vẫn có thể biến đổi cái con ngựa thật này thành ngựa vằn,
+0:10:31 - 0:10:41, nhờ cái thuật toán CycleGAN. CycleGAN là nó sẽ đi theo một cái chương trình, biến từ cái domain DX sang cái domain DY,
+0:10:41 - 0:10:45, và sau đó chúng ta sẽ có một cái hàm biến đổi ngược lại.
+0:10:45 - 0:10:56, Thì lúc này chúng ta sẽ có cái gọi là cycle loss để đảm bảo rằng là cái ảnh tạo ra bởi cái không gian đích là Y,
+0:10:56 - 0:11:07, nó phải giống thật nhưng đồng thời ở cái khía cạnh ngược lại là từ cái không gian Y về lại X, thì cái DX này cũng phải là một cái ảnh giống thật.
+0:11:08 - 0:11:12, Thì CycleGAN là một cái biến thể rất là thú vị.
+0:11:12 - 0:11:20, Thì nếu như GAN là chúng ta ánh xạ từ một cái random noise sang một cái không gian ảnh,
+0:11:20 - 0:11:29, thì CycleGAN là biến đổi từ hai cái miền dữ liệu X và Y cho nhau, biến đổi từ miền dữ liệu X sang miền dữ liệu Y.
+0:11:29 - 0:11:33, Ví dụ như trong ví dụ vừa rồi, X của mình chính là ngựa thường.
+0:11:34 - 0:11:38, Còn Y ở bên đây đó là ngựa vằn.
+0:11:41 - 0:11:43, Và cái này là không bắt cặp.
+0:11:46 - 0:11:51, Nhưng nó vẫn có thể học được các cái phân bố của hai cái domain X và Y này.
+0:11:52 - 0:12:02, Như vậy tổng kết lại, trong phần này thì chúng ta đã cùng tìm hiểu về hai cái nhóm mô hình tạo sinh quan trọng,
+0:12:02 - 0:12:07, đó chính là autoencoder và biến thể variational autoencoder.
+0:12:08 - 0:12:14, Mục đích của variational autoencoder đó là chúng ta sẽ học cái không gian ẩn,
+0:12:15 - 0:12:21, chúng ta sẽ học cái không gian tiềm ẩn có số chiều thấp hơn so với dữ liệu đầu vào.
+0:12:22 - 0:12:32, Và khi chúng ta lấy mẫu Y, thì nó sẽ tái tạo lại qua cái hàm decoder để tái tạo lại cái X mẫu này.
+0:12:33 - 0:12:38, Và chúng ta luôn mong muốn cái X mẫu xấp xỉ với lại X.
+0:12:40 - 0:12:46, Còn đối với GAN là một cái mạng tạo sinh đối kháng, thì chúng ta không có cái công đoạn nén ảnh này,
+0:12:46 - 0:12:52, mà chúng ta từ một cái vector random noise Z, chúng ta sẽ tạo ra một cái ảnh x' (x phẩy).
+0:12:54 - 0:12:59, Nhưng mà đương nhiên trong cái quá trình huấn luyện, khi G mà nó càng tốt,
+0:13:00 - 0:13:04, thì cái x' (x phẩy) này nó sẽ có xu hướng là càng giống với là xReal, tức là x giống thật.
+0:13:05 - 0:13:11, Thế thì đối với mạng GAN, mặc dù nó không có cái công đoạn nén,
+0:13:11 - 0:13:18, nó không có cái công đoạn là nén, nhưng mà nó có một cái module tương tự như vậy, đó là discriminator.
+0:13:19 - 0:13:24, Là một cái module để giúp phân biệt ảnh thật và ảnh giả.
+0:13:25 - 0:13:31, Thế thì tưởng là chúng ta có thể tránh cái việc không dùng một cái mạng generator,
+0:13:31 - 0:13:41, dùng một cái mạng encoder, nhưng cuối cùng thì cái D này, discriminator này nó sẽ tương đương với lại một cái mạng encoder.
+0:13:43 - 0:13:53, Như vậy thì chúng ta đã cùng tìm hiểu qua hai cái kiến trúc rất là kinh điển và vẫn có rất nhiều những cái ứng dụng hiện nay, đó chính là VAE và GAN.
+0:13:53 - 0:14:03, Trong phần tiếp theo, phần các cái mô hình tạo sinh học sâu, thứ hai thì chúng ta sẽ được tìm hiểu về mô hình diffusion.
+0:14:04 - 0:14:09, Đây cũng là một trong những cái mô hình mà có rất nhiều những cái ứng dụng trong thực tế.
+0:14:23 - 0:14:27, Cảm ơn các bạn đã xem video.
+0:14:28 - 0:14:32, Hãy đăng ký kênh để xem video mới nhất.

@@ -1,0 +1,199 @@
+00:00:00 - 00:00:16, VGG đã có những cải tiến gì?
+00:00:16 - 00:00:18, so với AlexNet
+00:00:18 - 00:00:20, đó là
+00:00:20 - 00:00:22, thay thế các cái
+00:00:22 - 00:00:24, filter có kích thước lớn
+00:00:24 - 00:00:26, ví dụ như là 5577 trở lên
+00:00:26 - 00:00:28, bằng các cái bộ lọc 3x3
+00:00:28 - 00:00:30, được thực hiện một cách liên tiếp
+00:00:30 - 00:00:32, thì như đã nói
+00:00:32 - 00:00:34, trong phần trước là việc thực hiện
+00:00:34 - 00:00:36, các cái bộ lọc 33 liên tiếp
+00:00:36 - 00:00:38, thì nó sẽ có cái Reset Defu
+00:00:38 - 00:00:40, tương ứng với lại các cái vùng là 5x5
+00:00:40 - 00:00:42, hoặc là 7x7
+00:00:42 - 00:00:44, sau đó thì VGG
+00:00:44 - 00:00:56, thì ta tìm cách vì việc thay các kernel kích thước là 5 x 5 và 7 x 7 bằng các kernel có kích thước là 3 x 3 liên tiếp
+00:00:56 - 00:01:00, thì dẫn đến là nó sẽ khiến mạng của mình sẽ sâu hơn
+00:01:02 - 00:01:12, khi mạng của mình càng sâu hơn thì các tác giả mới nhận thấy rằng là từ VGG 11 tăng lên VGG 13
+00:01:12 - 00:01:19, Độ chính xác tăng lên, lên VGG16 đổ chính xác tăng lên, đến 19 thì cũng vậy.
+00:01:19 - 00:01:25, Tuy nhiên nó sẽ có vấn đề đó là sự tăng này dần bão hòa.
+00:01:25 - 00:01:33, Vì việc dần bão hòa có nguyên nhân gì thì chúng ta sẽ cùng giải thích trong phần tiếp theo.
+00:01:33 - 00:01:38, Trong sơ đồ này chúng ta thấy là những layer, những đặc trưng mà màu hồng
+00:01:38 - 00:01:48, đó là những lần chúng ta down sampling xuống, pooling để giảm số chiều, giảm kích thước của ảnh xuống
+00:01:48 - 00:01:55, và trước đó chúng ta thấy có 2 cái layer liên tiếp, 2 cái layer liên tiếp
+00:01:55 - 00:02:03, nó đặt tương đương với lại 1 cái vùng có kích thước là Reset Default là 5x5
+00:02:03 - 00:02:06, do chúng ta sử dụng 2 cái filter là 3x3 liên tiếp
+00:02:06 - 00:02:16, Sau đó, chúng ta thấy là có vùng là 4 đặc trưng, 1, 2, 3, 4 đặc trưng 3 x 3 liên tiếp
+00:02:16 - 00:02:22, Thì như vậy là nó làm cho chúng ta tạo ra các đặc trưng mà có Reset Default lớn
+00:02:22 - 00:02:40, Để hi vọng rằng các đặc trưng có thể bao quát trên vùng có diện tích lớn để có tính toàn cục
+00:02:40 - 00:02:44, Đó chính là những cải tiến lớn của VGG
+00:02:44 - 00:02:55, Rồi, thế thì một cái cải tiến tiếp theo đó chính là ResNet, Residual Network
+00:02:55 - 00:03:00, và nó giải quyết cái vấn đề gì của kiến trúc mạng trước đó là VCC
+00:03:00 - 00:03:09, đó là khi tăng số layer lên, cụ thể là trên 16 layer thì độ chính xác nó không còn tăng đáng kể
+00:03:09 - 00:03:12, Tức là nó có tăng nhưng mà nó tăng không đáng kể
+00:03:13 - 00:03:19, và không đáng kể so với lại số lượng tham số cũng như là công tính toán của mình
+00:03:19 - 00:03:25, Thậm chí là khi tăng hơn 20 layer thì nó có dấu hiệu là có thể giảm
+00:03:26 - 00:03:28, Vì vậy thì nguyên nhân ở đây là gì?
+00:03:28 - 00:03:33, Đó là do hiện tượng tiêu biến đạo hàm mà chúng ta đã đề cập trong những phần trước
+00:03:33 - 00:03:38, Khi số lớp biến đổi càng nhiều thì hiện tượng tiêu biến đạo hàm
+00:03:38 - 00:03:42, nó sẽ xảy ra càng mạnh mẽ hơn
+00:03:42 - 00:03:46, mặc dù là chúng ta đã sử dụng Rectify Linear Unit
+00:03:46 - 00:03:50, nhưng đây không phải là một liều thuốc toàn năng
+00:03:50 - 00:03:53, mà có thể giải quyết được triệt để vấn đề vanishing gradient
+00:03:53 - 00:03:59, tại vì nó vẫn sẽ có... với Rectify Linear Unit
+00:03:59 - 00:04:05, tức là cụ hàm Z, là bằng max cụ 0 và Z
+00:04:05 - 00:04:13, khi đó đạo hàm của Relu, thì nó sẽ hoặc là bằng 0 hoặc là bằng 1
+00:04:13 - 00:04:20, thì một cách trung dung sẽ có những tình huống lớn hơn không
+00:04:20 - 00:04:25, sẽ có tình huống bằng 0 hoặc là bằng 1
+00:04:25 - 00:04:29, giờ đó thì một cách trung dung sẽ là con số ở giữa là khoảng 0.5
+00:04:29 - 00:04:36, Như vậy thì cách làm này nó sẽ còn chưa đạt được một cách triệt để trong việc là
+00:04:36 - 00:04:44, cái đạo hàm của Relu là một cái con số ổn định và con số là hài hòa cân bằng.
+00:04:44 - 00:04:51, Thì cái cải tiến lớn nhất của Residual Neural Network, ResNet nó chính là
+00:04:51 - 00:04:55, tạo ra các cái Notak hay còn gọi là Skip Connection
+00:04:55 - 00:04:59, để hạn chế hiện tượng vanishing gradient
+00:04:59 - 00:05:04, thì cái này chúng ta đã đề cập ở trong phần vanishing gradient rồi
+00:05:04 - 00:05:08, nhờ có cái hàm hx là bằng fx
+00:05:08 - 00:05:13, fx này tức là cái thao tác mà rút trích đặc trưng của mình
+00:05:13 - 00:05:16, rồi sau đó chúng ta sẽ cộng thêm cho x
+00:05:16 - 00:05:19, thì khi chúng ta tính đào hàm
+00:05:19 - 00:05:22, thì nó sẽ là bằng f và x
+00:05:22 - 00:05:32, Cộng cho 1, cho dù thành phần này nó có lớn hay nhỏ hơn không, thì khi chúng ta tính một cách trung bình
+00:05:32 - 00:05:39, thì h-x này sẽ giao động xoay xung quanh con số 1, nó có thể bên trái và bên phải số 1
+00:05:39 - 00:05:49, nhưng mà một cách trung dung và hài hòa nhất thì nó sẽ xoay xung quanh số 1 dẫn đến ổn định đạo hạng
+00:05:49 - 00:05:52, Để ổn định đạo hàng
+00:05:57 - 00:06:05, Còn đối với Relu, chúng ta thấy trung dung nhất là 0.5, vẫn là một con số bẻ hơn 1
+00:06:05 - 00:06:11, Rồi, chúng ta sẽ cùng đến với một biến thể nữa, đó là MobileNet
+00:06:11 - 00:06:18, MobileNet, khi nói đến từ Mobile này, chúng ta sẽ hình dụng ngay là nó nhằm cải tiến tốc độ
+00:06:18 - 00:06:27, để hy vọng rằng các mạng convolution neural network có thể chạy được trên các thiết bị di động
+00:06:27 - 00:06:30, chạy được trên di động
+00:06:30 - 00:06:42, Thế thì làm sao có thể cải thiến được? Đó là do chúng ta phải phân tích vấn đề của nó là nguyên nhân tại sao chúng ta chọn
+00:06:42 - 00:06:52, Đó là cùng một ResetQiFuel là 3x3xD, nhưng số lượng tham số và tính toán của mình là lớn
+00:06:52 - 00:06:59, số lượng tham số tính toán và số lượng tham số và số phép toán là lớn
+00:06:59 - 00:07:06, MobiNet sẽ thay convolution bằng Depth-wide Separable Conversion DSC
+00:07:06 - 00:07:12, Thì Depth-wide Separable Conversion sẽ gồm 2 bước tính toán
+00:07:12 - 00:07:14, Bước đầu tiên là Depth-wide
+00:07:14 - 00:07:28, thì chúng ta sẽ có một cái filter và chúng ta sẽ thực hiện nó trên toàn bộ cái độ sâu của cái feature này
+00:07:28 - 00:07:34, thì chúng ta thấy là khi chúng ta áp dụng cái DepthWideCompression
+00:07:34 - 00:07:38, thì cái kích thước của cái độ sâu này không thay đổi thì trước và sau
+00:07:38 - 00:07:45, nếu như ở trước là d chiều là có độ sâu ở d thì phía sau độ sâu cũng là d
+00:07:45 - 00:07:51, trong khi đó nếu chúng ta áp dụng cái phép biến đổi cung ứng xuyên bình thường
+00:07:51 - 00:07:57, thì rõ ràng là nó sẽ đưa về một cái feature map có cái depth là bằng một
+00:07:57 - 00:08:01, thì ở đây cái depth này của mình là dữ nguyên
+00:08:01 - 00:08:04, depth này là dữ nguyên
+00:08:04 - 00:08:07, Còn FAP convolution bình thường thì depth của mình nó sẽ đưa về bằng 1
+00:08:09 - 00:08:13, Rồi, thì ở đây chúng ta sẽ thấy có một cái lợi điểm nữa đó là số lượng tham số
+00:08:13 - 00:08:18, Vì chúng ta thực hiện depth-wide convolution nên cái filter này nó sẽ không có depth
+00:08:18 - 00:08:22, Nó không có độ sâu, nó chỉ có kích thước là 3 x 3 thôi, ví dụ vậy
+00:08:22 - 00:08:26, Sau khi chúng ta đã thực hiện ra được, tạo ra được các feature map này
+00:08:26 - 00:08:30, Thì chúng ta sẽ tiến đến cái bước là Point-wide convolution
+00:08:30 - 00:08:38, và chúng ta sẽ stack, chúng ta trồng các feature map này lên và tiến hành 1 nhân 1 conversion
+00:08:38 - 00:08:44, nhân với 1 nhân 1 conversion để tạo ra 1 feature map mới
+00:08:44 - 00:08:53, thì cái 1 nhân 1 này, bề ngang và bề cao của mình nó sẽ có kích thước là 1
+00:08:53 - 00:08:55, đều có kích thước là 1
+00:08:55 - 00:08:57, nhưng mà cái độ sâu của mình
+00:08:57 - 00:09:01, thì lúc này nó sẽ là d
+00:09:01 - 00:09:03, thì nếu như chúng ta áp dụng
+00:09:03 - 00:09:07, ca cái filter
+00:09:07 - 00:09:11, 1 nhìn 1 nhìn co-function thì ở đây
+00:09:11 - 00:09:13, def của mình nó sẽ ra là ca
+00:09:13 - 00:09:17, như vậy thì chúng ta sẽ xem giữa 2 cách
+00:09:17 - 00:09:21, thì cách tình thường sẽ là đâu đó sắp xỉ
+00:09:21 - 00:09:33, Ví dụ như chúng ta cho input là 32 kênh, output là 64 kênh, kernel của mình kích thước là 3 x 3, số tham số sẽ là bao nhiêu?
+00:09:33 - 00:09:48, đối với phép Convolution bình thường, chúng ta sử dụng kernel có kích thước 3 x 3
+00:09:48 - 00:09:54, và số canh đầu vào là 32, nên đép sẽ là 32
+00:09:54 - 00:10:01, và chúng ta muốn cái output của mình có 64 kênh thì chúng ta phải nhân cái này lên 64 lần
+00:10:01 - 00:10:03, do đó thì là...
+00:10:03 - 00:10:10, convolution thường nó sẽ tốn có cái số lượng tham số là 32 x 3 x 3 x 4
+00:10:10 - 00:10:15, thì đâu đó là khoảng 18.000 tham số
+00:10:15 - 00:10:24, nếu chúng ta áp dụng DSC thì ở lớp biến đổi đầu tiên chỉ có kích thước là 3x3
+00:10:24 - 00:10:35, đối với phép biến đổi thứ 2, đó là Point-wide Condition
+00:10:35 - 00:10:40, thì chúng ta sẽ có input của mình là depth là 32
+00:10:40 - 00:10:42, vẫn là 32
+00:10:42 - 00:10:45, nhưng mà chúng ta sẽ nhân với condition 1 nhân 1
+00:10:45 - 00:10:47, và chúng ta muốn output có 64 kênh
+00:10:47 - 00:10:51, thì khi đó chúng ta sẽ nhân với 64
+00:10:51 - 00:10:54, thì cái kết quả ở đây đâu đó nó sẽ ra khoảng là
+00:10:54 - 00:10:56, 2003
+00:10:56 - 00:11:01, rồi thì
+00:11:01 - 00:11:17, Vì có 32 kênh, thì có 32 kênh
+00:11:17 - 00:11:34, Chia ra tỷ lệ là 2.000 x 18.000 là 1.9%
+00:11:34 - 00:11:42, hay nói cách khác, đó là chúng ta có thể giảm được 9 lần tốc độ tính toán
+00:11:42 - 00:11:50, xin lỗi 1 lần, là giảm 9 lần số phép toán và giảm được 9 lần số tham số
+00:11:50 - 00:11:56, thế thì chúng ta sẽ đến với 1 kiến trúc hiện đại hơn, đó là con neck
+00:11:56 - 00:12:02, Conflux đã ra đời từ sau năm 2000
+00:12:02 - 00:12:12, Khi vào thời điểm 2020, khi kiến trúc Transformer đã tương đối trưởng thành
+00:12:12 - 00:12:16, khi nó đã có được 3 năm phát triển
+00:12:16 - 00:12:24, Conflux mục tiêu của nó là muốn kế thừa những thành tựu của Transformer
+00:12:24 - 00:12:28, nhưng vẫn giữ kiến trúc cũ của Confusion
+00:12:28 - 00:12:35, nó chỉ mượn những cái trick, những cái mẹo khuấn luyện của Transformer để đưa vào cái mạng CNN
+00:12:35 - 00:12:39, thì đó chính là những cái vấn đề
+00:12:39 - 00:12:42, thứ nhất đó là cái Relu của mình
+00:12:42 - 00:12:46, nó sẽ bị trịt tiêu đạo hàm khi tín hiệu của mình có cái đầu vào là âm
+00:12:46 - 00:12:50, tại vì chúng ta nhìn thấy cái sơ đồ của cái hàm Relu
+00:12:50 - 00:12:52, thì với những cái đặc trưng mà dương
+00:12:52 - 00:12:58, thì nó sẽ nhận giá trị đúng bằng x của mình luôn
+00:12:58 - 00:13:02, nhưng đối với đặt trực âm thì nó sẽ trịt tiêu, cái đường nằm ngang này là trịt tiêu
+00:13:02 - 00:13:08, thế thì ReLU nó sẽ không khai thác được những radian của đặt trực âm
+00:13:08 - 00:13:13, và nếu như chúng ta chỉ bám vào những mạng CNN
+00:13:13 - 00:13:18, thì chúng ta không kế thừa được những mẹo khi huấn luyện các mô hình với transformer
+00:13:18 - 00:13:23, 4 nổi đình nổi đám với độ chính xác rất là cao
+00:13:23 - 00:13:29, và nó sẽ có 1 biến thể cho lĩnh vực về thị giác máy tính đó là VIT
+00:13:29 - 00:13:31, là Vision Transformer
+00:13:31 - 00:13:34, Vậy thì Connect đã có những cái cải tiến gì?
+00:13:34 - 00:13:36, Đầu tiên đó là ở hàm kỹ thoại
+00:13:36 - 00:13:41, thay vì chúng ta sử dụng Relu tức là cái đường màu cam chúng ta thấy nó bị gãy ở đây
+00:13:41 - 00:13:49, thì chúng ta dùng Relu nó sẽ tạo ra đường màu xanh này, nó sẽ là mượt mà hơn
+00:13:49 - 00:13:59, sẽ khiến cho việc huấn luyện của mình dễ dàng hơn và nó chống được hiện tượng vanishing gradient
+00:13:59 - 00:14:12, Cái việc huấn luyện của mình nó cũng sẽ trơn tru và dễ dàng hơn. Thế thì, đồng thời là cũng sẽ khai thác một cái loại optimizer mới vào những năm 2000.
+00:14:12 - 00:14:22, Đó chính là Adam W. Adam W là một cái biến thể khác của Adam nhưng mà được sử dụng trong lĩnh vực xử lý ngôn ngữ tự nhiên với cái kiến trúc là Transformer.
+00:14:22 - 00:14:29, Thế thì cái mạng Conflux này nó cũng đã thay Adam bằng Adam W
+00:14:29 - 00:14:33, Đồng thời cũng sử dụng những phương pháp tăng cường dữ liệu hiện đại hơn
+00:14:33 - 00:14:37, Bí dụ như random augment, mixup, cutmix
+00:14:37 - 00:14:42, thì đây là 2 kỹ thuật để mà blend các đặc trưng lại với nhau
+00:14:42 - 00:14:46, và tạo ra những đối tượng mà có tính outlayer rất là cao
+00:14:46 - 00:15:00, tức là để tăng tính phổ quát của đặc trưng, tạo ra những cái Hsample, mẫu dữ liệu khó để khiến cho phân bố của dữ liệu càng mở rộng
+00:15:00 - 00:15:04, để hồng giúp cho mô hình của mình có tính tổng quát hơn.
+00:15:04 - 00:15:13, Hay nói cái khác, đó là nó sẽ giúp cho chúng ta chống được hiện tượng Overfitting, chống Overfitting một cách hiệu quả hơn.
+00:15:13 - 00:15:19, Ngoài ra thì nó sẽ thay thế các patchnum bằng layernum
+00:15:19 - 00:15:26, Tại vì khi chúng ta sử dụng patchnum thì đối với những patchsize nhỏ, đặc biệt khi chúng ta làm với dữ liệu lớn
+00:15:26 - 00:15:33, thì patchsize nhỏ sẽ khiến cho radian của mình bị phập phù
+00:15:33 - 00:15:35, Tức là nó sẽ không ổn định
+00:15:35 - 00:15:38, Nó sẽ là không ổn định
+00:15:38 - 00:15:45, Cái Radian khi cái Bat của mình bé
+00:15:45 - 00:15:53, Thì cái việc mà dùng BatNom này nó sẽ khiến cho cái việc huấn luyện nó không có tính ổn định
+00:15:53 - 00:15:58, Khi Bat lớn thì tốt nhưng khi BatSize mà nhỏ thì Radian nó thiếu tính ổn định
+00:15:58 - 00:16:01, Do đó thì chúng ta thay bằng Layonom
+00:16:01 - 00:16:05, và ngoài ra nó sẽ hơi ngược với lại VGG
+00:16:05 - 00:16:09, đó là sẽ dùng kernel kích thước là 7 x 7
+00:16:09 - 00:16:13, để hy vọng rằng là nó học được bối cảnh xa hơn
+00:16:13 - 00:16:17, trong sơ đổ ở đây chúng ta thấy bên trái là ResNet Block
+00:16:17 - 00:16:21, và bên phải là Convolution Connect Block
+00:16:21 - 00:16:27, sự khác biệt nữa của ConvNet so với ResNet đó chính là
+00:16:27 - 00:16:36, RESTNET thì chúng ta sẽ tìm cách đi reduce, tức là chúng ta đi core lại các feature map
+00:16:36 - 00:16:45, chúng ta giảm các số lượng đặc trưng lại vì chúng ta áp dụng cái 1 nhân 1
+00:16:45 - 00:16:58, Công Nusson sẽ khiến feature map x lại và đặc trưng x sẽ tạo ra boto neck
+00:16:58 - 00:17:17, Trái ngược lại, ConnextBlock dùng kernel kích thước 7x7 và vẫn giữ nguyên
+00:17:17 - 00:17:27, Điều xong là 96, băng đầu vào của mình là 96, qua lớp biến đổi đầu tiên nó vẫn diễn nguyên
+00:17:27 - 00:17:36, Điểm co lại ở bên ResNet thì đã được đảo ngược lại
+00:17:36 - 00:17:41, Thay vì chúng ta đưa từ 256 chiều, rớt xuống còn 64
+00:17:41 - 00:17:53, thì ở đây, Connect làm điều ngược lại trước, đó là chúng ta từ 96, chúng ta tăng lên 384, tức là tăng cái số đặc trưng lên.
+00:17:57 - 00:18:03, Thì theo giải thích của các tác giả, khi chúng ta nới động cái số đặc trưng lên, nó tạo ra cái không gian của mình nó thoáng hơn
+00:18:03 - 00:18:10, và khi đó cái Radian của mình nó truyền, nó sẽ hiệu quả hơn, không có bị hiện tượng Vanishing Radian.
+00:18:10 - 00:18:19, Còn nếu chúng ta co bóp nó lại để còn có 64, thì khi radian của mình đi qua những khu vực bốt tổn ác
+00:18:19 - 00:18:26, thì nó sẽ bị ngãn, ngãn radian và dẫn đến là radian của mình được lan truyền không có hiệu quả.
+00:18:26 - 00:18:40, Đối với Restnet, chúng ta thực hiện công việc đó là giảm xong rồi từ 64 chúng ta lại tăng lên là thành 256, giảm xong tăng.
+00:18:40 - 00:18:45, hoặc là giảm rồi mở rộng
+00:18:45 - 00:18:52, còn Connext thì làm điều ngược lại, đó là chúng ta tăng trước
+00:18:52 - 00:18:58, sau đó có nhiều ký dư địa rồi thì chúng ta sẽ giảm lại sau
+00:18:58 - 00:19:01, giảm sau
+00:19:01 - 00:19:07, từ 96 lên 384 rồi từ 344 về lại 96
+00:19:07 - 00:19:21, Đây là 2 chiến lược đối lược nhau và một trong những tính chất hiệu quả đó chính là dùng inverted residual block này.
+00:19:21 - 00:19:24, Tức là nó làm điều ngược lại sau với ResNet.
+00:19:24 - 00:19:33, Như vậy thì trong phần này chúng ta đã cùng tìm hiệu qua những biến thể của mạng CNN theo chuỗi lịch sử.
+00:19:33 - 00:19:43, và với mỗi một cái kinh trúc mạng thì đâu đó nó sẽ có những cái vấn đề cơ bản cần giải quyết và đề xuất ra một cái giải pháp phù hợp.
+00:19:43 - 00:19:55, Thì cái biến thể Connect là một trong những cái biến thể khá là hiện đại và gần đây và nó khai thác được rất nhiều những cái thành tựu của các cái mô hình trước đây.
+00:19:55 - 00:20:04, đặc biệt là nó sẽ kết hợp với lại mẹo huấn luyện của Transformer để tạo ra tổ hợp,
+00:20:04 - 00:20:11, những ưu điểm vừa giải quyết được hiện tượng Overfitting và vừa giải quyết được hiện tượng Vanishing Gradient.
+00:20:11 - 00:20:21, Trong phần này, chúng ta đã áp dụng các kỹ thuật để giải quyết hiện tượng Overfitting và Vanishing Gradient
+00:20:21 - 00:20:29, cho Oxygen Gradient vào các biến thể của Oxygen để chúng ta thấy được sự tiến hóa của nó và có những đi do của nó.

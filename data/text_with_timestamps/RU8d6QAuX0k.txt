@@ -1,0 +1,44 @@
+00:00:00 - 00:00:26, Chào mừng các bạn đến với mô học CS3.1.5 Máy học nâng cao. Ngày hôm nay chúng ta sẽ cùng giới thiệu về mô học và ôm lại một số kiến thức cơ bản để làm nền tảng phục vụ cho mô học này.
+00:00:26 - 00:00:32, Đầu tiên là giới thiệu mô học. Mô học này sẽ học những nội dung chính là gì?
+00:00:32 - 00:00:51, Chúng ta có 15 tuần, sau đây sẽ là những nội dung chi tiết cho từng tuần. Đầu tiên là giới thiệu về môn học và ôm tập những kiến thức toán nền tảng để phục vụ cho các mô hình mà sau chúng ta sử dụng.
+00:00:51 - 00:01:00, Và những phần chúng ta sẽ ôm tập rất là căng bản và rất là cốt lõi trong các mô hình nâng cao.
+00:01:00 - 00:01:22, Tùng 2 thì chúng ta sẽ cùng tìm hiểu về mô hình dựa trên Radiant và chúng ta sẽ đến với một thuật toán. Đầu tiên đó chính là thuật toán Radiant Descent. Đây có thể nói là một trong những cái lõi thuật toán để huấn luyện mô hình máy học và đặc biệt là các mô hình học sâu, những mô hình hiện đại đều sử dụng cái lõi là thuật toán Radiant Descent.
+00:01:23 - 00:01:34, Sau đó thì chúng ta sẽ cùng tìm hiểu về các biến thể nâng cao của Radiant Descent, ví dụ như là Momentum, Root Mean Square, Propagation, Adam.
+00:01:34 - 00:01:44, Và sau đó thì chúng ta sẽ đến với một kỹ thuật toán để giúp chúng ta có thể tính đạo hàm và chạy được kỹ thuật toán Radiant Descent một cách dễ dàng.
+00:01:44 - 00:01:54, Đó chính là thuật toán Lan Truyền Ngược hay còn gọi là Back Propagation và một số mô hình cơ bản dựa trên Radiant.
+00:01:54 - 00:02:04, Sau đó thì sang tuần năm thì chúng ta sẽ cùng giới thiệu về quá trình tiến hóa của một vài mô hình kinh điển trong học sâu.
+00:02:04 - 00:02:19, Trước khi chúng ta đi qua các mô hình thì chúng ta sẽ nói về hai vấn đề cục lõ nhất mà các mô hình học sâu hiện nay đều đang gặp phải. Đó chính là vấn đề về Overfitting, tức là quá khớp dữ liệu.
+00:02:20 - 00:02:36, Và vấn đề thứ hai đó chính là đặt thù cho lĩnh vực học sâu đó chính là Vanishing Radiant. Đây là một hiện tượng gây ra cho việc khuấn luyện chậm và có thể khiến mô hình của chúng ta không học được.
+00:02:39 - 00:02:46, Nội dung chính chúng ta sẽ tìm hiệu trong hôm nay là tuần một, tức là giới thiệu về các chiến thức nền tảng.
+00:02:47 - 00:02:56, Sang tuần số 6 thì chúng ta sẽ cùng tìm hiểu về một số mô hình và sự tiến hóa của các mô hình trên dữ liệu ảnh.
+00:02:57 - 00:03:07, Sang tuần 7 thì chúng ta sẽ tìm hiểu về các mô hình trên dữ liệu chuỗi và đặc biệt là một dạng dữ liệu mà được nhắc đến là dữ liệu văn bản.
+00:03:07 - 00:03:15, Lưu ý đó là dữ liệu chuỗi thì chúng ta không nhất thiết là văn bản có thể là âm thanh, có thể là video và chuỗi thời gian.
+00:03:16 - 00:03:23, Tuy nhiên thì văn bản sẽ là một dữ liệu chính để chúng ta dình bày cho các mô hình dạng chuỗi này.
+00:03:24 - 00:03:35, Và hai mô hình cho dữ liệu ảnh và cho dữ liệu chuỗi thì đều bám theo việc đó là giải quyết hai vấn đề Overfitting và vấn đề về Vanishing Radiant.
+00:03:38 - 00:03:50, Tức là khi chúng ta tìm hiểu về các mô hình này thì đều xoay xung quanh vấn đề là các mô hình đó đã giải quyết Overfitting và Vanishing Radiant như thế nào.
+00:03:51 - 00:03:54, Sau đó chúng ta sẽ cùng đến với các mô hình tạo sinh.
+00:03:54 - 00:04:06, Và mô hình tạo sinh nhóm đầu tiên đó chính là các mô hình Autoencoder, Variational Autoencoder và GAN, Generative Adversarial Network.
+00:04:07 - 00:04:16, Sau đó chúng ta sẽ cùng tìm hiểu về một trong những mô hình hiện đại hiện nay đang được sử dụng và ứng dụng rộng rãi.
+00:04:16 - 00:04:24, Đó chính là mô hình dựa trên sát xuất và cụ thể của một mô hình dựa trên sát xuất đó chính là mô hình khách táng là Diffusion Model.
+00:04:25 - 00:04:37, Sau đó sang tuần thứ 11 thì chúng ta sẽ cùng tìm hiểu về những mô hình học sâu nhưng mà có sự tham gia của ngôn ngữ và thị giác hay còn gọi là Vision Language Model.
+00:04:37 - 00:04:49, Đối với tiếng Anh thì chúng ta để là Vision Language Model nhưng mà khi chúng ta dịch sang tiếng Việt thì nó sẽ đảo lại, đó là ngôn ngữ thị giác.
+00:04:50 - 00:04:57, Và 3 mô hình đầu tiên chúng ta sẽ cùng tìm hiểu trong tuần thứ 11 đó chính là mô hình clip, mô hình clip và mô hình clip.
+00:04:57 - 00:05:13, Sau đó thì chúng ta sẽ tìm hiểu về những mô hình ngôn ngữ thị giác mà ở cấp độ có sự tương đáp về ngữ nghĩa cao hơn, đó là mô hình Visual Programming và GPT for Vision.
+00:05:14 - 00:05:29, Rồi cuối cùng trong mô hình ngôn ngữ thị giác thì chúng ta có các mô hình sử dụng mô hình ngôn ngữ thị giác để giải quyết bài toán từ kinh điển cho đến hiện đại của thị giác máy tính.
+00:05:30 - 00:05:36, Ví dụ như là Rounding Dino để phục vụ cho bài toán phát hiện vật thể hoặc là phân đoạn nữa nghĩa gác.
+00:05:36 - 00:05:48, Đầu tiên là để phát hiện, sau đó là kết hợp với thục tán SAM để phân đoạn ngữ nghĩa đối tượng.
+00:05:48 - 00:05:56, Tức là những mô hình ngôn ngữ thị giác nhưng mà được sử dụng cho những bài toán kinh điển để phát hiện một phân đoạn nghĩa.
+00:05:57 - 00:06:06, Rồi cho các tương tác đa thể thức khác nhau, có rất nhiều loại Prom mà chúng ta tương tác lên trên tấm hình.
+00:06:07 - 00:06:13, Ví dụ như Prom bình thường thì chúng ta dùng dạng văn bảng nhưng mà không chỉ dừng lại ở văn bảng.
+00:06:13 - 00:06:28, Ví dụ như là tương tác lên trên hình, thông qua dạng Point là điểm, Box là Bounding Box, Scribble là đường vạch hoạt.
+00:06:29 - 00:06:37, Sim là một trong những mô hình giúp chúng ta tương tác lên trên máy tính thông qua rất nhiều loại Prom khác nhau.
+00:06:37 - 00:06:52, Và cuối cùng là Lava, đây có thể nói là một trong những mô hình mạng hồ mở tương đương với LGBT4V để giúp chúng ta giải quyết được các bài toán trong thị giác máy tính nhưng có sử dụng ưu tố ngôn ngữ để tương tác.
+00:06:53 - 00:07:02, Ví dụ như chúng ta đặt câu hỏi, chat với hình ảnh, v.v. thì đó chính là mô hình Lava.
+00:07:02 - 00:07:12, Và cuối cùng đó là chúng ta gồm tùm 14 và tùm 15 thì 2 tùm này sẽ được dành cho việc đó là báo cáo đồ án cuối kỳ.
+00:07:13 - 00:07:19, Các bạn sẽ trình bày cái đồ án của mình và đồng thời đó là chúng ta sẽ ôm tập để chuẩn bị cho việc thi cuối kỳ.
+00:07:20 - 00:07:25, Về hình thức đánh giá mô học này thì sẽ bao gồm là 3 cục điểm chính.
+00:07:25 - 00:07:33, Cục điểm đầu tiên đó là bài tập chiếm 30% bao gồm việc chúng ta làm các bài quy trong quá trình chúng ta xem bài giảng này.
+00:07:34 - 00:07:46, Và các bài tập lập trình, thứ 2 đó là cục đồ án 30%, thì chúng ta sẽ làm theo nhóm và sẽ báo cáo semina cộng với việc chúng ta sẽ một cuốn report của báo cáo cuối kỳ.
+00:07:47 - 00:07:56, Và cuối cùng cục điểm cao nhất đó là 40%, thì đây sẽ là cái cục điểm được sử dụng để thi viết và với đề đóng.
+00:07:57 - 00:08:02, Trên đây đó là cách thức mà chúng ta sẽ đánh giá mô học này.
+00:08:16 - 00:08:20, Cảm ơn các bạn đã xem video.

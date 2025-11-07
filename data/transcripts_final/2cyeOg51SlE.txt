@@ -1,0 +1,287 @@
+0:00:14 - 0:00:25, Chúng ta sẽ cùng nghiên cứu về một mô hình ngôn ngữ thị giác có sử dụng đến LLM, Large Language Model để cho bài toán hiểu nội dung của ảnh.
+0:00:25 - 0:00:29, Đầu tiên, chúng ta sẽ đặt câu hỏi đó là LLM là gì?
+0:00:29 - 0:00:36, LLM là viết tắt của chữ Large Language Model là một kỹ thuật của Deep Learning
+0:00:36 - 0:00:41, và trong đó nó có thể giải quyết được các bài toán khác nhau trong xử lý ngôn ngữ tự nhiên
+0:00:41 - 0:00:50, bao gồm tổng hợp thông tin, dự đoán, tạo ra các nội dung chat, v.v.
+0:00:50 - 0:01:00, Điểm đặc biệt của LLM là nó có chữ LAS, trước đây có mô hình Large Language Model
+0:01:00 - 0:01:08, nhưng bây giờ nó có chữ LAS này, lý do là LAS này có thể hiểu là số lượng tham số của mô hình
+0:01:08 - 0:01:14, có thể lên đến hàng tỷ để chứa được những thông tin từ những nguồn dữ liệu khổng lồ trên internet
+0:01:14 - 0:01:20, Nhìn chung thì nó giống như là một công cụ nén mọi thứ để có mặt trên internet
+0:01:20 - 0:01:27, tuy nhiên nó không chỉ đơn giản là nén mà một số mô hình LLM gần đây nó còn có khả năng là suy luận
+0:01:27 - 0:01:35, và có khả năng khai thác được những thông tin đa chiều
+0:01:35 - 0:01:45, Ví dụ như có thể dùng LAS để cho các tác vụ của những lĩnh vực không phải bên lĩnh vực về xử lý ngôn ngữ tự nhiên
+0:01:45 - 0:01:53, Ví dụ như là hình ảnh hoặc là âm thanh, LLM không chỉ hiệu quả cho các tác vụ về văn bản
+0:01:53 - 0:02:01, mà nó có nhiều nghiên cứu để chứng minh và khai thác được LLM cho khả năng suy diễn trên các thao tác
+0:02:01 - 0:02:09, LLM sẽ có tính tổng quát hóa rất là cao
+0:02:09 - 0:02:17, để khi chúng ta cho nó thực hiện trên một tác vụ mới, nó chưa từng thấy bao giờ thì nó vẫn có thể hoạt động tốt được
+0:02:17 - 0:02:25, Ví dụ như nó có thể dự báo thời tiết, chơi cờ vua, sử dụng chuỗi gen, xử lý hình ảnh, tổng quát hóa
+0:02:25 - 0:02:33, và nó có thể hoạt động ghi nhớ và suy luận như là bộ não của con người
+0:02:33 - 0:02:41, Với tác vụ về thị giác máy tính, ngoài các đặc trưng từ giác quan như mắt, con người có những kỹ năng khác mà nó có thể sử dụng
+0:02:41 - 0:02:49, Ví dụ như nó có thể sử dụng bộ não của con người, nó có thể sử dụng bộ não của con người, nó có thể sử dụng bộ não của con người
+0:02:49 - 0:02:59, Với tổng quát hóa, con người có những kỹ năng khác mà đôi khi chúng ta cũng không tự nhận ra được
+0:02:59 - 0:03:07, Ví dụ như chúng ta có khả năng kết hợp đặc trưng, thị giác mà chúng ta nhìn thấy qua mắt, với những khả năng suy luận của chúng ta
+0:03:07 - 0:03:16, Giác quan regarding to stats, to t Tribunal..., Pewillos..., gay, sex & tur çalışaram làm kiến thức đểiving Ol M
+0:03:16 - 0:03:19, ")
+0:03:20 - 0:03:27, Đisiónеч algorithms pela M bisog không thể sử dụng đяет 책 ز gelecek thì đ Million Broadcasting,
+0:03:27 - 0:03:33, đó jogxe đ guarantees irgenda imaginer mriverant plutos và Dal seal rap minced
+0:03:33 - 0:03:36, vào trong các tác vụ của thị giác máy tính
+0:03:36 - 0:03:41, là LLM có thể giúp được để giải quyết các tác vụ của thị giác máy tính
+0:03:41 - 0:03:45, Vậy thì chúng ta sẽ đến với mô hình đầu tiên
+0:03:45 - 0:03:49, có khai thác LLM, đó chính là mô hình LLaVA
+0:03:49 - 0:03:56, chúng ta sẽ so sánh kết hợp LLM với các mô hình trước đây
+0:03:57 - 0:04:04, trước đây chúng ta có mô hình GPT-4, mô hình CLIP
+0:04:04 - 0:04:10, chúng ta sẽ có một hình ảnh khá là thú vị ở đây
+0:04:10 - 0:04:15, đó là người đàn ông đang ủi đồ ở ngoài đường
+0:04:15 - 0:04:17, trên chiếc xe taxi
+0:04:17 - 0:04:24, chúng ta hỏi user đặt câu hỏi có gì bất thường trong tấm hình này hay không
+0:04:24 - 0:04:28, mô hình LLaVA của chúng ta đã trả lời được chính xác
+0:04:28 - 0:04:30, đó là hành động là ủi đồ
+0:04:30 - 0:04:36, và đồng thời có thể lý giải được tại sao hành động này là bất thường
+0:04:36 - 0:04:43, do nó khai thác được thông tin, tri thức trước đó
+0:04:48 - 0:04:54, để nó có thể đưa ra kết luận đó là hành động ủi đồ, hành động bất bình thường
+0:04:54 - 0:05:03, ở đây nó nói là đây không phải là một nơi điển hình để làm công việc này
+0:05:06 - 0:05:12, ví dụ việc ủi đồ thường được ở nơi an toàn hơn, ổn định hơn
+0:05:12 - 0:05:13, như là nhà
+0:05:13 - 0:05:22, hoặc là nó đã giải thích được hành vi ủi đồ chỉ nên áp dụng ở nơi an toàn và ổn định
+0:05:22 - 0:05:26, còn đây là ngoài đường, nó không có an toàn và không có ổn định
+0:05:26 - 0:05:31, thì đó chính là hai thông tin của tri thức trước đó
+0:05:31 - 0:05:35, đã giúp cho mô hình của mình trả lời được câu hỏi
+0:05:35 - 0:05:43, tương tự như vậy thì cho mô hình như này ở đây
+0:05:43 - 0:05:48, thì nó có thể giải thích cái meme này chi tiết được hay không
+0:05:48 - 0:05:58, thì rõ ràng là chúng ta rất là bất ngờ là LLaVA có thể nhìn nó và hiểu nó như là một cái bản đồ thế giới
+0:06:00 - 0:06:02, như là một cái bản đồ thế giới
+0:06:02 - 0:06:08, mặc dù về mặt vật liệu thì chúng ta thấy đây là những cái tấm ảnh mà
+0:06:08 - 0:06:14, đây là những cái vật liệu mà không có được dùng để vẽ bản đồ nhưng mà
+0:06:14 - 0:06:22, người dùng, người chụp ảnh họ đã sắp xếp những cái món ăn, đồ ăn lại để sao cho nó nhìn giống như 5 châu của chúng ta
+0:06:22 - 0:06:28, và nhờ chúng ta chỉ dẫn cho nó biết đây là một cái meme
+0:06:28 - 0:06:32, nên nó có thể khai thác được cái thông tin trước đó
+0:06:32 - 0:06:36, ví dụ như là thông tin về trái đất là nó sẽ gồm các cái châu lục nào
+0:06:36 - 0:06:44, vâng vâng thì world map là liên tưởng đến world map rồi các cái lục địa, hải đảo
+0:06:44 - 0:06:48, thì đây chính là cái minh họa cho cái việc khai thác cái thông tin tri thức trước đó
+0:06:48 - 0:06:52, của LLM để mà giải quyết các cái bài toán của thị giác máy tính
+0:06:52 - 0:06:56, trong khi các cái mô hình như là GPT-4
+0:06:56 - 0:07:02, hoặc là CLIP thì chưa có thể giúp cho chúng ta giải quyết được tốt các cái công việc này
+0:07:03 - 0:07:11, đặc biệt là CLIP mặc dù là mang tiếng là đã được train là một cái mô hình ngôn ngữ
+0:07:11 - 0:07:15, mô hình ngôn ngữ thị giác được train với rất nhiều những cái dữ liệu
+0:07:15 - 0:07:19, và sử dụng rất nhiều những cái image encoder và text encoder tốt nhất
+00:07:19 - 0:07:27, nhưng mà nó vẫn không có giải thích được chính xác và chi tiết cho hai cái ví dụ ở trên
+00:07:27 - 0:07:35, như vậy thì cái kiến trúc LLaVA ở đây nó có cái điểm gì đặc biệt
+00:07:35 - 0:07:39, thì thực sự mà nói kiến trúc này nó rất là đơn giản
+0:07:39 - 0:07:43, chúng ta nhìn trong cái sơ đồ này chúng ta có thể thấy
+00:07:43 - 0:07:49, ở đây có hai cái pre-train model đó chính là cái vision encoder và cái language model
+00:07:49 - 0:07:53, thì đây sẽ là một cái LLM
+00:07:53 - 0:07:59, là một cái mô hình ngôn ngữ lớn ví dụ như là mô hình LLaMA là LLaMA chẳng hạn
+00:08:03 - 0:08:09, rồi LLaMA-2 và vision encoder thì chúng ta có thể sử dụng là ViT
+00:08:09 - 0:08:13, hoặc là các cái mô hình của CNN
+00:08:13 - 0:08:17, rồi và đây là hai cái large pre-train model
+00:08:17 - 0:08:21, và chúng ta sẽ sử dụng ViT để trích xuất đặc trưng ảnh
+00:08:21 - 0:08:27, thì với cái ảnh XV đưa vào thì chúng ta sẽ có được cái đặc trưng
+00:08:27 - 0:08:31, và đặc trưng biểu diễn này thì sẽ được
+00:08:31 - 0:08:34, đặc trưng này sẽ được biểu diễn dưới dạng là token
+00:08:34 - 0:08:41, và qua cái lớp MLP thì nó sẽ đưa về cái đầu vào
+0:08:41 - 0:08:44, giống như là một cái mô hình ngôn ngữ lớn
+0:08:44 - 0:08:46, thì nhờ có cái module ZV này
+0:08:46 - 0:08:49, nó sẽ giúp cho chúng ta ánh xạ
+00:08:49 - 0:08:54, tức là qua cái module projection W này
+00:08:54 - 0:08:59, nó sẽ giúp cho chúng ta ánh xạ sang cái không gian HV
+00:08:59 - 0:09:07, thì đây là cái dạng biểu diễn token mà tương tự như trong cái LLM
+00:09:07 - 0:09:12, hay nói cách khác đó là nó đang map cái đặc trưng của không gian ảnh
+00:09:13 - 0:09:17, sang cái đặc trưng của mô hình ngôn ngữ lớn
+0:09:17 - 0:09:20, thế thì chúng ta sẽ đi chi tiết hơn
+0:09:20 - 0:09:23, đó là làm sao để huấn luyện được cái mô hình LLaVA
+0:09:23 - 0:09:26, thì LLaVA có hai bước huấn luyện chính
+00:09:26 - 0:09:31, bước đầu tiên đó là tiền huấn luyện để căn chỉnh cái đặc trưng ảnh và ngôn ngữ
+0:09:31 - 0:09:34, thì đây chính là cái ý mà chúng ta vừa mà nói khi nãy
+0:09:34 - 0:09:38, và cái bước thứ hai đó là tinh chỉnh để fine-tune lại toàn bộ mô hình
+00:09:38 - 0:09:42, để có thể nó gọi là instruction fine-tuning
+00:09:42 - 0:09:45, để mà mình có thể giải quyết các cái tác vụ
+00:09:51 - 0:09:52, trên ảnh
+00:09:54 - 0:09:59, còn cái bước tiền huấn luyện thì nhiệm vụ của nó chỉ đơn giản đó là
+00:09:59 - 0:10:04, align cái đặc trưng thị giác về với lại đặc trưng của
+00:10:04 - 0:10:06, được huấn luyện bởi mô hình ngôn ngữ lớn
+00:10:06 - 0:10:11, thế thì đối với cái bước căn chỉnh đặc trưng ảnh và ngôn ngữ
+00:10:11 - 0:10:15, thì đây là một cái bước mà đưa cái đặc trưng ảnh với các visual token
+00:10:15 - 0:10:19, về cái không gian text token embedding của mô hình ngôn ngữ lớn
+00:10:19 - 0:10:20, như chúng ta đã nói
+0:10:21 - 0:10:25, và cả visual encoder và LLM đều được đóng băng
+00:10:25 - 0:10:28, tức là chúng ta sẽ frozen đóng băng cái này
+00:10:29 - 0:10:30, và đóng băng cái này
+00:10:33 - 0:10:35, và không tiến hành huấn luyện
+00:10:35 - 0:10:39, chúng ta chỉ huấn luyện trên cái module chiếu tức là cái module projection này
+00:10:39 - 0:10:41, thì chúng ta sẽ train trên đây
+00:10:41 - 0:10:44, để tìm ra cái ma trận W
+00:10:44 - 0:10:49, nhằm ánh xạ cái vector zv
+00:10:49 - 0:10:52, cái vector zv tức là cái kết quả sau khi
+0:10:52 - 0:10:56, đưa cái tấm ảnh xv qua cái visual encoder
+00:10:56 - 0:11:00, thì cái zv sẽ được đưa về cái HV
+0:11:00 - 0:11:04, tức là cái không gian đặc trưng của mô hình ngôn ngữ lớn
+0:11:05 - 0:11:10, và để mà tiền huấn luyện này
+00:11:10 - 0:11:13, thì chúng ta cần phải có một cái bộ dữ liệu
+00:11:13 - 0:11:18, và bộ dữ liệu này chúng ta sẽ lấy từ các bộ dữ liệu image captioning dataset
+00:11:18 - 0:11:19, ví dụ như là COCO chẳng hạn
+0:11:20 - 0:11:22, chúng ta sẽ lập và xử lý
+00:11:22 - 0:11:25, để đưa về cái dạng format như sau
+00:11:25 - 0:11:34, và cái prompt của mình sẽ có cái dạng human 2.xq xv stock và assistant xc stock
+00:11:34 - 0:11:39, trong đó xv của chúng ta chính là cái ảnh của mình
+00:11:39 - 0:11:44, còn xc chính là cái caption được lấy từ các tập dataset
+00:11:44 - 0:11:46, ví dụ như là tập COCO
+0:11:46 - 0:11:50, rồi xq thì sẽ là một câu instruction
+00:11:50 - 0:11:54, ví dụ như là describe image concisely
+00:11:54 - 0:11:57, tức là mô tả tấm hình một cách chi tiết
+00:11:57 - 0:12:01, hoặc là summarize visual content of the image
+0:12:01 - 0:12:04, đây là những cái cách nói khác nhau
+0:12:04 - 0:12:08, những cái dạng câu hỏi khác nhau được viết lại bằng cái công cụ GPT
+00:12:08 - 0:12:12, tức là chúng ta sẽ nhờ ChatGPT
+00:12:12 - 0:12:14, để viết những cái biến thể khác nhau
+00:12:14 - 0:12:17, cho cái ý đó là tóm tắt cái nội dung hình ảnh
+00:12:19 - 0:12:22, tóm tắt cái nội dung của một cái tấm ảnh cho trước
+0:12:22 - 0:12:25, bằng cái dạng ngôn ngữ văn bản
+0:12:25 - 0:12:27, thì đây là cái ý việc chuẩn bị dữ liệu
+0:12:27 - 0:12:30, và khi chúng ta đưa dữ liệu, chúng ta huấn luyện
+00:12:30 - 0:12:32, chúng ta tạo xong dữ liệu này
+0:12:32 - 0:12:35, thì chúng ta sẽ đưa vào
+00:12:35 - 0:12:38, để mà tinh chỉnh toàn bộ mô hình
+00:12:38 - 0:12:41, thì đây là cái bước tinh chỉnh với những dữ liệu đa dạng hơn
+00:12:41 - 0:12:43, và sinh ra từ GPT-4
+00:12:43 - 0:12:47, tức là bên cạnh dữ liệu mà chúng ta lấy từ COCO như hồi nãy
+00:12:47 - 0:12:50, thì chúng ta còn có thể lấy ra những dữ liệu
+00:12:50 - 0:12:54, mà tạo ra bởi ChatGPT
+00:12:55 - 0:12:58, và lúc này thì cái tham số
+00:12:58 - 0:13:03, cái tham số của mô hình vision encoder thì vẫn được giữ nguyên
+0:13:05 - 0:13:09, và chúng ta sẽ tiếp tục tinh chỉnh cho hai cái module này
+00:13:09 - 0:13:12, để nhờ có cái language model
+00:13:12 - 0:13:16, chúng ta sẽ tinh chỉnh cái mô hình F_phi
+00:13:16 - 0:13:19, để cho nó có thể giải quyết được
+00:13:19 - 0:13:22, cái tác vụ mà chúng ta đang hỏi ở đây
+0:13:22 - 0:13:25, rồi
+0:13:25 - 0:13:29, và dữ liệu cho việc tinh chỉnh thì chúng ta có thể sử dụng
+0:13:29 - 0:13:32, COCO image captioning dataset
+0:13:32 - 0:13:35, rồi kết hợp với lại few-shot example từ người dùng
+0:13:35 - 0:13:39, thì cái kỹ thuật này gọi là in-context learning
+0:13:43 - 0:13:46, với few-shot prompting
+0:13:46 - 0:13:49, tức là chúng ta sẽ cho mô hình một vài ví dụ
+0:13:49 - 0:13:52, và nó sẽ tạo sinh ra thêm cho chúng ta
+00:13:52 - 0:13:55, khi chúng ta đưa những mẫu dữ liệu mới
+00:13:55 - 0:13:58, ví dụ như là context style 1 là loại dữ liệu của chúng ta
+00:13:58 - 0:14:01, đầu vào của chúng ta đó là caption
+00:14:01 - 0:14:04, là group people standing outside
+00:14:04 - 0:14:07, of a black vehicle
+00:14:07 - 0:14:10, thì đây là cái câu mô tả
+00:14:10 - 0:14:13, rồi cái dạng đầu vào tiếp theo
+00:14:13 - 0:14:16, đó là cái dạng bounding box
+00:14:16 - 0:14:19, có thể có tọa độ của đối tượng như là người
+00:14:19 - 0:14:22, của những người trong tấm hình
+00:14:22 - 0:14:25, backpack v.v. thì nó sẽ là có tọa độ
+00:14:25 - 0:14:28, làm dữ liệu đầu vào
+00:14:30 - 0:14:33, và có 3 dạng câu hỏi được yêu cầu
+00:14:33 - 0:14:36, cái dạng câu hỏi đầu tiên đó là dạng câu hỏi hội thoại
+00:14:36 - 0:14:39, dạng hội thoại
+00:14:39 - 0:14:42, ví dụ như đây là một dạng hội thoại
+00:14:42 - 0:14:45, hội thoại, ví dụ như là what type of vehicle is featured in the image
+00:14:45 - 0:14:48, thì câu trả lời đó là
+00:14:48 - 0:14:51, the image features
+00:14:51 - 0:14:54, black sport utility vehicle SUV
+00:14:54 - 0:14:57, thế thì đây là cái dạng câu hỏi dạng conversation
+00:14:57 - 0:15:00, và conversation thì chúng ta biết rằng là nó
+00:15:00 - 0:15:03, không phải chỉ có một cặp câu hỏi đáp
+00:15:03 - 0:15:06, mà nó sẽ có một cái chuỗi như thế này
+00:15:06 - 0:15:09, mà có rất nhiều dạng hỏi rồi đáp
+00:15:10 - 0:15:13, và cái dạng thứ 2
+00:15:13 - 0:15:16, câu trả lời thứ 2 đó là
+00:15:16 - 0:15:19, detail description
+00:15:19 - 0:15:22, tức là dạng mô tả chi tiết
+00:15:22 - 0:15:25, thế thì đây là cái dạng ví dụ cho cái dạng
+00:15:25 - 0:15:28, phản hồi
+00:15:28 - 0:15:31, image is an underground, parking area gì đấy
+00:15:31 - 0:15:34, thì đây là một cái câu mô tả rất là dài
+00:15:34 - 0:15:37, và chi tiết
+00:15:37 - 0:15:40, và cái dạng câu trả lời
+00:15:40 - 0:15:43, thứ 3 đó là
+00:15:43 - 0:15:46, reasoning, đây là những câu hỏi khó
+00:15:46 - 0:15:49, và phải lý giải được nội dung liên quan
+00:15:49 - 0:15:52, ví dụ như chúng ta đưa vào một câu hỏi là
+00:15:52 - 0:15:55, what challenge do these people face
+00:15:55 - 0:15:58, thì ở đây cái câu trả lời của mình sẽ phải có
+00:15:58 - 0:16:01, tính lập luận từng bước và logic
+00:16:01 - 0:16:04, thì đây là những dữ liệu phục vụ cho việc tinh chỉnh
+00:16:04 - 0:16:07, mà chúng ta sẽ khai thác
+0:16:07 - 0:16:10, công cụ ChatGPT để tạo ra
+0:16:10 - 0:16:13, thế thì cái việc cải thiện
+0:16:13 - 0:16:16, của LLaVA đó là
+0:16:16 - 0:16:19, chúng ta có thể cải thiện
+0:16:19 - 0:16:22, cái chất lượng của LLaVA
+00:16:22 - 0:16:25, thông qua việc tăng cường chất lượng của dữ liệu
+0:16:25 - 0:16:28, do đó là chúng ta phải để tâm
+0:16:28 - 0:16:31, tại vì garbage in, garbage out tức là nếu mà rác vào rác ra
+0:16:31 - 0:16:34, nếu mà dữ liệu huấn luyện là dữ liệu không có sạch
+00:16:34 - 0:16:37, và có chứa nhiều thông tin không liên quan đến tấm ảnh
+00:16:37 - 0:16:40, thì nó có thể gây ra
+00:16:40 - 0:16:43, mô hình LLaVA học bị sai
+00:16:43 - 0:16:46, do đó chúng ta sẽ thêm các dữ liệu mới
+00:16:46 - 0:16:49, đồng thời phải xử lý lại dữ liệu
+00:16:49 - 0:16:52, lọc lại dữ liệu của mình cho chất lượng của dữ liệu
+0:16:52 - 0:16:55, nó ngày càng tốt, rồi thay đổi kiến trúc
+00:16:55 - 0:16:58, ví dụ như chúng ta có thể thay đổi kiến trúc
+00:16:58 - 0:17:01, dữ liệu của dữ liệu của dữ liệu của dữ liệu
+00:17:01 - 0:17:04, có thể thay đổi kiến trúc dữ liệu của dữ liệu
+00:17:04 - 0:17:07, và tăng kích thước của LLM lên
+00:17:07 - 0:17:10, hay là sử dụng mô hình LLM hiện đại hơn
+00:17:10 - 0:17:13, và có performance, có độ chính xác cao hơn
+00:17:13 - 0:17:16, và một ý cuối để cải thiện
+00:17:16 - 0:17:19, chất lượng của mô hình LLaVA
+00:17:19 - 0:17:22, đó chính là tăng kích thước ảnh
+00:17:22 - 0:17:25, tại vì khi chúng ta giải quyết các bài toán
+00:17:25 - 0:17:28, hay là GQA Grounded Question Answering
+00:17:28 - 0:17:32, thì nó sẽ đòi hỏi chúng ta quan sát
+00:17:32 - 0:17:35, rất là chi tiết bên trong tấm ảnh
+00:17:35 - 0:17:38, chứ không phải là thông tin toàn cục
+00:17:38 - 0:17:41, mà thông tin chi tiết muốn nổi bật thì kích thước ảnh của mình
+00:17:41 - 0:17:44, nó phải đủ lớn, thì cái sơ đồ bên đây cho thấy
+00:17:44 - 0:17:47, đó là khi chúng ta scale up
+00:17:47 - 0:17:50, LLM, tức là chúng ta từ 7B
+00:17:50 - 0:17:53, 7 tỷ lên mô hình là 13 tỷ
+00:17:53 - 0:17:56, thì độ chính xác của mình tăng lên khoảng 1,3%
+00:17:56 - 0:17:59, đối với độ đo là GQA
+00:17:59 - 0:18:02, hoặc là MMI
+00:18:02 - 0:18:05, thì nó tăng từ 1510 lên 1531
+00:18:05 - 0:18:08, rồi khi chúng ta tăng độ phân giải lên
+00:18:08 - 0:18:11, tương ứng là giải pháp số 3
+00:18:11 - 0:18:14, thì chúng ta thấy là nó đã tăng từ
+00:18:14 - 0:18:17, mô hình LLaVA lên
+00:18:17 - 0:18:20, tương ứng là giải pháp số 3
+00:18:20 - 0:18:23, thì chúng ta thấy là nó đã tăng từ
+00:18:23 - 0:18:26, 50% lên 51%
+00:18:26 - 0:18:29, 50% lên 51%
+00:18:29 - 0:18:32, rồi cải thiện cái chất lượng của dữ liệu
+00:18:32 - 0:18:35, thì thế thì
+00:18:35 - 0:18:38, đây là những cái cải tiến quan trọng
+00:18:38 - 0:18:41, mà LLaVA đã cho cái kết quả
+00:18:41 - 0:18:44, thậm chí là còn cao hơn cả GPT
+00:18:44 - 0:18:47, Ultra và GPT-4V
+0:18:47 - 0:18:50, thì như đã nói ban đầu cái mô hình LLaVA
+00:18:50 - 0:18:53, NEXT là cái phiên bản tốt nhất
+00:18:53 - 0:18:56, hiện nay là cái phiên bản tốt nhất
+00:18:56 - 0:18:59, tại thời điểm hiện tại thì khi so sánh với lại
+00:18:59 - 0:19:02, GPT-4V thì đây là cho cái kết quả
+0:19:02 - 0:19:05, tốt hơn cả GPT-4V và lưu ý là GPT-4V
+0:19:05 - 0:19:08, đó là một mô hình close source
+00:19:08 - 0:19:11, trong khi đó LLaVA NEXT
+00:19:11 - 0:19:14, đó là một cái mô hình mã nguồn mở
+00:19:14 - 0:19:17, là open source
+00:19:17 - 0:19:20, thì điều này cho thấy là cái cộng đồng nghiên cứu open source
+00:19:20 - 0:19:23, họ rất là năng động và
+00:19:23 - 0:19:26, tạo ra được những cái mô hình rất là chất lượng
+00:19:26 - 0:19:29, để chia sẻ cho cộng đồng
+00:19:29 - 0:19:32, thì trong cái bản biểu ở bên đây chúng ta thấy đó là
+00:19:32 - 0:19:35, cái hiệu quả của GPT Pro
+00:19:35 - 0:19:38, GPT Ultra
+00:19:38 - 0:19:41, thì chúng ta thấy là LLaVA NEXT cho cái kết quả
+00:19:41 - 0:19:44, nó có thể bị cao hơn so với lại GPT Pro
+00:19:44 - 0:19:47, và thậm chí là cao
+00:19:47 - 0:19:50, trong một số task thì nó cao hơn cả GPT-4V
+0:19:56 - 0:19:59, Rồi, thế thì đây chính là cái thành tựu của
+00:19:59 - 0:20:02, cái mô hình mà có sự kết hợp
+0:20:02 - 0:20:05, của image encoder kết hợp với LLM
+00:20:05 - 0:20:08, tức là một cái mô hình ngôn ngữ thị giác
+0:20:08 - 0:20:11, trong những phần tiếp theo thì chúng ta sẽ cùng tìm hiểu qua
+0:20:11 - 0:20:14, một số cái biến thể khác của cái mô hình thị giác này

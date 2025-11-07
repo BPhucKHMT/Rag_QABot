@@ -1,0 +1,142 @@
+00:00:00 - 00:00:19, Như vậy thì chúng ta đã cùng tìm hiểu về những phương pháp để tạo sinh hình ảnh
+00:00:20 - 00:00:26, tuy nhiên những phương pháp trên bao gồm VAE, Diffusion thậm chí là GAN
+00:00:27 - 00:00:30, đó là chúng ta sẽ khởi tạo ngẫu nhiên một vector Z
+00:00:30 - 00:00:35, và từ đó nó sẽ tạo ra một tấm hình của mình qua hàm decoder
+00:00:35 - 00:00:40, nhưng mà quá trình decoder này thì chúng ta không kiểm soát được đầu ra của mình
+00:00:40 - 00:00:48, thì trong thực tế chúng ta sẽ có những nhu cầu đó là làm sao để kiểm soát được ảnh đầu ra
+00:00:48 - 00:00:53, tạo ra những tấm ảnh mà chúng ta muốn với nội dung mà chúng ta muốn
+00:00:53 - 00:01:00, Vậy thì, cái phần điều hướng ảnh tạo sinh là một cái phần để giúp chúng ta trả lời được câu hỏi đó là
+00:01:00 - 00:01:03, Làm sao để sinh ảnh được từ văn bảng?
+00:01:03 - 00:01:09, Văn bảng chỉ là một trong những cách để giúp chúng ta điều hướng cái ảnh của mình
+00:01:10 - 00:01:14, Trên hình đó là quá trình sinh ảnh mà không có điều kiện
+00:01:14 - 00:01:20, Tức là với một vector Z ngẫu nhiên qua hàm decoder với tham số theta mà chúng ta đã huấn luyện
+00:01:20 - 00:01:30, thì nó sẽ giúp chúng ta tạo ra các hình ảnh, ví dụ như là chó, mèo, gấu và bò nằm trong phân bố P theta X như thế này
+00:01:30 - 00:01:39, và quá trình sinh ảnh mà có điều kiện thì chúng ta sẽ đưa vào conditional signal, tức là một tín hiệu có điều kiện là I
+00:01:39 - 00:01:45, Ví dụ như trong ngữ cảnh này sẽ là a cat wearing sunglasses
+00:01:45 - 00:01:50, thì cái y này sẽ được đưa vào quá trình decoder tại mỗi step
+00:01:50 - 00:01:54, và khi đưa vào thì chúng ta sẽ điều hướng hoặc là bẻ lái
+00:01:54 - 00:01:57, thì đây là một cái từ mang tính hình tượng thôi
+00:01:57 - 00:01:58, đó là bẻ lái cái hướng
+00:01:58 - 00:02:01, Bình thường nếu như một cái vector z bất kỳ
+00:02:01 - 00:02:08, thì nó sẽ đưa đến cái khu vực ảnh mà ví dụ như có cái đối tượng không liên quan đến cái nội dung mình đang muốn
+00:02:08 - 00:02:22, Nhưng mà nhờ có conditional signal tham gia qua quá trình decode thì nó sẽ bẻ hướng để chúng ta đến vào khu vực ảnh mà có những con mèo đeo kính kill như thế này.
+00:02:22 - 00:02:28, Ở đây chúng ta sẽ có một mô hình để giúp chúng ta sinh ảnh có điều kiện.
+00:02:28 - 00:02:32, Ở đây là công thức của sinh ảnh không có điều kiện.
+00:02:32 - 00:02:44, Đối với sinh ảnh mà có điều kiện, chúng ta sẽ thêm vô một biến nữa là biến y. Đây chính là conditional signal.
+00:02:44 - 00:02:54, Đây là conditional signal. Sau này khi tổn quát lên, y này không nhất thiết phải là văn bảng.
+00:02:54 - 00:02:58, nó có thể là một cái mass, nó có thể là một cái điểm v.v.
+00:02:58 - 00:03:06, thì công thức của chúng ta thay vì là S theta của Xt, t
+00:03:06 - 00:03:12, thì chúng ta sẽ thêm cái thành phần là y vào đây
+00:03:12 - 00:03:21, và khi đó thì cái St này sẽ xấp xỉ với lại cái radian của log p Xt cho trước y
+00:03:21 - 00:03:25, Đây là conditional score
+00:03:25 - 00:03:28, Công thức trước là unconditional score
+00:03:28 - 00:03:32, Bây giờ chúng ta sẽ chuyển sang conditional score
+00:03:32 - 00:03:35, chúng ta sẽ đưa vô một sát xuất có điều kiện là i
+00:03:35 - 00:03:42, Chứ cho trước i, thì sát xuất để tìm ra xt khi cho trước i là bao nhiêu?
+00:03:42 - 00:03:44, Chúng ta sẽ triển khai
+00:03:44 - 00:03:52, Và dựa trên định lý bias thì công thức này xuất phát từ trịnh khai như sau
+00:03:52 - 00:03:57, đó là cái lốc của Px t cho trước y
+00:03:57 - 00:04:01, thì nó sẽ là bằng
+00:04:01 - 00:04:07, lốc của Pxt cho trước y
+00:04:07 - 00:04:12, thì nó sẽ là bằng Pxt
+00:04:12 - 00:04:17, nhân với lại Pi cho trước xt
+00:04:17 - 00:04:20, tất cả chia cho Pi
+00:04:20 - 00:04:29, Với công thức này, chúng ta sẽ chuyển khai ra và có được là bằng đạo hàm của log của PxT
+00:04:29 - 00:04:39, Nhân thì chúng ta sẽ đưa về dấu cộng, đó là cộng cho log của Py cho trước xT
+00:04:39 - 00:04:46, Chia thì chúng ta sẽ chuyển thành là dấu trừ cho log của Pi
+00:04:46 - 00:04:53, Với công thức này, chúng ta thấy là vì chúng ta đang muốn tính đạo hàm theo XT
+00:04:53 - 00:04:55, chúng ta đang tính đạo hàm theo XT
+00:04:57 - 00:04:59, Đây là đạo hàm theo XT
+00:05:00 - 00:05:06, Trong con mắt của XT, thì y của mình là hàng số
+00:05:06 - 00:05:10, Do đó chúng ta sẽ loại bỏ đi thành phần này đi
+00:05:10 - 00:05:18, Tại vì đạo hàm của một cái thằng số đối với xt thì nó sẽ là bằng 0
+00:05:18 - 00:05:22, Do đó thì công thức này sẽ đưa về công thức ở trên
+00:05:22 - 00:05:27, Đó là lock của pxt cộng cho lock của pi cho trước xt
+00:05:27 - 00:05:33, Và với cái công thức này thì chúng ta sẽ thấy là cái xt của mình
+00:05:33 - 00:05:36, Khi chúng ta khôn phục, chúng ta decode
+00:05:36 - 00:05:42, Bình thường nó sẽ đi theo con đường này là Unconditioned là màu xanh lá
+00:05:42 - 00:05:45, Màu xanh lá tương ứng cho Unconditioned
+00:05:45 - 00:05:53, Bình thường nó sẽ đi theo đường màu xanh dương
+00:05:53 - 00:06:02, Và qua màu xanh lá thì chúng ta sẽ điều hướng đi qua mũi tên màu xanh
+00:06:02 - 00:06:08, và cộng 2 cái đề lại thì nó sẽ ra cái mũi tên 1 cam.
+00:06:08 - 00:06:12, Thế thì bình thường là chúng ta sẽ đi theo cái con đường này.
+00:06:12 - 00:06:22, Nhờ có cái vector radian của log y cho trước xt, nó bẻ lái để biến thành cái vector 1 cam này.
+00:06:22 - 00:06:30, Chúng ta suy ý ở đây nó sẽ có thêm một cái hệ số nữa, nó gọi là classifier guidance.
+00:06:30 - 00:06:41, Nếu như trong công thức chúng ta biến đổi ở phía trước là chúng ta không có cái gamma ở đây thì hàm ý đó là một cái Unconvention Score
+00:06:41 - 00:06:47, nó sẽ kết hợp với một cái Adversarial Radian tức là cái vector điều hướng theo tỷ lệ đó là 1,1
+00:06:47 - 00:06:55, nhưng mà chúng ta muốn nó nhanh điều hướng thì chúng ta sẽ tăng cái hệ số tỷ lệ đó lên
+00:06:55 - 00:06:59, hoặc là chúng ta muốn chậm lại thì chúng ta sẽ giảm cái hệ số tỷ lệ đó xuống
+00:06:59 - 00:07:08, Như vậy trong công thức này, gamma sẽ là hệ số để giảm tốc độ điều hướng của mình
+00:07:09 - 00:07:15, Vector màu cam sẽ là tổng hợp của vector màu đỏ
+00:07:16 - 00:07:18, trong điều kiện là Uncondition
+00:07:22 - 00:07:26, Kết hợp với adversarial
+00:07:29 - 00:07:37, thì nó sẽ đưa ra, bẻ cái hướng, thay vì chúng ta đi theo hướng này để mà tìm được đến đây
+00:07:37 - 00:07:40, thì bây giờ nó bẻ hướng lại, nó sẽ đi theo cái hướng này
+00:07:40 - 00:07:47, để đến cái ảnh mà có cái điều kiện giống với lại cái Y của mình
+00:07:47 - 00:07:50, thì đó chính là cái ClassifierGuide
+00:07:50 - 00:07:53, thế thì cái mô hình này sẽ được thực hiện như thế nào
+00:07:53 - 00:08:01, Trước tiên chúng ta sẽ nói về vai trò của ClassifierGuide, tức là gamma hồi nãy của mình
+00:08:01 - 00:08:05, Nếu chúng ta chọn gamma là bằng một, tức là dùng công thức góc ban đầu
+00:08:05 - 00:08:13, Thì kết quả của mình sẽ không được điều hướng đủ tốt và đủ nhanh
+00:08:13 - 00:08:17, Dẫn đến là nó sẽ tạo ra những hình thù không có thật
+00:08:17 - 00:08:22, Tại sao không có thật? Tại vì nó vừa pha trộn của một cây ảnh, của một đối tượng
+00:08:22 - 00:08:28, có một đối tượng thật mà lẽ ra với bectorZ tạo ra
+00:08:28 - 00:08:30, tạo ra cái x0
+00:08:30 - 00:08:35, khi có sự tham gia của gamma vào
+00:08:35 - 00:08:38, thì gamma này nó bẻ lái nhưng nó bẻ chưa đủ nhanh
+00:08:38 - 00:08:40, dẫn đến đó là kết quả của mình
+00:08:40 - 00:08:43, nó tạo ra đối tượng lại lại ở giữa
+00:08:43 - 00:08:45, đây là cái x0
+00:08:45 - 00:08:47, còn đây là cái x0 mới
+00:08:47 - 00:08:52, thì lẽ ra là chúng ta hướng đến chỗ này
+00:08:52 - 00:08:54, nhưng mà cái gamma của chúng ta chưa đủ
+00:08:54 - 00:08:56, nên thay vì là nó bẻ lái
+00:08:56 - 00:08:59, bình thường là đến đây đúng không thì nó sẽ bẻ lái đến giữa chừng
+00:08:59 - 00:09:03, và ở cái khúc giữa chừng này thì nó tạo ra những tấm ảnh như thế này
+00:09:03 - 00:09:08, trong khi đó nếu chúng ta cho classifier guidance tức là cái gamma lớn hơn
+00:09:08 - 00:09:10, ví dụ như gamma trong trường hợp này bằng 10
+00:09:10 - 00:09:12, thì nó sẽ bẻ lái mạnh hơn
+00:09:12 - 00:09:14, để mà nó đến được đến cái xnew
+00:09:14 - 00:09:17, giống với lại cái nội dung mà chúng ta mong muốn
+00:09:17 - 00:09:20, đó là Pembroke Wells có ghi
+00:09:20 - 00:09:22, Đây là một cái giống chó rất là hiếm
+00:09:25 - 00:09:29, Vậy thì quá trình sinh ở trên là quá trình sinh có điều kiện
+00:09:30 - 00:09:32, và nó có một cái Classifier Guidance
+00:09:33 - 00:09:36, Vậy thì chúng ta sẽ huấn luyện cái mô hình này như thế nào
+00:09:37 - 00:09:40, Thì cái cấp thứ huấn luyện đó là chúng ta sẽ có thêm một cái module
+00:09:40 - 00:09:43, chúng ta sẽ có thêm một cái mạng nữa, nó gọi là một cái Classifier
+00:09:44 - 00:09:47, hay còn gọi là Off the Cell Classifier
+00:09:47 - 00:09:59, Và cứ với mỗi cái i mà chúng ta đưa vào thì chúng ta sẽ đi huấn luyện cho một cái classifier
+00:09:59 - 00:10:05, như vậy là một cái i sẽ có một cái classifier riêng
+00:10:07 - 00:10:12, Và như vậy thì nó sẽ khiến cho cái mô hình của mình nó không có tính linh động
+00:10:12 - 00:10:15, Nó không có tính linh động vì khi chúng ta muốn tạo ra một cái đối tượng mới
+00:10:15 - 00:10:22, Bình thường chúng ta tạo ra 2 con mèo đeo kính, bây giờ chúng ta muốn tạo ra 1 con chó quốc y đeo kính chắc hạn
+00:10:22 - 00:10:27, thì lúc đó chúng ta sẽ phải train 1 cái classifier mới cho cái y đó
+00:10:27 - 00:10:33, thì nó sẽ khiến cho cái mô hình của mình nó chạy không có tính thực tiện cao
+00:10:33 - 00:10:41, do đó thì chúng ta sẽ chuyển sang 1 cái mô hình, nó gọi là cái mô hình mà sinh có điều kiện
+00:10:41 - 00:10:49, nhưng mà với Classifier Free Guidance, tức là không có classifier
+00:10:49 - 00:10:52, Vậy thì công thức của mình sẽ được sửa lại
+00:10:52 - 00:10:57, đó là bằng 1 trừ gamma nhân cho log của PXT
+00:10:57 - 00:11:01, thì đây là cái Unconditioned Score kết hợp với Conditioned Score
+00:11:01 - 00:11:09, và ở đây chúng ta sẽ hướng luyện trên 9 mô hình Diffusion của mình luôn
+00:11:09 - 00:11:13, Đây chính là dunet trong diffusion.
+00:11:16 - 00:11:22, Dunet trong diffusion này chúng ta sẽ hướng luyện bằng cách đưa 2 tình huống.
+00:11:22 - 00:11:28, Tình huống thứ nhất là chúng ta sẽ đưa một vector rõng vào.
+00:11:28 - 00:11:37, Mục tiêu của mình tương đương như một mô hình sinh ảnh nhưng mà không có điều hướng.
+00:11:39 - 00:11:51, và chúng ta sẽ đưa y vào, thì y này sẽ là mẫu giữ liệu huấn luyện của chúng ta
+00:11:51 - 00:11:57, và y này sẽ cho trước một số mẫu condition mà chúng ta muốn huấn luyện
+00:11:57 - 00:12:03, để từ đó nó sẽ estimate ra cái x, xt, t, y
+00:12:03 - 00:12:10, Thứ nhất là chúng ta sẽ không có thêm, không có classifier
+00:12:10 - 00:12:17, mà chúng ta sẽ huấn luyện trên chính cái mô hình của diffusion của mình luôn
+00:12:17 - 00:12:19, trên chính cái decoder của mình luôn
+00:12:19 - 00:12:25, và khi chúng ta huấn luyện trên cái decoder này thì chúng ta sẽ có hai tình huống
+00:12:25 - 00:12:29, một đó là chúng ta sẽ truyền vô một cái condition là rỗng
+00:12:29 - 00:12:31, đây là một cái condition rỗng
+00:12:31 - 00:12:45, Mục tiêu của nó là tạo ra tấm ảnh không có cần điều hướng và đưa vào 1 condition trong data set của mình để chuẩn bị trước, đó chính là y.
+00:12:45 - 00:12:52, Mục tiêu của mình là điều hướng đến cái này là không điều hướng, còn cái này là có điều hướng.
+00:12:52 - 00:13:02, sau khi chúng ta huấn luyện xong, chúng ta cứ sử dụng decoder này để đưa y vào và nó sẽ tạo sinh ra mô hình của mình
+00:13:02 - 00:13:12, thì cái sơ đồ này sẽ tương tự như nó sẽ lấy từ mô hình mà chúng ta đã học trong những slide trước
+00:13:12 - 00:13:21, bình thường là chúng ta chỉ đưa vào xt và t, bây giờ chúng ta sẽ đưa vào thêm y nữa
+00:13:21 - 00:13:29, để làm được việc này thì chúng ta có thể sử dụng các mô hình của Transformer với extension
+00:13:29 - 00:13:32, sử dụng wikav của extension để điều hướng
+00:13:32 - 00:13:35, thì cái i này có thể là quary

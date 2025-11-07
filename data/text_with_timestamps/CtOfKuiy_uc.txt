@@ -1,0 +1,73 @@
+00:00:00 - 00:00:20, Chúng ta sẽ cùng tìm hiểu về một số biến thể đơn giản của thực tán Radiant Descent.
+00:00:20 - 00:00:39, Đến với biến thể đầu tiên, là Bat Radiant Descent, truyền toàn bộ dữ liệu vào mô hình của mình.
+00:00:39 - 00:00:49, Công thức cập nhật của Bat Radiant Descent là tính kỳ vọng trên toàn bộ dữ liệu.
+00:00:55 - 00:01:03, Đạo hàm của kỳ vọng của G theta, tức là kỳ vọng của toàn bộ các hàm lỗi.
+00:01:03 - 00:01:17, Chúng ta sẽ tính đạo hàm của trung bình lỗi của toàn bộ dữ liệu.
+00:01:20 - 00:01:30, Thay vì chúng ta tính hàm lỗi, giá trị sai số trên một mẫu dữ liệu, chúng ta sẽ tính trung bình sai số, trung bình lỗi trên toàn bộ dữ liệu của mình.
+00:01:30 - 00:01:50, Bên dưới là một đoạn mã giả, trong đó trung bình sai số sẽ diệt qua số lượt dữ liệu.
+00:01:50 - 00:02:10, Khi chúng ta lập đi lập lại, chúng ta có thể lập luyện 10, 20, 200, 300, 1000, 400, 500, 1000 dữ liệu.
+00:02:10 - 00:02:15, Mỗi một e-pop là một lần chúng ta sẽ lượt qua dữ liệu của mình.
+00:02:15 - 00:02:27, Nếu như khối này là biểu diễn cho toàn bộ dữ liệu, thì với mỗi e-pop chúng ta sẽ xử lý trên toàn bộ dữ liệu của mình.
+00:02:27 - 00:02:35, Và data ở đây chính là phần chúng ta hành sập để huấn luyện trong một vòng lập.
+00:02:35 - 00:02:45, Còn đối với thuộc quán Stochastic Radiant Descent hay ví tắc là chữ SGD, chúng ta sẽ truyền từng mẫu huấn luyện vào.
+00:02:45 - 00:02:58, Lúc này thì công thức sẽ là theta bằng theta trừ cho đạo hàm của... đây là cái hàm lỗi của một mẫu dữ liệu.
+00:02:58 - 00:03:11, Và khi này thì mả giả của mình chúng ta sẽ lượt qua mọi e-pop và với mỗi e-pop chúng ta sẽ suphô data của mình.
+00:03:11 - 00:03:19, Tức là data của mình sẽ xáo trộn lên, do đó ở đây không phải là data mà là suphô data.
+00:03:20 - 00:03:26, Sau đó thì, forXExample, tức là với mỗi một xample, thì ở đây chúng ta sẽ lấy ra đúng một mẫu thôi.
+00:03:26 - 00:03:39, Và mẫu này là random. Rồi sau đó chúng ta sẽ xác định cái lỗi và sau đó là tính cái radiant, rồi sau đó cập nhật lại cái tham số.
+00:03:39 - 00:03:44, Với mỗi một cái lượt này, thì đó là một cái data của mình.
+00:03:45 - 00:03:49, Đây sẽ là một cái example. Mỗi example sẽ là một mẫu dữ liệu.
+00:03:49 - 00:03:55, Và chúng ta sẽ truyền vào cái example, thay vì chúng ta truyền vào toàn bộ dữ liệu giống như trong slide trước.
+00:03:55 - 00:04:00, Trong slide trước là chúng ta truyền vào toàn bộ dữ liệu. Thì ở đây chúng ta chỉ truyền vào một mẫu thôi.
+00:04:00 - 00:04:05, Và một mẫu này sẽ được lấy random. Một mẫu random.
+00:04:05 - 00:04:12, Cái biến thể tiếp theo đó chính là mini-bat radiant descent hay viết tắc là mgd.
+00:04:12 - 00:04:19, Thì chúng ta thay vì truyền vào một mẫu, thì chúng ta sẽ truyền vào một khối hay bat.
+00:04:19 - 00:04:28, Cái mẫu huấn luyện. Và cái bat size ở đây, cái kích thước của cái mẫu, kích thước của cái khối là viết tắc của chữ bat size.
+00:04:28 - 00:04:33, Đây là kích thước của khối.
+00:04:33 - 00:04:39, Thì với cái kích thước khối thì thông thường nó là những con số chia sẻ cho, nó là con số lĩ thường của 2.
+00:04:39 - 00:04:43, Ví dụ như là 1, 2, 4, 8, 16 v.v.
+00:04:43 - 00:04:51, Và cái công thức của mình lúc này thì nó sẽ là theta bằng theta trừ cho đạo hàm của hàm loss được tính trên một khối.
+00:04:51 - 00:04:55, Đây là một bat.
+00:04:55 - 00:05:01, Và cái bat này có kích thước là n.
+00:05:01 - 00:05:08, Lưu ý là từ i cho đến i, i cộng n thì có thể chúng ta sẽ hiểu là nó có n cộng 1 giá trị.
+00:05:08 - 00:05:18, Nhưng mà nếu mà chiếu theo cái cú pháp của python thì là từ i cho đến giá trị ngay trước i cộng n thì nó sẽ là có n phần tử.
+00:05:18 - 00:05:26, Và cái mãi giả của mình nó sẽ là mini bat gd là chúng ta sẽ lặp qua số ipop và với mỗi lần lặp,
+00:05:26 - 00:05:33, với mỗi ipop thì chúng ta sẽ shuffle data, chúng ta sẽ random dữ liệu.
+00:05:33 - 00:05:38, Thì đây sẽ là shuffle data.
+00:05:38 - 00:05:46, Rồi sau đó sau khi chúng ta đã shuffle data xong thì chúng ta sẽ lấy một bat, lấy một bat thì chúng ta sẽ có một cái hàm get bat.
+00:05:46 - 00:05:51, Gat bat này nó sẽ chặt cái data của mình ra làm nhiều phần.
+00:05:51 - 00:05:56, Ví dụ như mỗi cái phần này nó sẽ là một bat.
+00:05:56 - 00:06:03, Chúng ta sẽ dượt qua hết các cái bat trong cái shuffle data này.
+00:06:03 - 00:06:08, Bắt đầu chúng ta sẽ train trên dữ liệu này sau đó chúng ta sẽ train trên dữ liệu tiếp theo, cái bat tiếp theo.
+00:06:08 - 00:06:11, Sau đó chúng ta sẽ train trên cái phần tiếp theo.
+00:06:11 - 00:06:14, Rồi sau đó chúng ta sẽ train trên cái phần cuối cùng.
+00:06:14 - 00:06:24, Thì for bat in get bat thì nó sẽ là dượt qua tất cả cái bat của cái dữ liệu đã được khoáng đội nộ nhiên này.
+00:06:24 - 00:06:36, Và ở đây thay vì chúng ta truyền vào data hoặc là example thì ở đây chúng ta sẽ không có truyền data,
+00:06:36 - 00:06:39, không truyền example mà truyền vào nguyên một khối dữ liệu.
+00:06:40 - 00:06:47, Thế thì bây giờ chúng ta sẽ cùng tìm hiểu xem là cái ưu khuyết điểm của từng cái phương pháp này là gì.
+00:06:47 - 00:06:56, Thì đối với cái bat gradient descent thì số mẫu dữ liệu chúng ta hướng lệ là chúng ta sẽ tính trên toàn bộ mẫu dữ liệu.
+00:06:56 - 00:07:00, Do đó đương nhiên chi phí tính toán của mình nó sẽ rất là cao.
+00:07:00 - 00:07:06, Chi phí tính toán cao do tại một thời điểm chúng ta sẽ phải tính hết trên toàn bộ dữ liệu.
+00:07:06 - 00:07:13, Trong khi đó stochastic gradient descent thì tại một thời điểm huấn luyện chúng ta chỉ lấy ra một mẫu dữ liệu để tính toán.
+00:07:13 - 00:07:22, Và stochastic gradient descent thì nó sẽ khiến cho cái thời gian tính toán nó trọng.
+00:07:22 - 00:07:31, Lý do đó là vì trong Python nếu mà chúng ta tính theo khối, tính theo một cái lực lớn dữ liệu thì nó sẽ nhanh hơn chúng ta sẽ tính lẽ trên từng dữ liệu.
+00:07:31 - 00:07:42, Và mini bat gradient descent là một cái thuộc toán mà nó sẽ trung hòa ở giữa.
+00:07:42 - 00:07:49, Tức là chi phí tính toán thì nó không lớn như bat gradient descent, tức là tính trên hết toàn bộ mẫu dữ liệu.
+00:07:49 - 00:07:55, Nhưng mà thời gian tính toán thì nó cũng sẽ không có chậm như là với stochastic gradient descent.
+00:07:55 - 00:08:03, Tức là chúng ta sẽ phải tính đi tính lạc, chúng ta sẽ thực hiện việc cập nhật cho một epoch là chúng ta phải thực hiện nhiều lần.
+00:08:03 - 00:08:07, Thì đó là về mặt chi phí tính toán cũng như là thời gian tính toán.
+00:08:07 - 00:08:15, Còn về hàm lỗi, cái giảng thức của hàm lỗi, đối với bat gradient descent thì nó sẽ ra một cái đường nó rất là mượt.
+00:08:15 - 00:08:19, Hay tiếng Anh nó gọi là smooth.
+00:08:20 - 00:08:35, Trong khi đó thì cái hàm lỗi khi chúng ta huấn luyện qua từng cái vòng lạc, đối với stochastic gradient descent thì chúng ta sẽ thấy nó rất là dịch sắc, nó rất là không ổn định, unstable.
+00:08:35 - 00:08:51, Nhưng nhìn chung thì cái loss của mình mặc dù nó đi lên đi xuống nhưng mà nó vẫn sẽ là đi xuống hết. Khi mà chúng ta lạc đủ nhiều thì loss của mình cũng sẽ giảm xuống.
+00:08:52 - 00:09:01, Còn đối với cái mini bat gradient descent thì nó cũng sẽ trung hòa giữa cả hai.
+00:09:01 - 00:09:11, Một, đó là nó cũng tương đối mượt nhưng mà nó cũng sẽ có những cái dịch sắc nhất định nhưng mà nó sẽ không có bất ổn định giống như là stochastic gradient descent.
+00:09:11 - 00:09:26, Thì đây chính là cái mô hình mà, cái thuật toán nó sẽ trung bình trung hòa được cái điểm yếu của cả hai cái bat gradient descent và stochastic gradient descent.
+00:09:26 - 00:09:35, Thông thường thì khi chúng ta huấn luyện với deep learning thì chúng ta sẽ phải dùng một trong hai cái stochastic hoặc là mini bat.
+00:09:35 - 00:09:40, Vì dù đó là vì trong deep learning thì cái dữ liệu của mình thường rất là lớn.
+00:09:40 - 00:09:44, Cái data set của mình nó thường gọi là last scale data set.
+00:09:46 - 00:09:56, Và khi đó thì cái bộ nhớ mà mình lưu trữ cái dữ liệu thôi nó cũng đã không đủ rồi. Chứ đừng có nói là lưu cái mô hình và tính toán trên cái mô hình.
+00:09:56 - 00:10:04, Còn các cái data set lớn thì nó sẽ rất là phù hợp cho cái stochastic và mini bat.
+00:10:04 - 00:10:13, Nếu như chúng ta không biết, bắt đầu chúng ta thử thì chúng ta nên thử với stochastic gradient descent tại vì nó chắc chắn là ít tốn bộ nhớ nhất.
+00:10:13 - 00:10:21, Nhưng mà khi chúng ta thấy là nó vẫn còn dư dạ cái dư cái dung lượng bộ nhớ thì chúng ta sẽ tăng nó lên là thành mini bat.
+00:10:21 - 00:10:31, Thì đó là một số cái ưu khuyết điểm của các cái phiên bản, các cái biến thể của gradient descent, những cái biến thể đơn giản đầu tiên.

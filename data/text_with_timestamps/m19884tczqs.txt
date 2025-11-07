@@ -1,0 +1,56 @@
+00:00:00 - 00:00:18, Chúng ta sẽ cùng đến một mô hình, cơ bản tiếp theo là mô hình Softmax.
+00:00:18 - 00:00:24, Cái đường đi của mô hình này là nó nằm trong nhóm tuyến tính và thuộc bài toán là phân loại.
+00:00:24 - 00:00:32, Nhưng trong trường hợp này, số lớp phân loại của chúng ta là nhiều hơn 2, tức là ca lớn hơn 2.
+00:00:32 - 00:00:40, Mô hình dưới dạng đồ thị của Softmax Regression là như sau.
+00:00:40 - 00:00:52, Input đồ vào của chúng ta cũng có các đặc trưng, đó là Input Feature và đồng thời chúng ta cũng có thành phần Bias.
+00:00:53 - 00:01:06, Nếu như trong mô hình Logistic Regression, mỗi một đặc trưng, mỗi một Neuron chúng ta đưa vào để xử lý,
+00:01:06 - 00:01:14, thì nó đều có một phần tổng và một hàm kích hoạt, tức là một phép biến đổi tiến tính.
+00:01:14 - 00:01:21, Ngay sau phép biến đổi tiến tính, chúng ta sẽ có một hàm kích hoạt phi tuyến.
+00:01:22 - 00:01:30, Và để giải quyết được bài toán phân lớp đa lớp, chúng ta có thể sử dụng nhiều hơn một Neuron này.
+00:01:35 - 00:01:46, Tuy nhiên, việc chúng ta sử dụng nhiều Neuron như vậy, nó có khả năng gây ra hiện tượng gọi là nhập nhằn.
+00:01:46 - 00:01:54, Hụ thể là trong mô hình của chúng ta, nếu như chúng ta có các tập điểm dạy như thế này,
+00:01:56 - 00:02:06, thì nếu chúng ta dùng ba cái node này độc lập nhau, thì nó sẽ tách ra làm ba cái phần mặt phẳng mỗi một node tương ứng với lại một cái đường thẳng.
+00:02:06 - 00:02:11, Thì nó sẽ có những cái khu vực mà chúng ta sẽ không biết là nó sẽ xếp về lớp nào.
+00:02:11 - 00:02:19, Ví dụ nếu theo cái đường thẳng số 1 này, thì chúng ta sẽ nói cái điểm chấm hỏi này là hình tròn.
+00:02:19 - 00:02:24, Nhưng nếu chiếu theo cái đường phân lớp số 2 này, thì chúng ta nói đó là hình cộng.
+00:02:24 - 00:02:27, Thì do đó nó tạo ra sự nhập nhằn.
+00:02:27 - 00:02:36, Và mô hình SoapMath Regression là sẽ lại bỏ đi cái thành phần sigmoid độc lập này để đưa chung vào một cái hàm SoapMath.
+00:02:37 - 00:02:43, Thì qua cái hàm SoapMath này chúng ta sẽ tính ra các cái giá trị y ngã 1, y ngã 2 và y ngã k.
+00:02:43 - 00:02:50, Y ngã 1 nếu mà bình thường nó tính thì nó chỉ dựa trên một giá trị z1 thôi.
+00:02:50 - 00:02:58, Nhưng qua cái hàm SoapMath thì nó sẽ phải có cái sự tổng hợp của tất cả những cái giá trị z1, z2 cho đến zk.
+00:02:59 - 00:03:08, Thì cái công thức SoapMath của mình cụ thể nó sẽ là SoapMath của z.
+00:03:08 - 00:03:10, Bí dụ như ở đây là zi.
+00:03:12 - 00:03:19, Nhưng nó sẽ có sự tham gia của các cái z còn lại là từ z1 cho đến zk.
+00:03:20 - 00:03:33, Và nó sẽ là bằng e-mũ của zi chia cho tổng của e-mũ zk với k là chạy từ 1 cho đến k lớn.
+00:03:33 - 00:03:35, k lớn là tổng số lớp của mình.
+00:03:35 - 00:03:39, Thì cái công thức SoapMath này nó sẽ có rất nhiều những cái điểm lợi.
+00:03:39 - 00:03:42, Thứ nhất đó là tính đạo hàm của nó cũng dễ.
+00:03:42 - 00:03:55, Nhưng đồng thời là nó sẽ đưa về một cái không gian sát xuất trong đó các cái thành phần y này, y ngã y này của chúng ta thì đều là lớn hơn 0 và bé hơn 1.
+00:03:55 - 00:04:00, Các cái giá phân bố sát xuất của mình thì nó là từ 0 cho đến 1.
+00:04:00 - 00:04:09, Và đồng thời tổng của các cái y ngã y này thì đều là bằng 1 với y chạy từ 1 cho đến k.
+00:04:10 - 00:04:14, Thì đây chính là đưa về một cái không gian sát xuất khá là đẹp.
+00:04:14 - 00:04:22, Và chúng ta sẽ dựa trên cái y ngã nào mà cho cái sát xuất cơ nhất thì chúng ta sẽ kết luận nó thuộc về cái phần lớp đó.
+00:04:22 - 00:04:27, Còn đối với cái hàm lỗi thì chúng ta sẽ sử dụng cái hàm Cross entropy.
+00:04:27 - 00:04:32, Thế thì Cross entropy nếu như cái thành phần SoapMath này chúng ta ký hiệu là y ngã.
+00:04:33 - 00:04:45, Thì khi đó hàm lỗi J theta của Xi thì sẽ được ghi là bằng Cross entropy của y ngã y.
+00:04:45 - 00:04:59, Thì cái công thức của mình nó sẽ là bằng log y, log y ngã trừ và tổng với y chạy từ 1 cho đến k.
+00:04:59 - 00:05:01, Và ở đây là chỉ số y.
+00:05:01 - 00:05:04, Thì đây là công thức của Cross entropy.
+00:05:04 - 00:05:15, Tương tự như là binary Cross entropy thì Cross entropy nó sẽ tạo ra cái sự mô hình trừng phạt nặng hơn khi chúng ta dự đoán sai.
+00:05:15 - 00:05:18, Và sẽ giúp cho cái mô hình của mình quấn luyện nhanh hơn.
+00:05:18 - 00:05:26, Thì sau đây chúng ta sẽ xem cái ý nghĩa về mặt hình học của các cái tham số của mình.
+00:05:26 - 00:05:32, Đầu tiên đó là chúng ta sẽ thấy cái mô hình của mình nó sẽ có một cái tham số là theta.
+00:05:32 - 00:05:40, Và qua cái tham số cái mô hình của mình nó sẽ chia cái không gian của mình ra làm nhiều phần.
+00:05:40 - 00:05:47, Nếu như trong cái phần trước chúng ta thấy là chúng ta dùng mô hình logistic theo kiểu là màu vàng và không phải màu vàng.
+00:05:47 - 00:05:52, Một xanh lá và không phải xanh lá thì nó sẽ chia ra thành các cái không gian như thế này.
+00:05:52 - 00:05:56, Và nó sẽ có những cái khu vực là bị nhập nhành như thế này.
+00:05:56 - 00:05:59, Mình sẽ không biết được là nó thuộc về lớp nào.
+00:05:59 - 00:06:02, Nhưng qua cái mô hình softmark regression
+00:06:05 - 00:06:11, Mô hình hồi quy softmark thì cái đầu ra của mình là nó sẽ cho một cái phân bố sát xuất.
+00:06:11 - 00:06:19, Và với cái phân bố sát xuất này thì chúng ta chỉ có thể từ một cái điểm chúng ta chỉ có thể kết luận nó thuộc về một lớp duy nhất mà thôi.
+00:06:20 - 00:06:27, Nhờ cái cách mà chuẩn hóa theo kiểu softmark này nếu ở đây thì chúng ta sẽ gán nó về lớp màu vàng.
+00:06:27 - 00:06:29, Nếu ở đây thì có thể gán về lớp màu đỏ.
+00:06:29 - 00:06:33, Do đó nó sẽ chia cái không gian của mình ra.
+00:06:33 - 00:06:35, Chia cái không gian của mình ra.
+00:06:41 - 00:06:48, Ví dụ vậy thành 4 phần và với mỗi một cái điểm thì nó sẽ thuộc vào một phần chứ nó không có thuộc vào hai cái phần.
+00:06:48 - 00:06:52, Gây ra cái sự nhập nhằn giống như trong cái mô hình logistic regression.

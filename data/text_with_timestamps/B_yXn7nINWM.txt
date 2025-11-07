@@ -1,0 +1,158 @@
+00:00:00 - 00:00:19, Chúng ta sẽ cùng đến với một cái biến thể tiếp theo, đó chính là Adam, Adaptive Moment Optimization.
+00:00:19 - 00:00:28, Trong phần trước, chúng ta đã cùng tìm hiểu về biến thể Root Mean Square Propagation trên kỹ momentum
+00:00:28 - 00:00:43, Và công thức cập nhật của momentum của mình sẽ là bằng alpha chia cho căn của epsilon cộng cho r, tất cả nhân cho g
+00:00:43 - 00:00:49, G này sẽ được tính là bằng đạo hàm của hàm loss theo theta
+00:00:49 - 00:00:54, Rõ ràng chúng ta thấy nó chưa có sử dụng momentum
+00:00:58 - 00:01:06, Chúng ta chỉ mới sử dụng momentum trong công thức của r này mà thôi
+00:01:06 - 00:01:08, Cụ thể là như thế nào?
+00:01:08 - 00:01:14, Trong công thức này, r sẽ bằng beta nhân với r
+00:01:14 - 00:01:20, R trong đó beta là một hệ số để kết hợp của r quá khứ
+00:01:20 - 00:01:23, Cụ thể đây beta là bằng 0.9
+00:01:23 - 00:01:29, R là bằng 0.9r, tức là quá khứ của mình là 90% quá khứ của mình
+00:01:29 - 00:01:35, Cộng cho 1 trừ beta tất cả nhân cho g
+00:01:35 - 00:01:38, G bình phương, g nhân g
+00:01:38 - 00:01:52, Trong công thức này chúng ta thấy với beta mà bằng 0.9, tức là chúng ta lấy 90% thông tin của quá khứ kết hợp với 1 trừ beta tức là 10% thông tin của quá khứ
+00:01:52 - 00:01:58, Thì thành phần này quá ít dẫn đến là tại những vòng lập đầu tiên
+00:01:58 - 00:02:02, Ví dụ đây là hàm loss của mình
+00:02:02 - 00:02:11, Tại những vòng lập đầu tiên, r sẽ là bằng 90% của số 0
+00:02:11 - 00:02:14, Do đó thành phần này sẽ là bằng 0
+00:02:14 - 00:02:21, Cộng cho 10% của g nhân g
+00:02:21 - 00:02:29, Thế thì thành phần này quá bé tại những vòng lập đầu tiên
+00:02:29 - 00:02:38, Mặc dù thế năng của nó tại vị trí này chúng ta thấy rất là tốt, ở vị trí rất là cao do đó đạo hàm của mình rất giốc
+00:02:38 - 00:02:41, Nhưng nó chỉ được lấy có 10% thôi
+00:02:41 - 00:02:47, Như vậy thì ở những bước đầu tiên của Root Mean Square Roar, nó sẽ đi rất chậm
+00:02:47 - 00:02:52, Thì Adam Adaptive Moment Optimization đã cải tiến ở 2 chỗ
+00:02:52 - 00:02:56, 1 là sẽ đưa moment vào trong thành phần này
+00:02:56 - 00:03:01, 2 là r thì chúng ta cũng sẽ chuẩn hóa
+00:03:01 - 00:03:08, Chúng ta sẽ chuẩn hóa để tại những vị trí đầu tiên nó sẽ không bị biased
+00:03:08 - 00:03:13, Nó sẽ không bị phụ thuộc vào r khởi tạo băng đồng là một con số khá là bé
+00:03:13 - 00:03:18, Và cái thụt toán Adaptive Moment Optimization Adam
+00:03:18 - 00:03:24, Thì thường là ổn định với siêu tham số 2 parameter mặc định nghĩa là sao
+00:03:24 - 00:03:29, Nếu như các phương pháp trước thì siêu tham số chúng ta phải tune khá là nhiều để mà có thể hiệu quả
+00:03:29 - 00:03:33, Thì Adam với siêu tham số mặc định của mình
+00:03:33 - 00:03:40, Chúng ta cũng có thể chạy ra được một cái thụt toán mà nó ổn định
+00:03:40 - 00:03:45, Và đó chúng ta không cần phải chú ý để mà tune quá nhiều với cái siêu tham số này
+00:03:45 - 00:03:50, Thì chi tiết cái thụt toán Adam nó như thế nào thì chúng ta sẽ tìm hiểu trong những slide tiếp theo
+00:03:50 - 00:03:56, Và chi tiết của cái thụt toán Adam Adaptive Moment Optimization là nằm ở đây
+00:03:56 - 00:04:00, Chúng ta đầu tiên cũng sẽ khởi tạo là alpha là bằng 0.1
+00:04:00 - 00:04:06, Đối với cái Decay Rate thì bình thường trong cái Root Mean Square Propagation chúng ta chỉ có duy nhất một cái beta
+00:04:06 - 00:04:11, Thì ở đây chúng ta sẽ có hai cái beta là beta 1 và beta 2
+00:04:11 - 00:04:22, Trong đó beta 1 là cái hệ số momentum là cái Decay Rate cho cái momentum của radian
+00:04:22 - 00:04:26, Cho cái việc cập nhật cái momentum của radian
+00:04:26 - 00:04:34, Còn cái beta 2 sẽ là cho cái việc cập nhật cái hệ số chuẩn hóa, cái thành phần chuẩn hóa
+00:04:34 - 00:04:42, Chuẩn hóa cái Learning Rate
+00:04:42 - 00:04:54, Và chúng ta sẽ yr thì chúng ta sẽ có thêm s, s chính là cái thành phần momentum cho radian
+00:04:54 - 00:04:59, Thành phần momentum cho radian
+00:04:59 - 00:05:03, Thì đây chính là cái momentum cho cái beta radian của mình
+00:05:03 - 00:05:11, Và công thức của mình là bình thường là trong cái phần Root Mean Square Roar thì s của mình chính là chỉ bằng g thôi
+00:05:11 - 00:05:15, Còn bây giờ s của mình nó sẽ là bằng cái thành phần quá khứ
+00:05:15 - 00:05:21, Nhân với lại, cộng với lại cái thành phần radian hiện tại
+00:05:21 - 00:05:25, Đây là hiện tại
+00:05:25 - 00:05:27, Còn đây là cái thành phần quá khứ
+00:05:31 - 00:05:36, Và nó sẽ là bằng 90% của quá khứ cộng cho 10% của hiện tại
+00:05:36 - 00:05:41, Và như hồi nãy chúng ta đã lập luận thì cái việc mà lấy quá nhiều cho cái quá khứ
+00:05:41 - 00:05:44, Nó sẽ khiến cho những cái bước cập nhật đầu tiên rất là chậm
+00:05:44 - 00:05:48, Thì chúng ta sẽ có cái thành phần chuẩn hóa ở phía sau, chúng ta sẽ giải thích sau
+00:05:48 - 00:05:54, Đây, s mũ, đó chính là cái thành phần chuẩn hóa cho cái s ở phía trên
+00:05:54 - 00:06:00, Thế thì tại sao cái việc chuẩn hóa với cái công thức này thì những cái vòng lập đầu tiên của mình
+00:06:00 - 00:06:03, Nó sẽ có cái giá trị không quá bé
+00:06:03 - 00:06:09, Thì bây giờ chúng ta giả s, s ban đầu của mình là một cái con số rất là bé
+00:06:09 - 00:06:15, Như đã giải thích, s sẽ là bằng quá khứ là bằng 90% của cái s ban đầu là bằng 0
+00:06:15 - 00:06:17, Tức là cái thành phần này là bằng 0
+00:06:17 - 00:06:21, Tức là ở những cái vòng lập đầu tiên là ban đầu
+00:06:21 - 00:06:24, Thì s sẽ là bằng quá khứ là bằng 0
+00:06:24 - 00:06:31, Cộng cho 10% của g thì cái thành phần này rất là bé
+00:06:31 - 00:06:40, Nhưng khi chúng ta chia cho căn của 1 trừ beta mũ t với t là số thứ tự t là cái bước lập của mình
+00:06:40 - 00:06:43, Thì ở cái vòng lập đầu tiên, tức là t bằng 1
+00:06:43 - 00:06:45, Vòng lập đầu tiên t bằng 1
+00:06:45 - 00:06:53, Thì khi đó s sẽ là bằng 1 trừ cho beta mũ của mình là 0.9 mũ 1
+00:06:53 - 00:06:57, 0.9 mũ 1 tức là 0.9
+00:06:57 - 00:07:00, Thì 1-0.9 tức là 0.1
+00:07:00 - 00:07:05, Thì s mà chia cho 0.1 tương đương với s chúng ta sẽ nhân lên 10 lần
+00:07:05 - 00:07:08, Thì ban đầu s của mình rất là thấp
+00:07:08 - 00:07:11, Nó chỉ bằng khoảng 0.9 cái đạo hàm gốc của mình thôi
+00:07:11 - 00:07:13, Nhưng mà chúng ta chia cho 0.1 tức là nhân 10 lên
+00:07:13 - 00:07:19, Thì có phải là s của mình tương đương với đạo hàm tại thời điểm băng đầu
+00:07:19 - 00:07:23, Thì nó đã được boost lên 10 lần
+00:07:23 - 00:07:29, Thì công thức này sẽ giúp chúng ta boost tại những thời điểm đầu tiên
+00:07:29 - 00:07:34, Thế thì khi t mà càng lớn, đương nhiên không thể nào mà t tiến đến vô cùng được
+00:07:34 - 00:07:40, T chỉ là khoảng 10-20, ví dụ vậy, cỡ 10 cho đến 20 đi
+00:07:40 - 00:07:45, Thì khi đó là beta 1 mũ t
+00:07:45 - 00:07:49, Beta 1 là một con số bé hơn 1, lớn hơn 0
+00:07:49 - 00:07:52, Nên nó sẽ tiến đến, nó sẽ tiến về 0
+00:07:52 - 00:07:58, Do đó 1 trừ beta 1 mũ t, nó sẽ tiến về 1
+00:07:58 - 00:08:00, 1 trừ 0 tức là bằng 1
+00:08:00 - 00:08:05, Tức là khi đó s mũ của chúng ta sẽ sắp xỉ bằng s chia cho 1
+00:08:05 - 00:08:08, Tức là nó sẽ bằng nguyên bảng của momentum ban đầu của mình
+00:08:08 - 00:08:12, Thì khi t mà càng lớn thì gần như không cần boost lên nữa
+00:08:12 - 00:08:16, Còn khi t của mình nhỏ, khoảng 1-2 thì nó sẽ boost lên rất là nhiều lần
+00:08:16 - 00:08:20, Đó là ý nghĩa của công thức chuẩn hóa này
+00:08:20 - 00:08:29, Tương tự như vậy, cho thành phần để cập nhật chuẩn hóa của learning rate
+00:08:29 - 00:08:34, Chúng ta cũng sẽ dùng công thức này để giúp cho việc mà tại những thời điểm đầu tiên
+00:08:34 - 00:08:39, Nó không quá bé, nó sẽ sắp xỉ bằng với lại đạo hàm của mình luôn
+00:08:39 - 00:08:46, Và ý nghĩa của công thức này, tương tự như trong root mean square propagation
+00:08:46 - 00:08:51, Mục tiêu của nó là để tách ra, tìm ra là 1 cái vector
+00:08:51 - 00:08:57, Nên nó sẽ tách ra thành những learning rate riêng khi chúng ta cập nhật vô thành phần đạo hàm
+00:08:57 - 00:09:02, Và nó làm theo nguyên tắc, thành phần đạo hàm nào ở bên đây
+00:09:02 - 00:09:08, Của g mà càng nhỏ thì learning rate sẽ càng lớn
+00:09:08 - 00:09:13, Thành phần của g này lớn thì learning rate sẽ nhỏ
+00:09:13 - 00:09:19, Như vậy là Adam đã có những cải tiến chính
+00:09:19 - 00:09:22, Đó là nó có thêm momentum cho vector radian
+00:09:22 - 00:09:28, Nó có thêm thành phần chuẩn hóa để những vòng lập đầu tiên không quá nhỏ
+00:09:28 - 00:09:34, Thành phần đạo hàm của mình không quá bé, hoặc là cái phần chuẩn hóa đạo hàm cũng không quá bé
+00:09:34 - 00:09:39, Nó bị sai lệch so với lại đạo hàm tại thời điểm đó
+00:09:41 - 00:09:48, Trong sơ đồ này thì chúng ta sẽ có trực quan hóa để cho thấy tốc độ hội tụ của tuần kỹ thuật toán
+00:09:48 - 00:09:53, Ở đây Adam là đường màu vàng của mình
+00:09:53 - 00:09:58, Đường màu vàng này
+00:09:58 - 00:10:04, Đường màu vàng sẽ rớt xuống rất nhanh, hội tụ rất nhanh
+00:10:04 - 00:10:11, Khi đến khu vực set up point và valet thông lũng
+00:10:11 - 00:10:19, Thông lũng có 2 cái thành, giảm từ giốc, đi ngang, xong rồi lại đi lên, đó gọi là valet
+00:10:19 - 00:10:24, Adam rớt xuống nhanh nhất, rất nhanh
+00:10:24 - 00:10:29, Còn thuật toán root mean square propagation là đường màu đen
+00:10:29 - 00:10:34, Chúng ta thấy nó sẽ rớt chậm hơn
+00:10:34 - 00:10:40, Còn stochastic gradient descent, đối với stochastic gradient descent là cái chấm màu đỏ
+00:10:40 - 00:10:44, Chúng ta thấy nó bị giao động qua lại và nó đứng yên luôn
+00:10:44 - 00:10:46, Nó không thoát ra được chỗ này luôn
+00:10:46 - 00:10:51, Momentum thì khá hơn một chút xíu là cái điểm màu xa lá
+00:10:51 - 00:10:55, Chúng ta thấy là khi momentum rớt xuống nó cũng sẽ giao đảo qua lại
+00:10:55 - 00:11:00, Nhưng mà vì có một số kiếu tối nhiễu nên nó sẽ dần dần thoát ra được
+00:11:00 - 00:11:02, Và nó đến được cái rảnh này nó di chuyển
+00:11:02 - 00:11:09, Trong khi các phương pháp cải tiến khác thì nó cũng bị hiện tượng giao động qua lại rất nhiều
+00:11:09 - 00:11:11, Nó bị hiện tượng giao động qua lại
+00:11:11 - 00:11:13, Bật qua bật lại
+00:11:13 - 00:11:17, Còn Adam là cái đường màu vàng thì nó sẽ rớt thẳng xuống luôn
+00:11:17 - 00:11:20, Nó sẽ đi theo cái đường cập nhật hoàn hảo
+00:11:20 - 00:11:22, Cái đường cập nhật mà tôi yêu ở đây
+00:11:22 - 00:11:29, Bên phải thì đó là cái sơ đồ về giá trị của hàm loss khi chúng ta sử dụng các thuật toán khác nhau
+00:11:29 - 00:11:31, Thì Adam là cái đường màu tím
+00:11:31 - 00:11:35, Nó cho cái giá trị hàm loss hồi tụng nhanh hơn và nó thấp nhất
+00:11:35 - 00:11:37, Loss càng thấp càng tốt
+00:11:37 - 00:11:40, Thì cái training loss của mình càng thấp càng tốt
+00:11:40 - 00:11:44, Thì chúng ta thấy là nó hồi tụng nhanh hơn nhiều so với lại các thuật toán
+00:11:44 - 00:11:52, Như là root mean square, ada delta, ada rad, v.v.
+00:11:54 - 00:11:59, Thì kết luận đó là một số phương pháp tối ưu môi nọc sâu bằng cách
+00:11:59 - 00:12:05, Trong cái phần này chúng ta đã được thảo luận qua những cách để tùy chỉnh learning rate
+00:12:05 - 00:12:07, Cho từng cái tham số
+00:12:07 - 00:12:11, Và thuật toán, câu hỏi là thuật toán nào sẽ được chọn khi luận luyện
+00:12:11 - 00:12:13, Thì câu trả lời đó là không chắc chắn
+00:12:13 - 00:12:16, Nó sẽ tùy thuộc vào cái dữ liệu của các bạn như thế nào
+00:12:16 - 00:12:19, Nó phụ thuộc vào cái mô hình của mình nó có phức tạp hay không
+00:12:19 - 00:12:23, Ví dụ đối với những cái mô hình phức tạp mà nhiều tham số
+00:12:23 - 00:12:29, Thì khi đó chúng ta sẽ phải dùng các cái thuật toán ví dụ như là
+00:12:29 - 00:12:34, Root Mean Square, Prop, Propagation hoặc là Adam
+00:12:34 - 00:12:37, Nhưng đối với những cái mô hình mà ít tham số
+00:12:37 - 00:12:40, Thì khi đó Adam và Root Mean Square là không cần thiết
+00:12:40 - 00:12:44, Mà chúng ta chỉ cần Stochastic Radiant Descent là đủ
+00:12:44 - 00:12:47, Rồi nếu mà dữ liệu của mình không quá phức tạp
+00:12:47 - 00:12:50, Thì chúng ta có thể dùng Stochastic Radiant Descent
+00:12:50 - 00:12:54, Nhưng nếu mà phức tạp thì chúng ta sẽ dùng 2 cái thực phán bên đây
+00:12:54 - 00:12:59, Thì đa số các cái thực phán đều có cái sự phổ biến nhất định của mình
+00:12:59 - 00:13:03, Và được lựa chọn tùy theo cái sự quen thuộc của người dùng
+00:13:03 - 00:13:09, Như vậy thì đến đây chúng ta đã tìm hiểu qua 2 cái biến thể rất là nổi tiếng của Adaptive Learning Rate
+00:13:09 - 00:13:12, Đó là Root Mean Square, Propagation và Adam
+00:13:12 - 00:13:19, Thì cái Root Mean Square, Propagation là một cái tiền đề để cho Adam có thể cải tiến
+00:13:19 - 00:13:22, Và Adam nó có một cái cải tiến khá là quan trọng
+00:13:22 - 00:13:26, Đó là chuẩn hóa để giúp cho những cái bước cập nhật đầu tiên của mình nó không quá chậm
+00:13:26 - 00:13:32, Và đây chính là những cái thực phán Optimizer được sử dụng trong rất nhiều những cái mô hình học sâu
+00:13:32 - 00:13:35, Những cái mô hình mà dựa trên Radiant về sau
+00:13:35 - 00:13:38, Và nó sẽ là tiền đề cho chúng ta đi tiếp

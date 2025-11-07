@@ -1,0 +1,175 @@
+00:00:00 - 00:00:19, Chúng ta sẽ tiến hành cài đặt một cái mạng Neural Network.
+00:00:19 - 00:00:26, Đặc tính của cái mạng Neural Network là nó sẽ giúp chúng ta giải quyết được các bài toán non-linear.
+00:00:27 - 00:00:37, Và trong trường hợp này, chúng ta sẽ lấy tình huống đơn giản nhất của non-linear đó chính là các tập điểm hình tan giác và hình tròn.
+00:00:37 - 00:00:44, Thì hai tập điểm này không thể nào chia tắt ra được bởi một đường thẳng.
+00:00:44 - 00:00:54, Do đó thì đường đúng sẽ phải là một đường tròn như thế này, thì nó mới có thể phân ra làm hai phần riêng biệt được.
+00:00:54 - 00:00:56, Thì đây là một cái bài toán phi tuyến.
+00:00:56 - 00:01:02, Và để giải quyết bài toán này thì chúng ta cũng không cần thiết phải sử dụng một cái mạng Neural Network quá phức tạp.
+00:01:02 - 00:01:05, Thì ở đây nó chỉ cần có một lớp ẩn thôi.
+00:01:05 - 00:01:10, Ở đây là một hidden layer.
+00:01:10 - 00:01:17, Cái mạng Neural Network đúng của chúng ta thì nó có thể có một, hai hoặc là rất nhiều hidden layer.
+00:01:17 - 00:01:21, Nhưng trong trường hợp này thì chúng ta chỉ cần minh họa với một hidden layer.
+00:01:21 - 00:01:26, Cái thứ hai đó là tập điểm này chỉ có hai thành phần.
+00:01:26 - 00:01:32, Do đó thì ở đây chúng ta sẽ có duy nhất một cái node Output cuối cùng.
+00:01:32 - 00:01:41, Ở đây là chúng ta sẽ có một lớp input, một cái hidden layer và một cái Output.
+00:01:41 - 00:01:50, Và cái Output này thì do là cái giá trị của mình nó chỉ có một, nó chỉ có một phần lớp, xin lỗi nó có hai phần lớp.
+00:01:50 - 00:01:56, Nên ở đây chúng ta không có sử dụng hàm SIP, mà chúng ta sẽ sử dụng một cái hàm SIGMOID.
+00:01:56 - 00:02:01, Tại vì SIGMOID nó sẽ đưa cái miền giá trị của mình về cái đoạn từ 0 cho đến 1.
+00:02:01 - 00:02:09, Và lúc này thì cái giá trị Y và Y ngã này thì mình sẽ sử dụng cái độ đo là Binary Cross entropy.
+00:02:09 - 00:02:13, Thì đây là một cái biến thể đơn giản của mạng Neural Network.
+00:02:13 - 00:02:18, Tiếp theo thì chúng ta sẽ tiến hành cài đặt cho cái ví dụ này.
+00:02:22 - 00:02:31, Rồi thì cũng tương tự chúng ta sẽ có cái đoạn code để khởi tạo cho các tập điểm nằm trong và nằm bên ngoài vùng tròn.
+00:02:31 - 00:02:35, Thì ở đây chúng ta có một cái thư viện là SIGCHICLEARN.
+00:02:35 - 00:02:39, Nó sẽ có cái hàm Max Circle.
+00:02:39 - 00:02:46, Và cái hàm Max Circle này thì nó sẽ giúp cho chúng ta tạo ra các cái điểm nằm trong và nằm ngoài hình tròn.
+00:02:46 - 00:02:54, Rồi, các cái điểm nằm trong thì chúng ta sẽ được đánh dấu bằng mẫu đỏ.
+00:02:54 - 00:02:59, Và các cái điểm nằm trong thì được đánh dấu bằng các cái điểm màu xanh lá.
+00:02:59 - 00:03:03, Và cái điểm nào ngoài thì được đánh dấu bằng các điểm màu đỏ.
+00:03:03 - 00:03:08, Và những cái điểm nào màu đỏ thì được sẽ gắn nhãn là bằng 0.
+00:03:08 - 00:03:14, Và những cái điểm nào màu xanh lá thì sẽ được gắn nhãn là bằng 1.
+00:03:14 - 00:03:18, Và tất cả thì đều được ép về kiểu số thật.
+00:03:18 - 00:03:26, Rồi, thì x của mình, tỏa độ x của mình nó chính là tập dữ liệu tỏa độ theo trục x1 và x2.
+00:03:26 - 00:03:28, Tức là 2 bao gồm 2 chiều.
+00:03:28 - 00:03:35, y thì nó sẽ là cái nhãn hoặc là nhận giá trị 0 hoặc là nhận giá trị là 1.
+00:03:35 - 00:03:39, Rồi, bây giờ về cái phần cài đặt thuộc toán.
+00:03:39 - 00:03:45, Thì cũng tương tự cho các cái mô hình linear, logistic và software regression.
+00:03:45 - 00:03:53, Và ở đây thì chúng ta sẽ có 1 cái hàm nữa đó là hàm getway.
+00:03:53 - 00:04:00, Rên cái hàm getway này thì chúng ta sẽ phải biết lại so với hại linear regression.
+00:04:00 - 00:04:06, Tại vì trong cái mạng neural network thì chúng ta sẽ có nhiều layer.
+00:04:06 - 00:04:10, Và như vậy thì nếu chúng ta muốn quan sát cái layer, cái time số của layer nào,
+00:04:10 - 00:04:14, thì chúng ta phải truyền thêm cái chỉ số của layer đó vào.
+00:04:14 - 00:04:18, Vậy thì chúng ta sẽ có thêm 1 cái phương thức này nữa.
+00:04:18 - 00:04:20, Bít lại cái phương thức này.
+00:04:20 - 00:04:28, Rồi, bây giờ đối với build thì ở đây chúng ta sẽ có input và output dimension.
+00:04:28 - 00:04:40, Thì chúng ta cũng tương tự sẽ cài đặt là input với shape là bằng input.
+00:04:44 - 00:04:49, Tiếp theo, đó là chúng ta sẽ có cái lớp hidden layer.
+00:04:49 - 00:04:51, Chúng ta sẽ có 1 cái lớp hidden layer.
+00:04:51 - 00:04:54, Như vậy ở đây sẽ để là hidden.
+00:04:54 - 00:05:02, Rồi, lớp hidden layer này thì nó sẽ được thực hiện bởi một cái phép biến đổi là fully connected.
+00:05:02 - 00:05:07, Tại vì từ cái lớp input sang cái lớp hidden này thì nó được kết nối đầy đủ.
+00:05:07 - 00:05:15, Và chúng ta lưu ý là activation của mình thì chúng ta sẽ sử dụng hàm sigmoid.
+00:05:15 - 00:05:19, Và đồng thời là chúng ta có sử dụng bias.
+00:05:19 - 00:05:24, Vậy thì ở đây sẽ là layer, sẽ là dense.
+00:05:24 - 00:05:29, Rồi, output của mình thì nó sẽ có nhiều nodes.
+00:05:29 - 00:05:32, Vả sử ở đây chúng ta có 8 nodes thôi.
+00:05:32 - 00:05:36, Số nodes ở giữa ở đây chúng ta có 8 nodes.
+00:05:36 - 00:05:44, Rồi, activation thì chúng ta sẽ để là sigmoid.
+00:05:44 - 00:05:51, Rồi, use bias thì chúng ta sẽ để là true.
+00:05:51 - 00:05:58, Và chúng ta sẽ phải truyền cái lớp input cho nó chính là input ở đây.
+00:05:58 - 00:06:01, Rồi, chúng ta sẽ có cái output là hidden.
+00:06:01 - 00:06:06, Và với output là hidden, chúng ta lại một lần nữa, chúng ta...
+00:06:08 - 00:06:12, Một lần nữa thì chúng ta sẽ đưa qua cái lớp biến đổi là fully connected.
+00:06:12 - 00:06:19, Tại vì bản chất ở đây tất cả các cái node đầu vào và cái node đầu ra thì nó kết nối đầy đủ với nhau.
+00:06:19 - 00:06:22, Và đó thì ở đây nó cũng là một cái dense.
+00:06:22 - 00:06:27, Và cái dense này thì cái output của mình nó chỉ có duy nhất một node.
+00:06:27 - 00:06:31, Tại sao một node? Tại vì ở đây chúng ta phân lý chỉ phân.
+00:06:33 - 00:06:39, Rồi, ở đây sẽ có là output là bằng dense.
+00:06:39 - 00:06:46, Trong đó chỉ có một node activation thì chúng ta sẽ để là sigmoid.
+00:06:49 - 00:06:53, Rồi, sử dụng bias bằng true.
+00:06:53 - 00:06:58, Và input của nó chính là cái hidden ở phía trước.
+00:07:00 - 00:07:06, Rồi, bây giờ chúng ta sẽ đóng gói cả cái này vào trong cái biến vật là model.
+00:07:10 - 00:07:15, Và chúng ta sẽ trả về cho cell.model.
+00:07:15 - 00:07:20, Ở đây thì chúng ta sẽ không cần phải return cái gì ra bên ngoài.
+00:07:20 - 00:07:36, Rồi, tương tự như vậy ở đây chúng ta sẽ có optimizer sẽ là bằng tf.geras.optimizer.stochastic-radiant descent
+00:07:36 - 00:07:41, Với learning rate là bằng 0.1 để train cho nó nhanh.
+00:07:41 - 00:07:45, Và ở đây chúng ta sẽ có sử dụng momentum.
+00:07:45 - 00:07:49, Momentum sẽ giúp cho cái quá trình huấn luyện của mình nó nhanh hơn.
+00:07:51 - 00:07:56, Là bằng 0.9. Thông thường mặc định chúng ta sẽ để ở đây là 0.
+00:07:56 - 00:08:00, Nhưng mà theo kinh nghiệm thì momentum nên để bằng 0.9.
+00:08:00 - 00:08:05, Và bây giờ thì chúng ta sẽ compile nó vào trong cái biến model.
+00:08:06 - 00:08:11, optimizer thì để bằng ovt
+00:08:15 - 00:08:35, Rồi, loss thì chúng ta sẽ để là tf.geras.loss.binary classification
+00:08:35 - 00:08:41, Rồi, ở đây chúng ta sẽ có thêm một cái tham số nữa.
+00:08:41 - 00:08:46, Chúng ta sẽ có thêm một cái tham số nữa đó là số evoke.
+00:08:46 - 00:08:49, Sẽ có thêm một số evoke nữa.
+00:08:49 - 00:08:59, Vậy là n evoke sẽ là bằng 5 evoke.
+00:08:59 - 00:09:07, Rồi, đối với cái hàm gateway thì chúng ta sẽ phải truyền vào cái layer số máy.
+00:09:07 - 00:09:09, Layer số máy.
+00:09:09 - 00:09:19, Vì vậy ở đây chúng ta sẽ return là self.model.layer và chúng ta sẽ truyền vào cái chỉ số của cái layer.
+00:09:19 - 00:09:22, Rồi, .gateway
+00:09:22 - 00:09:31, Rồi, bây giờ chúng ta sẽ tiến hành chạy thử chương trình này.
+00:09:31 - 00:09:32, Maybach không có lỗi.
+00:09:32 - 00:09:40, Và để khơi tạo thì chúng ta sẽ tạo một cái đối tượng tên là neural network.
+00:09:40 - 00:09:43, Rồi, neural network.build
+00:09:44 - 00:09:49, Thì chúng ta sẽ truyền vào là số input là 2, số output là 1.
+00:09:49 - 00:09:51, Tại vì chúng ta phân lớp nhị phân.
+00:09:51 - 00:09:55, Rồi, .summary
+00:09:58 - 00:10:01, Ở đây mô hình này có tất cả là 33 tham số.
+00:10:01 - 00:10:04, Trong đó có một cái lớp ẩn và một cái lớp output cuối cùng.
+00:10:04 - 00:10:06, Lớp ẩn thì còn có 8 neural.
+00:10:06 - 00:10:10, Rồi, bây giờ chúng ta sẽ tiến hành trend.
+00:10:11 - 00:10:16, Và chúng ta sẽ truyền vào các cái giá trị Xtrend và Ytrend ở đây.
+00:10:25 - 00:10:30, Ở đây thì mặc định chúng ta để số epoch là 1000.
+00:10:30 - 00:10:33, Tuy nhiên thì chúng ta có thể giảm cái số epoch này xuống.
+00:10:33 - 00:10:39, Tại vì chúng ta dùng momentum nên cái số thao tác này nó, cái bước cập nhật của mình nó rất là nhanh.
+00:10:40 - 00:10:50, Rồi, nó không hiểu cái epoch.
+00:11:10 - 00:11:13, Rồi, mình sẽ phải gọi vào cái hầm...
+00:11:13 - 00:11:15, Ok, combine nó sẽ không hiểu.
+00:11:17 - 00:11:20, Rồi, quên mất cái này, nó sẽ phải gọi vào hầm fit.
+00:11:20 - 00:11:29, thì self.model.fit và chúng ta sẽ fit với dữ dụ trend, ytrend và số lượng epoch.
+00:11:32 - 00:11:37, Rồi, bây giờ chúng ta sẽ trend lại.
+00:11:40 - 00:11:47, Bên đầu thì chúng ta thấy là loss rất là cao.
+00:11:47 - 00:11:52, Là 0.7
+00:11:52 - 00:11:59, Sau đó thì loss đã giảm xuống còn dưới 0.1
+00:11:59 - 00:12:03, Nó sẽ ra là 0.28
+00:12:03 - 00:12:07, Rồi, bây giờ thì chúng ta sẽ vẽ cái history.
+00:12:07 - 00:12:12, Thôi, cái quá trình trend này thì nó thực hiện rất là nhanh.
+00:12:12 - 00:12:14, Vậy đó thì chúng ta sẽ chạy lại cái này.
+00:12:14 - 00:12:16, Ở đây chúng ta sẽ để là hits.
+00:12:21 - 00:12:25, Để chút nữa chúng ta sẽ quan sát cái giá trị loss nó đã giảm như thế nào.
+00:12:29 - 00:12:35, Ở đây thì chúng ta sẽ trả về cái loss của cái hầm trend.
+00:12:37 - 00:12:49, Rồi, chúng ta thấy là cái giá trị của cái hầm loss nó liên tục giảm xuống.
+00:12:49 - 00:12:59, Rồi, bây giờ để trực quan hóa thì chúng ta sẽ phải log ra các cái tham số cho cái mô hình này.
+00:12:59 - 00:13:03, Ở đây chúng ta thấy là chúng ta sẽ có hai cái là theta 1 và theta 2.
+00:13:03 - 00:13:11, Trong đó cái thành phần theta 2 là cái mà chúng ta sẽ quan sát đầu tiên xem coi cái giá trị của nó là như thế nào.
+00:13:11 - 00:13:21, Thì để lấy cái giá trị tham số đầu tiên theta 2, chúng ta sẽ lấy là neural network.getWay
+00:13:24 - 00:13:27, Và chúng ta sẽ truyền vô layer là layer số 2.
+00:13:29 - 00:13:30, Rồi.
+00:13:33 - 00:13:45, Rồi, như vậy thì chúng ta sẽ thấy là các cái giá trị của theta 2 này nó sẽ có 8 giá trị tất cả.
+00:13:45 - 00:13:53, 8 giá trị này nó tương ứng sẽ là cái trọng số của cái mô hình.
+00:13:53 - 00:13:57, Nó sẽ tương ứng là cái trọng số của các cái node ở đây.
+00:13:57 - 00:14:01, Nó tương ứng là cái trọng số của các cái node trong cái mô hình này.
+00:14:01 - 00:14:16, Và cái trọng số này thì nó sẽ thể hiện là cái vai trò khi đưa ra cái output cuối cùng thì tôi sẽ tin cậy vào cái node nào.
+00:14:16 - 00:14:18, Tôi sẽ tin cậy vào cái node nào.
+00:14:18 - 00:14:24, Thế thì trong số 8 cái node này thì đâu đó có những node có độ tin cậy thấp.
+00:14:24 - 00:14:32, Ví dụ như là 0.3, 0.5, 0.4 nhưng cũng có những node độ tin cậy rất là cao.
+00:14:32 - 00:14:34, Ví dụ như là trừ 17.
+00:14:34 - 00:14:43, Lu ý là cái độ tin cậy ở đây chúng ta sẽ thể hiện ở chỗ là trị liệt đối chứ không phải là cái sự lớn bé về mặt đại số của nó.
+00:14:43 - 00:14:52, Vậy là trừ 17, 14, 11, trừ 11, trừ 8 đó là những cái node có độ tin cậy rất là cao.
+00:14:52 - 00:15:07, Vậy thì chúng ta sẽ có một ý tưởng đó là với những cái node mà có độ tin cậy cao thì chúng ta sẽ tìm cách trực quan hóa cái đường thẳng mà được tạo bởi các cái trọng số.
+00:15:07 - 00:15:13, Đường thẳng được tạo bởi các cái trọng số đến cái node mà có trọng số cao này.
+00:15:13 - 00:15:20, Cái cách mà chúng ta trực quan hóa đường thẳng thì chúng ta đã tìm hiểu ở trong cái bài về Logistic Regression rồi.
+00:15:20 - 00:15:32, Vậy thì ở đây chúng ta sẽ viết một cái vòng 4. Đoạn đầu thì chủ yếu đó là chúng ta vẽ các điểm data lên thôi.
+00:15:32 - 00:15:55, Vậy thì ở phần sau chúng ta sẽ đi lấy những cái đường thẳng có độ tin cậy cao. Ví dụ như ở đây là 0, 1, 2, 3, 4, 5, 6, 7.
+00:15:55 - 00:16:08, Rồi chúng ta sẽ vi dụ như các cái neuron có độ tin cậy cao và để vẽ đường thẳng với từng neuron thì chúng ta phải biến đổi công thức của mình.
+00:16:08 - 00:16:20, Vậy thì ở đây chúng ta sẽ vi dụ như các cái nối đến x1 và x2.
+00:16:20 - 00:16:43, Rồi x1 và x2, params 0, đó chính là cái trọng số nối đến đây. Nối đến cái thành phần bias. Params 1 là nối đến cái x1, là tương ứng với x1.
+00:16:43 - 00:17:06, Và params 2 là cái trọng số tương ứng với x2 cho cái theta 1. Vậy bây giờ chúng ta sẽ phải tính cái theta 1 trước là sẽ bằng neuronet.getWay.
+00:17:06 - 00:17:17, Và ở đây chúng ta sẽ truyền là 1. Rồi bây giờ chúng ta sẽ lấy cái thành phần đầu tiên, đó là thành phần bias thì nó chính là bằng theta 1.
+00:17:17 - 00:17:29, Và x1 thành phần params thì nó sẽ là bằng theta 1.
+00:17:29 - 00:17:44, Rồi bây giờ chúng ta sẽ có cái công thức này. Chúng ta sẽ thế vào để tính ra phương trình đường thẳng cho các cái nodes của mình.
+00:17:44 - 00:18:00, Rồi, vỉa A sẽ là bằng trừ params 0, chia cho params 1.
+00:18:00 - 00:18:16, B sẽ là bằng trừ bias chia cho params 1.
+00:18:16 - 00:18:28, Và ở đây thì params ở đây chúng ta sẽ phải lấy là cái... Ok bây giờ để biết chúng ta sẽ tính như thế nào chúng ta sẽ in nó ra trước.
+00:18:28 - 00:18:46, Để coi nó như thế nào. Bias params thì nó là các cái bộ 8 các cái giá trị tương ứng với 8 nodes.
+00:18:46 - 00:19:00, Trong đó params thì nó sẽ có 2 thành phần là cho W1 và cho W2. Rồi, như vậy thì ở đây mình muốn lấy ra cái thành phần nào thì mình sẽ phải truyền thêm cái chỉ số nữa.
+00:19:00 - 00:19:15, Tức là mình truyền vào chỉ số node thứ máy. Ở đây sẽ là params params và không node thứ idx. Vị trí là thứ idx. Rồi params 1 idx.
+00:19:15 - 00:19:32, Bias thứ idx và params 1 idx. Rồi, bây giờ chúng ta sẽ vẽ nó lên klt.plot và 2 cái điểm của mình. Ở đây thì chúng ta sẽ lấy cái điểm là từ trừ 1 cho đến 1.
+00:19:32 - 00:19:44, Rồi, tương ứng lấy điểm từ trừ 1 cho đến 1 và điểm theo trục x2 hay là trục y chúng ta ký hiệu ở đây.
+00:19:44 - 00:20:09, Thì nó sẽ là công thức này là as b. A nhân với lại trừ 1 b. Rồi, và a nhân với 1 b. A nhân 1 b. Rồi, thì ở đây chúng ta sẽ thấy là gì?
+00:20:09 - 00:20:21, Các cái điểm, xin lỗi các cái neuron mà có độ thiên nhật kệ cao thì nó sẽ cắt cái đường thẳng, xin lỗi nó sẽ cắt tập điểm của mình ra làm 2 phần.
+00:20:21 - 00:20:34, Trong đó 1 nửa, ví dụ như cái đường màu tím này thì 1 nửa bên tay phải thì nó đều là những cái điểm màu đỏ. Nhưng mà nửa bên tay trái thì nó lẫn lộn cả màu đỏ và màu xanh.
+00:20:34 - 00:20:44, Tất cả những cái đường thẳng gọi lại nó cũng có tính chất như vậy. Ví dụ như cái đường màu đỏ, nửa dưới sẽ là toàn màu đỏ, nhưng mà nửa bên trên thì là có lẫn màu đỏ và màu xanh.
+00:20:44 - 00:21:00, Như vậy thì mỗi 1 cái đường thẳng này nó là 1 cái quick classifier, nó sẽ là 1 cái bộ phân lớp yếu. Và tổ hợp của nhiều cái quick classifier này thì nó sẽ giúp cho chúng ta tạo thành 1 cái bộ strong classifier, 1 cái bộ phân lớp mạnh.
+00:21:00 - 00:21:10, Tức là các cái đường màu xanh dương, màu xanh lá, màu tím, màu đỏ hợp lại thì nó sẽ giúp cho chúng ta tắt cái vùng màu đỏ ra là cái vùng rìa bên ngoài.
+00:21:10 - 00:21:21, Và vùng màu xanh, cái điểm màu xanh là những điểm nằm ở bên trong. Thì bây giờ chúng ta sẽ thử visualize các cái điểm mà có độ tinh cậy kém.
+00:21:21 - 00:21:29, Ví dụ như là điểm số 0, 1, 2, 2, 3, 4. Chúng ta sẽ xem thử các cái điểm mà có độ tinh cậy kém.
+00:21:29 - 00:21:46, 1, 2, 3, 4. Rồi. Thì chúng ta thấy là với các cái điểm mà có độ tinh cậy thấp thì nó sẽ đi xuyên qua.
+00:21:46 - 00:21:53, Ví dụ như ở đây có 2 cái đường thẳng là màu cam và màu xanh, nó đi xuyên qua tập điểm của mình.
+00:21:53 - 00:22:01, Ví dụ như cái việc đi xuyên qua tập điểm này thì nó sẽ không đóng góp cho cái việc là phân coi. Đó là màu đỏ hoặc là màu xanh.
+00:22:01 - 00:22:18, Thì nó sẽ không có nhiều cái giá trị tinh cậy. Rồi. Như vậy thì qua cái bài tập này, qua cái phép cài đặt này thì chúng ta một lần nữa ứng dụng thư viện Keras để cài đặt cho cái kiến trúc mạng là No Rain Network.
+00:22:18 - 00:22:31, Và một cách tổng quát thì sau này chúng ta có thể mở rộng lên thành nhiều cái hidden layer hơn. Ví dụ như ở đây chúng ta sẽ có là hidden số 1 thì sẽ truyền vào cho lớp tiếp theo là hidden 1.
+00:22:31 - 00:22:43, Rồi sẽ ra hidden 2. Hidden 2 sẽ truyền vào đây. Đúng không? Rồi để ra cái hidden số 3. Và hidden 3 truyền vào để ra cái output.
+00:22:43 - 00:23:00, Và cái số node ở đây chúng ta cũng có thể gia giảm. Có thể là 1632. Đúng không? Thì đây là cái cách thích cài đặt cho cái mạng Neural Network sử dụng thư viện Keras.
+00:23:06 - 00:23:07, Rồi.
+00:23:13 - 00:23:23, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

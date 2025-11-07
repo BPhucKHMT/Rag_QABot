@@ -1,0 +1,83 @@
+0:00:14 - 0:00:23, Chúng ta sẽ lược qua một số biến thể khác của các mô hình thị giác, ngôn ngữ thị giác
+0:00:23 - 0:00:27, Mô hình đầu tiên là Mô hình Clam
+0:00:27 - 0:00:35, Ý tưởng của Mô hình này là có chứa một dạng token đặc biệt, đó là set
+0:00:35 - 0:00:51, Mô hình này là một trong những chủ đề độc đáo và mới trong thời gian gần đây
+0:00:51 - 0:01:03, Mô hình ngôn ngữ sẽ nói thông qua mask, khai thác được mô hình ngôn ngữ cho một bài toán liên quan đến segmentation
+0:01:03 - 0:01:14, Thay vì chúng ta cần phải có một mô hình chuyên dụng để segment được hình ảnh của đối tượng
+0:01:14 - 0:01:27, Mô hình LM sẽ output ra prompt và chỉ việc decode là có thể tạo ra mask của đối tượng
+0:01:27 - 0:01:38, Tức là kết quả segmentation đến từ large language model, chứ không phải từ một mô hình chuyên dụng cho bài toán segmentation
+0:01:38 - 0:01:44, Một ý tưởng cũng tương tự như vậy, đó chính là mô hình route hot
+0:01:44 - 0:01:50, Nó có chứa một token đặc biệt, đó là GRD, tức là viết tắt của chữ routing
+0:01:50 - 0:02:03, Ý tưởng của nó là sử dụng một multimodal language model để khi chúng ta retrieve mask retrieval head
+0:02:03 - 0:02:16, Từ mask retrieval head này, chúng ta sẽ kết hợp lại với các class có trong đối tượng hình của mình để tạo ra một ảnh mask đẹp
+0:02:17 - 0:02:31, Bên cạnh việc trả ra một ngôn ngữ để mô tả tấm hình, chúng ta có thể trả ra một dạng ngôn ngữ nhưng có cấu trúc
+0:02:31 - 0:02:38, Ngôn ngữ có cấu trúc là Syntrap, tức là có một ví dụ
+0:02:38 - 0:02:44, Girl on chair, man sitting on chair, but...
+0:02:44 - 0:02:53, Đây chính là một cấu trúc graph, một cấu trúc có ngữ nghĩa
+0:02:53 - 0:03:06, Thay vì chúng ta trả ra một văn bản phi cấu trúc như thế này, chúng ta sẽ trả ra đồng thời thêm Syntrap để cho biết được các đối tượng đã tương tác với nhau như thế nào
+0:03:06 - 0:03:10, Và những thông tin đó được lưu trữ như đồ thị
+0:03:12 - 0:03:20, Và một bài toán nữa cũng đã được đề cập trong mô hình trước đây, đó là mô hình SIM
+0:03:20 - 0:03:31, Thế thì bài báo ở đây là making large multimodal model understand RB3 VisualProm
+0:03:31 - 0:03:40, VisualProm ở đây chính là dấu mũi tên, chúng ta dùng dấu mũi tên để làm tương tác và chỉ thị
+0:03:40 - 0:03:47, Chỉ dẫn kèm theo text prompt là What is the person marked with the red arrow honey?
+0:03:47 - 0:04:01, Chúng ta kết hợp cả cái câu prompt dạng text với lại cái VisualProm để mà tăng cái khả năng tương tác cũng như là xử lý cái khả năng dễ hiểu dễ tương tác của người dùng
+0:04:01 - 0:04:10, Và một cái mô hình khác nữa đó là chúng ta đã cải tiến cái mô hình thị giác máy tính khác
+0:04:10 - 0:04:18, Ở đây chúng ta thấy là chúng ta có sử dụng các cái mô hình của bên mục thị giác máy tính như là mô hình captioning để verbalization
+0:04:18 - 0:04:24, Tức là cái tấm ảnh của mình thay vì chúng ta rút trích nó dưới dạng là VisualFeature
+0:04:27 - 0:04:32, Thì ở đây chúng ta sẽ verbalization, tức là chúng ta sẽ mô tả bằng lời nó
+0:04:32 - 0:04:43, Vì cái việc tấm ảnh nó sẽ biến thành cái dạng mô tả ngôn ngữ chi tiết thì chúng ta sẽ xử lý nó giống như là với văn bản thôi
+0:04:43 - 0:04:49, Thì khi đó chúng ta có thể khai thác được các sức mạnh của các mô hình ngôn ngữ lớn
+0:04:49 - 0:04:56, Thì đây chính là cái ý tưởng là biến cái tấm ảnh thành một cái dạng mô tả bằng lời chi tiết
+0:04:57 - 0:05:02, Và nó nằm trong cái bài báo đó là MOAI
+0:05:02 - 0:05:11, Thế thì tổng kết lại chúng ta đã tìm hiểu qua rất nhiều những cái mô hình khác nhau trong phần này
+0:05:11 - 0:05:18, Thì đầu tiên đó là cái mô hình RoundingDino thì nó sẽ sử dụng cái ngôn ngữ để query thông tin hình ảnh
+0:05:18 - 0:05:25, Và ở cái output của mình nó sẽ là cái dạng segment, segmentation
+0:05:26 - 0:05:28, Tức là một cái phân đoạn ảnh
+0:05:28 - 0:05:34, Và đầu vào của mình sẽ là một cái prompt dạng ngôn ngữ text
+0:05:34 - 0:05:43, Thế thì cái RoundingDino này nó sẽ phải kết hợp với một cái mô hình segmentation rất là tốt
+0:05:43 - 0:05:50, Mà dựa trên cái VisualProm hoặc là SpatialProm là chính là mô hình SAM
+0:05:50 - 0:05:56, Tại vì cái mô hình RoundingDino này thì nó chỉ tạo ra được cái BoundingBox
+0:05:56 - 0:06:03, Chúng ta lấy cái BoundingBox này đưa vào SAM để mà nó segment ra chính xác đối tượng của mình
+0:06:03 - 0:06:12, Thế thì có cái cách để mà không cần phải sử dụng SAM mà chúng ta có một cái mô hình end-to-end để mà segment, đó chính là SIM
+0:06:12 - 0:06:19, Và SIM nó có một cái điểm thú vị khác đó là nó đa thể thức trong cái VisualProm
+0:06:19 - 0:06:23, Nó có thể là một điểm, cái VisualProm của mình nó có thể là một điểm
+0:06:23 - 0:06:29, Một BoundingBox, một cái Mask hoặc là một cái StripWall, một cái đường nét nguệch ngoạc
+0:06:29 - 0:06:34, Và đồng thời là nó có hỗ trợ các cái phương thức là Composite
+0:06:34 - 0:06:44, Cũng như là CompositeProm, tức là có sự kết hợp của cả VisualProm, TextProm, vâng
+0:06:44 - 0:06:54, Hoặc SIM cũng có thể đưa vào dưới dạng là Referring Prompt
+0:06:57 - 0:07:00, Tức là chúng ta sẽ không biết cái đối tượng đó là gì
+0:07:00 - 0:07:07, Thì chúng ta sẽ query, đưa vào Key Prompt, dạng là Thumbnail
+0:07:07 - 0:07:12, Thì chúng ta sẽ tìm cái đối tượng giống như cái đối tượng trong cái ảnh Thumbnail của mình
+0:07:13 - 0:07:18, Thì đây là hai cái mô hình phục vụ cho cái bài toán Segmentation
+0:07:19 - 0:07:25, Sau đó thì chúng ta sẽ có những cái mô hình liên quan đến cái việc là khai thác mô hình ngôn ngữ lớn
+0:07:25 - 0:07:31, Cho các cái bài toán của ngôn ngữ thị giác, đó là mô hình lava
+0:07:31 - 0:07:36, Và mô hình lava nó đã đưa cái đặc trưng ảnh về cùng không gian với lại cái mô hình LLM
+0:07:36 - 0:07:40, Thông qua một cái ProjectionLayer
+0:07:43 - 0:07:46, Thì nó sẽ đưa về cái không gian của LLM
+0:07:46 - 0:07:51, Sau đó thì nó sẽ tận dụng được cái tri thức đã được huấn luyện trước đó của LLM
+0:07:51 - 0:07:54, Để mà có thể giải quyết được các cái bài toán phức tạp
+0:07:55 - 0:07:59, Và lava đã cải thiện được ba yếu tố đó là
+0:07:59 - 0:08:04, Nó có thể được cải thiện thông qua việc tăng cái chất lượng của bộ dữ liệu lên
+0:08:04 - 0:08:06, Tăng cái độ phân giải của ảnh
+0:08:06 - 0:08:09, Cũng như là tăng cái độ lớn của mô hình lên
+0:08:09 - 0:08:13, Thì cái điều này cũng khá là thú vị
+0:08:13 - 0:08:16, Đó là nó cho cái kết quả một cái mô hình open source
+0:08:16 - 0:08:21, Và cho cái kết quả cao hơn các cái mô hình closed source ở một số cái task
+0:08:21 - 0:08:27, Và hai cái mô hình open source, hai mô hình closed source được so sánh ở đây chính là
+0:08:27 - 0:08:35, GmanEye, Flash, Ultra
+0:08:35 - 0:08:39, GmanEye Ultra hoặc là GmanEye Pro
+0:08:39 - 0:08:45, Còn cái phiên bản ở đây của GPT, đó là GPT 4V
+0:08:45 - 0:08:47, Là 4vision
+0:08:47 - 0:08:53, Thì cái lava cho cái kết quả tốt hơn hai cái mô hình này ở một số cái task
+0:08:53 - 0:08:54, Nhất định
+0:08:54 - 0:09:01, Thế thì cuối cùng đó là chúng ta có thể tùy biến cái đầu vào và đầu ra của lava
+0:09:01 - 0:09:04, Để giải quyết được những cái bài toán khác nhau
+0:09:04 - 0:09:08, Tại vì khi chúng ta cấu hình những cái đầu vào và đầu ra
+0:09:08 - 0:09:10, Thì sau đó chúng ta sẽ fine-tune lại
+0:09:10 - 0:09:13, Còn cái cơ chế chung của lava
+0:09:13 - 0:09:18, Nó vẫn là đưa cái đặc trưng ảnh để về cái không gian của cái mô hình ngôn ngữ lớn
+0:09:18 - 0:09:23, Và khai thác được cái mô hình ngôn ngữ lớn cho cái việc giải quyết các cái bài toán khác nhau phức tạp
+0:09:23 - 0:09:29, Thì trên đây đó là chúng ta đã tổng kết qua những cái mô hình
+0:09:29 - 0:09:31, Thị giác ngôn ngữ
+0:09:31 - 0:09:34, Ngôn ngữ thị giác vision language model
+0:09:34 - 0:09:37, Mà đã được học trong cái phần số 2 này

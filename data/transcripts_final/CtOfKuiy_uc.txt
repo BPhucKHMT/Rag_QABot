@@ -1,0 +1,73 @@
+0:00:14 - 0:00:20, Chúng ta sẽ cùng tìm hiểu về một số biến thể đơn giản của thuật toán Gradient Descent.
+0:00:20 - 0:00:39, Đến với biến thể đầu tiên, là Batch Gradient Descent, truyền toàn bộ dữ liệu vào mô hình của mình.
+0:00:39 - 0:00:49, Công thức cập nhật của Batch Gradient Descent là tính kỳ vọng trên toàn bộ dữ liệu.
+0:00:55 - 0:01:03, Đạo hàm của kỳ vọng của G theta, tức là kỳ vọng của toàn bộ các hàm lỗi.
+0:01:03 - 0:01:17, Chúng ta sẽ tính đạo hàm của trung bình lỗi của toàn bộ dữ liệu.
+0:01:20 - 0:01:30, Thay vì chúng ta tính hàm lỗi, giá trị sai số trên một mẫu dữ liệu, chúng ta sẽ tính trung bình sai số, trung bình lỗi trên toàn bộ dữ liệu của mình.
+0:01:30 - 0:01:50, Bên dưới là một đoạn mã giả, trong đó trung bình sai số sẽ duyệt qua số lượt dữ liệu.
+0:01:50 - 0:02:10, Khi chúng ta lặp đi lặp lại, chúng ta có thể huấn luyện 10, 20, 200, 300, 1000, 400, 500, 1000 dữ liệu.
+0:02:10 - 0:02:15, Mỗi một epoch là một lần chúng ta sẽ duyệt qua dữ liệu của mình.
+0:02:15 - 0:02:27, Nếu như khối này là biểu diễn cho toàn bộ dữ liệu, thì với mỗi epoch chúng ta sẽ xử lý trên toàn bộ dữ liệu của mình.
+0:02:27 - 0:02:35, Và data ở đây chính là phần chúng ta xử lý để huấn luyện trong một vòng lặp.
+0:02:35 - 0:02:45, Còn đối với thuật toán Stochastic Gradient Descent hay viết tắt là chữ SGD, chúng ta sẽ truyền từng mẫu huấn luyện vào.
+0:02:45 - 0:02:58, Lúc này thì công thức sẽ là theta bằng theta trừ cho đạo hàm của... đây là cái hàm lỗi của một mẫu dữ liệu.
+0:02:58 - 0:03:11, Và khi này thì mã giả của mình chúng ta sẽ duyệt qua mọi epoch và với mỗi epoch chúng ta sẽ shuffle data của mình.
+0:03:11 - 0:03:19, Tức là data của mình sẽ xáo trộn lên, do đó ở đây không phải là data mà là shuffle data.
+0:03:20 - 0:03:26, Sau đó thì, for each example, tức là với mỗi một example, thì ở đây chúng ta sẽ lấy ra đúng một mẫu thôi.
+0:03:26 - 0:03:39, Và mẫu này là random. Rồi sau đó chúng ta sẽ xác định cái lỗi và sau đó là tính cái gradient, rồi sau đó cập nhật lại cái tham số.
+0:03:39 - 0:03:44, Với mỗi một cái lượt này, thì đó là một cái data của mình.
+0:03:45 - 0:03:49, Đây sẽ là một cái example. Mỗi example sẽ là một mẫu dữ liệu.
+0:03:49 - 0:03:55, Và chúng ta sẽ truyền vào cái example, thay vì chúng ta truyền vào toàn bộ dữ liệu giống như trong slide trước.
+0:03:55 - 0:04:00, Trong slide trước là chúng ta truyền vào toàn bộ dữ liệu. Thì ở đây chúng ta chỉ truyền vào một mẫu thôi.
+0:04:00 - 0:04:05, Và một mẫu này sẽ được lấy random. Một mẫu random.
+0:04:05 - 0:04:12, Cái biến thể tiếp theo đó chính là mini-batch gradient descent hay viết tắt là MGD.
+0:04:12 - 0:04:19, Thì chúng ta thay vì truyền vào một mẫu, thì chúng ta sẽ truyền vào một khối hay batch.
+0:04:19 - 0:04:28, Cái mẫu huấn luyện. Và cái batch size ở đây, cái kích thước của cái mẫu, kích thước của cái khối là viết tắt của chữ batch size.
+0:04:28 - 0:04:33, Đây là kích thước của khối.
+0:04:33 - 0:04:39, Thì với cái kích thước khối thì thông thường nó là những con số chia hết cho, nó là con số lũy thừa của 2.
+0:04:39 - 0:04:43, Ví dụ như là 1, 2, 4, 8, 16 v.v.
+0:04:43 - 0:04:51, Và cái công thức của mình lúc này thì nó sẽ là theta bằng theta trừ cho đạo hàm của hàm loss được tính trên một khối.
+0:04:51 - 0:04:55, Đây là một batch.
+0:04:55 - 0:05:01, Và cái batch này có kích thước là n.
+0:05:01 - 0:05:08, Lưu ý là từ i cho đến i, i cộng n thì có thể chúng ta sẽ hiểu là nó có n cộng 1 giá trị.
+0:05:08 - 0:05:18, Nhưng mà nếu mà chiếu theo cái cú pháp của python thì là từ i cho đến giá trị ngay trước i cộng n thì nó sẽ là có n phần tử.
+0:05:18 - 0:05:26, Và cái mã giả của mình nó sẽ là mini-batch GD là chúng ta sẽ lặp qua số epoch và với mỗi lần lặp,
+0:05:26 - 0:05:33, với mỗi epoch thì chúng ta sẽ shuffle data, chúng ta sẽ random dữ liệu.
+0:05:33 - 0:05:38, Thì đây sẽ là shuffle data.
+0:05:38 - 0:05:46, Rồi sau đó sau khi chúng ta đã shuffle data xong thì chúng ta sẽ lấy một batch, lấy một batch thì chúng ta sẽ có một cái hàm get_batch.
+0:05:46 - 0:05:51, Get_batch này nó sẽ chia cái data của mình ra làm nhiều phần.
+0:05:51 - 0:05:56, Ví dụ như mỗi cái phần này nó sẽ là một batch.
+0:05:56 - 0:06:03, Chúng ta sẽ duyệt qua hết các cái batch trong cái shuffle data này.
+0:06:03 - 0:06:08, Bắt đầu chúng ta sẽ train trên dữ liệu này sau đó chúng ta sẽ train trên dữ liệu tiếp theo, cái batch tiếp theo.
+0:06:08 - 0:06:11, Sau đó chúng ta sẽ train trên cái phần tiếp theo.
+0:06:11 - 0:06:14, Rồi sau đó chúng ta sẽ train trên cái phần cuối cùng.
+0:06:14 - 0:06:24, Thì for batch in get_batch thì nó sẽ là duyệt qua tất cả cái batch của cái dữ liệu đã được xáo trộn ngẫu nhiên này.
+0:06:24 - 0:06:36, Và ở đây thay vì chúng ta truyền vào data hoặc là example thì ở đây chúng ta sẽ không có truyền data,
+0:06:36 - 0:06:39, không truyền example mà truyền vào nguyên một khối dữ liệu.
+0:06:40 - 0:06:47, Thế thì bây giờ chúng ta sẽ cùng tìm hiểu xem là cái ưu khuyết điểm của từng cái phương pháp này là gì.
+0:06:47 - 0:06:56, Thì đối với cái batch gradient descent thì số mẫu dữ liệu chúng ta huấn luyện là chúng ta sẽ tính trên toàn bộ mẫu dữ liệu.
+0:06:56 - 0:07:00, Do đó đương nhiên chi phí tính toán của mình nó sẽ rất là cao.
+0:07:00 - 0:07:06, Chi phí tính toán cao do tại một thời điểm chúng ta sẽ phải tính hết trên toàn bộ dữ liệu.
+0:07:06 - 0:07:13, Trong khi đó stochastic gradient descent thì tại một thời điểm huấn luyện chúng ta chỉ lấy ra một mẫu dữ liệu để tính toán.
+0:07:13 - 0:07:22, Và stochastic gradient descent thì nó sẽ khiến cho cái thời gian tính toán nó chậm.
+0:07:22 - 0:07:31, Lý do đó là vì trong Python nếu mà chúng ta tính theo khối, tính theo một cái lượng lớn dữ liệu thì nó sẽ nhanh hơn chúng ta sẽ tính lẻ trên từng dữ liệu.
+0:07:31 - 0:07:42, Và mini-batch gradient descent là một cái thuật toán mà nó sẽ trung hòa ở giữa.
+0:07:42 - 0:07:49, Tức là chi phí tính toán thì nó không lớn như batch gradient descent, tức là tính trên hết toàn bộ mẫu dữ liệu.
+0:07:49 - 0:07:55, Nhưng mà thời gian tính toán thì nó cũng sẽ không có chậm như là với stochastic gradient descent.
+0:07:55 - 0:08:03, Tức là chúng ta sẽ phải tính đi tính lặp, chúng ta sẽ thực hiện việc cập nhật cho một epoch là chúng ta phải thực hiện nhiều lần.
+0:08:03 - 0:08:07, Thì đó là về mặt chi phí tính toán cũng như là thời gian tính toán.
+0:08:07 - 0:08:15, Còn về hàm lỗi, cái dạng thức của hàm lỗi, đối với batch gradient descent thì nó sẽ ra một cái đường nó rất là mượt.
+0:08:15 - 0:08:19, Hay tiếng Anh nó gọi là smooth.
+0:08:20 - 0:08:35, Trong khi đó thì cái hàm lỗi khi chúng ta huấn luyện qua từng cái vòng lặp, đối với stochastic gradient descent thì chúng ta sẽ thấy nó rất là giật cục, nó rất là không ổn định, unstable.
+0:08:35 - 0:08:51, Nhưng nhìn chung thì cái loss của mình mặc dù nó đi lên đi xuống nhưng mà nó vẫn sẽ là đi xuống hết. Khi mà chúng ta lặp đủ nhiều thì loss của mình cũng sẽ giảm xuống.
+0:08:52 - 0:09:01, Còn đối với cái mini-batch gradient descent thì nó cũng sẽ trung hòa giữa cả hai.
+0:09:01 - 0:09:11, Một, đó là nó cũng tương đối mượt nhưng mà nó cũng sẽ có những cái giật cục nhất định nhưng mà nó sẽ không có bất ổn định giống như là stochastic gradient descent.
+0:09:11 - 0:09:26, Thì đây chính là cái mô hình mà, cái thuật toán nó sẽ trung bình trung hòa được cái điểm yếu của cả hai cái batch gradient descent và stochastic gradient descent.
+0:09:26 - 0:09:35, Thông thường thì khi chúng ta huấn luyện với deep learning thì chúng ta sẽ phải dùng một trong hai cái stochastic hoặc là mini-batch.
+0:09:35 - 0:09:40, Lý do đó là vì trong deep learning thì cái dữ liệu của mình thường rất là lớn.
+0:09:40 - 0:09:44, Cái data set của mình nó thường gọi là large scale data set.
+0:09:46 - 0:09:56, Và khi đó thì cái bộ nhớ mà mình lưu trữ cái dữ liệu thôi nó cũng đã không đủ rồi. Chứ đừng có nói là lưu cái mô hình và tính toán trên cái mô hình.
+0:09:56 - 0:10:04, Còn các cái data set lớn thì nó sẽ rất là phù hợp cho cái stochastic và mini-batch.
+0:10:04 - 0:10:13, Nếu như chúng ta không biết, bắt đầu chúng ta thử thì chúng ta nên thử với stochastic gradient descent tại vì nó chắc chắn là ít tốn bộ nhớ nhất.
+0:10:13 - 0:10:21, Nhưng mà khi chúng ta thấy là nó vẫn còn dư dả cái dung lượng bộ nhớ thì chúng ta sẽ tăng nó lên là thành mini-batch.
+0:10:21 - 0:10:31, Thì đó là một số cái ưu khuyết điểm của các cái phiên bản, các cái biến thể của gradient descent, những cái biến thể đơn giản đầu tiên.

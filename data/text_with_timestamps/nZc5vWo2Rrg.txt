@@ -1,0 +1,201 @@
+00:00:00 - 00:00:18, Tiếp theo chúng ta sẽ bàn về tốc độ của mô hình Diffusion
+00:00:18 - 00:00:27, Đối với mô hình Diffusion thì vấn đề lớn nhất là nó phải sampling rất nhiều bước trung gian để có thể encode và decode
+00:00:27 - 00:00:30, Như vậy thì làm sao để có thể sinh ra ảnh với tốc độ nhanh hơn
+00:00:30 - 00:00:38, Nguyên nhân là trong quá trình thêm nhiễu vào, nhiễu sau sẽ phụ thuộc vào nhiễu trước
+00:00:38 - 00:00:45, Tức là để denoise được xt-2 thì phải có xt-1
+00:00:45 - 00:00:48, Mà muốn tính được xt-1 thì phải có xt
+00:00:48 - 00:00:54, Chính sự tuần tự này sẽ khiến chúng ta chậm
+00:00:54 - 00:00:59, Nguyên nhân của tần tự này là nó giả định theo chuỗi Markov,
+00:00:59 - 00:01:08, tức là phải có x thứ t trừ 1 xong chúng ta mới có thể tính được xt.
+00:01:08 - 00:01:10, Đó chính là nguyên nhân.
+00:01:10 - 00:01:12, Và ngược lại khi chúng ta denoise cũng như thế.
+00:01:12 - 00:01:16, Như vậy thì thời gian chạy của diffusion sẽ là bằng t
+00:01:16 - 00:01:18, nhân cho thời gian chạy của organ và vr.
+00:01:18 - 00:01:22, Vậy thì chúng ta sẽ nhắc lại công thức tạo sinh của mô hình của mình.
+00:01:22 - 00:01:34, Trong mô hình tạo sinh của mình thì công thức sử dụng theo kích cách số 2 của chúng ta đó là đoán xem cái nhiễu tại một thời điểm t
+00:01:34 - 00:01:42, so với lại cái nhiễu đúng là bao nhiêu thì chúng ta sẽ có mi của qi xt phải x0 là bằng công thức này
+00:01:42 - 00:01:47, và mi của theta xt t thì nó sẽ là bằng công thức này
+00:01:47 - 00:01:54, trong công thức này thì chúng ta thấy nó có tính chất gọi là macos
+00:01:54 - 00:01:59, tức là phải tính xt cũ trước rồi mới tính xt
+00:01:59 - 00:02:06, tuy nhiên có một bài báo khác đó là ddim
+00:02:06 - 00:02:11, tức là denoising diffusion implicit model
+00:02:11 - 00:02:16, thì đã bỏ đi cái yếu tố gọi là chuỗi macos
+00:02:16 - 00:02:25, tức là chúng ta sẽ không có yêu cầu quý xt, xt trừ 1 phải là một chuỗi Markov, tức là phải tính được xt trừ 1
+00:02:25 - 00:02:27, xong rồi chúng ta mới tính được cái xt này
+00:02:27 - 00:02:32, thì ở đây chúng ta sẽ dùng cái sơ đồ này để dễ hình dung
+00:02:32 - 00:02:36, đó là từ xt chúng ta có thể tính trực tiếp lên x1
+00:02:36 - 00:02:39, xin lỗi từ x0 chúng ta có thể tính trực tiếp lên x1
+00:02:39 - 00:02:43, từ x0 chúng ta có thể tính trực tiếp đến x2 mà không cần thông qua
+00:02:43 - 00:02:45, không cần thông qua cái bước tính x1 này
+00:02:45 - 00:02:48, thì công thức của mình sẽ là qi của xt
+00:02:48 - 00:02:52, khi chúng ta biết trước xt trừ 1 x0
+00:02:52 - 00:02:56, thì lúc này chúng ta sẽ tính trực tiếp từ x0 mà không cần qua xt trừ 1
+00:02:56 - 00:03:01, vậy thì ở trên công thức này chúng ta thấy bản chất của các công thức
+00:03:01 - 00:03:06, nó chỉ là một sự tính toán với các hệ số a, b và b
+00:03:06 - 00:03:07, a và b
+00:03:07 - 00:03:15, hàm mi của quý xt, xt0, xt0 là bằng a, b, axt, bε
+00:03:15 - 00:03:23, tư tưởng như vậy mi theta của xt, t là bằng axt, bε, theta xt
+00:03:23 - 00:03:29, Thế thì chúng ta chỉ cần tìm a và b sau cho miễn là cái xt nó thỏa mãn
+00:03:29 - 00:03:35, xt là bằng căn của alpha t x0 cộng cho 1 trừ căn alpha
+00:03:35 - 00:03:40, 1 trừ... cộng cho căn của 1 trừ alpha epsilon
+00:03:40 - 00:03:42, thì như vậy là đã bứng được
+00:03:42 - 00:03:45, Thì cái mô hình ddim ý tưởng của nó đó là
+00:03:45 - 00:03:51, thay vì chúng ta đi từng bước phụ thuật bước thứ t
+00:03:51 - 00:03:54, chúng ta tính xong thì chúng ta mới đến được bước thứ T cộng 1
+00:03:54 - 00:04:00, thì nó sẽ dùng một cái công thức trực tiếp từ x0 cho đến cái vị trí thứ T luôn
+00:04:00 - 00:04:02, và ngược lại cũng vậy
+00:04:02 - 00:04:07, thế thì nó sẽ nhảy cóc, nói một cách nôn na đó là nó sẽ tính toán nhảy cóc
+00:04:07 - 00:04:11, cái bước mà encoding và decoding
+00:04:11 - 00:04:16, và như vậy thì cái tốc độ của ddam có thể nhanh hơn
+00:04:16 - 00:04:20, gấp 10 hoặc thập chính là gấp 100 lần so với lại dd
+00:04:20 - 00:04:22, DDVM
+00:04:23 - 00:04:25, Đây là mô hình probabilistic
+00:04:25 - 00:04:27, tức là mô hình có sát xuất
+00:04:27 - 00:04:28, Còn ở đây là implicit
+00:04:30 - 00:04:32, Tức là một mô hình mà
+00:04:32 - 00:04:34, nó có thể tính một cách đơn định
+00:04:34 - 00:04:36, không có kiểu tối gây nhiễu trong đó
+00:04:36 - 00:04:37, không có ý tối nhiễu
+00:04:37 - 00:04:38, Thế thì
+00:04:38 - 00:04:41, xét về tốc độ thì DDVM nó hơn
+00:04:41 - 00:04:43, Còn xét về độ chính xác thì
+00:04:43 - 00:04:45, nó gần như tương đương và thậm chí là
+00:04:45 - 00:04:47, tốt hơn
+00:04:47 - 00:04:49, ở một số tình huống ví dụ
+00:04:49 - 00:05:05, với số Step 10, FID là 10, DDPM là 13, DDPM là 300
+00:05:05 - 00:05:16, khi thực hiện với 1000 step, DDBM cho độ chính xác cho FID là tốt nhất
+00:05:16 - 00:05:20, DDBM cũng gần như tương đương, 4.0
+00:05:20 - 00:05:28, nhưng từ 100 trở về trước, ở đây là 4,0, còn ở đây là gần 10,4,0, rất tốt hơn 10 nhiều
+00:05:28 - 00:05:40, Với DDAM, số step của mình mà nhỏ hơn 100, độ chính xác FID của mình tốt hơn hẳn so với DDAM.
+00:05:40 - 00:05:46, Tương tự như vậy cho bộ CELES64, kết quả cũng hoàn toàn tương tự như vậy.
+00:05:46 - 00:05:52, DDIM có thể nói là một trong những cải tiến đột phá
+00:05:52 - 00:05:59, trong việc đó là cải tiến về tốc độ của một mô hình diffusion
+00:05:59 - 00:06:03, chuyển từ dạng probabilistic sang dạng deterministic
+00:06:03 - 00:06:05, để mà mình có thể lấy mẫu nhanh.
+00:06:05 - 00:06:10, Và một kỹ thuật khác đó là progressive distillation
+00:06:10 - 00:06:15, khi nói đến mô hình họp máy thì chúng ta sẽ có kỹ thuật
+00:06:15 - 00:06:23, tức là huấn luyện một mô hình teacher có một số tham số rất là lớn
+00:06:23 - 00:06:27, và mô hình student có số lượng tham số ít hơn
+00:06:27 - 00:06:32, trong trường hợp này thì chúng ta sẽ huấn luyện mô hình teacher và student phối hợp với nhau
+00:06:32 - 00:06:36, để sao cho chúng ta, thay vì chúng ta phải đi từng bước như thế này
+00:06:36 - 00:06:42, thì chúng ta có thể đi những cái đường tắc mà vẫn có thể đến được đích
+00:06:42 - 00:06:46, progressive distillation
+00:06:46 - 00:06:55, ở đây chúng ta sẽ huấn luyện teacher trước và sau đó chúng ta sẽ distill vào knowledge của student theo đường màu vàng này
+00:06:55 - 00:07:05, thì student của mình là đi theo các đường tắc, tức là nó bỏ qua các bước trung gian ở đây
+00:07:05 - 00:07:10, sau đó, nếu là progressive có nghĩa là gì?
+00:07:10 - 00:07:14, nó lấy chính cái đường tab này, tức là cái mô hình mà đi
+00:07:14 - 00:07:18, đi noi theo cái kiểu đường tab này để làm teacher
+00:07:18 - 00:07:21, để làm teacher, là cái đường màu vàng này là teacher
+00:07:21 - 00:07:25, thì chúng ta sẽ đi một cái đường tab hơn nữa, đó là student
+00:07:25 - 00:07:28, chúng ta sẽ bỏ qua cái node này
+00:07:28 - 00:07:32, bỏ qua cái node của teacher cũ
+00:07:32 - 00:07:37, để tạo ra một stewarding mới có bước nhạy cóc nhanh hơn
+00:07:37 - 00:07:40, thì đây chính là Progressive Length Distillation
+00:07:40 - 00:07:48, chúng ta từng bước dạm số bước của mình xuống để tăng tốc độ Delay
+00:07:48 - 00:07:57, Mô hình Guided Distillation ý tưởng cũng là dùng Distillation nhưng mà kết hợp với Layton Diffusion
+00:07:57 - 00:08:07, Đây là một mô hình cho chúng ta vừa đạt được tốc độ huấn luyện và tốc độ inference của mình.
+00:08:07 - 00:08:15, Đây là mô hình có Condition là Y, cho phép chúng ta điều hướng mô hình của mình.
+00:08:15 - 00:08:24, Vì vậy, ở đây là một mô hình Guided Distillation là giao thoa hoặc là kết hợp của Progressive
+00:08:24 - 00:08:28, tức là chúng ta sẽ đi các đường đi tắc
+00:08:28 - 00:08:32, thay vì chúng ta đi từng bước, từng bước, từng bước thì chúng ta sẽ đi tắc
+00:08:32 - 00:08:36, hoặc thậm chí là tắc hơn, tức là chúng ta có thể đi trực tiếp từ đây sang đây
+00:08:36 - 00:08:41, thông qua cái việc là chân cất tuần tự
+00:08:41 - 00:08:48, sau đó chúng ta kết hợp với mô hình Latent Diffusion, tức là chúng ta chỉ làm bước
+00:08:48 - 00:08:56, encode và decode ở trên không gian latent thôi, tức là chúng ta không làm trong không gian ảnh mà làm trên không gian latent
+00:08:56 - 00:09:05, và kết quả của Guided Distillation thì chúng ta thấy là rất là đẹp và
+00:09:05 - 00:09:18, Các bước từ 2 bước, 4 bước và 8 bước thì kết quả gần như tương đương nhau, không có sự phô trình khác biệt gì nhiều
+00:09:18 - 00:09:24, Với chỉ 2 bước mà kết quả của chúng ta rất là tốt
+00:09:24 - 00:09:31, So với đương nhiên là 8 bước nhiều bước hơn thì nó sẽ đẹp hơn, chi tiết hơn nhưng mà 2 bước thì kết quả cũng rất là tốt
+00:09:31 - 00:09:39, và khi chúng ta đe-noi mà chỉ có hai bước thì rõ ràng tốc độ mình nhanh hơn rất là nhiều so với lại đe-noi cả t bước
+00:09:39 - 00:09:43, thì đây là cái kết quả vào năm 2023
+00:09:43 - 00:09:47, và chúng ta sẽ có cái mô hình consistency model
+00:09:47 - 00:09:56, tức là chúng ta sẽ kết hợp các cái loss lại với nhau là bằng min của EMA của XT và T
+00:09:56 - 00:09:59, Rồi F của theta x t phải
+00:09:59 - 00:10:03, thì đây là một cái target network hay còn gọi là mô hình của teacher
+00:10:03 - 00:10:07, Còn online network sẽ là mô hình student
+00:10:07 - 00:10:16, Tóm lại là đối với những cái giải pháp mà giảm cái tốc độ thì chúng ta sẽ dùng cái mô hình đó là teacher và student
+00:10:16 - 00:10:22, Kết hợp hai cái network này lại để chúng ta có thể tạo ra cái mô hình mà
+00:10:22 - 00:10:27, tốt hơn, đi tắt hơn và multi-deck hơn
+00:10:27 - 00:10:30, ví dụ như ở đây chúng ta thấy là cái đường này nè
+00:10:30 - 00:10:32, là đi 1 phát 1 đến đích
+00:10:32 - 00:10:35, thì nó đã tiết giảm cho chúng ta rất là nhiều các bước de-noise
+00:10:37 - 00:10:40, như vậy thì chúng ta có thể là single step generation
+00:10:40 - 00:10:45, là một bước nhảy từ xt lớn về x0
+00:10:45 - 00:10:56, Và kết quả của Latent Consistency Model thì cũng hoàn toàn tương tự như các mô hình trước
+00:10:56 - 00:11:02, Với 4 Step Inference, 4 Step Denoy thì kết quả của mình vẫn cho chất lượng rất tốt
+00:11:02 - 00:11:12, Ngoài ra thì chúng ta sẽ có các kỹ thuật liên quan đến vấn đề về Phai Tun lại mô hình
+00:11:12 - 00:11:17, Phai tune mô hình diffusion
+00:11:20 - 00:11:25, Khi nói về mô hình diffusion thì tham số thường rất lớn
+00:11:25 - 00:11:29, Lý do đó là nó phải encode cả văn bảng
+00:11:29 - 00:11:33, Cộng với lại encode cả thông tin về mặt hình ảnh
+00:11:34 - 00:11:37, Do đó số lượng tham số của mình
+00:11:37 - 00:11:42, của các mô hình diffusion thường rất là lớn
+00:11:42 - 00:11:46, có những mô hình lên đến gần 1 tỷ tham số
+00:11:46 - 00:11:50, có những mô hình hiện đại hơn thì có thể lên đến 3 tỷ, 4 tỷ tham số
+00:11:50 - 00:11:58, để tạo được những kỷ ảnh chất lượng tốt và hiểu được văn bảng, hiểu được yêu cầu đồ vào của mình
+00:11:58 - 00:12:00, thì số tham số là lớn
+00:12:00 - 00:12:05, và chúng ta muốn phai tune mô hình diffusion này với data set của mình
+00:12:05 - 00:12:13, Thì khi đó nó rất dễ bị hiện tượng overfitting.
+00:12:13 - 00:12:16, Tại vì trong các cái bài trước chúng ta đã nói rồi,
+00:12:16 - 00:12:20, hiện tượng overfitting xảy ra khi số lượng tham số lớn và khi dữ liệu của mình ít.
+00:12:20 - 00:12:23, Và thông thường mình không phải là một cái doanh nghiệp lớn,
+00:12:23 - 00:12:26, thì số data của mình sẽ ít hơn rất là nhiều.
+00:12:26 - 00:12:31, Do đó thì nó sẽ bị hai yếu tố này, tham số lớn và dữ liệu thì ít.
+00:12:31 - 00:12:33, Thì hiện tượng overfitting.
+00:12:33 - 00:12:42, Như vậy thì để có thể file tune được thì chúng ta có thể sẽ sử dụng một kỹ thuật nó gọi là low-rate adaptation
+00:12:42 - 00:12:50, Ý tưởng của mình rất là đơn giản đó là trong các thao tác tính toán của các mạng transformer
+00:12:50 - 00:12:55, thì thao tác attention là một trong những thao tác mà được tính nhiều nhất
+00:12:55 - 00:13:09, trong extension thì tham số wkv là những cái ma trận xin lỗi chính xác là wkwv
+00:13:09 - 00:13:15, đây chính là những cái tham số để ánh sạ từ x về wkv
+00:13:15 - 00:13:25, Đây là tham số mà chiếm nhiều dung lượng tham số nhất
+00:13:29 - 00:13:36, Và giả sử chúng ta lấy 1 ma trận WQ ra, thì ma trận này có kích thước là N nhân M
+00:13:36 - 00:13:49, Nếu chúng ta phai tune trên toàn bộ cái ma trận này, thì số lượng tham số chúng ta là lớn
+00:13:49 - 00:13:57, Do đó ý tưởng của LowRankAdaptation đó là chúng ta sẽ cộng cái ma trận WQI mà đã Trend trước đó
+00:13:57 - 00:14:03, thì chúng ta sẽ đóng băng nó lại, hiệu đóng băng là chúng ta sẽ để cái dấu chấm này hoặc là dấu gạc này đi, là đóng băng lại
+00:14:03 - 00:14:06, sau đó chúng ta sẽ cộng nó với 1 cái LowRank ma trận
+00:14:06 - 00:14:08, 1 cái ma trận có cái hạng thấp
+00:14:08 - 00:14:12, thì ví dụ như đây là 1 cái ma trận A
+00:14:12 - 00:14:14, A thấp
+00:14:14 - 00:14:17, thế thì 1 cái ma trận LowRank là 1 cái ma trận mà có thể
+00:14:17 - 00:14:20, A của chúng ta có thể phân rã ra được
+00:14:20 - 00:14:22, bằng 2 cái ma trận
+00:14:22 - 00:14:24, có cái rank thấp
+00:14:29 - 00:14:32, ví dụ ở đây là n nhân m
+00:14:32 - 00:14:37, ở đây sẽ là n và m
+00:14:37 - 00:14:43, nhưng mà phần ma trận bên trái thì kích thước của mình sẽ là d
+00:14:43 - 00:14:49, thì a của mình là bằng tích của hai ma trận low rank
+00:14:49 - 00:14:54, trong đó d sẽ rất bé so với n, d rất bé so với m
+00:14:54 - 00:15:01, khi đó số lượng tham số của ma trận a sẽ rất ít so với n và m
+00:15:01 - 00:15:06, Như vậy thì chúng ta đã giảm số lượng tham số của mô hình xuống
+00:15:06 - 00:15:10, Thông qua việc kết hợp ma trận WQ đã được train trước nó
+00:15:13 - 00:15:16, Với một ma trận LowRank là A
+00:15:17 - 00:15:22, Nếu chúng ta phai tune từ đầu thì nó sẽ là n nhân m tham số
+00:15:22 - 00:15:27, Trong khi đó nếu chúng ta phai tune mà kết hợp WQ đóng băng
+00:15:27 - 00:15:28, Cộng với lại A
+00:15:28 - 00:15:30, Cộng với ma trận A này
+00:15:30 - 00:15:34, thì số tham số của mình là không tính, tại vì đã đóng băng rồi nên không tính
+00:15:34 - 00:15:39, mà bên đây sẽ là n cộng m, tất cả nhân d
+00:15:39 - 00:15:46, vì d rất bé hơn sau với nm nên tỷ số này chắc chắn là số tham số nm lớn hơn
+00:15:46 - 00:15:48, số tham số 3 rất là nhiều
+00:15:48 - 00:15:55, thì đây là một kỹ thuật rất phổ biến và cho độ chính xác, cho tính hiệu quả rất là cao
+00:15:55 - 00:16:08, Rồi, thì đây là những cái mô hình thay vì chúng ta phai tune trên toàn bộ cái ma trận W
+00:16:08 - 00:16:12, Giống như hồi nãy chúng ta nói thay vì chúng ta phai tune trên toàn bộ cái ma trận W
+00:16:12 - 00:16:13, Kết thước là D nhân K
+00:16:13 - 00:16:21, Thì bây giờ chúng ta sẽ lấy cái ma trận này cộng với một cái ma trận kết thức là D nhân R, R nhân cho K
+00:16:21 - 00:16:26, R là rank của ma trận mới
+00:16:26 - 00:16:30, R này sẽ rất bé, chúng ta thấy nó rất nhỏ so với D
+00:16:30 - 00:16:33, Đây chính là ý tưởng của LowRank
+00:16:33 - 00:16:37, LowRank Lora đã kết hợp với rất nhiều phương pháp
+00:16:37 - 00:16:43, ví dụ như Layton consistency model kết hợp với các mô hình Distillation
+00:16:43 - 00:16:49, để cho những ảnh có kết quả rất đẹp và chức lượng cao
+00:16:49 - 00:16:54, như đây là LowRange Consistency Model
+00:16:54 - 00:16:58, thì LCM Lora cho kết quả ở hàng trên
+00:16:58 - 00:17:01, rồi với cái Backbone SD là 1.5
+00:17:01 - 00:17:05, Backbone tốt hơn là SD XL
+00:17:05 - 00:17:07, rồi SSD 1 tỷ thăm số
+00:17:07 - 00:17:09, thì với cái mô hình số thăm số càng nhiều
+00:17:09 - 00:17:11, đương nhiên là cái chất lượng sẽ càng cao
+00:17:11 - 00:17:15, nhưng mà cho dù gì đi chăng nữa thì
+00:17:15 - 00:17:17, khi dùng LCM với lại Lora
+00:17:17 - 00:17:19, thì vừa đạt được tốc độ tốt
+00:17:19 - 00:17:23, mà vừa cái dữ liệu của mình không có bị hình tượng overfitting.

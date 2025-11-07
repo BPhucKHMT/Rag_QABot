@@ -1,0 +1,11 @@
+0:00:14 - 0:00:23, Chúng ta sẽ đưa vào 1 cái Codeprom và kết quả với 2 phương pháp
+0:00:23 - 0:00:32, 1 là Classifier Guidance, chúng ta thấy kết quả không tự nhiên lắm
+0:00:32 - 0:00:40, Trong khi đó với Classifier Free Guidance, chúng ta sẽ thấy kết quả cho ra rất tự nhiên và đẹp
+0:00:40 - 0:00:47, Đây chính là 1 ví dụ của mô hình mà có điều hướng
+0:00:47 - 0:00:54, Vì vậy thì trong tương lai thì nó sẽ có rất nhiều những hướng phát triển khác nhau
+0:00:54 - 0:01:03, Ví dụ như là cái Y này của mình thì hiện giờ chúng ta đang hiểu nó là 1 Keprom và Keprom này là dạng Text
+0:01:03 - 0:01:09, Nhưng mà tương lai thì nó có thể ở những dạng Prom khác, ví dụ như là 1 Point, 1 Điểm
+0:01:09 - 0:01:22, Nó có thể là 1 tín hiệu sóng não, FMRI, nó có thể là 1 Mask của 1 đối tượng nào đó mình cần gen ra
+0:01:22 - 0:01:32, Keprom này sẽ rất là đa dạng thể thức và người ta cũng đã có những bước đầu nghiên cứu cho việc sử dụng những Condition khác nhau
+0:01:32 - 0:01:34, Và kết quả rất là ấn tượng
+0:01:39 - 0:01:47, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

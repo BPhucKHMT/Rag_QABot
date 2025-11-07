@@ -1,0 +1,143 @@
+0:00:14 - 0:00:18, Chúng ta sẽ xem cái ma trận W này có cái giá trị là bao nhiêu
+0:00:18 - 0:00:28, Chúng ta sẽ thấy là cái W này sẽ là một cái Array, là một cái List bao gồm hai phần tử
+0:00:28 - 0:00:35, Thì phần tử đầu tiên chính là cái số trọng số, số filter của phép biến đổi Convolution đầu tiên
+0:00:35 - 0:00:39, Và thành phần thứ hai chính là cái BIAS, tại vì chúng ta có sử dụng BIAS
+0:00:39 - 0:00:44, W0 chính là cái trọng số của mình
+0:00:44 - 0:00:48, Rồi để xem coi cái trọng số này có kích thước bao nhiêu
+0:00:50 - 0:00:56, Chúng ta là chấm shape, trong đó 3, 3, 1, 6, 3, 3 chính là cái kích thước của cái channel
+0:00:56 - 0:01:02, Và 1 chính là cái input, dimension của input của đầu vào của mình, nó chỉ có một channel thôi
+0:01:02 - 0:01:07, Nó sẽ là một, và output của mình sẽ là 6, 6 cái filter
+0:01:08 - 0:01:16, Vậy thì để trực quan, chúng ta sẽ có số filter là 6, rồi chúng ta sẽ duyệt qua Y từ 0 cho đến 5 để truyền vô đây
+0:01:16 - 0:01:26, Rồi đây là W0, W0.shape chính là 3, 3, 1, 6, thì chúng ta sẽ lấy cái chỉ số Y chạy ở đây trước
+0:01:26 - 0:01:31, Rồi sau đó lấy chỉ số Z chạy ở đây, thì ở đây một cách tổng quát trong cái lớp Convolution số 2
+0:01:31 - 0:01:39, Rồi sau đó thì số 1 này sẽ chuyển thành là số 16, do đó thì ở đây chúng ta sẽ để là Y chạy cho một cái rank
+0:01:39 - 0:01:43, Rank này thì ở đây chúng ta để là 1, nhưng mà sắp tới có thể để là 16
+0:01:47 - 0:01:54, Đây chính là 6 cái filter ở cái lớp đầu tiên, thì chúng ta có thể hiểu cái ý nghĩa của cái filter này
+0:01:54 - 0:02:04, Đây chính là chúng ta lấy cái sai số, cái sự chênh lệch của cái vùng phía bên phải, phía dưới so với lại cái vùng ở phía trái bên trên
+0:02:04 - 0:02:11, Ý nghĩa của filter này đó là lấy cái sự chênh lệch giữa cái hàng ở giữa so với lại hai cái hàng ở phía trên và phía dưới
+0:02:11 - 0:02:15, Thì mỗi một cái filter này nó sẽ thể hiện một cái đặc trưng nào đó
+0:02:15 - 0:02:23, Rồi tiếp theo là chúng ta sẽ tiến hành thử nghiệm với một số cái biến thể khác nhau
+0:02:23 - 0:02:27, Trước khi qua thử nghiệm một số biến thể khác nhau thì chúng ta sẽ thử cái hàm Predict
+0:02:27 - 0:02:32, Cái hàm Predict thì CNN.Predict
+0:02:32 - 0:02:43, Rồi, thì chúng ta sẽ truyền vào cái istat và mẫu dữ liệu thứ, ví dụ như là mẫu dữ liệu thứ 300
+0:02:43 - 0:02:45, Rồi
+0:02:45 - 0:02:54, Ok, ở đây thì hàm Predict, chúng ta sẽ xem lại cái hàm Predict của mình
+0:02:54 - 0:03:10, Truyền vào cell.model.istat, ok, bây giờ chúng ta sẽ xem tiếp cái istat của mình đã được load rồi và đã được chuẩn hóa rồi, đúng không?
+0:03:10 - 0:03:12, Rồi
+0:03:12 - 0:03:24, Ok, bây giờ chúng ta sẽ thử truyền vào như thế này
+0:03:24 - 0:03:30, Rồi, chúng ta sẽ xem cái istat của mình
+0:03:30 - 0:03:52, Rồi, ah, istat của mình là cái mạng kích thước là 28 x 28, do đó chúng ta phải reset, chúng ta phải reset nó về cái dạng là 28 x 1
+0:03:52 - 0:04:01, Rồi sau đó chúng ta mới đưa vào để cho cái mô hình của mình có thể Predict được, CNN.Predict
+0:04:01 - 0:04:03, Rồi
+0:04:05 - 0:04:07, Cũng chưa được ha
+0:04:10 - 0:04:21, Rồi, ah, ở đây cái số này sẽ phải để lên trước, đúng không? Cái này nó sẽ phải để lên trước, dạ là 1,28
+0:04:21 - 0:04:36, Ok, được rồi, tức là nó sẽ phải để cái chỉ số của cái thứ tự lên trước, nó sẽ hơi ngược, hơi ngược
+0:04:36 - 0:04:41, Rồi, bây giờ chúng ta sẽ thử xem cái nhãn này nó sẽ ra cái giá trị là bao nhiêu?
+0:04:41 - 0:04:53, Tại vì ở đây nó chỉ trả ra 1 cái vector one-hot, chúng ta sẽ phải có thêm 1 cái hàm nữa đó là argmax là np.argmax
+0:04:58 - 0:05:00, Rồi, nó sẽ là 4
+0:05:00 - 0:05:09, Và bây giờ chúng ta sẽ xem coi cái mẫu thứ 300 này, x, y, test của mình, thứ 300 nó là bằng bao nhiêu?
+0:05:09 - 0:05:11, Nó là 4
+0:05:12 - 0:05:20, Rồi, bây giờ chúng ta sẽ thử những cái mẫu khác ha, chúng ta sẽ thử những cái mẫu khác, ở đây chúng ta sẽ để là Predict
+0:05:21 - 0:05:23, Rồi
+0:05:23 - 0:05:34, Rồi, ở đây sẽ là nhãn dự đoán là Predict
+0:05:36 - 0:05:41, Rồi, còn ở đây sẽ là nhãn thực tế
+0:05:41 - 0:05:56, Và ở đây, cái chỉ số này chúng ta sẽ tham số hóa nó là idx là bằng 100, và chúng ta sẽ để đây là idx
+0:05:59 - 0:06:07, Rồi, thì đại đa số chúng ta thấy là cái độ chính xác rất là cao, chúng ta thử rất nhiều những cái nhãn khác nhau ha
+0:06:08 - 0:06:12, Thì nó đều ra là dự đoán và thực tế khớp nhau
+0:06:12 - 0:06:17, Bây giờ, trong cái mạng CNN thì chúng ta thấy nó có rất nhiều những cái module khác nhau
+0:06:17 - 0:06:23, Và tại thời điểm hiện tại thì chúng ta sẽ chưa hiểu rõ cái vai trò của từng module này
+0:06:23 - 0:06:29, Do đó thì chúng ta sẽ làm một cái thí nghiệm, nó gọi là Ablation Study với các cái biến thể khác nhau
+0:06:29 - 0:06:36, Bằng cách, đó là chúng ta sẽ lần lượt thay đổi một số cái cấu hình của cái chương trình của mình
+0:06:36 - 0:06:38, Chúng ta sẽ thay đổi một số cái cấu hình
+0:06:38 - 0:06:48, Thì cái biến thể đầu tiên, đó là chúng ta sẽ bỏ đi cái thay cái hàm sigmoid bằng relu
+0:06:48 - 0:06:53, Chúng ta sẽ thay cái sigmoid bằng relu, như vậy thì chúng ta sẽ copy cái code ở đây đem xuống
+0:06:53 - 0:07:03, Rồi, chúng ta sẽ đem lên cái hàm này thay cái sigmoid bằng relu
+0:07:03 - 0:07:11, Như vậy thì bản chất là cái biến thể này chúng ta không cần phải cài đặt lại
+0:07:11 - 0:07:15, Mà chúng ta chỉ sửa cái tham số của mình thôi
+0:07:15 - 0:07:21, Chúng ta chỉ sửa cái tham số khi gọi cái hàm build thôi
+0:07:23 - 0:07:27, Rồi, và ở đây là relu
+0:07:27 - 0:07:41, Sau đó thì chúng ta sẽ tiến hành là cnn.train, X_train, y_train, oh
+0:07:41 - 0:07:47, Và lưu ý ở đây chúng ta sẽ để cái history là history số 2
+0:07:47 - 0:07:52, Rồi, bây giờ chúng ta sẽ tiến hành build cái này
+0:07:52 - 0:07:57, Và tranh thủ trong thời gian chờ đợi thì chúng ta sẽ thử
+0:07:57 - 0:08:05, Viết code trước cho cái phần là vẽ cái giá trị loss
+0:08:05 - 0:08:10, Chúng ta sẽ thêm một cái đường nữa đó là history số 2
+0:08:10 - 0:08:16, Rồi, và ở đây sẽ là train loss v1
+0:08:17 - 0:08:24, Đây sẽ là train loss v2, trong đó v2 đó là dùng relu
+0:08:30 - 0:08:33, Rồi, tương tự như vậy, bây giờ chúng ta sẽ chờ đợi
+0:08:33 - 0:08:41, Chúng ta sẽ viết trước cái code cho các biến thể tiếp theo
+0:08:41 - 0:08:45, Biến thể bỏ hết các lớp pooling thì chúng ta làm cũng rất là nhanh
+0:08:45 - 0:08:50, Pooling đúng không? Thì chúng ta sẽ bỏ, xóa đi
+0:08:50 - 0:08:55, Và lưu ý đó là phải để gối đầu các cái biến
+0:08:55 - 0:08:59, Ví dụ như ở đây c1 thì sẽ được truyền trực tiếp sang đây
+0:08:59 - 0:09:02, Rồi c3 thì sẽ truyền trực tiếp sang đây
+0:09:02 - 0:09:05, Vì vậy là chúng ta đã xong cái biến thể số 3
+0:09:05 - 0:09:07, Chúng ta sẽ để là cnn v3
+0:09:07 - 0:09:13, Rồi, bây giờ chúng ta sẽ cài cho cái biến thể cuối cùng
+0:09:14 - 0:09:20, Ok, ở đây khi bỏ cái relu thì chúng ta thấy là nó đã chạy xong rồi
+0:09:20 - 0:09:22, Và chúng ta sẽ quan sát thử
+0:09:25 - 0:09:27, Ok, chúng ta sẽ vẽ
+0:09:28 - 0:09:30, Thì nhìn vào cái sơ đồ này
+0:09:31 - 0:09:34, Ok, ở đây chúng ta sẽ phải gom nó lại
+0:09:35 - 0:09:37, Gom 2 cái legend này lại
+0:09:39 - 0:09:41, Rồi, vẽ lại
+0:09:44 - 0:09:49, Rồi, chúng ta sẽ thấy là cái relu phiên bản số 2
+0:09:49 - 0:09:53, Nó giảm rất là nhanh, đúng không? Nó giảm rất là nhanh
+0:09:53 - 0:09:56, Nó nằm bên dưới cái đường màu xanh
+0:09:56 - 0:09:58, Thì điều đó có nghĩa là gì?
+0:09:58 - 0:10:02, Điều đó là, ví dụ tại cái epoch số 5
+0:10:02 - 0:10:06, Thì cái phương pháp v2, tức là khi sử dụng relu
+0:10:06 - 0:10:10, Nó cho cái loss thấp hơn so với cái phiên bản số 1, tức là dùng sigmoid
+0:10:10 - 0:10:13, Tức là nó đã giúp cho mình hội tụ nhanh hơn
+0:10:13 - 0:10:18, Nhưng mà đương nhiên, khi số epoch càng lớn thì cả 2 thằng cũng sẽ tiệm cận về
+0:10:18 - 0:10:20, Nhưng mà nó sẽ tốn thời gian hơn
+0:10:20 - 0:10:25, Thì tập MNIST là tập rất tuyến tính, rất là dễ, rất là đơn giản
+0:10:25 - 0:10:31, Nó sẽ không thể nào thể hiện được cái sự khuếch đại
+0:10:31 - 0:10:35, Cái tốc độ mà train của relu nhanh hơn so với sigmoid như thế nào
+0:10:36 - 0:10:43, Khi chúng ta train với tập dữ liệu lớn như MNIST, thì chúng ta sẽ thấy rõ relu hiệu quả hơn rất là nhiều
+0:10:43 - 0:10:49, Rất là nó sẽ giảm xuống, chúng ta sẽ thấy sự sụt giảm về loss của nó rất là nhanh
+0:10:49 - 0:10:53, Thì đó chính là ý nghĩa của biến thể đầu tiên
+0:10:53 - 0:10:59, Đó là bỏ sigmoid và thay thế là bằng relu, thì tốc độ hội tụ của nó sẽ nhanh hơn
+0:10:59 - 0:11:04, Còn về độ chính xác, theo thời gian dài, đâu đó nó vẫn sẽ xấp xỉ với sigmoid
+0:11:04 - 0:11:12, Nhưng mà với thời gian mà mình có thể chờ đợi được để có thể huấn luyện, thì việc dùng sigmoid sẽ chậm hơn rất là nhiều
+0:11:12 - 0:11:16, Tiếp theo, đó là chúng ta sẽ bỏ hết các lớp pooling
+0:11:16 - 0:11:19, Rồi, chúng ta đã cài đặt rồi
+0:11:19 - 0:11:26, Và bây giờ chúng ta sẽ sử dụng nó
+0:11:27 - 0:11:34, Rồi, ở đây chúng ta sẽ để là CNN v3 và History ở đây sẽ là History số 3
+0:11:34 - 0:11:41, Rồi, ở đây chúng ta sẽ khôi phục ngược trở lại, chúng ta sẽ khôi phục ngược trở lại là sigmoid
+0:11:41 - 0:11:44, Rồi, chạy
+0:11:44 - 0:11:58, Rồi, bây giờ chúng ta sẽ vẽ hàm loss khi có đồng thời cả 3 cái History 123
+0:12:03 - 0:12:11, Rồi v3 thì ở đây sẽ là without pooling
+0:12:14 - 0:12:18, Without pooling
+0:12:18 - 0:12:22, Rồi, chúng ta có thể thu gọn lại một chút xíu
+0:12:29 - 0:12:35, Rồi, tranh thủ trong khi chờ đợi thì chúng ta sẽ cài luôn cái phiên bản thứ 4
+0:12:35 - 0:12:41, Cái phiên bản này, đó chính là chúng ta bỏ hết các lớp convs
+0:12:41 - 0:12:51, Một điều rất là thú vị đó là chúng ta đặt sự nghi ngờ rằng là cái mạng convs thì cái vai trò của convs rõ ràng rất là lớn
+0:12:51 - 0:12:56, Nhưng bây giờ chúng ta sẽ làm một thí nghiệm đó là bỏ hết cái convs thì xem điều gì sẽ xảy ra
+0:12:56 - 0:13:01, Thì đó chính là chỉ ý nghĩa của cái phiên bản số 4
+0:13:01 - 0:13:08, Rồi, bây giờ may quá cái phiên bản số 3 nó đã chạy xong và chúng ta sẽ xem thử
+0:13:11 - 0:13:20, Rồi, chúng ta thấy là nếu như không có cái pooling thì cái loss của mình gần như không giảm, nó cứ giữ nguyên
+0:13:20 - 0:13:23, Ah, loss gần như không giảm, nó cứ giữ nguyên
+0:13:25 - 0:13:30, Rõ ràng là cái vai trò của pooling cũng rất là quan trọng
+0:13:30 - 0:13:37, Nếu không có pooling thì cái loss của mình gần như là đi ngang, nó không giúp cho mình giảm xuống
+0:13:38 - 0:13:40, Rồi
+0:13:40 - 0:13:47, Ok, bây giờ chúng ta sẽ qua cái phiên bản tiếp theo, đó là không có cái lớp convs
+0:13:47 - 0:13:55, Ở đây chúng ta phải sử dụng cái biến thể đầu tiên để mình code, chứ nếu không là sẽ nhầm lẫn
+0:13:55 - 0:14:00, Rồi, không có convs chúng ta sẽ bỏ đi lớp này, bỏ đi lớp này
+0:14:00 - 0:14:05, Rồi, và ở đây chúng ta sẽ truyền vào là input, S2 sẽ truyền vào đây
+0:14:05 - 0:14:09, Tức là chúng ta sẽ giảm cái kích thước liên tiếp 2 lần
+0:14:09 - 0:14:14, Rồi, ok, ở đây sẽ là CNN v4
+0:14:19 - 0:14:30, Rồi, bây giờ chúng ta sẽ gọi cái hàm này khởi tạo để là v4, history là 4
+0:14:30 - 0:14:33, Ah, run
+0:14:33 - 0:14:37, Và tương tự như vậy chúng ta sẽ vẽ cái chart ở đây
+0:14:38 - 0:14:42, Rồi, chúng ta sẽ có history là 4
+0:14:47 - 0:14:54, Train loss ở đây sẽ là v4, without convolution
+0:15:07 - 0:15:21, Rồi, chúng ta thấy là cái loss của mình cũng có giảm, tuy nhiên cái tốc độ giảm của nó khá là chậm
+0:15:21 - 0:15:29, Tốc độ giảm khá chậm, thì điều này cũng minh chứng là cái việc là cái convolution của mình đã giúp cho cái việc huấn luyện nhanh hơn
+0:15:29 - 0:15:34, Mặc dù accuracy thì nó cũng có xu hướng là nó càng lúc càng tăng, đúng không?
+0:15:34 - 0:15:41, Nếu không có convolution, tốc độ nó sẽ chậm hơn rất nhiều
+0:15:41 - 0:15:49, Rồi, cái đường màu đỏ là v4, thì chúng ta thấy là nó nằm ở phía trên, nếu không có convolution thì nó sẽ nằm phía trên
+0:15:49 - 0:15:58, Vì vậy, cái phiên bản mà hoàn thiện nhất của chúng ta chính là cái phiên bản màu cam ở đây, là đường nằm ở dưới cùng
+0:15:58 - 0:16:06, Tương ứng phiên bản số 2 là thay cái sigmoid bằng relu, trong đó vẫn phải giữ vừa có pooling và vừa có convolution
+0:16:06 - 0:16:18, Như vậy, đây chính là cái bài tập tutorial để giúp chúng ta hiểu được vai trò của từng phép biến đổi ở bên trong mạng CNN
+0:16:19 - 0:16:31, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

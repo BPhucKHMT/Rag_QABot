@@ -1,0 +1,167 @@
+0:00:14 - 0:00:20, Chúng ta đã biết một số thách thức khi thực thi thuật toán Gradient Descent
+0:00:20 - 0:00:27, Và một trong những biến thể đầu tiên để giúp chúng ta giải quyết được những thách thức đó chính là biến thể momentum
+0:00:27 - 0:00:34, Ý tưởng của momentum đó là đối với những hàm loss mà có nhiều hơn một điểm cực tiểu
+0:00:34 - 0:00:44, Đối với những phương pháp mà Gradient Descent trước đây, khi chạy đến vị trí điểm cực tiểu đầu tiên này thì nó sẽ bị dừng lại
+0:00:44 - 0:00:49, Nguyên nhân đó là do đạo hàm của mình triệt tiêu là bằng 0
+0:00:49 - 0:00:57, momentum đã vận dụng được kiến thức về vật lý, đó là kiến thức về mặt động năng, hiệu bằng chữ V
+0:00:57 - 0:01:09, V này sẽ tận dụng được những động năng của quá khứ và truyền đến được cho vị trí hiện tại
+0:01:09 - 0:01:13, Từ những vị trí này, vị trí này, vị trí này, nó sẽ truyền đến vị trí hiện tại
+0:01:13 - 0:01:23, Do đó mặc dù khi chúng ta di chuyển đến vị trí cực tiểu cực tiểu cục bộ thì nó vẫn có thể nhờ động năng của quá khứ
+0:01:23 - 0:01:31, Nó sẽ giúp chúng ta nhảy ra và thoát ra khỏi điểm cực tiểu cục bộ này. Đó chính là ý tưởng của biến thể momentum
+0:01:31 - 0:01:39, Trước khi qua chi tiết cho thuật toán momentum, chúng ta sẽ cùng ôn lại thuật toán Gradient Descent
+0:01:39 - 0:01:47, Ở bên tay trái là một sơ đồ đầy đủ, bao gồm các bước khởi tạo tham số theta
+0:01:47 - 0:01:53, Rồi chúng ta sẽ tính gradient là bằng công thức đạo hàm như thế này
+0:01:53 - 0:02:00, Sau khi tính xong thì chúng ta sẽ cập nhật tham số theta new là bằng theta old, tức là theta cũ
+0:02:00 - 0:02:04, Trừ cho alpha nhân cho nabla, tức là gradient
+0:02:04 - 0:02:12, Thì ở đây chúng ta dùng từ old và new cho dễ hiểu là cũ và mới
+0:02:12 - 0:02:18, Còn thực tế khi lập trình thì chúng ta có thể bỏ qua hai chữ old và new này
+0:02:18 - 0:02:24, Theta là bằng theta trừ cho alpha nhân cho nabla của J theta
+0:02:24 - 0:02:27, Công thức này thì nó sẽ hơi bị dài dòng
+0:02:27 - 0:02:37, Do đó những phần sau để tiết kiệm không gian và chúng ta sẽ tập trung vào đối tượng chính của chúng ta là công thức cập nhật tham số
+0:02:37 - 0:02:43, Thì chúng ta sẽ viết gọn lại theo dạng là lặp cho đến khi hội tụ
+0:02:43 - 0:02:49, Và công thức lặp của chúng ta là theta là bằng theta trừ cho alpha nhân cho nabla
+0:02:49 - 0:02:54, Và chúng ta sẽ dựa trên công thức này để phát triển tiếp
+0:02:54 - 0:03:02, Thế thì đầu tiên chúng ta sẽ nói về vấn đề của các phương pháp trước đây
+0:03:02 - 0:03:08, Vấn đề thứ nhất là làm sao để chúng ta có thể chọn ra được một cái learning rate tốt
+0:03:08 - 0:03:15, Cụ thể là trong công thức của chúng ta nếu như alpha learning rate này nhỏ
+0:03:15 - 0:03:18, Thì tốc độ hội tụ của chúng ta sẽ rất chậm
+0:03:19 - 0:03:23, Ví dụ như chúng ta có một cái điểm khởi tạo ở đây
+0:03:23 - 0:03:27, Thì alpha mà nhỏ quá thì nó sẽ cứ đi từng cái bước nhỏ như thế này
+0:03:27 - 0:03:32, Và rất lâu nó mới có thể đến được cái điểm cực tiểu cục bộ ở đây
+0:03:32 - 0:03:37, Mặt khác nếu như cái alpha của mình mà quá lớn
+0:03:37 - 0:03:42, Thì ví dụ như chúng ta có cái hàm loss ở đây
+0:03:42 - 0:03:46, Thì khi alpha quá lớn nó có thể khiến cho chúng ta
+0:03:46 - 0:03:52, Thay vì chúng ta đi từng bước nhỏ như thế này thì nó bị vượt qua cái điểm cực tiểu cục bộ ở đây
+0:03:52 - 0:03:57, Và cái việc này thì nó sẽ bật qua bật lại và dần dần nó sẽ bị phân kỳ
+0:03:57 - 0:04:00, Nó thoát ra khỏi cái điểm tối ưu của mình
+0:04:00 - 0:04:03, Thì đó chính là cái vấn đề đầu tiên
+0:04:03 - 0:04:10, Như vậy thì cái learning rate của chúng ta làm sao nó cần phải được điều chỉnh giảm dần hay còn gọi là dampening
+0:04:10 - 0:04:16, Tại vì khi chúng ta điều chỉnh giảm dần thì giả sử như ban đầu chúng ta chọn mà không tốt
+0:04:16 - 0:04:18, Cái alpha của mình nó lớn quá
+0:04:18 - 0:04:24, Nhưng mà ở những cái vòng lặp tiếp theo thì alpha của mình nó sẽ được giảm dần với một cái hệ số nào đó
+0:04:24 - 0:04:31, Thì từ từ nó cũng sẽ giúp cho chúng ta hội tụ được đến cái điểm cực tiểu của mình
+0:04:31 - 0:04:36, Như vậy thì với cái vấn đề số 1 thì chúng ta sẽ có cái giải pháp số 1
+0:04:36 - 0:04:44, Đó là alpha ban đầu thì chúng ta sẽ khởi tạo là bằng dù như là một con số là 0.5 là một con số khá là lớn
+0:04:44 - 0:04:49, Và công thức của chúng ta sẽ là lặp cho những cái hệ số hội tụ
+0:04:49 - 0:04:53, Thì ở đây alpha sẽ là bằng delta nhân cho alpha
+0:04:53 - 0:04:58, Trong đó delta là một cái hệ số mà nhỏ hơn 1
+0:04:58 - 0:05:03, Delta là dampening factor là từ 0 cho đến 1
+0:05:03 - 0:05:08, Thì điều gì xảy ra nếu như delta của chúng ta là bằng 0
+0:05:08 - 0:05:13, Thì nếu như delta là bằng 0 thì có nghĩa là chúng ta đã triệt tiêu luôn cái alpha này
+0:05:13 - 0:05:18, Và lúc này nó sẽ là bằng 0 và dẫn đến nguyên cái vế này là bằng 0
+0:05:18 - 0:05:24, Thì khi delta là bằng 0 thì mô hình của mình sẽ không có cập nhật trọng số
+0:05:24 - 0:05:27, Còn ngược lại nếu như delta là bằng 1
+0:05:28 - 0:05:32, Delta là bằng 1 tức là alpha là bằng alpha
+0:05:32 - 0:05:36, Thì cái hệ số dampening này gần như là không có tác dụng tức là alpha giữ nguyên
+0:05:36 - 0:05:43, Mà nếu ban đầu chúng ta chọn alpha là một con số quá lớn thì nó có thể sẽ khiến chúng ta không hội tụ
+0:05:43 - 0:05:48, Nó sẽ khiến chúng ta không hội tụ và thậm chí là nó bị phân kỳ
+0:05:48 - 0:05:53, Thì đây là cái cải tiến đầu tiên của cái momentum
+0:05:54 - 0:06:01, Tiếp theo thì để thuận tiện cho việc các cải tiến thì chúng ta sẽ đặt một cái tên biến mới
+0:06:01 - 0:06:03, Nó gọi là biến vận tốc
+0:06:03 - 0:06:09, Thế thì đây là cái công thức cập nhật đạo hàm, cập nhật cái tham số của chúng ta theo cách cũ
+0:06:09 - 0:06:17, Thì chúng ta sẽ dùng cái alpha của nabla là bằng một cái biến là v, là vận tốc
+0:06:17 - 0:06:23, Thì khi đó chúng ta sẽ đưa, chúng ta sẽ viết lại cái công thức bên tay trái
+0:06:23 - 0:06:30, Cái mà dải bên tay trái về cái dạng đó là v là bằng alpha nhân cho nabla của loss J theta
+0:06:30 - 0:06:34, Thì khi đó là theta sẽ là bằng theta trừ cho vận tốc
+0:06:34 - 0:06:37, Thì ở đây là cái đại lượng mà chúng ta sẽ cập nhật
+0:06:37 - 0:06:42, Vậy thì cái biến thể tiếp theo nó sẽ dựa trên một cái vấn đề số 2
+0:06:42 - 0:06:50, Đó là cái tốc độ hội tụ nó sẽ chậm hoặc là nó sẽ bị mắc kẹt tại các cái điểm cực tiểu cục bộ
+0:06:50 - 0:06:56, Thì cái này chúng ta đã nói ở trong cái phần giới thiệu của momentum
+0:06:56 - 0:07:01, Nếu như chúng ta có hai cái điểm cực tiểu cục bộ hoặc thậm chí là nhiều hơn rất là nhiều
+0:07:01 - 0:07:10, Thì tại cái vị trí khởi tạo ở đây thì nó sẽ, cái đạo hàm của mình, cái độ dốc của mình nó rất là lớn
+0:07:10 - 0:07:13, Do đó thì nó sẽ di chuyển rất là nhanh
+0:07:13 - 0:07:20, Nhưng khi di chuyển đến cái vị trí mà gần với lại cái điểm cực tiểu cục bộ ở đây
+0:07:20 - 0:07:26, Thì cái độ dốc của mình nó gần như là song song với trục hoành, tức là nó sẽ gần như bằng không
+0:07:26 - 0:07:28, Thì khi đó đạo hàm của mình là bằng không
+0:07:28 - 0:07:35, Mà nếu như vậy thì cái công thức cập nhật này của chúng ta nó sẽ là bằng không
+0:07:35 - 0:07:38, Và theta sẽ không được cập nhật
+0:07:38 - 0:07:45, Như vậy thì chúng ta sẽ làm sao để mà có thể thoát ra khỏi những cái điểm cực tiểu cục bộ này
+0:07:45 - 0:07:49, Bằng cách đó là sử dụng cái khái niệm momentum
+0:07:49 - 0:07:53, Momentum sẽ là một cái công thức dạng như là đệ quy
+0:07:53 - 0:08:01, Nó sẽ được tính dựa trên cái thông tin vận tốc hoặc là cái động năng hoặc là cái năng lượng trong quá khứ
+0:08:01 - 0:08:04, Để mà truyền đến cái vị trí hiện tại
+0:08:04 - 0:08:15, V này nó sẽ có xu hướng giảm dần qua mỗi bước là do khi chúng ta càng tiến cái đạo hàm này thì nó sẽ bị bằng không
+0:08:15 - 0:08:20, Như vậy thì chúng ta sẽ sử dụng cái khái niệm momentum trong vật lý
+0:08:20 - 0:08:24, Thì cái momentum này nó sẽ được tính như thế nào
+0:08:24 - 0:08:30, Công thức của chúng ta đó là V là bằng beta nhân cho V cộng cho cái thành phần đạo hàm
+0:08:30 - 0:08:35, Thì đây chính là cái thành phần động năng của quá khứ
+0:08:38 - 0:08:44, Và ở đây nó sẽ xuất hiện thêm một cái hệ số siêu tham số, một cái siêu tham số mới đó là beta
+0:08:44 - 0:08:47, Thì thông thường beta ở đây là bằng 0.9
+0:08:47 - 0:08:48, Thì điều này có nghĩa là gì?
+0:08:48 - 0:08:52, V sẽ là bằng 90% của V quá khứ
+0:08:52 - 0:08:55, Tức là nó đang tận dụng cái động năng của quá khứ
+0:08:55 - 0:08:58, Sau đó nó sẽ cộng cho cái alpha của nabla ở đây
+0:08:58 - 0:09:00, Thì đây chính là cái thế năng hiện tại
+0:09:06 - 0:09:11, Cộng thêm cho beta V, tức là cái động năng của quá khứ
+0:09:11 - 0:09:16, Thì đây chính là cái beta của mình, nó sẽ gọi là momentum factor
+0:09:16 - 0:09:19, Và thường nó là một cái con số từ 0 cho đến 1
+0:09:19 - 0:09:23, Vậy thì điều gì xảy ra khi beta bằng 0
+0:09:23 - 0:09:27, Khi beta bằng 0, tức là nó gần như chính là cái công thức bên đây
+0:09:27 - 0:09:30, Khi beta bằng 0, tức là 0 nhân V bằng 0
+0:09:30 - 0:09:32, Tức là không có thành phần này
+0:09:32 - 0:09:34, Thì nó sẽ chuyển về cái công thức bên đây
+0:09:34 - 0:09:38, Còn ngược lại nếu mà beta mà bằng 1 thì sao?
+0:09:40 - 0:09:47, Nếu beta bằng 1, tức là V sẽ là bằng V cộng cho cái đạo hàm
+0:09:47 - 0:09:50, Thế thì nếu như vậy thì cái V này nó sẽ tăng rất là nhanh
+0:09:50 - 0:09:53, Tại vì nó là một cái cấp số nhân, nó cứ cộng liên tục
+0:09:53 - 0:09:58, Thế thì chúng ta nên chọn một cái beta là một cái con số trung dung ở giữa
+0:09:58 - 0:10:02, Và thường nó là con số khoảng 0.9 để tiết kiệm
+0:10:02 - 0:10:04, Nhưng nó cũng không nên quá lớn
+0:10:04 - 0:10:06, Nếu nó quá lớn thì nó sẽ cộng dồn
+0:10:06 - 0:10:10, Và dẫn đến đó là nó sẽ bùng nổ cái gradient
+0:10:10 - 0:10:13, Dẫn đến là nó sẽ không có hội tụ được
+0:10:15 - 0:10:20, Vậy thì ở trong cái hình, cái slide ở đây chúng ta sẽ có một cái visualize
+0:10:20 - 0:10:23, Một cái trực quan hóa cho cái momentum
+0:10:23 - 0:10:25, Với cái giải pháp đầy đủ của chúng ta
+0:10:25 - 0:10:31, Đó là alpha ban đầu sẽ được gắn là bằng 0.5 là một con số đủ lớn
+0:10:31 - 0:10:35, Và ở đây thì chúng ta sẽ có cái dampening alpha
+0:10:35 - 0:10:39, Tức là chúng ta sẽ giảm cái alpha sau các cái vòng lặp
+0:10:39 - 0:10:45, Và V là cái vận tốc ban đầu chúng ta sẽ khởi tạo là bằng 0
+0:10:45 - 0:10:49, Và đạo hàm là bằng 0
+0:10:49 - 0:10:52, Và delta là cái hệ số dampening
+0:10:52 - 0:10:55, Cứ mỗi lần thì alpha sẽ giảm 10 lần
+0:10:55 - 0:10:58, Nó sẽ chia cho 10, tức là nhân 0.1, tức là chia 10
+0:10:58 - 0:11:06, Beta là bằng 0.9 thì có nghĩa là cái vận tốc hiện tại bằng 90% vận tốc của quá khứ
+0:11:06 - 0:11:12, Cộng cho cái alpha của nabla, tức là cái thế năng hiện tại được tính từ đạo hàm
+0:11:12 - 0:11:16, Thế thì khi chúng ta sử dụng cái giải pháp đầy đủ này
+0:11:16 - 0:11:21, Thì chúng ta sẽ thấy là cái 3 điểm màu đỏ ban đầu chúng ta sẽ rớt xuống
+0:11:21 - 0:11:24, Rớt rất là nhanh đến cái vị trí này
+0:11:24 - 0:11:26, Rớt qua đây
+0:11:26 - 0:11:27, Rớt qua đây
+0:11:27 - 0:11:32, Và nhờ có cái động năng của quá khứ đã giúp chúng ta leo lên được cái ngọn đồi này
+0:11:32 - 0:11:38, Để từ đó giúp chúng ta có thể thoát ra khỏi được cái điểm cực tiểu cục bộ
+0:11:38 - 0:11:44, Để đến một cái khu vực khác và hy vọng rằng nó sẽ có được cái điểm cực tiểu tốt hơn
+0:11:44 - 0:11:46, Đây là một cái điểm cực tiểu mới
+0:11:52 - 0:11:57, Thì ở đây nó đã giúp cho chúng ta thoát ra được khỏi cái điểm cực tiểu cục bộ
+0:12:00 - 0:12:06, Và ở đây chúng ta sẽ có một cái ví dụ để tính toán trực tiếp với các con số
+0:12:06 - 0:12:12, Giả sử như momentum của chúng ta, cái hệ số momentum của chúng ta là bằng 0.9
+0:12:12 - 0:12:18, Thì khi đó ba cái bước cập nhật đầu tiên của chúng ta sẽ có cái cách tính như sau
+0:12:18 - 0:12:24, Ở cái vòng lặp đầu tiên thì là vì V0 của mình là ban đầu là bằng 0
+0:12:24 - 0:12:30, Thì không nhân với bao nhiêu? Không nhân với lại beta là cũng bằng 0
+0:12:30 - 0:12:35, Do đó thì cái V1 chỉ có chứa cái thế năng tại cái thời điểm đầu tiên
+0:12:35 - 0:12:39, Tức là cái đạo hàm tại cái vị trí này
+0:12:39 - 0:12:42, Tức là tại đây là chúng ta có V1
+0:12:42 - 0:12:50, Rồi tại cái vị trí tiếp theo thì là chúng ta sẽ cập nhật lại cái V2 là bằng beta của cái V1
+0:12:50 - 0:12:57, Tức là 0.9 của V1
+0:12:57 - 0:13:04, Cộng cho cái thế năng mới, ví dụ như chúng ta tại đây chúng ta có cái đạo hàm mới thì chúng ta sẽ tính vào đây
+0:13:04 - 0:13:12, Và sau cái vòng lặp số 3 đến cái vòng lặp thứ 3 thì V3 sẽ là bằng 0.9 của V2
+0:13:12 - 0:13:22, 0.9 của V2 thì chúng ta sẽ đưa toàn bộ cái biểu thức ở phía trên để chúng ta đem xuống thế vào đây
+0:13:22 - 0:13:29, Thì là 0.9 của 0.9G1 cộng G2 rồi cộng cho G3
+0:13:29 - 0:13:35, Thì ở đây nó sẽ là bằng 0.81G1 cộng 0.9G2 cộng G3
+0:13:35 - 0:13:43, Như vậy chúng ta có thể thấy là tại cái thời điểm T bằng 3 thì nó sẽ là bằng 0.81 của cái G đầu tiên
+0:13:43 - 0:13:48, Như vậy ban đầu cái hệ số của G1 nó là bằng 1.0
+0:13:48 - 0:13:54, Sang vòng lặp thứ 2 nó rớt xuống còn 0.9 và sang vòng lặp thứ 3 thì nó rớt xuống còn 0.81
+0:13:54 - 0:14:02, Cứ như vậy thì càng về sau cái vai trò của cái G1 này càng lúc càng thấp đi và nó sẽ tiến dần về bằng 0
+0:14:02 - 0:14:10, Và những cái G nào gần với lại cái vị trí T thứ 3 tại cái thời điểm thứ 3 thì cái hệ số của nó càng cao
+0:14:10 - 0:14:18, Chúng ta thấy là cái G ngay trước đó là G2 là Gradient 2 thì nó sẽ có hệ số là 0.9
+0:14:18 - 0:14:27, Rồi trước đó nữa sẽ là 0.81 và cứ như vậy thì cái vòng lặp tiếp theo là V4 thì có thể là cái G1 này
+0:14:27 - 0:14:36, Nó sẽ tiến về là 0.81 mà nhân với lại 0.9 thì đâu đó nó xấp xỉ là khoảng 0.72 nó lại giảm xuống một nấc nữa
+0:14:36 - 0:14:44, Thì khi cập nhật tham số Gradient tại những cái bước mà càng gần thì nó sẽ đóng góp càng nhiều là 0.9
+0:14:44 - 0:14:49, Nó sẽ là 90% ví dụ vậy và 0.81 tức là khoảng 81
+0:14:49 - 0:15:01, Thực ra chúng ta dùng cái từ phần trăm ở đây không có đúng mà V của chúng ta thì nó sẽ có là 0.81 của G1 và 0.9 của G2 và cộng cho 100% của G3
+0:15:01 - 0:15:10, Thì đây là cái động năng của quá khứ để khi mà nó tiến đến cái vị trí cực tiểu cục bộ như thế này thì nhờ có cái động năng quá khứ này
+0:15:10 - 0:15:14, Nó sẽ giúp cho chúng ta thoát ra khỏi được cái điểm cực tiểu cục bộ đầu tiên
+0:15:14 - 0:15:22, Thì trên đây đó chính là cái minh họa cho cái phiên bản cái cải tiến của Momentum
+0:15:22 - 0:15:29, Nó sẽ bao gồm 2 phần thì cái phần đầu tiên liên quan đến dampening cái alpha
+0:15:29 - 0:15:33, Nhưng cái phần thứ 2 là quan trọng nhất chính là công thức cập nhật của cái V của chúng ta
+0:15:40 - 0:15:44, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

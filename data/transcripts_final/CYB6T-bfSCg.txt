@@ -1,0 +1,14 @@
+0:00:14 - 0:00:20, Chúng ta sẽ cùng đến với một chủ đề rất là hot trong thời gian gần đây, đó là mô hình ngôn ngữ thị giác.
+0:00:21 - 0:00:39, Xuất phát điểm ý tưởng của mô hình ngôn ngữ thị giác đó là các bài toán của chúng ta hiện nay đòi hỏi có sự tham gia của nhiều thể thức dữ liệu hay còn gọi là multimodality model.
+0:00:39 - 0:00:57, Mô hình ngôn ngữ thị giác có thể gồm các modalities là văn bản, hình ảnh, âm thanh và video.
+0:00:57 - 0:01:09, Thế thì tại sao các mô hình của mình có sự tham gia của các loại thể thức dữ liệu khác nhau, đó là do nhu cầu ứng dụng của mình.
+0:01:09 - 0:01:20, Ví dụ như chúng ta hiện nay chúng ta thấy các ứng dụng của AI hiện giờ là cho phép chúng ta có thể điều khiển hoặc là giao tiếp bằng giọng nói.
+0:01:20 - 0:01:28, Nhưng mà ứng với cái giọng nói đó thì chúng ta có thể tạo ra các hình ảnh hoặc là chúng ta có thể trò chuyện với hình ảnh.
+0:01:28 - 0:01:34, Thì những ứng dụng kiểu như vậy đòi hỏi có sự tham gia của nhiều thể thức khác nhau.
+0:01:34 - 0:01:40, Thế thì trong phạm vi của bài giảng hôm nay chúng ta sẽ cùng tìm hiểu về mô hình ngôn ngữ thị giác.
+0:01:40 - 0:01:46, Trong đó có sự tham gia của hai thể thức đó là văn bản và hình ảnh.
+0:01:46 - 0:01:57, Thì nội dung chính của chúng ta trong phần này chính là vai trò của mô hình ngôn ngữ thị giác hay là Vision Language Model.
+0:01:57 - 0:02:08, Và một số mô hình ngôn ngữ thị giác nổi bật, đầu tiên ví dụ như là Clip, Clip, Blip và Visual Programming.
+0:02:08 - 0:02:11, Đây là một trong những bài báo rất là thú vị.
+0:02:11 - 0:02:23, GPT4V thì đây là một trong những mô hình của OpenAI với mục tiêu đó là đưa mọi thể thức từ hình ảnh văn bản về cùng một mô hình để xử lý.
+0:02:23 - 0:02:27, Thì chúng ta sẽ cùng tìm hiểu qua các mô hình này.

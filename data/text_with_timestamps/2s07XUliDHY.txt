@@ -1,0 +1,160 @@
+00:00:00 - 00:00:19, Mô hình đầu tiên chúng ta sẽ cùng tìm hiểu trong nhóm Vision Language Model là clip
+00:00:19 - 00:00:26, trong bài báo Learning Transferable Visual Model from Nature Language Supervision
+00:00:26 - 00:00:31, Đây có thể nói là một trong những mô hình ngôn ngữ thị giác đầu
+00:00:31 - 00:00:39, Cho đến hiện nay thì clip vẫn được sử dụng khá phổ biến trong nhiều tác phụ của các bài toán thị giác máy tính
+00:00:39 - 00:00:47, Thì đầu tiên chúng ta sẽ phát biểu vấn đề của các mô hình thị giác trước đây
+00:00:47 - 00:00:52, Các mô hình thị giác trước đây đều được hướng luyện trên những tập dữ liệu lớn
+00:00:52 - 00:00:58, Ví dụ như tập dữ liệu nổi tiếng mà hiện nay vẫn còn được sử dụng đó là tập e-mail net
+00:00:58 - 00:01:05, Tập dữ liệu e-mail net này thì nó sẽ có số lượng rất lớn nên lên hàng triệu mẫu
+00:01:05 - 00:01:11, Và nó bao gồm một tập là ảnh cộng với lại một cái nhãn
+00:01:11 - 00:01:16, Thì cái nhãn này nó sẽ ở dạng ngôn ngữ tự nhiên
+00:01:16 - 00:01:25, Tuy nhiên thực tế thì chúng ta hành sự với cái nhãn này nó giống như là với một cái con số nhiều hơn là ngôn ngữ
+00:01:25 - 00:01:29, Tại vì khi nói về ngôn ngữ thì chúng ta sẽ phải nói đến câu cũ
+00:01:29 - 00:01:33, Chúng ta phải nói đến câu, phải nói đến đoạn văn
+00:01:33 - 00:01:39, Phải nói đến khái niệm là mô tả chi tiết
+00:01:39 - 00:01:46, Còn cái nhãn ở đây thì nó mới chỉ dừng lại là đối tượng của chúng ta ở đây là đối tượng gì
+00:01:46 - 00:01:52, Ví dụ ở trong hình bên dưới chúng ta có hình một con chó thì cái nhãn của chúng ta là con chó
+00:01:52 - 00:02:01, Tuy nhiên khi chúng ta xây dựng cái mô hình này xong, huấn luyện cái mô hình này xong thì khi chúng ta đưa vào một cái hình thuộc cái domain khác
+00:02:01 - 00:02:05, Ví dụ như hình hoặc hình hoặc là hình con chó robot
+00:02:05 - 00:02:10, Thì liệu cái mô hình của mình nó có còn dự đoán đây là con chó nữa hay không
+00:02:10 - 00:02:12, Chúng ta để cái dấu chấm hỏi ở đây ha
+00:02:12 - 00:02:21, Đó chính là cái bấn đề bất cập của các cái mô hình huấn luyện mà dựa trên cái loại dữ liệu hình ảnh và nhãn
+00:02:21 - 00:02:31, Đó là vì chúng ta đang hành xử với cái nhãn của mình như là một con số mà chúng ta chưa thực sự xem nó như là một cái yếu tố ngôn ngữ mô tả
+00:02:31 - 00:02:38, Vậy thì với tập dữ liệu mns này thì chúng ta thấy là nó có lên đến hàng ngàn glass
+00:02:38 - 00:02:42, Và dữ liệu đầu ra của chúng ta là cái vector 1000 chiều
+00:02:42 - 00:02:46, Tức là chúng ta vẫn xem các cái nhãn này như là một cái vector số học
+00:02:46 - 00:02:51, Và nó không có sự liên kết giữa các cái nhãn với nhau
+00:02:51 - 00:02:55, Nó không cho biết là con chó và con mèo thì nó có sự giống nhau ra sao
+00:02:55 - 00:03:00, Rồi cái hành vi của nó tương tự như nhau như thế nào
+00:03:00 - 00:03:04, Thế thì chính vì cái cách mà chúng ta đang huấn luyện mô hình như vậy
+00:03:04 - 00:03:13, Và cách chúng ta sử dụng tập data set mns dẫn đến là cái mô hình của mình sẽ bị giới hạn bởi số gượng class của mình
+00:03:13 - 00:03:19, Tức là nếu chúng ta xây dựng một cái mô hình mà có 1000 chiều tương ứng với 1000 lớp đối tượng
+00:03:19 - 00:03:28, Thì sau này khi có những cái đối tượng mới thì nó sẽ ít có cái khả năng học ra được hoặc là nhận biết ra được
+00:03:28 - 00:03:36, Ví dụ như ở đây chúng ta thấy là cũng là con chó nhưng mà theo một cái phong cách khác thì cái mô hình của mình nó sẽ bị lúng túm
+00:03:36 - 00:03:44, Và nó không có cái tính gọi là độc lập cũng như là tạm gọi là sáng tạo để mà suy nghĩ
+00:03:44 - 00:03:52, Thế thì ý tưởng chính của clip đó là thay vì chúng ta huấn luyện dựa trên mối liên kết giữa hình ảnh và nhãn
+00:03:52 - 00:04:06, Nghĩa nhãn hoặc là label thì chúng ta sẽ dựa vào, chúng ta sẽ huấn luyện dựa vào cái mối liên kết giữa hình ảnh và cái văn bản mô tạ
+00:04:06 - 00:04:23, Rõ ràng là trong các câu khẩu ngữ trước đây người ta hay có câu đó là một hình ảnh thì là bằng 1000 lời nói
+00:04:23 - 00:04:31, Tức là trong tấm ảnh của mình nó sẽ có rất nhiều thông tin chứ không phải là nó chỉ có một cái nhãn không
+00:04:31 - 00:04:41, Thì thì nếu chúng ta chỉ có một thông tin của một cái nhãn nó sẽ giới hạn cái nội dung trong tấm ảnh đó, giới hạn cái nội dung nghĩa nghĩa
+00:04:41 - 00:04:48, Vậy đến là mô hình của mình nó sẽ không có khai thác được hết cái dữ liệu của mình
+00:04:48 - 00:04:57, Ví dụ như trong tấm hình này thì lẽ ra là chúng ta sẽ phải nói chi thiết hơn, ví dụ như là con chó màu trắng
+00:04:57 - 00:05:03, và nằm cạnh một con mèo màu nâu ở trong tấm chăn sọc và trên một cái giường
+00:05:03 - 00:05:10, Tức là ở đây chúng ta thấy nó có rất nhiều những thuộc tính, đối tượng, rồi cái giường
+00:05:10 - 00:05:16, Rõ ràng là một tấm hình nó sẽ có rất nhiều cái thông tin như vậy
+00:05:16 - 00:05:24, Thì nếu như chúng ta có một cái mô hình mà có khả năng vừa học được hình ảnh và vừa học được cái nội dung mô tả
+00:05:24 - 00:05:32, để mà khai thác được các cái thông tin đó thì rõ ràng là cái mô hình của mình nó sẽ thông minh hơn
+00:05:32 - 00:05:37, và chúng ta cũng sẽ đỡ tốn kém hơn trong cái việc là gán nhãn dữ liệu
+00:05:37 - 00:05:44, Thì cái mô hình ngôn ngữ, cái mô tả ngôn ngữ nó sẽ chứa nhiều thông tin hơn là một cái nhãn đơn lẽ
+00:05:44 - 00:05:51, Thì đó chính là một trong những cái key idea, ý tưởng chính để khiến chúng ta xây dựng một cái mô hình
+00:05:51 - 00:05:57, thay vì huấn luyện trên ảnh và nhãn thì chúng ta sẽ huấn luyện trên hình ảnh và văn bản
+00:06:00 - 00:06:04, Và cái này thì thích hợp để sử dụng làm cái thông tin giám sát quá trình học
+00:06:04 - 00:06:10, Tức là cái văn bản của chúng ta nó có thể là một cái dạng thức, là một cái loại dữ liệu
+00:06:10 - 00:06:15, Để giúp chúng ta giám sát cái quá trình học, tức là nó vẫn nằm trong cái dạng học và giám sát
+00:06:15 - 00:06:21, Vậy thì câu hỏi đặt ra đó là làm sao nào để mà có thể học được mối liên kết giữa hình ảnh và văn bản
+00:06:21 - 00:06:26, Để mà nó có thể khai thác được tốt cái thông tin này
+00:06:26 - 00:06:33, Thì chúng ta sẽ sử dụng cái hướng tiếp cận đó là Contrastive Learning, tức là học tương phản
+00:06:34 - 00:06:42, Thế thì học tương phản là gì? Mục đích của học tương phản đó là chúng ta sẽ học một cái bộ mạ hóa văn bản
+00:06:42 - 00:06:46, Và bộ mạ hóa văn bản, tức là Text Encoder
+00:06:48 - 00:06:51, Và một cái bộ mạ hóa hình ảnh, tức là Image Encoder
+00:06:51 - 00:06:57, Thế thì ở trong cái ví dụ ở đây, cái này không phải là ví dụ mà là cái mô hình ở đây
+00:06:57 - 00:07:00, Chúng ta thấy là khi chúng ta huấn luyện thì nó sẽ đi một cặp
+00:07:00 - 00:07:05, Nó sẽ đi một cặp là hình ảnh và văn bản
+00:07:07 - 00:07:13, Và hai cái cặp ảnh và văn bản này khi chúng ta chiếu lên trên cái không gian lây tân
+00:07:13 - 00:07:20, Nó sẽ gần nhau, tại vì đây là cái cặp nội dung đi chung với nhau
+00:07:20 - 00:07:24, Trong cái không gian lây tân, cái biểu diễn của văn bản này và ảnh này nó phải gần nhau
+00:07:24 - 00:07:28, Và tương tự như vậy, hai cái văn bản và hình ảnh này thì nó cũng phải gần nhau
+00:07:28 - 00:07:34, Các cái hình ảnh và văn bản mà có cái nội dung không giống nhau thì nó sẽ phải xa nhau
+00:07:34 - 00:07:37, Ví dụ như chúng ta thấy cái cặp ảnh và văn bản ở đây
+00:07:37 - 00:07:42, Có thể là nó có chứa một cái nội dung khác hoàn toàn thì nó sẽ nằm gần xa nhau
+00:07:42 - 00:07:49, Như vậy thì cái không gian đặc trưng của chúng ta ở đây là một cái không gian đặc trưng mà đa kiểu dữ liệu
+00:07:49 - 00:07:51, Hay còn là đa thể thức
+00:07:52 - 00:07:54, Và đa thể thức
+00:07:55 - 00:08:01, Rồi, thế thì chúng ta sẽ có một cái hình ảnh minh họa bên lề cho cái việc học tương phản
+00:08:01 - 00:08:07, Đó là ở trên đây chúng ta sẽ thấy là x1 và x2, đó là cùng một cái giống chó
+00:08:07 - 00:08:14, Nhưng mà nó ở trong những cái bối cảnh khác nhau, ví dụ như đây là một cái bãi cỏ
+00:08:15 - 00:08:19, Còn ở đây là một cái vùng nền đen
+00:08:20 - 00:08:25, Thế thì những cái đối tượng nào mà dông giống nhau thì nó sẽ nằm ở gần nhau
+00:08:25 - 00:08:30, Và chúng ta thấy là giữa hai cái ảnh đầu tiên thì nó có cái sự tương đồng rất là cao
+00:08:30 - 00:08:37, Do đó khi chúng ta biểu diễn lên trên cái không gian Layton Space thì hai cái điểm này là gần nhau
+00:08:37 - 00:08:44, Và những cái đối tượng này đều có cùng một cái mô tả đó là FrameBooldog
+00:08:44 - 00:08:49, Tức là một cái giống chó bool của Pháp thì nó sẽ nằm ở trong một cái cụm
+00:08:52 - 00:08:57, Rồi, còn cái con chó x2 thì nó cũng là con chó đó
+00:08:57 - 00:09:01, Nhưng mà nó trong cái background màu đen thì nó sẽ nằm ở ngoài rè
+00:09:01 - 00:09:06, Sợi vì tại sao nó nằm ngoài rè như thế này là vì nó có cái nền nó khác đi
+00:09:06 - 00:09:12, Vậy thì khi chúng ta xây dựng cái mô hình học tương phản thì nó sẽ phải đảm bảo đó là
+00:09:12 - 00:09:26, Hai cái đối tượng mà tương tự nhau thì nó sẽ nằm gần nhau
+00:09:26 - 00:09:32, Còn hai cái đối tượng ví dụ như là chó và mèo đó là hai cái class rất là xa nhau
+00:09:32 - 00:09:35, Thì ở đây nó sẽ nằm hai cái không gian rất là xa
+00:09:35 - 00:09:41, Rồi, thậm chí là trong cái giống chó thì Brittany thì nó là một cái giống chó khác
+00:09:41 - 00:09:45, Thì nó sẽ nằm ở một cái khu vực khác
+00:09:45 - 00:09:48, Còn cái giống chó FrameBooldog thì nó sẽ nằm ở một khu vực khác
+00:09:48 - 00:09:50, Nó sẽ bị xa nhau ra như thế này
+00:09:50 - 00:09:58, Thì đó chính là cái ý tưởng, đó là những đối tượng nào mà gần nhau, giống nhau thì nó sẽ nằm gần nhau
+00:09:58 - 00:10:04, Còn đối tượng nào mà xa nhau, không giống nhau thì nó sẽ cách xa ở trên cái không gian lây tình
+00:10:04 - 00:10:11, Và cái việc này thì nó cũng hoàn toàn tương tự khi chúng ta làm việc trên cái loại dữ liệu là văn bản
+00:10:11 - 00:10:18, Nó cũng hoàn toàn tương tự như trên hình ảnh
+00:10:18 - 00:10:27, Vậy thì cái bài báo Clip Contrastive Language, bí tắc của chữ là Contrastive Language Image Pre-training
+00:10:27 - 00:10:31, Từ cái bài báo này, thì chúng ta thấy là có tô màu, các cái màu ở đây
+00:10:31 - 00:10:35, Và chúng ta sẽ cùng giải nghĩa ý nghĩa của các cái từ này
+00:10:35 - 00:10:43, Đầu tiên đó là Transferable Visual Model, đó là mô hình có thể sử dụng Linh hoạt cho nhiều cái bài toán khác nhau
+00:10:43 - 00:10:54, Nghĩa là cái mô hình Clip sau khi chúng ta đã xây dựng được rồi, thì chúng ta có thể Transfer Learning cho các cái bài toán liên quan đến thị giác máy tính khác nhau
+00:10:54 - 00:11:09, Ví dụ như chúng ta có thể dùng nó cho bài toán phân loại hình ảnh, có thể dùng nó cho bài toán segmentation, phân đoạn ngữ nghĩa, có thể dùng nó cho bài toán detection
+00:11:09 - 00:11:16, Nhưng mà đương nhiên cái cách chúng ta sử dụng như thế nào thì nó sẽ có những cái cách thức khác nhau, một phương pháp khác nhau
+00:11:17 - 00:11:37, Rồi, cái cụm từ thứ hai đó là Natural Language Supervision, tức là trái với những cái mô hình trước đây ví dụ như là VIT hoặc là mô hình CNN như là ResNet v.v. thì cái supervision của nó đó là Label
+00:11:37 - 00:11:54, Còn ở đây, cái mà khiến để giúp chúng ta giám sát quá trình học đó là ngôn ngữ tự nhiên, nó không phải là Label, Label chỉ là một trường hợp đặc biệt của ngôn ngữ tự nhiên
+00:11:54 - 00:12:16, Ví dụ Label của chúng ta đó là Doc hoặc là Cat, còn Natural Language Supervision đó là chúng ta sẽ có một câu ví dụ như là Red Car on a street, ví dụ vậy, thì đây là một cái ngôn ngữ mô tả
+00:12:16 - 00:12:24, Như vậy thì quá trình huấn luyện sẽ dựa trên ngôn ngữ tự nhiên và đây là ngôn ngữ để mô tả cho tấm ảnh của mình
+00:12:26 - 00:12:42, Và cái cụm từ tiếp theo đó là từ Contrastive, thì cái Contrastive này nó nằm trong cái nhóm đó là Contrastive Learning hay là học tương phản, thì đây là một công cụ chính mà chúng ta sẽ sử dụng để huấn luyện cái mô hình clip này
+00:12:42 - 00:12:55, Cái cách làm của Contrastive Learning đó là chúng ta sẽ có hai cái cặp, có các cái cặp, ví dụ như cặp gần nhau và cái cặp xa nhau
+00:12:55 - 00:13:12, Thì nếu hai cái đối tượng mà cùng nhóm với nhau, có cái nội dung giống nhau thì nó sẽ kéo về gần nhau, nhưng mà hai cái đối tượng mà nó có cái nội dung khác xa nhau thì cái khoảng cách của nó sẽ càng xa, nó sẽ đẩy ra
+00:13:12 - 00:13:19, Thì đó là cái tư tưởng của Contrastive Learning và đây chính là cái công cụ chính cho cái mô hình clip để huấn luyện
+00:13:20 - 00:13:37, Cái từ Pre-training có nghĩa là tiền huấn luyện, tức là huấn luyện sẵn, thì đây là một cái mô hình được huấn luyện sẵn và có khả năng suy luận không cần cái dữ liệu huấn luyện, tức là Zero Short Inferrent
+00:13:37 - 00:13:50, Và chút nữa thì chúng ta sẽ nói là tại sao cái khái niệm Zero Short ở đây được sử dụng, và ở đây là không huấn luyện trên cái không gian đặc trưng, đa thể thức của mình đã được huấn luyện sẵn
+00:13:50 - 00:14:15, Trong bên tay phải của chúng ta, đó là hình ảnh minh họa, nếu như chúng ta sử dụng tập dữ liệu e-mailnet và với mô hình Restnet 101, thì clip sẽ cho clip với backbone, đó là vitl, cho độ chính xác cao hơn
+00:14:15 - 00:14:43, Ví dụ như đây là 76.2 thì là tương đương với 76.2 của Restnet 101, nhưng các data set khác như e-mailnet v2, khó hơn phức tạp hơn và đối tượng của mình lẫn lộn nhiều hơn, clip vit cho kết quả là 70 so với lại 64.3
+00:14:43 - 00:15:00, Và e-mailnet rendition, tức là những tập e-mailnet mà được tạo ra bằng render hoặc là bằng các phương pháp tạo sinh, không phải là ảnh thật, thì chúng ta thấy sự khác biệt này càng chênh lệch hơn nữa
+00:15:00 - 00:15:17, Còn tập dữ liệu không có thật này thì khi áp dụng với e-mailnet Restnet 101 thì độ chính xác chỉ có 37%, tương tự như vậy
+00:15:17 - 00:15:27, Và đối với tập dữ liệu cuối cùng thì chúng ta thấy là gần như là clip hơn tuyệt đối, do khí tính phức tạp của nó, khí tính phức tạp rất là cao
+00:15:27 - 00:15:47, Thì ở những tập data set ở trên thì chúng ta thấy nó khá là đơn giản và dễ, nhưng càng xuống dưới thì các data set này thuộc đồ men khác và không có nhiều mẫu dữ liệu để huấn luyện
+00:15:47 - 00:16:00, Rồi ZeroSort nên đâm ra là độ chính xác khi chúng ta sử dụng mô hình Restnet 101 thì độ chính xác của chúng ta rất là thấp, còn clip thì nó rất là cao
+00:16:00 - 00:16:13, Vậy thì ý tưởng của clip đó là gì? Đối với quá trình huấn luyện, clip sẽ có hai phần, phần huấn luyện và phần inference, tức là phần sử dụng mô hình
+00:16:13 - 00:16:24, Bước số 1, đó là chúng ta sử dụng họp tương phản và chúng ta sẽ huấn luyện đồng thời hai cái module, module thứ nhất đó chính là textencoder này
+00:16:24 - 00:16:43, Và module số 2, đó là module imageencoder, cái module mả hóa hình ảnh mục tiêu của nó, đó là biến một tấm ảnh thành một cái vector, thành một cái vector biểu diễn
+00:16:43 - 00:16:57, Còn text, cái module mả hóa văn bản hay là textencoder thì mục tiêu của nó là biến một cái câu thành một cái vector biểu diễn
+00:16:57 - 00:17:15, Mục tiêu của chúng ta đó là làm sao để cho sự tương đồng của những cặp ảnh mà giống nhau thì nó sẽ là cao nhất
+00:17:15 - 00:17:28, Ví dụ như chúng ta thấy là trong các cái, ví dụ ở trên thì các cái cặp ảnh là I1 và T1, đó là những cái cặp ảnh và text và văn bản là thuộc cùng một cái chủ đề
+00:17:28 - 00:17:35, Thì nó sẽ hướng cái ma trận này về cái ma trận đơn vị, tức là đương nhiên một cách hoàn hảo thì là như vậy
+00:17:35 - 00:17:49, Còn các cái cặp ảnh và văn bản mà không liên quan với nhau, ví dụ như là image 2 và text 1 thì nó sẽ là tiến về 0
+00:17:49 - 00:17:57, Nhưng mà đương nhiên thì trong quá trình huấn luyện chắc chắn các cái giá trị này nó sẽ không về cái ma trận đơn vị một cách tuyệt đối
+00:17:57 - 00:18:09, Nhưng mà định hướng của chúng ta sẽ là khiến cho cái việc so khớp giữa các cái ảnh và văn bản thuộc cùng một cái chủ đề là nó sẽ bằng một và càng cao càng tốt
+00:18:09 - 00:18:14, Còn các cái ảnh và văn bản mà không có cùng nội dung thì nó sẽ càng thấp
+00:18:14 - 00:18:20, Thì mục tiêu vậy, huấn luyện mô hình có khả năng mã hóa để tối đa hóa cái độ tương đồng
+00:18:20 - 00:18:31, Và nếu mà chúng ta dùng cái độ tương đồng ở đây dạng cosine thì nó sẽ tiến về 1 giữa các cái vector biểu diễn của một cặp ảnh và văn bản
+00:18:31 - 00:18:44, Và ngược lại có nghĩa là những cái ảnh và văn bản không cùng một đối tượng thì nó sẽ cho cái độ tương đồng thấp hơn
+00:18:44 - 00:18:50, Chúng ta sẽ sang cái quá trình gọi là Info Run hay là sử dụng cái mô hình của mình
+00:18:50 - 00:19:05, Thì cụ thể đó là cái mô hình clip khi đã được Retraining clip có thể phân lớp hình ảnh mà không cần huấn luyện
+00:19:05 - 00:19:12, Bởi cái mô hình chúng ta đã huấn luyện theo cái cách này, đó là chúng ta mapping một cái cặp hình ảnh và câu mô tả
+00:19:12 - 00:19:23, Rõ ràng là nó không phục vụ cho cái task là phân loại hình ảnh, nhưng nó vẫn có thể sử dụng cho cái việc đó là phân loại hình ảnh
+00:19:23 - 00:19:33, Thì gọi là Zero Source Reduction, thì phân loại hình ảnh không cần thông qua cái 2 bước, không cần huấn luyện
+00:19:34 - 00:19:40, Thì thông qua 2 bước, bước số 1, đó là chúng ta sẽ tạo một cái câu mô tả ứng với một lớp
+00:19:40 - 00:19:51, Ví dụ như chúng ta có một cái tập dữ liệu là Plane, Car, Dog, Bird v.v. và chúng ta muốn phân biệt xem cái ảnh này là cái con vật nào
+00:19:51 - 00:20:04, Thì chúng ta sẽ tạo ra cái câu mô tả cho mỗi lớp, ví dụ như là a Photo of a Class, thì ví dụ như a Photo of a Car, a Photo of a Dog, a Photo of a Plane
+00:20:04 - 00:20:14, Và chúng ta lấy cái câu mô tả này, chúng ta đưa qua cái Text Anchor, thì đưa qua cái Text Anchor chúng ta sẽ ra được cái T1, T2, T3 và TN
+00:20:14 - 00:20:22, Và đây là cái Embedding, cái Vector biểu diễn của N, cái đối tượng chúng ta cần mả hóa, giả sử ở đây chúng ta có N đối tượng
+00:20:25 - 00:20:33, Rồi, với N đối tượng chúng ta cần mả hóa ở đây, thì chúng ta sẽ có N Embedding, ở đó chúng ta thấy là không hề huấn luyện gì hết
+00:20:33 - 00:20:40, Và đây là cái Pre-Trend, cái model này đã được Pre-Trend Clip
+00:20:40 - 00:20:47, Tương tự như vậy, bước số 3, ở đây bước 1, bước 2, bước 1 là cái bước học tiên phản rồi ha
+00:20:47 - 00:20:58, Còn ở đây chúng ta đang nói là bước số 2 là tạo một cái bộ phần lớp, bước số 3 đó là tiến hành phần lớp bằng cách đó là chúng ta sẽ đưa cái tấm ảnh này vào một cái Image Encoder
+00:20:58 - 00:21:07, Và cái Image Encoder này cũng đã được Pre-Trend, cũng đã được Pre-Trend trước đó, chúng ta huấn luyện cái mô hình này trước đó rồi
+00:21:10 - 00:21:19, Rồi, thì chúng ta sẽ hướng luyện cái model này
+00:21:19 - 00:21:28, Rồi, sau đó thì chúng ta sẽ tiến hành so sánh 2 cái Vector biểu diễn
+00:21:28 - 00:21:36, Rồi, sau đó thì chúng ta sẽ thấy là trong một loạt các cái đối tượng, thì Coplan, Car, Dog cũng mất
+00:21:36 - 00:21:48, Thì khi chúng ta lấy cái Vector T1, T2, T3 và TN, chúng ta đi tích vô hướng với lại cái Y, Y1, đây là ảnh số 1
+00:21:48 - 00:21:52, Đây là một cái ảnh của cái image, cái image của cái ảnh bên đây
+00:21:52 - 00:22:03, Chúng ta nhân tích vô hướng, thì chúng ta thấy là giả sử như cái Y1 và T3 này là cho cái Vector, cho cái giá trị độ tương đồng là cao nhất
+00:22:03 - 00:22:13, Thì chúng tỏ đó là, và nếu như cái T3 này tương ứng là Dog, T3 chính là Dog, thì ở Photo Off ở Dog
+00:22:13 - 00:22:25, Thế thì chúng ta sẽ kết luận rằng đây chính là Photo Off ở Dog, thì đó chính là cái idea của clip trong cái việc là Zero Source Image Classification
+00:22:25 - 00:22:35, Chúng ta không hề vấn đề, mà chúng ta chỉ hình thành cái Prom và lấy cái Embedding của Photo Off ở Object để mà chúng ta đi so với cái Embedding của tám ảnh
+00:22:35 - 00:22:38, Thì đó chính là cái idea
+00:22:43 - 00:22:51, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

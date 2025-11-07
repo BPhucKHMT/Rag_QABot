@@ -1,0 +1,121 @@
+0:00:14 - 0:00:19, sau khoảng hơn 2 phút, thuật toán đã được huấn luyện xong
+0:00:19 - 0:00:23, và chúng ta sẽ tiến hành trực quan hóa
+0:00:23 - 0:00:28, để trực quan hóa không gian latent với các Embedding Vector
+0:00:28 - 0:00:34, khái niệm Embedding Vector là những tập dữ liệu chúng ta đã huấn luyện
+0:00:34 - 0:00:38, chúng ta biến đổi nó về VectorZ
+0:00:38 - 0:00:42, VectorZ là Embedding Vector
+0:00:42 - 0:00:48, chúng ta sẽ tìm cách vẽ VectorZ của tập dữ liệu MNIST này
+0:00:48 - 0:00:53, lên trên mặt phẳng 2 chiều để xem nó như thế nào
+0:00:53 - 0:00:57, chúng ta sẽ có hàm Plot Latent
+0:00:57 - 0:01:01, và chúng ta sẽ truyền vào hàm mô hình đã được huấn luyện
+0:01:01 - 0:01:05, đó là Autoencoder kèm theo Data
+0:01:05 - 0:01:12, ở đây chúng ta sẽ tắt gradient
+0:01:12 - 0:01:16, và lưu ý ở đây chúng ta có dữ liệu của mình là theo trục X
+0:01:16 - 0:01:19, và có dữ liệu đầu vào là X và Y
+0:01:19 - 0:01:22, tuy nhiên, trong phần huấn luyện
+0:01:22 - 0:01:27, chúng ta sẽ gọi hàm Train không có sử dụng biến Y
+0:01:27 - 0:01:31, nhưng ở phần trực quan hóa chúng ta sẽ sử dụng biến Y này
+0:01:31 - 0:01:37, để chúng ta có thể vẽ ra những ảnh có cùng một cái nhãn
+0:01:37 - 0:01:39, cũng là cùng một cái chữ số
+0:01:39 - 0:01:42, xem xem nó có nằm trong chung một khu vực hay không
+0:01:42 - 0:01:46, hay là nó nằm ở trải rác ở nhiều nơi
+0:01:46 - 0:01:54, chúng ta sẽ dùng encoder và truyền cái X này vào
+0:01:54 - 0:01:57, X ở đây là truyền vào cái device
+0:01:57 - 0:01:59, sau đó sẽ tính ra Z
+0:01:59 - 0:02:03, sau khi chúng ta tính ra cái vector Z của toàn bộ dữ liệu rồi
+0:02:03 - 0:02:07, thì chúng ta sẽ rút trích ra CPU
+0:02:07 - 0:02:15, sau khi rút trích ra CPU thì chúng ta sẽ lần lượt dùng cái biểu đồ dạng scatter
+0:02:15 - 0:02:17, rất là biểu đồ dạng vẽ điểm
+0:02:17 - 0:02:21, và truyền cái thành phần đầu tiên và thành phần thứ hai
+0:02:21 - 0:02:25, tức là hai tọa độ theo trục X và trục Y
+0:02:25 - 0:02:27, về màu sắc là C
+0:02:27 - 0:02:31, chúng ta sẽ dùng 10 cái nhãn từ 0 cho đến 9
+0:02:31 - 0:02:34, làm cái nhãn của cái màu
+0:02:34 - 0:02:38, và cái color map thì chúng ta sẽ dùng là tab 10
+0:02:38 - 0:02:47, rồi, thế thì ở đây chúng ta sẽ gọi hàm và chúng ta vẽ cái Latent này lên
+0:02:47 - 0:02:51, thì nó sẽ ra cái hình ảnh như thế này
+0:02:51 - 0:02:55, và chúng ta thấy cái hình này nó sẽ có cái tính chất gì
+0:02:55 - 0:03:03, đó là nó sẽ không có dạng một cái phân bố giống như phân bố chuẩn
+0:03:03 - 0:03:06, mà nó có thể đi một cái đường dải rất là dài như thế này
+0:03:06 - 0:03:08, một cái dải rất là dài
+0:03:08 - 0:03:10, đó là ý thứ nhất
+0:03:10 - 0:03:14, cái thứ hai đó là có những cái số ví dụ như số 1
+0:03:14 - 0:03:19, khi những mẫu dữ liệu là cái vector embedding của cái ảnh số 1
+0:03:19 - 0:03:25, thì thấy là nó đã phân tách ra rất tốt so với lại những cái con số khác
+0:03:25 - 0:03:30, tại vì cái hình thù của số 1 khá là khác biệt so với những cái con số khác
+0:03:30 - 0:03:34, cái số tiếp theo đó là số 7 là màu xám thì cũng khá là khác biệt
+0:03:34 - 0:03:38, nhưng mà sẽ có những cái khu vực như thế này là khá là lộn xộn
+0:03:38 - 0:03:43, và nó có thể vừa có xanh đỏ tím vàng đầy đủ hết
+0:03:43 - 0:03:48, thì cái khu vực này có thể là những cái con chữ mà được viết không rõ ràng
+0:03:48 - 0:03:51, nên nó sẽ gom lại ở khu vực này
+0:03:51 - 0:03:57, rồi, thế thì chúng ta sẽ tiến hành trực quan hóa
+0:03:57 - 0:04:01, cái kết quả decode với một cái vector gì bất kỳ
+0:04:01 - 0:04:05, thế thì trên cái ảnh của cái không gian Latent Space chúng ta thấy
+0:04:05 - 0:04:09, nó có một cái đặc điểm nữa đó là rất nhiều những cái khoảng hở
+0:04:09 - 0:04:15, khoảng hở đó là những cái khu vực mà chúng ta thấy có màu trắng là không có được vẽ
+0:04:15 - 0:04:20, không có một cái vector embedding nào nằm lên trên đó
+0:04:20 - 0:04:24, thì câu hỏi đó là những cái khoảng hở này khi chúng ta decode
+0:04:24 - 0:04:27, thì nó sẽ ra cái tấm ảnh là gì?
+0:04:27 - 0:04:29, nó có ý nghĩa hay không?
+0:04:29 - 0:04:39, thì cách mà chúng ta sẽ thực nghiệm đó chính là chúng ta sẽ làm cái lưới từ trừ 5 cho đến 10
+0:04:39 - 0:04:43, và từ trừ 10 cho đến 5
+0:04:43 - 0:04:47, rồi, thì chúng ta sẽ thử ha
+0:04:47 - 0:04:52, chúng ta sẽ vẽ cái lưới này
+0:04:52 - 0:05:01, rồi, trừ 5 là ở đây
+0:05:01 - 0:05:09, rồi chúng ta sẽ lấy cái lưới chụp cái màn hình này
+0:05:09 - 0:05:12, thì trừ 5 sẽ là ở đây
+0:05:12 - 0:05:16, rồi 10 sẽ là ở đây
+0:05:16 - 0:05:21, trừ 5 cho đến 10
+0:05:21 - 0:05:24, trừ 5 cho đến 10 thì 10 sẽ là ở đây
+0:05:24 - 0:05:30, rồi và trục tung thì là sẽ từ trừ 10 cho đến 5
+0:05:30 - 0:05:33, trừ 10 cho đến 5 là ở đây
+0:05:33 - 0:05:38, trừ 10 cho đến 5 là ở đây
+0:05:38 - 0:05:43, rồi, như vậy cái lưới mà dự định chúng ta sẽ vẽ là ở khu vực này
+0:05:43 - 0:05:48, trục hoành là từ trừ 5 cho đến 10
+0:05:48 - 0:05:53, và trục tung là từ trừ 10 cho đến 5
+0:05:53 - 0:06:00, như vậy thì chúng ta sẽ có một cái khung vuông
+0:06:00 - 0:06:05, rồi, sau đó chiến thuật của chúng ta là gì?
+0:06:05 - 0:06:08, chúng ta sẽ chia lưới nó ra
+0:06:08 - 0:06:16, ví dụ như trong trường hợp này chúng ta sẽ chia ra làm 12 khoảng cách đều nhau
+0:06:16 - 0:06:24, rồi, sau đó chúng ta cũng sẽ chia lưới theo chiều dọc
+0:06:24 - 0:06:31, như vậy
+0:06:31 - 0:06:35, rồi, thì với mỗi một cái điểm trên cái mắt lưới này
+0:06:35 - 0:06:40, lấy ví dụ như cái điểm ở đây chúng ta sẽ dùng một điểm đen
+0:06:40 - 0:06:43, ví dụ như một cái điểm trên cái mắt lưới này
+0:06:43 - 0:06:48, thì nó sẽ là một cái vector z mà chúng ta lấy ra, chấm lên trên cái lưới
+0:06:48 - 0:06:55, và chúng ta sẽ qua cái hàm decoder để xem nó ra một cái tấm ảnh gì nó như thế nào
+0:06:55 - 0:07:03, sau đó chúng ta lấy cái ảnh này chúng ta sẽ vẽ lên trên thành một cái ma trận
+0:07:03 - 0:07:06, với cái ảnh này chúng ta sẽ vẽ ra một ảnh
+0:07:06 - 0:07:10, với một cái điểm z ở đây chúng ta sẽ decode ra và vẽ ảnh lên
+0:07:10 - 0:07:14, với cái điểm này, điểm này chúng ta decode ra và vẽ ảnh lên
+0:07:14 - 0:07:16, thì chúng ta sẽ ra một cái ma trận các điểm ảnh
+0:07:16 - 0:07:21, và chúng ta sẽ quan sát xem nó có cái tính chất gì đặc biệt phải không
+0:07:21 - 0:07:26, Rồi, thì đó chính là cái ý tưởng của cái hàm Plot Reconstructed
+0:07:26 - 0:07:31, chúng ta sẽ chia ra thành các latent space
+0:07:31 - 0:07:35, với n ở đây là bằng 12, chúng ta sẽ chia ra làm 12 khoảng
+0:07:35 - 0:07:43, rồi lấy cái x và cái y này chúng ta sẽ có được cái latent z
+0:07:43 - 0:07:45, là cái điểm màu đen mà chúng ta đã vẽ
+0:07:45 - 0:07:48, rồi qua cái hàm decoder chúng ta sẽ ra được x hat
+0:07:48 - 0:07:51, tức là cái ảnh được tạo sinh ra
+0:07:51 - 0:07:57, và ảnh này sẽ được reset về cái kích thước là 28 x 28
+0:07:57 - 0:08:00, và sau đó vẽ lên cái ma trận ảnh
+0:08:00 - 0:08:03, rồi, thì chúng ta sẽ chạy cái đoạn code này
+0:08:05 - 0:08:09, đó thì với cái ví dụ này chúng ta có thể thấy
+0:08:09 - 0:08:12, đó là ở những cái khu vực phía trên
+0:08:12 - 0:08:15, đó sẽ ra một cái hình thù gì đấy và chúng ta không cảm nhận được
+0:08:15 - 0:08:17, đó là một cái con số
+0:08:17 - 0:08:18, khu vực ở giữa ở đây cũng vậy
+0:08:18 - 0:08:21, nó sẽ có lẫn lộn rất nhiều những cái hình ảnh ở trong đó
+0:08:21 - 0:08:23, có thể có chứa nhiều con số
+0:08:23 - 0:08:27, dẫn đến là mình nhìn mình không cảm nhận được đó là số gì
+0:08:27 - 0:08:29, khu vực này cũng vậy
+0:08:29 - 0:08:36, thế thì chiếu lên trên cái hình ảnh của cái không gian của mình
+0:08:36 - 0:08:41, thì những ảnh ở góc phía trên bên đây là ở khu vực trừ 5
+0:08:41 - 0:08:44, cho đến 5
+0:08:44 - 0:08:45, trừ 5
+0:08:45 - 0:08:46, cho đến 5
+0:08:46 - 0:08:48, tức là nó nằm ở cái khu vực màu trắng
+0:08:48 - 0:08:51, và cái khu vực màu trắng này khi chúng ta decode ra
+0:08:51 - 0:08:54, thì nó sẽ tạo ra một cái ảnh không có ý nghĩa
+0:08:54 - 0:08:57, không giống cái con số nào hết
+0:08:57 - 0:09:02, đó thì đây chính là cái điểm yếu của mô hình auto encoder

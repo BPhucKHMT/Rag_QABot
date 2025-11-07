@@ -1,0 +1,178 @@
+0:00:14 - 0:00:22, Chúng ta sẽ cài đặt một cái mạng Convolutional Network và tập dữ liệu mà chúng ta sẽ sử dụng ở đây chính là tập dữ liệu MNIST.
+0:00:22 - 0:00:27, Đây là một trong những tập dữ liệu rất là kinh điển khi làm trong lĩnh vực về thị giác máy tính.
+0:00:27 - 0:00:34, Ảnh đầu vào của tập dữ liệu này sẽ có kích thước 28 x 28, đúng bằng cái kích thước ở đây.
+0:00:34 - 0:00:41, Và kiến trúc mạng CNN ở đây chúng ta sẽ sử dụng đó là kiến trúc mạng LeNet được có từ những năm 1998.
+0:00:41 - 0:00:46, Và kiến trúc mạng này thực sự mà nó cũng không có sâu, nó chỉ bao gồm 2 lớp convolution.
+0:00:46 - 0:00:52, Và 2 lớp convolution này thì sử dụng các filter có kích thước là 3 x 3.
+0:00:52 - 0:00:59, Và đối với lớp convolution đầu tiên thì chỉ có 6 filter.
+0:00:59 - 0:01:06, Đối với lớp convolution thứ 2 thì sẽ có kích thước 3 x 3, nhân cho 6.
+0:01:06 - 0:01:13, Tại vì đầu vào của lớp convolution này chính là feature map này, mà feature map này có depth là bằng 6.
+0:01:13 - 0:01:22, Vì đó ở đây sẽ là 6. Tuy nhiên thì trong quá trình mà chúng ta cài đặt thì chúng ta cũng không cần phải chỉ ra tường minh là số input của mình là bao nhiêu.
+0:01:22 - 0:01:27, Tự cái deep learning framework sẽ tính cho mình cái con số này.
+0:01:27 - 0:01:31, Chúng ta chỉ cần cho biết cái kích thước bề ngang, bề cao của filter là được.
+0:01:31 - 0:01:40, Và đồng thời chúng ta cũng cho deep learning framework biết số filter đầu ra mong muốn là trong phép convolution thứ 2 chính là 16.
+0:01:40 - 0:01:50, Các phép biến đổi subsampling ở đây thực chất chính là phép biến đổi max pooling.
+0:01:50 - 0:02:03, Và phần cuối của mạng CNN này chính là các lớp biến đổi fully connected để tạo ra các filter có kích thước là 120, 84 và 10.
+0:02:03 - 0:02:10, Trong đó 10 thì tương ứng với lại số lớp đầu ra của mình là các con số từ 0 cho đến 9.
+0:02:10 - 0:02:18, Vậy thì trong phần tiếp theo chúng ta sẽ tiến hành cài đặt mạng convolution neural network này.
+0:02:18 - 0:02:38, Bước đầu tiên chúng ta sẽ khởi tạo các tập dataset của mình.
+0:02:38 - 0:02:45, Trong Keras nó đã có phương thức giúp cho mình load dataset rất dễ dàng.
+0:02:45 - 0:02:50, Đó là Keras.datasets và chúng ta sẽ import tập dữ liệu là MNIST.
+0:02:50 - 0:03:01, Sau đó chúng ta chỉ việc gọi là MNIST.load_data thì tự động nó sẽ lấy từ trên mạng internet về giải nén và đưa vào các cặp biến là X_train, y_train và X_test, y_test.
+0:03:01 - 0:03:05, Chúng ta sẽ quan sát thử kích thước của các ký biến này.
+0:03:05 - 0:03:11, X_train có kích thước là 60.000 x 28 x 28.
+0:03:11 - 0:03:14, 60.000 này tương ứng là tổng số mẫu.
+0:03:14 - 0:03:20, 28 x 28 là kích thước bề ngang và bề cao của ảnh chữ số viết tay.
+0:03:20 - 0:03:24, y_train có kích thước là 60.000.
+0:03:24 - 0:03:32, Vì ứng với từng cái X_train nó sẽ có một cái giá trị label, một cái nhãn output của y_train.
+0:03:32 - 0:03:36, Thì ở đây chúng ta sẽ thử quan sát một số mẫu dữ liệu.
+0:03:36 - 0:03:46, Để quan sát thì chúng ta sẽ sử dụng thư viện đó là matplotlib.pyplot as plt.
+0:03:46 - 0:03:49, Vì ứng với tổng số mẫu.
+0:03:49 - 0:03:56, Chúng ta sẽ sử dụng cái hàm imshow với cái biến là X_train.
+0:03:56 - 0:04:02, X_train này nó có các cái chiều 60.000 x 28 x 28.
+0:04:02 - 0:04:07, Ở chiều đầu tiên chúng ta sẽ lấy ra tại một cái vị trí nào đó, đó là index.
+0:04:07 - 0:04:15, Và trong trường hợp này thì chúng ta sẽ cho index là bằng 123, cái con số bất kỳ trong khoảng từ 0 cho đến 60.000.
+0:04:15 - 0:04:19, Rồi thành phần vào lại thì sẽ là [:, :].
+0:04:19 - 0:04:23, Tức là chúng ta sẽ lấy toàn bộ cái nội dung của tấm ảnh ra để chúng ta hiển thị.
+0:04:23 - 0:04:29, Rồi sau đó chúng ta sẽ thực hiện thì thấy là cái ảnh này mình đoán đoán nó hình như là số 7.
+0:04:29 - 0:04:37, Thì muốn biết chính xác đó là nhãn bao nhiêu thì chúng ta sẽ in ra là nhãn của dữ liệu.
+0:04:37 - 0:04:45, Rồi ở đây chúng ta sẽ lấy là y_train và chúng ta cũng sẽ truyền vào cái trị số là index.
+0:04:45 - 0:04:51, Rồi đúng như dự đoán thì cái nhãn này chính là, nhãn của dữ liệu này chính là số 7.
+0:04:51 - 0:04:56, Và chúng ta có thể thay đổi các cái trị số này, ví dụ như là 10.000.
+0:04:56 - 0:05:02, Rồi, thì đây là tương ứng nhãn của nó sẽ là số 3.
+0:05:02 - 0:05:10, Tiếp theo, đó là chúng ta sẽ tiền xử lý chúng ta sẽ chuẩn hóa cái dữ liệu X_train và X_test của mình.
+0:05:10 - 0:05:17, Bằng cách đó là thay vì đưa cái miền giá trị từ 0 đến 255, thì chúng ta sẽ đưa về cái miền giá trị là từ 0 cho đến 1.
+0:05:17 - 0:05:19, Để giúp cho cái quá trình huấn luyện nó được nhanh hơn.
+0:05:20 - 0:05:29, Và đồng thời là cái giá trị y của mình cũng sẽ được chuyển đổi từ cái dạng nhãn là cái chỉ số từ 0 cho đến 9.
+0:05:29 - 0:05:32, Chúng ta sẽ đưa nó về cái dạng One Hot Encoding.
+0:05:32 - 0:05:36, Vì dạng One Hot Encoding, thì One Hot Encoding nó như là gì?
+0:05:36 - 0:05:44, Ví dụ số 0, thì chúng ta sẽ đưa một cái vector trong đó có duy nhất một cái phần tử bật lên là 1.
+0:05:44 - 0:05:47, Và tất cả các phần tử còn lại sẽ để là số 0.
+0:05:48 - 0:05:56, Và tương tự như vậy cho số 2 đi, thì nó sẽ bật lên là 0, ở đây là 0, ở đây là 0 và nó sẽ bật lên ở đây.
+0:05:56 - 0:05:59, Và tất cả các phần tử còn lại sẽ để là số 0.
+0:05:59 - 0:06:02, Thì đây là cái dạng One Hot Encoding.
+0:06:03 - 0:06:09, Rồi bước tiếp theo, đó là chúng ta sẽ tiến hành cài đặt cái thuật toán huấn luyện hay cụ thể đó là cài đặt cái mô hình.
+0:06:09 - 0:06:21, Thì cái mạng CNN, ở đây chúng ta sẽ có các phương thức như là Build, Train, Constructor, Load, Get Weights.
+0:06:21 - 0:06:31, Ở đây có các phương thức Get Weights là chúng ta sẽ chưa cài đặt, chúng ta sẽ cài đặt để đưa lên Train song hành cùng với lại hàm Train để kẻo chúng ta quên.
+0:06:31 - 0:06:38, Xin lỗi, chúng ta sẽ đưa lên Train ngang với lại phương thức là Build để không một chút nữa chúng ta sẽ quên.
+0:06:38 - 0:06:45, Cái quá trình Train của mạng CNN rất là lâu, nếu mà chúng ta quên thực hiện cái gì đấy và chúng ta thực hiện lại thì nó sẽ tốn thời gian rất là nhiều.
+00:06:45 - 0:06:51, Thì ở đây chúng ta sẽ phải cho cái model nó biết đó là Input Dimension.
+0:06:51 - 0:07:06, Rồi, đồng thời là các cấu hình, ví dụ như số lượng filter là 6, số lượng filter là 16, rồi số các output của các lớp Fully Connected là 120, 84.
+0:07:06 - 0:07:09, Thì chúng ta sẽ phải tham số hóa 4 cái bộ số này.
+0:07:09 - 0:07:17, Riêng cái con số cuối cùng đó là 10, đó chính là số lượng cái nhãn mà mình cần nhận diện rồi thì nó sẽ cố định là 10.
+0:07:17 - 0:07:23, Rồi, mình biết trước tập dữ liệu này là có 10 mẫu, 10 loại, 10 nhãn, 10 class.
+0:07:23 - 0:07:29, Và đồng thời thì chúng ta cũng sẽ tham số hóa cái hàm kích hoạt Activation Function.
+0:07:29 - 0:07:33, Rồi, Activation Function.
+0:07:33 - 0:07:44, Rồi, chúng ta sẽ có n Convolution số 1, n Convolution số 2, n FC1, n FC2.
+0:07:44 - 0:07:52, Và mặc định thì hàm Activation chúng ta sẽ để là Sigmoid.
+0:07:52 - 0:07:58, Rồi, Convolution thì mặc định chúng ta sẽ để là 6, giống như trong cái thiết kế ở đây.
+0:07:58 - 0:08:06, Convolution số 2 thì mặc định chúng ta sẽ để là 16. FC1 thì chúng ta sẽ để là 120.
+0:08:06 - 0:08:11, Và FC2 thì chúng ta sẽ để là 84.
+0:08:11 - 0:08:20, Rồi, sau đó thì chúng ta sẽ tiến hành cài đặt các thành phần của cái mạng này.
+0:08:20 - 0:08:28, Bằng cách đó là chúng ta sẽ tiến hành lần lượt qua các lớp đối tượng, qua lớp biến đổi.
+0:08:28 - 0:08:31, Lớp đầu tiên chính là lớp Input.
+0:08:31 - 0:08:43, Rồi, Input thì chúng ta sẽ cho biết cái shape của nó sẽ là bằng Input Dimension.
+0:08:43 - 0:08:48, Rồi, và chúng ta sẽ trả ra một cái biến tên là Input.
+0:08:49 - 0:09:02, Rồi, tương tự như vậy thì chúng ta sẽ tiến hành thực hiện phép biến đổi Convolution.
+0:09:02 - 0:09:06, Thì ở đây là Convolution chúng ta sẽ sử dụng Convolution 2D.
+0:09:06 - 0:09:16, Và nó sẽ có các tham số. Đầu tiên là số lượng filter thì chúng ta sẽ để là số lượng Convolution số 1.
+0:09:16 - 0:09:28, Cái tham số thứ 2 là Convolution thì như hồi nãy chúng ta đã gặp, đó là kích thước của cái Convolution này chính là kích thước của nó sẽ là 3 x 3.
+0:09:35 - 0:09:43, Rồi, Stride thì ở đây chúng ta sẽ để mặc định là 1, vậy là chúng ta sẽ không để cái Stride ở đây.
+0:09:43 - 0:09:48, Rồi, Padding thì chúng ta sẽ để là same.
+0:09:48 - 0:09:55, Tại vì trong cái sơ đồ này chúng ta thấy, trong sơ đồ này chúng ta thấy là ảnh đầu vào và ảnh đầu ra có kích thước giống nhau.
+0:09:55 - 0:10:06, Ảnh đầu vào là 28, 28 thì ảnh đầu ra là 28, 28. Ảnh đầu vào là 14, 14 thì ảnh đầu ra cũng sẽ là 14 x 14.
+0:10:07 - 0:10:17, Thì qua cái phép biến đổi Convolution thì chúng ta thấy là cái kích thước bề ngang và bề cao là không thay đổi khi thực hiện cái phép Convolution.
+0:10:17 - 0:10:19, Do đó chúng ta sẽ để Padding là bằng same.
+0:10:20 - 0:10:38, Rồi, thì chắc là mình sẽ phải điền cái use_bias là bằng true.
+0:10:38 - 0:10:47, Rồi, thì cơ bản đó là nó đã đầy đủ những cái... à nó còn thiếu một cái nữa đó là cái activation.
+0:10:47 - 0:10:58, Activation này sẽ để trước bias. Bias sẽ là bằng activation.
+0:10:58 - 0:11:17, Rồi, như vậy thì chúng ta đã cài đặt cho cái đối tượng tên là Convolution2D và chúng ta sẽ phải truyền vào cho nó là cái input.
+0:11:17 - 0:11:22, Và trả ra nó sẽ ra là cái biến tên là C1, giống như trong cái sơ đồ ở đây.
+0:11:22 - 0:11:32, Rồi, tiếp theo thì chúng ta sẽ thử chạy. Ok, nó sẽ báo lỗi.
+0:11:32 - 0:11:38, À, 3x3, ok, nó không hiểu 3x3 là gì. 3,3.
+0:11:38 - 0:11:46, Rồi, hết lỗi rồi. Bây giờ chúng ta sẽ thực hiện cái phép Pooling. Pooling thì tương ứng nó chính là cái MaxPooling2D ở đây.
+0:11:46 - 0:11:55, Và chúng ta sẽ có cái tham số là pool_size thì mặc định nó sẽ sử dụng đó là 2x2.
+0:11:55 - 0:12:07, Do đó thì một cái tường minh chúng ta sẽ để ở đây là 2x2. Với cái Pooling mà bằng 2x2 như thế này thì cái kích thước mình sẽ được giảm xuống một nửa.
+0:12:07 - 0:12:19, Ở đây thì chúng ta sẽ để Stride là bằng 2. Sau khi thực hiện cái Pooling này thì cái kích thước của nó sẽ giảm xuống một nửa.
+0:12:19 - 0:12:29, Rồi, ngoài ra thì có Padding thì chúng ta sẽ để là same.
+0:12:30 - 0:12:40, Rồi, và chúng ta sẽ truyền cái đầu vào cho nó chính là C1 và đầu ra sẽ là S2, giống như trong cái kiến trúc mạng, trong cái thiết kế ở đây.
+0:12:40 - 0:12:49, Rồi, đối với cái phép biến đổi Convolution tiếp theo chúng ta sẽ copy xuống. Nhưng mà khi copy thì cần phải lưu ý là sửa lại.
+0:12:49 - 0:12:55, Thay vì ở đây để là Input thì nó sẽ để là S2. S2.
+0:12:55 - 0:13:06, Rồi, và đầu ra sẽ là C3. Và số Convolution ở đây, số Filter ở đây, nó sẽ là Nconf2. Kích thước không thay đổi.
+0:13:06 - 0:13:16, Lưu ý là hồi nãy, kích thước là 3x3 và nó sẽ tự biết cái Input S2, kích thước cái Depth là bao nhiêu thì nó sẽ chọn cái Filter cho phù hợp.
+0:13:16 - 0:13:22, Do đó chúng ta không cần phải tường minh để chỉ ra là kích thước 3x3 nhân bao nhiêu.
+0:13:22 - 0:13:31, Rồi, Activation thì chúng ta cũng tái sử dụng lại. Tiếp theo, nó sẽ chuyển sang cái phép là Pooling.
+0:13:31 - 0:13:42, Rồi, thì đầu vào chúng ta sẽ có là C3 và nó sẽ tạo ra là S4. Và cái cấu hình thì cũng tương tự. Cấu hình cũng sẽ tương tự.
+0:13:43 - 0:13:48, Rồi, bây giờ chúng ta sẽ tiếp tục cài đặt cho cái phép biến đổi Fully Connected.
+0:13:48 - 0:13:52, Thì để thực hiện được cái Fully Connected này, chúng ta sẽ phải có một cái bước là Flatten.
+0:13:52 - 0:14:02, Thì chúng ta sẽ gọi cái đối tượng Flatten ở đây và truyền vào cái S4 để trả ra là FC.
+0:14:02 - 0:14:11, Ở đây thì nó sẽ đặt tên là FC4 đi ha. Rồi, tại vì thực sự mà nó phép Flatten nó không có biến đổi gì hết.
+0:14:11 - 0:14:16, Tiếp theo thì chúng ta sẽ thực hiện cái phép Fully Connected, nó chính là Dense.
+0:14:16 - 0:14:23, Rồi, và tham số đầu tiên là số lượng unit, tức là số lượng output neuron sẽ trả ra.
+0:14:23 - 0:14:28, Thì chúng ta sẽ lấy cái tham số FC1 này đưa vào.
+0:14:28 - 0:14:39, Rồi, Activation thì chúng ta sẽ để là App Function.
+0:14:39 - 0:14:46, Rồi, use_bias là bằng true.
+0:14:46 - 0:14:53, Rồi, và chúng ta sẽ truyền vào cái biến đó là FC4.
+0:14:53 - 0:15:06, Thì trong cái sơ đồ ở đây, nó để là C5, nhưng mà để đúng với lại cái tên của nó, đó là Fully Connected, thì chúng ta sẽ đặt tên lại đó là FC5.
+0:15:06 - 0:15:18, Rồi, tương tự như vậy, cho cái biến đổi tiếp theo, chúng ta sẽ để đầu vào là FC5, đầu ra sẽ là FC6, và số neuron đầu ra sẽ là FC2.
+0:15:18 - 0:15:24, Rồi, cuối cùng, đó chính là output.
+0:15:24 - 0:15:30, Thì FC6 sẽ được truyền vào đây, và đầu ra sẽ là output.
+0:15:30 - 0:15:38, Và số neuron của mình sẽ là 10, tại vì mình biết trước, cái đầu ra của mình sẽ là 10 class.
+0:15:38 - 0:15:46, Riêng cái hàm Activation Function thì chúng ta sẽ phải để là softmax, tại vì đây là phân lớp đa lớp, chứ không phải là phân lớp nhị phân.
+0:15:46 - 0:15:49, Nếu mà phân lớp nhị phân thì chúng ta sẽ sử dụng Sigmoid.
+0:15:49 - 0:15:56, Rồi, cuối cùng thì chúng ta sẽ đóng gói toàn bộ input và output trong cái biến tên là MODEL.
+0:15:56 - 0:16:02, self.model sẽ là bằng MODEL, rồi input và output.
+0:16:02 - 0:16:10, Rồi, như vậy thì chúng ta đã cài xong cho cái phần build mô hình.
+0:16:10 - 0:16:13, Đối với cái hàm TRAIN thì chúng ta sẽ sử dụng optimizer là ADAM.
+0:16:13 - 0:16:20, ADAM thì đây là một trong những cái optimizer rất là hiệu quả, nó giúp cho chúng ta thoát ra được những cái điểm cực tiểu cục bộ.
+0:16:20 - 0:16:30, Hàm Loss thì chúng ta sẽ sử dụng CROSS ENTROPY, CATEGORICAL CROSS ENTROPY, tức là chúng ta thực hiện phân lớp nhiều lớp.
+0:16:30 - 0:16:34, Rồi, độ đo thì chúng ta sẽ sử dụng độ đo để đánh giá là Accuracy.
+0:16:34 - 0:16:48, Về Weights thì chúng ta sẽ trả về self.model.layers và chúng ta sẽ truyền vào cái chỉ số của cái layer mà mình muốn trả về, xong rồi gọi hàm GET Weights.
+0:16:52 - 0:16:56, Rồi, như vậy thì chúng ta đã cài xong cái mạng CNN.
+0:16:56 - 0:17:00, Và bước tiếp theo thì chúng ta sẽ khởi tạo các cái mô hình.
+0:17:00 - 0:17:12, Rồi, CNN.build và ở đây thì chúng ta sẽ copy xuống các cái tham số để tránh bị sơ sót.
+0:17:12 - 0:17:23, Đầu tiên input dimension thì cái ảnh này của mình nếu thông thường chúng ta sẽ để là 28,28.
+0:17:23 - 0:17:32, Tuy nhiên cái convolution, cái mô hình convolution nó chỉ có thể thực hiện được khi nó phải là 1 cái tensor 3 chiều.
+0:17:32 - 0:17:36, Do đó ở đây thì chúng ta sẽ để là 28,28.1.
+0:17:36 - 0:17:39, Và activation thì chúng ta sẽ để là sigmoid.
+0:17:39 - 0:17:43, Rồi, convolution số 1 chúng ta sẽ để là 6.
+0:17:43 - 0:17:45, Convolution số 2 thì chúng ta sẽ để là 16.
+0:17:45 - 0:17:48, Và FC ở đây chúng ta sẽ để là 1.
+0:17:48 - 0:17:50, FC lớp số 1 chúng ta sẽ để là 120.
+0:17:50 - 0:17:53, FC số 2 thì chúng ta sẽ để là 84.
+0:17:53 - 0:17:58, Và hàm activation ở đây thì chúng ta sẽ để là hàm sigmoid.
+0:17:58 - 0:18:01, Rồi, bây giờ chúng ta sẽ chạy thử.
+0:18:01 - 0:18:03, Và chương trình thì chạy được rồi.
+0:18:03 - 0:18:10, Bây giờ chúng ta sẽ xem coi là cái mạng CNN này chấm summary xem có thể thực hiện được hay không.
+0:18:10 - 0:18:14, Để xem cái kích thước, cái kiến trúc của cái mạng CNN này.
+0:18:14 - 0:18:21, Thì chúng ta có thể thấy trong cái mạng CNN này nó thỏa mãn được đúng như kiến trúc mà chúng ta mong muốn.
+0:18:21 - 0:18:28, Là bao gồm thực hiện cái FC số 1 với 6 filter, thực hiện convolution số 2 với 16 filter.
+0:18:28 - 0:18:34, Rồi, và cái kích thước của các tensor thì cũng giảm dần.
+0:18:34 - 0:18:38, Đó là từ 28 xuống 14 xuống 7 giống như trong thiết kế ở đây.
+0:18:38 - 0:18:47, Và số neuron của mình sẽ là, xin lỗi số tham số của mình, nó sẽ là 100.000 tham số.
+0:18:47 - 0:18:48, 100.000 tham số.
+0:18:48 - 0:18:50, Bây giờ chúng ta sẽ tiến hành train.
+0:18:50 - 0:18:56, Chúng ta sẽ truyền vào 2 tham số đó là X_train và y_train.
+0:18:56 - 0:18:58, Tuy nhiên y_train nó phải ở dạng là one hot.
+0:19:01 - 0:19:03, Rồi, thì cái việc train này đâu đó nó có thể tốn.
+0:19:03 - 0:19:05, Ồ, ở đây chúng ta quên mất một cái việc.
+0:19:05 - 0:19:15, Đó là sau này để mà có thể vẽ được cái hàm loss, vẽ được cái giá trị loss theo số epoch.
+0:19:15 - 0:19:19, Chúng ta sẽ phải gán vào một cái biến, vâng, history.
+0:19:19 - 0:19:25, Rồi sau đó thì ở đây chúng ta mới có thể thực hiện được cái việc trực quan hóa này.
+0:19:25 - 0:19:37, Rồi, để trực quan hóa cho cái mô hình, thì chúng ta sẽ phải lấy ra các cái filter.
+0:19:37 - 0:19:41, Ở đây chúng ta sẽ lấy ra filter ở cái lớp đầu tiên.
+0:19:41 - 0:19:45, Đó chính là cnn.get_weights.
+0:19:45 - 0:19:49, get_weights ở đây chúng ta sẽ để cái layer số 1.
+0:19:49 - 0:19:52, Tại vì layer số 0 chính là cái input rồi.
+0:19:52 - 0:19:54, Layer số 1 chính là cái phép convolution.
+0:19:55 - 0:19:58, Rồi, chúng ta sẽ cùng quan sát.
+0:20:00 - 0:20:03, Nhưng mà đương nhiên là phải chờ cái mô hình này nó huấn luyện xong,
+0:20:03 - 0:20:07, thì chúng ta mới có thể thấy được cái hàm loss này nó chạy như thế nào.
+0:20:07 - 0:20:14, Ở đây thì chúng ta quan sát thấy là cái loss của mình nó đã giảm từ 0.18 trong cái epoch đầu tiên.
+0:20:14 - 0:20:18, Giảm xuống còn 0.13, giảm xuống còn 0.10.
+0:20:18 - 0:20:24, Và đến cái epoch thứ 25, 26 thì giảm xuống còn 0.01.
+0:20:24 - 0:20:31, Và hy vọng là đến cái epoch số 30 thì cái loss của mình nó đã giảm xuống còn 0.007.
+0:20:31 - 0:20:38, Và accuracy cho tập dữ liệu train nó đã lên đến 99.85%.
+0:20:40 - 0:20:43, Rồi, chúng ta quan sát thì cái loss giảm rất là tốt.
+0:20:43 - 0:20:46, Chúng ta quan sát cái train loss này giảm rất là tốt.
+0:20:48 - 0:20:58, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

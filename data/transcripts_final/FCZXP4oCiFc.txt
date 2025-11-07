@@ -1,0 +1,87 @@
+0:00:14 - 0:00:18, Chúng ta sẽ cùng đến với phần thực hành thuật toán Radiant Ascent
+0:00:18 - 0:00:27, Đây là sơ đồ thuật toán của Radiant Ascent phiên bản đầu tiên
+0:00:27 - 0:00:33, Tham số là theta
+0:00:33 - 0:00:43, Theta có một giá trị ngẫu nhiên, tình hình như số 1, số 12, v.v.
+0:00:43 - 0:00:51, Chúng ta sẽ sử dụng hàm một biến là J theta
+0:00:51 - 0:00:57, Hàm này là một dạng hàm mà có một điểm cực tiểu
+0:00:57 - 0:01:08, Khi sang tình huống phức tạp hơn, chúng ta sẽ cài đặt bằng biến thể momentum
+0:01:08 - 0:01:20, Vì vậy, chúng ta sẽ chọn một hàm đơn giản để thực hành
+0:01:20 - 0:01:33, Vì vậy, chúng ta sẽ chọn một hàm đơn giản để thực hành
+0:01:33 - 0:01:38, Sau đó, chúng ta sẽ tiến hành lập trình
+0:01:38 - 0:01:42, Trong quá trình lập trình, chúng ta sẽ có một số tham số mạng lưới
+0:01:42 - 0:01:46, Ví dụ như là tham số alpha
+0:01:46 - 0:01:49, Đây là siêu tham số
+0:01:49 - 0:01:57, Alpha cũng khởi tạo bằng một con số khá bé, ví dụ như là 0.01
+0:01:57 - 0:02:01, Chúng ta thấy có xuất hiện hai biến là theta new và theta old
+0:02:01 - 0:02:05, Thực ra, chúng ta không cần tạo hai biến new và biến old này
+0:02:05 - 0:02:09, Theta là bằng theta trừ cho alpha nhân cho đạo hàm
+0:02:09 - 0:02:16, Thì nó đã tự động cập nhật biến theta vào trong giá trị mới cho biến theta
+0:02:16 - 0:02:21, Bây giờ, chúng ta sẽ tiến hành những bước lập trình đầu tiên
+0:02:21 - 0:02:26, Chúng ta sẽ qua giao diện code
+0:02:26 - 0:02:29, Chúng ta sẽ import
+0:02:29 - 0:02:33, Chúng ta sẽ tạo ra một file tên là GradientDescent
+0:02:33 - 0:02:37, Import NumPy
+0:02:37 - 0:02:41, SNP
+0:02:41 - 0:02:58, Chúng ta sẽ có một bước khởi tạo các tham số và siêu tham số
+0:02:58 - 0:03:03, Chúng ta sẽ có theta bằng số 12
+0:03:03 - 0:03:08, Alpha là 0.01
+0:03:08 - 0:03:15, Trong sơ đồ, chúng ta sẽ phải khởi tạo hàm j
+0:03:15 - 0:03:21, Chúng ta sẽ có thêm hàm j của theta
+0:03:21 - 0:03:32, Chúng ta sẽ return là 5 nhân cho theta mũ 2 trừ cho 8 nhân cho theta cộng 3
+0:03:32 - 0:03:38, Sau đó, chúng ta sẽ đến bước tính đạo hàm
+0:03:38 - 0:03:41, Chúng ta đã xong bước này rồi
+0:03:41 - 0:03:44, Chúng ta sẽ đến bước tính đạo hàm
+0:03:44 - 0:03:49, Thì tính đạo hàm của hàm ở trên sẽ có công thức luôn
+0:03:49 - 0:03:52, Thay vì chúng ta dùng công thức định nghĩa đạo hàm
+0:03:52 - 0:04:00, Chúng ta vẫn dùng các bảng tra, các công thức tính đạo hàm cho hàm đa thức, hàm hợp, v.v.
+0:04:00 - 0:04:02, Để chúng ta tính trực tiếp
+0:04:02 - 0:04:04, J' cho nó đơn giản
+0:04:04 - 0:04:10, J' sẽ là bằng 10 theta trừ cho 8
+0:04:10 - 0:04:15, Sau đó, chúng ta sẽ tiến hành cài đặt hàm J'
+0:04:26 - 0:04:31, Chúng ta sẽ return là 10 nhân cho theta trừ cho 8
+0:04:31 - 0:04:36, Sau đó, chúng ta sẽ tiến hành cập nhật tham số
+0:04:36 - 0:04:43, Chúng ta thấy là bản chất là một vòng lặp lặp đi lặp lại tính đạo hàm
+0:04:43 - 0:04:45, thực hiện đi thực hiện lại bước này
+0:04:45 - 0:04:48, Chúng ta sẽ tạo một vòng lặp while
+0:04:48 - 0:04:53, Chúng ta không biết trước số vòng lặp nên chúng ta sẽ để while True
+0:04:53 - 0:05:02, Mình sẽ gọi hàm tính đạo hàm là derivative là bằng J' của theta
+0:05:02 - 0:05:13, Sau đó, chúng ta sẽ có công thức là theta là bằng theta trừ cho alpha nhân với lại đạo hàm
+0:05:13 - 0:05:17, Vòng lặp này khi nào thì nó dừng
+0:05:17 - 0:05:26, Khi tham số của mình tiến về điểm cực tiểu
+0:05:26 - 0:05:33, Khi tiến về điểm cực tiểu, đạo hàm của j là xấp xỉ bằng không
+0:05:33 - 0:05:40, Tại vì đạt điểm cực tiểu thì hệ số góc này là song song với lại trục ox
+0:05:40 - 0:05:42, Tức là đạo hàm xấp xỉ bằng không
+0:05:42 - 0:05:51, Vì vậy, điều kiện dừng của mình là if theta is derivative là đủ nhỏ
+0:05:51 - 0:05:53, Tại vì nó không thể nào bằng không được
+0:05:53 - 0:05:59, Tại vì trong quá trình tính toán, nó sẽ có sai số
+0:05:59 - 0:06:02, Và ở đây chúng ta sẽ phải dùng trị tuyệt đối
+0:06:02 - 0:06:05, Tại vì nó sẽ có tình huống là đạo hàm nó âm và đạo hàm nó dương
+0:06:05 - 0:06:07, Nhưng mà nó tiến về số 0
+0:06:07 - 0:06:09, Do đó mình phải dùng trị tuyệt đối
+0:06:09 - 0:06:11, Và ở đây chúng ta sẽ xuất hiện thêm một cái biến nữa
+0:06:11 - 0:06:13, Đó là biến epsilon
+0:06:13 - 0:06:18, Và ở đây chúng ta sẽ xuất hiện 1 break
+0:06:18 - 0:06:20, Và ở đây chúng ta sẽ xuất hiện 1 break
+0:06:20 - 0:06:28, Rồi, thì ở đây chúng ta sẽ thêm một biến nữa là eps là bằng 0.001 là một con số rất là nhỏ
+0:06:28 - 0:06:32, Rồi, bây giờ chúng ta sẽ in cái kết quả ra
+0:06:32 - 0:06:36, Đó là theta tối ưu
+0:06:36 - 0:06:40, Thì nó sẽ là in ra cái theta
+0:06:41 - 0:06:45, Rồi, bây giờ chúng ta sẽ chạy cái đoạn code này
+0:06:45 - 0:06:47, Chúng ta sẽ chạy cái đoạn code này
+0:06:47 - 0:06:56, Bằng cách đó là chúng ta Ctrl+Shift+P chọn cái interpreter là conda
+0:06:56 - 0:07:00, Rồi, sau đó chúng ta sẽ run
+0:07:00 - 0:07:04, Thì ở đây là chưa có cái thư viện NumPy
+0:07:04 - 0:07:09, Do đó thì chúng ta sẽ pip install
+0:07:09 - 0:07:21, Rồi, sau đó chúng ta sẽ chạy cái code này lại
+0:07:21 - 0:07:26, Thì chúng ta thấy là cái theta tối ưu chạy rất là nhanh
+0:07:26 - 0:07:30, Và theta tối ưu là xấp xỉ bằng 8
+0:07:30 - 0:07:37, Thế thì bây giờ chúng ta làm sao kiểm tra xem cái theta này có đúng là bằng 8 hay không
+0:07:37 - 0:07:40, Thì chúng ta sẽ quay trở lại cái slide của mình
+0:07:40 - 0:07:45, Trong cái công thức ở trên thì cái giá trị nhỏ nhất
+0:07:45 - 0:07:49, Đó là đạt được khi bằng b chia cho 2a
+0:07:49 - 0:07:51, Tức là bằng trừ b chia cho 2a
+0:07:51 - 0:07:56, Tức là bằng trừ của trừ 8 chia cho 2a
+0:07:56 - 0:08:00, A ở đây là 5, 2 x 5 là bằng 10
+0:08:00 - 0:08:04, Tức là bằng 8 phần 10 tức là bằng 0.8
+0:08:04 - 0:08:09, Như vậy thì cái đáp số của mình là hoàn toàn chính xác
+0:08:09 - 0:08:12, Sau khi chúng ta chạy với thuật toán Radiant Descent

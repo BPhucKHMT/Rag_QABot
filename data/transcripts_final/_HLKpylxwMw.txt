@@ -1,0 +1,162 @@
+0:00:14 - 0:00:22, Tiếp theo, chúng ta sẽ cùng tiến hành ôn tập một trong những kiến thức toán nền tảng rất quan trọng trong môn này, đó chính là đại số tuyến tính.
+0:00:22 - 0:00:36, Tại sao chúng ta cần phải tìm hiểu về đại số tuyến tính? Vì nó giúp chúng ta có được công cụ để chúng ta có thể biểu diễn được dữ liệu.
+0:00:41 - 0:00:48, Cái thứ hai là một công cụ để giúp chúng ta có thể biến đổi dữ liệu từ cái dạng này sang dạng khác.
+0:00:52 - 0:01:08, Và hay nói trong ngôn ngữ của không gian đại số tuyến tính thì chúng ta biến đổi từ không gian này sang một không gian khác.
+0:01:08 - 0:01:16, Còn trong chủ đề về mô hình máy học thì nó sẽ biến đổi từ đặc trưng từ dạng này sang dạng khác.
+0:01:16 - 0:01:25, Từ đặc trưng đơn giản lên đặc trưng vừa, đặc trưng vừa lên đặc trưng cấp cao. Nhờ cái công cụ là đại số tuyến tính.
+0:01:25 - 0:01:34, Vậy thì đầu tiên chúng ta sẽ tìm hiểu về các khái niệm cơ bản trong đại số tuyến tính, đó chính là khái niệm về tensor.
+0:01:34 - 0:01:40, Khi nói tensor thì chúng ta có thể nâng từ số chiều từ không chiều cho đến nhiều chiều.
+0:01:40 - 0:01:47, Thì tensor không chiều tương đương với một cái giá trị scalar để biểu diễn cho những cái đại lượng vô hướng.
+0:01:47 - 0:01:55, Ngoài ra thì chúng ta sẽ có cái tensor một chiều để biểu diễn cho dạng là vector.
+0:01:55 - 0:02:00, Vector sẽ là tập hợp của các giá trị vô hướng là scalar.
+0:02:01 - 0:02:14, Thì đây là một cái tensor. Nếu mà dùng để biểu diễn dữ liệu thì có thể dùng để biểu diễn các thuộc tính hoặc các đặc trưng của một đối tượng nào đó.
+0:02:16 - 0:02:25, Và khi chúng ta nâng nó lên từ một chiều lên hai chiều thì nó tương đương với việc chúng ta lấy nhiều cái tensor 1D ghép lại với nhau.
+0:02:25 - 0:02:29, Ví dụ như trong hình này thì chúng ta thấy là nó sẽ ghép các cái cột này lại.
+0:02:30 - 0:02:35, Và mỗi một cái đặc trưng này thì nó sẽ là một đối tượng.
+0:02:35 - 0:02:41, Như vậy thì hoặc là một đặc trưng, một loại đặc trưng.
+0:02:42 - 0:02:50, Như vậy thì toàn bộ cái ma trận này hay còn gọi là 2D tensor này sẽ là một tập hợp các cái đối tượng hoặc là một tập hợp các cái đặc trưng.
+0:02:51 - 0:02:57, Và khi chúng ta nâng lên là ba chiều thì chúng ta sẽ có các cái lát cắt khác nhau.
+0:02:57 - 0:03:01, Ví dụ như mỗi một cái lát cắt này sẽ là một tập hợp các cái đặc trưng.
+0:03:03 - 0:03:08, Ghép các cái lát cắt đó lại với nhau thì chúng ta sẽ có một tensor ba chiều.
+0:03:09 - 0:03:13, Và nhiều cái tensor ba chiều chồng lên thì chúng ta sẽ có 4D.
+0:03:14 - 0:03:24, Rồi cứ như vậy thì chúng ta lại nối, thì chúng ta thấy cái quy luật này nó sẽ cứ lặp đi lặp lại để chúng ta có thể trực quan hóa được cái dữ liệu của mình.
+0:03:25 - 0:03:27, Thì chúng ta sử dụng cái tensor.
+0:03:28 - 0:03:30, Và đây là một trong những cái công cụ rất là hiệu quả.
+0:03:31 - 0:03:35, Nhưng mà thông thường trong lập trình thì thường chúng ta sẽ dùng đến 4D tensor.
+0:03:36 - 0:03:39, Thường chúng ta sẽ dùng đến một cấp độ là 4D tensor.
+0:03:39 - 0:03:46, Trong đó cái chiều đầu tiên có thể là cái chiều về số lượng cái mẫu dữ liệu của mình.
+0:03:46 - 0:03:50, Ví dụ như là batch size, tức là cái kích thước dữ liệu của mình.
+0:03:51 - 0:03:53, Sau đó là chúng ta sẽ đến cái chiều độ sâu, depth.
+0:03:54 - 0:03:56, Thì ở đây chính là cái số đặc trưng của mình.
+0:03:58 - 0:04:01, Số đặc trưng của một cái layer.
+0:04:02 - 0:04:04, Sau đó sẽ đến là width và height.
+0:04:05 - 0:04:07, Tương ứng là hai cái chiều không gian của mình.
+0:04:07 - 0:04:11, Chiều ngang và chiều cao trong chiều trục không gian của mình.
+0:04:12 - 0:04:22, Thì đây là một cái dạng biểu diễn hoặc ứng dụng của 4D tensor khi chúng ta áp vào bên trong cái dữ liệu khi huấn luyện với các môn học sâu.
+0:04:24 - 0:04:27, Ngoài ra thì chúng ta sẽ có một số cái phép toán.
+0:04:27 - 0:04:30, Cái phép toán đầu tiên và được sử dụng rất là nhiều đó chính là phép chuyển vị.
+0:04:31 - 0:04:36, Mục tiêu của cái phép chuyển vị này đó là để biến các cái vector dạng cột của ma trận thành dòng.
+0:04:37 - 0:04:40, Biến từ cột thành dạng dòng hoặc ngược lại.
+0:04:40 - 0:04:44, Ví dụ như ma trận A chúng ta đang ở dạng cột chúng ta sẽ biến nó thành dòng.
+0:04:45 - 0:04:53, Thì mục tiêu của cái việc là chuyển về cái dạng chuyển vị để phục vụ cho cái việc là tương tác nhân giữa các cái vector với nhau.
+0:04:53 - 0:04:55, Hoặc là nhân giữa các cái ma trận với nhau.
+0:04:55 - 0:04:57, Sao cho nó đồng bộ.
+0:04:58 - 0:05:00, Tiếp theo đó là cái phép cộng vector.
+0:05:00 - 0:05:02, Thì việc cộng vector nó cũng khá là đơn giản.
+0:05:02 - 0:05:04, Chúng ta sẽ cộng theo từng phần tử.
+0:05:04 - 0:05:11, Ví dụ như ở đây chúng ta có x2 và y2 thì cộng cho cái phần tử x2 và y2 chúng ta sẽ ra được cái vector mới như thế này.
+0:05:12 - 0:05:25, Và chiếu trong cái không gian thì cái vector x của mình và vector y thì khi chúng ta cộng lại nó sẽ biến thành một cái vector khác.
+0:05:27 - 0:05:29, Ví dụ như đây là x cộng y.
+0:05:29 - 0:05:32, Vector x cộng y này hiểu một cách nôm na.
+0:05:32 - 0:05:37, Ý nghĩa của nó là vector x là đặc trưng ban đầu.
+0:05:37 - 0:05:43, Nó sẽ bị điều hướng và chuyển hướng sang một cái hướng khác.
+0:05:43 - 0:05:48, Vector y ở đây chúng ta sẽ tương đương với việc chúng ta đưa vector y lên.
+0:05:48 - 0:05:53, Và khi đó x cộng y thì nó đã bị điều hướng về hướng tại vị trí mới là ở đây.
+0:05:53 - 0:06:00, Y là giống như là một vector để chúng ta thay đổi hướng.
+0:06:04 - 0:06:08, Cái này trong vật lý chúng ta thấy dùng rất là nhiều.
+0:06:08 - 0:06:10, Trong máy học thì cũng vậy.
+0:06:10 - 0:06:14, Các phép cộng hai ma trận và hai vector.
+0:06:14 - 0:06:22, Phép cộng ma trận thì nâng số chiều lên thay vì chúng ta cộng trên hai tensor một chiều, tức là vector.
+0:06:22 - 0:06:27, Thì chúng ta sẽ cộng hai tensor hai chiều.
+0:06:27 - 0:06:31, Và chúng ta cũng sẽ cộng theo element-wise, tức là cộng theo từng phần tử.
+0:06:31 - 0:06:35, Thì chúng ta sẽ lấy phần tử này, cộng với phần tử này để cộng với phần tử này.
+0:06:35 - 0:06:39, Thì chúng ta sẽ lấy phần tử này, cộng với phần tử này để ra được phần tử ở đây.
+0:06:39 - 0:06:43, Là thực hiện theo đúng thứ tự và vị trí.
+0:06:43 - 0:06:48, Tương tự như vậy thì chúng ta sẽ có phép tích Hadamard cho từng phần tử.
+0:06:48 - 0:06:52, Tức là lấy tại một vị trí, nhân với một vị trí tương ứng.
+0:06:52 - 0:06:56, Sau đó sẽ ra được giá trị tại vị trí đó.
+0:06:56 - 0:06:58, Nhân element-wise.
+0:06:58 - 0:07:04, Và khi đó thì kích thước của ma trận Output của mình sẽ là giống như là một phần tử.
+0:07:04 - 0:07:08, Giống với lại cái kích thước của hai ma trận Output vào.
+0:07:08 - 0:07:15, Thì cái phép này hiểu một cách nôm na là chúng ta đang đi nhân từng phần tử và chúng ta sẽ nhân trọng số.
+0:07:15 - 0:07:21, Ví dụ như ma trận A là một đặc trưng gốc. Đây là đặc trưng gốc.
+0:07:21 - 0:07:26, Còn ma trận B tương ứng là một trọng số.
+0:07:26 - 0:07:32, Thể hiện cái vai trò của từng đặc trưng ở trên ma trận A.
+0:07:32 - 0:07:37, Thế thì khi chúng ta lấy cái đặc trưng A này, chúng ta nhân với lại cái trọng số tại vị trí này.
+0:07:37 - 0:07:43, Để tạo ra một cái đặc trưng mới có cái sự gia giảm về cái việc mà tính toán.
+0:07:43 - 0:07:48, Ví dụ như đặc trưng này. Mình nhân với một cái hệ số là bằng 0 đi.
+0:07:51 - 0:07:53, Mình nhân với một cái trọng số là bằng 0.
+0:07:53 - 0:07:55, Thì cái kết quả ra ở đây sẽ là bằng 0.
+0:07:55 - 0:08:00, Thì hàm ý đó là cái đặc trưng ở đây sẽ không được sử dụng.
+0:08:00 - 0:08:06, Nhưng nếu ví dụ ở đây chúng ta có một cái đặc trưng và trọng số ở đây là bằng 1.
+0:08:06 - 0:08:09, Thì hàm ý đó là chúng ta sẽ lấy toàn bộ cái đặc trưng này.
+0:08:09 - 0:08:11, Vào đây, chép qua đây.
+0:08:11 - 0:08:14, Còn nếu như cái trọng số của chúng ta là 0.5.
+0:08:14 - 0:08:22, Thì tức là chúng ta chỉ lấy 50% cái lượng thông tin tại cái vị trí này để chép qua đây.
+0:08:22 - 0:08:29, Thì ý nghĩa về mặt tương tác trong máy tính trong mô hình máy học.
+0:08:29 - 0:08:32, Đó là có thể là một cái phép nhân trọng số từng phần tử.
+0:08:34 - 0:08:38, Rồi khi chúng ta nói đến cái phép nhân thì chúng ta phải chú ý.
+0:08:38 - 0:08:41, Đó là cái phép vừa rồi là tích phần tử từng phần tử.
+0:08:41 - 0:08:45, Còn bây giờ chúng ta sẽ có cái khái niệm nhân nữa.
+0:08:45 - 0:08:48, Nhưng mà nhân theo kiểu là phép chiếu.
+0:08:48 - 0:08:50, Thì đây chính là một cái phép chiếu.
+0:08:50 - 0:08:52, Bản chất của đó là một phép chiếu.
+0:08:54 - 0:08:58, Ví dụ, chúng ta nhân vô hướng 2 cái vector.
+0:08:58 - 0:09:01, Cái này còn có một cái từ khóa khác gọi là dot và dot.
+0:09:03 - 0:09:05, Thì bản chất của cái phép nhân A,
+0:09:05 - 0:09:07, Máy vector A với vector B,
+0:09:07 - 0:09:09, Trong cái không gian n chiều,
+0:09:09 - 0:09:10, Vector này gồm có n chiều.
+0:09:10 - 0:09:15, Về mặt tính toán thì chúng ta sẽ lấy từng phần tử nhân.
+0:09:15 - 0:09:18, Nhưng mà sau đó chúng ta sẽ đi cộng lại hết lại với nhau.
+0:09:18 - 0:09:20, Để ra một cái tổng.
+0:09:20 - 0:09:22, Và đây sẽ là một cái giá trị là scalar.
+0:09:24 - 0:09:27, Và ý nghĩa về mặt đại số của nó đó là gì?
+0:09:27 - 0:09:32, Vector A và vector B ở đây thì chúng ta sẽ chiếu A xuống B.
+0:09:32 - 0:09:34, Chiếu A xuống B.
+0:09:34 - 0:09:36, Và được một cái điểm này.
+0:09:36 - 0:09:43, Thì cái giá trị tích vô hướng của A và B chính là cái độ dài của đoạn thẳng.
+0:09:43 - 0:09:45, Ví dụ đây là OH, đây là H.
+0:09:45 - 0:09:48, Của OH nhân với lại OB.
+0:09:48 - 0:09:50, Đây là OA.
+0:09:50 - 0:09:54, Thì nó sẽ là bằng OH nhân với lại OB.
+0:09:54 - 0:09:57, Và nó sẽ là một cái giá trị scalar.
+0:09:59 - 0:10:00, Thì ở một góc độ khác,
+0:10:00 - 0:10:06, Cái phép tích vô hướng này có thể hiểu là cái sự tương đồng giữa hai vector A và B.
+0:10:06 - 0:10:10, Nếu như hai vector A và B lớn thì cái độ tương đồng của nó sẽ cao.
+0:10:10 - 0:10:13, Còn ở một cái góc độ đặc trưng,
+0:10:13 - 0:10:20, Chúng ta đang chuyển đổi từ một cái điểm A chiếu xuống dưới một cái điểm B để đưa về cái không gian của B.
+0:10:24 - 0:10:29, Và chúng ta có một chú ý đó là A chiếu lên B cũng là bằng B chiếu xuống A.
+0:10:29 - 0:10:32, Do đó A chuyển vị nhân B sẽ là bằng B nhân A.
+0:10:32 - 0:10:34, Sau đó chúng ta nâng cấp lên.
+0:10:34 - 0:10:37, Đó là phép nhân giữa ma trận với lại vector.
+0:10:37 - 0:10:40, Thay vì chúng ta thực hiện giữa vector với vector,
+0:10:40 - 0:10:42, Bây giờ chúng ta sẽ làm hàng loạt.
+0:10:42 - 0:10:49, Chúng ta sẽ có vector x và chúng ta sẽ lần lượt nhân hàng loạt với lại vector A,
+0:10:49 - 0:10:53, A1, A2, A3, cho đến An.
+0:10:53 - 0:10:57, Và các cái giá trị tích vô hướng đó sẽ được đưa vào cái vector như thế này.
+0:10:57 - 0:11:02, Đó là A1 x A2 chuyển về x, A n chuyển về x.
+0:11:02 - 0:11:09, Thì đây chúng ta đang thực hiện nhân hàng loạt x với lại các cái vector hàng của ma trận A.
+0:11:09 - 0:11:16, Và cái phép này thì hiểu nôm na nó cũng là một cái phép chiếu hoặc là một cái phép chuyển không gian.
+0:11:17 - 0:11:19, Chuyển không gian.
+0:11:19 - 0:11:24, Ví dụ như chúng ta có một cái không gian là như thế này.
+0:11:24 - 0:11:31, Và một cái điểm trong cái không gian thì khi chúng ta chiếu xuống dưới một cái mặt phẳng nào đó, ví dụ vậy.
+0:11:32 - 0:11:44, Rồi, thì khi chúng ta chiếu xuống, để đại diện cho cái mặt phẳng này, đại diện cho cái mặt phẳng này, mặt phẳng P đi,
+0:11:44 - 0:11:49, thì nó sẽ có cái tham số và tham số đó chính là cái ma trận A của mình.
+0:11:49 - 0:11:59, Và khi chiếu, khi chiếu xuống cái không gian của A thì chúng ta sẽ chuyển từ một cái vector là 3 chiều,
+0:11:59 - 0:12:07, Ví dụ vậy, thuộc R3, chuyển xuống một cái không gian 2 chiều thì lúc đó là chúng ta chỉ còn là một cái điểm kích sởi,
+0:12:07 - 0:12:11, nhưng mà nằm trong cái không gian chỉ có 2 chiều, chứ không gian mặt phẳng.
+0:12:11 - 0:12:20, Ở đây là một cái phép chiếu từ một cái không gian lớn chiều là 3 chiều xuống một cái không gian mặt phẳng là 2 chiều.
+0:12:20 - 0:12:25, Và ngược lại, chúng ta cũng sẽ có cái phép chiếu từ không gian thấp chiều lên không gian cao chiều.
+0:12:26 - 0:12:29, Ví dụ từ không gian 2 chiều lên không gian 3 chiều.
+0:12:35 - 0:12:39, Và tiếp theo thì chúng ta sẽ có cái phép nhân giữa ma trận với ma trận,
+0:12:39 - 0:12:45, tức là chúng ta cũng sẽ thực hiện hàng loạt giữa các cái cặp AI với lại BZ.
+0:12:45 - 0:12:51, A sẽ là chạy theo, từ trên xuống dưới là theo hàng, còn B sẽ là theo cột, là từ trái sang phải.
+0:12:51 - 0:12:55, Và khi lấy hai cái ma trận này nhân với nhau thì chúng ta sẽ ra một cái ma trận,
+0:12:55 - 0:13:00, trong đó các cái phần tử của mình thì sẽ được nhân lần lượt từ trái sang phải và từ trên xuống dưới.
+0:13:00 - 0:13:04, Thì chúng ta sẽ ra được cái ma trận như thế này.
+0:13:04 - 0:13:08, Và đây cũng kiểu một cách nôm na, đó là một cái phép chiếu,
+0:13:08 - 0:13:13, nhưng mà chiếu hàng loạt trên rất nhiều ma trận và các cái không gian.
+0:13:14 - 0:13:20, Và tính chất của cái việc mà nhân ma trận với ma trận đó là,
+0:13:20 - 0:13:26, thứ nhất cái phép nhân ma trận này không có tính giao hoán, tức là A nhân B thì không có bằng B nhân A.
+0:13:26 - 0:13:33, Cái thứ hai đó là cái kết hợp, cái tính chất kết hợp là A nhân B, tất cả nhân C thì sẽ là bằng A nhân BC.
+0:13:34 - 0:13:44, Tính chất kết hợp theo kiểu là, cái này giống như phân phối từ A, B cộng C thì sẽ là A nhân B và A cộng C.
+0:13:44 - 0:13:50, Cái này là cái phép tính chất phân phối.
+0:13:50 - 0:13:58, Và chúng ta sẽ chuyển vị, thì ma trận A mà chuyển vị, rồi chuyển vị lại thì nó sẽ bằng A.
+0:13:58 - 0:14:05, Thì khi đó là A, B, tất cả chuyển vị sẽ bằng là B chuyển vị nhân với A chuyển vị.
+0:14:05 - 0:14:10, Rồi A cộng B chuyển vị sẽ là bằng A chuyển vị cộng cho B chuyển vị.
+0:14:10 - 0:14:16, Và một số cái ma trận đặc biệt, ví dụ như là ma trận đơn vị, thì đây là một cái ma trận mà có tính chất đó là
+0:14:16 - 0:14:21, X mà nhân với lại một cái ma trận chuyển vị thì nó sẽ bằng chính X.
+0:14:21 - 0:14:27, Hiểu một cách nôm na đây giống như là số 1, 1 nhân với cái gì thì cũng bằng cái số 9.
+0:14:28 - 0:14:36, ma trận nghịch đảo là một cái ma trận vuông, là một cái ma trận vuông mà thỏa mãn tính chất đó là A nhân với lại A.
+0:14:36 - 0:14:39, Nghịch đảo thì nó sẽ là bằng ma trận đơn vị.

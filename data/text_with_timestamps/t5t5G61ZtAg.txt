@@ -1,0 +1,121 @@
+00:00:00 - 00:00:19, sau khoảng hơn 2 phút, thuật toán đã được uống điện xong
+00:00:19 - 00:00:23, và chúng ta sẽ tiến hành trực quan hóa
+00:00:23 - 00:00:28, để trực quan hóa không gian lây tên với các Embedding Vector
+00:00:28 - 00:00:34, khái niệm Embedding Vector là những dữ liệu tập chúng ta đã huấn luyện
+00:00:34 - 00:00:38, chúng ta biến đổi nó về VectorZ
+00:00:38 - 00:00:42, VectorZ là Embedding Vector
+00:00:42 - 00:00:48, chúng ta sẽ tìm cách vẽ VectorZ của tập dữ liệu MNIST này
+00:00:48 - 00:00:53, lên trên mặt phẳng 2 chiều để xem nó như thế nào
+00:00:53 - 00:00:57, chúng ta sẽ có hàm Plot Latent
+00:00:57 - 00:01:01, và chúng ta sẽ truyền vào hàm mô hình đã được huấn luyện
+00:01:01 - 00:01:05, đó là Autoencoder kèm theo Data
+00:01:05 - 00:01:12, ở đây chúng ta sẽ tắt theo tình bác
+00:01:12 - 00:01:16, và lưu ý ở đây chúng ta có dữ liệu của mình là theo trực X
+00:01:16 - 00:01:19, và có dữ liệu đầu vào là X và Y
+00:01:19 - 00:01:22, tuy nhiên, trong phần huấn luyện
+00:01:22 - 00:01:27, chúng ta sẽ gọi hàm Trend không có sử dụng miếng Y
+00:01:27 - 00:01:31, nhưng ở phần trực quan hóa chúng ta sẽ sử dụng miếng Y này
+00:01:31 - 00:01:37, để chúng ta có thể vẽ ra những ảnh có cùng một cái nhãn
+00:01:37 - 00:01:39, cũng là cùng một cái chữ số
+00:01:39 - 00:01:42, xem xem nó có nằm trong chung một khu vực hay không
+00:01:42 - 00:01:46, hay là nó nằm ở trại rác ở nhiều nơi
+00:01:46 - 00:01:54, chúng ta sẽ dùng encoder và truyền cái X này vào
+00:01:54 - 00:01:57, X ở đây là truyền vào cái device
+00:01:57 - 00:01:59, sau đó sẽ tính ra Z
+00:01:59 - 00:02:03, sau khi chúng ta tính ra cái vector Z của toàn bộ dữ liệu rồi
+00:02:03 - 00:02:07, thì chúng ta sẽ rút trích ra CPU
+00:02:07 - 00:02:15, sau khi rút trích ra CPU thì chúng ta sẽ lần lượt dùng cái biểu đồ dạng scatter
+00:02:15 - 00:02:17, rất là biểu đồ dạng vẽ điểm
+00:02:17 - 00:02:21, và truyền cái thành phần đầu tiên và thành phần thứ hai
+00:02:21 - 00:02:25, tức là hai tạo độ theo trục X và trục Y
+00:02:25 - 00:02:27, về màu sắc là C
+00:02:27 - 00:02:31, chúng ta sẽ dùng 9 cái nhãn từ 0 cho đến 9
+00:02:31 - 00:02:34, làm cái nhãn của cái màu
+00:02:34 - 00:02:38, và cái color map thì chúng ta sẽ dùng là tab 10
+00:02:38 - 00:02:47, rồi, thế thì ở đây chúng ta sẽ gọi ham và chúng ta vẽ cái Layton này lên
+00:02:47 - 00:02:51, thì nó sẽ ra cái hình ảnh như thế này
+00:02:51 - 00:02:55, và chúng ta thấy cái hình này nó sẽ có cái tính chất gì
+00:02:55 - 00:03:03, đó là nó sẽ không có dạng một cái phân bố giống như phân bố chuẩn
+00:03:03 - 00:03:06, mà nó có thể đi một cái đường dải rất là dài như thế này
+00:03:06 - 00:03:08, một cái dải rất là dài
+00:03:08 - 00:03:10, đó là kỹ thứ nhất
+00:03:10 - 00:03:14, cái thứ hai đó là có những cái số ví dụ như số 1
+00:03:14 - 00:03:19, những chiên mẫu dữ liệu là cái vector emitting của cái ảnh số 1
+00:03:19 - 00:03:25, thì thấy là nó đã phân tách ra rất tốt so với lại những cái con số khác
+00:03:25 - 00:03:30, tại vì cái hình thù của số 1 khá là khác biệt so với những cái con số khác
+00:03:30 - 00:03:34, cái số tiếp theo đó là số 7 là 1 xám thì cũng khá là khác biệt
+00:03:34 - 00:03:38, nhưng mà sẽ có những cái khu vực như thế này là khá là lộn sộn
+00:03:38 - 00:03:43, và nó có thể vừa có xanh đỏ tím vàng đầy đủ hết
+00:03:43 - 00:03:48, thì cái khu vực này có thể là những cái con chữ mà được biết không rõ ràng
+00:03:48 - 00:03:51, nên nó sẽ gom lại ở khu vực này
+00:03:51 - 00:03:57, rồi, thế thì chúng ta sẽ tiến hành trực quan hóa
+00:03:57 - 00:04:01, cái kết quả decode với một cái vector gì bất kỳ
+00:04:01 - 00:04:05, thế thì trên cái ảnh của cái không gian Layton Space chúng ta thấy
+00:04:05 - 00:04:09, nó có một cái đặc điểm nữa đó là rất nhiều những cái khoảng hở
+00:04:09 - 00:04:15, khoảng hở đó là những cái khu vực mà chúng ta thấy có màu trắng là không có được vẽ
+00:04:15 - 00:04:20, không có một cái vector emitting nào nằm lên trên đó
+00:04:20 - 00:04:24, thì câu hỏi đó là những cái khoảng hở này khi chúng ta decode
+00:04:24 - 00:04:27, thì nó sẽ ra cái tấm ảnh là gì?
+00:04:27 - 00:04:29, nó có ý nghĩa hay không?
+00:04:29 - 00:04:39, thì cách mà chúng ta sẽ thực nghiệm đó chính là chúng ta sẽ làm cái núi từ trừ 5 cho đến 10
+00:04:39 - 00:04:43, và từ trừ 10 cho đến 5
+00:04:43 - 00:04:47, rồi, thì chúng ta sẽ thử ha
+00:04:47 - 00:04:52, chúng ta sẽ vẽ cái núi này
+00:04:52 - 00:05:01, rồi, trừ 5 là ở đây
+00:05:01 - 00:05:09, rồi chúng ta sẽ lấy cái núi chụp cái màn hình này
+00:05:09 - 00:05:12, thì trừ 5 sẽ là ở đây
+00:05:12 - 00:05:16, rồi 10 sẽ là ở đây
+00:05:16 - 00:05:21, trừ 5 không nằm 10
+00:05:21 - 00:05:24, trừ 5 không nằm 10 thì 10 sẽ là ở đây
+00:05:24 - 00:05:30, rồi và trục tung thì là sẽ từ trừ 5 cho trừ 10 cho đến 5
+00:05:30 - 00:05:33, trừ 10 cho đến 5 là ở đây
+00:05:33 - 00:05:38, trừ 10 cho đến 5 là ở đây
+00:05:38 - 00:05:43, rồi, như vậy cái núi mà dự định chúng ta sẽ vẽ là ở khu vực này
+00:05:43 - 00:05:48, trục hành là từ trừ 5 cho đến 10
+00:05:48 - 00:05:53, và trục tung là từ trừ 10 cho đến 9
+00:05:53 - 00:06:00, như vậy thì chúng ta sẽ có một cái phô vu
+00:06:00 - 00:06:05, rồi, sau đó chiến thuật của chúng ta là gì?
+00:06:05 - 00:06:08, chúng ta sẽ chia lưới nó ra
+00:06:08 - 00:06:16, ví dụ như trong trường hợp này chúng ta sẽ chia ra làm 12 khuảnh các hẹn đều nhau
+00:06:16 - 00:06:24, rồi, sau đó chúng ta cũng sẽ chia lưới theo kì dọc
+00:06:24 - 00:06:31, như vậy
+00:06:31 - 00:06:35, rồi, thì với mỗi một cái điểm trên cái mắt lưới này
+00:06:35 - 00:06:40, lấy ví dụ như cái điểm ở đây chúng ta sẽ dùng một bộ đen
+00:06:40 - 00:06:43, ví dụ như một cái điểm trên cái mắt lưới này
+00:06:43 - 00:06:48, thì nó sẽ là một cái vector z mà chúng ta lấy ra, xàm lên trên cái núi
+00:06:48 - 00:06:55, và chúng ta sẽ qua cái hàm decoder để xem nó ra một cái tấm ảnh dìm nó như thế nào
+00:06:55 - 00:07:03, sau đó chúng ta lấy cái ảnh này chúng ta sẽ vẽ lên trên thành một cái ma trận
+00:07:03 - 00:07:06, với cái ảnh này chúng ta sẽ vẽ ra một ảnh
+00:07:06 - 00:07:10, với một cái điểm z ở đây chúng ta sẽ decode ra và vẽ ảnh lên
+00:07:10 - 00:07:14, với cái điểm này, điểm này chúng ta decode ra và vẽ ảnh lên
+00:07:14 - 00:07:16, thì chúng ta sẽ ra một cái ma trận các điểm ảnh
+00:07:16 - 00:07:21, và chúng ta sẽ quan sát xem nó có cái tính chất gì đặc biệt phải không
+00:07:21 - 00:07:26, Rồi, thì đó chính là cái ý tưởng của cái hàm Blob Reconstructed
+00:07:26 - 00:07:31, chúng ta sẽ chia ra thành các lean space
+00:07:31 - 00:07:35, với n ở đây là bằng 12, chúng ta sẽ chia ra làm 12 khoảng
+00:07:35 - 00:07:43, rồi lấy cái y và cái x và cái y này chúng ta sẽ có được cái latent z
+00:07:43 - 00:07:45, là cái điểm màu đen mà chúng ta đã vẽ
+00:07:45 - 00:07:48, rồi qua cái hàm decoder chúng ta sẽ ra được x hat
+00:07:48 - 00:07:51, tức là cái ảnh được tạo sinh ra
+00:07:51 - 00:07:57, và ảnh này sẽ được reset về cái thước là 28 như 28
+00:07:57 - 00:08:00, và sau đó vẽ lên cái ma trận ảnh
+00:08:00 - 00:08:03, rồi, thì chúng ta sẽ chạy cái đoạn code này
+00:08:05 - 00:08:09, đó thì với cái bí dụ này chúng ta có thể thấy
+00:08:09 - 00:08:12, đó là ở những cái khu vực phía trên
+00:08:12 - 00:08:15, đó sẽ ra một cái hình thù gì đấy và chúng ta không cảm nhận được
+00:08:15 - 00:08:17, đó là một cái con số
+00:08:17 - 00:08:18, khu vực ở giữa ở đây cũng vậy
+00:08:18 - 00:08:21, nó sẽ có lẫn lộn rất nhiều những cái hình ảnh ở trong đó
+00:08:21 - 00:08:23, có thể có chứa nhiều con số
+00:08:23 - 00:08:27, dẫn đến là mình nhìn mình không cảm nhận được đó là số gì
+00:08:27 - 00:08:29, khu vực này cũng vậy
+00:08:29 - 00:08:36, thế thì chiếu lên trên cái hình ảnh của cái không gian của mình
+00:08:36 - 00:08:41, thì những ảnh ở góc phía trên bên đây là ở khu vực trừ 5
+00:08:41 - 00:08:44, cho đến 5
+00:08:44 - 00:08:45, trừ 5
+00:08:45 - 00:08:46, cho đến 5
+00:08:46 - 00:08:48, tức là nó nằm ở cái khu vực màu trắng
+00:08:48 - 00:08:51, và cái khu vực màu trắng này khi chúng ta đi góc ra
+00:08:51 - 00:08:54, thì nó sẽ tạo ra một cái ảnh không có ý nghĩa
+00:08:54 - 00:08:57, không giống cái con số nào hết
+00:08:57 - 00:09:02, đó thì đây chính là cái định yếu của mô hình auto encoder

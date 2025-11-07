@@ -1,0 +1,208 @@
+0:00:14 - 0:00:21, Rồi trong những phần trước thì chúng ta đã cùng tìm hiểu về sự khác nhau giữa VAE, Variational Autoencoder và Diffusion
+0:00:21 - 0:00:28, Cả hai mô hình VAE và Diffusion đều dựa trên lý thuyết
+0:00:28 - 0:00:35, đó là chúng ta sẽ cực đại hóa log của PX này, tức là làm sao cho kỳ ảnh X của mình giống thật nhất.
+0:00:35 - 0:00:46, Thay vì chúng ta cực đại hóa log PX này, chúng ta sẽ cực đại hóa chặn dưới, tức là evidence lower bound ELBO của kỳ vọng này.
+0:00:46 - 0:00:57, Nếu như trong công thức của VAE, thì cái Z này là một vector ẩn, thì ở đây chúng ta sẽ có nhiều vector ẩn,
+0:00:57 - 0:01:01, tại vì mô hình Diffusion của mình sẽ thực hiện nhiều bước để encoding.
+0:01:01 - 0:01:08, Nguyên lý của nó đó là chia thành những bước nhỏ, thì nó sẽ giúp chúng ta đơn giản hóa bài toán của mình.
+0:01:08 - 0:01:14, Thay vì chúng ta làm một bước lớn thì nó sẽ khó để huấn luyện và bài toán của chúng ta phức tạp hơn.
+0:01:14 - 0:01:22, Thay vì chúng ta có một biến Z thì bây giờ nó sẽ là T biến là X1 cho đến XT,
+0:01:22 - 0:01:28, và do đó thì thành phần Z này sẽ biến thành từ X1 cho đến XT.
+0:01:28 - 0:01:34, Còn đối với biến X này của mình thì nó sẽ là X0, tức là cái giá trị ký hiệu ở đây.
+0:01:34 - 0:01:42, X0 sẽ là ảnh đầu vào được sampling theo phân bố của data X.
+0:01:42 - 0:01:49, Vậy thì công thức ở trên sẽ được đưa về và bài toán mô hình Diffusion model
+0:01:49 - 0:01:57, sẽ đưa về việc cực đại hóa kỳ vọng của x1 cho đến XT cho trước X0.
+0:01:57 - 0:02:00, Thì đây chính là latent của mình.
+0:02:00 - 0:02:08, Và xT sẽ là gồm x0 cho đến XT, nó mở, trộn lại với nhau.
+0:02:08 - 0:02:11, Còn công thức ở đây thì nó đem qua từ đây.
+0:02:11 - 0:02:15, Như vậy thì đây chính là mô hình của Diffusion model.
+0:02:15 - 0:02:21, Vậy thì bây giờ chúng ta sẽ đến với bước đầu tiên, đó là quá trình khuếch tán thuận hay còn gọi là encoding.
+0:02:21 - 0:02:27, Ở bước encoding này, công thức của phân bố xác suất x1,
+0:02:27 - 0:02:35, tức là phân bố xác suất của các vector ẩn khi cho trước ảnh gốc đầu vào lấy mẫu x0,
+0:02:35 - 0:02:39, thì nó sẽ được biểu diễn bằng sơ đồ ở đây.
+0:02:39 - 0:02:45, Và công thức phân bố xác suất của các biến ẩn cho trước x0,
+0:02:45 - 0:02:50, thì nó sẽ là bằng tích của t từ 1 cho đến T lớn của q X1,
+0:02:50 - 0:02:53, XT cho trước XT từ 1.
+0:02:53 - 0:02:58, Thế thì các q phân bố của XT cho trước XT từ 1,
+0:02:58 - 0:03:00, nó chính là các dấu mũi tên này.
+0:03:00 - 0:03:06, Tức là từ x0, chúng ta sẽ ra được phân bố xác suất của x1.
+0:03:06 - 0:03:10, Từ XT cho trước x1, chúng ta sẽ ra được phân bố xác suất của XT.
+0:03:10 - 0:03:14, Từ XT, chúng ta sẽ ra được phân bố xác suất của XT cộng 1.
+0:03:14 - 0:03:20, Từ XT lớn cho trước x1, chúng ta sẽ ra được phân bố xác suất của XT lớn.
+0:03:20 - 0:03:24, Thì đây là một quá trình các bước để encoding.
+0:03:25 - 0:03:31, Và phân bố xác suất của x1 cho đến xT sẽ là bằng tích phân bố xác suất này.
+0:03:31 - 0:03:37, Tiếp theo, chúng ta sẽ tham số hóa hàm phân bố xác suất.
+0:03:37 - 0:03:44, Thế thì ở đây chúng ta sẽ tham số hóa dùng công thức thêm nhiễu.
+0:03:44 - 0:03:48, Để đại diện cho thêm nhiễu, chúng ta sẽ dùng một phân bố Gauss.
+0:03:48 - 0:03:53, Trong đó, mean là bằng căn của alphaT nhân xT cho 1.
+0:03:53 - 0:03:59, Và variance là bằng 1 trừ alphaT nhân với I.
+0:03:59 - 0:04:01, I là cái ma trận đơn vị.
+0:04:01 - 0:04:07, Thế thì alphaT của mình sẽ là một con số lớn hơn 0 và nhỏ hơn 1.
+0:04:07 - 0:04:11, Nếu alphaT mà càng tiến về 0,
+0:04:11 - 0:04:17, tức là cái thao tác mà căn của alphaT nhân với xT cho 1 là chúng ta đang làm yếu.
+0:04:17 - 0:04:21, Làm yếu cái tín hiệu của xT đi.
+0:04:21 - 0:04:24, Làm yếu cái tín hiệu của xT cho 1.
+0:04:24 - 0:04:28, Sau đó chúng ta thêm nhiễu đã làm yếu cái thằng xT cho 1.
+0:04:28 - 0:04:34, Và cái thành phần mà độ lệch nó tương ứng sẽ là cái nhiễu mà chúng ta muốn thêm vào.
+0:04:35 - 0:04:42, Thế thì nếu alphaT mà càng nhỏ, thì cái xT cho 1 càng yếu và 1 trừ alphaT càng lớn,
+0:04:42 - 0:04:44, tức là cái nhiễu của mình càng mạnh.
+0:04:44 - 0:04:47, Thì cái quá trình khuếch tán này nó sẽ càng nhanh.
+0:04:47 - 0:04:53, Còn khi alphaT của mình mà càng tiến về 1, tức là xT này chỉ bị, xT cho 1 này chỉ bị làm yếu một ít.
+0:04:53 - 0:04:57, Còn cái phần, phần nhiễu này thì chúng ta cũng thêm vô một ít.
+0:04:57 - 0:05:01, Như vậy thì kỳ ảnh của mình nó sẽ ít bị thêm nhiễu.
+0:05:01 - 0:05:06, Thế thì cũng là tham số nhưng mà ở đây, cái quá trình encoding này,
+0:05:06 - 0:05:10, thì cái tham số alphaT này của mình là cố định.
+0:05:11 - 0:05:13, Và cố định theo từng bước T.
+0:05:13 - 0:05:17, Tức là với mỗi cái bước T chúng ta sẽ có một cái alpha riêng.
+0:05:18 - 0:05:20, Và nó sẽ khác so với lại VAE.
+0:05:20 - 0:05:24, Đó là cái quá trình encoding này không có tham số huấn luyện phi.
+0:05:24 - 0:05:28, Tức là chúng ta không có huấn luyện cái tham số alphaT này.
+0:05:28 - 0:05:30, Mà alphaT này là một con số cố định.
+0:05:31 - 0:05:34, Vậy thì chúng ta sẽ ghi lại cái công thức ở đây.
+0:05:34 - 0:05:37, Đó là q xT cho trước xT.
+0:05:37 - 0:05:39, q của xT cho trước xT cho 1.
+0:05:39 - 0:05:44, Thì đây chính là một cái phân bố xác suất trong cái không gian mà chúng ta mã hóa.
+0:05:45 - 0:05:49, Phân bố gauss với mean là bằng căn của alphaT xT cho 1.
+0:05:49 - 0:05:53, Chúng ta đang làm yếu thông tin của cái ảnh trước đó đi.
+0:05:53 - 0:05:57, Rồi thêm vô một cái thành phần nhiễu là 1 trừ alphaT.
+0:05:57 - 0:06:01, Thì đây chính là cái công thức của khuếch tán thuận.
+0:06:02 - 0:06:05, Thế thì chúng ta sẽ đến với một cái kỹ thuật.
+0:06:05 - 0:06:09, Đó là kỹ thuật Reparameterization hay gọi là tái tham số hóa.
+0:06:09 - 0:06:13, Thì cái này cũng tương tương tương tự như là cái VAE.
+0:06:14 - 0:06:18, Nếu như cái thao tác x mà chúng ta sampling, cái ký hiệu này là sampling.
+0:06:19 - 0:06:23, Thì cái thao tác sampling này là một cái thao tác không tính đạo hàm được.
+0:06:23 - 0:06:26, Đây là một cái thao tác không tính đạo hàm được.
+0:06:26 - 0:06:33, Dẫn đến là khi chúng ta sử dụng cái kỹ thuật tính Gradient Ascent, chúng ta sẽ không thể huấn luyện được cái mô hình Diffusion Model này.
+0:06:33 - 0:06:39, Do đó chúng ta sẽ viết lại x dưới dạng là một cái hàm số khác.
+0:06:39 - 0:06:44, Và thay vì chúng ta lấy mẫu trên x, thì chúng ta sẽ lấy mẫu trên cái biến epsilon.
+0:06:44 - 0:06:48, Ví dụ epsilon này sẽ tuân theo cái phân bố chuẩn.
+0:06:48 - 0:06:51, Ví dụ như epsilon là nằm ở đây.
+0:06:51 - 0:06:58, Thì khi chúng ta lấy epsilon nhân với sigma, rồi cộng cho mu, thì nó sẽ ra cái x nằm ở đây.
+0:06:58 - 0:07:08, Nếu chúng ta lấy epsilon nằm ở đây, thì khi chúng ta nhân sigma và cộng mu, thì nó sẽ ra cái biến x nằm ở đây.
+0:07:08 - 0:07:13, Thế thì đây là một cái thao tác hoàn toàn tương đương.
+0:07:13 - 0:07:20, Thay vì chúng ta lấy mẫu trong cái không gian phân bố là gauss, với mean là bằng mu và sigma.
+0:07:20 - 0:07:24, Bằng mu và sigma, variance là bằng sigma.
+0:07:24 - 0:07:31, Thì chúng ta sẽ lấy trong cái không gian gauss là phân bố chuẩn không một.
+0:07:31 - 0:07:39, Thì khi chúng ta huấn luyện, thì chuyển đến cái tham số epsilon này rồi, thì nó sẽ không có chuyển đi đâu nữa.
+0:07:39 - 0:07:47, Nên cho dù epsilon này là một cái thao tác, là một cái sampling variable từ phân bố chuẩn,
+0:07:47 - 0:07:50, nhưng mà chúng ta sẽ không có cập nhật tham số ở đây.
+0:07:50 - 0:07:56, Mà chúng ta chỉ đi cập nhật các cái tham số nếu có ở các cái bước mu và sigma này thôi.
+0:07:56 - 0:08:04, Vậy thì tại sao chúng ta lại dùng cái công thức này và cái quá trình khuếch tán thuận,
+0:08:04 - 0:08:13, chúng ta không có dùng các cái tham số huấn luyện được, mà chỉ dùng cái alpha và một trừ alpha là những cái tham số mà cố định.
+0:08:13 - 0:08:21, Đó là vì cái quá trình encoding, thì chúng ta đơn giản hóa cái mô hình của mình.
+0:08:21 - 0:08:25, Nó không có tham số để huấn luyện nên nó sẽ đỡ bị hiện tượng overfitting hơn.
+0:08:25 - 0:08:34, Và cái mô hình của mình, decoding về sau, nó bám theo cái công thức này để mà nó cố gắng khôi phục lại cái phân bố xác suất này.
+0:08:34 - 0:08:41, Sao cho nó decode giống với cái giá trị này nhất. Thế thì nó giảm được, thứ nhất là nó giảm được cái lỗi.
+0:08:41 - 0:08:49, Vì cái này nó không có tham số, tức là cái độ cố định của nó sẽ cao. Mặc dù nó là một cái phân bố xác suất nhưng mà nó sẽ cố định.
+0:08:49 - 0:08:56, Còn nếu như cái này mà có tham số vào thì cái việc huấn luyện của mình nó sẽ vừa phụ thuộc cả encoding mà vừa phụ thuộc cả decoding.
+0:08:56 - 0:09:00, Nên cái size số của mình nó sẽ rất là lớn và nó khó hội tụ.
+0:09:00 - 0:09:10, Vậy thì chúng ta sẽ free tham số cái bước mà khuếch tán thuận, nó có nhiều cái lợi chống overfitting và cái việc huấn luyện về sau nó sẽ dễ hơn.
+0:09:10 - 0:09:26, Và đồng thời nó có một cái lợi thứ ba đó là với cái cách mà chúng ta sampling như thế này thì xt với t bất kỳ chúng ta có thể tính được theo x0, tức là cái ảnh ban đầu mà công thức nó rất là đơn giản.
+0:09:26 - 0:09:38, Bây giờ chúng ta sẽ thử với những cái x1 và x2 trước. Thì với x1 thì nó sẽ là bằng căn của alpha 1 nhân với x0 cộng cho căn của alpha 1 nhân với epsilon.
+0:09:38 - 0:09:42, Với epsilon đó là một cái biến theo cái phân bố chuẩn.
+0:09:43 - 0:09:52, Sau đó chúng ta thay cái công thức x2 thì sẽ là bằng căn của alpha 2 nhân x1 cộng cho căn của 1 nhân alpha 2 nhân epsilon 1.
+0:09:52 - 0:09:56, epsilon 1 cũng là một cái biến theo phân bố chuẩn luôn.
+0:09:56 - 0:10:13, Thì chúng ta thay cái công thức x1 ở trên đem xuống đây thì lúc này nó sẽ là bằng căn của alpha 2 nhân cho căn của alpha 1 x0 cộng cho căn của 1 trừ alpha 1 epsilon 0.
+0:10:13 - 0:10:21, Tất cả cộng cho căn của 1 trừ alpha 2 epsilon 1.
+0:10:21 - 0:10:31, Rồi thì chúng ta thay vào đây thì nó sẽ là bằng căn của alpha 1, alpha 2, x0 cộng cho căn của...
+0:10:31 - 0:10:44, Thay vào đây thì nó sẽ là alpha 2 1 trừ alpha 1 epsilon 0 cộng cho căn của 1 trừ alpha 2 tất cả nhân cho epsilon 1.
+0:10:44 - 0:10:49, Thế thì cái công thức này nó sẽ đưa về đây.
+0:10:49 - 0:10:52, Những cái biến đổi của chúng ta hồi nãy nó chính là ở đây.
+0:00:00 - 0:00:00, Và ở đây chúng ta sẽ có một chú ý 2 cái biến epsilon 0 và epsilon 1 là 2 cái biến lấy mẫu với cùng một phân bố.
+0:11:02 - 0:11:07, Thì khi đó chúng ta cộng lại nó cũng sẽ ra cùng một cái phân bố Gaussian.
+0:11:07 - 0:11:16, 2 cái phân bố Gaussian mà có cùng một cái mean là bằng 0 thì khi chúng ta cộng lại nó sẽ ra một phân bố Gaussian.
+0:11:16 - 0:11:24, Và khi đó cái công thức của cái sigma của mình nó sẽ là bằng 1 trừ alpha 1 nhân alpha 2.
+0:11:24 - 0:11:28, Hay chúng ta biết gọi là triển khai.
+0:11:28 - 0:11:39, Đó là bằng epsilon của căn của cái vế bên tay trái là alpha 2 trừ cho alpha 1 alpha 2.
+0:11:39 - 0:11:44, Rồi cộng cho 1 trừ cho alpha 2.
+0:11:44 - 0:11:53, Thì đây là một cái công thức mà khá là kinh điển của cái việc mà chúng ta cộng 2 cái biến ngẫu nhiên theo phân bố chuẩn.
+0:11:53 - 0:12:00, Thế thì trừ alpha 2 cộng alpha 2 là mất do đó thì chúng ta sẽ còn là 1 trừ alpha 1 alpha 2 epsilon.
+0:12:00 - 0:12:11, Và một cách tương tự thì cái xt bất kỳ nó sẽ được tính dưới từ cái x0 và một cái biến epsilon theo phân bố chuẩn.
+0:12:11 - 0:12:13, Và công thức của nó sẽ là như đây.
+0:12:13 - 0:12:18, Thế thì alpha ở đây sẽ là alpha gạch ngang trên đầu.
+0:12:18 - 0:12:21, Đó công thức của cái alpha t gạch ngang trên đầu.
+0:12:21 - 0:12:28, Nếu mà viết triển khai ra thì alpha gạch ngang t sẽ bằng alpha 1 alpha 2... cho đến alpha t.
+0:12:28 - 0:12:33, Và epsilon ở đây thì vẫn là một cái biến ngẫu nhiên theo phân bố chuẩn.
+0:12:33 - 0:12:37, Thì cái công thức này chúng ta thấy khá là gọn.
+0:12:37 - 0:12:41, Và như vậy thì chúng ta đã tìm hiểu xong cái quá trình khuếch tán thuận.
+0:12:41 - 0:12:44, Bây giờ chúng ta sẽ sang cái quá trình khuếch tán nghịch.
+0:12:44 - 0:12:48, Với cái thao tác encoding là chúng ta đang phun thêm nhiễu vào.
+0:12:48 - 0:12:53, Vậy thì cái thao tác encoding là chúng ta sẽ tìm cách để đi khử nhiễu.
+0:12:55 - 0:12:57, Chúng ta sẽ tìm cách để đi khử nhiễu.
+0:12:57 - 0:13:01, Và cái hàm khử nhiễu này nó sẽ là có tham số theta.
+0:13:01 - 0:13:08, Hay nói cách khác, encoding theta là một cái hàm số truyền vào cái xt để ra xt trừ một.
+0:13:08 - 0:13:11, Sao cho nó bớt đi một cái lượng nhiễu nào đó.
+0:13:11 - 0:13:14, Như vậy thì làm sao chúng ta có thể khử nhiễu được?
+0:13:14 - 0:13:23, Vì dựa trên cái công thức của cái ELBO mà chúng ta đã có ở những slide trước.
+0:13:23 - 0:13:28, Qua một số cái phép biến đổi, thì ở đây là do số lượng phép biến đổi quá nhiều.
+0:13:28 - 0:13:31, Nên chúng ta chỉ ghi cái kết quả cuối cùng ở đây thôi.
+0:13:31 - 0:13:33, Thì nó sẽ có ba cái thành phần số hạng.
+0:13:33 - 0:13:40, Số hạng đầu tiên đó là cái kỳ vọng của phân bố xác suất của x1 cho trước x0.
+0:13:40 - 0:13:44, X0 của mình chính là cái ảnh gốc ban đầu.
+0:13:44 - 0:13:50, Nó sau đó thêm một ít nhiễu để tạo ra thành x1.
+0:13:50 - 0:13:56, Thì chúng ta sẽ lấy kỳ vọng trên toàn bộ cái phân bố của x1.
+0:13:56 - 0:14:01, Và log của Ptheta x0 cho trước x1.
+0:14:01 - 0:14:04, Thì cái ý nghĩa của cái công thức này đó là gì?
+0:14:04 - 0:14:08, Ý nghĩa của cái công thức này đó là từ x1 cho trước x1.
+0:14:08 - 0:14:11, Chúng ta khôi phục được trở lại x0.
+0:14:11 - 0:14:16, Và phân bố xác suất của Ptheta x0 này là phải cực đại.
+0:14:16 - 0:14:21, Tại vì trong công thức của diffusion model là chúng ta cực đại cái kỳ vọng này.
+0:14:21 - 0:14:25, Tương đương chúng ta cực đại hóa cái kỳ vọng này.
+0:14:25 - 0:14:30, Ở đây vì có dấu trừ nên chúng ta sẽ là minimize, tức là chúng ta tối thiểu hóa cái công thức này.
+0:14:30 - 0:14:34, Ở đây có dấu trừ nên chúng ta sẽ minimize cái công thức này.
+0:14:35 - 0:14:40, Đối với số hạng đầu tiên đó là reconstruction.
+0:14:40 - 0:14:44, Tức là làm sao chúng ta có thể tái tạo lại được cái x0 ban đầu.
+0:14:44 - 0:14:47, Sao cho cái xác suất này là cao nhất.
+0:14:47 - 0:14:51, Tức là chúng ta tái tạo lại được cái x0 ban đầu từ cái x1.
+0:14:51 - 0:14:54, Tái tạo lại được.
+0:14:54 - 0:15:00, Rồi trong cái công thức prior matching, thì ở đây là chúng ta cũng...
+0:15:00 - 0:15:05, Nếu như mà các công thức trước thì chúng ta nhớ lại cái công thức của VAE
+0:15:05 - 0:15:09, thì cái công thức reconstruction này cũng tương tự như VAE.
+0:15:09 - 0:15:11, Prior matching này cũng tương tự như VAE.
+0:15:11 - 0:15:17, Đó là chúng ta làm sao để chính quy hóa với một cái prior distribution.
+0:15:17 - 0:15:22, Tức là chúng ta mong muốn cái phân bố PXT này của mình, đó là một phân bố chuẩn.
+0:15:23 - 0:15:31, Vậy thì làm sao để cho cái q của XT, cho trước XT từ 1
+0:15:31 - 0:15:35, là nó tuân theo một cái phân bố chuẩn.
+0:15:35 - 0:15:38, Giống như cái PXT này.
+0:15:38 - 0:15:41, Thì đây chính là cái thành phần regularization.
+0:15:43 - 0:15:48, Rồi, và thành phần cuối cùng, đó chính là cái kỳ vọng này.
+0:15:48 - 0:15:52, Rồi, chạy t chạy từ 1 cho đến T lớn.
+0:15:52 - 0:15:57, Thì cái ý nghĩa của cái tổng kỳ vọng này đó là cái sự consistency.
+0:15:57 - 0:16:05, Là cái consistency, tức là cái sự nhất quán giữa cái kỳ vọng của cái hàm chúng ta
+0:16:05 - 0:16:11, denoise, giải mã, chúng ta khử nhiễu.
+0:16:11 - 0:16:16, Với lại cái phân bố của q XT, XT từ 1.
+0:16:16 - 0:16:19, Tức là cái phân bố của cái quá trình encode.
+0:16:21 - 0:16:25, Decode nó sẽ giống với cái phân bố mà chúng ta đã từng encode.
+0:16:25 - 0:16:30, Thì trong cái slide tiếp theo, chúng ta sẽ có cái minh họa rõ hơn cái chỗ này.
+0:16:30 - 0:16:35, Các cái thành phần như là reconstruction và prior matching nó tương tự như VAE.
+0:16:35 - 0:16:39, Và cái sự khác biệt ở đây chính là cái consistency, chúng ta đã nhắc như hồi nãy.
+0:16:39 - 0:16:43, Đây chính là cái sự đặc thù riêng của cái diffusion model.
+0:16:43 - 0:16:48, Như vậy thì làm sao để có thể huấn luyện được cái hàm P này.
+0:16:48 - 0:16:52, Sao cho nó khớp với lại cái q.
+0:16:52 - 0:16:56, Thì ở trong cái hình này, nó minh họa một cái trực quan.
+0:16:56 - 0:17:02, Đó là cái quá trình, cái màu tím ở đây, tương ứng là cái màu hồng ở đây.
+0:17:02 - 0:17:06, Là cái phân bố của cái XT.
+0:17:07 - 0:17:14, Phân bố của XT khi chúng ta được encode từ XT-1, được encode từ XT-1.
+0:17:14 - 0:17:17, Tức là chúng ta phun nhiễu và thêm nhiễu từ XT-1.
+0:17:17 - 0:17:26, Thì cái phân bố này nó phải khớp với lại cái phân bố của cái Pθ, tức là cái màu xanh của XT, cho trước XT-1.
+0:17:26 - 0:17:31, Tức là chúng ta khử nhiễu từ XT-1 để về cái XT.
+0:17:31 - 0:17:38, Thì cái kết quả của cái việc thêm nhiễu, nó phải khớp với kết quả của chúng ta khử nhiễu từ cái ảnh phía sau.
+0:17:38 - 0:17:44, Thì đây chính là cái ConsistencyLoss.
+0:17:44 - 0:17:53, Và chúng ta sẽ biến đổi một chút xíu để chuyển từ cái công thức ở bên Slide này về cái dạng.
+0:17:53 - 0:18:00, Đó là chúng ta sẽ tính cái phân bố của cái q XT.
+0:18:00 - 0:18:10, Khi chúng ta biết cả XT và X0, thì tại sao lại như vậy?
+0:18:10 - 0:18:21, Trong cái quá trình mà chúng ta add-denoit và denoit, thì nhờ có cái X0, nó sẽ giúp cho chúng ta định hướng được cái quá trình denoit.
+0:18:21 - 0:18:27, Và đảm bảo được cái XT của mình, đó là một cái phân bố đúng.
+0:18:27 - 0:18:32, Thì khi chúng ta sửa cái công thức bên tay trái lại, viết theo một cái cách khác thì nó sẽ ra như thế này.
+0:18:32 - 0:18:37, Và chúng ta chú ý có một số cái sự khác biệt được highlight bởi cái màu tím.
+0:18:37 - 0:18:46, Nếu như trong công thức trước, là chúng ta làm sao từ XT-1, chúng ta thêm nhiễu vào, chúng ta thêm nhiễu vào XT.
+0:18:46 - 0:18:54, Thì bây giờ, cái công thức của mình là từ X0, chúng ta thêm nhiễu vào để tạo ra cái XT.
+0:18:54 - 0:18:59, Và cái XT này nó vẫn theo cái phân bố Gaussian, ờ, tuân theo cái phân bố chuẩn.
+0:18:59 - 0:19:10, Rồi ở cái công thức bên dưới, cái thành phần consistency nó sẽ chuyển thành là cái phân bố của cái hàm denoit.
+0:19:10 - 0:19:16, Chúng ta denoit cái XT về cái XT-1.
+0:19:16 - 0:19:18, Ờ, denoit.
+0:19:19 - 0:19:26, Từ XT về XT-1, thì cái phân bố này, nó phải giống với lại cái phân bố ground truth.
+0:19:26 - 0:19:31, Ground truth là q của XT-1 cho trước XT và X0.
+0:19:31 - 0:19:41, Thì khi chúng ta biết được cái X0 và chúng ta biết được cái XT, thì chúng ta có thể dễ dàng chúng ta nội suy và tính được cái XT-1.
+0:19:41 - 0:19:48, Còn nếu mà chúng ta không có cái X0 này, thì chúng ta có thể bị lạc hướng và chúng ta sẽ không biết được là cái XT-1 nó nằm ở đâu.
+0:19:48 - 0:19:55, Do đó nhờ có cái thành phần X0 này, nó sẽ giúp chúng ta xác định được cái XT-1.

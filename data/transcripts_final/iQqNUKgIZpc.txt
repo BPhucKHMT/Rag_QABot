@@ -1,0 +1,218 @@
+0:00:14 - 0:00:19, Giải pháp để giải quyết hiện tượng vanishing gradient này là gì?
+0:00:19 - 0:00:23, Chúng ta sẽ phải xem xét đến nguyên nhân.
+0:00:23 - 0:00:30, Trong nguyên nhân của mình là có những cái hàm được xuất hiện đi xuất hiện lại nhiều lần
+0:00:30 - 0:00:33, và giá trị đạo hàm của nó nhỏ hơn một.
+0:00:33 - 0:00:37, Thế thì khi chúng ta đang làm với các mô hình học sâu,
+0:00:37 - 0:00:47, thì cái việc mà một cái hàm lặp đi lặp lại nhiều lần đó là chuyện bắt buộc phải xảy ra rồi.
+0:00:47 - 0:00:58, Việc một cái hàm lặp đi lặp lại nhiều lần là một cái việc mà hoàn toàn là khó tránh khỏi.
+0:01:02 - 0:01:07, Do đó cái vế đầu tiên đó là cái hàm của mình lặp đi lặp lại nhiều lần thì mình sẽ không can thiệp vào
+0:01:07 - 0:01:22, mà mình sẽ đưa đến cái giải quyết bằng cách đó là chúng ta sẽ chọn một cái hàm mà có cái giá trị đạo hàm không quá bé.
+0:01:22 - 0:01:27, Thế thì ở đây chúng ta sẽ tấn công vô cái hàm kích hoạt tức activation.
+0:01:28 - 0:01:33, Thì nếu như chúng ta không dùng cái hàm kích hoạt có đạo hàm nhỏ,
+0:01:33 - 0:01:39, thì chúng ta sẽ chọn những cái hàm kích hoạt mà có cái đạo hàm nó có tính chất cân bằng hơn.
+0:01:39 - 0:01:42, Cân bằng hơn tức là nó sẽ gần bằng một.
+0:01:42 - 0:01:47, Hoặc là có thể lúc nó sẽ là số rất bé nhưng mà cũng có thể là số lớn,
+0:01:47 - 0:01:50, nó sẽ phải dao động xung quanh con số một.
+0:01:50 - 0:01:55, Còn với hàm sigmoid thì cho dù là hàm kích hoạt có đạo hàm nhỏ,
+0:01:55 - 0:01:59, cho dù là hàm của mình nó có kiến trúc gì đi chăng nữa,
+00:01:59 - 0:02:02, thì sigmoid của x luôn luôn là con số bé hơn một.
+0:02:02 - 0:02:07, Trong khi đó chúng ta không có dùng cái hàm này, không dùng hàm sigmoid nữa,
+0:02:07 - 0:02:10, mà chúng ta dùng hàm relu.
+0:02:10 - 0:02:17, Thì đạo hàm của hàm relu này thì nó sẽ là bằng 0.
+0:02:18 - 0:02:25, Nếu z bé hơn 0 và bằng 1 nếu z lớn hơn 0,
+0:02:28 - 0:02:31, thì cái việc này nó sẽ giúp chúng ta cân bằng.
+0:02:31 - 0:02:36, Và chúng ta lưu ý đó là không phải lúc nào z khi chúng ta gọi hàm activation function,
+0:02:36 - 0:02:39, thì cái giá trị chúng ta truyền vô là đều bé hơn 0,
+0:02:39 - 0:02:41, nó sẽ có lúc bé hơn 0, có lúc lớn hơn 0,
+0:02:41 - 0:02:44, do đó nó tạo ra sự hài hòa và sự cân bằng cho mình.
+0:02:45 - 0:02:48, Đó là cái biểu hiện của tính cân bằng,
+0:02:48 - 0:02:49, là thể hiện cho đó.
+0:02:49 - 0:02:51, Nó sẽ lúc không, lúc bằng một,
+0:02:51 - 0:02:55, nhưng mà trung bình thì nó sẽ là xoay xung quanh con số một.
+0:02:57 - 0:03:02, Và với cái thao tác là đổi cái hàm sigmoid thành relu,
+0:03:02 - 0:03:06, thì AlexNet đã ghi một cái dấu ấn,
+0:03:06 - 0:03:09, đó là vào năm 2012,
+0:03:09 - 0:03:14, đó là khi lần đầu tiên trong một cuộc thi về phân loại hình ảnh,
+0:03:14 - 0:03:16, trên tập dữ liệu là ImageNet.
+0:03:18 - 0:03:21, Thì cái kiến trúc mạng CNN đã chiến thắng
+0:03:21 - 0:03:25, so với lại các giải pháp sử dụng đặc trưng handcrafted features,
+0:03:25 - 0:03:27, tức là lần đầu tiên mà deep learning
+0:03:27 - 0:03:30, có được cái độ chính xác vượt trội so với lại
+0:03:30 - 0:03:35, các mô hình sử dụng đặc trưng được thu thủ công.
+0:03:36 - 0:03:40, Và một trong những cái tạo nên sự khác biệt của AlexNet
+0:03:40 - 0:03:42, đó chính là có sử dụng hàm relu,
+0:03:43 - 0:03:45, thay vì sử dụng hàm sigmoid thì họ dùng relu.
+0:03:45 - 0:03:47, Tuy nhiên họ sẽ còn những cái cải tiến khác,
+0:03:47 - 0:03:51, nhưng mà ứng với lại cái vấn đề về vanishing gradient thì
+0:03:51 - 0:03:53, họ đã có những cái cập nhật này.
+0:03:55 - 0:03:58, Cái giải pháp số 2, đó là chúng ta sẽ thêm các cái kết nối tắt,
+0:03:58 - 0:04:01, tức là chúng ta sẽ can thiệp vô cái kiến trúc,
+0:04:01 - 0:04:08, thay đổi cái kiến trúc của cái mô hình, học sâu.
+0:04:09 - 0:04:14, Thì đối với một cái mạng neural network bình thường,
+0:04:14 - 0:04:17, thì chúng ta sẽ thực hiện cái phép biến đổi là
+0:04:17 - 0:04:22, tính, weight layer, tức là chúng ta đang thực hiện phép biến đổi tuyến tính
+0:04:22 - 0:04:24, để rút trích đặc trưng,
+0:04:24 - 0:04:26, sau đó rồi chúng ta qua hàm relu,
+0:04:26 - 0:04:28, để phi tuyến hóa cái đặc trưng đó,
+0:04:28 - 0:04:31, rồi sau đó lại qua weight layer,
+0:04:31 - 0:04:33, tức là để rút trích đặc trưng,
+0:04:33 - 0:04:35, rồi lại đi relu.
+0:04:35 - 0:04:38, Thì đây là cái thao tác biến đổi một cách tuần tự.
+0:04:39 - 0:04:41, Và chúng ta ký hiệu nó là hx.
+0:04:41 - 0:04:44, Thì nếu như chúng ta dùng một cái kiến trúc mạng bình thường như thế này,
+0:04:44 - 0:04:46, mà không có cái kết nối tắt,
+0:04:46 - 0:04:48, kết nối tắt là gì thì chúng ta sẽ nói trong slide tiếp theo.
+0:04:48 - 0:04:51, Nhưng mà với cái kiến trúc thông lệ này,
+0:04:51 - 0:04:54, thì khi tác giả của cái bài báo
+0:04:54 - 0:04:57, là Deep Residual Learning for Image Recognition,
+0:04:57 - 0:05:01, bài này là viết tắt của cái kiến trúc mạng là ResNet,
+0:05:01 - 0:05:04, là tác giả Kaming Hair,
+0:05:04 - 0:05:12, thì khi chúng ta tăng số layer lên từ 20 lên 32 lên 46 lên 56,
+0:05:12 - 0:05:16, thì cái giá trị loss của mình nó lại càng lúc càng cao.
+0:05:16 - 0:05:19, Khi mà tăng layer lên thì nó lại đi hội tụ chậm.
+0:05:22 - 0:05:27, Nó hội tụ chậm hơn so với lại những cái layer ít,
+0:05:27 - 0:05:29, so với lại những cái mạng mà ít layer hơn.
+0:05:29 - 0:05:31, Thì đây là một cái điều vô lý,
+0:05:32 - 0:05:36, tại vì nó sẽ khiến cho mô hình của mình không có tốt
+0:05:36 - 0:05:40, đối với những cái mạng có kiến trúc sâu.
+0:05:40 - 0:05:44, Mặc dù trước đó đã có một số công trình họ nghiên cứu
+0:05:44 - 0:05:47, và họ khái quát hóa rằng khi mạng càng sâu,
+0:05:51 - 0:05:54, thì nó sẽ càng tạo ra nhiều đặc trưng tốt,
+0:05:54 - 0:05:57, tạo ra càng nhiều đặc trưng,
+00:05:57 - 0:06:00, từ đặc trưng cấp thấp cho đến đặc trưng cấp cao
+0:06:01 - 0:06:05, và nó sẽ bổ trợ cho cái việc phân biệt đối tượng.
+0:06:05 - 0:06:07, Nhưng mà khi chúng ta tăng cái độ sâu lên,
+0:06:07 - 0:06:09, thì nó lại không còn hiệu quả nữa.
+0:06:09 - 0:06:15, Thì đây chính là cái quan sát đầu tiên của các tác giả của bài ResNet
+0:06:15 - 0:06:19, và họ đã đưa ra một số lý giải
+0:06:19 - 0:06:23, và đề xuất một cái giải pháp rất là đơn giản.
+0:06:23 - 0:06:25, Đó là chúng ta thêm một cái kết nối tắt như thế này.
+0:06:25 - 0:06:27, Thêm một cái kết nối tắt là cái đường này.
+0:06:27 - 0:06:32, Và chúng ta ý nghĩa của cái hàm kết nối tắt này đó là gì?
+0:06:32 - 0:06:35, Hx sẽ là bằng fx,
+0:06:35 - 0:06:37, hx là bằng fx,
+0:06:37 - 0:06:39, tức là các cái thao tác biến đổi tuần tự,
+0:06:39 - 0:06:41, cộng thêm chính x đầu vào.
+0:06:41 - 0:06:43, Chỉ là đơn giản như vậy thôi.
+0:06:43 - 0:06:47, Thế thì tại sao một cái thao tác biến đổi đơn giản này
+0:06:47 - 0:06:49, nó lại giúp cho chúng ta
+0:06:49 - 0:06:53, giải quyết được cái vấn đề balancing gradient?
+0:06:53 - 0:06:55, Đó là vì chúng ta khi chúng ta tính đạo hàm,
+0:06:56 - 0:07:00, thì bình thường là nếu như hx mà bằng fx,
+0:07:00 - 0:07:04, tức là các cái phép biến đổi tuần tự ở đây,
+0:07:04 - 0:07:06, thì khi chúng ta tính đạo hàm,
+0:07:06 - 0:07:08, các cái activation function này mặc dù đã được thiết kế,
+0:07:08 - 0:07:12, là đã có thể giảm thiểu được cái hiện tượng balancing gradient,
+0:07:12 - 0:07:14, nhưng mà cái việc huấn luyện thì các cái...
+0:07:14 - 0:07:18, càng về sau thì các cái đạo hàm của mình nó sẽ có xu hướng càng nhỏ
+0:07:18 - 0:07:21, và nó sẽ tiến về là nhỏ hơn một.
+0:07:21 - 0:07:23, Dẫn đến đó là cái mô hình của mình
+0:07:24 - 0:07:28, sẽ càng về sau, nó sẽ càng khó hội tụ hơn.
+0:07:28 - 0:07:30, Có thể ban đầu nó sẽ hội tụ tốt, nhưng về sau nó khó hội tụ hơn.
+0:07:30 - 0:07:36, Thì khi đó là đạo hàm của f này sẽ là...
+0:07:36 - 0:07:38, không có... nó sẽ mau tiến về không.
+0:07:40 - 0:07:44, Thế thì với cái việc chúng ta cộng thêm x thì đạo hàm...
+0:07:44 - 0:07:48, bên đây là đạo hàm của x, của h,
+0:07:48 - 0:07:50, là bằng đạo hàm của hàm f,
+0:07:50 - 0:07:52, tức là chúng ta vẫn lấy những cái đặc trưng bình thường.
+0:07:53 - 0:07:55, Đây là các cái đặc trưng bình thường.
+0:08:01 - 0:08:03, Nhưng mà chúng ta sẽ có thêm cái vế cộng x này,
+0:08:03 - 0:08:07, mà đạo hàm của x thì nó chính là bằng một.
+0:08:07 - 0:08:13, Như vậy thì nhờ có cái thao tác mà cộng thêm một này,
+0:08:13 - 0:08:17, thì kể cả sau này khi đạo hàm này có lớn hơn không,
+0:08:17 - 0:08:21, hay nhỏ hơn không, thì cái đạo hàm của h sẽ là dao động.
+0:08:23 - 0:08:29, Dao động quanh số 1,
+0:08:29 - 0:08:31, nó sẽ khiến cho cái mô hình của mình,
+0:08:31 - 0:08:33, nó sẽ càng cân bằng hơn.
+0:08:35 - 0:08:37, Cái đạo hàm của mình nó cân bằng hơn.
+0:08:37 - 0:08:43, Do cái h phải, tức là đạo hàm của h,
+0:08:43 - 0:08:47, lúc thì nó sẽ nhận số lớn hơn một, lúc nhận số nhỏ hơn một,
+0:08:47 - 0:08:51, tại vì nó tùy thuộc vô cái đạo hàm của f là có...
+0:08:51 - 0:08:57, nhưng mà trung dung nhất thì là h phải x sẽ nhận các cái giá trị vừa dao động
+0:08:57 - 0:08:59, xung quanh số 1.
+0:08:59 - 0:09:01, Khi chúng ta tính cái chain rule,
+0:09:01 - 0:09:05, các cái con số mà dao động quanh số 1 nó sẽ là cân bằng,
+0:09:05 - 0:09:09, dẫn đến là đạo hàm của mình sẽ không có giảm quá nhanh.
+0:09:09 - 0:09:13, Thì đó là cái lý thuyết lý giải về lý thuyết toán.
+0:09:13 - 0:09:19, Và đây là một cái phương pháp rất là đơn giản.
+0:09:20 - 0:09:22, Nhưng mà cực kỳ hiệu quả.
+0:09:22 - 0:09:24, Ở đây tôi nhấn mạnh đó là...
+0:09:24 - 0:09:26, dùng cái từ là cực kỳ hiệu quả.
+0:09:26 - 0:09:29, Và rất nhiều những cái bài báo về sau,
+0:09:29 - 0:09:32, họ đều có sử dụng cái ý tưởng kết nối tắt này.
+0:09:32 - 0:09:34, Ví dụ như trong kiến trúc ResNet,
+0:09:34 - 0:09:38, đối với kiến trúc VGG trước đó là VGG 19,
+0:09:38 - 0:09:41, là bao gồm 19 cái layer biến đổi này,
+0:09:41 - 0:09:45, thì nó đã đạt được cái ngưỡng bão hòa về độ chính xác,
+0:09:45 - 0:09:47, nó không thể tăng lên được nữa.
+0:09:47 - 0:09:51, Nó tăng lên là 20 lớp, 30 lớp là nó gần như nó bão hòa và nó không có...
+0:09:51 - 0:09:53, thậm chí là nó còn giảm.
+0:09:53 - 0:09:57, Nhưng ResNet bằng cái cơ chế Skip Connection,
+0:09:57 - 0:10:02, đây là cái Skip Connection, các cái kết nối tắt,
+0:10:02 - 0:10:08, thì ResNet đã có thể huấn luyện được với những cái mạng có số lượng layer lên đến là 34 lớp,
+0:10:08 - 0:10:11, và thậm chí là lên đến trên 100 lớp.
+0:10:11 - 0:10:16, Nhưng mà độ chính xác của mình nó vẫn càng lúc càng cải tiến, càng tốt.
+0:10:16 - 0:10:19, Vậy thì nhờ có cái Skip Connection này,
+0:10:19 - 0:10:22, thì khi chúng ta tính ra cái giá trị Loss ở đây,
+0:10:22 - 0:10:24, nếu như bình thường,
+0:10:24 - 0:10:27, nếu như bình thường chúng ta tính Loss,
+0:10:27 - 0:10:30, và chúng ta muốn lan truyền đến những cái layer ở lớp đầu tiên,
+0:10:30 - 0:10:33, những cái layer số 1, số 2,
+0:10:35 - 0:10:39, thì khi chúng ta lan truyền cái độ lỗi về đến cái layer đầu tiên,
+0:10:39 - 0:10:41, thì cái Loss gần như đã bị triệt tiêu.
+0:10:42 - 0:10:50, Là cái đạo hàm của hàm j theo những cái tham số ở những cái lớp số 1 hoặc là số 2 gần như bằng 0.
+0:10:50 - 0:10:58, Vì chúng ta phải thực hiện các cái con số nhân này với 34, 34 cái đạo hàm
+0:11:00 - 0:11:02, của các cái con số,
+0:11:02 - 0:11:06, ờ, của các cái đạo hàm thành phần là do của 34 lớp.
+0:11:06 - 0:11:09, Nhưng nhờ có các cái Skip Connection này,
+0:11:09 - 0:11:11, thì khi chúng ta lan truyền cái lỗi,
+0:11:11 - 0:11:18, thì cái số bước nhảy này sẽ giúp chúng ta giảm bớt con đường để đi từ layer cuối về layer đầu.
+0:11:18 - 0:11:20, Ví dụ như trên hình này,
+0:11:20 - 0:11:27, chúng ta có là 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16.
+0:11:27 - 0:11:31, Tức là chúng ta chỉ còn 16 lần, 16 cái bước nhảy.
+0:11:35 - 0:11:37, Như vậy là nó đã tăng gấp đôi,
+0:11:37 - 0:11:41, nó đã tăng được tốc độ gấp đôi để lan truyền cái độ lỗi đó xuống.
+0:11:41 - 0:11:47, Đó thì chính là cái lý giải 1 cái góc nhìn khác về cái lý thuyết về mặt thông tin.
+0:11:47 - 0:11:52, Tức là cái sai số nếu bình thường chúng ta truyền qua các cái tuần tự,
+0:11:52 - 0:11:54, thì về đến đây là nó đã bị tiêu biến dần.
+0:11:54 - 0:11:59, Nhưng mà nhờ có các Skip Connection này thì cái sai số truyền qua cái đường tắt.
+0:11:59 - 0:12:02, Thì đến đây nó chỉ có 16 bước thôi.
+0:12:02 - 0:12:04, Nó sẽ ít hơn nhiều so với 0.34 bước.
+0:12:04 - 0:12:10, Vì vậy là cái mô hình của mình sẽ đỡ hiện tượng vanishing gradient hơn.
+0:12:12 - 0:12:14, Và với cái sự thay đổi đó,
+0:12:14 - 0:12:22, thì ở phiên bản trước, đây là trước khi dùng Skip Connection.
+0:12:22 - 0:12:24, Và đây là sau.
+0:12:24 - 0:12:27, Sau khi dùng Skip Connection thì chúng ta thấy là
+0:12:27 - 0:12:38, Cái layer số 50, 6 và thậm chí là cái layer số 110 là cho cái loss thấp hơn so với lại cái loss của cái layer số 20.
+0:12:38 - 0:12:47, Trong khi đó bên đây là không có dùng thì 56, cái giá trị sai số của nó còn cao hơn cả cái sai số của layer số,
+0:12:47 - 0:12:51, của cái mô hình mà có layer số 20 lớp.
+0:12:51 - 0:12:58, Vì vậy chúng ta thấy là cái tác dụng của cái nối tắt rất là hiệu quả.
+0:12:58 - 0:13:04, Đặc biệt là chúng ta vẫn có thể tiếp tục cải tiến được trên những cái mạng mà có số lớp lên đến hàng trăm.
+0:13:04 - 0:13:11, Và không phải ngẫu nhiên mà cái bài này được đánh giá là một trong những thành tựu lớn trong Deep Learning.
+0:13:11 - 0:13:15, Vì đến tính từ thời điểm 2015 cho đến bây giờ là 10 năm.
+0:13:15 - 0:13:23, Và đã có là hơn 200.000 và gần xấp xỉ 300.000 citation, là 300.000 cái trích dẫn.
+0:13:23 - 0:13:32, Thì cách đây là hơn một năm thì mới chỉ khoảng là 210.000 nhưng mà sau một năm là nó nhảy lên 90.000.
+0:13:32 - 0:13:42, Thì thế thì chúng ta thấy đó là cái tốc độ tăng citation rất là nhanh và chưa thấy có một cái dấu hiệu gì là dừng lại.
+0:13:42 - 0:13:50, Thì điều đó chứng tỏ là cái kỹ thuật mà Skip Connection này rất là hiệu quả và được rất nhiều những cái nghiên cứu họ sử dụng gần đây.
+0:13:52 - 0:14:01, Và với cái kết nối tắt này thì không chỉ ResNet mà những cái kiến trúc khác ví dụ như là DenseNet cũng sẽ có các cái kết nối tắt.
+0:14:01 - 0:14:03, Đây là các kết nối tắt.
+0:14:04 - 0:14:12, Rồi Transformer cũng vậy. Chúng ta thấy là Transformer là Attention Is All You Need.
+0:14:16 - 0:14:19, Tức là là tất cả những gì bạn cần.
+0:14:19 - 0:14:25, Nhưng mà các bạn nhìn vô đây thì chúng ta thấy cái kết nối tắt mới chính là những cái thao tác mà nhiều nhất.
+0:14:25 - 0:14:27, Đây là một cái nối tắt.
+0:14:27 - 0:14:29, Một kết nối tắt.
+0:14:29 - 0:14:31, Rồi lại tiếp tục kết nối.
+0:14:31 - 0:14:33, Kết nối tắt.
+0:14:33 - 0:14:39, Đó thì không biết là Attention Is All You Need hay là Skip Connection Is All You Need. Cái này là một cái nói vui.
+0:14:41 - 0:14:48, Và tương tự như vậy thì cũng sẽ có Deep Supervision là một cái kiến trúc mạng mà có các cái kết nối tắt.
+0:14:48 - 0:14:53, Thì cái kết nối tắt này nó không có theo kiểu của DenseNet mà là nó sẽ tắt ra thành từng nhánh.
+0:14:53 - 0:15:01, Và với mỗi nhánh thì chúng ta thấy nếu đi theo đúng cái đường ban đầu là cái đường kiến trúc ở giữa thì sẽ biến đổi rất là nhiều.
+0:15:01 - 0:15:07, Nhưng mà nhờ có cái nhánh nó tắt ra, tắt ra, tắt ra, tắt ra ở đây.
+0:15:07 - 0:15:12, Thì chúng ta sẽ tính các cái loss ở những cái lớp mà có ít biến đổi hơn.
+0:15:12 - 0:15:22, Thì những cái loss ở các lớp ít biến đổi này thì khi chúng ta lan truyền về thì chúng ta sẽ giúp cập nhật được trọng số của những lớp đầu tiên dễ dàng hơn.
+0:15:22 - 0:15:28, Tại vì khoảng cách từ lớp đầu tiên này cho đến những cái... ví dụ như đến đây đi.
+0:15:28 - 0:15:30, Đến cái chỗ loss này.
+0:15:30 - 0:15:34, Chúng ta thấy là chỉ có 1, 2, 3, 4, 5, 6, 7 bước.
+0:15:35 - 0:15:48, Trong khi đó nếu chúng ta đi hết nguyên 1 cái trục này thì có thể lên đến gấp 2, thậm chí là gấp 2,5 lần là có thể lên đến là 16, 17 bước.
+0:15:48 - 0:16:04, Thì nhờ các cái kết nối đầu ra như thế này, nó sẽ giúp cho chúng ta lan truyền đến cái trọng... cái độ lỗi đến những cái lớp đầu tiên và ít bị hiện tượng vanishing gradient hơn.
+0:16:18 - 0:16:22, Cảm ơn các bạn đã xem video hấp dẫn.

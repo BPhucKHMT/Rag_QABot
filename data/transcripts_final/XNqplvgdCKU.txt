@@ -1,0 +1,79 @@
+0:00:14 - 0:00:19, Tiếp theo, chúng ta sẽ cùng tìm về phần 2 của mô hình ngôn ngữ Thiết
+0:00:19 - 0:00:28, Trong phần trước, chúng ta đã tìm hiểu về mô hình grounded image
+0:00:28 - 0:00:45, Đầu vào có 1 câu prompt, nó sẽ kết hợp với 1 tấm ảnh để đầu ra
+0:00:45 - 0:01:00, Nhưng nó sẽ dừng ở Bounding Box, kết hợp với className
+0:01:00 - 0:01:10, Đây là bài toán dạng Zero-Shot, tức là chúng ta không huấn luyện đối tượng này
+0:01:10 - 0:01:18, Trong phần 2, chúng ta sẽ giải quyết bài toán cũng gần như tương tự
+0:01:18 - 0:01:25, Nhưng output của chúng ta không phải là Bounding Box, mà sẽ là một cái segment, cái mask
+0:01:25 - 0:01:38, Nó sẽ chi tiết hơn, không phải là một cái đường bao xung quanh đối tượng
+0:01:38 - 0:01:45, Mô hình ở đây chúng ta sẽ nghiên cứu, đó chính là 2 mô hình Grounded-Dino và SAM
+0:01:46 - 0:01:53, Sau đó chúng ta sẽ mở rộng ra mô hình ngôn ngữ LM cho bài toán hiểu nội dung ảnh
+0:01:53 - 0:02:04, Và một trong những mô hình có mục tiêu tương tự như GPT, VQA, đó chính là mô hình LLaVA
+0:02:04 - 0:02:09, Sau đó chúng ta sẽ cùng tìm hiểu qua một số biến thể của mô hình này
+0:02:10 - 0:02:13, Đầu tiên chúng ta sẽ nói về Grounded-Dino
+0:02:13 - 0:02:22, Trước Grounded-Dino thì đã có một cái mô hình nổi đình nổi đám của Meta, MetaAI
+0:02:22 - 0:02:24, Đó chính là SegmentAnything, SAM
+0:02:24 - 0:02:32, Ý tưởng của cái mô hình này đó là, đầu tiên họ xây dựng một cái bộ dataset lên đến hàng tỷ ảnh
+0:02:33 - 0:02:43, Và trong dataset này thì nó sẽ chứa cái mask của các đối tượng, tức là ảnh, cộng với cái mask
+0:02:43 - 0:02:48, Và cái mask này thì được đảm bảo là cái chất lượng của nó rất là cao
+0:02:48 - 0:02:54, Tức là nó sẽ phủ đúng những đối tượng có bên trong ảnh
+0:02:55 - 0:03:02, Đồng thời nó sẽ phủ đầy đủ, không chỉ phủ đúng mà phủ đầy đủ các cái bộ phận
+0:03:02 - 0:03:09, Thậm chí là ví dụ trong cái hình này chúng ta thấy là nó sẽ có thể phủ được đến cái mức độ chân của cái tripod này
+0:03:09 - 0:03:11, Thì đó là về dataset
+0:03:11 - 0:03:14, Sau đó họ huấn luyện cái mô hình SegmentAnything
+0:03:14 - 0:03:18, Và ý tưởng của cái mô hình SegmentAnything đó là
+0:03:18 - 0:03:23, Đầu vào sẽ có một cái tấm ảnh, rồi qua một cái image encoder
+0:03:24 - 0:03:26, Thì nó sẽ ra một cái embedding
+0:03:26 - 0:03:31, Cái embedding này là cái vector biểu diễn của cái tấm hình
+0:03:31 - 0:03:36, Và đầu vào thì nó sẽ có là prompt
+0:03:36 - 0:03:43, Nhưng mà chúng ta lưu ý là cái prompt của SAM đó là special prompt
+0:03:43 - 0:03:49, Tức là những cái prompt mang tính chất gọi là có thông tin về mặt tọa độ
+0:03:49 - 0:03:53, Ví dụ như là các cái điểm bounding box hoặc là mask
+0:03:53 - 0:03:58, Thế thì ý nghĩa của nó là gì? Ví dụ như trong hình tay phải chúng ta thấy cái prompt của mình
+0:03:58 - 0:04:01, Cái chỉ dẫn của mình nó ở dạng là
+0:04:01 - 0:04:06, Dạng điểm hay gọi là point
+0:04:10 - 0:04:16, Nghĩa là chúng ta sẽ chấm vô đây và cho cái mô hình nó biết là cái đối tượng mà chúng ta cần phải segment
+0:04:16 - 0:04:19, Nó sẽ có ở cái vị trí này
+0:04:19 - 0:04:22, Tương tự như vậy chúng ta cũng sẽ chấm vô đây
+0:04:23 - 0:04:28, Để cho cái mô hình biết là cái đối tượng của mình muốn lấy ra cũng ở vị trí này
+0:04:28 - 0:04:33, Với 2 cái dấu chấm này nó sẽ giúp chúng ta khoanh vùng
+0:04:33 - 0:04:36, Và cái khoanh vùng nó sẽ được vẽ bằng cái đường bao màu xanh ở đây
+0:04:36 - 0:04:38, Thì nó sẽ tách ra cái đối tượng này
+0:04:38 - 0:04:42, Như vậy thì cái prompt của mình nó sẽ là 1 cái special prompt
+0:04:42 - 0:04:48, Là cái prompt ở dạng điểm bounding box hoặc là mask
+0:04:48 - 0:04:53, Tương tự như vậy nếu như chúng ta khoanh vùng 1 cái bounding box như thế này
+0:04:53 - 0:04:58, Thì nó sẽ vẽ cho chúng ta cái đường bao chi tiết xung quanh cái đối tượng của mình
+0:04:58 - 0:05:04, Như vậy cái input của mình là không phải ở dạng text
+0:05:04 - 0:05:08, Và với cái prompt này thì nó sẽ qua 1 cái prompt encoder
+0:05:08 - 0:05:14, Rồi sau đó nó sẽ qua cái module gọi là mask decoder
+0:05:14 - 0:05:17, Để kết hợp cái thông tin của cái prompt
+0:05:17 - 0:05:19, Tức là cái special prompt
+0:05:19 - 0:05:23, Và cái image embedding, cái vector biểu diễn của tấm ảnh
+0:05:23 - 0:05:26, Để từ đó nó tạo ra cái mask
+0:05:26 - 0:05:33, Và cái mask này sẽ là cái mask xung quanh cái đối tượng được chỉ dẫn bởi cái prompt ở trên đây
+0:05:33 - 0:05:38, Thì cái hình bên đây đó là minh họa là cái mask này được decode ra
+00:05:38 - 0:05:41, Với 2 cái chỉ dẫn tại prompt point ở dạng điểm
+0:05:41 - 0:05:45, Như vậy thì làm sao chúng ta có thể giải quyết được cái bài toán này
+0:05:46 - 0:05:54, Giải quyết được cái bài toán đó là referencing segmentation
+0:05:56 - 0:06:05, Tức là chúng ta sẽ đưa cho nó một cái dạng là ngôn ngữ để cho nó hiểu được cái đối tượng
+0:06:05 - 0:06:13, Ví dụ như ở đây chúng ta cung cấp cho nó 1 cái prompt là a cat is hitting another cat
+00:06:13 - 0:06:17, Thì một cái con mèo nó đang đá một cái con mèo khác
+00:06:17 - 0:06:19, Thì nó sẽ hiểu là chúng ta sẽ khoanh vùng này
+00:06:19 - 0:06:21, Thay vì chúng ta chấm 2 cái điểm ở đây
+0:06:21 - 0:06:28, Thì đây chính là cái mục tiêu của cái model đó là Grounded-Dino
+0:06:28 - 0:06:36, Thì đó chính là làm sao đưa vào, đầu vào cho prompt làm một cái ngôn ngữ mô tả
+0:06:36 - 0:06:42, Thế thì cái ý tưởng đó là chúng ta sẽ dùng một cái mô hình phát hiện đối tượng khác
+0:06:42 - 0:06:45, Có sẵn để lấy cái bounding box của nó ra
+0:06:45 - 0:06:48, Tức là chúng ta sẽ có một cái object detector
+0:06:48 - 0:06:54, Và chúng ta sẽ đưa vào một cái từ khóa
+0:06:54 - 0:06:59, Rồi sau đó nó sẽ tìm ra ví dụ như chúng ta có thể sử dụng mô hình là CLIP hoặc là GLIP
+0:07:01 - 0:07:03, Cái này là viết tắt, cái này là GLIP
+0:07:03 - 0:07:09, Rồi thì khi chúng ta đưa vào cái mô hình kiểu như là ví dụ như CLIP
+0:07:09 - 0:07:13, Thì input của mình nó sẽ là một cái prompt
+0:07:13 - 0:07:17, Và output của mình nó sẽ ra được một cái bounding box
+0:07:17 - 0:07:21, Và prompt này là ở dạng text
+0:07:21 - 0:07:32, Thế thì điều gì xảy ra nếu như cái mô hình của mình nó không thấy được cái đối tượng hoặc là cái đối tượng của mình đó là cái đối tượng mới hoàn toàn
+0:07:32 - 0:07:34, Không có trong cái tập dataset
+0:07:34 - 0:07:38, Thì khi đó là cái phương pháp A này là không ổn
+0:07:38 - 0:07:43, Là do nó không thể hiểu được cái từ khóa
+0:07:43 - 0:07:47, Hiểu được cái đối tượng mà thể hiện ở trong cái câu mô tả

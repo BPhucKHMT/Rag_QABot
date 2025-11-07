@@ -1,0 +1,88 @@
+00:00:00 - 00:00:20, Chúng ta sẽ cùng đến với vấn đề thứ 2 khi huấn luyện với một mô hình học sâu đó chính là Valenixing-Reyel.
+00:00:20 - 00:00:28, Nếu như cái vấn đề về overfitting hay là quá khớp với dị liệu thì nó rất tổn quát cho các mô hình máy học.
+00:00:28 - 00:00:32, Mọi mô hình máy học đều sẽ gặp những vấn đề về overfitting.
+00:00:32 - 00:00:38, Còn vấn đề về Valenixing-Reyel thì thường chỉ dành cho các mô hình học sâu.
+00:00:38 - 00:00:44, Vậy thì cơ chế của ổ khí hiện tượng Valenixing-Reyel là gì và làm sao để khắc phục được vấn đề này?
+00:00:44 - 00:00:47, Chúng ta sẽ cùng đến trong những phần tiếp theo.
+00:00:48 - 00:00:54, Đầu tiên, như đã nói đây là một mô hình chỉ dành cho các deep learning model.
+00:00:54 - 00:01:00, Khi chúng ta làm với các deep model thì chúng ta mới cần xem xét đến vấn đề này.
+00:01:00 - 00:01:10, Và hiện tượng thể hiện của nó đó chính là mô hình của mình sẽ hội tụ chậm hoặc là thậm chí không hội tụ sau vài vòng lập.
+00:01:11 - 00:01:15, Tức là có thể ở những vòng lập đầu tiên thì nó sẽ hội tụ rất tốt.
+00:01:15 - 00:01:22, Nhưng mà sau vài vòng lập thì nó sẽ không còn hội tụ được nữa hoặc là tốc độ hội tụ của mình rất chậm.
+00:01:23 - 00:01:30, Vậy thì bây giờ chúng ta sẽ cùng lý giải xem cái bản chất bên trong của hiện tượng Valenixing-Reyel là gì.
+00:01:30 - 00:01:35, Và chúng ta sẽ sử dụng các mô hình toán học để giải thích cho nó.
+00:01:35 - 00:01:42, Đầu tiên chúng ta giả sử hàm lỗi của mô hình đó chính là hàm J theta.
+00:01:43 - 00:01:51, Và như chúng ta biết là các mô hình học sâu thì nó sẽ rất phức tạp và có nhiều layer biến đổi liên tiếp nhau.
+00:01:51 - 00:01:55, Do đó thì cái hàm lỗi của mình nó sẽ là một cái dạng hàng hợp,
+00:01:55 - 00:01:59, nó là một cái hàm hợp gồm nhiều hàm thành phần.
+00:02:01 - 00:02:11, Ví dụ như ở đây chúng ta có hàm J theta là bằng Fn trường 1 cho đến F2, F1 và theta.
+00:02:11 - 00:02:17, Và gradient theo tham số của mình nó sẽ được tính theo cái công thức này.
+00:02:17 - 00:02:26, Lu ý là cái theta của mình nó sẽ là vector hoặc là một tập hợp các cái tham số thành phần.
+00:02:26 - 00:02:30, Ví dụ như chúng ta xét trên cái tham số thành phần là theta i.
+00:02:32 - 00:02:40, Thì khi đó đạo hàm của J theo theta i nó sẽ là bằng đạo hàm của Fn theo Fn trường 1,
+00:02:40 - 00:02:51, nhân với đạo hàm của Fn trường 1 theo Fn trường 2, nhân cho đạo hàm F2 theo F1 và nhân đạo hàm của F1 theo theta i.
+00:02:53 - 00:03:03, Thì đây là một cái dạng quy tắc gọi là nối tiếp, quy tắc chủi trong cái việc là khai triển đạo hàm hay gọi là gen rule.
+00:03:03 - 00:03:16, Rồi, thế thì cái hiện tượng vanishing gradient sẽ được giải thích dựa trên cái công thức gen rule này.
+00:03:16 - 00:03:24, Đó là trong cái mô hình học sâu thì chúng ta mặc dù là nó có rất nhiều những cái layer biến đổi,
+00:03:24 - 00:03:31, nhưng mà đâu đó những cái hàm ở đây sẽ là những cái hàm được thực hiện lặp đi lặp lại nhiều lần.
+00:03:31 - 00:03:34, Thì đó là có những cái hàm xuất hiện nhiều lần.
+00:03:34 - 00:03:42, Ví dụ trong mô hình học sâu thì activation function hàm kết hoạt là một trong những hàm mà xuất hiện nhiều lần.
+00:03:42 - 00:03:55, Tại vì chúng ta có một cái nguyên tắc đó là ngay sau cái phép biến đổi tiến tính là một cái hàm kết hoạt.
+00:03:55 - 00:04:00, Và đây là hàm phi tuyến.
+00:04:00 - 00:04:07, Thế thì tại sao chúng ta lại phải có một cái hàm kết hoạt?
+00:04:07 - 00:04:12, Tại vì nếu không có hàm kết hoạt thì chúng ta chỉ có phi tuyến tính.
+00:04:12 - 00:04:18, Thế thì sau cái phép biến đổi tiến tính mà là một phép biến đổi tiến tính thì bản chất đó là một tổ hợp tuyến tính.
+00:04:18 - 00:04:22, Do đó thì nó cũng chỉ có thể giải quyết được các cái bài thoáng đơn giản.
+00:04:22 - 00:04:30, Khi chúng ta chèn vào một cái hàm phi tuyến ở giữa thì nó sẽ giúp chúng ta giải quyết được các cái bài thoáng phức tạp hơn.
+00:04:30 - 00:04:38, Và giá trị đạo hàm, lưu ý thứ nhất đó là nó sẽ có một số loại hàm xuất hiện nhiều lần.
+00:04:38 - 00:04:44, Và đồng thời đó là cái giá trị đạo hàm của nó nó nhỏ hơn một.
+00:04:44 - 00:04:49, Thì tại sao cái giá trị nhỏ hơn một thì nó sẽ gây ra hiện tượng vanishing gradient?
+00:04:49 - 00:04:59, Thì đó là do nếu như ở trong số các cái hàm ở đây mà có cái đạo hàm bé hơn một thì chúng ta hồi xưa có ba chúng ta đã học một cái hàm
+00:04:59 - 00:05:06, đó là chúng ta học một cái công thức đó ReLIMB của a, một n khi n tiến đến vô cùng.
+00:05:06 - 00:05:15, Đó là bằng 0 nếu a lớn hơn 0 và nhỏ hơn một. Tức là một cái con số nhỏ hơn một.
+00:05:15 - 00:05:23, Rồi thì hay nói cách khác đó là những con số mà nhỏ hơn một khi nhân với nhau thì thay vì nó tăng lên thì nó giảm xuống.
+00:05:23 - 00:05:37, Lấy ví dụ như là 0.9 chúng ta nhân với 0.9 thì nó sẽ ra là 0.81 thì 0.81 nó nhỏ hơn 0.9 tức là càng nhân nó sẽ càng nhỏ.
+00:05:37 - 00:05:50, Rồi cứ như vậy 0.9 mà mũ 3 thì sẽ là bằng 0.81 nhưng 0.9 thì đâu đó nó sắp xỉ là 0.72 tức là nó còn nhỏ hơn cả con số 0.81 nữa.
+00:05:50 - 00:06:02, Và cứ như vậy thì cái con số này khi n của mình mà tiến đến vô cùng thì cái con số này nó sẽ tiến về 0.
+00:06:02 - 00:06:13, Thì khi n đủ lớn thì trong mô hình học sâu của mình sẽ có rất nhiều những cái hàm hợp và có nhiều lớp biến đổi thực hiện đi thực hiện lại nhiều lần.
+00:06:13 - 00:06:24, Các mô hình của mình đã được chứng minh là càng sâu thì nó sẽ cho khả năng phi tiến tính hoạt càng cao. Do đó n sẽ có xu hướng lớn hơn 0.
+00:06:24 - 00:06:38, Thế thì nếu như trong công thức đạo hàm này có những cái hàm lập đi lập lại và cái đạo hàm đó ví dụ như cái đạo hàm này là có cái giá trị tiệt đối nó bé hơn 1.
+00:06:38 - 00:06:49, Thì khi đó các cái hàm, các cái giá trị nhỏ hơn 1 nhau với nhau thì nó sẽ tiến về 0. Nó sẽ kéo toàn bộ cái giá trị đạo hàm này về 0.
+00:06:50 - 00:06:57, Thì đó là cái bấn đề về Panic Sanctum Gradient, tức là đạo hàm của mình càng lúc càng bị tiến về 0.
+00:06:57 - 00:07:05, Và đặc biệt đó là các cái tham số mà càng xa cái bước tính Loss thì cái đạo hàm của mình càng dễ bị tiêu biến.
+00:07:05 - 00:07:12, Thế thì thế nào là các cái tham số mà càng xa các cái bước tính Loss thì nó càng dễ tiêu biến.
+00:07:12 - 00:07:15, Ví dụ như chúng ta có một cái mạng Neural như thế này.
+00:07:19 - 00:07:36, Rồi, thì cái quy trình tinh toán của chúng ta đó là những cái tham số ở cái layer số 1, layer số 2 và layer số 3.
+00:07:36 - 00:07:43, Rồi sau đó chúng ta sẽ đi tính, ở đây chúng ta sẽ đi so sánh một cái Loss.
+00:07:43 - 00:07:47, Chúng ta sẽ đi tính một cái Loss giữa giá trị dịa đoán và giá trị thực tế.
+00:07:47 - 00:07:58, Thì cái định nghĩa xa gần đó là trong cái ví dụ của mạng Neural Network thì cái bộ tham số theta 3 là gần với cái bước tính Loss.
+00:08:00 - 00:08:06, Nhưng mà các cái tham số theta 1 và theta 2 thì nó sẽ xa hơn.
+00:08:06 - 00:08:13, Và cụ thể ở đây xa nhất chính là theta 1 thì đây là cái khoảng cách gọi là xa.
+00:08:14 - 00:08:25, Thì các cái tham số mà càng xa cái bước tính Loss, tức là các cái tham số càng về cái lớp đầu tiên của cái mô hình học sâu, cụ thể đó là theta 1 hoặc là theta 2.
+00:08:26 - 00:08:31, Thì cái giá trị đạo hàm sẽ càng dễ bị tiêu yến.
+00:08:31 - 00:08:37, Còn những cái giá trị mà ở đầu thì nó sẽ ít bị tiêu yến hơn.
+00:08:37 - 00:08:44, Nguyên nhân đó là khi chúng ta chạy thuật toán lan truyền ngược về thuật toán Back Propagation lan truyền ngược,
+00:08:44 - 00:08:53, thì khi chúng ta tính đến những cái tham số đạo hàm của những cái tham số theta 3 thì nó sẽ ít cái số phép biến đổi hơn.
+00:08:53 - 00:08:56, Số cái phép biến đổi là phép nhân hơn.
+00:08:56 - 00:09:06, Trong khi đó, khi chúng ta lan truyền ngược cái loss về cái tham số ở càng xa, tức là ở những lớp đầu tiên,
+00:09:06 - 00:09:11, thì chúng ta sẽ thực hiện cái thuật toán Back Propagation, chúng ta thực hiện cái phép nhân càng lúc càng nhiều.
+00:09:11 - 00:09:20, Mà cái việc phép nhân càng nhiều mà gặp những cái con số, đặc biệt là cái đạo hàm của các activation function mà nhỏ, nhỏ hơn 1,
+00:09:20 - 00:09:25, thì khi đó các con số nhỏ hơn 1 nó nhân nhiều lần với nhau, nó sẽ tiến về về 0.
+00:09:25 - 00:09:35, Còn những cái trọng số ở những lớp cuối, thì số lần chúng ta thực hiện phép nhân đạo hàm của genrui này,
+00:09:35 - 00:09:46, nó ít, kể cả khi cái giá trị đạo hàm của các hàm kích hoạt này mà nhỏ, thì số lần nhân của nó nó ít hơn.
+00:09:46 - 00:09:54, Do đó thì các cái tham số càng xa thì nó càng dễ bị tiêu biến.
+00:09:55 - 00:10:04, Và thế thì nếu mà cái đạo hàm của G theo thetaG mà nó tiêu biến, tức là nó sẽ tiến về 0, thì vấn đề gì xảy ra?
+00:10:04 - 00:10:13, Chúng ta phải quay trở lại cái công thức cập nhật tham số của thuật toán Radiant Ascent, đó là thetaG,
+00:10:13 - 00:10:18, thì sẽ là bằng thetaG trừ cho alpha nhân cho đạo hàm của G theo thetaG.
+00:10:19 - 00:10:27, Vì cái đại lượng mà đạo hàm ở đây xấp xị 0 nên alpha nhân với nó sẽ xấp xị 0,
+00:10:27 - 00:10:34, alpha là một con số còn nhỏ hơn 1 nữa, nó có thể là 0.001 nữa, và càng nhỏ hơn.
+00:10:34 - 00:10:40, Thế thì cái con số này sẽ càng tiến về 0, thế thì thetaG thetaI bằng thetaI trừ 0,
+00:10:40 - 00:10:49, tức là xấp xị với lại con số thetaI hay nói cái khác thetaI không cập nhật, tức là gần như không cập nhật.
+00:10:50 - 00:10:59, Thì nó giải thích cho cái hiện tượng đó là hội tụ chậm, tại vì nó không có cập nhật tham số thì lấy đâu mà nó hội tụ?
+00:10:59 - 00:11:05, Hoặc thậm chí đó là không hội tụ luôn, hội tụ chậm hoặc thậm chí là không hội tụ.
+00:11:06 - 00:11:14, Rồi, như vậy thì ở đây chúng ta đã lý giải về mặt nguyên lý toán học của hiện tượng vanishing gradient.
+00:11:14 - 00:11:24, Cái nguyên lý số 1 đó là trong mô hình học sau có rất nhiều những cái hàm lặp đi lặp lại nhiều lần, cụ thể đó là cái hàm kết hoạt.
+00:11:25 - 00:11:32, Thì các cái hàm kết hoạt này đương nhiên là không chỉ hàm kết hoạt, nó có thể có những hàm khác tùy vào thiết kế của mô hình của mình.
+00:11:33 - 00:11:42, Các cái hàm kết hoạt này nếu chúng ta chọn lựa mà không tốt thì có khả năng cái đạo hàm của nó là một con số nhỏ hơn 1.
+00:11:42 - 00:11:54, Khi chúng ta thực hủy cái trend ruôi này mà những cái đạo hàm nào thực hiện đi thực hiện lại nhiều lần, khác nhân nhiều lần với những con số nhỏ hơn 1 thì nó sẽ tiến về không.
+00:11:54 - 00:12:06, Và đặc biệt cái hiện tượng này càng dễ thấy đối với những cái tham số mà ở những cái lớp đầu tiên của cái mạng học sau, tức là nó xa cái bước đến loss.

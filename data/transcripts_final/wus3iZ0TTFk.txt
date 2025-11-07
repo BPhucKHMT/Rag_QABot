@@ -1,0 +1,80 @@
+0:00:14 - 0:00:21, Chúng ta sẽ đến với thuật toán backpropagation sau khi chúng ta đã thực hiện được thuật toán lan truyền thuận feedforward rồi
+0:00:21 - 0:00:29, Chúng ta sẽ đến với thuật toán lan truyền ngược và vẫn sẽ sử dụng những ví dụ như đã nói ở trước
+0:00:29 - 0:00:32, đó là fx, ez sẽ là x, y
+0:00:32 - 0:00:44, Về nguyên lý, chúng ta sẽ sử dụng chain rule, tức là quy tắc để tính đạo hàm của hàm hợp
+0:00:44 - 0:00:54, Chúng ta sẽ áp dụng chain rule trên đồ thị tính toán và tính tại những giá trị cụ thể, đó là x bằng 3, y bằng trừ 4 và z bằng 5
+0:00:54 - 0:01:01, Bước đầu tiên là đồ thị tính toán, đây là bước số 1
+0:01:01 - 0:01:03, Chúng ta sẽ tạo ra đồ thị tính toán
+0:01:04 - 0:01:10, Rồi, thì nó cũng tương tự như trong lan truyền thuận, chúng ta sẽ có các cái node là node cộng và node nhân ở đây
+0:01:10 - 0:01:18, và tương ứng đầu ra sẽ là f1 và f2, cái f2 này bản chất nó chính là cái f của mình
+0:01:18 - 0:01:24, Sau đó thì chúng ta sẽ chạy cái thuật toán lan truyền thuận
+0:01:24 - 0:01:30, Khi chúng ta lan truyền thuận lên thì chúng ta sẽ có cái giá trị f đầu ra chính là bằng trừ 5
+0:01:30 - 0:01:33, Sau đó thì chúng ta sẽ áp dụng cái nguyên tắc của chain rule
+0:01:37 - 0:01:41, Thì chúng ta sẽ... cái bước này là bước số 3 ha
+0:01:41 - 0:01:46, Bước số 3, còn cái bước số 2 chính là lan truyền thuận
+0:01:52 - 0:01:56, Rồi, thì chúng ta áp dụng chain rule trên cái cấu trúc đồ thị tính toán như thế này
+0:01:57 - 0:02:01, Đầu tiên, đó là chúng ta sẽ khởi tạo một cái con số 1
+0:02:01 - 0:02:11, Tại vì trong cái nguyên tắc của chain rule thì chúng ta sẽ phải tính các phép nhân rất là nhiều
+0:02:11 - 0:02:15, Ví dụ như d của f thứ n, nhân cho d của f thứ n trừ 1
+0:02:15 - 0:02:22, Sau đó d của f n trừ 1, d của d của f n trừ 2, v.v.
+0:02:22 - 0:02:25, Thì chúng ta sẽ phải thực hiện một chuỗi các phép nhân này
+0:02:25 - 0:02:31, Do đó khởi tạo nó sẽ là giá trị 1 để có thể nhân, tiếp tục nhân
+0:02:31 - 0:02:34, Còn nếu chúng ta khởi tạo bằng 0 thì không nhân với bao nhiêu cũng bằng 0, không được
+0:02:34 - 0:02:41, Do đó thì khởi tạo đối với cái phép tích thì chúng ta sẽ sử dụng cái số 1 ở đây
+0:02:41 - 0:02:47, Sau đó chúng ta sẽ đi tính đạo hàm của f2 theo f1
+0:02:47 - 0:02:50, Chúng ta sẽ tính đạo hàm của f2 theo f1
+0:02:50 - 0:02:53, Sau đó sẽ nhân với 1, sẽ là như vậy kết quả ở đây
+0:02:53 - 0:02:55, Đó là đạo hàm của f2 theo f1
+0:02:55 - 0:03:01, Đạo hàm của f2 theo f1 chúng ta đã biết đó là nó chính là bằng z
+0:03:01 - 0:03:05, Đạo hàm của f2 theo f1 tức là đạo hàm của cái công thức này
+0:03:05 - 0:03:11, Và đạo hàm của cái công thức f2 ở đây đó chính là bằng z
+0:03:11 - 0:03:15, Z của chúng ta lúc này nó đang là bằng 5
+0:03:15 - 0:03:19, Do đó chúng ta sẽ lấy cái giá trị này vào và thế vào đây
+0:03:19 - 0:03:25, Là 1 nhân với 5 là bằng 5
+0:03:25 - 0:03:29, Sau đó chúng ta sẽ lấy cái công thức này
+0:03:29 - 0:03:38, Đạo hàm của f theo x nó sẽ là bằng 1 nhân với đạo hàm của f2 theo f1 dựa trên cái công thức này
+0:03:38 - 0:03:45, Rồi nhân cho đạo hàm của f1 theo x thì đạo hàm của f2 theo f1 chúng ta đã biết nó là bằng z
+0:03:46 - 0:03:53, Còn đạo hàm của f1 theo x nó chính là bằng 1 ở đây
+0:03:53 - 0:03:56, Đạo hàm của f1 theo x nó sẽ là bằng 1
+0:03:56 - 0:04:00, Như vậy thì nó sẽ là bằng 1 nhân z nhân với lại 1
+0:04:00 - 0:04:03, 1 nhân z nhân 1 tức là bằng 5 nhân 1 là bằng 5
+0:04:03 - 0:04:08, Như vậy đạo hàm của f theo x sẽ là bằng 5
+0:04:08 - 0:04:13, Và chúng ta hoàn toàn làm tương tự như vậy cho các biến y và biến z
+0:04:13 - 0:04:20, Thì đây là thuật toán để tính sử dụng chain rule trên cấu trúc đồ thị tính toán
+0:04:20 - 0:04:24, Nhưng ở đây thực tế thì sao?
+0:04:24 - 0:04:26, Thực tế nếu chúng ta làm như vậy
+0:04:26 - 0:04:30, Khi tính đến đạo hàm của f cuối cùng
+0:04:30 - 0:04:36, Đạo hàm của f theo x thì nó sẽ có rất nhiều những thao tác tính toán thừa
+0:04:36 - 0:04:42, Nó bị lặp lại do đó chúng ta sẽ tránh chain rule
+0:04:42 - 0:04:50, Mà chúng ta sẽ trực tiếp kế thừa những cái giá trị đã tính toán ở những bước trước đó để cập nhật cho phía sau
+0:04:50 - 0:04:54, Để tiết kiệm chi phí tính toán
+0:04:56 - 0:04:59, Không có tính lại
+0:04:59 - 0:05:04, Không tính lại những cái thao tác thừa
+0:05:07 - 0:05:09, Thì tại sao là thừa?
+0:05:09 - 0:05:13, Tại vì ở trong quá trình tính toán thì chúng ta sẽ tính đạo hàm của f2 theo f1
+0:05:13 - 0:05:15, Chúng ta đã có cái giá trị ở đây rồi
+0:05:15 - 0:05:20, Nhưng mà sang đây chúng ta lại đi tính lại đạo hàm của f2 theo f1
+0:05:20 - 0:05:22, Thì đó là thừa
+0:05:22 - 0:05:26, Chúng ta chỉ cần copy cái giá trị từ bên đây qua đây
+0:05:26 - 0:05:28, Thì nó sẽ không phải đi tính lại
+0:05:28 - 0:05:31, Thì chi tiết cái thuật toán backpropagation
+0:05:31 - 0:05:36, Với cái phiên bản đó là chúng ta tránh cái chain rule như thế nào
+0:05:36 - 0:05:43, Bước đầu tiên là chúng ta sẽ xây dựng đồ thị tính toán và thực hiện cái thuật toán feedforward
+0:05:43 - 0:05:48, Sau khi feedforward xong thì chúng ta sẽ nhận được các cái giá trị tại các cái node
+0:05:52 - 0:05:56, Sau đó thì khởi tạo cho cái thuật toán backpropagation
+0:05:56 - 0:05:58, Chúng ta sẽ bắt đầu bằng số 1
+0:05:58 - 0:06:01, Sau đó các bước của thuật toán rất đơn giản là như sau
+0:06:01 - 0:06:09, Đầu tiên chúng ta sẽ copy cái giá trị đạo hàm ở cái node cha
+0:06:09 - 0:06:11, Tức là cái node trước ngay đằng sau đó
+0:06:11 - 0:06:13, Kéo về
+0:06:13 - 0:06:14, Kéo về đây
+0:06:14 - 0:06:21, Sau đó chúng ta sẽ nhân với đạo hàm của cái thành phần f2
+0:06:21 - 0:06:23, Chia cho đạo hàm của f1
+0:06:23 - 0:06:26, Tức là lấy cái đạo hàm của cái node phía sau
+0:06:26 - 0:06:29, Theo cái đạo hàm của cái node hiện tại
+0:06:29 - 0:06:31, Cái node hiện tại của mình chính là f1
+0:06:31 - 0:06:33, Tức là đạo hàm của f2 theo f1
+0:06:33 - 0:06:36, Thì đạo hàm của f2 theo f1 chính là bằng z
+0:06:36 - 0:06:40, Z của mình trong trường hợp này là bằng 5
+0:06:40 - 0:06:42, Do đó nó sẽ là bằng 5
+0:06:42 - 0:0

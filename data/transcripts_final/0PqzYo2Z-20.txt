@@ -1,0 +1,157 @@
+0:00:14 - 0:00:13, Lan truyền ngược
+0:00:13 - 0:00:26, Lan truyền ngược là một trong những thuật toán rất phổ biến trong các mô hình học dựa trên Gradient
+0:00:26 - 0:00:31, Và trong đó có rất nhiều mô hình hiện đại như Deep Learning, học sâu
+0:00:31 - 0:00:38, Chi tiết thuật toán Backpropagation vận hành như thế nào, chúng ta sẽ cùng tìm hiểu trong những chương sau
+0:00:38 - 0:00:42, Đầu tiên chúng ta sẽ nhắc lại về mô hình dựa trên Gradient
+0:00:42 - 0:00:49, Trong mô hình dựa trên Gradient, chúng ta phải tính toán giá trị dự đoán là y ngã
+0:00:49 - 0:00:53, Y ngã trong trường hợp này chính là bằng fθx
+0:00:53 - 0:00:58, Và mình mong muốn là cho giá trị dự đoán xấp xỉ với giá trị thực tế
+0:00:58 - 0:01:04, Thế thì có 3 công việc cần phải làm, chúng ta đang tập trung vào công việc cuối cùng
+0:01:04 - 0:01:12, Đối với công việc tìm tham số tối ưu của mô hình, tức là tìm theta sao sao cho hàm lỗi này là nhỏ nhất
+0:01:12 - 0:01:18, Trong hồi trước chúng ta đã nói có một số thuật toán để tìm cái điện tối ưu
+0:01:18 - 0:01:26, Cụ thể đó là Stochastic Gradient Descent, Momentum, Root Mean Square Propagation và Adam
+0:01:26 - 0:01:34, Thế thì chúng ta sẽ cùng ôn lại các thuật toán này, thì nó sẽ có những điểm đặc điểm gì chung
+0:01:34 - 0:01:40, Chúng ta thấy là cả 3 thuật toán giữa Momentum, Root Mean Square Propagation và Adam
+0:01:40 - 0:01:47, Điểm chung đó là các thao tác phức tạp nhất được tính trên Gradient
+0:01:47 - 0:01:52, Nghĩa là ở đây chúng ta thấy có rất nhiều các bước thực hiện, nhưng các bước này đều rất là đơn giản
+0:01:52 - 0:01:56, Đó chỉ đơn giản là gán giá trị và cộng trừ nhân chia
+0:01:56 - 0:02:04, Nhưng mà riêng cái thao tác phức tạp nhất của cả 3 thuật toán ở trên đó chính là tính đạo hàm
+0:02:04 - 0:02:09, Đây là tính đạo hàm, và đây là tính đạo hàm
+0:02:09 - 0:02:16, Thế thì tại sao cái việc tính Gradient là khó, thì chúng ta sẽ có một số lý do sau
+0:02:16 - 0:02:21, Đầu tiên đó là các hàm lỗi của mình, cái hàm Tri Theta của mình
+0:02:21 - 0:02:33, Thường là những hàm rất phức tạp, vì nó có chứa cả hàm mô hình Fthx lẫn hàm để tính sai số giữa dự đoán và giá trị thực tế
+0:02:33 - 0:02:38, Hay rất khác, đó là cái hàm Tri Theta của mình, nó sẽ là một cái hàm hợp
+0:02:38 - 0:02:44, Hàm hợp tức là một cái hàm của rất nhiều những hàm thành phần bên trong
+0:02:44 - 0:02:53, Trong đó là bao gồm Fthx và cái sai số, và cái hàm để tính sai số
+0:02:53 - 0:03:04, Rồi lý do thứ 2 đó là cái mô hình của mình, thì nó không phải là một cái mô hình, là một cái hàm đơn biến mà nó có thể chứa rất nhiều tham số
+0:03:04 - 0:03:13, Ví dụ Theta của mình, nó không phải là một giá trị Scalar, nó không phải là một cái biến đơn mà nó có thể chứa rất nhiều cái biến bên trong
+0:03:13 - 0:03:19, Bao gồm là Theta1, Theta2, ThetaN
+0:03:19 - 0:03:25, Thì đây là một cái hàm lỗi của mình, nó sẽ là một cái hàm đa biến theo Theta
+0:03:25 - 0:03:34, Thì dưới đây sẽ là một số cái ví dụ Ctheta của mình, nó có thể là bằng một phần một cộng cho E mũ trừ ThetaX
+0:03:34 - 0:03:41, Chúng ta lưu ý rằng là đây là cái thao tác thực hiện là nhân ma trận, nhân giữa vector và ma trận
+0:03:41 - 0:03:46, Vector hoặc là ma trận
+0:03:46 - 0:03:52, Hoặc nó cũng có thể là một cái hàm lồng trong hàm phức tạp như thế này
+0:03:52 - 0:03:58, Một chia cho một cộng E mũ rồi lại trừ cho Theta chia cho một cộng E mũ, một cộng ThetaX
+0:03:58 - 0:04:01, Thì đây là một vài cái ví dụ
+0:04:01 - 0:04:08, Vậy thì công việc của chúng ta đó là làm sao chúng ta tính được đạo hàm của cái hàm này
+0:04:08 - 0:04:14, Và lưu ý là đây mới chỉ là những hàm tương đối cơ bản đơn giản, chưa thực sự phức tạp
+0:04:14 - 0:04:28, Trong các mô hình học sâu, ví dụ như chúng ta có những cái hàm Fx mà nó có thể là chứa F1 của F2, của F thứ 100X
+0:04:28 - 0:04:32, Tức là nó có chứa 100 cái hàm thành phần
+0:04:32 - 0:04:37, Các mô hình học sâu là cực kỳ phức tạp, do đó thì những hàm ở đây cũng chưa thực sự là quá phức tạp
+0:04:37 - 0:04:47, Mà nó cũng đã khiến chúng ta đổ mồ hôi hột để làm sao có thể tính toán được cái gradient, tức là đạo hàm cho cái vector
+0:04:47 - 0:04:58, Vậy thì chúng ta sẽ nhắc lại cái kiến thức cũ của phổ thông và phòng giải tích 1 trong học kỳ 1 của lớp của đại học
+0:04:58 - 0:05:02, Đó là chúng ta sẽ sử dụng cái đạo hàm của hàm hợp, công thức đạo hàm của hàm hợp
+0:05:02 - 0:05:07, Với cái công cụ đó là quy tắc chuỗi hay còn gọi là chain rule
+0:05:07 - 0:05:14, Thì ở đây chúng ta sẽ dùng cái chain rule để cho nó đồng bộ với các tài liệu viết bằng tiếng Anh
+0:05:14 - 0:05:17, Và trong rất nhiều tài liệu thì họ vẫn dùng cái từ là chain rule
+0:05:17 - 0:05:26, Vì việc sử dụng cái quy tắc chuỗi để tính đạo hàm của hàm hợp, đó là 1 trong những cái quy tắc cơ bản
+0:05:26 - 0:05:38, Thì chúng ta nhắc lại, đó là ký hiệu hàm hợp fx là bằng fn, fn-1, v.v.v cho đến f1, tức là cái hàm này gồm có n hàm thành phần
+0:05:41 - 0:05:48, Và với n hàm thành phần này thì chúng ta dùng cái hệ thống ký hiệu của phổ thông, tức là fx
+0:05:48 - 0:05:57, Nhưng mà trong cái chương trình của cái môn máy học nâng cao thì chúng ta sử dụng cái hệ thống ký hiệu đó là g và theta
+0:05:57 - 0:05:59, Thì nó cũng hoàn toàn tương tự như là fx
+0:05:59 - 0:06:02, Bình thường chúng ta sẽ ghi là g của theta
+0:06:02 - 0:06:10, Còn chúng ta dùng cái ký hiệu của fx để cho nó gần gũi với lại toán phổ thông để cho các bạn dễ theo dõi trước
+0:06:10 - 0:06:17, Sau đó chúng ta sẽ áp dụng vào cái ký hiệu của các mô hình máy học sau, đó là g theta
+0:06:17 - 0:06:19, Chúng ta sẽ dùng cái hệ thống này sau
+0:06:19 - 0:06:22, Thì quy tắc của tính chain rule đó là gì?
+0:06:22 - 0:06:27, Đó là đạo hàm của f theo x
+0:06:27 - 0:06:33, Thì sẽ được tính bằng đạo hàm của f thứ n theo f thứ n-1
+0:06:33 - 0:06:38, Tức là chúng ta xem fn-1 giống như là một biến, nó không phải là một hàm mà nó là một biến
+0:06:38 - 0:06:42, Thì chúng ta sẽ tính đạo hàm của fn theo fn-1
+0:06:42 - 0:06:45, Rồi nhân đạo hàm của fn-1 theo fn-2
+0:06:45 - 0:06:49, Rồi cho đến đạo hàm fn-2
+0:06:49 - 0:06:54, Đạo hàm 2 theo đạo hàm f1 và đạo hàm f1 theo x
+0:06:54 - 0:06:59, Thì chúng ta thấy là cái công thức này nhìn rất là phức tạp
+0:06:59 - 0:07:05, Lý do đó là vì có rất nhiều hệ thống ký hiệu và với rất nhiều hàm thành phần
+0:07:05 - 0:07:11, Vậy thì chúng ta sẽ có một cái mẹo để nhớ cái quy tắc này
+0:07:11 - 0:07:16, Đó là nếu như chúng ta dùng cái dấu gạch này
+0:07:16 - 0:07:24, Thì là fd của fn-1 thì ở phía sau đó trên tử sẽ là dfn-1 và chúng ta thấy là nó sẽ khử nhau
+0:07:24 - 0:07:29, Tử là có dfn-1, mẫu là có dfn-1, nó sẽ khử nhau
+0:07:29 - 0:07:36, Rồi mẫu có dfn-2 thì ở phía sau đó sẽ là dfn-2
+0:07:36 - 0:07:45, Tiếp tục cứ như vậy, ở đây là tử có dfn-1 và mẫu có dfn-1, nó sẽ khử
+0:07:45 - 0:07:55, Vậy còn lại là gì? Chúng ta sẽ còn lại là dfn-dx, tức là đạo hàm của f theo x
+0:07:55 - 0:07:58, Thì đây là một cái quy tắc để nhớ thôi
+0:07:58 - 0:08:09, Đó là dfn-1, sau đó là n-1, n-2, n-2, n-3, rồi v.v.v cho đến f2 theo f1 và f1 theo x
+0:08:09 - 0:08:14, Thì x sẽ là cái biến số của mình, nó sẽ nằm ở cuối cùng ở đây
+0:08:14 - 0:08:20, Thì chúng ta sẽ xét một cái ví dụ cho đơn giản và trực quan
+0:08:20 - 0:08:27, Ví dụ như fx, iz là bằng x cộng i, tất cả nhân với z
+0:08:27 - 0:08:39, Thì ở đây giả sử như chúng ta xem xét là, chúng ta tại một thời điểm thì chúng ta chỉ xét với một biến x
+0:08:39 - 0:08:45, Tức là tất cả những cái hàm ở trên đây sẽ được đưa về cái hàm chỉ có một biến thôi
+0:08:45 - 0:08:51, Thì đặt cái công việc đầu tiên chúng ta phải tính toán, đó là cái việc tính x cộng i
+0:08:51 - 0:08:56, Đây là cái thao tác đầu tiên chúng ta tính, thì đây sẽ là biểu diễn bởi hàm f1
+0:08:56 - 0:09:04, Sau khi chúng ta tính cái f1 là x cộng i xong, thì chúng ta sẽ lại nhân với z, thì đây sẽ là hàm f2
+0:09:04 - 0:09:14, Nhưng ở đây chúng ta sẽ xét trên một biến x trước, thì f1x sẽ là bằng x cộng i
+0:09:14 - 0:09:18, Sau đó chúng ta lại lấy f1 nhân với z để ra f2
+0:09:18 - 0:09:28, Như vậy công thức của f2 mà theo cái biến x thì nó sẽ là bằng f1 nhân với z
+0:09:28 - 0:09:34, Nhưng mà trong trường hợp này, f1 của chúng ta chính là cái biến số của mình
+00:09:34 - 0:09:43, Thì khi đó, fx của mình, cái công thức fx ban đầu của mình sẽ là bằng f2 của f1x
+0:09:44 - 0:09:52, Khi chúng ta thế vào, thì f2 chính là z nhân x
+0:09:52 - 0:10:02, Do đó, f2 của f1x sẽ là bằng z nhân cho xx, trong trường hợp này chính là f1
+0:10:02 - 0:10:08, F1 chúng ta sẽ thế vào bằng công thức này, đó là x cộng i
+0:10:09 - 0:10:19, Rồi, khi đó thì đạo hàm của f1 theo x, lưu ý là ở đây chúng ta chỉ đang xét với một biến x thôi
+0:10:19 - 0:10:25, Chúng ta sẽ làm cái việc tương tự, cái việc này tương tự cho biến i, chúng ta sẽ làm sao
+0:10:25 - 0:10:32, Đạo hàm của f1 theo x, thì đạo hàm của f1 theo x chính là trong công mắc của x, thì i chính là hằng số
+0:10:32 - 0:10:37, Do đó đạo hàm của f1 theo x chính là 1
+0:10:37 - 0:10:48, Rồi, đạo hàm của f2 theo f1 là bao nhiêu? Đạo hàm của f2 theo f1, tức là chúng ta sẽ tính đạo hàm của cái này theo x
+0:10:48 - 0:10:58, Chúng ta sẽ tính đạo hàm của cái này theo x, thì trong biến x, thì z chính là hằng số do đó đạo hàm của cái này sẽ là bằng z
+0:10:58 - 0:11:01, Đạo hàm của f2 theo f1 chính là z
+0:11:02 - 0:11:15, Rồi, như vậy thì chúng ta sẽ sử dụng, áp dụng cái công thức chain rule là d của f theo x sẽ là bằng df2 theo f1
+0:11:15 - 0:11:22, Sau đó df1 theo x, thì df2 theo f1 chính là z, nguyên cái cọp này sẽ là z
+0:11:22 - 0:11:28, Và df1 theo x chính là 1
+0:11:28 - 0:11:36, Như vậy z nhân 1 chính là bằng z, như vậy đạo hàm của f theo x sẽ là bằng z
+0:11:36 - 0:11:45, Hoàn toàn tương tự cho i và z, chúng ta sẽ làm cái công việc này cho đạo hàm của f theo i và đạo hàm của f theo z
+0:11:46 - 0:11:48, Thì đối với biến i
+0:11:48 - 0:11:58, Vì chúng ta có nhiều biến nên tại một thời điểm chúng ta chỉ xem xét một biến thôi
+0:11:58 - 0:12:02, Thì công việc đầu tiên chúng ta sẽ tính toán, đó là phép cộng ở đây
+0:12:02 - 0:12:09, Thì f1 của ta, bây giờ nó không phải là biến x nữa mà sẽ là biến theo i, thì nó vẫn sẽ là bằng x cộng i
+0:12:09 - 0:12:19, Và f2 của mình theo biến i thì nó cũng sẽ là bằng giá trị f1 nhân với z
+0:12:19 - 0:12:24, Và f1 theo nhân với z như vậy sẽ là z nhân với i
+0:12:24 - 0:12:30, Tại vì trong trường hợp này f1 của mình sẽ là biến số, f1 của mình sẽ là biến số
+0:12:30 - 0:12:33, Như vậy thì f2 i là bằng z i
+0:12:33 - 0:12:46, Và khi đó thì công thức f của i sẽ là bằng f2 của f1 của i
+0:12:46 - 0:12:53, Thì x cộng i là x cộng i
+0:12:53 - 0:13:02, Rồi, f2 của f1 là z nhân với i
+0:13:02 - 0:13:06, Thay là z nhân với lại cái f1 này
+0:13:06 - 0:13:09, Mà f1 của mình là x cộng i
+0:13:09 - 0:13:20, Tức là khi chúng ta triển khai ở đây thì f1 i chính là chúng ta xem nó như là một cái biến
+0:13:20 - 0:13:26, Rồi chúng ta triển khai vô thì nó sẽ là z nhân với lại cái biến
+0:13:26 - 0:13:31, Tức là z nhân với f1, mà f1 thì nó lại là bằng x cộng i
+0:13:31 - 0:13:35, Rồi, khi đó chúng ta sẽ tính đạo hàm
+0:13:35 - 0:13:41, Đạo hàm là d của f1 theo i
+0:13:41 - 0:13:44, D của f1 theo i thì nó sẽ là bằng 1
+0:13:44 - 0:13:47, Tại trong có mắt của i thì x là bằng hằng số
+0:13:47 - 0:13:53, D của f2 theo f1
+0:13:53 - 0:13:56, Tức là đạo hàm của công thức này
+0:13:56 - 0:14:00, Và đạo hàm của công thức này là bằng z
+0:14:00 - 0:14:06, Rồi, như vậy thì chúng ta sẽ có đạo hàm của f theo biến i
+0:14:06 - 0:14:11, Chính là bằng đạo hàm của f2 theo f1
+0:14:11 - 0:14:16, Nhân cho đạo hàm của f1 theo i
+0:14:16 - 0:14:19, Vì f2 theo f1 chính là bằng z
+0:14:19 - 0:14:24, Và df1 theo i chính là bằng 1, không bằng z
+0:14:24 - 0:14:30, Tương tự như vậy chúng ta sẽ tính cho đạo hàm của f theo z
+0:14:30 - 0:14:38, Thì chúng ta thấy là cái cách làm này, Chain Rule này thì nó sẽ rất là bài bảng và có thể tổng quát hóa được
+0:14:38 - 0:14:48, Và bây giờ chúng ta sẽ tìm cách biểu diễn cái công thức của cái fx, iz này dưới dạng là biểu đồ, đồ thị tính toán
+0:14:48 - 0:14:53, Như sau, đầu vào chúng ta sẽ có x, y và z
+0:14:53 - 0:14:58, Bước đầu tiên chúng ta sẽ thực hiện là lấy x, y, đây là toán tử cộng
+0:14:58 - 0:15:02, Và đầu ra của mình sẽ là hàm f1
+0:15:02 - 0:15:12, Sau đó chúng ta lấy cái z này đem nhân với cái f1 để ra cái f2, thì đây chính là cái hàm f của mình
+0:15:12 - 0:15:17, Rồi, thì đây là cái cách biểu diễn dưới dạng đồ thị tính toán
+0:15:17 - 0:15:25, Trong đó mỗi một cái node tính toán sẽ là một toán tử và đầu vào nó sẽ nhận các cái biến số
+0:15:25 - 0:15:33, Thế thì chúng ta sẽ đến với một trong những thuật toán đầu tiên, đó chính là thuật toán Feed Forward
+0:15:33 - 0:15:37, Tức là trước khi thực hiện Backpropagation, Backpropagation là lan truyền nghịch
+0:15:37 - 0:15:43, Thì chúng ta sẽ phải làm cái thuật toán lan truyền thuận, tức là chúng ta sẽ đi tính cái giá trị của hàm f trước
+0:15:43 - 0:15:51, Dựa trên cái đồ thị tính toán, thì giả sử ở đây chúng ta vẫn sử dụng các cái hàm như đã nêu ở trên
+0:15:51 - 0:15:57, Thì x, x nó sẽ là bằng f2 của f1, x thì đầu tiên ta sẽ xây dựng cái đồ thị tính toán
+0:15:57 - 0:16:08, Rồi sau đó chúng ta sẽ tính giá trị tại các cái node, biết rằng là chúng ta sẽ chọn ra một cái bộ giá trị x, y, z khởi tạo ban đầu
+0:16:08 - 0:16:10, Đây chính là cái giá trị khởi tạo
+0:16:10 - 0:16:20, Và chúng ta sẽ đi tính đạo hàm tại cái giá trị x bằng 3, y bằng trừ 4 và z bằng 5
+0:16:20 - 0:16:27, Đầu tiên đó là chúng ta sẽ xây dựng cái đồ thị tính toán, giống như ở trong slide trước, thì đây chính là đồ thị tính toán
+0:16:27 - 0:16:32, Và chúng ta sẽ có các cái node là node cộng, rồi node nhân
+00:16:32 - 0:16:42, Sau đó chúng ta sẽ lần lượt thay các cái giá trị này vào các cái node, thì x là bằng 3, y là bằng trừ 4 và z là bằng 5
+0:16:42 - 0:16:47, Sau đó chúng ta cứ lần lượt lan truyền thuận lên, lan truyền thuận về phía trước
+0:16:47 - 0:16:56, Đầu tiên đó là thực hiện phép cộng, thì f1 bước này nó sẽ là bằng 3 cộng cho trừ 4, thì nó sẽ là bằng trừ 1
+0:16:56 - 0:17:02, Sau khi chúng ta đã tính f1 xong, thì chúng ta sẽ thực hiện cái node phép nhân
+0:17:02 - 0:17:13, Thì f2 nó sẽ là bằng f1 nhân với trừ 5, tức là f1 nhân với 5, tức là bằng trừ 1 nhân với 5 là bằng trừ 5
+0:17:13 - 0:17:21, Như vậy thì cái thuật toán lan truyền thuận đó là một cái thuật toán quan trọng để giúp chúng ta xây dựng cái đồ thị tính toán
+0:17:22 - 0:17:25, Cái bước quan trọng đầu tiên đó là xây dựng được cái đồ thị tính toán
+0:17:25 - 0:17:35, Là một cái bước tiền đề quan trọng trước khi chúng ta có thể tính được cái đạo hàm của hàm f theo các cái biến x này, các cái biến x, x, y, z này

@@ -1,0 +1,108 @@
+00:00:00 - 00:00:17, Mô hình ngôn ngữ thì giá tiếp theo mà chúng ta sẽ cùng tìm hiểu đó chính là SIM
+00:00:17 - 00:00:22, Do Microsoft phát triển, như SAM là mô hình của Meta
+00:00:22 - 00:00:33, SIM có một cách đi khác, đó là họ dựa trên cách thức để tương tác với ảnh cho tẹn hơn
+00:00:33 - 00:00:38, Cách thức để tương tác có rất nhiều cách
+00:00:38 - 00:00:41, 1 là dùng dạng điển là Point
+00:00:41 - 00:00:43, 2 là Bounding Box
+00:00:43 - 00:00:45, 3 là Mask
+00:00:45 - 00:00:49, 4 là Strip Wall
+00:00:49 - 00:00:56, và tầm chí là đương nhiên nó vẫn sẽ Support cho việc dùng Text Prom
+00:00:56 - 00:01:02, Thế thì chúng ta sẽ đến phần phát triển bài toán
+00:01:02 - 00:01:08, Nếu như mô hình trước đây là Routing Dino x SAM thì nó đạt được độ chính xác tốt
+00:01:08 - 00:01:16, Đặc biệt là nhờ SAM được huấn luyện dựa trên các tập dữ liệu lên đến là hàng tỷ ảnh
+00:01:16 - 00:01:24, Thì sự đa dạng của hình ảnh sẽ giúp SAM phân đoạn được rất chính xác
+00:01:24 - 00:01:30, Nhưng việc này khá là cồm kình do nó phải kết hợp 2 mô hình lại với nhau
+00:01:30 - 00:01:32, đó là Routing Dino và SAM
+00:01:32 - 00:01:36, mà nó không phải huấn luyện 1 mô hình từ đầu đến cuối
+00:01:36 - 00:01:43, Có mô hình nào chúng ta có thể xét mình từ Text tốt hơn mà không cần phải chạy SAM hay không
+00:01:43 - 00:01:51, Đại như đã nói, việc kết hợp 2 mô hình Routing Dino với SAM sẽ tạo ra sự cộng cần không đáng có
+00:01:51 - 00:01:58, Thế thì chúng ta sẽ có mô hình SIM đó là Segment Everything Everywhere At Once
+00:01:58 - 00:02:06, Và trên đây đó là một vài ví dụ về kết quả được thực hiện bởi SIM
+00:02:07 - 00:02:13, Độ vào chúng ta có thể là không có Prom hoặc Visual Prom
+00:02:13 - 00:02:18, Ví dụ như là một điểm Bounding Box hoặc là một Scriptable
+00:02:18 - 00:02:22, Và nó có thể là một câu Text Prom
+00:02:22 - 00:02:30, Ví dụ như là PersonInBlue hoặc là một dạng Referred Prom
+00:02:30 - 00:02:35, Ví dụ như là kết hợp giữa Scriptable với tấm ảnh
+00:02:35 - 00:02:42, Ví dụ, ở đây chúng ta đưa vào một ảnh mẫu của một đối tượng là con mèo
+00:02:42 - 00:02:51, Sau đó chúng ta sẽ để Scriptable này hàm ý đó là chúng ta sẽ segment những đối tượng nào mà có dạng thức giống như đối tượng này
+00:02:51 - 00:02:58, Thế thì khi chúng ta Inferring thì chúng ta phải khoanh vùng cả Doraemon
+00:02:58 - 00:03:02, Đó là cũng là một con mèo máy và con mèo ở đây
+00:03:02 - 00:03:06, Thế thì kiểu Referred Prom là một kiểu khá là thú vị
+00:03:06 - 00:03:13, Tại vì nhiều khi chúng ta không biết đối tượng đó là gì thì làm sao chúng ta có thể viết được Prom
+00:03:13 - 00:03:21, Cái này dùng khi chúng ta không biết đối tượng của mình là gì
+00:03:27 - 00:03:29, Tên là gì
+00:03:30 - 00:03:42, Đó chính là dụng ý của tại sao chúng ta lại phải sử dụng Scriptable kết hợp với ảnh mẫu, ảnh hàm chiếu
+00:03:44 - 00:03:52, Cuối cùng đó chính là Composition, tức là nó có thể phối hợp giữa hai đối tượng, ba đối tượng với nhau
+00:03:52 - 00:03:54, Nó là một cái đường như thế này
+00:03:54 - 00:04:02, Và nó sẽ có thêm kèm một cái văn bản nữa, đó là cái Laggage Bear, tức là con gấu lớn nhất trong con gấu ở đây
+00:04:02 - 00:04:07, Thì đây là một cái kiểu mà rất là phức tạp, cái dạng Prom rất là phức tạp
+00:04:07 - 00:04:18, Và đến đến của SIM có lẽ là tạo ra các thể thức tương tác tương tự như là GBT4V
+00:04:22 - 00:04:33, Đó chính là sức phát điển động cơ về các thức tương tác của SIM
+00:04:33 - 00:04:42, Trong sơ đồ này chúng ta sẽ thấy, đó là cái mô hình này, thứ nhất là nó được Trend Ento Ent
+00:04:42 - 00:04:48, Tức là nó sẽ không có cái bước kết hợp với lại mô hình SAM
+00:04:48 - 00:04:52, Cái thứ hai là nó có rất nhiều những cái thể thức khác nhau
+00:04:52 - 00:05:03, Trong đó có cái thể thức là dạng Visual, dạng Visual Prom, ví dụ như là một cái đường do người dùng vẽ tự do
+00:05:03 - 00:05:09, Rồi Scriptable là một cái đường ngoạch ngoài, có chứ cái đối tượng cần quan tâm
+00:05:09 - 00:05:11, Bounding Box Point
+00:05:11 - 00:05:22, Và đầu vào thì chúng ta sẽ còn có text encoder và image encoder tương ứng cho cái Code Prom dạng văn bảng
+00:05:22 - 00:05:24, Và ảnh sẽ là trạng tham chiếu
+00:05:24 - 00:05:36, Thế thì đối với Visual Prom thì chúng ta sẽ qua một cái module, đó là Visual Sumler
+00:05:36 - 00:05:46, Thì mục tiêu của Visual Sumler đó là mọi Visual Prom sẽ được đưa về cùng một định dạng khóng nhất
+00:05:46 - 00:05:53, Đó là chúng ta sẽ đưa về các cái Token, Feature Emitting của các cái Token
+00:05:53 - 00:06:01, Và ý tưởng đó là từ một Visual Prom, ví dụ như là Scriptable, chúng ta kết hợp với lại image feature
+00:06:01 - 00:06:09, Tại vì chúng ta sẽ cần có sự tương tác với không gian ảnh để chúng ta lấy ra đối tượng mà chúng ta cần quan tâm
+00:06:09 - 00:06:15, Thì cái image feature là từ cái module màu tím này kết hợp với lại Visual Prom
+00:06:15 - 00:06:21, Qua cái module Mask Pooling để chúng ta ngội suy ra cái Token của mình
+00:06:21 - 00:06:32, Thì cái module Visual Prom sẽ thực hiện tại cái vị trí mà người dùng vẽ hoặc là click hoặc là cái vùng bên trong cái Bounding Box của mình
+00:06:32 - 00:06:39, Thì đây chính là những cái phương thức tương tác khác hoàn toàn so với lại những cái phương pháp thông thường
+00:06:39 - 00:06:45, Thông thường thì người ta chỉ tương tác là Bounding Box hoặc là Coil thôi
+00:06:45 - 00:06:52, Còn bây giờ lại có thể là ở dạng Scriptable, dạng Commosite, tức là dạng phức hợp hoặc là Referring Image
+00:06:52 - 00:07:05, Rồi thì dựa vào cái Mask và các cái đặc trưng tương ứng với ảnh thì chúng ta sẽ trích xuất ra các cái đặc trưng và chúng ta sẽ nội suy ra thành 512 Token
+00:07:05 - 00:07:07, Thì đây là 512 Token
+00:07:07 - 00:07:17, Được trích ra từ đặc trưng ảnh và cái Scriptable ở đây
+00:07:17 - 00:07:26, Ở cái bước tiếp theo đó là chúng ta sẽ tương tác giữa các cái loại Quary với nhau
+00:07:26 - 00:07:35, Thì tương tự như các cái mô hình hiện đại như là SAM hoặc là DATER thì chúng ta sẽ có một cái Learnable Quary
+00:07:35 - 00:07:39, Bản chất ở đây sẽ là một cái TimeSol có thể huấn luyện được
+00:07:39 - 00:07:57, Thì cái Learnable Quary này nó sẽ tạo ra các cái Quary mà có thể đến từ những cái đối tượng có trong tấm ảnh
+00:07:57 - 00:08:08, Và sau đó thì nó sẽ duplicate, tức là nó sẽ nhân bản cái Learnable Quary này để cho cái Object Quary, Text Quary và Visual Quary
+00:08:08 - 00:08:15, Thì cái Visual Quary này nó sẽ đến từ các cái phần liên quan đến cái Visual Prom
+00:08:15 - 00:08:18, Còn Text Quary thì nó đến từ Text Prom
+00:08:18 - 00:08:30, Còn Object Quary thì nó có thể đến từ các cái Memory Prom, có thể đến từ các cái đối tượng mà được mô tả bên trong tấm ảnh của mình
+00:08:31 - 00:08:40, Rồi, thì Object Quary nó sẽ tương tác cái Attention, nó sẽ tương tác thông qua cái phép biến đổi Attention
+00:08:40 - 00:08:49, Với chính nó, tức là nó sẽ tương tác trong nội bộ của nó và với các cái đạc trương ảnh trong tấm ảnh của mình
+00:08:49 - 00:08:56, Rồi Text Quary thì nó sẽ bổ xung thêm cái Text Prom trong lúc huấn luyện
+00:08:56 - 00:09:01, Thì Text Prom ở đây, nó sẽ bổ xung thêm vào trong Text Quary khi huấn luyện
+00:09:01 - 00:09:09, Và cái Text Prom này thì nó tương ứng là những cái Quary dạng văn bản, dạng câu mô tả của người dùng
+00:09:09 - 00:09:35, Rồi, đối với cái Visual Quary thì nó sẽ có cái sự kết hợp cả Visual Prom, tức là những cái Prom mà ở dạng Point, dạng Bounding Box hoặc là dạng Scriptable v.v.
+00:09:35 - 00:09:45, Rồi nó kết hợp với Memory Prom thì Memory Prom là những cái quá khứ chat hoặc là tương tác với lại cái hệ thống này của mình
+00:09:45 - 00:09:53, Thì một vài cái tương tác có thể xảy ra mà không cần huấn luyện, đó là tạo nên sự đa dạng về tác vụ có thể chạy
+00:09:53 - 00:09:58, Ví dụ như từ Text Prom, chúng ta có thể tạo ra các cái Visual Quary
+00:09:58 - 00:10:08, Và từ Visual Prom thì chúng ta có thể tạo ra các Text Quary, thì đó chính là sự đa dạng về tác vụ có thể chạy được của cái mô hình này
+00:10:08 - 00:10:14, Và dĩt trên đây thì đó là một vài cái hình ảnh kết quả khi chúng ta chạy với SIM
+00:10:14 - 00:10:20, Thì chúng ta thấy khi chúng ta chấm cái điểm này thì SIM đã khoanh vùng chính xác cái con báo ở đây
+00:10:20 - 00:10:24, Vì chúng ta thấy khi chúng ta chấm cái điểm này thì nó đã khoanh vùng chính xác cái thuyền
+00:10:24 - 00:10:30, Tương tự như vậy cho Stripple thì nó sẽ khoanh vùng được cái vùng Building
+00:10:30 - 00:10:34, Vậy thì điều gì ở SIM nó đã vượt trội hơn so với SIM?
+00:10:34 - 00:10:41, Thì đó chính là SIM nó có thể hoạt động tốt ở nhiều cái loại ảnh khác nhau
+00:10:41 - 00:10:45, Đó một phần đến từ cái việc dữ liệu của nó là rất là đa dạng
+00:10:45 - 00:10:49, Ví dụ hình ở đây là ảnh Painting, tức là ảnh tranh vẽ
+00:10:49 - 00:10:58, Rồi ảnh ở đây là ảnh ở thế giới thực, ảnh ở đây là ảnh đã được xử lý bằng các công cụ xử lý ảnh
+00:10:58 - 00:11:06, Rồi ảnh bên đây là ảnh ở trong cái màn hình của game mô phỏng
+00:11:06 - 00:11:15, Thì cái sự đa dạng này tạo ra sự khác biệt giữa SIM đối với lại SIM
+00:11:16 - 00:11:23, Ngoài ra một cái điểm đặc biệt nữa của SIM so với SIM đó chính là cái Referring Segmentation
+00:11:23 - 00:11:29, Thì như chúng ta biết có những cái nội dung mà chúng ta không thể dùng lời để mô tả được
+00:11:29 - 00:11:31, thì chúng ta có thể dùng cái ảnh ví dụ
+00:11:31 - 00:11:37, Thì cái Referring Image chúng ta sẽ kết hợp thêm cái Point này là cái điểm
+00:11:37 - 00:11:44, Thì hàm ý đó là chúng ta đang muốn truy vấn cái đối tượng là cái con Point
+00:11:44 - 00:11:49, Thì khi chúng ta đưa cái Referring Image kết hợp với lại cái Prom này
+00:11:49 - 00:11:55, thì nó sẽ segment được các cái đối tượng có cái nhãn, có cái class tương tự
+00:11:55 - 00:12:02, Thì đây chính là cái kết quả của mình khi sử dụng cái Referring Image
+00:12:02 - 00:12:06, Ở bên dưới thì đó là Referring Image nhưng mà nó sử dụng cái Scribble
+00:12:06 - 00:12:08, tức là hàm ý là lấy cái con sông
+00:12:08 - 00:12:14, và Output của mình thì nó cũng đã phanh vùng và chính xác được cái con sông ở trong cái tấm ảnh của mình
+00:12:14 - 00:12:23, Thì đây rõ ràng là một cái ưu điểm khác, một cái thể thức tương tác khác biệt giữa SIM với lại Segmentation
+00:12:23 - 00:12:25, à với lại SIM
+00:12:25 - 00:12:33, Và đặc biệt đó là SIM có thể làm việc tốt được trên cái dữ liệu hình ảnh hạ lẫn video
+00:12:33 - 00:12:40, Thì trong cái ví dụ này chúng ta thấy là cái con chó đã được khoanh vùng trên cái dữ liệu video khá là mượt mà
+00:12:40 - 00:12:44, Tương tự như vậy cái vũ công ballet cũng hoạt động rất là tốt
+00:12:55 - 00:12:59, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

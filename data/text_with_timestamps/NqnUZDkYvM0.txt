@@ -1,0 +1,40 @@
+00:00:00 - 00:00:26, Thế thì nãy giờ chúng ta đã nói về những mô hình tuyến tính, tức là cái giá trị đầu ra y nó sẽ phụ thuộc một cách tuyến tính với lại x.
+00:00:26 - 00:00:38, Thế thì nếu trong trường hợp mà y nó phụ thuộc một cách không có tuyến tính, tức là y nó sẽ phụ thuộc phy tuyến với lại x, thì cái giá trị này của mình, cái hàm của mô hình của mình nó sẽ như thế nào?
+00:00:38 - 00:00:53, Thì chúng ta sẽ sử dụng một cái mạng đó là mạng Neural Network. Cái sự khác biệt lớn nhất giữa mạng Neural Network so với lại cái mạng Soapmark Regression, đó chính là nó có rất nhiều cái lớp hidden layer ở giữa.
+00:00:54 - 00:00:59, Đây là các lớp hidden layer.
+00:01:03 - 00:01:12, Và đến cái lớp cuối cùng thì nó sẽ tương đương với một cái hàm, tương đương với một cái mô hình đó là mô hình Soapmark của mình.
+00:01:12 - 00:01:20, Như vậy sự khác biệt của Neural Network và Soapmark đó là chúng ta sẽ chèn thêm rất nhiều những cái lớp biến đổi trung gian ở giữa.
+00:01:20 - 00:01:28, Với cái việc chèn nhiều lớp biến đổi trung gian ở giữa, nó sẽ giúp cho chúng ta tạo ra được các đặc trưng ở nhiều cấp độ khác nhau.
+00:01:28 - 00:01:35, Ở những cái đặc trưng ở lớp đầu tiên thì đây là những cái đặc trưng cấp thấp.
+00:01:35 - 00:01:47, Còn đối với những cái lớp tiếp theo thì nó sẽ tạo ra những cái đặc trưng và đặc trưng cấp giữa, tức là midlevel feature.
+00:01:47 - 00:01:53, Còn những cái đặc trưng ở lớp cuối cùng, đó sẽ là highlevel feature, tức là những cái đặc trưng cấp cao.
+00:01:53 - 00:02:04, Và với những cái đặc trưng cấp cao này thì nó sẽ giúp cho chúng ta phân biệt các mẫu dữ liệu đầu vào một cách rất là dễ dàng, do có tính trừ tượng của nó.
+00:02:04 - 00:02:11, Với đây chúng ta sẽ có một cái mô hình trực quan để ví dụ cho dữ liệu của mình, đó là phụ thuộc một cách phi chuyến tính.
+00:02:11 - 00:02:21, Với 2 tập điểm trong và ngoài vòng trò này, chúng ta thấy rằng là không thể nào chúng ta dùng một đường thẳng để chia ra làm 2 phần được.
+00:02:21 - 00:02:27, Không có cách nào để chia ra 2 tập mô hình tròn và hình tanh giác bằng một đường thẳng.
+00:02:27 - 00:02:34, Do đó để chia ra được thì chúng ta chỉ có thể dùng một cái đường phân lớp mà dạng phi chuyến tính như thế này.
+00:02:34 - 00:02:36, Nó sẽ đi zigzag như thế này.
+00:02:36 - 00:02:40, Và làm sao có thể làm được cái chuyện này?
+00:02:40 - 00:02:53, Ý tưởng rất là đơn giản, với mỗi một cái node trong cái mạng NeuroNetwork ở đây, tương ứng đó chính là một cái Logistic Regression.
+00:02:57 - 00:03:04, Nó chính là một cái node tổn và sigmoid, tức là một cái lớp hội quy tiếng tính.
+00:03:04 - 00:03:12, Thì đặc trưng cái trọng số của mình đó, nó chính là cái hệ số của cái phương trình đường thẳng để phân tách ra làm 2.
+00:03:12 - 00:03:18, Cái trọng số của một cái node Logistic, tức là một cái node hình tròn bao gồm tổn và sigmoid ở đây,
+00:03:18 - 00:03:23, thì nó sẽ là một cái trọng số của một cái phương trình đường thẳng để phân tách ra làm 2.
+00:03:23 - 00:03:35, Vậy thì chúng ta mượn cái ý tưởng đó để giải thích tại sao một cái mạng NeuroNetwork có thể phân tách được ra khi mà cái mode của mình không có thể dùng được một đường thẳng.
+00:03:35 - 00:03:40, Với cái node mà chúng ta đang tô đỏ ở đây, thì nó sẽ tạo ra được một cái đường biên.
+00:03:40 - 00:03:45, Thì đây nó được gọi là một cái bộ phân lớp yếu.
+00:03:46 - 00:03:55, Và một cái bộ phân lớp yếu này, nhiều cái bộ phân lớp yếu này, ví dụ như cái đường màu đen ở đây,
+00:03:55 - 00:04:05, thì chúng ta sẽ có một cái đường khác, rồi cái đường màu xanh lá ở đây, thì chúng ta sẽ có một cái đường khác tương tự như vậy.
+00:04:05 - 00:04:17, Và tổ hợp, ở cái lớp biên đổi Hidden layer tiếp theo, nó sẽ tổ hợp lại các cái đường phân lớp màu đỏ, màu đen, màu xanh lá và màu nâu
+00:04:17 - 00:04:27, để tạo ra thành một cái đường bao khép kín. Và với cái đường bao khép kín này, thì nó đã giúp cho chúng ta phân tách ra được.
+00:04:27 - 00:04:32, Làm 2 phần. Đó là cái vùng màu tam giác và hình tròn.
+00:04:32 - 00:04:38, Thì đây chính là cái ý tưởng tại sao một cái mạng Neural Network có thể giải quyết được một cái bài tuán phi tuyến tính.
+00:04:38 - 00:04:48, Là nhờ các cái đặc trưng, các cái bộ phân lớp yếu ở các lớp đầu tiên tổ hợp lại với nhau để tạo ra các cái đặc trưng cấp giữa,
+00:04:48 - 00:04:59, tức là đặc trưng cấp vừa. Các cái đặc trưng cấp vừa, nó sẽ tổ hợp lại để tạo ra các cái đặc trưng ở các lớp tiếp theo, đó là đặc trưng cấp cao.
+00:04:59 - 00:05:11, Các cái đặc trưng cấp cao này, nó sẽ giúp cho chúng ta khoanh vùng được một cách chính xác và kích độ phức tạp của chúng ta sẽ ngày càng cao khi chúng ta tích hợp càng nhiều lớp phía dưới.
+00:05:11 - 00:05:23, Thì đó chính là sơ lược qua những cái kiến trúc mạng dựa trên dạng đồ thị tính toán, chúng ta có thể tạo ra được các cái mô hình giải quyết được các cái bài tuán phi tuyến tính và phi tuyến.
+00:05:23 - 00:05:33, Và đây là những cái mô hình rất là cơ bản, thì đối với cái mạng Neural Network thì nó đã bắt đầu cho cái kỹ nguyên của Deep Learning, các cái mô hình học sau.
+00:05:33 - 00:05:45, Thì người ta đã có rất nhiều những cái cải tiến, CNN, ANN, Transformer đã có rất nhiều cái cải tiến từ cái mạng Neural Network này để cho mô hình chúng ta có thể huấn luyện một cách dễ dàng hơn
+00:05:45 - 00:05:52, và có thể học được trên những cái dữ liệu phức tạp hơn và bài tuán phức tạp hơn cũng như là tổng bác hơn.
+00:05:52 - 00:06:02, Thì trên đây đó là giới thiệu về mạng Neural Network, chúng ta sẽ kết thúc cái phần đầu đó là lý thuyết về radian, các cái mô hình dựa trên radian.
+00:06:02 - 00:06:15, Trong những phần tiếp theo thì chúng ta sẽ tìm hiểu về các cái mô hình hiện đại hơn, bao gồm các cái mạng học sau như là CNN, ANN, Transformer, cũng như là các cái mô hình cho AI tạo sinh.

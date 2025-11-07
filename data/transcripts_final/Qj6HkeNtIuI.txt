@@ -1,0 +1,77 @@
+0:00:14 - 0:00:20, Chúng ta sẽ cùng đến với vấn đề đầu tiên mà chúng ta cần phải giải quyết, đó chính là vấn đề về overfitting.
+0:00:20 - 0:00:29, Thì overfitting không phải là một vấn đề riêng của lĩnh vực học sâu mà đó là một vấn đề chung của mọi mô hình máy học.
+0:00:29 - 0:00:38, Thế thì overfitting là gì, nguyên lý của nó ra sao, nguyên nhân là gì và giải pháp là gì thì chúng ta sẽ cùng tìm hiểu trong phần này.
+0:00:38 - 0:00:46, Đầu tiên khi nói về hiện tượng overfitting thì chúng ta sẽ phải nhắc đến cái vấn đề đó là cái mô hình của mình.
+0:00:46 - 0:00:54, Nó dự đoán rất là tốt trên tập Train nhưng nó lại rất là tệ trên tập Test.
+0:00:54 - 0:01:03, Thì cái này có một số biểu hiện mang tính chất định lượng, ví dụ như là trên tập Train chúng ta huấn luyện xong chúng ta dùng chính tập Train để chúng ta đánh giá,
+0:01:03 - 0:01:08, thì cái độ chính xác của mình nó có thể lên đến 80% ví dụ vậy.
+0:01:08 - 0:01:16, Nhưng khi chúng ta Test trên tập Dữ liệu Test thì độ chính xác của mình nó rớt xuống rất là đáng kể.
+0:01:16 - 0:01:28, Ví dụ nếu mà nó khoảng 75% thì ok là cái mô hình của mình tương đối tốt và nó sẽ không có quá bị hiện tượng Overfitting.
+0:01:28 - 0:01:40, Tuy nhiên nếu cái độ chính xác trên tập Test của mình mà chỉ còn có khoảng 60% thì nó đã có một sự giảm đáng kể từ 80% xuống 60%.
+0:01:40 - 0:01:44, Vì vậy cái tình huống này đó là hiện tượng Overfitting.
+0:01:44 - 0:01:50, Thì đây là một cái ví dụ mang tính chất định lượng để giúp chúng ta hình dung về cái hiện tượng này.
+0:01:50 - 0:01:59, Thế thì nếu xét về giải thích thì chúng ta có rất nhiều những cái cách thức để giải thích cho cái hiện tượng Overfitting.
+0:01:59 - 0:02:04, Thì đây là một cái mô hình nó rất là phức tạp và dữ liệu không đủ nhiều.
+0:02:04 - 0:02:16, Thì đây là một cái cách giải thích cho cái nguyên nhân của hiện tượng Overfitting mà các bạn thấy phổ biến nhất khi chúng ta đọc các tài liệu trên các bài báo khoa học hoặc là trên nguồn internet.
+0:02:16 - 0:02:30, Hoặc là một cái cách giải thích khác đó là hiện tượng Overfitting là cái hiện tượng mà mô hình của mình nó sẽ tìm cách để mà học thuộc các mẫu dữ liệu Train thay vì là chúng ta tổng quát hóa lên.
+0:02:30 - 0:02:40, Để sao cho sau này khi có một cái dữ liệu mới thì nhờ có tính chất tổng quát hóa này nó có thể dễ dàng xử lý được trên những cái dữ liệu mới.
+0:02:40 - 0:02:48, Thì hình ở dưới đây là minh họa hai cái tình huống. Cái tình huống đầu tiên đó là Appropriate Fitting.
+0:02:48 - 0:02:55, Thì đây là một cái mô hình được gọi là tốt. Thì cái mô hình này là mô hình tốt tại vì sao?
+0:02:55 - 0:03:09, Mặc dù ở cái đường phân loại, cái đường màu đỏ này là cái đường phân lớp giữa hai tập X và O thì chúng ta thấy là nó vẫn còn hai cái điểm X mà nằm trộn chung với lại cái điểm O.
+0:03:09 - 0:03:16, Tức là nó đang đặt sai vị trí. Thì cái hai cái sai này thì nó có thể có nhiều nguyên nhân.
+0:03:16 - 0:03:26, Cái nguyên nhân đầu tiên đó là do cái dữ liệu này thực sự là Outlier và do chúng ta gán nhãn sai.
+0:03:26 - 0:03:36, Thế thì nếu như cái mô hình của mình mà cứ tìm cách để mà học thuộc những cái tình huống mà gán nhãn sai thì vô hình chung nó đã làm mất đi tính tổng quát của cái mô hình của mình.
+0:03:36 - 0:03:46, Do đó nếu mà mô hình của chúng ta biết gạn lọc ra và loại bỏ những cái Outlier một cách hợp lý thì cái mô hình của mình nó sẽ có tính tổng quát quá cao.
+0:03:46 - 0:03:52, Cái tình huống thứ hai đó là cái dữ liệu này thực sự là dữ liệu được gán nhãn đúng.
+0:03:52 - 0:04:02, Tuy nhiên cái hai cái điểm này thì nó sẽ nằm ở cái đường biên. Nó sẽ nằm ở gần đường biên và có cái sự giao thoa giữa hai cái loại điểm với nhau.
+0:04:02 - 0:04:09, Thì thông thường những cái điểm này là những cái điểm mà có cái khả năng xảy ra trong thực tế rất là thấp.
+0:04:09 - 0:04:17, Nên nếu mà chúng ta cứ chăm chăm học vô những cái điểm này thì vô hình chung chúng ta lại bỏ qua những cái tình huống tổng quát.
+0:04:17 - 0:04:29, Còn bên tay phải đó là một cái tình huống để minh họa cho cái hiện tượng Overfitting. Đó là cái mô hình của chúng ta khi mà nó đi theo cái biên giới giữa hai cái điểm X và O.
+0:04:29 - 0:04:38, Thì nó sẽ tìm cách kéo các cái điểm X mà Outlier ở đây về cùng phía với các cái điểm X thông thường.
+0:04:38 - 0:04:48, Thế thì các cái đường cong mà nó đi khúc khuỷu như thế này nó sẽ là cố gắng để đi học thuộc. Đây là những cái tình huống mà nó học thuộc.
+0:04:48 - 0:04:54, Và vì cái yếu tố học thuộc này nó sẽ khiến cho cái mô hình của mình không có tổng quát hóa.
+0:04:54 - 0:05:05, Thế thì đây là một vài cái cách để chúng ta giải thích cho hiện tượng Overfitting. Tuy nhiên tất cả những cái cách này thì nó đều không có cái tính thuyết phục.
+0:05:05 - 0:05:16, Tại vì nó mang tính chất gọi là trừu tượng hoặc là cảm nhận. Thì bây giờ làm sao có một cái cách giải thích nào đó mang tính chất định lượng hơn, thuyết phục hơn.
+0:05:16 - 0:05:25, Và đương nhiên nếu mà chúng ta bám vào những cái lý thuyết cơ bản mà chúng ta đã học ở bậc phổ thông thì đó là một cái cách giải thích tốt.
+0:05:25 - 0:05:33, Thế thì ở đây chúng ta sẽ lý giải cái hiện tượng Overfitting bằng kiến thức toán cấp 3.
+0:05:33 - 0:05:42, Và chúng ta sẽ nhắc lại cái mô hình huấn luyện của mình. Đầu tiên đó là chúng ta sẽ có cái dữ liệu X qua cái hàm mô hình là một cái hàm F theta X.
+0:05:42 - 0:05:50, Vì vậy thì chúng ta sẽ ra được cái giá trị dự đoán Y ngã. Y ngã trong trường hợp này chính là bằng F của theta, theta X.
+0:05:50 - 0:05:55, Và chúng ta mong muốn cái giá trị này nó sẽ xấp xỉ với lại giá trị thực tế Y.
+0:05:55 - 0:06:05, Thế thì mục tiêu cuối cùng của cái việc huấn luyện một cái mô hình máy học đó là làm sao cho cái F theta X là khớp với lại cái giá trị dự đoán, cái giá trị thực tế.
+0:06:05 - 0:06:13, Trong đó thì X và Y của mình đó là một cái mẫu dữ liệu để huấn luyện. Đây là một cái mẫu dữ liệu để Train.
+0:06:16 - 0:06:29, Và chúng ta sẽ đưa về cái bài toán, đưa cái công thức này về cái dạng là giải hệ phương trình, giải hệ phương trình trong toán cấp 3.
+0:06:29 - 0:06:34, Và sử dụng một số cái kiến thức mà chúng ta đã biết để lý giải cho cái hiện tượng overfitting.
+0:06:37 - 0:06:46, Đầu tiên đó là chúng ta giả sử hàm F là một cái hàm tuyến tính. Còn trong trường hợp hàm F là một cái hàm phi tuyến thì chúng ta hoàn toàn có thể lập luận một cách tương tự.
+0:06:46 - 0:07:03, Tuy nhiên ở đây chúng ta sử dụng cái hàm tuyến tính để chúng ta đơn giản hóa công thức, cho chúng ta có thể cảm nhận được cái sự khác biệt và cái sự cần thiết trong cái việc cân bằng giữa cái số mẫu dữ liệu huấn luyện và cái tham số của mô hình.
+0:07:03 - 0:07:08, Do đó hàm tuyến tính là một cái hàm đủ đơn giản để giải thích, để minh họa.
+0:07:08 - 0:07:24, Rồi, thì bây giờ với một mẫu dữ liệu huấn luyện, với một mẫu dữ liệu huấn luyện XA và EA thì cái E này chính là cái chỉ số của mẫu.
+0:07:24 - 0:07:38, Và ta sẽ có một phương trình, như vậy với một mẫu dữ liệu XA thì chúng ta sẽ có một phương trình tuyến tính, đó là FθXA là bằng EA.
+0:07:38 - 0:07:46, Chúng ta luôn mong muốn cái hàm dự đoán của mình đối với mẫu dữ liệu thứ Y này sẽ là khớp với cái kết quả Ground Truth.
+0:07:47 - 0:07:57, Và nếu như đây là một cái hàm tuyến tính thì chúng ta sẽ viết lại cái hàm F ở dạng như sau. Đó là theta0 cộng cho theta1 XI.
+0:07:57 - 0:08:06, Thứ nhất, lưu ý là cái XI ở đây đó là một cái vector. Vector này thì bao gồm là m chiều.
+0:08:06 - 0:08:17, Rồi, thì chúng ta sẽ có thành phần số thứ 1, thứ 2, cho đến thứ M, từ 1 đến M. Và kèm theo cái thành phần nữa đó là bias.
+0:08:17 - 0:08:26, Thì đây là một cái mô hình tuyến tính chuẩn. Thì phương trình này, nguyên cái biểu thức này sẽ bằng với cái giá trị dự đoán là EA.
+0:08:26 - 0:08:31, Thì đây là một cái phương trình tuyến tính. Đây là một cái phương trình tuyến tính.
+0:08:38 - 0:08:47, Và dựa trên cái kiến thức cũ mà chúng ta đã học trước đây, đó là một cái chúng ta muốn giải được các cái ẩn số của cái phương trình này.
+0:08:47 - 0:09:00, Cụ thể ở đây, ẩn số của mình chính là theta0, theta1, theta2 và thetaM. Thì ở đây có tất cả là m cộng 1 ẩn.
+0:09:00 - 0:09:11, Chúng ta có tất cả m cộng 1 ẩn. Tương ứng với lại theta0, theta1, theta2 và thetaM. Thì đây chính là cái ẩn số mà chúng ta cần giải.
+0:09:11 - 0:09:23, Và để mà tìm được m cộng 1 cái ẩn số này, thì chúng ta và lưu ý là tìm với một nghiệm duy nhất.
+0:09:23 - 0:09:32, Tại vì khi chúng ta huấn luyện một cái mô hình máy học, thì khi huấn luyện xong một cái mô hình máy học, thì chúng ta sẽ có duy nhất một mô hình.
+0:09:32 - 0:09:36, Mà một mô hình thì đó sẽ là một bộ tham số và thôi.
+0:09:36 - 0:09:52, Như vậy thì giả sử như cái mô hình mà có độ chính xác cao nhất của chúng ta, đó là theta0 là nó đúng trong các tình huống khi chúng ta triển khai trong thực tế.
+0:09:52 - 0:09:56, Mô hình mà tối ưu là chúng ta ký hiệu là bởi theta0.
+0:09:56 - 0:10:06, Thì để mà tìm ra được cái theta sao này, với một nghiệm duy nhất thì chúng ta phải có đủ ít nhất là m cộng 1 phương trình.
+0:10:06 - 0:10:12, Giải một cái m cộng 1 ẩn thì chúng ta cần có đủ m cộng 1 phương trình.
+0:10:12 - 0:10:17, Ở đây là chúng ta lưu ý là đang giả sử hàm của mình là một cái hàm tuyến tính.
+0:10:17 - 0:10:22, Vậy thì gọi n là số mẫu dữ liệu huấn luyện.
+0:10:22 - 0:10:30, Khi đó thì chúng ta sẽ có một hệ các phương trình. Đây là mẫu dữ liệu thứ nhất, mẫu dữ liệu thứ nhất, rồi mẫu dữ liệu thứ n.
+0:10:30 - 0:10:37, Và ở đây chúng ta lưu ý là có cái dấu 3 chấm, tức là có bao gồm mẫu thứ 2, thứ 3, thứ 4, cho đến mẫu thứ n.
+0:10:37 - 0:10:49, Thế thì nếu như cái phương trình mà ít hơn về số ẩn, tức là n, nếu mà số phương trình ít hơn số ẩn, tức là n, phương trình bé hơn m cộng 1,
+0:10:49 - 0:10:57, thì cũng dựa trên kiến thức toán cấp 3 là cái hệ phương trình này là vô số nghiệm.
+0:10:57 - 0:11:06, Mà cái hệ phương trình vô số nghiệm thì nó sẽ xảy ra cái vấn đề đó là cái xác suất để khi chúng ta kết thúc quá trình huấn luyện,
+0:11:06 - 0:11:16, mà chúng ta tìm ra được cái bộ tham số tối ưu nhất, tức là cái bộ tham số theta sao mà có thể đúng cho cả tập Train và tập Test mà tốt nhất,
+0:11:16 - 0:11:28, hoặc là tổng quát nhất, hoặc là đáng chính xác trên tập Test nhất, thì đây là 3 cái cách nói khác nhau hả, bộ tham số tối ưu nhất, hoặc là tổng quát nhất, hoặc là đáng chính xác trên tập Test nhất.
+0:11:28 - 0:11:38, Thì xác suất để mà cái p của theta bằng theta sao, tức là chúng ta huấn luyện ra được tìm được cái này sẽ là bằng 1 phần vô cùng. Tại sao?
+0:11:38 - 0:11:48, Tại vì theta sao thì chỉ có 1 nhưng mà với n bé hơn m cộng 1, tức là số ẩn bé hơn số, xin lỗi số phương trình bé hơn số ẩn,
+0:11:48 - 0:11:58, thì nó là có vô số nghiệm, thì nó sẽ là 1 trên vô cùng, tức là gần như bằng 0. Xác suất cực kỳ thấp.
+0:12:08 - 0:12:18, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn.

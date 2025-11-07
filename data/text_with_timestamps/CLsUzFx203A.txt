@@ -1,0 +1,80 @@
+00:00:00 - 00:00:24, Chúng ta sẽ cùng đến với một trong những kiến thuật mạng rất là nổi định nổi đáng và ý tưởng của nó cũng rất là hay và thú vị là chính là mạng tạo sinh đối kháng GAN.
+00:00:24 - 00:00:39, Chúng ta sẽ đến với ý tưởng của mạng GAN. Đối với các kiến trúc trước, chúng ta sẽ phải có một công đoạn đó là nén dữ liệu hay là encode dữ liệu.
+00:00:39 - 00:00:52, Từ một con số hoặc từ một tấm ảnh, chúng ta sẽ có một giai đoạn đó là biến nó và nén thành một VectorZ.
+00:00:52 - 00:01:06, Thế thì cái GAN nó xuất phát ý tưởng đó là mình chỉ muốn lấy mẫu, chứ là chúng ta chỉ lấy mẫu và sau đó chúng ta tạo ra một tấm ảnh mới mà không có công đoạn nén này.
+00:01:06 - 00:01:12, Tại vì mục tiêu của mình không phải là để nén ảnh, mà mục tiêu của mình là để sinh ảnh.
+00:01:13 - 00:01:24, Các mạng tạo sinh của mình mình hướng đến là công dụng là sinh ảnh chứ không phải là để nén ảnh. Nén ảnh thì chúng ta có thể sử dụng các thuật toán nén chuyên biệt, có hiệu suất rất là cao.
+00:01:24 - 00:01:39, Vậy thì mong muốn đó là chúng ta chỉ muốn lấy mẫu để mà từ đó chúng ta tạo ra ảnh mới mà không cần cái công việc nén ảnh tại vì đây là cái công việc thừa.
+00:01:39 - 00:01:51, Ừm hông, thì cái ý tưởng đó là chúng ta sẽ không cần mô hình hóa cái không gian ẩn một cách tường minh mà chỉ cần lấy mẫu để tạo ảnh mới.
+00:01:51 - 00:02:03, Như vậy thì GAN sẽ xuất phát điểm đó là không có cái công đoạn nén này mà từ cái vector z chúng ta sẽ tạo ra tấm ảnh mới luôn.
+00:02:03 - 00:02:20, Ở đây chúng ta sẽ phải có một cái mạng nó gọi là mạng tạo sinh z hay vít tắc của chữ là generator. Với cái generator này, từ một cái vector nhễu, một cái vector noise z,
+00:02:20 - 00:02:34, nó qua cái mạng G thì nó sẽ tạo ra một cái tấm ảnh x và mình mong muốn cái ảnh giả này nè, dùng cái từ lập từ fact là cái ảnh giả này nè, thu được từ cái mô hình,
+00:02:34 - 00:02:42, học được cái phân bố của dữ liệu thật, tức là cái x fact này nè, nó sẽ nằm trong cái phân bố của dữ liệu thật này của mình.
+00:02:43 - 00:02:54, Vậy thì vấn đề ở đây đó là chúng ta không lấy mẫu trực tiếp từ một cái phân phối chức tạp tại vì chúng ta không tạo ảnh hay là còn không tạo ảnh mong muốn.
+00:02:54 - 00:03:06, Vậy thì bây giờ giải pháp đó là gì? Đó là chúng ta sẽ lấy mẫu từ một vector đơn giản, đó là một cái vector nhễu, rồi sau đó chúng ta học cái cách biến đổi sang cái phân phối dữ liệu.
+00:03:06 - 00:03:18, Vậy thì chúng ta sẽ lấy mẫu từ cái vector z là trong một cái vector nhễu, rồi sau đó chúng ta sẽ, đây là một vector đơn giản, một vector nhễu,
+00:03:18 - 00:03:31, rồi học cái cách biến đổi sang cái phân bố dữ liệu. Đây là cái phân bố x của dữ liệu. Chúng ta sẽ tìm cái hàm ảnh xạ này.
+00:03:32 - 00:03:43, Chứ còn cái việc mà chúng ta lấy mẫu ngộ nhiên trong cái không gian này là khó. Chúng ta bốc ra một cái lấy mẫu ngộ nhiên trong cái không gian này sẽ là khó.
+00:03:43 - 00:03:55, Rất khó để mà chúng ta có thể lấy ra được một cái tấm ảnh mà có cái tính chất giống như cái ảnh thật mà chúng ta sẽ lấy mẫu theo một cái vector đơn giản nào đó và ngộ nhiên hoàn toàn.
+00:03:55 - 00:04:11, Thì cái việc lấy mẫu ngộ nhiên này là dễ. Lấy mẫu ngộ nhiên là dễ. Samling, vector z, ngộ nhiên thì dễ.
+00:04:12 - 00:04:25, Còn cái việc mà chúng ta lấy mẫu trong cái không gian phân bố ảnh này đó là một cái thao tác phức tạp. Tại vì mình không có cái mô hình nào có thể mô phẩm được cái phân bố phức tạp của x này.
+00:04:25 - 00:04:29, Thì đây là một cái phân bố phức tạp.
+00:04:35 - 00:04:54, Rồi, vậy thì cái kiến trúc của mạng GAN hay là viết tắc của Generative Adversarial Network hay là mạng tạo sinh đối kháng là một cái phương pháp để tạo ra một cái mô hình sinh bằng cách để hai cái mạng đối kháng với nhau.
+00:04:54 - 00:05:12, Thì ở cái bước đầu tiên đó là cái bước generator là bước tạo sinh. Thì đây là một cái mô hình tạo sinh generator. Nó sẽ từ một cái vector z là một vector nhễu ngộ nhiên. Nó sẽ tạo thành một cái dữ liệu giả là cái x fact này.
+00:05:12 - 00:05:24, Chính là cái dữ liệu giả để cố đánh lừa cái mô hình D này. Để cố đánh lừa cái mô hình D sao cho cái mô hình D này nó không phân biệt được cái ảnh thật và ảnh giả.
+00:05:24 - 00:05:34, Thì cái x real này là cái x mà chúng ta thu thập. Đây là cái dữ liệu chúng ta thu thập trong thực tế.
+00:05:34 - 00:05:46, Sau đó chúng ta sẽ đi huấn luyện từ cái x real và x fact này chúng ta sẽ đi huấn luyện cái D để làm sao cho nó có thể phân biệt được là ảnh thật và ảnh giả.
+00:05:46 - 00:05:59, Thì cái mô hình phân loại, mô hình D này là discriminator là sẽ cố gắng xác định xem dữ liệu thật và dữ liệu giả do z tạo ra. X fact này là do z tạo ra.
+00:06:00 - 00:06:10, Thì D nó sẽ tìm cách đi phân biệt hai này. Và tại sao chúng ta gọi là đối kháng? Tại vì nhiệm vụ của G và D là hai cái kềm vụ mà ngược nhau.
+00:06:10 - 00:06:18, G mục tiêu của mình đó là tạo ra cái dữ liệu không có, là tạo ra một cái dữ liệu nhìn giống thật nhất có thể.
+00:06:18 - 00:06:25, Trong khi đó D thì nhiệm vụ của nó lại là phân biệt hai cái mẫu dữ liệu này. Một bên thật và một bên giả.
+00:06:25 - 00:06:32, Nếu chúng ta đối chiếu nó với hình ảnh trong thực tế thì G nó giống như là một cái người in tin giả.
+00:06:32 - 00:06:45, Còn D là cái cảnh sát, là công an chống cái việc là in tin giả.
+00:06:45 - 00:06:54, Thì hai người này sẽ thực hiện hai cái công việc ngược nhau. Một người tìm cách phát hiện và một người sẽ tìm cách đi làm giả.
+00:06:54 - 00:07:00, Vậy thì ở đây chúng ta sẽ có cái bản chất và ý tưởng của GAN đó là gì?
+00:07:00 - 00:07:08, Mô hình G là mô hình tạo sinh G sẽ cố gắng bắt đầu từ một cái dữ liệu nhỉu để bắt trước cái dữ liệu thật.
+00:07:08 - 00:07:14, Ở đây màu đỏ là chúng ta minh họa cho cái dữ liệu giả và dữ liệu phách.
+00:07:14 - 00:07:27, Và mô hình G này được từ các cái vector nhỉu G1, G2, GN tạo ra các cái điểm dữ liệu giả này.
+00:07:27 - 00:07:36, Sau đó thì cái mô hình phân biệt, tức là mô hình D, Discriminator sẽ xem xét cả dữ liệu thật và dữ liệu giả được tạo ra.
+00:07:37 - 00:07:44, Dữ liệu thật sẽ được mô tả bởi màu xanh, còn dữ liệu giả là từ bên đây chúng ta đem qua.
+00:07:44 - 00:07:48, Là từ Cascade generator chúng ta đem qua. Ba cái điểm này.
+00:07:48 - 00:07:53, Thì Discriminator sẽ phải hướng luyện để mà phân biệt.
+00:07:53 - 00:08:00, Dả sử như chúng ta có một cái đường ở trên là cái sát xuất để thuộc về dữ liệu thật.
+00:08:00 - 00:08:04, Và cao nhất của mình sát xuất đó sẽ là bằng 100%.
+00:08:04 - 00:08:10, Thì ban đầu Discriminator của mình nó sẽ rất là yếu, nó sẽ không có chính xác.
+00:08:10 - 00:08:16, Nên chúng ta sẽ thấy là cái sát xuất của những cái điểm dữ liệu giả của mình nó khá là cao.
+00:08:16 - 00:08:22, Nó sẽ xem xem. Nó sẽ xem xem với lại cái chiều cao, tức là cái sát xuất của các điểm dữ liệu thật.
+00:08:23 - 00:08:32, Do đó chúng ta sẽ tìm cách để hướng luyện cho cái Discriminator này sẽ càng lúc nó sẽ có cái khả năng phân biệt tiền thật và tiền giả.
+00:08:32 - 00:08:35, Phân biệt mẫu dữ liệu thật, dữ liệu giả càng chính xác hơn.
+00:08:35 - 00:08:41, Thì khi chúng ta hướng luyện thì chúng ta thấy là cái sát xuất của các điểm dữ liệu thật nó sẽ càng lúc càng được đẩy lên.
+00:08:41 - 00:08:47, Trong khi đó các mẫu dữ liệu giả sát xuất của nó sẽ càng lúc bị đẩy xuống.
+00:08:47 - 00:08:52, Điều đó có nghĩa là cái Discriminator nó đang giỏi lên.
+00:08:52 - 00:08:57, Và đến được một cái mức đó là nó gần sắp sử dụng mô.
+00:08:57 - 00:09:04, Thì đó là cái mô hình của chúng ta đã hoạt động rất là tốt với cái mẫu dữ liệu thật và mẫu dữ liệu giả như thế này.
+00:09:04 - 00:09:12, Tuy nhiên chúng ta nhìn thấy là cái dữ liệu thật và dữ liệu giả là hiện giờ nó vẫn còn cách nhau khá là xa.
+00:09:12 - 00:09:15, Về mặt phân bố nó nằm ở xa nhau.
+00:09:15 - 00:09:20, Do đó nên cái Discriminator nó sẽ phân biệt rất là tốt.
+00:09:20 - 00:09:28, Do đó thì cái Generator này sẽ tìm cách học như thế nào đó để cho hai cái phân bố này nó sẽ tiến về lại gần nhau hơn.
+00:09:28 - 00:09:31, Tức là các điểm màu đỏ sẽ tiến về gần các điểm màu xanh hơn.
+00:09:31 - 00:09:34, Chúng ta thấy là nó đã tiến về gần hơn.
+00:09:34 - 00:09:38, Rồi, và khi hai điểm màu đỏ và màu xanh nó đã tiến về gần hơn.
+00:09:39 - 00:09:47, Tức là cái mẫu dữ liệu giả này nó đã có vẻ thật hơn.
+00:09:51 - 00:09:57, Thì khi đó chúng ta đem qua Discriminator cũng cái dữ liệu này chúng ta đem qua đây.
+00:09:57 - 00:10:05, Thì chúng ta sẽ thấy là cái sát xuất qua Discriminator thì cái sát xuất của các điểm dữ liệu giả nó khá là cao.
+00:10:05 - 00:10:14, Nó không bằng cái điểm thật nhưng mà nó đã được đẩy lên rất là cao và gần với lại cái ngưỡng Peril là bằng 100%.
+00:10:14 - 00:10:15, Thế là bằng 1 đây.
+00:10:15 - 00:10:17, Thì cái điều này là không tốt.
+00:10:17 - 00:10:27, Vậy đến là Discriminator sẽ tìm cách để cải thiện cái hiệu quả của mình bằng cách là học ra và đè cái phân bố này xuống.
+00:10:27 - 00:10:31, Chúng ta thấy là cái phân bố của nó sẽ càng lúc được đẩy xuống dưới.
+00:10:32 - 00:10:41, Và cái phân bố và cái sát xuất của cái dự đoán của các điểm dữ liệu thật nó đã được đẩy lên gần sát với lại 100%.
+00:10:41 - 00:10:45, Thì khi đó là cái Discriminator của mình nó đã tốt lên.
+00:10:45 - 00:10:50, Và cái dữ liệu Generator này thì cũng tương tự như vậy.
+00:10:50 - 00:10:53, Nó sẽ tìm cách là đánh lừa Discriminator.
+00:10:53 - 00:10:56, Do đó thì cái mẫu dữ liệu mới nó được tạo ra.
+00:10:56 - 00:11:00, Nó đã càng lúc càng tiến sát vào bên trong gần với điểm dữ liệu thật hơn.
+00:11:01 - 00:11:07, Thì đến đây chúng ta đã thấy rằng cái phân bố của dữ liệu thật và dữ liệu giả nó đã hòa vào nhau.
+00:11:07 - 00:11:09, Nó càng tiến đến gần hơn.
+00:11:11 - 00:11:15, Và đến đây đó là 2 cái này gần như là chọn nhau.
+00:11:15 - 00:11:19, Thì đây chính là cái ý tưởng của Mạng Ghan là Mạng tạo sinh đối kháng.
+00:11:31 - 00:11:33, Cảm ơn các bạn đã xem video.
+00:11:33 - 00:11:35, Hãy đăng ký kênh để xem video mới nhất.

@@ -1,0 +1,149 @@
+0:00:14 - 0:00:22, Chúng ta sẽ cùng đến với một trong những cái cải tiến đầu tiên của thuật toán Gradient Descent, đó chính là biến thể momentum
+0:00:23 - 0:00:40, Momentum có thể nói là một trong những biến thể quan trọng và ý tưởng của nó đã được kế thừa và sử dụng rất nhiều trong các thuật toán optimizer trên các mô hình gradient base
+0:00:40 - 0:00:51, Và ý tưởng của momentum là gì? Và tại sao có thể đề xuất ra được cái cải tiến này? Chúng ta sẽ cùng tìm hiểu trong những phần tiếp theo
+0:00:51 - 0:00:56, Đầu tiên chúng ta sẽ nhắc lại về thuật toán gradient descent
+0:00:56 - 0:01:08, Ở bên tay trái đó chính là cái thuật toán được biết một cách đầy đủ là khởi tạo tham số, cụ thể đây là theta là bằng một cái random
+0:01:08 - 0:01:20, Rồi sau đó chúng ta sẽ đi tính đạo hàm của hàm lỗi theo từng thành phần của theta
+0:01:20 - 0:01:31, Sau đó chúng ta sẽ cập nhật lại các cái tham số là theta mới thì sẽ là bằng theta cũ trừ cho alpha nhân cho đạo hàm của hàm lỗi theo theta
+0:01:31 - 0:01:37, Và cái bước cập nhật này sẽ được thực hiện đi, thực hiện lại nhiều lần
+0:01:37 - 0:01:46, Thế thì để cho gọn chúng ta sẽ lấy cái phần lỗi nhất của cái thuật toán gradient descent, đó chính là cái bước cập nhật tham số này
+0:01:46 - 0:01:56, Và chúng ta sẽ lặp cho đến khi nào mà cái theta của mình nó hội tụ, thì cái hội tụ ở đây có nghĩa là nó sẽ không có giảm xuống được nữa
+0:01:56 - 0:02:08, Và chúng ta sẽ đến với cái cải tiến đầu tiên của momentum, thì trước khi đến cái cải tiến chúng ta phải nói về cái vấn đề của nó đang gặp là gì
+0:02:08 - 0:02:16, Vấn đề số 1 đó là làm sao để một cái learning rate chúng ta có thể chọn nó một cái learning rate tốt
+0:02:16 - 0:02:30, Thì cái vấn đề này xảy ra khi chúng ta quan sát vào cái thuật toán gradient descent, chúng ta thấy cái alpha này đóng vai trò rất là quan trọng trong cái việc hội tụ của mô hình
+0:02:30 - 0:02:39, Nếu như alpha của mình mà quá nhỏ thì cái mô hình của mình nó sẽ hội tụ chậm, lấy ví dụ như ở đây là cái hàm loss
+0:02:39 - 0:02:47, Và khi mà cái alpha mà quá nhỏ thì nó sẽ nhảy xuống từng cái bước rất là nhỏ, những cái bước dò dẫm rất là nhỏ
+0:02:47 - 0:02:52, Và vì nó đi chậm như vậy nên cái hội tụ nó sẽ chậm
+0:02:52 - 0:03:09, Ngược lại nếu alpha mà lớn, thậm chí là rất lớn thì nó có thể nhảy qua bên đây, thoát ra khỏi cái điểm lẽ ra nó phải đến được, nó lại nhảy qua bên đây, xong rồi qua đây
+0:03:09 - 0:03:14, Và cứ như vậy là thoát ra khỏi cái điểm tối ưu
+0:03:14 - 0:03:22, Vậy thì learning rate cần phải được điều chỉnh giảm dần hay còn gọi là dampening
+0:03:22 - 0:03:33, Thế thì tại sao lại như vậy? Nếu như ban đầu chúng ta không biết learning rate là bao nhiêu thì chúng ta sẽ cho nó một cái giá trị bụi lớn
+0:03:33 - 0:03:40, Và có thể chấp nhận là nó sẽ dần dần có thể ban đầu nó sẽ thoát ra khỏi cái điểm cực tiểu
+0:03:40 - 0:03:56, Tuy nhiên ở những cái vòng lặp sau nó sẽ giảm dần, nhỏ dần và đến lúc đạt được cái giá trị learning rate mà tối ưu, tức là hội tụ về cái điểm cực tiểu nhưng đồng thời là không đi quá chậm
+0:03:56 - 0:04:00, Thì đó là cái ý tưởng của cái cải tiến
+0:04:00 - 0:04:11, Vậy thì ở đây chúng ta sẽ có một cái bước khởi tạo đó là alpha ban đầu là bằng 0.5 thì đây là một cái con số khá là lớn
+0:04:11 - 0:04:19, Và chúng ta sẽ lặp cho đến khi hội tụ thì chúng ta sẽ cho alpha là bằng delta nhân với alpha
+0:04:19 - 0:04:26, Trong đó delta chính là cái hệ số dampening, dampening factor nó có giá trị từ 0 cho đến 1
+0:04:26 - 0:04:32, Thì ở đây chúng ta sẽ thử trả lời cho cái câu hỏi là điều gì xảy ra nếu delta bằng 0
+0:04:32 - 0:04:46, Nếu delta bằng 0, tức là alpha sẽ là bằng 0 nhân với cái alpha cũ thì alpha sẽ bị triệt tiêu và khi đó cái phần này nó sẽ là bằng 0, tức là theta sẽ không cập nhật
+0:04:46 - 0:05:12, Ngược lại nếu delta mà bằng 1, tức là alpha sẽ không giảm mà alpha không giảm, tức là quá trình cập nhật này nó tại những thời điểm đầu tiên nó sẽ có thể bị phân kỳ như thế này
+0:05:12 - 0:05:23, Nếu chúng ta không khéo cho delta là lớn hơn 0 và nó phải bé hơn 1
+0:05:23 - 0:05:34, Để thuận tiện cho chúng ta bàn đến những cái cải tiến tiếp theo thì chúng ta sẽ đặt một cái biến, nó gọi là biến vận tốc
+0:05:34 - 0:05:48, Thế thì theta bằng theta trừ cho alpha nhân cho đạo hàm thì chúng ta sẽ xét nguyên cái vế này sẽ là cái biến V, tức là cái vận tốc cập nhật tham số của mình
+0:05:48 - 0:06:00, Tại sao dùng từ vận tốc? Tại vì nó thể hiện cho cái việc di chuyển nhanh hay không nhanh, nếu như cái V này lớn thì delta sẽ được cập nhật nhanh
+0:06:00 - 0:06:19, Nếu V mà nhỏ thì theta sẽ cập nhật rất chậm, do đó chúng ta sẽ viết lại thuật toán của mình, đó là lặp cho đến khi hội tụ và chúng ta tạo ra một cái biến vận tốc V ở đây
+0:06:19 - 0:06:39, Vậy thì vấn đề ở đây là gì? Tốc độ hội tụ sẽ rất chậm hoặc là nó sẽ bị mắc kẹt hay gọi là get stuck tại các điểm cực tiểu cục bộ
+0:06:39 - 0:06:59, Nếu dùng từng bước cập nhật, chúng ta sẽ có một cái hàm j là hàm lỗi như sau, nếu như chúng ta khởi tạo, nó sẽ nằm ở những cái điểm mà không phải là cực tiểu toàn cục, mà nó sẽ nằm ở cái phía như thế này
+0:06:59 - 0:07:11, Vậy thì khi chúng ta cập nhật nó về đây thì nó sẽ bị mắc kẹt tại cái điểm cực tiểu cục bộ này
+0:07:11 - 0:07:26, V sẽ có xu hướng là ban đầu sẽ rất là nhanh, nhưng mà càng đến đây, càng đến cái điểm cực tiểu cục bộ thì nó sẽ chậm dần
+0:07:26 - 0:07:43, Tại sao lại như vậy? Tại vì khi tham số của mình càng tiến về điểm cực tiểu cục bộ, mà điểm cực tiểu cục bộ có tính chất đó là đạo hàm gần bằng 0
+0:07:43 - 0:07:54, Mà khi đạo hàm xấp xỉ bằng 0 thì tức là, tức là cái v, v này của chúng ta, v là bằng alpha nhân đạo hàm thì nó cũng sẽ xấp xỉ bằng 0
+0:07:54 - 0:08:01, Và khi đó thì theta bằng theta trừ cả một con số rất là bé, tức là nó sẽ đi rất là chậm
+0:08:02 - 0:08:11, Tại khi cái v có xu hướng giảm dần và tiến về 0 như vậy thì nó sẽ gây ra cái việc hội tụ chậm
+0:08:11 - 0:08:18, Và chúng ta sẽ mượn cái khái niệm trong vật lý là momentum để giải quyết vấn đề này
+0:08:18 - 0:08:25, Momentum là gì? Giả sử như ban đầu, chúng ta đặt một cái quả banh ở đây
+0:08:25 - 0:08:32, Thì ở trên cao nó sẽ có một cái thế năng, nó sẽ khiến cho cái trái banh nó sẽ rớt xuống
+0:08:32 - 0:08:37, Nhưng khi mà trái banh nó rớt xuống đến cái điểm cực tiểu cục bộ ở đây
+0:08:42 - 0:08:50, Và lúc đó cái thế năng nó đã bị triệt tiêu bằng 0, thế năng trong trường hợp này là chính là đạo hàm
+0:08:50 - 0:08:55, Nó sẽ tương đương với đạo hàm ở trên
+0:08:55 - 0:09:03, Và thế năng thì nó bằng 0, nhưng bù lại nó sẽ có cái động năng là do quả banh đi từ trên xuống dưới
+0:09:03 - 0:09:09, Ban đầu động năng là bằng 0, nhưng mà sau đó rớt xuống dưới thì cái động năng của quả banh nó lớn lên
+0:09:09 - 0:09:17, Và nhờ có cái động năng này, nó sẽ tạo ra một cái moment để cho cái quả banh này tương đương với đạo hàm ở trên
+0:09:17 - 0:09:22, Rớt xuống được cái điểm cực tiểu mà tốt hơn
+0:09:22 - 0:09:26, Và đó chính là cái ý tưởng cho giải pháp số 2
+0:09:26 - 0:09:37, Đó là cái vận tốc của chúng ta thì sẽ được kế thừa từ cái vận tốc của quá khứ V bằng beta nhân V
+0:09:37 - 0:09:40, Đây là cái quá khứ
+0:09:40 - 0:09:50, Nếu không có cái thành phần beta V này thì V của chúng ta chỉ bao gồm cái thành phần thế năng chính là cái đạo hàm ở đây
+0:09:50 - 0:09:58, Nhờ nó khai thác được cái lượng động năng của quá khứ thì khi nó chạm đến cái điểm cực tiểu cục bộ
+0:09:58 - 0:10:02, Nó sẽ giúp cho chúng ta thoát ra khỏi cái bụng này
+0:10:02 - 0:10:07, Thì cái công thức cải tiến của chúng ta sẽ rất là đơn giản như trên
+0:10:07 - 0:10:16, Và beta lúc này nó gọi là momentum factor và beta cũng là từ 0 cho đến 1
+0:10:16 - 0:10:21, Điều gì xảy ra nếu beta bằng 0, beta bằng 1
+0:10:21 - 0:10:26, Nếu beta bằng 0 thì nó sẽ bỏ ra một cái vận tốc của chúng ta
+0:10:26 - 0:10:30, Điều gì xảy ra nếu beta bằng 0, beta bằng 1
+0:10:30 - 0:10:35, Nếu beta bằng 0, tức là chúng ta không có cái thành phần động năng này
+0:10:35 - 0:10:41, Vậy thì beta bằng 0 chính là cái trường hợp không có cải tiến
+0:10:45 - 0:10:54, Rồi, khi beta bằng 1 thì lúc này V sẽ là bằng 9V cộng dồn vào cái thế năng
+0:10:54 - 0:10:57, Thì khi đó cái tốc độ tăng của V này rất là cao
+0:10:57 - 0:11:00, V nó sẽ là cộng dồn lên, cộng dồn lên, cộng dồn lên
+0:11:00 - 0:11:04, Như vậy thì nó sẽ tăng rất là nhanh
+0:11:12 - 0:11:23, Nó có thể khiến cho cái vận tốc của mình quá lớn và nó sẽ không có hội tụ mà nó sẽ bị phân kỳ
+0:11:23 - 0:11:30, Do đó thì beta nó nên là một con số nhỏ hơn một
+0:11:30 - 0:11:43, Tức là nó chỉ lấy một phần, ví dụ như trong trường hợp là beta bằng 0.9 thì nó lấy 90% của cái V quá khứ thôi
+0:11:45 - 0:11:50, Thì chúng ta sẽ có cái giải pháp đầy đủ cho cái momentum
+0:11:50 - 0:11:57, Đầu tiên chúng ta sẽ khởi tạo alpha là một cái giá trị khá là lớn
+0:11:59 - 0:12:08, Và sau đó thì alpha sẽ được cập nhật lại là bằng delta nhân cho alpha, tức là nó đang giảm dần
+0:12:08 - 0:12:16, Cái alpha, rồi chúng ta sẽ khởi tạo vận tốc ban đầu
+0:12:16 - 0:12:25, Khi chúng ta tưởng tượng quả banh ở trên đây thì cái động năng của nó là bằng 0, nó không có động năng mà nó chỉ có thế năng thôi
+0:12:25 - 0:12:30, Thì lúc này V của mình là bằng 0, tức là tượng trưng cho động năng tại thời điểm bắt đầu
+0:12:31 - 0:12:39, Delta là cái hệ số giảm, tức là alpha ban đầu là 0.5 nhưng mà sau đó nó sẽ giảm 10 lần
+0:12:39 - 0:12:45, Và 0.1 có nghĩa là chia cho 10 thì nó sẽ giảm 10 lần, cứ mỗi lần lặp nó sẽ giảm 10
+0:12:45 - 0:12:50, Và beta là bằng 0.9
+0:12:50 - 0:13:02, Tức là cái động năng, cái vận tốc của mình sẽ là bằng 90% của cái vận tốc quá khứ
+0:13:02 - 0:13:06, Sau đó chúng ta cộng thêm cái thành phần thế năng hiện tại, tức là cái đạo hàm
+0:13:06 - 0:13:10, Cái này tượng trưng cho cái thế năng hiện tại
+0:13:10 - 0:13:20, Nếu như đến cái điểm, gần đến cái điểm cực tiểu, cục bộ ở đây
+0:13:20 - 0:13:29, Thì cái thành phần đạo hàm này nó sẽ xấp xỉ bằng 0 nhưng nó sẽ kế thừa được 90% cái động năng của quá khứ
+0:13:29 - 0:13:35, Nên nó sẽ không có bị dừng lại, bị đứng lại
+0:13:35 - 0:13:39, V vẫn còn đủ lớn để có thể được chuyển được
+0:13:39 - 0:13:47, Và ở đây chúng ta thấy là khi chúng ta, cái điểm màu đỏ đến tại vị trí này
+0:13:47 - 0:13:50, Nó sẽ vẫn còn một cái động năng để nhảy qua đây
+0:13:50 - 0:13:53, Sau đó tiếp tục nhảy lên, nhảy lên, nhảy lên
+0:13:53 - 0:14:00, Và nếu như cái động năng này đủ lớn thì nó sẽ giúp cho chúng ta thoát ra khỏi cái điểm, cái khu vực bên này
+0:14:00 - 0:14:03, Thoát ra khỏi cái khu vực cực tiểu cục bộ
+0:14:09 - 0:14:11, Và để qua một cái khu vực khác
+0:14:11 - 0:14:17, Với hy vọng rằng là chúng ta có thể tìm ra được một cái cực tiểu tốt hơn
+0:14:17 - 0:14:24, Và ở đây thì chúng ta sẽ thử tính toán trên những cái con số
+0:14:24 - 0:14:28, Đầu tiên đó là giả sử như cái momentum của mình là bằng 0.99
+0:14:28 - 0:14:32, Thì khi đó 3 cái bước cập nhật đầu tiên, 3 cái bước cập nhật đầu tiên của mình
+0:14:32 - 0:14:38, V ban đầu thì sẽ là bằng G, trong đó G chính là cái gradient
+0:14:41 - 0:14:44, Tại cái vị trí khởi tạo chính là G1 ở đây
+0:14:44 - 0:14:48, Tức là nó chỉ bao gồm thế năng thôi, động năng lúc này là 0
+0:14:48 - 0:14:53, Ở đây đúng ra là 0 cộng cho G1
+0:14:53 - 0:15:02, Sau đó V2 sẽ là bằng 90% của cái cũ
+0:15:05 - 0:15:12, Sau đó cộng thêm 1 thằng G2, thì nó chính là bằng 0.99 v.1 v.1 trước này là G
+0:15:12 - 0:15:16, Nó chính là 0.99 v.1 cộng cho G2
+0:15:16 - 0:15:19, Tiếp tục sang cái điểm thứ 3
+0:15:19 - 0:15:24, V3 sẽ là bằng 0.99 v.2 cộng cho G3
+0:15:24 - 0:15:27, Tức là cái đạo hàm tại thời điểm hiện tại
+0:15:27 - 0:15:36, G3 ở đây, cộng cho, nó sẽ cộng cho khoảng 0.99 v.2
+0:15:36 - 0:15:41, Chúng ta thế cái V2 ở cái công thức ở trên xuống đây
+0:15:41 - 0:15:46, Thì nó sẽ là bằng 0.99 v.1 cộng cho G2
+0:15:46 - 0:15:55, Chúng ta triển khai vào thì nó sẽ ra là 0.81 v.1 và 0.99 v.2 cộng cho G3
+0:15:55 - 0:15:58, Như vậy thì ở đây chúng ta sẽ có một cái nhận xét
+0:15:58 - 0:16:02, Đó là khi cập nhật tham số, thì gradient tại những cái bước càng gần
+0:16:02 - 0:16:04, Nó sẽ đóng góp càng nhiều
+0:16:04 - 0:16:09, Tức là V tại cái thời điểm thứ 3, tức là cái thời điểm hiện tại chúng ta đang xét
+0:16:09 - 0:16:18, Nó sẽ bao gồm là 0.81 v.1 cộng cho 0.991 v.2 cộng cho G3
+0:16:18 - 0:16:22, Tức là cái thế năng tức thời, tức là đạo hàm tức thời của mình
+0:16:22 - 0:16:27, Thì chúng ta thấy là tại cái vị trí số 3
+0:16:27 - 0:16:33, G3 đóng vai trò là cái tỷ lệ, cái hệ số là 1
+0:16:33 - 0:16:35, Tức là cao nhất
+0:16:35 - 0:16:40, Sau đó là G2 sẽ đóng góp là 0.9 và G3 là 0.81
+0:16:40 - 0:16:46, Như tương tự như vậy thì khi G, khi V mà càng lớn
+0:16:49 - 0:16:55, Thì nó sẽ là bằng cái hệ số của những cái V
+0:16:55 - 0:17:03, Gn cộng cho Gn-1 cộng cho Gn-2
+0:17:03 - 0:17:07, Và sau đó nó sẽ nhân với những cái hệ số thấp dần
+0:17:07 - 0:17:13, Ban đầu sẽ là 1, 0.9, 0.81
+0:17:13 - 0:17:17, Tiếp theo thì nó sẽ là 0.9 nhân cho 0.81
+0:17:17 - 0:17:23, Nó sẽ cộng cho 0.9 nhân cho 0.81
+0:17:23 - 0:17:31, Tức là đâu đó khoảng xấp xỉ là 0.72 của cái G thứ n-3
+0:17:31 - 0:17:36, Càng sau đó hệ số nó càng thấp
+0:17:36 - 0:17:42, Đây chính là cái ý tưởng của thuật toán momentum
+0:17:42 - 0:17:47, Và nó đã giúp cho chúng ta thoát ra được khỏi cái điểm cực tiểu cục bộ
+0:17:47 - 0:17:55, Nhờ cái việc là chúng ta khai thác được những cái động năng của quá khứ
+0:17:55 - 0:18:01, 90% của Gn-1, 80% của Gn-2 và 70% của Gn-3
+0:18:01 - 0:18:04, Nó khiến cho chúng ta thoát ra được
+0:18:04 - 0:18:10, Và khi thoát ra được thì câu hỏi là lượt có khi nào mà nó cứ đi lên hoài hay không
+0:18:10 - 0:18:15, Thì câu trả lời là không, tại vì khi mà nó thoát ra đến đây
+0:18:15 - 0:18:24, Rồi, thì đến đây cái lúc này thì nó sẽ kế thừa những cái thế năng của cách đây
+0:18:24 - 0:18:29, Trước đó thì thế năng tại những thời điểm này rất là thấp
+0:18:29 - 0:18:32, Cái khu vực này rất là thấp
+0:18:36 - 0:18:47, Thì những cái Gn rất thấp này nó lại đóng góp tỷ trọng cao vào cái vị trí của cái tham số hiện giờ
+0:18:47 - 0:18:52, Còn những cái điểm mà có động năng thế năng cao, ví dụ như chỗ này
+0:18:52 - 0:18:58, Thì thế năng của nó rất là cao, nhưng mà nó đã đi xa so với cái vị trí này
+0:18:58 - 0:19:02, Nên cái hệ số ở đây nó chỉ có thể đóng góp là tầm 0.1, 0.2 thôi
+0:19:02 - 0:19:10, Còn những cái đóng góp nhiều nhất vào đây đó là những cái thế năng tại vị trí này
+0:19:10 - 0:19:16, Tức là đạo hàm ở những cái khu vực rất là thấp, đó thì nó dẫn đến nó sẽ kéo cái này xuống ngược trở lại
+0:19:17 - 0:19:24, Rồi, và khi kéo ngược trở lại thì nó lại tiếp tục chạy qua chạy lại và cho đến khi nào mà chạm được đến cái điểm này
+0:19:24 - 0:19:28, Thì đó chính là cái ý tưởng của momentum

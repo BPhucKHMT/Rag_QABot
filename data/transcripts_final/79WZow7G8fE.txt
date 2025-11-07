@@ -1,0 +1,50 @@
+0:00:14 - 0:00:17, Vấn đề tiếp theo thì chúng ta sẽ bàn về độ phân giải.
+0:00:17 - 0:00:26, Do sao thì các mô hình tạo sinh ảnh nếu mà muốn có ứng dụng được thì nó phải có thể tạo ra được những cái ảnh mà có kích thước lớn.
+0:00:26 - 0:00:40, Vậy thì với mô hình cascade diffusion thì chúng ta sẽ denoise, chúng ta thêm nhiễu rồi sau đó chúng ta sẽ khử nhiễu ở trên cùng một độ phân giải khác nhau.
+0:00:40 - 0:00:51, Ví dụ như ở đây chúng ta thấy là đây là mô hình diffusion gốc, thì kích thước của noise của mình đúng bằng kích thước của ảnh mà chúng ta sẽ decode.
+0:00:52 - 0:01:04, Và cái quá trình mà chúng ta huấn luyện mô hình thì đây là một cái mô hình để mà tạo ra một cái ảnh với điều kiện cho trước là cái Y.
+0:01:04 - 0:01:08, Và cái này nó sẽ được thực hiện đi, thực hiện lại là T, 1 bước.
+0:01:08 - 0:01:18, Và khi sang cái mô hình cascade diffusion mode thì chúng ta không chỉ text-to-image diffusion, tức là đây là cái mô hình gốc ban đầu nè.
+0:01:19 - 0:01:28, Nó sẽ có kết hợp với các mô hình để thực hiện việc super resolution, tức là tăng kích độ phân giải lên.
+0:01:32 - 0:01:40, Và ở trong hình bên dưới chúng ta thấy đó là ban đầu cái ảnh của mình nó sẽ có kích thước là 64 x 64.
+0:01:40 - 0:01:43, Và đây là cái mô hình diffusion gốc.
+0:01:44 - 0:01:52, Sau khi chúng ta kết thúc text-to-image diffusion, nó sẽ tạo ra tấm hình giống như thế này.
+0:01:52 - 0:02:03, Thì chúng ta sẽ train một cái mô hình super resolution thứ 2 để tăng kích thước của tấm ảnh lên.
+0:02:03 - 0:02:07, Và nó đã tăng lên 256 x 256.
+0:02:08 - 0:02:17, Rồi sau đó chúng ta lại tiếp tục chạy qua một cái mô hình super resolution diffusion mode để tăng lên là 1024 x 1024.
+0:02:17 - 0:02:24, Như vậy thì với cái mô hình cascade diffusion này chúng ta thấy, đó là cái quá trình huấn luyện này là nó độc lập nhau.
+0:02:24 - 0:02:32, Text-to-image và super resolution diffusion 1 và 2 thì không có, nói chung là huấn luyện độc lập với nhau.
+0:02:32 - 0:02:36, Và nó không có end to end, tức là không có huấn luyện từ đầu đến cuối.
+0:02:36 - 0:02:40, Và nó sẽ dễ gây ra cái hiện tượng đó là lan truyền lỗi.
+0:02:40 - 0:02:56, Ví dụ điều gì xảy ra nếu như cái ảnh 64 x 64 này nó có những cái artifact, tức là những cái dấu hiệu để mà không có được đẹp và có những cái lỗi trong hình ảnh.
+0:02:56 - 0:03:06, Vì vậy thì nó sẽ lan truyền cái lỗi đó đến những cái ảnh sau mà không có cái cơ chế, nó không có cơ chế để sửa lỗi.
+0:03:11 - 0:03:18, Thế thì cái mô hình này cascade diffusion này thì nó sẽ không có phù hợp để mà có thể ứng dụng được.
+0:03:18 - 0:03:21, Lý do đó là vì thứ nhất là nó sẽ lan truyền lỗi.
+0:03:21 - 0:03:24, Cái thứ hai đó là cái sự cồng kềnh.
+0:03:24 - 0:03:32, Mình mong muốn khi setup thì nó sẽ chỉ có duy nhất một mô hình thôi, còn ở đây nó có đến 3 cái mô hình thực hiện cùng một lúc.
+0:03:32 - 0:03:40, Như vậy thì chúng ta sẽ sang một cái phiên bản tiếp theo để có thể giải quyết được cái mô hình, cái điểm yếu của mô hình cascade diffusion này.
+0:03:40 - 0:03:43, Đó chính là cái mô hình latent diffusion.
+0:03:43 - 0:03:56, Thì latent diffusion là chúng ta sẽ thực hiện cái diffusion, chúng ta thực hiện cái bước là denoise và add noise ở trên cái không gian latent.
+0:03:56 - 0:04:11, Thì đầu tiên chúng ta train một cái mô hình VAE để ánh xạ từ cái ảnh có độ phân giải cao ví dụ như là 1024 về cái không gian latent z của mình, ví dụ như là 64 x 64.
+0:04:11 - 0:04:21, Rồi, sau đó với cái độ phân giải thấp này, cái ảnh độ phân giải thấp này chúng ta sẽ decode ra để tạo ra cái ảnh gốc.
+0:04:21 - 0:04:28, Và chúng ta sẽ có một cái reconstruction loss, tức là cái loss để kiểm tra xem cái ảnh chúng ta tái tạo có giống với ảnh ban đầu hay không.
+0:04:28 - 0:04:37, Rồi sau đó chúng ta cũng sẽ có cái phần regularization loss để cho cái latent z này nó tuân theo một cái phân bố là,
+0:04:37 - 0:04:41, tuân theo một cái prior distribution mong muốn, ví dụ như là phân bố Gauss.
+0:04:41 - 0:04:51, Ngoài ra thì còn có thêm cái adversarial loss của gan để giúp cho chúng ta có thể tạo ra những cái tấm ảnh có chất lượng cao với độ sắc nét chi tiết.
+0:04:51 - 0:05:04, Và chúng ta sẽ sử dụng cái mô hình VAE này để là cái bước đầu tiên để nén, chúng ta sẽ nén cái ảnh x này qua VAE encoder.
+0:05:07 - 0:05:18, Chúng ta sẽ tạo ra cái vector latent z, sau đó chúng ta sẽ áp dụng cái mô hình diffusion trên chính cái không gian latent này,
+0:05:18 - 0:05:34, thay vì trên không gian gốc chúng ta sẽ tạo ra d, đây là d, d1 hoặc là d0 đi ha, d2, rồi cho đến dt, thì đây là cái quá trình encode.
+0:05:34 - 0:05:47, Sau đó chúng ta sẽ tiến hành là decode là từ dt, denoise ra dt trừ 1 v.v. về d0 mũ,
+0:05:47 - 0:05:57, và với d0 mũ này sau đó chúng ta áp dụng cái decoder của VAE, thì nó đã tạo ra một cái tấm hình,
+0:05:57 - 0:06:07, giống như ở đây, thì đây là cái cách thức để chúng ta huấn luyện một cái mô hình latent diffusion.
+0:06:07 - 0:06:12, Cái ý tưởng lớn nhất của cái latent diffusion này, thứ nhất đó là một cái end-to-end model.
+0:06:12 - 0:06:26, Và cái thứ hai, đó là thay vì chúng ta diffusion, chúng ta encode và decode hoặc là chúng ta add noise hoặc denoise ha, encode và decode.
+0:06:26 - 0:06:35, Nhưng chúng ta không làm trên không gian ảnh mà chúng ta làm trên không gian latent.
+0:06:35 - 0:06:47, Mà không gian latent thì chúng ta biết rằng cái kích thước của nó bé hơn rất nhiều so với lại cái không gian của cái ảnh gốc,
+0:06:47 - 0:06:53, do đó thì nó sẽ tiết kiệm được cái chi phí tính toán.
+0:06:54 - 0:06:57, Đó là cái đầu tiên chúng ta có thể thấy chi phí tính toán.
+0:06:57 - 0:07:03, Và trong cái không gian nhỏ hơn thì chúng ta sẽ tiết kiệm được cái số tham số.
+0:07:03 - 0:07:09, Và khi chúng ta tiết kiệm được số tham số thì nó sẽ đỡ được cái hiện tượng overfitting.
+0:07:09 - 0:07:12, Và huấn luyện nó cũng sẽ ổn định hơn.
+0:07:12 - 0:07:22, Thì đó chính là cái điều khiến cho latent diffusion model là một trong những cái mô hình tạo sinh hình ảnh mà được rất nhiều cái trích dẫn
+0:07:22 - 0:07:29, và được rất nhiều các cái bài báo cũng như là các cái nghiên cứu gần đây họ sử dụng để phát triển.

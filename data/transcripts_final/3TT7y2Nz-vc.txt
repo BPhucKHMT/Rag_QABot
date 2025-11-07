@@ -1,0 +1,137 @@
+0:00:14 - 0:00:19, Chúng ta sẽ cùng đến với một cái cải tiến cũng theo hướng đó là Adaptive Learning Rate, đó là ADAM.
+0:00:19 - 0:00:27, ADAM đã cải tiến so với lại phiên bản đó là Root Mean Square Propagation và cũng dựa trên Momentum.
+0:00:27 - 0:00:36, Trong Root Mean Square Propagation, chúng ta thấy là có thành phần alpha chia cho căn của epsilon cộng cho r.
+0:00:36 - 0:00:40, Đây là thành phần chuẩn hóa của Learning Rate.
+0:00:41 - 0:00:53, Nhưng sau đó chúng ta lại đi nhân với lại g là thành phần gradient và g này thì lại bằng đạo hàm của g theo theta,
+0:00:53 - 0:01:10, tức là một cái thành phần gradient nguyên bản, nó chưa có áp dụng momentum vào g, chưa có momentum cho gradient.
+0:01:10 - 0:01:14, Thì chúng ta sẽ có một cái cải tiến cho ở chỗ này.
+0:01:14 - 0:01:21, Cái thứ hai, nó sẽ có một cái hiện tượng đó là tại những cái giai đoạn đầu tiên.
+0:01:22 - 0:01:31, Thì chúng ta thấy là cái thành phần momentum của mình là ví dụ như ở đây là r là bằng 0, đúng không?
+0:01:31 - 0:01:32, Là bằng 0.
+0:01:32 - 0:01:44, Rồi sau đó sang cái vòng lặp tiếp theo thì r sẽ là bằng beta nhân với r cộng cho 1 trừ beta nhân với lại g.g.
+0:01:45 - 0:01:54, Thì dẫn đến đó là ở đây beta là bằng 90% của r mà r của mình nó đang bằng 0.
+0:01:54 - 0:02:01, Thì dẫn đến cái thằng này là bằng 0 và thằng này thì chỉ có là 10% của cái đạo hàm hiện tại thôi.
+0:02:01 - 0:02:13, Tức là ở trong 4 cái vòng lặp đầu tiên, 3 cho đến 4 vòng lặp, thì cái r này rất nhỏ.
+0:02:14 - 0:02:18, R này rất nhỏ, thì gây ra cái hiện tượng gì?
+0:02:18 - 0:02:21, Là nó sẽ không phản ánh đúng cái đạo hàm của mình.
+0:02:21 - 0:02:24, Nó không phản ánh đúng cái đạo hàm, tức là cái độ dốc của mình.
+0:02:24 - 0:02:29, Dẫn đến là cái quá trình cập nhật rất là chậm.
+0:02:30 - 0:02:33, Vì nó bé mà nên nó sẽ là chậm.
+0:02:33 - 0:02:42, Do đó thì chúng ta sẽ tìm cách chuẩn hóa sao cho với 3-4 vòng lặp đầu tiên thì nó sẽ boost cái momentum của mình lên.
+0:02:42 - 0:02:54, Chúng ta sẽ có một cái biến thể là cải tiến ở chỗ là những vòng lặp đầu tiên thì nó sẽ boost momentum lên để cho nó cập nhật nhanh hơn, không bị chậm ở những bước đầu.
+0:02:56 - 0:03:01, Chi tiết của thuật toán ADAM Adaptive Moment Estimation là nằm ở đây.
+0:03:01 - 0:03:05, Chúng ta đầu tiên cũng sẽ khởi tạo là alpha là bằng 0.1.
+0:03:05 - 0:03:11, Đối với cái Decay Rate thì bình thường trong cái Root Mean Square Propagation chúng ta chỉ có duy nhất một cái beta.
+0:03:11 - 0:03:15, Ở đây chúng ta sẽ có hai cái beta là beta 1 và beta 2.
+0:03:15 - 0:03:30, Trong đó beta 1 là cái hệ số momentum là cái Decay Rate cho cái momentum của gradient cho cái việc cập nhật cái momentum của gradient.
+0:03:30 - 0:03:38, Còn cái beta 2 sẽ là cho cái việc cập nhật cái hệ số chuẩn hóa, hệ thành phần chuẩn hóa.
+0:03:44 - 0:03:46, Chuẩn hóa cái Learning Rate.
+0:03:49 - 0:03:58, Rồi, và chúng ta sẽ, ngoài R thì chúng ta sẽ có thêm S. S chính là cái thành phần momentum cho gradient.
+0:03:58 - 0:04:00, Thành phần momentum cho gradient.
+0:04:00 - 0:04:14, Thì đây chính là cái momentum cho cái beta gradient của mình và công thức của mình là bình thường là trong cái phần Root Mean Square Propagation thì S của mình nó chính là chỉ bằng G thôi.
+0:04:14 - 0:04:24, Còn bây giờ S của mình nó sẽ là bằng cái thành phần quá khứ, nhân với lại, cộng với lại cái thành phần gradient hiện tại.
+0:04:24 - 0:04:26, Đây là hiện tại.
+0:04:26 - 0:04:28, Còn đây là cái thành phần quá khứ.
+0:04:32 - 0:04:37, Rồi, và nó sẽ là bằng 90% của quá khứ cộng cho 10% của hiện tại.
+0:04:37 - 0:04:45, Và như hồi nãy chúng ta đã lập luận thì cái việc mà lấy quá nhiều cho cái quá khứ nó sẽ khiến cho những cái bước cập nhật đầu tiên rất là chậm.
+0:04:45 - 0:04:48, Thì chúng ta sẽ có cái thành phần chuẩn hóa ở phía sau.
+0:04:48 - 0:04:50, Chúng ta sẽ giải thích sau.
+0:04:50 - 0:04:54, S mũ chính là cái thành phần chuẩn hóa cho cái S ở phía trên.
+0:04:54 - 0:05:03, Thế thì tại sao cái việc chuẩn hóa với cái công thức này thì những cái vòng lặp đầu tiên của mình nó sẽ có cái giá trị không quá bé.
+0:05:03 - 0:05:09, Thì bây giờ chúng ta giả sử S ban đầu của mình là một cái con số rất là bé.
+0:05:09 - 0:05:13, Nhưng khi chúng ta giả sử S ban đầu của mình là một cái con số rất là bé.
+0:05:13 - 0:05:19, Như đã giải thích S sẽ là bằng quá khứ là bằng 90% của cái S ban đầu là bằng 0.
+0:05:19 - 0:05:21, Tức là cái thành phần này là bằng 0.
+0:05:21 - 0:05:25, Tức là ở những cái vòng lặp đầu tiên là ban đầu.
+0:05:25 - 0:05:33, Thì S sẽ là bằng quá khứ là bằng 0 cộng cho 10% của G.
+0:05:33 - 0:05:35, Thì cái thành phần này rất là bé.
+0:05:36 - 0:05:43, Nhưng khi chúng ta chia cho căn của 1 trừ beta mũ T với T là số thứ tự.
+0:05:43 - 0:05:45, T là cái bước lặp của mình.
+0:05:45 - 0:05:47, Thì ở cái vòng lặp đầu tiên tức là T bằng 1.
+0:05:47 - 0:05:49, Vòng lặp đầu tiên T bằng 1.
+0:05:49 - 0:05:57, Thì khi đó S sẽ là bằng 1 trừ cho beta 1 của mình là 0.9 mũ 1.
+0:05:57 - 0:06:01, 0.9 mũ 1 tức là là 0.9.
+0:06:01 - 0:06:05, Thì 1 trừ 0.9 tức là 0.1.
+0:06:05 - 0:06:10, Thì S mà chia cho 0.1 tương đương với S chúng ta sẽ nhân lên 10 lần.
+0:06:10 - 0:06:12, Thì ban đầu S của mình rất là thấp.
+0:06:12 - 0:06:15, Nó chỉ bằng khoảng 0.9 cái đạo hàm góc của mình thôi.
+0:06:15 - 0:06:18, Nhưng mà chúng ta chia cho 0.1 tức là nhân 10 lên.
+0:06:18 - 0:06:22, Thì có phải là S lúc này của mình nó tương đương với cái đạo hàm tại cái thời điểm đó không?
+0:06:22 - 0:06:25, Tại cái thời điểm ban đầu.
+0:06:25 - 0:06:29, Thì nó đã được boost lên 10 lần.
+0:06:29 - 0:06:34, Thì cái công thức này sẽ giúp chúng ta boost tại những cái thời điểm đầu tiên.
+0:06:34 - 0:06:39, Thế thì khi T mà càng lớn, đương nhiên không thể nào mà T tiến đến vô cùng được.
+0:06:39 - 0:06:42, T chỉ là khoảng 10, 20 ví dụ vậy.
+0:06:42 - 0:06:45, Cỡ 10 cho đến 20 đi.
+0:06:45 - 0:06:49, Thì khi đó là beta 1 mũ T.
+0:06:49 - 0:06:54, Không phải beta 1 mũ T vì beta 1 là 1 con số bé hơn 1 lớn hơn 0.
+0:06:54 - 0:06:57, Nên nó sẽ tiến đến, nó sẽ tiến về 0.
+0:06:57 - 0:07:03, Do đó 1 trừ beta 1 mũ T, nó sẽ tiến về 1.
+0:07:03 - 0:07:05, 1 trừ 0 tức là 1.
+0:07:05 - 0:07:10, Tức là khi đó S mũ của chúng ta, nó sẽ xấp xỉ bằng S chia cho 1.
+0:07:10 - 0:07:13, Tức là nó sẽ bằng cái nguyên bản của cái momentum ban đầu của mình.
+0:07:13 - 0:07:17, Thì khi T mà càng lớn thì gần như nó không cần boost lên nữa.
+0:07:17 - 0:07:21, Còn khi T của mình nhỏ khoảng 1, 2 thì nó sẽ boost lên rất là nhiều lần.
+0:07:21 - 0:07:25, Thì đó là ý nghĩa của công thức chuẩn hóa này.
+0:07:25 - 0:07:34, Tương tự như vậy, cho cái thành phần để cập nhật chuẩn hóa của learning rate,
+0:07:34 - 0:07:38, chúng ta cũng sẽ dùng cái công thức này để giúp cho cái việc mà
+0:07:38 - 0:07:41, tại những thời điểm đầu tiên nó không quá bé.
+0:07:41 - 0:07:45, Nó sẽ xấp xỉ bằng với lại cái đạo hàm của mình luôn.
+0:07:45 - 0:07:50, Và ý nghĩa của công thức này như tương tự như trong cái
+0:07:50 - 0:07:54, Root Mean Square Propagation, mục tiêu của nó là để tách ra
+0:07:54 - 0:07:59, T vì là một cái vector nên nó sẽ tách ra thành những cái learning rate riêng
+0:07:59 - 0:08:02, khi chúng ta cập nhật vô cái thành phần đạo hàm.
+0:08:02 - 0:08:07, Và nó làm theo cái nguyên tắc đó là thành phần đạo hàm nào ở bên đây,
+0:08:07 - 0:08:13, của g mà càng nhỏ thì cái learning rate sẽ càng lớn.
+0:08:13 - 0:08:18, Thành phần nào của cái g này mà lớn thì cái learning rate của nó sẽ nhỏ.
+0:08:18 - 0:08:23, Như vậy là Gradient, Adam nó đã có những cái cải tiến chính.
+0:08:23 - 0:08:27, Đó là nó có thêm cái momentum cho cái vector Gradient.
+0:08:27 - 0:08:31, Nó có thêm cái thành phần chuẩn hóa để những cái vòng lặp đầu tiên
+0:08:31 - 0:08:35, nó sẽ không quá nhỏ, cái thành phần đạo hàm của mình
+0:08:35 - 0:08:39, nó sẽ không quá bé hoặc là cái phần chuẩn hóa đạo hàm cũng không quá bé.
+0:08:39 - 0:08:44, Nó bị sai lệch so với lại cái đạo hàm tại cái thời điểm đó.
+0:08:45 - 0:08:53, Và trong cái sơ đồ này thì chúng ta sẽ có cái trực quan hóa để cho thấy cái tốc độ hội tụ của từng thuật toán.
+0:08:53 - 0:08:57, Thì ở đây AdaDelta, đó chính là cái Adam của mình.
+0:08:57 - 0:09:01, Đó là cái đường màu vàng. Đó là cái đường màu vàng này.
+0:09:01 - 0:09:09, Rồi, và chúng ta thấy là cái đường màu vàng thì nó sẽ rớt xuống rất là nhanh, nó sẽ hội tụ rất là nhanh.
+0:09:10 - 0:09:17, Khi đến cái khu vực mà gọi là Saddle Point và đồng thời là có cái valley, là cái thung lũng
+0:09:17 - 0:09:24, chúng ta thấy là có hai cái thành, giảm độ dốc, đi ngang, xong rồi lại đi lên, đó gọi là valley
+0:09:24 - 0:09:29, thì cái Adam của chúng ta rớt xuống nhanh nhất, nó rớt xuống rất là nhanh.
+0:09:29 - 0:09:34, Còn cái thuật toán mà Root Mean Square Propagation là cái đường màu đen
+0:09:34 - 0:09:38, thì chúng ta thấy là nó sẽ rớt chậm hơn.
+0:09:39 - 0:09:45, Còn Stochastic Gradient Descent thì đối với Stochastic Gradient Descent là cái chấm màu đỏ nè
+0:09:45 - 0:09:51, là chúng ta thấy nó bị dao động qua lại và nó đứng yên luôn, nó không thoát ra được cái chỗ này luôn.
+0:09:51 - 0:09:55, Momentum thì khá hơn một chút xíu là cái đường, cái điểm màu xanh lá.
+0:09:55 - 0:10:00, Chúng ta thấy là khi Momentum nó rớt xuống nó cũng sẽ chao đảo qua lại.
+0:10:00 - 0:10:05, Nhưng mà vì có một số kiểu tối ưu nên nó sẽ dần dần dần dần nó thoát ra được
+0:10:05 - 0:10:07, và nó đến được cái rảnh này nó di chuyển.
+0:10:07 - 0:10:14, Trong khi các cái phương pháp cải tiến khác thì nó cũng bị cái hiện tượng là dao động qua lại rất là nhiều.
+0:10:14 - 0:10:17, Nó bị hiện tượng dao động qua lại, bật và bật lại.
+0:10:17 - 0:10:21, Còn Adam là cái đường màu vàng thì nó sẽ rớt thẳng xuống luôn.
+0:10:21 - 0:10:26, Nó sẽ đi theo cái đường cập nhật hoàn hảo, cái đường cập nhật mà tối ưu ở đây.
+0:10:27 - 0:10:33, Bên phải thì đó là cái sơ đồ về giá trị của hàm loss khi chúng ta sử dụng các thuật toán khác nhau.
+0:10:33 - 0:10:40, Thì Adam là cái đường màu tím, nó cho cái giá trị hàm loss hội tụ nhanh hơn và nó thấp nhất.
+0:10:40 - 0:10:44, Loss càng thấp càng tốt, thì training loss của mình càng thấp càng tốt.
+0:10:44 - 0:10:50, Thì chúng ta thấy là nó hội tụ nhanh hơn nhiều so với lại các thuật toán như là Root Mean Square,
+0:10:50 - 0:10:57, AdaDelta, AdaGrad v.v.
+0:10:57 - 0:11:04, Thì kết luận đó là một số cái phương pháp tối ưu, mô hình học sâu bằng cách.
+0:11:04 - 0:11:11, Trong cái phần này thì chúng ta đã được thảo luận qua những cái cách để mà tùy chỉnh learning rate cho từng cái tham số.
+0:11:11 - 0:11:15, Và thuật toán, câu hỏi là thuật toán nào sẽ được chọn khi muốn luyện?
+0:11:15 - 0:11:20, Thì câu trả lời đó là không chắc chắn. Nó sẽ tùy thuộc vào cái dữ liệu của các bạn như thế nào.
+0:11:20 - 0:11:23, Nó phụ thuộc vào cái mô hình của mình nó có phức tạp hay không?
+0:11:23 - 0:11:32, Ví dụ, đối với những cái mô hình phức tạp mà nhiều tham số, thì khi đó chúng ta sẽ phải dùng các cái thuật toán
+0:11:32 - 0:11:38, ví dụ như là Root Mean Square Propagation, hoặc là Adam.
+0:11:38 - 0:11:44, Nhưng đối với những cái mô hình mà ít tham số, thì khi đó Adam và Root Mean Square là không cần thiết.
+0:11:44 - 0:11:48, Mà chúng ta chỉ cần Stochastic Gradient Descent là đủ.
+0:11:48 - 0:11:54, Rồi nếu mà dữ liệu của mình không quá phức tạp, thì chúng ta có thể dùng Stochastic Gradient Descent.
+0:11:54 - 0:11:58, Nhưng nếu mà phức tạp thì chúng ta sẽ dùng hai cái thuật toán bên đây.
+0:11:58 - 0:12:03, Thì đa số các cái thuật toán đều có cái sự phổ biến nhất định của mình.
+0:12:03 - 0:12:07, Và được lựa chọn tùy theo cái sự quen thuộc của người dùng.
+0:12:08 - 0:12:14, Như vậy thì đến đây chúng ta đã tìm hiểu qua hai cái biến thể rất là nổi tiếng của Adaptive Learning Rate,
+0:12:14 - 0:12:17, đó là Root Mean Square Propagation và Adam.
+0:12:17 - 0:12:24, Thì cái Root Mean Square Propagation, nó là một cái tiền đề để cho Adam có thể cải tiến.
+0:12:24 - 0:12:30, Và Adam nó có một cái cải tiến khá là quan trọng, đó là chuẩn hóa để giúp cho những cái bước cập nhật đầu tiên của mình
+0:12:30 - 0:12:32, nó không quá chậm.
+0:12:32 - 0:12:37, Và đây chính là những cái thuật toán Optimizer được sử dụng trong rất nhiều những cái mô hình học sâu,
+0:12:37 - 0:12:40, những cái mô hình mà dựa trên Gradient về sau.
+0:12:40 - 0:12:43, Và nó sẽ là tiền đề cho chúng ta đi tiếp.

@@ -1,0 +1,155 @@
+00:00:00 - 00:00:23, Chúng ta đã tìm hiểu qua về quá trình encode và decode của mô hình của mình
+00:00:23 - 00:00:29, Đó là mô hình tổng bác, chúng ta sẽ hướng luyện mô hình này như thế nào
+00:00:29 - 00:00:34, Chúng ta sẽ xem dựa trên công thức của mình, đó là công thức này
+00:00:34 - 00:00:41, Hai thành phần reconstruction và prior matching là hoàn toàn tương tự như VAR
+00:00:41 - 00:00:49, Nhưng sự khác biệt nằm ở bước denoising matching, tức là quá trình denoying chính xác với phân bố ban đầu
+00:00:49 - 00:00:59, Thì quá trình denoying được biểu hiện bởi công thức này là P của XT triệu một
+00:00:59 - 00:01:08, Cho trước XT, với tham số Theta, thì đây là một hàm, hiểu một cách nona, đó là một hàm từ XT khử nhũ để ra XT triệu một
+00:01:08 - 00:01:14, Chúng ta luôn mong muốn phân bố xác xuất này gần với lại phân bố xác xuất của Quay
+00:01:14 - 00:01:20, Quay là phân bố xác xuất trong quá trình encoding
+00:01:20 - 00:01:28, Ý nghĩa của công thức Quay là chúng ta thấy trước điểm x0, tức là ảnh góc ban đầu không có nhũi
+00:01:28 - 00:01:37, Chúng ta có được ảnh nhũ ở đây là tại XT và chúng ta sẽ biết được, chúng ta sẽ có được phân bố xác xuất của XT triệu một
+00:01:37 - 00:01:47, Mức độ nhũ ít hơn so với XT, thì đây là cái route mà chúng ta mong muốn để mô hình P Theta bắt trước theo phân bố này
+00:01:47 - 00:01:55, Thì có một cái meme vui đó là, đây là cái anh chàng Metabin, tương ứng là cái hàm denoise
+00:01:55 - 00:02:05, Và ở đây chúng ta denoise khi chúng ta không biết trước cái đáp án, chúng ta chỉ có ảnh, trước đó là XT thôi
+00:02:05 - 00:02:08, Và chúng ta sẽ phải đi xác định XT triệu một
+00:02:08 - 00:02:17, Trong khi đó cái anh chàng này thì ảnh có cái đáp án là x0 nên ảnh có thể xác định được cái phân bố nhĩa của này một cách chính xác
+00:02:17 - 00:02:21, Thì anh này sẽ tìm cách để bắt trước cái anh này
+00:02:21 - 00:02:26, Và cái quá trình huấn luyện thì chúng ta sẽ tính toán trên cái Quay của XT triệu một
+00:02:26 - 00:02:30, Và dựa trên cái công thức xác xuất có điều kiện và bias
+00:02:30 - 00:02:34, Và cái kết quả thu được, cuối cùng thu được đó là một cái phân bố Gauss
+00:02:34 - 00:02:39, Quay XT cho trước XT triệu một của mình, đó là một cái phân bố Gauss như thế này
+00:02:39 - 00:02:42, Đó là phân bố màu xanh lái như thế này
+00:02:42 - 00:02:44, Và đây là Routroot
+00:02:44 - 00:02:55, Và cái phân bố này thì nó sẽ được tham số hóa bởi cái công thức đó là My của Quay, XT, X0 và Sigma của Quay T
+00:02:55 - 00:03:06, Thế thì hai cái My và Sigma này đó là Mean và Variant được tạo ra từ cái X0, XT và T
+00:03:06 - 00:03:10, Trong đó cái thành phần variant ở đây là chỉ phụ thuộc vào T thôi
+00:03:10 - 00:03:14, Nó không phụ thuộc vào các cái X0 và XT
+00:03:14 - 00:03:18, Dí do đó là vì các cái bán kính này là giống nhau, không thay đổi
+00:03:18 - 00:03:22, Nó là những cái hình tròn giống nhau cùng một cái bán kính
+00:03:22 - 00:03:25, Bán kính của nó sẽ thay đổi theo T
+00:03:25 - 00:03:32, Nhưng mà nó sẽ là chỉ phụ thuộc vào biến T thôi, không phụ thuộc vào các cái biến X của mình
+00:03:32 - 00:03:41, Và công thức này thì nó có một cái ý nghĩa khác, đó là chúng ta sẽ tìm cách để tối thiệu hóa cái Mean của hai phân phối
+00:03:41 - 00:03:46, Lý do đó là vì hai cái phân phối này có độ lịch giống nhau
+00:03:46 - 00:03:48, Hai cái phân bố này nó có độ lịch giống nhau
+00:03:48 - 00:03:51, Tại vì nó chỉ phụ thuộc vào T
+00:03:51 - 00:03:56, Nó chỉ là một cái biến phụ thuộc vào T hoặc chính xác hơn là phụ thuộc vào các cái alpha T
+00:03:56 - 00:03:59, Do đó thì hai cái này là khớp rồi
+00:03:59 - 00:04:03, Cái độ rộng của cái phân bố này là khớp rồi
+00:04:03 - 00:04:11, Giờ chỉ là làm sao để cái tâm của hai cái hình cầu, tâm của hai cái phân bố này là về khớp lại với nhau thôi
+00:04:11 - 00:04:19, Do đó thì cái việc này nó tương đương với việc chúng ta tối thiệu hóa Mean của hai phân phối
+00:04:19 - 00:04:24, Một xanh là công thức này và một nhau là công thức này
+00:04:24 - 00:04:35, Trong đó, cái Mean của cái phân phối T theta thì đó là một cái hàm tham số hóa bởi Phi
+00:04:35 - 00:04:41, Tức là nó cách khác, chúng ta sẽ xây dựng một cái hàm để ước lượng cái mươi này
+00:04:41 - 00:04:45, Ước lượng cái mươi này từ XT trước đó và cái giá trị T
+00:04:45 - 00:04:55, Vậy thì cái mô hình này thì chúng ta sẽ có hai cách, xin lỗi, có ba cách tính và diễn dạy khác nhau
+00:04:55 - 00:05:04, Cái công thức trước đó nó sẽ được đưa về cái công thức này, tức là nó sẽ tương đương với việc chúng ta đi minimize hai cái phân bố
+00:05:04 - 00:05:07, Đây chính là hai cái Mean của hai phân phối
+00:05:07 - 00:05:12, Mean của cái phân phối
+00:05:12 - 00:05:17, Và chúng ta mong muốn hai cái phân phối này khớp với nhau, giống như trong cái nhận xét trước
+00:05:17 - 00:05:22, Vậy thì cái công thức của Me-queue là nó sẽ có công thức như thế này
+00:05:22 - 00:05:28, Chúng ta hoàn toàn có thể tính được, chứng minh được cái công thức này nhưng mà nó sẽ hơi mất thời gian
+00:05:28 - 00:05:30, Chúng ta chỉ ghi cái kết quả cuối cùng thôi ha
+00:05:30 - 00:05:33, Thì cái Me-queue nó sẽ có cái công thức như trên
+00:05:33 - 00:05:39, Và chúng ta sẽ có ba cách để chúng ta thực hiện cái việc mà tối ưu cái công thức này
+00:05:39 - 00:05:44, Cách thứ nhất đó là chúng ta sẽ đưa về cái Me-queue
+00:05:44 - 00:05:49, Me của theta x t là bằng cái công thức này
+00:05:49 - 00:05:54, Và khi đó chúng ta lấy cái Me-queue trừ cho Me theta, hai cái công thức này trừ cho nhau
+00:05:54 - 00:05:57, Thì chúng ta thấy là cái thành phần này lại bỏ
+00:05:57 - 00:06:04, Và cái thành phần này ở trên thì chúng ta sẽ xem như là hàng số
+00:06:04 - 00:06:12, Gia đó thì chúng ta chỉ việc tối ưu sau cho cái x theta mũ x t t sắp xỉ với x zero
+00:06:12 - 00:06:15, Thế thì cái công thức này nói một cách khác
+00:06:15 - 00:06:23, Đó là chúng ta đang làm sao mà cái mô hình của mình có khả năng khôi phục được cảnh gốc từ mỗi step
+00:06:23 - 00:06:29, Lưu ý là trong cái công thức này chúng ta được tính tổng trên nhiều step chứ không phải chỉ tại một thời điểm
+00:06:29 - 00:06:32, T sẽ chạy từ 2 cho đến t lớn
+00:06:32 - 00:06:37, Và ở đây chính là cái ảnh mà mình khôi phục được
+00:06:37 - 00:06:46, Ảnh gốc, ảnh ban đầu khôi phục được
+00:06:46 - 00:06:49, Tức là chúng ta luôn mâm muốn khôi phục lại cái ảnh ban đầu
+00:06:49 - 00:06:53, Và cái x mũ theta này nó phải sắp xỉ với x zero
+00:06:53 - 00:06:55, Đây là route root nè
+00:06:56 - 00:07:03, Đây là route root để mà chúng ta phải huấn luyện để mà bắt trước cái x zero này
+00:07:03 - 00:07:08, Thì đây là cái cách số 1 và cái cách số 1 cũng tương đương với lại cái cách số 2
+00:07:08 - 00:07:12, Tức là nó chỉ là cái cách cách để mà biểu diện khác nhau thôi
+00:07:12 - 00:07:19, Thì cái công thức mi của Quy nó cũng có thể biểu diện dưới dạng là một phần alpha t x t
+00:07:19 - 00:07:20, Nhân cho cái công thức này
+00:07:20 - 00:07:25, Với cái đại lượng epsilon này là tuần theo cái phần bố Gaussian 0 1
+00:07:25 - 00:07:32, Và xt thì trong những slide trước chúng ta đã có cái công thức tính xt từ x zero và epsilon rồi
+00:07:32 - 00:07:37, Do đó chúng ta sẽ tính từ cái công thức này chúng ta sẽ suy ra được công thức của epsilon
+00:07:37 - 00:07:41, Thì epsilon là bằng cái công thức này
+00:07:41 - 00:07:48, Thì từ đó chúng ta sẽ ra được mi của theta xtt là bằng cái công thức này
+00:07:48 - 00:07:55, Và khi chúng ta lấy 2 cái hiệu số này chúng ta trừ cho nhau thì nó khử
+00:07:55 - 00:08:03, Và cái thành phần này là hàng số do đó thì nó sẽ tương đương với cái việc epsilon theta xt t trừ cho epsilon
+00:08:03 - 00:08:08, Hay nói cách khác đó là cái mô hình này là chúng ta dự đoán cái nhiễu của từng step
+00:08:08 - 00:08:10, Chúng ta đi dự đoán nhiễu của từng step
+00:08:10 - 00:08:16, Với step chạy từ 2 cho đến t thì làm sao cho cái nhiễu này là nhỏ nhất
+00:08:16 - 00:08:18, Với step chạy từ 2 cho đến t thì làm sao cho cái nhiễu này là nhỏ nhất
+00:08:18 - 00:08:27, Và công thức cách thức làm số 3 đó là chúng ta đi dự đoán cái vector radian của logpt
+00:08:27 - 00:08:33, Vector radian của logpt này hình ảnh nói hiểu một cách nôn na đó chính là cái hướng
+00:08:33 - 00:08:36, Vector hướng radian là thể hiệu hướng mà
+00:08:36 - 00:08:50, Thì cái hướng để mà hướng đến cái phân bố của cái ảnh xt
+00:08:50 - 00:08:54, Hướng đến cái phân bố của cái xt của mình
+00:08:54 - 00:09:04, Rồi thì cái s theta t xt này nó sẽ tìm cách là cực tiểu hóa hay nói cách khác là dự đoán được cái hướng này
+00:09:04 - 00:09:08, Thì tương tự như vậy chúng ta có 2 cái công thức này và khi chúng ta trừ cho nhau
+00:09:08 - 00:09:15, Thì nó sẽ 2 cái thành phần này là hàng số thì nó sẽ đưa về cái công thức này
+00:09:15 - 00:09:20, Thì đây là cái cách làm số 3 và cái công thức này nó gọi là score function
+00:09:20 - 00:09:31, Rồi, vậy thì bản chất của 3 cái cách này đó là giống nhau và chúng ta thực hiện theo cái cách số 1
+00:09:31 - 00:09:35, Hay là chúng ta làm theo cái cách số 2 thì cũng giống nhau
+00:09:35 - 00:09:39, Cách số 1 đó là chúng ta tìm cách để tính cái lợi 2
+00:09:39 - 00:09:47, Tức là cái sai số giữa cái hàng dự đoán cái ảnh so với lại cái x0 ban đầu
+00:09:47 - 00:09:54, Còn đối với cái công thức của, xin lỗi trong cái công thức này thì nó để nhầm
+00:09:54 - 00:10:04, Nó không phải là mi theta xt mà nó sẽ là x mũ theta xt 1
+00:10:04 - 00:10:12, Rồi, thì chúng ta mong muốn là cái x mũ theta này là khớp với lại cái x0 ban đầu
+00:10:12 - 00:10:21, Còn trong cái công thức của cái cách số 2 đó là qua cái hàm, qua cái mô hình có cái theta ở đây
+00:10:21 - 00:10:26, Vậy thì các bạn có thể nhận ra cái nhịu này, thì chúng ta sẽ dự đoán được cái nhịu
+00:10:26 - 00:10:33, Và cái nhịu này thì chúng ta tính cái sai số với lại cái nhịu ban đầu này của mình
+00:10:33 - 00:10:40, Tức là yêu cầu cái mô hình dự đoán được cái nhịu mà chúng ta đã thêm vào trước đó
+00:10:40 - 00:10:48, Và cách làm số 3 đó là chúng ta đi dự đoán cái hướng để cho cái mô hình của mình dịch chuyển vào
+00:10:48 - 00:10:54, Vậy để kết quen hóa các cái cách làm của các nhau thì chúng ta sẽ dùng cái không gian Layton như sau
+00:10:54 - 00:10:58, Màu cái không gian này chính là cái phân bố Pdata của mình
+00:10:58 - 00:11:02, Và x0 đây chính là cái ảnh mà chúng ta đã lấy mẫu được
+00:11:02 - 00:11:13, Sau đó thì chúng ta nhân với lại căng của alpha t x0 thì đây chính là cái min của cái xt
+00:11:13 - 00:11:19, Nhưng mà chưa có cái xt tại vì chúng ta sẽ phải xác định dựa trên cái variant nữa
+00:11:19 - 00:11:26, Và cái variant giả sử như cái epsilon của mình là sampling là ở đây theo phân bố gauss
+00:11:26 - 00:11:33, Thế thì chúng ta sẽ nhân với lại căng của 1 trường alpha t thì nó sẽ ra cái vector màu đỏ này
+00:11:33 - 00:11:38, Và sau đó chúng ta lấy cái vector màu đỏ này đem qua đây
+00:11:38 - 00:11:42, Thì chúng ta sẽ ra được cái xt của mình
+00:11:42 - 00:11:44, Đem ra, tính ra được cái xt của mình
+00:11:44 - 00:11:52, Như vậy thì cái xt nó sẽ là bằng căng của alpha t x0 cộng cho căng của 1 trường alpha t epsilon thì nó là nằm ở đây
+00:11:52 - 00:11:56, Và bây giờ nhiệm vụ của chúng ta ở đây là cái quá trình encode
+00:11:56 - 00:12:04, Bây giờ chúng ta decode để làm sao cho từ cái xt này có thể đi được trở về cái xt x0
+00:12:04 - 00:12:10, Vậy thì trong cái quá trình huấn luyện thì chúng ta sử dụng cái cách số 1
+00:12:10 - 00:12:12, Cách số 1 của mình đó là gì?
+00:12:12 - 00:12:24, Là chúng ta sẽ đi ước lượng cái xtt hay cái khác đó là đang đi dự đoán ảnh gốc ban đầu x0
+00:12:24 - 00:12:30, Và chúng ta thấy là cái điểm này nó mong muốn là làm sao cho 2 cái này là khoảng cách nhỏ nhất
+00:12:30 - 00:12:38, Với cái cách làm số 1 thì cái my theta xtt nó sẽ có cái công thức này
+00:12:38 - 00:12:46, Trong đó cái thành phần x0 xtheta mũ này tức là cái giá trị mà chúng ta dự đoán
+00:12:46 - 00:12:54, Và khi chúng ta có được cái xt theta 0 này rồi thì chúng ta sẽ dịch chuyển
+00:12:54 - 00:13:02, Chúng ta sẽ dịch chuyển cái xt đi theo cái hướng này thì đây sẽ là cái xt trừ 1
+00:13:02 - 00:13:04, Đi về cái phân bố của xt trừ 1
+00:13:04 - 00:13:10, Đối với cái cách làm số 2 thì chúng ta sẽ đi dự đoán nhiễu dựa trên cái công thức này
+00:13:10 - 00:13:17, Thì chúng ta sẽ có cái nhiễu dự đoán và chúng ta kỳ vọng là cái nhiễu dự đoán của mình khớp với cái nhiễu thực tế
+00:13:17 - 00:13:27, Thì khi mà chúng ta xác định được cái nhiễu đó thì chúng ta cũng sẽ xác định được cái phân bố của mình là v của xt trừ 1
+00:13:27 - 00:13:36, Và cái cách làm số 3 đó là chúng ta sẽ xác định dựa trên cái radian
+00:13:36 - 00:13:45, Thế thì cái radian của mình nó sẽ được ước lượng bởi cái công thức của xt theta
+00:13:45 - 00:13:50, Và chúng ta mong muốn là cái này nó sẽ sắp xỉ
+00:13:50 - 00:13:56, Cái xt theta này nó sẽ sắp xỉ với lại cái nabla của cái lock của mình, p theta
+00:13:56 - 00:13:58, Mong muốn nó sắp xỉ
+00:13:58 - 00:14:05, Thế thì khi chúng ta tính ra được cái xt theta rồi thì xt của mình sẽ được dịch chuyển về hướng này
+00:14:05 - 00:14:08, Dịch chuyển đi về cái hướng này dựa trên cái công thức này
+00:14:08 - 00:14:16, Vậy thì tóm lại cho dù chúng ta làm theo cách nào đi chăng nữa thì nó cũng hoàn toàn tương đương nhau
+00:14:16 - 00:14:24, Đó là chúng ta đang dịch chuyển từ cái xt về cái xt trừ 1, sau đó từ xt trừ 1 về cái xt trừ 2
+00:14:24 - 00:14:31, Cứ như vậy, kéo cho đến khi nào mà tiến về cái x0, sao cho nó khớp với lại cái x0 nhất
+00:14:31 - 00:14:35, Thì đó chính là cái cách thức mà cái mô hình của mình hướng luyện
+00:14:35 - 00:14:45, De-noise và mục tiêu của mình đó là làm sao tìm các cái tham số theta để cho 3 cái mục tiêu trên, đó là thỏa mãn
+00:14:45 - 00:14:55, Một đó là cái radian để hướng đến cái phân bố là khớp nhất hoặc là dự đoán được cái nhễu là chính xác nhất
+00:14:55 - 00:15:03, hoặc là chúng ta khôi phục lại được cái ảnh góc giống với lại cái x0 nhất, thì đó là 3 cái cách khác nhau
+00:15:03 - 00:15:13, Thì trên đây chúng ta đã cùng tìm hiểu qua 3 cái cách thức tương đương để mà có thể hướng luyện được cái mô hình diffusion
+00:15:13 - 00:15:21, Hy vọng là các bạn có thể hình dung được cái cách thức mà mô hình nó vận hành qua cái bước gọi là encoding
+00:15:21 - 00:15:32, Và encoding thì chúng ta sẽ không có tham số nhưng mà decode, khi chúng ta decode ngược lại thì chúng ta sẽ đi tìm cái theta này
+00:15:32 - 00:15:41, Sau cho cái việc sắp xỉ, đó có 3 cái cách để sắp xỉ, cái cách đầu tiên đó là sắp xỉ nhân noise
+00:15:41 - 00:15:46, Cách thứ 2 đó là sắp xỉ theo cái x0
+00:15:46 - 00:15:50, Cách đầu tiên là sắp xỉ theo nhân noise
+00:15:50 - 00:15:54, Cách thứ 2 đó là sắp xỉ theo x0
+00:15:54 - 00:16:01, Cách thứ 3 đó là sắp xỉ theo cái log của cái p
+00:16:01 - 00:16:05, Thế ta, tức là cái hướng đi của mình, nó sắp xỉ
+00:16:05 - 00:16:19, Trong những phần tiếp theo thì chúng ta sẽ cùng tìm hiểu về những cái chủ đề mở rộng của cái mô hình diffusion liên quan đến cái việc là điều hướng liên quan đến việc tăng độ phân giải, tốc độ cuốn luyện
