@@ -1,1 +1,124 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Thường tạo các file tạm khi đóng gói
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# -----------------------------
+# Environments
+# -----------------------------
+# Virtual environment folders
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+
+# -----------------------------
+# VS Code & Editor files
+# -----------------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# -----------------------------
+# Logs & temp files
+# -----------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Environment variables & secrets
+# -----------------------------
 .env
+.env.*
+*.secret
+secrets.json
+credentials.json
+
+# -----------------------------
+# Streamlit / Gradio / FastAPI cache
+# -----------------------------
+.streamlit/
+.gradio/
+__pycache__/
+.cache/
+*.db
+*.sqlite3
+
+# -----------------------------
+# Custom / Project-specific ignores
+# -----------------------------
+# Nếu có dữ liệu training / model
+data/
+datasets/
+checkpoints/
+outputs/
+models/
+*.pt
+*.pth
+*.bin
+
+# Nếu có tài liệu lớn
+*.pdf
+*.zip
+*.tar
+*.gz

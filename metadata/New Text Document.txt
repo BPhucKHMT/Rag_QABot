@@ -1,4 +1,0 @@
-video_id,video_title,transcript,video_url
-0,[CS315 - Chương 0] Giới thiệu môn học (Phần 3),scripts_timestamp_[CS315 _ Chương 0] Giới thiệu môn học (Phần 3) _ YouTube.txt,https://www.youtube.com/watch?v=Vm18bFk-RsI&list=PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP&index=61
-1,[CS315 - Chương 1] Tutorial - Gradient Descent (Phần 1),scripts_timestamp_[CS315 _ Chương 1] Tutorial _ Gradient Descent (Phần 1) _ YouTube.txt,https://www.youtube.com/watch?v=FCZXP4oCiFc&list=PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP&index=60
-2,[CS315 - Chương 1] Tutorial - Gradient Descent (Phần 2),https://www.youtube.com/watch?v=6VIywjiErJs&list=PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP&index=59
