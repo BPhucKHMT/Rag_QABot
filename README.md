@@ -1,7 +1,8 @@
 # Hệ thống hỏi đáp môn học CS315
 
 ## Cấu trúc thư mục
-``` bash
+
+```bash
 ├── data
 ├── database
 │   ├── notebook_baseline
@@ -14,7 +15,7 @@
 │       ├── file_loader.py : load file txt transcript để chunk
 │       ├── llm_model.py: define model
 │       ├── main.py: tạo rag chain (chính)
-│       ├── offline_rag.py: 
+│       ├── offline_rag.py:
 │       ├── reranking.py: rerank
 │       └── vectorstore.py: load db
 ├── .env
@@ -22,7 +23,11 @@
 ├── README.md
 └── requirements.txt
 ```
+
 ## Chaỵ file riêng lẻ
+
 python -m rag.main
 
+## Chạy cell evaluation
 
+pip install ragas datasets nest_asyncio pandas tabulate
