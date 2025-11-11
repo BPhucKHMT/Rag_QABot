@@ -13,7 +13,7 @@
 │   └── rag
 │       ├── file_loader.py : load file txt transcript để chunk
 │       ├── llm_model.py: define model
-│       ├── main.py: tạo rag chain 
+│       ├── main.py: tạo rag chain (chính)
 │       ├── offline_rag.py: 
 │       ├── reranking.py: rerank
 │       └── vectorstore.py: load db
@@ -22,5 +22,6 @@
 ├── README.md
 └── requirements.txt
 ```
+## Cha
 
 
