@@ -1,0 +1,141 @@
+0:00:00 - 0:00:14, Chủ đề tập 3. Nền tảng toán
+0:00:14 - 0:00:18, Tiếp theo, chúng ta sẽ cùng ôn tập nền tảng toán.
+0:00:18 - 0:00:29, Như đã gặp trước đây, đại số tuyến tính và giải tích là 2 nền tảng toán rất quan trọng và liên quan trực tiếp đến mô hình này.
+0:00:29 - 0:00:36, Đầu tiên, chúng ta sẽ đặt câu hỏi là tại sao chúng ta cần phải có kiến thức đại số tuyến tính.
+0:00:36 - 0:00:40, Công dụng đầu tiên của nó chính là dùng để biểu diễn dữ liệu.
+0:00:40 - 0:00:48, Như chúng ta đã biết, trong lĩnh vực về máy học, công cụ, thành phần đầu tiên chúng ta phải có chính là dữ liệu.
+0:00:48 - 0:00:54, Và làm sao để dữ liệu này có khả năng tính toán được thì chúng ta phải dùng các công cụ đại số.
+0:00:54 - 0:01:00, thì ở đây, từ thấp lên cao thì chúng ta sẽ có các khái niệm tensor 0 chiều
+0:01:00 - 0:01:10, tên gọi khác chính là scalar, tensor 1 chiều, tên gọi khác là vector, tensor 2 chiều, tên gọi khác là ma trận
+0:01:10 - 0:01:13, và tensor N chiều, hay là tensor nhiều chiều
+0:01:13 - 0:01:19, thì các khái niệm scalar, vector, ma trận và tensor nhiều chiều này
+0:01:19 - 0:01:24, nó sẽ được sử dụng để biểu diễn cho những loại dữ liệu khác nhau
+0:01:24 - 0:01:29, thì chi tiết chúng ta sẽ cùng thảo luận trong những slide tiếp theo.
+0:01:31 - 0:01:35, Một công dụng khác đó chính là dùng để biến đổi dữ liệu.
+0:01:35 - 0:01:44, Sau khi chúng ta đã biểu diễn rồi, thì chúng ta sẽ biến dữ liệu đó thành dữ liệu phái sinh, hay còn gọi là đặc trưng.
+0:01:44 - 0:01:51, Các đặc trưng sẽ giúp cho mô hình máy học có thể hiểu dữ liệu ở nhiều khía cạnh khác nhau
+0:01:51 - 0:01:55, là sử dụng các đặc trưng này để phục vụ cho mục đích của các bài toán
+0:01:55 - 0:02:02, ví dụ như mục đích phân lớp, ví dụ như là mục đích chuyển đổi từ dữ liệu dạng này sang dạng khác.
+0:02:04 - 0:02:09, Đầu tiên chúng ta sẽ tìm hiểu về khái niệm scalar hay là tensor 0 chiều.
+0:02:09 - 0:02:14, Bản chất của các giá trị scalar đó chính là các số thực.
+0:02:14 - 0:02:20, Nếu như chúng ta biểu diễn dưới dạng là các ký hiệu toán học
+0:02:20 - 0:02:26, thì scalar sẽ là biểu diễn bởi một cái ký tự viết bình thường
+0:02:26 - 0:02:32, và scalar thì thường được sử dụng để biểu diễn cho các cái đại lượng vô hướng
+0:02:32 - 0:02:35, tức là không có hướng, ví dụ như là tốc độ
+0:02:35 - 0:02:39, thể hiện sự nhanh chậm, khối lượng thể hiện sự nặng nhẹ
+0:02:39 - 0:02:42, chiều dài thể hiện chiều dài là ngắn dài
+0:02:42 - 0:02:49, và những cái tên gọi khác nó không phổ biến lắm của tensor
+0:02:49 - 0:02:57, 0 chiều hay là scalar đó chính là scalar tensor, zero-dimensional tensor, 0D tensor
+0:02:57 - 0:03:00, thì các cái tên gọi này ít được gặp
+0:03:00 - 0:03:05, và trong thư viện NumPy hoặc là Python
+0:03:05 - 0:03:10, thì chúng ta sẽ có hai cái thông số rất là quan trọng hay là hai thuộc tính
+0:03:10 - 0:03:13, hai thuộc tính rất là quan trọng đó chính là ndim và shape
+0:03:13 - 0:03:17, dựa vào ndim hoặc shape
+0:03:17 - 0:03:21, thì sẽ giúp chúng ta kiểm tra xem cái biến của mình
+0:03:21 - 0:03:24, nó là kiểu scalar hay không
+0:03:24 - 0:03:29, thì đầu tiên chúng ta sẽ khởi tạo một cái biến x
+0:03:29 - 0:03:30, là np.array
+0:03:30 - 0:03:32, là có giá trị là 12
+0:03:32 - 0:03:35, và x.ndim
+0:03:35 - 0:03:38, thì nó sẽ có giá trị là 0
+0:03:38 - 0:03:40, và x.shape
+0:03:40 - 0:03:43, thì nó sẽ có giá trị là rỗng
+0:03:43 - 0:03:51, Để kiểm tra giá trị scalar, chúng ta sẽ kiểm tra xem các giá trị ndim có bằng 0 hay không, hoặc là shape có bằng rỗng hay không
+0:03:51 - 0:03:58, Tiếp theo, đó chính là khái niệm Vector hay là tensor 1 chiều
+0:03:58 - 0:04:09, Chúng ta sẽ xét một cái ví dụ, đó là chúng ta sẽ có một cái bảng dữ liệu về các thông tin của các nhà trong một khu phố
+0:04:09 - 0:04:14, Và thông tin này thì sẽ bao gồm là diện tích, số phòng ngủ và giá
+0:04:14 - 0:04:18, Thì chúng ta sẽ lấy ra một dòng dữ liệu
+0:04:18 - 0:04:21, Thì các thông tin về một dòng dữ liệu
+0:04:21 - 0:04:24, Nó sẽ hình thành một vector
+0:04:24 - 0:04:30, Và cái vector này sẽ là đại diện cho căn nhà thứ 3
+0:04:30 - 0:04:36, Để biểu diễn cho căn nhà này, chúng ta sẽ dùng một vector 3 chiều
+0:04:36 - 0:04:41, trong đó bao gồm 3 giá trị là 2430369
+0:04:41 - 0:04:46, thì tương ứng nó chính là diện tích số phòng ngủ và giá trị của căn nhà
+0:04:48 - 0:04:50, về ký hiệu
+0:04:50 - 0:04:58, thì khác với lại scalar, vector sẽ được ký hiệu viết nhỏ và in đậm
+0:04:58 - 0:05:02, sẽ là viết thường và tô đậm
+0:05:02 - 0:05:08, Nếu mà scalar thì nó sẽ là viết thường nhưng mà không có tô đậm
+0:05:08 - 0:05:12, Còn vector thì sẽ là viết thường nhưng mà có in đậm
+0:05:12 - 0:05:18, Và số chiều của mình ở đây sẽ là N
+0:05:18 - 0:05:21, Tương ứng là số phần tử của vector
+0:05:21 - 0:05:24, Và chiều không gian của mình sẽ có 1 chiều
+0:05:24 - 0:05:31, Và vector thì thường sẽ bao gồm một tập hợp
+0:05:31 - 0:05:38, các giá trị scalar, ví dụ đây là vector x, vector x sẽ gồm có N giá trị
+0:05:38 - 0:05:41, và mỗi giá trị này chính là 1 giá trị scalar
+0:05:44 - 0:05:48, về mặt ký hiệu, vector sẽ thường biểu diễn dưới dạng cột
+0:05:48 - 0:05:53, trong các tài liệu chúng ta thấy vector sẽ biểu diễn dưới dạng cột
+0:05:53 - 0:06:02, Về lập trình, chúng ta sẽ khởi tạo một vector là np.array hay NumPy array
+0:06:02 - 0:06:06, và tạo ra một list, trong đó tham số của mình sẽ là một list
+0:06:06 - 0:06:11, cái list gồm các giá trị là 12, 3, 6 và 14
+0:06:11 - 0:06:16, và list này sẽ được tự động ép kiểu sang kiểu vector
+0:06:16 - 0:06:20, và để kiểm tra số chiều cũng như là số phần tử
+0:06:20 - 0:06:27, Trong cái vector này thì chúng ta sẽ dùng hai cái phương thức, đó là ndim và shape
+0:06:27 - 0:06:32, Với cái vector ví dụ ở đây, số chiều của mình sẽ là 1
+0:06:32 - 0:06:35, Tức là chiều không gian thì chúng ta sẽ có 1 chiều
+0:06:35 - 0:06:39, Nhưng mà số phần tử thì chúng ta sẽ có là 4
+0:06:39 - 0:06:44, Đối với vector thì chúng ta sẽ chú ý như vậy
+0:06:44 - 0:06:47, Và vector dùng để biểu diễn cái gì?
+0:06:47 - 0:06:50, Vector thì thường sử dụng để biểu diễn văn bản
+0:06:50 - 0:06:54, Ví dụ như chúng ta có mô hình là Word2Vec
+0:06:54 - 0:07:01, là biểu diễn các cái câu trong mỗi một cái từ
+0:07:01 - 0:07:04, trong văn bản dưới dạng là một vector
+0:07:04 - 0:07:08, Ví dụ như từ King sẽ biểu diễn bởi vector 4 chiều này
+0:07:08 - 0:07:11, từ Man sẽ biểu diễn bởi vector 4 chiều này
+0:07:11 - 0:07:14, Và trong một số các cái mô hình biểu diễn khác
+0:07:14 - 0:07:16, Ví dụ như mô hình Bag of Words
+0:07:16 - 0:07:27, Mỗi một đoạn văn hoặc văn bản sẽ được biểu diễn bởi một vector nhiều chiều
+0:07:27 - 0:07:33, Đây là ứng dụng của vector trong biểu diễn dữ liệu
+0:07:33 - 0:07:40, Ngoài ra, đối với dữ liệu dạng sóng, ví dụ sóng âm thanh
+0:07:40 - 0:07:44, có thể biểu diễn dưới dạng là một mảng hoặc vector
+0:07:44 - 0:07:47, thì đây là một hình minh họa cho sóng âm thanh
+0:07:47 - 0:07:53, và nó sẽ được lấy mẫu và biểu diễn dưới dạng là vector trong máy tính
+0:07:55 - 0:07:58, Tiếp theo thì chúng ta sẽ nói về khái niệm ma trận
+0:07:58 - 0:08:02, thì cũng lấy ví dụ trong ví dụ trước
+0:08:02 - 0:08:06, là tập hợp các căn nhà trong khu phố
+0:08:06 - 0:08:12, thì ở đây nếu như chúng ta lấy hết toàn bộ tất cả các căn nhà này ra
+0:08:12 - 0:08:21, để biểu diễn thì đây chính là một cái ma trận để đại diện cho thông tin của các căn nhà trong một khu phố
+0:08:21 - 0:08:24, thì đây là ma trận
+0:08:24 - 0:08:31, và nếu xét về ký hiệu thì ma trận được biểu diễn bởi một ký tự viết hoa
+0:08:31 - 0:08:33, nhưng mà không tô đậm
+0:08:33 - 0:08:36, và ở đây chúng ta sẽ thấy là nó sẽ có hai chiều thành phần không gian
+0:08:36 - 0:08:40, và chiều thứ nhất thì sẽ gồm có M phần tử
+0:08:40 - 0:08:43, chiều thứ 2 thì sẽ có N phần tử
+0:08:43 - 0:08:46, thì một cách nói khác đó chính là
+0:08:46 - 0:08:48, đây là một ma trận 2 chiều không gian
+0:08:48 - 0:08:51, và gồm M dòng N cột
+0:08:51 - 0:08:59, và ma trận thì có thể được hiểu đó là một tập hợp các cái vector cùng kích thước
+0:08:59 - 0:09:02, ví dụ như đây là một vector
+0:09:02 - 0:09:04, đây là một vector
+0:09:04 - 0:09:07, và đây là một vector
+0:09:07 - 0:09:10, tất cả cái vector này đều có cùng kích thước
+0:09:10 - 0:09:12, đó là gồm có M chiều
+0:09:14 - 0:09:21, và trong lập trình Python thì đây là cách thức để chúng ta khai báo một cái ma trận
+0:09:21 - 0:09:26, lưu ý là ở đây chúng ta sẽ có hai cái dấu ngoặc vuông ở đây
+0:09:26 - 0:09:32, và tương ứng thì chúng ta sẽ kiểm tra xem một cái biến nó có phải là ma trận hay không
+0:09:32 - 0:09:35, thông qua cái phương thức là ndim và shape
+0:09:35 - 0:09:46, Trong cái ví dụ này chúng ta thấy số chiều của mình sẽ là 2, trong đó số phần tử theo từng chiều đó là 3 và 4
+0:09:46 - 0:09:53, Thì đây là cách thức để chúng ta lập trình sử dụng Python để tạo ra một ma trận
+0:09:56 - 0:10:04, Tiếp theo thì chúng ta sẽ cùng thảo luận về việc sử dụng ma trận để biểu diễn dữ liệu
+0:10:04 - 0:10:09, thì nếu như là ma trận, thì chúng ta có thể dùng ma trận để biểu diễn cho một cái ảnh mức xám
+0:10:09 - 0:10:13, thì chúng ta thấy cái tấm hình này là một cái dạng phóng to
+0:10:13 - 0:10:18, và với cái độ phân giải thấp hình của một cái gương mặt người
+0:10:18 - 0:10:26, và nếu như mỗi một cái ô này, chúng ta sẽ biểu diễn bởi một cái số
+0:10:26 - 0:10:31, và cái số này nó có cái miền giá trị là từ 0 cho đến 255
+0:10:31 - 0:10:35, hay còn gọi là chúng ta sẽ sử dụng một byte dữ liệu đó
+0:10:35 - 0:10:37, để biểu diễn
+0:10:37 - 0:10:39, thì như vậy từng cái phần tử ở đây
+0:10:39 - 0:10:42, nó sẽ được minh họa cho một con số
+0:10:42 - 0:10:45, và cái số này người ta còn gọi là mức xám
+0:10:45 - 0:10:48, số mà càng nhỏ thì màu sẽ càng tối
+0:10:48 - 0:10:52, số sẽ càng lớn thì màu sẽ càng sáng
+0:10:52 - 0:10:54, ví dụ như chúng ta thấy ở đây
+0:10:54 - 0:10:58, cái vị trí này là giá trị gần với lại con số là 255
+0:10:58 - 0:11:00, thì giá trị này là 251
+0:11:00 - 0:11:03, và nó tương ứng là cho vùng màu sáng
+0:11:04 - 0:11:07, Còn giá trị ở đây, ví dụ như là 10
+0:11:07 - 0:11:10, thì chúng ta thấy là nó gần với số 0, tức là vùng màu tối
+0:11:11 - 0:11:15, Và đây sẽ là cái biểu diễn dưới dạng ma trận
+0:11:15 - 0:11:18, của tấm ảnh gốc đầu vào này
+0:11:18 - 0:11:21, Như vậy thì chúng ta thấy là cái công dụng của ma trận
+0:11:21 - 0:11:25, Công dụng đầu tiên của ma trận đó chính là để biểu diễn hình ảnh
+0:11:25 - 0:11:29, Và lưu ý ảnh ở đây là ảnh không có màu, ảnh mức xám

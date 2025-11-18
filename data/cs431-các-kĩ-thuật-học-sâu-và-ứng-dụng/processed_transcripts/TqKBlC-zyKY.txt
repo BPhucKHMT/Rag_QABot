@@ -1,0 +1,178 @@
+0:00:00 - 0:00:08, Trong phần tiếp theo, chúng ta sẽ cùng tìm hiểu về kiến trúc mạng Recurrent Neural Network.
+0:00:08 - 0:00:15, Đầu tiên, chúng ta sẽ phải xem dạng triển khai của mạng Recurrent Network.
+0:00:15 - 0:00:20, Thứ nhất, chúng ta xem đối với mạng Neural Network,
+0:00:20 - 0:00:28, điểm yếu của nó là chúng ta không thể mã hóa được yếu tố về mặt trình tự của các từ.
+0:00:28 - 0:00:36, Còn các cái từ, ví dụ như cái từ thứ x_{t-1}, x_t, rồi x_{t+1}
+0:00:36 - 0:00:41, Chúng ta đưa nó về một cái dạng vector One-Hot như thế này
+0:00:41 - 0:00:48, thì rõ ràng là nó sẽ không biết cái từ nào là từ xuất hiện trước, từ nào là xuất hiện sau
+0:00:48 - 0:00:55, Thế thì, đối với mạng Recurrent Neural Network, thì cái yếu tố là Recurrent
+0:00:55 - 0:00:58, Vì tiếng Việt đó là hồi quy
+0:01:00 - 0:01:09, Thì hồi quy chính là cơ chế để giúp cho mình mã hóa yếu tố về mặt trình tự
+0:01:10 - 0:01:13, Nó chính là mã hóa yếu tố về mặt trình tự
+0:01:13 - 0:01:16, Cách thức mà mình mã hóa nó là như thế nào?
+0:01:16 - 0:01:19, Khi chúng ta gặp từ thứ x_t
+0:01:19 - 0:01:28, chúng ta đưa vào và bây giờ tạm thời chúng ta sẽ chưa còn biết là cái mạng này nó tính toán như thế nào
+0:01:28 - 0:01:31, chúng ta đi tính cái giá trị thứ s_{t-1}
+0:01:31 - 0:01:34, rồi sau đó chúng ta đi tính cái giá trị output
+0:01:34 - 0:01:40, và khi chúng ta tính được cái từ thứ s_{t-1} xong
+0:01:40 - 0:01:43, chúng ta lan truyền cái thông tin này đến cái node tiếp theo
+0:01:43 - 0:01:47, và chúng ta lại nhận cái thông tin tại thời điểm thứ s_t
+0:01:47 - 0:01:55, Và tại thời điểm thứ x_t này, thì chúng ta sẽ kết hợp cả cái thông tin của quá khứ,
+0:01:55 - 0:01:57, tức là thông tin của cái s_{t-1}.
+0:01:57 - 0:02:03, Khi đã xử lý cái từ x_{t-1} rồi, nó tạo ra cái thông tin là s_{t-1}.
+0:02:03 - 0:02:05, Thì đây chính là quá khứ.
+0:02:07 - 0:02:12, Và cái quá khứ này, nó sẽ kết hợp với thông tin của thời điểm hiện tại.
+0:02:12 - 0:02:21, Để tổng hợp thông tin, thì như vậy là S_t là nó mang tính chất gọi là tổng hợp
+0:02:21 - 0:02:27, Tổng hợp thông tin
+0:02:27 - 0:02:32, Khi đó, việc đưa ra dự đoán giá trị y_t
+0:02:32 - 0:02:40, y_hat_t, nó sẽ mang đầy đủ thông tin của những từ trước đó và những từ hiện tại
+0:02:40 - 0:02:45, Và đồng thời là từ trước đó nó sẽ có trước,
+0:02:45 - 0:02:47, rồi nó sẽ kết hợp với từ hiện tại,
+0:02:47 - 0:02:53, thì nó sẽ giúp cho cái việc phán đoán này nó sẽ toàn diện hơn.
+0:02:53 - 0:02:57, Và như vậy thì cái yếu tố hồi quy
+0:02:57 - 0:03:01, nó thể hiện ở chỗ đó là cái quá trình này được lặp đi lặp lại.
+0:03:01 - 0:03:09, Cái S_t này sẽ lại tiếp tục lan truyền đến cho cái thời điểm thứ t+1.
+0:03:09 - 0:03:11, thì nó sẽ là quá khứ của S_{t+1}.
+0:03:12 - 0:03:17, X_t là hiện tại mới kết hợp với quá khứ trước đó
+0:03:17 - 0:03:21, để tổng hợp thông tin và đưa ra output tiếp theo.
+0:03:21 - 0:03:23, Đây là cái dạng triển khai,
+0:03:23 - 0:03:27, tức là cách thức mà chúng ta triển khai
+0:03:27 - 0:03:31, các từ đầu vào trong một mô hình Recurrent Neural Network.
+0:03:31 - 0:03:36, Và viết như vậy thì nó cũng sẽ hơi tắt quá.
+0:03:36 - 0:03:39, thì chút nữa chúng ta sẽ có cái dạng gọi là dạng thu gọn
+0:03:40 - 0:03:44, Và là thay vì chúng ta đưa vào x1, x2 đến x_t
+0:03:44 - 0:03:47, thì ở đây chúng ta chỉ cần ký hiệu là x thôi
+0:03:47 - 0:03:49, và đầu ra sẽ là giá trị y_hat
+0:03:49 - 0:03:51, và ở đây chúng ta sẽ vẽ một cái vòng hồi quy
+0:03:52 - 0:03:56, x sẽ được đưa trở lại cho cái node S này
+0:03:57 - 0:04:00, và ở đây chúng ta sẽ có thống nhất với nhau về mặt ký hiệu
+0:04:00 - 0:04:03, Đối với cái dữ kiện đầu vào x_t
+0:04:03 - 0:04:17, thì cái x_t này thì t là có thể thay đổi độ dài, tức là t sẽ di chuyển từ 1 cho đến T lớn.
+0:04:17 - 0:04:20, t sẽ thay đổi chiều dài của mình từ 1 cho đến T lớn.
+0:04:20 - 0:04:28, Và tại một cái thời điểm t hiện tại là x_t, chúng ta sẽ đi tính cái giá trị dự đoán.
+0:04:28 - 0:04:33, Chúng ta sẽ đi tính giá trị dự đoán là ký hiệu bằng y_hat_t.
+0:04:33 - 0:04:42, Và ở đây có một cái lưu ý cực kỳ quan trọng đó là các bộ tham số U, V và W này là chúng ta sẽ dùng chung,
+0:04:42 - 0:04:50, dùng chung cho mỗi bước tính toán. Cho ví dụ chúng ta tính với s_{t-1}, hay tính với x_t, hay tính với x_{t-1},
+0:04:50 - 0:04:54, chúng ta đều sử dụng chung các bộ trọng số này.
+0:04:54 - 0:05:05, S_t này được gọi là trạng thái ẩn. Đây là ký hiệu và quy ước về cách đặt tên cho mạng neural network về sau.
+0:05:05 - 0:05:20, X sẽ là input, Y_hat sẽ là dự đoán, S sẽ là trạng thái ẩn của mô hình.
+0:05:20 - 0:05:29, Và các cái bộ ma trận U, V và W chính là các cái tham số của mô hình
+0:05:29 - 0:05:39, Và như vậy thì RNN đã có thể mã hóa được cái thứ tự, cái trình tự của các cái từ
+0:05:39 - 0:05:45, trong một văn bản thông qua cái cơ chế là cơ chế hồi quy
+0:05:45 - 0:05:55, Bây giờ chúng ta sẽ đến với các bước để xây dựng một mô hình dưới dạng công thức
+0:05:55 - 0:06:00, Đầu tiên là bước số 1 là thiết kế hàm mô hình của mình
+0:06:00 - 0:06:13, Cho trước các chuỗi vector là x1, x2, ..., x_t
+0:06:13 - 0:06:19, Thì ở đây chúng ta lưu ý, đây là Word Vector, khái niệm Word Vector thì chúng ta đã học ở trong bài trước rồi
+0:06:19 - 0:06:32, đó chính là Vector Embedding hay Vector Biểu diễn của từ x_1
+0:06:32 - 0:06:39, hoặc X_t này sẽ là Vector Biểu diễn của từ W_t
+0:06:39 - 0:06:51, Rồi, và tại mỗi thời điểm hay còn gọi là time step, tức là tại mỗi thời điểm t, thì chúng ta sẽ có nhận dữ liệu đầu vào là x_t.
+0:06:51 - 0:06:59, Và chúng ta sẽ tính toán cái giá trị trạng thái ẩn s_t dựa trên cái công thức này.
+0:06:59 - 0:07:07, dựa trên công thức này. Thì cái S_t sẽ có công thức như sau là bằng hàm kích hoạt
+0:07:07 - 0:07:11, sigmoid hoặc là hàm tanh. Hàm này có thể là hàm sigmoid hoặc là hàm tanh
+0:07:15 - 0:07:23, hoặc là hàm tanh. Rồi, và nó sẽ phối hợp cái thông tin của quá khứ
+0:07:23 - 0:07:27, Đây là quá khứ và đây là hiện tại. Rồi
+0:07:29 - 0:07:36, Còn đây là hiện tại.
+0:07:36 - 0:07:51, Và hai cái ma trận U và W ở đây, nó sẽ giúp cho chúng ta ánh xạ hai cái vector là X_t và S_{t-1} về cùng một cái không gian.
+0:07:51 - 0:07:54, và sau đó nó sẽ tổng hợp thông tin lại với nhau
+0:07:54 - 0:08:00, tổng hợp thông tin lại, rồi từ đó qua hàm kích hoạt để ra trạng thái ẩn
+0:08:00 - 0:08:04, trạng thái ẩn S_t, nhưng mà S_t nó đã chứa đầy đủ thông tin
+0:08:04 - 0:08:09, chứa đầy đủ thông tin để giúp cho mình đưa ra giá trị dự đoán
+0:08:09 - 0:08:14, S_t là đủ thông tin
+0:08:14 - 0:08:20, để mình dự đoán
+0:08:20 - 0:08:26, Và để dự đoán kết quả thì chúng ta sẽ nhân với ma trận V
+0:08:26 - 0:08:31, và qua hàm Softmax để ra y_hat_t
+0:08:31 - 0:08:37, Trong một số tài liệu, người ta sẽ ký hiệu là tất cả ma trận tham số
+0:08:37 - 0:08:43, người ta sẽ để là U^T, hoặc là W^T, rồi V^T
+0:08:43 - 0:08:47, Thì trong tài liệu này thì chúng ta sẽ lựa chọn cách thức ký hiệu
+0:08:47 - 0:08:50, U, V, W sao cho nó gọn nhất
+0:08:50 - 0:08:53, thật ra là cả hai cách thì đều giống nhau thôi ha
+0:08:53 - 0:08:54, đều khác
+0:08:54 - 0:08:58, đó chỉ là U, trong cái U^T trong các tài liệu trước
+0:08:58 - 0:09:00, thì nó chính là cái dạng chuyển vị của
+0:09:00 - 0:09:03, tức là nó sẽ có cái kích thước nó khác so với lại cái U
+0:09:03 - 0:09:06, của cái hệ thống bài giảng ở đây
+0:09:06 - 0:09:09, ví dụ như nếu U ở cái tài liệu trước
+0:09:09 - 0:09:11, ở trong cái bài giảng trước
+0:09:11 - 0:09:13, hoặc là cái bài giảng khác
+0:09:13 - 0:09:14, nó có kích thước là V
+0:09:14 - 0:09:15, nhân với là N
+0:09:15 - 0:09:18, V là số lượng từ trong từ điển
+0:09:18 - 0:09:26, N là chiều dài của vector biểu diễn
+0:09:26 - 0:09:31, Ở bên đây, U sẽ có kích thước là N x V
+0:09:31 - 0:09:33, Nó sẽ ngược lại một chút
+0:09:33 - 0:09:36, Nhưng cái đó thì không quá quan trọng
+0:09:36 - 0:09:38, Ý nghĩa của nó vẫn giống nhau
+0:09:38 - 0:09:48, và bài tập cho chúng ta đó chính là cho trước các thông tin về cái độ dài của cái X_t
+0:09:48 - 0:09:52, S_t và y_hat_t là như sau
+0:09:52 - 0:09:58, X_t là vector có 8.000 chiều, có 8.000 phần tử
+0:09:58 - 0:10:01, S_t là một vector 100 chiều
+0:10:01 - 0:10:06, và y_hat_t là một vector có 8.000 chiều hay 8.000 phần tử
+0:10:06 - 0:10:15, Câu hỏi đặt ra là kích thước của tham số U, V và W trong trường hợp này sẽ là bao nhiêu?
+0:10:15 - 0:10:24, Hay nói cách khác, đó là U sẽ thuộc 1 cái R bao nhiêu nhân với lại bao nhiêu?
+0:10:24 - 0:10:28, Chúng ta sẽ cùng làm thử bài tập như sau.
+0:10:28 - 0:10:33, Đầu tiên, chúng ta sẽ phải bám vào 2 cái công thức này.
+0:10:33 - 0:10:40, Đây là hai cái công thức để giúp cho chúng ta xác định được cái độ dài của U, V và W.
+0:10:40 - 0:10:47, Thì hàm activation, ở đây giả sử như chúng ta gọi là hàm sigmoid luôn đi ha.
+0:10:47 - 0:10:54, Thì đây là một cái hàm mà theo kiểu là thực hiện trên từng phần tử hay còn gọi là element-wise.
+0:10:54 - 0:10:56, element-wise
+0:10:56 - 0:10:58, nó sẽ tính trên phần tử
+0:10:58 - 0:11:01, từng phần tử, do đó qua hàm sigmoid
+0:01:01 - 0:11:03, nó sẽ không thay đổi
+0:11:03 - 0:11:05, nó sẽ không làm thay đổi
+0:11:05 - 0:11:07, kích thước của cái vector của mình
+0:11:07 - 0:11:11, ví dụ đầu vào của hàm sigmoid này
+0:11:11 - 0:11:13, nó là một ma trận hoặc một vector nào đó
+0:11:13 - 0:11:15, thì qua hàm sigmoid nó sẽ không làm thay đổi
+0:11:15 - 0:11:19, như vậy, chúng ta đã biết S_t là một vector
+0:01:19 - 0:11:23, kích thước xin lỗi là một vector có 100 phần tử
+0:11:23 - 0:11:27, hay viết dưới dạng ma trận thì nó sẽ là 100
+0:11:29 - 0:11:29, nhân 1
+0:11:30 - 0:11:35, như vậy thì toàn bộ cái phép cộng này nó sẽ là 100
+0:11:36 - 0:11:37, nhân 1
+0:11:38 - 0:11:41, mà cái phép cộng này thì nó cũng là element-wise
+0:01:41 - 0:11:44, tức là tính trên từng phần tử do đó thì hai cái
+0:11:45 - 0:11:46, này
+0:11:46 - 0:11:49, U nhân X_t và W nhân S_{t-1}
+0:11:49 - 0:11:51, nó cũng là kết quả của nó cũng là
+0:11:51 - 0:11:54, các cái vector có kích thước là 100 x 1
+0:11:54 - 0:11:58, Như vậy thì chúng ta sẽ bám vào cái nhận xét này
+0:11:58 - 0:12:02, để dự đoán, để xác định
+0:12:02 - 0:12:06, xem U, V, W là kích thước bao nhiêu
+0:12:06 - 0:12:09, thì chúng ta sẽ lấy ra cái U nhân X_t trước
+0:12:09 - 0:12:11, thì U của mình
+0:12:11 - 0:12:16, nó sẽ là kích thước bao nhiêu nhân bao nhiêu, mình chưa biết
+0:12:16 - 0:12:21, X_t là 8.000 x 1
+0:12:21 - 0:12:27, X_t là 8.000 x 1
+0:12:28 - 0:12:30, Và ở đây sẽ là bao nhiêu? Mình không biết
+0:12:30 - 0:12:39, Và đầu ra thì nó sẽ tạo ra là một cái vector có kích thước là 100 x 1
+0:12:39 - 0:12:47, để U và X_t có thể nhân được với nhau, giá trị ở đây phải khớp
+0:12:47 - 0:12:51, số cột của U tương ứng với số dòng của X_t
+0:12:51 - 0:12:57, do đó đáp số của mình sẽ là 8.000
+0:12:57 - 0:13:11, và khi nhân 2 cái ma trận này với nhau thì cái 100 nó sẽ tạo ra vector là 100 nhân 1 như vậy thì ở đây số của mình nó sẽ là 100
+0:01:11 - 0:13:19, như vậy U của mình sẽ có kích thước đó là 100 nhân cho 8 nghìn
+0:13:19 - 0:13:29, Tương tự như vậy, chúng ta sẽ thực hiện thao tác cho phép biến đổi là W nhân với S_{t-1}
+0:13:29 - 0:13:35, W của mình sẽ là bằng bao nhiêu nhân bao nhiêu? Mình chưa biết
+0:13:35 - 0:13:45, S_{t-1} là một vector có kích thước là 100 nhân 1
+0:13:45 - 0:13:52, Và đầu ra của nó sẽ ra là 1 cái vector cũng là 100 nhân 1 luôn.
+0:13:52 - 0:14:00, Rồi, như vậy thì chúng ta sẽ dùng các quy tắc về số chiều của nhân 2 ma trận
+0:14:00 - 0:14:03, để 2 ma trận W và S_{t-1} có thể nhân được với nhau.
+0:14:03 - 0:14:07, Thì ở đây, số này phải giống với số này, đó là 100.
+0:14:07 - 0:14:12, Số cột của W sẽ giống với lại số hàng của S_{t-1}, thì là 100 sẽ khớp với 100.
+0:14:12 - 0:14:17, và ở đây sẽ là 100 luôn
+0:14:17 - 0:14:20, như vậy W của mình sẽ là cái ma trận
+0:14:20 - 0:14:26, W của mình sẽ là một cái ma trận kích thước là 100
+0:14:26 - 0:14:28, nhân với 100
+0:14:28 - 0:14:33, rồi tiếp đến thì chúng ta sẽ tính xem
+0:14:33 - 0:14:36, cái ma trận V sẽ là bao nhiêu
+0:14:36 - 0:14:38, thì tương tự như sigmoid, Softmax
+0:01:38 - 0:14:46, Softmax cũng là một cái hàm đảm bảo giữ nguyên số chiều khi chúng ta biến đổi
+0:14:46 - 0:14:55, Y_hat_t của mình sẽ là một cái ma trận kích thước là 8.000 x 1
+0:14:55 - 0:15:03, V của mình sẽ là kích thước là bao nhiêu? Mình không biết, mình sẽ để ở đây
+0:15:03 - 0:15:07, S_t sẽ là 100 x 1
+0:15:08 - 0:15:11, như vậy ở đây chúng ta muốn thực hiện được phép nhân này
+0:15:11 - 0:15:15, thì số cột của V sẽ phải là 100
+0:01:15 - 0:15:18, và đầu ra của mình là ra 1 vector
+0:15:18 - 0:15:21, ra 1 ma trận kích thước là 8.000 x 1
+0:15:21 - 0:15:23, như vậy ở đây nó sẽ phải là 8.000
+0:15:24 - 0:15:31, Tóm lại, V sẽ là 1 ma trận kích thước là 8.000 x 100
+0:15:31 - 0:15:40, Vì vậy, chúng ta đã có được 3 cái đáp án cho bài tập ở đây.

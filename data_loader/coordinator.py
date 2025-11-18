@@ -6,12 +6,14 @@ Chức năng:
 - Lấy transcript (ưu tiên API → fallback Whisper)
 - Chuẩn hoá và lưu transcript vào .txt
 - Cập nhật playlists_index.json để quản lý nhiều playlist
+- [MỚI] Hỗ trợ đọc từ config.yaml để xử lý nhiều playlist tự động
 
 Cấu trúc thư mục (tính từ root project, ví dụ: Rag_QABot/):
 - Rag_QABot/
     - loader/
         - youtube_fetchers.py
         - coordinator.py   (file này)
+    - config.yaml       (file config)
     - data/
         - playlists_index.json
         - logs/
@@ -25,11 +27,12 @@ Cấu trúc thư mục (tính từ root project, ví dụ: Rag_QABot/):
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, Optional
 import json
 import datetime
 import argparse
 import time
+import yaml
 
 # ================================================================
 # Import từ youtube_fetchers.py
@@ -57,6 +60,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_ROOT = ROOT_DIR / "data"
 LOGS_DIR = DATA_ROOT / "logs"
 INDEX_FILE = DATA_ROOT / "playlists_index.json"
+CONFIG_FILE = ROOT_DIR / "config.yaml"
 
 
 # =====================================================================
@@ -317,21 +321,151 @@ class DataCoordinator:
 
 
 # =====================================================================
+# CONFIG-BASED COORDINATOR
+# =====================================================================
+class ConfigBasedCoordinator:
+    """
+    Coordinator mới đọc từ config.yaml
+    Tự động quét và xử lý playlist
+    """
+
+    def __init__(self, config_path: Optional[str] = None):
+        if config_path is None:
+            config_path = str(CONFIG_FILE)
+
+        self.config_path = Path(config_path)
+        self.config = self._load_config()
+
+        # Lấy settings
+        settings = self.config.get("settings", {})
+        sleep = settings.get("sleep_between_videos", 2.0)
+
+        self.coordinator = DataCoordinator(sleep_between_videos=sleep)
+
+    def _load_config(self) -> Dict[str, Any]:
+        """Load config.yaml"""
+        if not self.config_path.exists():
+            print(f"⚠️ Không tìm thấy file config: {self.config_path}")
+            print("   Tạo file config.yaml mẫu...")
+            self._create_sample_config()
+            return self._load_config()
+
+        try:
+            with open(self.config_path, "r", encoding="utf-8") as f:
+                return yaml.safe_load(f) or {}
+        except Exception as e:
+            print(f"❌ Lỗi đọc config: {e}")
+            return {}
+
+    def _create_sample_config(self):
+        """Tạo file config.yaml mẫu"""
+        sample = {
+            "playlists": [
+                {
+                    "url": "https://www.youtube.com/playlist?list=PLxxxxxx",
+                    "enabled": True,
+                },
+            ],
+            "settings": {
+                "sleep_between_videos": 2.0,
+                "limit_per_playlist": None,
+            },
+        }
+        CONFIG_FILE.parent.mkdir(exist_ok=True)
+        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+            yaml.dump(sample, f, allow_unicode=True, default_flow_style=False)
+        print(f"✅ Đã tạo config mẫu: {CONFIG_FILE}")
+
+    def process_all_enabled_playlists(self):
+        """Xử lý tất cả playlist enabled trong config"""
+        playlists = self.config.get("playlists", [])
+        if not playlists:
+            print("⚠️ Không có playlist nào trong config")
+            return
+
+        enabled_playlists = [p for p in playlists if p.get("enabled", True)]
+
+        if not enabled_playlists:
+            print("⚠️ Không có playlist nào được enable")
+            return
+
+        print(f"📋 Tìm thấy {len(enabled_playlists)} playlist cần xử lý\n")
+
+        for idx, playlist in enumerate(enabled_playlists, 1):
+            url = playlist["url"]
+            print(f"\n{'=' * 60}")
+            print(f"📌 Playlist {idx}/{len(enabled_playlists)}")
+            print(f"🔗 URL: {url}")
+            print(f"{'=' * 60}\n")
+
+            try:
+                limit = self.config["settings"].get("limit_per_playlist")
+                self.coordinator.process_playlist(url, limit=limit)
+            except Exception as e:
+                print(f"❌ Lỗi xử lý playlist: {e}")
+                continue
+
+        print("\n🎉 Hoàn tất xử lý tất cả playlist!")
+
+    def add_playlist(self, url: str, enabled: bool = True):
+        """Thêm playlist mới vào config"""
+        playlists = self.config.setdefault("playlists", [])
+
+        # Kiểm tra trùng
+        if any(p["url"] == url for p in playlists):
+            print("⚠️ Playlist đã tồn tại trong config")
+            return False
+
+        playlists.append({"url": url, "enabled": enabled})
+        self._save_config()
+        print(f"✅ Đã thêm playlist vào config: {url}")
+        return True
+
+    def _save_config(self):
+        """Lưu config.yaml"""
+        with open(self.config_path, "w", encoding="utf-8") as f:
+            yaml.dump(self.config, f, allow_unicode=True, default_flow_style=False)
+
+
+# =====================================================================
 # CLI
 # =====================================================================
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="YouTube Data Coordinator")
-    parser.add_argument(
-        "playlist",
-        type=str,
-        help="Playlist URL hoặc playlist ID",
+    parser = argparse.ArgumentParser(
+        description="YouTube Data Coordinator",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Ví dụ:
+  # Xử lý 1 playlist (chế độ cũ)
+  python -m loader.coordinator --playlist "https://youtube.com/playlist?list=PLxxx"
+  
+  # Xử lý tất cả playlist từ config.yaml
+  python -m loader.coordinator --config
+  
+  # Thêm playlist vào config
+  python -m loader.coordinator --add-playlist "https://youtube.com/playlist?list=PLxxx"
+        """,
     )
+
+    # Chế độ cũ: xử lý 1 playlist
+    parser.add_argument(
+        "--playlist", type=str, help="Playlist URL hoặc ID (chế độ single playlist)"
+    )
+
+    # Chế độ mới: dùng config
+    parser.add_argument("--config", action="store_true", help="Chạy theo config.yaml")
+
+    parser.add_argument(
+        "--add-playlist", type=str, help="Thêm playlist mới vào config.yaml"
+    )
+
     parser.add_argument(
         "--limit",
         type=int,
         default=None,
         help="Giới hạn số video xử lý (vd: 5). Mặc định: xử lý tất cả.",
     )
+
     parser.add_argument(
         "--sleep",
         type=float,
@@ -341,5 +475,20 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    coord = DataCoordinator(sleep_between_videos=args.sleep)
-    coord.process_playlist(args.playlist, limit=args.limit)
+    if args.config:
+        # Chế độ config-based
+        config_coord = ConfigBasedCoordinator()
+        config_coord.process_all_enabled_playlists()
+
+    elif args.add_playlist:
+        # Thêm playlist vào config
+        config_coord = ConfigBasedCoordinator()
+        config_coord.add_playlist(args.add_playlist)
+
+    elif args.playlist:
+        # Chế độ cũ: xử lý 1 playlist
+        coord = DataCoordinator(sleep_between_videos=args.sleep)
+        coord.process_playlist(args.playlist, limit=args.limit)
+
+    else:
+        parser.print_help()

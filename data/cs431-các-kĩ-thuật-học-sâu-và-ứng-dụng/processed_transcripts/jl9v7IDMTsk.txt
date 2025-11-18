@@ -1,0 +1,126 @@
+0:00:00 - 0:00:08, Chúng ta sẽ tiến hành cài đặt mô hình Logistic Regression và sử dụng thư viện Keras.
+0:00:08 - 0:00:18, Với thư viện Keras, nó sẽ giúp chúng ta không cần phải tính đạo hàm của hàm loss một cách tường minh.
+0:00:18 - 0:00:27, Tức là ngầm bên trong Keras thì nó vẫn tính đạo hàm, nhưng nó sẽ giúp chúng ta không phải ngồi tính toán lại các công thức.
+0:00:27 - 0:00:34, để Keras tự tính đạo hàm, tự cập nhật tham số cho mình.
+0:00:34 - 0:00:39, Để minh họa và mô phỏng cho mô hình Logistic Regression,
+0:00:39 - 0:00:43, chúng ta sẽ sử dụng hai tập điểm xanh và màu cam tự tạo,
+0:00:43 - 0:00:44, giống như trên đây.
+0:00:44 - 0:00:49, Nếu chúng ta có thể tách hai tập điểm này ra bằng một đường thẳng,
+0:00:49 - 0:00:55, cách thức để tạo ra tập dữ liệu này là chúng ta sử dụng hai tâm.
+0:00:55 - 0:01:00, Và với hai tâm này thì chúng ta sẽ dao động ngẫu nhiên xung quanh này với một cái hàm nhiễu.
+0:01:00 - 0:01:07, Và lưu ý đó là đặc trưng đầu vào cho tập dữ liệu này sẽ là 2 chiều.
+0:01:07 - 0:01:10, Đó là 2 tọa độ x1 và x2 trong không gian.
+0:01:10 - 0:01:18, Còn y của mình đó chính là thể hiện cho màu sắc của các cái điểm dữ liệu ở đây, các cái điểm dữ liệu ở đây.
+0:01:18 - 0:01:29, Bên dưới là mô hình Logistic Regression, ở trong đó sẽ là lớp đầu vào
+0:01:29 - 0:01:38, Và trong trường hợp này thì m của mình là bằng 2, tương ứng là 2 tọa độ trong không gian của mình
+0:01:38 - 0:01:46, Và ở đây thì chúng ta sẽ có một cái hàm kích hoạt, activation, một cái hàm kích hoạt là hàm Sigmoid
+0:01:46 - 0:01:53, Và cả hai cái lớp này thì nó sẽ được đặt tên đó là Dense, kết nối đầy đủ
+0:01:53 - 0:02:02, Rồi, bây giờ chúng ta sẽ cùng tiến hành cài đặt cho cái mô hình Logistic Regression thì cũng tương tự như Linear Regression
+0:02:02 - 0:02:05, Đầu tiên, chúng ta sẽ tạo ra các dữ liệu mẫu.
+0:02:05 - 0:02:12, Chúng ta sẽ có n_samples, chính là số mẫu cho một loại điểm.
+0:02:12 - 0:02:17, Chúng ta sẽ sinh ra dữ liệu huấn luyện và dữ liệu kiểm tra, xin lỗi, và dữ liệu validation.
+0:02:17 - 0:02:23, Ví dụ lần này, chúng ta sẽ có thêm sự tham gia của tập dữ liệu validation.
+0:02:23 - 0:02:43, Điểm đỏ sẽ xoay xung quanh một tâm, thì chúng ta sẽ cùng theo dõi hình minh họa cho các điểm.
+0:02:43 - 0:02:51, Đối với các điểm màu đỏ, nó sẽ dao động xung quanh điểm có tọa độ 1,5.
+0:02:51 - 0:02:59, Vì vậy, chúng ta có tâm và chúng ta sẽ tạo ngẫu nhiên xung quanh điểm 1,5 này.
+0:02:59 - 0:03:07, Đối với điểm màu xanh, chúng ta sẽ tạo ngẫu nhiên xung quanh điểm có tọa độ 5,1.
+0:03:07 - 0:03:12, Tâm ở đây, chúng ta sẽ sinh nhiễu ngẫu nhiên xung quanh cái này
+0:03:12 - 0:03:17, Vậy như vậy thì hai tập điểm màu đỏ và màu xanh này thì đều có thể tách ra được bởi một cái đường thẳng
+0:03:17 - 0:03:24, Tương tự như vậy cho tập dữ liệu validation thì chúng ta cũng sẽ sử dụng công thức tương tự
+0:03:24 - 0:03:30, Công thức tương tự nhưng chúng ta sẽ để thêm cái hậu tố đó là validation
+0:03:30 - 0:03:40, Còn Y thì nó sẽ bao gồm, đối với tập y_train thì phần điểm màu đỏ nó sẽ có Y tương ứng nhãn là 1
+0:03:40 - 0:03:45, và phần điểm màu xanh thì phần nhãn của mình tương ứng là 0
+0:03:45 - 0:03:51, Rồi, bước tiếp theo thì chúng ta sẽ chạy lại
+0:03:54 - 0:03:57, Rồi, nó sẽ ra các tập điểm như thế này
+0:03:57 - 0:04:00, cũng có thể chia tách được ra bởi một cái đường thẳng.
+0:04:00 - 0:04:07, Đối với phần thuật toán huấn luyện, thì như đã đề cập, tất cả chúng ta sẽ sử dụng thư viện Keras.
+0:04:07 - 0:04:11, Và trong cái bài Linear Regression, chúng ta có một cái bộ khung chương trình.
+0:04:11 - 0:04:15, Ở đây chúng ta cũng sẽ sử dụng lại cái bộ khung đó.
+0:04:15 - 0:04:21, Tuy nhiên ở đây chúng ta tái sử dụng lại các phương thức là self.plot, self.summary, self.predict và self.get_weights.
+0:04:21 - 0:04:28, Chúng ta sẽ phải viết lại phương thức build và train
+0:04:28 - 0:04:37, Đối với phương thức `build`, chúng ta cũng phải có lớp đầu tiên là lớp Input
+0:04:37 - 0:04:46, Lớp Input, rồi Input, chúng ta phải truyền cho nó shape của đầu vào
+0:04:46 - 0:04:53, Shape này cũng tương tự như Linear Regression, nó sẽ có tham số là input_dim
+0:04:53 - 0:05:02, Và có thêm lưu ý rằng, hàm ý rằng, cái shape này sẽ cho những dữ liệu đầu vào là vector, chứ không phải là một ma trận
+0:05:02 - 0:05:08, Vector này cũng có input_dim chiều, nó sẽ trả về một cái biến đó là input
+0:05:08 - 0:05:22, Tiếp theo là output, thì output của mình sẽ là một lớp biến đổi là lớp kết nối đầy đủ (Dense)
+0:05:22 - 0:05:28, trong đó nó chỉ có duy nhất một nút, chúng ta sẽ có duy nhất một nút đầu ra
+0:05:28 - 0:05:34, và cái hàm kích hoạt của mình sẽ là hàm Sigmoid
+0:05:34 - 0:05:45, Chúng ta có thành phần bias, output của mình sẽ là một lớp Dense
+0:05:45 - 0:05:51, Đầu ra là một nút hàm kích hoạt
+0:05:51 - 0:06:08, Chúng ta sẽ để là bằng Sigmoid, use_bias sẽ để là bằng True
+0:06:08 - 0:06:19, Lưu ý là chúng ta mới chỉ tạo cho lớp đầu ra, chúng ta phải truyền đầu vào cho nó là input
+0:06:19 - 0:06:31, Tiếp theo, chúng ta sẽ đóng gói đầu vào và đầu ra này
+0:06:31 - 0:06:35, vào một biến tên là model
+0:06:35 - 0:06:39, và biến model này sẽ được gán cho thuộc tính
+0:06:39 - 0:06:41, đó là self.model
+0:06:41 - 0:06:44, Rồi, thì ở đây chúng ta sẽ không cần phải trả về gì hết
+0:06:44 - 0:06:47, Phương thức `build` này chúng ta sẽ không cần phải trả về gì hết
+0:06:47 - 0:07:04, Phương thức `train`, chúng ta cần phải khởi tạo optimizer tf.keras.optimizers.
+0:07:04 - 0:07:08, Tương tự chúng ta vẫn sử dụng Stochastic Gradient Descent
+0:07:08 - 0:07:12, và chúng ta phải truyền tham số đầu vào là learning rate
+0:07:12 - 0:07:17, là bằng 0.01.
+0:07:17 - 0:07:23, Trong tương lai thì learning rate này chúng ta cũng hoàn toàn có thể tham số hóa nó
+0:07:23 - 0:07:25, nhưng mà thôi ở đây chúng ta sẽ tạm thời là cố định
+0:07:25 - 0:07:33, Tiếp theo, đó là self.model.compile
+0:07:33 - 0:07:40, Chúng ta sẽ truyền vào optimizer là bằng optimizer
+0:07:40 - 0:07:46, Đồng thời hàm mất mát thì chúng ta sẽ sử dụng là tf.
+0:07:46 - 0:07:49, Lúc trước thì chúng ta sử dụng là Mean Squared Error
+0:07:49 - 0:07:55, Chúng ta có thể sử dụng Binary Crossentropy.
+0:07:55 - 0:07:57, Chúng ta sẽ khai báo như sau
+0:07:57 - 0:08:11, tf.keras.losses.BinaryCrossentropy
+0:08:11 - 0:08:16, Và lưu ý là nó phải khởi tạo như vậy là một cái đối tượng.
+0:08:16 - 0:08:19, Rồi, và đây cũng phải là một đối tượng.
+0:08:19 - 0:08:36, Rồi, và bây giờ thì mình sẽ tiến hành huấn luyện là self.model.fit dữ liệu X_train, y_train, X_validation, y_validation.
+0:08:36 - 0:08:46, và X_validation và y_validation thì chúng ta sẽ đóng gói trong tham số validation_data
+0:08:46 - 0:08:52, Vậy chúng ta phải đóng gói nó lại, chứ không phải là truyền rời như các biến X_train và y_train được
+0:08:52 - 0:08:55, validation_data
+0:08:55 - 0:09:02, và ở đây chúng ta sẽ có thêm tham số là số lượng epoch
+0:09:02 - 0:09:06, thì ở đây sẽ để là num_epochs
+0:09:06 - 0:09:11, num_epochs của mình sẽ là bằng 500 epochs
+0:09:11 - 0:09:18, Rồi, như vậy thì chúng ta đã cài đặt xong mô hình Logistic Regression
+0:09:18 - 0:09:25, và hai phương thức như là self.plot, self.summary, self.predict, self.get_weights
+0:09:25 - 0:09:27, là chúng ta sẽ tái sử dụng lại
+0:09:27 - 0:09:31, các mô hình đa số nó cũng sẽ tái sử dụng lại như vậy
+0:09:31 - 0:09:36, Chủ yếu chúng ta sẽ tiến hành cài đặt phương thức `build` và phương thức `train`
+0:09:36 - 0:09:40, Bây giờ chúng ta sẽ chạy thử xem có lỗi gì không
+0:09:40 - 0:09:47, Bây giờ chúng ta sẽ tiến hành khởi tạo và xây dựng mô hình và xem kiến trúc mô hình của mình như thế nào
+0:09:47 - 0:09:53, Đây sẽ là Logistic Regression
+0:09:53 - 0:09:57, Rồi chúng ta sẽ khởi tạo là Logistic Regression
+0:09:57 - 0:10:02, Rồi, build
+0:10:02 - 0:10:09, Thì ở đây chúng ta sẽ phải truyền vào tham số là input_dim
+0:10:09 - 0:10:16, Thì như đã đề cập hồi nãy, tức là ở đây chiều đầu vào chúng ta sẽ có 2 thành phần là x1 và x2
+0:10:16 - 0:10:24, Do đó ở đây thì chúng ta sẽ để ở đây tham số sẽ là 2
+0:10:24 - 0:10:30, Và tóm tắt LogisticRegression.summary()
+0:10:34 - 0:10:38, Rồi, thì ở đây chúng ta sẽ thấy là nó sẽ có đầu vào nè
+0:10:38 - 0:10:43, Đầu vào của mình là 2 và đương nhiên không có thêm tham số nào
+0:10:43 - 0:10:49, Lớp tiếp theo là lớp Dense và số tham số của mình là 3
+0:10:49 - 0:10:53, Tại sao lại là 3? Tại vì nó sẽ có 2 thành phần đầu vào
+0:10:53 - 0:10:58, nó sẽ có hai thành phần đầu vào và đồng thời có thêm một thành phần bias
+0:01:00 - 0:01:04, nên số tham số của mình sẽ là 3 và output của mình sẽ là 1 nút
+0:01:04 - 0:01:10, Vì vậy tổng số tham số sẽ là 3 và số tham số có thể huấn luyện được trong trường hợp này là 3
+0:01:10 - 0:01:15, Trong một số mô hình phức tạp hơn như CNN thì nó sẽ có tình huống
+0:01:15 - 0:01:20, tham số có thể huấn luyện sẽ ít hơn so với tổng số tham số
+0:01:20 - 0:01:23, là vì nó sẽ đóng băng một số phần và nó sẽ huấn luyện một số phần
+0:01:23 - 0:01:26, thì chúng ta sẽ đến cái bài đó chi tiết sau
+0:01:26 - 0:01:32, Tiếp theo thì chúng ta sẽ tiến hành huấn luyện mô hình của mình
+0:01:32 - 0:01:34, thì lưu ý là trong trường hợp này
+0:01:34 - 0:01:40, mô hình này mình sẽ có trả về quá trình huấn luyện, lịch sử huấn luyện
+0:01:40 - 0:01:50, đối tượng `History`
+0:01:50 - 0:01:58, truyền vào X_train, y_train, X_validation, y_validation
+0:01:59 - 0:02:04, lưu ý là tham số num_epochs
+0:02:08 - 0:02:09, và 500
+0:02:11 - 0:02:13, Rồi, nếu không hiểu X_train là gì
+0:02:13 - 0:02:17, thì chúng ta sẽ lên đây xem đặt tên biến đã đúng hay chưa
+0:02:17 - 0:02:19, X_train là phải viết hoa chữ X và chữ Y
+0:02:20 - 0:02:28, y_train, X_validation, y_validation
+0:02:33 - 0:02:37, num_epochs
+0:02:37 - 0:02:49, Chúng ta sẽ xem trong hàm `train`, num_epochs
+0:02:49 - 0:03:01, Ở đây thì hàm `fit`, có thể là tham số `epochs` mình để bị lỗi chính tả
+0:03:31 - 0:03:43, Chút nữa chúng ta sẽ quan sát, chúng ta sẽ thấy có hai đại lượng là loss của tập huấn luyện và validation loss
+0:03:43 - 0:03:51, thì loss của tập huấn luyện sẽ thấp hơn, trong trường hợp này nó thấp hơn so với validation loss
+0:03:51 - 0:03:59, Thì cũng đúng thôi, tại vì nó sẽ có hiện tượng gọi là overfitting
+0:03:59 - 0:04:03, và loss cho tập huấn luyện thì thường nó sẽ thấp hơn so với tập validation
+0:04:03 - 0:04:05, Tập validation thường cái dữ liệu của mình nó sẽ mới hơn
+0:04:05 - 0:04:09, nó sẽ không có lặp lại trên tập huấn luyện
+0:04:09 - 0:04:14, Vì vậy loss của tập validation sẽ cao hơn so với loss của tập huấn luyện

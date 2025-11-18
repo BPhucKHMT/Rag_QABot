@@ -1,0 +1,365 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:19, Trong phần tiếp theo thì chúng ta sẽ
+0:00:15 - 0:00:21, cùng à đến với phần thực hành cho chủ đề
+0:00:19 - 0:00:23, học không có giám sát. Và đối với lĩnh
+0:00:21 - 0:00:26, vực học không có giám sát thì có hai ứng
+0:00:23 - 0:00:30, dụng rất là nổi tiếng đó là giảm chiều
+0:00:26 - 0:00:32, dữ liệu và phân cụm. Thế thì nếu như
+0:00:30 - 0:00:35, trước đây à khi mà chưa có các cái thành
+0:00:32 - 0:00:37, tựu của
+0:00:35 - 0:00:41, GenI hoặc là cụ thể hơn đó là các cái
+0:00:37 - 0:00:43, công cụ như là chat GPT thì chúng ta sẽ
+0:00:41 - 0:00:45, tập trung vào cài đặt các cái thuật toán
+0:00:43 - 0:00:47, giảm chiều dữ liệu và phân cụm. Tuy
+0:00:45 - 0:00:51, nhiên thì gần đây với cái sự phát triển
+0:00:47 - 0:00:52, của geni thì cái việc cài đặt các cái
+0:00:51 - 0:00:55, thuật toán này thì đã trở nên dễ dàng
+0:00:52 - 0:00:58, hơn và chúng ta sẽ sử dụng các cái công
+0:00:55 - 0:00:59, cụ này để giải quyết một số cái bài toán
+0:00:58 - 0:01:02, của mình.
+0:00:59 - 0:01:04, Cụ thể hơn đó là
+0:01:02 - 0:01:07, mục đích của cái bài thực hành này đó là
+0:01:04 - 0:01:09, chúng ta sẽ ứng dụng học có không giám
+0:01:07 - 0:01:12, sát trong cái việc đó là chúng ta sẽ
+0:01:09 - 0:01:16, tiến hành giảm chiều dữ liệu và sau đó
+0:01:12 - 0:01:18, chúng ta sẽ trực quan hóa.
+0:01:16 - 0:01:20, Rồi sau đó là chúng ta sẽ tiến hành phân
+0:01:18 - 0:01:21, cụm các cái dữ liệu không có gác nhãn.
+0:01:20 - 0:01:24, Lưu ý là khi chúng ta nói đến học không
+0:01:21 - 0:01:26, có giám sát thì chúng ta sẽ có một cái
+0:01:24 - 0:01:29, dữ liệu đầu vào x nhưng mà chúng ta sẽ
+0:01:26 - 0:01:31, không có y. Rồi nhãn Y là chúng ta không
+0:01:29 - 0:01:33, có.
+0:01:31 - 0:01:34, Và tập dữ liệu ở đây chúng ta sẽ tiến
+0:01:33 - 0:01:37, hành thực nghiệm đó chính là tập dữ
+0:01:34 - 0:01:40, liệu. Thì tại sao lại dùng cái tập dữ
+0:01:37 - 0:01:44, liệu? Tập dữ liệu này là một cái tập dữ
+0:01:40 - 0:01:47, liệu đủ đơn giản và khối lượng của nó là
+0:01:44 - 0:01:49, đủ nhỏ. Đồng thời là cái tính chất dữ
+0:01:47 - 0:01:52, liệu của nó đủ đơn giản và không quá
+0:01:49 - 0:01:55, phức tạp để chúng ta có thể trực quan
+0:01:52 - 0:01:58, hóa dữ liệu nó tốt hơn. Và đầu vào của
+0:01:55 - 0:02:01, chúng ta sẽ là à các cái tập dữ liệu thô
+0:01:58 - 0:02:04, giống như ở bên tay trái và bên phải
+0:02:01 - 0:02:06, chính là cái kết quả mà chúng ta kỳ vọng
+0:02:04 - 0:02:08, sẽ trả về. Lưu ý là đây chỉ là kết quả
+0:02:06 - 0:02:10, mang tính chất tham khảo và không nhất
+0:02:08 - 0:02:13, thiết là chúng ta sẽ ra đúng như thế này
+0:02:10 - 0:02:18, nhưng mà chúng ta sẽ cố gắng đó là từ
+0:02:13 - 0:02:21, cái dữ liệu à với mỗi một cái
+0:02:18 - 0:02:25, ảnh một cái mẫu dữ liệu ha thì nó có
+0:02:21 - 0:02:25, kích thước là 28 x 28.
+0:02:25 - 0:02:31, Thế thì chúng ta sẽ tìm cách biến một
+0:02:28 - 0:02:33, cái dữ liệu nhiều chiều này về cái dữ
+0:02:31 - 0:02:37, liệu ở trong không gian có hai chiều
+0:02:33 - 0:02:39, thôi. À và hai chiều à ở đây là
+0:02:37 - 0:02:42, component
+0:02:39 - 0:02:44, 1 và component 2. Và sau đó thì chúng ta
+0:02:42 - 0:02:47, giả định là chúng ta sẽ không sử dụng
+0:02:44 - 0:02:49, cái nhãn của cái dữ liệu y. À tức là
+0:02:47 - 0:02:52, chúng ta giả sử như chúng ta không biết
+0:02:49 - 0:02:56, à số này là số 0, số này là số 1, số này
+0:02:52 - 0:02:58, số 2 đó thì chúng ta sẽ vẽ và trong cái
+0:02:56 - 0:03:01, không gian hai chiều này và chúng ta xem
+0:02:58 - 0:03:05, thử xem các cái con số mà có cùng một
+0:03:01 - 0:03:07, cái cùng một cái ờ biểu diễn cho một cái
+0:03:05 - 0:03:10, cái chữ số á nó có nằm gần nhau hay
+0:03:07 - 0:03:13, không. Đó thì ví dụ như nếu mà chúng ta
+0:03:10 - 0:03:15, làm đúng á thì có thể là các cái số bảy
+0:03:13 - 0:03:17, nó sẽ co cụm lại trong một cái khu rồi
+0:03:15 - 0:03:20, số 2 nó sẽ nằm co cụng trong một khu số
+0:03:17 - 0:03:24, sáu nó sẽ nằm co cụng trong một cái khu.
+0:03:20 - 0:03:25, Đó thì chúng ta thử thử xem xem là cái
+0:03:24 - 0:03:27, những cái dữ liệu mà nằm trong cùng một
+0:03:25 - 0:03:31, cái khu vực á nằm trong nằm trong nằm
+0:03:27 - 0:03:34, trong một cái cụm á thì cái à có phải là
+0:03:31 - 0:03:37, những cái số mà có cùng một cái chữ số
+0:03:34 - 0:03:37, hay không.
+0:03:37 - 0:03:44, Thì sau đây thì chúng ta sẽ tiến hành à
+0:03:41 - 0:03:46, thử nghiệm trên cái nền tảng đó là
+0:03:44 - 0:03:48, Google Collab.
+0:03:46 - 0:03:51, Thì với cái nền tảng Google Collab á thì
+0:03:48 - 0:03:53, nó sẽ cho phép là chúng ta có thể lập
+0:03:51 - 0:03:55, trình và có kết hợp với lại cái GNI. Ở
+0:03:53 - 0:03:58, đây chúng ta thấy cái giao diện JNI khá
+0:03:55 - 0:04:01, là giống với lại chat GVT. Thì ở đây
+0:03:58 - 0:04:03, chúng ta sẽ có hai cái công việc. Bước
+0:04:01 - 0:04:09, số một
+0:04:03 - 0:04:09, là chúng ta sẽ load cái dữ liệu.
+0:04:12 - 0:04:16, Rồi bước số hai
+0:04:17 - 0:04:22, là chúng ta sẽ tiến hành là
+0:04:22 - 0:04:27, trực quan hóa. À chúng ta sẽ tiến hành
+0:04:24 - 0:04:27, giảm chiều.
+0:04:27 - 0:04:30, [âm nhạc]
+0:04:32 - 0:04:36, trong cái không gian hai chiều.
+0:04:37 - 0:04:44, Rồi sang bước số ba
+0:04:41 - 0:04:47, là chúng ta sẽ tiến hành
+0:04:44 - 0:04:51, gom cụng
+0:04:47 - 0:04:52, và trực quang hóa
+0:04:51 - 0:04:56, các cụm.
+0:04:52 - 0:04:56, Rồi, bước số 4
+0:04:57 - 0:05:04, là chúng ta sẽ tiến hành lấy một số cụm,
+0:05:01 - 0:05:06, một số cái mẫu dữ liệu
+0:05:04 - 0:05:13, [Vỗ tay]
+0:05:06 - 0:05:13, để xem có cùng à chữ số hay không.
+0:05:18 - 0:05:24, Rồi thì đây chính là à những cái bước mà
+0:05:22 - 0:05:27, chúng ta sẽ tiến hành thử nghiệm. Thì
+0:05:24 - 0:05:31, đầu tiên
+0:05:27 - 0:05:31, đó là chúng ta sẽ tiến hành
+0:05:32 - 0:05:36, à load dữ liệu lên. Thế thì để load cái
+0:05:34 - 0:05:38, dữ liệu lên á thì chúng ta sẽ sử dụng
+0:05:36 - 0:05:42, cái thư viện si kitler. Thế thì ở đây
+0:05:38 - 0:05:49, chúng ta sẽ dùng cái công cụ JMI để tạo
+0:05:42 - 0:05:49, sin code ha. À chúng ta sẽ load dữ liệu
+0:05:52 - 0:05:55, bằng
+0:06:00 - 0:06:08, rồi. Và lưu ý là chúng ta sẽ loại bỏ cái
+0:06:04 - 0:06:14, dữ liệu nhãn. Tại vì chúng ta đang làm
+0:06:08 - 0:06:14, cái học không có giám sát, chỉ sử dụng.
+0:06:28 - 0:06:33, Thế thì ở đây chúng ta sẽ trước mắt là
+0:06:30 - 0:06:35, chúng ta accept, chúng ta khoan rồi. Đ
+0:06:33 - 0:06:39, chúng ta tránh cái thói quen đó là chúng
+0:06:35 - 0:06:43, ta quá tin tưởng vào geni ha. Rồi thì
+0:06:39 - 0:06:47, bước số một là chúng ta sẽ
+0:06:43 - 0:06:47, load cái dữ liệu ha. Ch
+0:06:51 - 0:06:54, dữ liệu.
+0:06:57 - 0:07:02, Rồi thì ở đây chúng ta thấy là nó sẽ sử
+0:06:59 - 0:07:06, dụng cái size kitl.dataset.
+0:07:02 - 0:07:08, À sau đó thì là dùng cái à phương thức
+0:07:06 - 0:07:13, là fake
+0:07:08 - 0:07:18, open email và dùng cái tập dữ liệu là em
+0:07:13 - 0:07:20, 784. Trong đó 784 tức là cái vecơ
+0:07:18 - 0:07:21, có 784 chiều. Thế thì tại sao cái ảnh
+0:07:20 - 0:07:25, của mình hai chiều nhưng mà lại ở đây là
+0:07:21 - 0:07:29, 784? Thì là vì cái ảnh gốc của mình á là
+0:07:25 - 0:07:32, có kích thước là 28 nhân 28 thì 28 x 28
+0:07:29 - 0:07:35, chính là bằng 784 nhân 784.
+0:07:32 - 0:07:39, Tức là ảnh
+0:07:35 - 0:07:44, 28 nhân 28 nó đã được convert, nó đã
+0:07:39 - 0:07:44, được flat về
+0:07:46 - 0:07:52, 7 tháng.
+0:07:48 - 0:07:54, Rồi sau đó thì nó sẽ load cái dữ liệu X
+0:07:52 - 0:07:57, và Y lên. Đó thì ở đây chúng ta sẽ không
+0:07:54 - 0:07:59, sử dụng cái x à xin lỗi chúng ta không
+0:07:57 - 0:08:02, sử dụng y mà chúng ta chỉ sử dụng x
+0:07:59 - 0:08:04, thôi. Rồi thế thì
+0:08:02 - 0:08:06, loại bỏ đi. Chúng ta chỉ lấy cái x image
+0:08:04 - 0:08:09, thôi. Đó. Thế thì sau khi chúng ta load
+0:08:06 - 0:08:13, lên thì chúng ta thấy là
+0:08:09 - 0:08:15, cái shap của image data là nó có 70.000
+0:08:13 - 0:08:19, nhân cho 784. Thế thì hàm ý của nó là
+0:08:15 - 0:08:23, gì? 70.000 này nó chính là có tất cả
+0:08:19 - 0:08:25, 70.000 mẫu và 784 này là một cái vecơ
+0:08:23 - 0:08:28, biểu diễn cho một cái tấm ảnh của mình.
+0:08:25 - 0:08:30, Đó. Thế thì bây giờ chúng ta muốn xem
+0:08:28 - 0:08:34, thử một cái tấm ảnh của mình nó nhìn như
+0:08:30 - 0:08:37, thế nào thì chúng ta sẽ lấy cái X
+0:08:34 - 0:08:39, image.
+0:08:37 - 0:08:44, Rồi chúng ta lấy một cái dòng dữ liệu
+0:08:39 - 0:08:49, đầu tiên ví dụ vậy. Và lấy tất cả là 784
+0:08:44 - 0:08:49, thì chúng ta sẽ xem ha. Sh.
+0:08:53 - 0:09:02, Đó là 784. Tức là đây là một cái mẫu ảnh
+0:08:56 - 0:09:02, đầu tiên. Và bây giờ chúng ta sẽ à
+0:09:03 - 0:09:07, reset nó
+0:09:05 - 0:09:11, về 28
+0:09:07 - 0:09:11, à nhân với 28
+0:09:12 - 0:09:19, đó thì nó sẽ ra cái ảnh có kích thước là
+0:09:15 - 0:09:24, 28 x 28 và sau đó thì chúng ta sẽ vẽ nó
+0:09:19 - 0:09:28, lên. Thế thì để vẽ lên thì chúng ta sẽ à
+0:09:24 - 0:09:28, import map.
+0:09:29 - 0:09:35, SPLT
+0:09:31 - 0:09:38, rồi sau đó là plt ch
+0:09:35 - 0:09:38, tìm show.
+0:09:40 - 0:09:44, Đó thì đây chính là con số 5. Chúng ta
+0:09:43 - 0:09:47, nhìn thì chúng ta sẽ thấy là đây là số
+0:09:44 - 0:09:51, 5. Chúng ta có thể thử những cái mẫu dữ
+0:09:47 - 0:09:55, liệu khác. Ví dụ sample
+0:09:51 - 0:09:58, index là bằng 123 đi thì đây sẽ là
+0:09:55 - 0:09:58, sample index.
+0:09:59 - 0:10:06, Đây chính là số 7 đó. Ví dụ như mẫu thứ
+0:10:04 - 0:10:08, 58
+0:10:06 - 0:10:10, thì đây chính là số 4. Thế thì ở đây
+0:10:08 - 0:10:12, chúng ta nhìn vô chúng ta là biết số 4
+0:10:10 - 0:10:14, nhưng mà chúng ta đã loại bỏ đi cái y
+0:10:12 - 0:10:16, rồi. Chúng ta sẽ không sử dụng y nữa.
+0:10:14 - 0:10:19, Đó. Như vậy thì chúng ta đã xong cái
+0:10:16 - 0:10:22, bước đầu tiên đó chính là à load cái dữ
+0:10:19 - 0:10:24, liệu lên và trực quang hóa. Tuy nhiên
+0:10:22 - 0:10:29, thì ở đây là chúng ta trực quan thì
+0:10:24 - 0:10:33, chúng ta sẽ đưa cái vecơ 784 chiều về
+0:10:29 - 0:10:35, vectơ 28 x 28. Nhưng mà các cái bước ở
+0:10:33 - 0:10:40, phía sau á, bước giảm chiều dữ liệu á
+0:10:35 - 0:10:42, thì chúng ta sẽ ờ không có sử dụng cái
+0:10:40 - 0:10:47, ma cái ma trận kích thước 28 x 28 mà
+0:10:42 - 0:10:49, chúng ta sẽ sử dụng luôn cái vecơ 784
+0:10:47 - 0:10:52, 784 chiều.
+0:10:49 - 0:10:55, Vậy chúng ta sẽ sang cái bước số hai đó
+0:10:52 - 0:10:55, là
+0:10:56 - 0:10:59, giảm chiều dữ liệu.
+0:11:00 - 0:11:06, Rồi
+0:11:03 - 0:11:14, thế thì ở đây chúng ta sẽ tiến hành là à
+0:11:06 - 0:11:20, giảm chiều dữ liệu của X image từ
+0:11:14 - 0:11:20, 784 chiều về hai chiều.
+0:11:20 - 0:11:28, và à vẽ trong cái mặt phẳng
+0:11:40 - 0:11:45, rồi thì ở đây nó sẽ có nhiều cái phương
+0:11:42 - 0:11:49, pháp ví dụ như là PCI hoặc là TSNI để
+0:11:45 - 0:11:52, giảm chiều dữ liệu từ 728 784 xuống còn
+0:11:49 - 0:11:54, hai chiều đó.
+0:11:52 - 0:11:58, Và trực quan hóa dữ liệu là vẽ biểu đồ
+0:11:54 - 0:11:58, là trong không gian hai chiều.
+0:11:58 - 0:12:04, Rồi ok như vậy thì chúng ta sẽ run step
+0:12:01 - 0:12:04, by step ha.
+0:12:13 - 0:12:18, Rồi bước đầu tiên là nó đã dùng cái
+0:12:16 - 0:12:20, thuậc toán là PCI. Sau này thì chúng ta
+0:12:18 - 0:12:22, có thể thử các cái thuậc toán khác ví dụ
+0:12:20 - 0:12:27, như là TSNI.
+0:12:22 - 0:12:27, Rồi thì chúng ta sẽ access và run.
+0:12:29 - 0:12:35, Thì cái việc khai báo này cũng khá là
+0:12:32 - 0:12:37, đơn giản đó là chúng ta sẽ dùng cái gói
+0:12:35 - 0:12:38, thư viện là si kichl.decompos.
+0:12:37 - 0:12:42, decomposition
+0:12:38 - 0:12:47, và import cái PCI. Rồi trong đó thì cái
+0:12:42 - 0:12:50, số chiều số n component ở đây ch
+0:12:47 - 0:12:52, không gian đích mà chúng ta muốn giảm
+0:12:50 - 0:12:53, chiều về. Thì ví dụ như chúng ta đang
+0:12:52 - 0:12:57, muốn giảm về hai chiều thì chúng ta sẽ
+0:12:53 - 0:13:00, để là n component là bằng 2. Sau đó
+0:12:57 - 0:13:02, chúng ta sẽ gọi pca.fit transform cái dữ
+0:13:00 - 0:13:06, liệu x của mình vào. Đó thì nó sẽ ra là
+0:13:02 - 0:13:08, cái nó sẽ trả về cái x PCI. Thế thì cái
+0:13:06 - 0:13:10, hàm bình thường á là PC.fit sau rồi
+0:13:08 - 0:13:13, chúng ta sẽ transform tức là chúng ta
+0:13:10 - 0:13:15, tách ra hai bước nhưng mà si kitl họ sẽ
+0:13:13 - 0:13:17, cung cấp luôn một cái phương thức đó là
+0:13:15 - 0:13:19, fit và transform luôn. Tức là nó sẽ làm
+0:13:17 - 0:13:23, cùng một lúc luôn. Và sau khi giảm chiều
+0:13:19 - 0:13:25, về thì ở phía trên chúng ta thấy là một
+0:13:23 - 0:13:30, cái mẫu dữ liệu của mình thì nó sẽ có
+0:13:25 - 0:13:34, kích thước đó là 784 tức là 70.000
+0:13:30 - 0:13:37, 70.000 cái vectơ 784 chiều. Thì sau khi
+0:13:34 - 0:13:40, chúng ta xử lý xong nó sẽ ra là 70.000
+0:13:37 - 0:13:42, cái vecơ chỉ có hai chiều thôi. Đó. Và
+0:13:40 - 0:13:48, sau đó chúng ta sẽ tiến hành trực quan
+0:13:42 - 0:13:48, hóa dữ liệu à vẽ biểu đồ. Rồi
+0:13:48 - 0:13:54, đó thì chúng ta thấy là à sau khi chúng
+0:13:50 - 0:13:55, ta vẽ trong cái không gian,
+0:13:54 - 0:13:57, chúng ta vẽ trong cái không gian thì
+0:13:55 - 0:13:59, chúng ta thấy là nó trần chịt như thế
+0:13:57 - 0:14:01, này đúng không? Chúng ta sẽ chàn
+0:13:59 - 0:14:03, như thế này. Và chút nữa thì chúng ta sẽ
+0:14:01 - 0:14:06, xem xem là các cái điểm dữ liệu này thì
+0:14:03 - 0:14:09, những cái điểm mà ở gần nhau nó có cùng
+0:14:06 - 0:14:14, một cái ờ
+0:14:09 - 0:14:14, phải là cùng một cái chữ số hay không.
+0:14:18 - 0:14:25, Rồi đó thì đây chính là cái kết quả của
+0:14:21 - 0:14:25, cái bước số 2.
+0:14:26 - 0:14:33, Rồi thì để cho gọn lại thì chúng ta sẽ
+0:14:29 - 0:14:34, vẫn cứ chúng ta có thể đọc thêm cái mô
+0:14:33 - 0:14:36, tả này. Tuy nhiên để cho gọn cái chương
+0:14:34 - 0:14:40, trình tutorial này thì chúng ta sẽ lại
+0:14:36 - 0:14:44, bỏ bớt cái phần tóm tắt của nó.
+0:14:40 - 0:14:47, Rồi tiếp theo sang bước số ba đó là
+0:14:44 - 0:14:52, chúng ta sẽ tiến hành gom cụm và trực
+0:14:47 - 0:14:52, quan hóa các cái cụm.
+0:15:11 - 0:15:16, Rồi thì chúng ta sẽ copy cái này luôn
+0:15:13 - 0:15:16, ha.
+0:15:18 - 0:15:24, Rồi gom cộng bằng camin và trực quang
+0:15:20 - 0:15:24, hóa trong không gian hai chiều.
+0:15:34 - 0:15:40, Rồi à nó sẽ giảm chiều bằng camin
+0:15:38 - 0:15:42, à áp dụng camin xin lỗi áp dụng camin để
+0:15:40 - 0:15:44, gom cụm
+0:15:42 - 0:15:46, ví dụ như là 10 cụm tại vì chúng ta đã
+0:15:44 - 0:15:48, biết trước cái tập dữ liệu này là tập dữ
+0:15:46 - 0:15:53, liệu chữ biết tay nên chúng ta biết là
+0:15:48 - 0:15:53, nó sẽ có 10 cụm rồi trực quan hóa
+0:15:53 - 0:15:59, rồi chúng ta sẽ run step by step ha.
+0:16:11 - 0:16:17, Rồi đầu tiên đó là nó sẽ khởi tạo cái
+0:16:15 - 0:16:20, thực toán camin trong cit learn và nó
+0:16:17 - 0:16:23, nằm trong cái nhóm cái module đó là
+0:16:20 - 0:16:26, cluster và số cụm ở đây chúng ta sẽ dùng
+0:16:23 - 0:16:29, đó là 10 cụm. À còn các cái tham số còn
+0:16:26 - 0:16:32, lại đó là các cái tham số mặc định
+0:16:29 - 0:16:34, random state đó là 42. Thì trong cái
+0:16:32 - 0:16:36, thuục toán gom cụm chúng ta biết rằng là
+0:16:34 - 0:16:39, cái bước khởi tạo á là cái bước lấy ngẫu
+0:16:36 - 0:16:42, nhiên 10 cái cụm đầu tiên à 10 cái điểm
+0:16:39 - 0:16:44, làm cái tâm cụm đầu tiên. Thế thì cái
+0:16:42 - 0:16:46, hàm ngẫu nhiên đó nó sẽ cần có một cái
+0:16:44 - 0:16:47, gọi là random state để đảm bảo là những
+0:16:46 - 0:16:52, cái lần thử nghiệm khác nhau nó sẽ ra
+0:16:47 - 0:16:55, cùng một cái kết quả. Và à cái việc là
+0:16:52 - 0:16:58, init là chúng ta sẽ là tự động.
+0:16:55 - 0:16:59, Rồi sau đó chúng ta sẽ gọi cái hàm fit
+0:16:58 - 0:17:01, camin.fit
+0:16:59 - 0:17:04, và chúng ta sẽ truyền vào là thay vì cái
+0:17:01 - 0:17:09, x image ban đầu là 784 chiều thì chúng
+0:17:04 - 0:17:13, ta sẽ fit cái xca tức là cái mà đã giảm
+0:17:09 - 0:17:17, chiều dữ liệu. Rồi sau đó là chúng ta sẽ
+0:17:13 - 0:17:19, ờ xem xem là các cái nhãn của mình của
+0:17:17 - 0:17:21, từng cái điểm sau khi chúng ta đã gom
+0:17:19 - 0:17:23, cụm xong thì cái nhãn của từng điểm dữ
+0:17:21 - 0:17:28, liệu là gì. Đó.
+0:17:23 - 0:17:28, Rồi chúng ta accept và run.
+0:17:28 - 0:17:31, Rồi nó chạy rất là nhanh đúng không? Tại
+0:17:29 - 0:17:34, vì chúng ta đã giảm xuống còn hai chiều
+0:17:31 - 0:17:36, dữ liệu nên cái tốc độ chạy PC rất là
+0:17:34 - 0:17:39, nhanh. Nhưng nếu chúng ta để là cái X
+0:17:36 - 0:17:42, image góc á tức là 784 chiều thì nó sẽ
+0:17:39 - 0:17:44, phải chạy gấp ờ nhiều lần nó phải gấp
+0:17:42 - 0:17:47, 300 lần.
+0:17:44 - 0:17:50, Rồi tiếp theo đó là chúng ta sẽ tìm cách
+0:17:47 - 0:17:53, trực quan hóa. Chúng ta sẽ lấy cái XPCA
+0:17:50 - 0:17:55, và thành phần X thành phần đầu tiên ha.
+0:17:53 - 0:17:56, Thành phần số 1 và thành phần số hai là
+0:17:55 - 0:18:00, hai cái trục trong cái không gian hai
+0:17:56 - 0:18:03, chiều của mình để vẽ lên. Và cái cluster
+0:18:00 - 0:18:06, thì chúng ta sẽ lấy cái cluster ở trên
+0:18:03 - 0:18:09, đây tức chính là cái nhãn của mình luôn.
+0:18:06 - 0:18:12, Rồi C chính là cái cái giá trị của cái
+0:18:09 - 0:18:15, cụm của mình. Rồi bây giờ chúng ta sẽ
+0:18:12 - 0:18:15, chấp nhận và run.
+0:18:15 - 0:18:19, Đó thì sau khi chúng ta chạy cái thuục
+0:18:17 - 0:18:22, toán gom cụm xong thì chúng ta thấy là
+0:18:19 - 0:18:26, nó ra rất là đều như thế này.
+0:18:22 - 0:18:26, Nó sẽ ra 10 cụm rất là đều như thế này.
+0:18:37 - 0:18:43, Rồi sau đó thì chúng ta sẽ chờ nó trực
+0:18:39 - 0:18:47, quan hóa các cái cụm này
+0:18:43 - 0:18:47, và kiểm tra coi các cái mẫu trong cụm.
+0:18:48 - 0:18:59, Và kiểm tra các cái mẫu trong cụm. Thì à
+0:18:53 - 0:18:59, thuậc toán này đó là chúng ta sẽ ờ
+0:18:59 - 0:19:04, với mỗi cái cụm đúng không? Với mỗi cái
+0:19:01 - 0:19:07, cụm thì chúng ta sẽ tiến hành là lấy ra
+0:19:04 - 0:19:09, random choice. Tức là chúng ta sẽ bóc ra
+0:19:07 - 0:19:12, một vài điểm. Bốc ra một vài điểm. Sau
+0:19:09 - 0:19:15, đó là chúng ta sẽ hiển thị nó lên. Đó.
+0:19:12 - 0:19:15, Rồi.
+0:19:32 - 0:19:38, Rồi thì ở đây chúng ta sẽ thấy là trong
+0:19:35 - 0:19:42, cái cụm đầu tiên
+0:19:38 - 0:19:49, đó nó sẽ có các cái cụm là cụm số 0 à nó
+0:19:42 - 0:19:54, sẽ có các cái à số đó là 7 4 9 7 4.
+0:19:49 - 0:19:58, Rồi cụm số 1 thì nó sẽ có 530
+0:19:54 - 0:20:00, ờ 2 5. Rồi cụm số 2. Lưu ý là cái cụm
+0:19:58 - 0:20:03, này nó không có nghĩa đó là à cái cụm
+0:20:00 - 0:20:07, này không có nghĩa đó là nó chính là cái
+0:20:03 - 0:20:10, nhãn của mình là cái chữ số hai ha. Thì
+0:20:07 - 0:20:13, chúng ta thấy là ví dụ trong cái cụm số
+0:20:10 - 0:20:17, 2 thì chúng ta sẽ thấy là có các cái số
+0:20:13 - 0:20:18, na ná nhau. Ví dụ số 0, số 0, số 0 và số
+0:20:17 - 0:20:20, 6. Thì đâu đó chúng ta thấy cái đường
+0:20:18 - 0:20:23, nét nó cũng có một cái vòng tròn vòng
+0:20:20 - 0:20:26, cung như thế này. Rồi riêng cái cụm số
+0:20:23 - 0:20:27, ba chúng ta thấy đó là cái cụm số ba tức
+0:20:26 - 0:20:30, không có nghĩa nhắc lại lần nữa đó là
+0:20:27 - 0:20:33, cụm số 3 không có nghĩa đó là cái nhãn
+0:20:30 - 0:20:35, của nó là số 3 ha. nó chỉ là một cái số
+0:20:33 - 0:20:38, thứ tự của cụm thôi. Thì chúng ta thấy
+0:20:35 - 0:20:41, là các cái cụm này đều có chung một cái
+0:20:38 - 0:20:43, nhãn đó là số 1. Đó, tức là những cái
+0:20:41 - 0:20:46, con số 1 này nó nằm chung trong một cái
+0:20:43 - 0:20:50, cụm. Rồi tương tự như vậy cụm số 5 thì
+0:20:46 - 0:20:52, là các cái số 7 đó là nằm trong một cái
+0:20:50 - 0:20:54, cụm. Như vậy chúng ta th có thể thấy đó
+0:20:52 - 0:20:57, là cái thuục toán này khá là hiệu quả
+0:20:54 - 0:20:59, khi mà chúng ta gom cụm mà không có à
+0:20:57 - 0:21:03, không ch có biết trước cái nhãn của mình
+0:20:59 - 0:21:03, là gì.
+0:21:03 - 0:21:15, [âm nhạc]

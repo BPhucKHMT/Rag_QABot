@@ -1,0 +1,78 @@
+0:00:00 - 0:00:19, Xin chào mừng các bạn đến với môn học CS431 Các Kỹ thuật học sâu và ứng dụng.
+0:00:19 - 0:00:22, Hôm nay chúng ta sẽ đến với bài học đầu tiên, bài mở đầu.
+0:00:22 - 0:00:29, Và tôi xin tự giới thiệu với các bạn. Tôi tên là Nguyễn Minh Tiệp, hiện đang là Trưởng phòng Thí nghiệm truyền thông Đa Phương Tiện, Đại học Công nghệ Thông tin Đại học Quốc gia thành phố Hồ Chí Minh.
+0:00:29 - 0:00:31, của Quốc gia thành phố Hồ Chí Minh.
+0:00:31 - 0:00:34, Thì nội dung chính của bài học ngày hôm nay sẽ gồm có 3 phần.
+0:00:34 - 0:00:37, Đầu tiên sẽ là giới thiệu tổng quan về môn học.
+0:00:37 - 0:00:40, Sau đó thì chúng ta sẽ cùng lướt qua lịch sử hình thành
+0:00:40 - 0:00:44, và thảo luận về một số thành tựu của trí tuệ nhân tạo nói chung
+0:00:44 - 0:00:47, cũng như là học sâu, Deep Learning nói riêng.
+0:00:47 - 0:00:51, Và cuối cùng đó là chúng ta sẽ cùng ôn tập kiến thức toán nền tảng.
+0:00:51 - 0:00:54, Trong số rất nhiều những kiến thức toán nền tảng,
+0:00:54 - 0:00:57, thì có cái phần là về đại số tuyến tính và giải tích
+0:00:57 - 0:01:02, là hai kiến thức toán có liên quan trực tiếp đến môn học này của chúng ta.
+0:01:02 - 0:01:05, Đầu tiên, đó là giới thiệu về môn học.
+0:01:05 - 0:01:09, Môn học này của chúng ta sẽ được diễn ra trong vòng 10 tuần.
+0:01:09 - 0:01:14, Và dưới đây là timeline về các nội dung sẽ diễn ra trong vòng 10 tuần.
+0:01:14 - 0:01:18, Tuần số 1, chúng ta sẽ giới thiệu và ôn tập kiến thức toán nền tảng.
+0:01:18 - 0:01:21, Như đã đề cập, đó là chúng ta sẽ ôn tập về kiến thức toán nền tảng.
+0:01:21 - 0:01:27, Sang tuần thứ hai, chúng ta sẽ cùng học về một mô hình học tổng quát
+0:01:27 - 0:01:32, Và dựa trên mô hình học tổng quát này, chúng ta sẽ phát triển sang các mô hình học nông
+0:01:32 - 0:01:37, Trước khi đi sang học sâu, chúng ta sẽ học các mô hình học nông trong đó có đại diện
+0:01:37 - 0:01:44, Chúng ta sẽ có các mô hình ví dụ như là mô hình Linear Regression, Logistic Regression, Softmax Regression
+0:01:44 - 0:01:49, Và chúng ta sẽ tiếp cận sang mô hình học sâu đầu tiên, đó chính là mạng Neural Network
+0:01:49 - 0:01:51, Và sang tuần thứ 3 thì chúng ta sẽ phát triển lên
+0:01:51 - 0:01:54, Đó là chúng ta sẽ học về một kiến trúc mạng CNN
+0:01:54 - 0:01:56, Convolutional Neural Network
+0:01:56 - 0:02:00, Thì đây là một trong những kiến trúc mạng rất là kinh điển
+0:02:00 - 0:02:02, Và có rất nhiều ứng dụng hiện nay
+0:02:02 - 0:02:04, Và để giúp cho các bạn có thể hiểu rõ hơn
+0:02:04 - 0:02:06, Về cái kiến trúc mạng này
+0:02:06 - 0:02:09, Thì chúng ta sẽ có cái phần gọi là trực quan hóa mạng CNN
+0:02:09 - 0:02:13, Sang tuần thứ 4 thì chúng ta sẽ có một số
+0:02:13 - 0:02:15, Biến thể của mạng CNN
+0:02:15 - 0:02:17, Và đây là những biến thể rất là nổi tiếng
+0:02:17 - 0:02:20, và có rất nhiều thành tựu hiện nay.
+0:02:20 - 0:02:25, Sang tuần thứ 5, chúng ta sẽ được học về áp dụng mạng CNN
+0:02:25 - 0:02:27, để vào giải quyết một số bài toán trong xử lý ảnh
+0:02:27 - 0:02:29, ví dụ như là bài toán phân loại hình ảnh,
+0:02:29 - 0:02:32, bài toán phát hiện và phân đoạn ngữ nghĩa đối tượng.
+0:02:34 - 0:02:37, Sang tuần thứ 6, chúng ta sẽ được tìm hiểu về
+0:02:37 - 0:02:39, mạng Recurrent Neural Network, RNN
+0:02:39 - 0:02:43, và một biến thể khác của nó, đó chính là LSTM.
+0:02:43 - 0:02:48, thì đây mặc dù là hai cái kiến trúc mạng rất là kinh điển
+0:02:48 - 0:02:51, tuy nhiên nó cũng có những cái ứng dụng tại thời kỳ này
+0:02:51 - 0:02:55, và sang tuần thứ 7 thì chúng ta sẽ được học về hai cái cơ chế
+0:02:55 - 0:02:59, một đó là Attention và hai đó là kiến trúc mạng Transformer
+0:02:59 - 0:03:03, thì đây là hai cái cơ chế và kiến trúc mạng rất là hiện đại hiện nay
+0:03:03 - 0:03:08, có rất nhiều những cái ứng dụng đã áp dụng vào trong cuộc sống sử dụng hai cái cơ chế này
+0:03:08 - 0:03:15, Sang tuần thứ 8 thì chúng ta sẽ được học qua một số ứng dụng của Mô Hình Attention và Transformer này.
+0:03:15 - 0:03:20, Và đến tuần thứ 9, tuần thứ 10 thì chúng ta sẽ dành 2 thời lượng của 2 tuần này
+0:03:20 - 0:03:24, để cho báo cáo đồ án cuối kỳ cũng như là ôn tập trước khi thi cuối kỳ.
+0:03:28 - 0:03:31, Tiếp theo đó chính là hình thức đánh giá của môn học này.
+0:03:31 - 0:03:33, Môn học này sẽ có 3 thành phần chính.
+0:03:33 - 0:03:36, Đầu tiên là bài tập chiếm 30% số điểm.
+0:03:36 - 0:03:43, Để có được cái cột điểm này thì chúng ta sẽ phải làm các cái bài quiz, tức là các cái bài tập trắc nghiệm hàng tuần.
+0:03:43 - 0:03:50, Tiếp theo đó là chúng ta sẽ làm các cái bài thực hành để kiểm tra và vận dụng kiến thức lý thuyết ở trên lớp.
+0:03:50 - 0:03:59, Cột điểm thứ 2 đó chính là đồ án, cũng chiếm 30% số điểm và để có được cái cột điểm này thì chúng ta sẽ phải làm đồ án theo nhóm trình bày ở trên lớp.
+0:03:59 - 0:04:04, Và chúng ta sẽ nộp báo cáo vào thời điểm cuối của học kỳ.
+0:04:04 - 0:04:10, Và cuối cùng đó chính là cột điểm cuối kỳ, chiếm 40% số điểm là cao nhất.
+0:04:10 - 0:04:16, Và để có được cái cột điểm này thì chúng ta sẽ phải thi lý thuyết, được tổ chức tập trung và thực hiện với đề đóng.
+0:04:18 - 0:04:26, Quy ước chung của môn học này đó chính là chúng ta sẽ sử dụng ngôn ngữ lập trình Python phiên bản 3.9 trở lên
+0:04:26 - 0:04:35, Và framework Deep Learning thì có rất nhiều nhưng chúng ta sẽ làm các bài tập của môn học này là framework TensorFlow
+0:04:35 - 0:04:42, Còn ngoài ra trong phần đồ án nếu như chúng ta có sử dụng một framework khác ví dụ như PyTorch thì cũng được
+0:04:42 - 0:04:46, Nhưng mà bài tập thì chúng ta sẽ sử dụng framework đó là TensorFlow
+0:04:46 - 0:04:52, Tiếp theo, để có thể giúp cho các bạn hiểu được bài lý thuyết kỹ hơn
+0:04:52 - 0:04:56, thì chúng ta không một cách nào khác, đó chính là phải làm bài tập đầy đủ hàng tuần.
+0:04:56 - 0:05:03, Và một trong những cái công việc cũng rất là quan trọng, đó chính là chúng ta phải tích cực đặt các câu hỏi
+0:05:03 - 0:05:10, cho giảng viên ở trên lớp hoặc là trên kênh website của môn học hoặc là trên kênh YouTube của lớp.
+0:05:10 - 0:05:16, Về tài liệu tham khảo, thì tài liệu tham khảo chính của môn này đó chính là
+0:05:16 - 0:05:20, giáo trình các kỹ thuật học sâu và ứng dụng do tôi là Nguyễn Minh Tiệp
+0:05:20 - 0:05:23, và viết cùng với lại thầy Lê Đường Di và thầy Dương Anh Đức.
+0:05:23 - 0:05:29, Ngoài ra thì chúng ta cũng còn một cái tài liệu tiếng nước ngoài cũng rất là nổi tiếng.
+0:05:29 - 0:05:35, Đó chính là cuốn sách về Deep Learning hay còn gọi là học sâu của tác giả Bengio và các cộng sự.
+0:05:35 - 0:05:39, Và các cái tài liệu tham khảo này thì cũng không phải là tất cả.
+0:05:39 - 0:05:42, Và chúng ta cũng có thể tham khảo các cái tài liệu khác.
+0:05:42 - 0:05:47, Bên cạnh việc là đọc sách thì chúng ta cũng có thể tham khảo các cái khóa học online
+0:05:47 - 0:05:52, Ví dụ như Coursera là một trong những nền tảng học trực tuyến rất là nổi tiếng hiện nay
+0:05:52 - 0:05:56, và chúng ta sẽ học các khóa học liên quan đến môn học sâu.

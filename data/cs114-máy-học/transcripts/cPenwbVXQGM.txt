@@ -1,0 +1,313 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:21, Bây giờ chúng ta sẽ thử chạy
+0:00:16 - 0:00:23, trên một cái GPU à gắn với máy tính thật
+0:00:21 - 0:00:24, của các bạn, không phải thông qua máy ảo
+0:00:23 - 0:00:27, Google Collab. Thì liệu các bạn có thể
+0:00:24 - 0:00:30, chạy được những cái chương trình machine
+0:00:27 - 0:00:34, learning này hay không? Thì trên nếu hồi
+0:00:30 - 0:00:36, nãy các bạn tình để ý thì sẽ thấy trên
+0:00:34 - 0:00:39, máy tính
+0:00:36 - 0:00:46, của thầy hiện tại cũng có một cái GPU
+0:00:39 - 0:00:48, ha. Đó là con AMD Radian 6700XT.
+0:00:46 - 0:00:53, Đó, GPU này thì nó cũng đời cũ rồi, thậm
+0:00:48 - 0:00:53, chí nó còn cũ hơn cả con CPU nữa.
+0:00:54 - 0:01:01, Nếu chúng ta tra nhanh thử thông tin cái
+0:00:57 - 0:01:01, GPU này thì à
+0:01:02 - 0:01:08, hiện giờ chắc là chỉ còn những cái tra,
+0:01:06 - 0:01:14, những cái shop nào mà họ bán đồ cũ thì
+0:01:08 - 0:01:15, may ra họ còn mẫu GPU này thôi ha. Đó.
+0:01:14 - 0:01:18, Đây a
+0:01:15 - 0:01:23, à shop này cũng còn khá nhiều. Còn một
+0:01:18 - 0:01:27, số shop khác thì đây mẫu 6700X này hiện
+0:01:23 - 0:01:29, bán với giá khoảng 7 triệu. Chắc là hàng
+0:01:27 - 0:01:31, tồn kho của họ. Còn nếu hàng nếu các bạn
+0:01:29 - 0:01:36, mua đồ secondh hand thì chắc nó sẽ rẻ
+0:01:31 - 0:01:39, hơn nữa ha. Thì GPU này
+0:01:36 - 0:01:41, nó có cấu hình cũng a không phải là cao
+0:01:39 - 0:01:43, lắm ha.
+0:01:41 - 0:01:47, Nếu các bạn đây có thể thấy hình dáng
+0:01:43 - 0:01:52, của GPU về thông số thì nó chỉ có 12 GB
+0:01:47 - 0:01:54, V RAM thôi, ít hơn cả GPU Tesla T4 mà
+0:01:52 - 0:01:58, Google Collab sẽ cung cấp miễn phí của
+0:01:54 - 0:02:01, các bạn. Nhưng mẫu GPU này là mẫu GPU
+0:01:58 - 0:02:05, cho người dùng cá nhân và thường. Nó
+0:02:01 - 0:02:07, hướng đến việc ừ tăng tốc các cái tha xử
+0:02:05 - 0:02:09, lý liên quan đến đồ họa nhiều hơn là các
+0:02:07 - 0:02:11, cái thao tác xử lý tính toán trên máy
+0:02:09 - 0:02:13, chủ.
+0:02:11 - 0:02:16, Nên nó sẽ yêu cầu nguồn điện cao hơn và
+0:02:13 - 0:02:19, tốc độ chạy của nó thì nhiều khi cũng có
+0:02:16 - 0:02:22, thể là nhanh hơn Tesla T4 nhưng mà VRAM
+0:02:19 - 0:02:24, của nó sẽ hạn chế hơn. Và cái mẫu GPU
+0:02:22 - 0:02:27, này thì các bạn không thể gắn nhiều quá
+0:02:24 - 0:02:29, nhiều GPU vào cùng một máy như mẫu GPU
+0:02:27 - 0:02:33, dành riêng cho server được ha. Trên
+0:02:29 - 0:02:35, server một máy chủ có thể gắn đến hàng
+0:02:33 - 0:02:37, vài chục ha. Máy cái nhiều nhất có thể
+0:02:35 - 0:02:39, gắn đến khoảng hai mươi mấy cái GPU. Còn
+0:02:37 - 0:02:42, nếu trong máy tính cá nhân của các bạn
+0:02:39 - 0:02:44, thì thường mỗi máy tính chỉ gắn được một
+0:02:42 - 0:02:50, GPU này mà thôi. Đó thì ở đây chúng ta
+0:02:44 - 0:02:50, có một GPU duy nhất. GPU này
+0:02:51 - 0:02:55, hiện tại cũng đang được sử dụng khá
+0:02:52 - 0:02:59, nhiều ha. Đó, đây là GPU duy nhất có
+0:02:55 - 0:03:01, trong máy tính nên nó sẽ phải gánh cả
+0:02:59 - 0:03:04, các cái ứng dụng đồ họa mà máy đang
+0:03:01 - 0:03:05, chạy. Đặc biệt là ứng dụng quay, video,
+0:03:04 - 0:03:07, bài giảng chẳng hạn thì các bạn thấy
+0:03:05 - 0:03:10, VRAM chưa gì là nó đã dùng gần phân nửa
+0:03:07 - 0:03:14, rồi đó. Và
+0:03:10 - 0:03:16, utilization đang cỡ khoảng 40%.
+0:03:14 - 0:03:19, Đây là chỉ là những phần mềm chạy trên
+0:03:16 - 0:03:21, máy và để quay video bài giảng này mà
+0:03:19 - 0:03:23, thôi ha. Chưa đụng gì đến machine
+0:03:21 - 0:03:25, learning. Thì nếu chúng ta cần, chúng ta
+0:03:23 - 0:03:28, vẫn có thể chạy
+0:03:25 - 0:03:31, cái code machine learning của chúng ta
+0:03:28 - 0:03:34, trên con GPU này. Mặc dù nó sẽ không
+0:03:31 - 0:03:36, phải là tối ưu như là chạy trên một
+0:03:34 - 0:03:37, server đó. Nhưng nếu các bạn biết cách
+0:03:36 - 0:03:41, cài đặt các bạn vẫn có thể chạy được.
+0:03:37 - 0:03:44, Thì đầu tiên mỗi GPU tùy hãng sản xuất
+0:03:41 - 0:03:47, ha, tùy công nghệ mà để chạy các bạn sẽ
+0:03:44 - 0:03:48, phải có cách cài đặt tens flow khác
+0:03:47 - 0:03:50, nhau.
+0:03:48 - 0:03:52, Thông thường cách cài đặt dễ nhất nếu
+0:03:50 - 0:03:57, các bạn dùng cách cài đặt mặc định này
+0:03:52 - 0:04:00, nó chỉ work nếu như các bạn dùng GPU đời
+0:03:57 - 0:04:03, mới mà của hãng Nvidia. Còn với hạng AMD
+0:04:00 - 0:04:06, thì các bạn sẽ nếu như dùng Docker các
+0:04:03 - 0:04:11, bạn sẽ phải sử dụng docker
+0:04:06 - 0:04:11, hỗ trợ một cái công nghệ gọi là Rock Cam
+0:04:18 - 0:04:25, [âm nhạc]
+0:04:20 - 0:04:26, rồi. Rock M là đâ đây là cái
+0:04:25 - 0:04:31, Docker
+0:04:26 - 0:04:33, H image à tức là cái máy ảo chứa cài sẵn
+0:04:31 - 0:04:37, tenser flow và cái thư viện tên là
+0:04:33 - 0:04:40, Rockam do AMD họ cung cấp và quản lý.
+0:04:37 - 0:04:43, Rồi đây là cái công cụ để giúp Tenser
+0:04:40 - 0:04:48, Flow chạy được trên những cái GPU do
+0:04:43 - 0:04:49, hãng AMD họ phát hành.
+0:04:48 - 0:04:52, Thì các bạn sẽ thấy cái lệnh để chạy
+0:04:49 - 0:04:55, lệnh Docker run ở đây sẽ có cú pháp phức
+0:04:52 - 0:04:59, tạp hơn à tương đối là nhiều so với cái
+0:04:55 - 0:05:03, lệnh Docker dùng để chạy trên GPU Nvidia
+0:04:59 - 0:05:06, ha. Đó và ở đây thì chúng ta chạy thử
+0:05:03 - 0:05:13, thôi. Đó.
+0:05:06 - 0:05:13, Rồi và máy này thì đã có chạy trước đó.
+0:05:17 - 0:05:24, Rồi lệnh chạy sẽ bắt đầu như thế này ha.
+0:05:20 - 0:05:26, Docker run. Rồi chúng ta cũng share cái
+0:05:24 - 0:05:30, working directory hiện hành với cái máy
+0:05:26 - 0:05:34, ảo. Và đây là các cái thông số à mặc
+0:05:30 - 0:05:38, định theo gợi ý của Docker
+0:05:34 - 0:05:41, Hub do AMD họ để xuất. Rồi và chúng ta
+0:05:38 - 0:05:43, share cái folder này ha. Chúng ta sẽ
+0:05:41 - 0:05:48, chạy một cái terminal pass để chúng ta
+0:05:43 - 0:05:49, có thể tương tác với lại cái máy ảo.
+0:05:48 - 0:05:51, Sau khi chạy xong thì chắc các bạn còn
+0:05:49 - 0:05:53, nhớ công việc đầu tiên chúng ta sẽ phải
+0:05:51 - 0:05:55, install hai cái thư viện mà mặc định
+0:05:53 - 0:06:03, tensor flow họ không cung cấp sẵn đó là
+0:05:55 - 0:06:06, M lot và tenser flow set.
+0:06:03 - 0:06:08, Rồi và máy này cài sẵn rồi thì nên nó
+0:06:06 - 0:06:12, chạy cũng khá là nhanh thôi ha.
+0:06:08 - 0:06:12, Requirement đều statify sẵn.
+0:06:13 - 0:06:19, Sau khi cài đặt xong thì
+0:06:16 - 0:06:23, à ở đây chúng ta sẽ tạm thời chia màn
+0:06:19 - 0:06:23, hình này làm hai phần.
+0:06:24 - 0:06:32, một bên để các bạn à quan sát
+0:06:27 - 0:06:32, tài nguyên được sử dụng của máy.
+0:06:37 - 0:06:45, Đó, bên dưới là tài nguyên được sử dụng
+0:06:40 - 0:06:48, của máy hiện hành ha. Và
+0:06:45 - 0:06:51, đây là tài nguyên ở phía bên tay phải
+0:06:48 - 0:06:56, trái của chúng ta là cả cái tài nguyên
+0:06:51 - 0:07:01, của GPU ha. Và bên tay phải phía trên là
+0:06:56 - 0:07:05, các cái tài nguyên của ừ CPU. Bây giờ
+0:07:01 - 0:07:09, chúng ta sẽ chạ ị lại cái
+0:07:05 - 0:07:11, ừ máy ảo này ha. Ờ
+0:07:09 - 0:07:13, đầu tiên chúng ta vẫn chạy lại hai lệnh
+0:07:11 - 0:07:18, cài đặt à thư viện ha. Mặc dù thư viện
+0:07:13 - 0:07:21, này có cài sẵn rồi nhưng mà do máy ảo.
+0:07:18 - 0:07:22, Khi các bạn à tắt máy ảo Docker và các
+0:07:21 - 0:07:24, bạn chạy lại đôi khi các bạn sẽ được một
+0:07:22 - 0:07:27, cái máy ảo hoàn toàn mới tùy vào các
+0:07:24 - 0:07:31, tham số. Đó cả kỹ năng sử dụng Docker
+0:07:27 - 0:07:33, cũng là một kiến thức các bạn à nên
+0:07:31 - 0:07:35, trang bị. Nó cũng khá hữu ích trong rất
+0:07:33 - 0:07:40, nhiều tình huống. Đó, thư viện đã cài
+0:07:35 - 0:07:42, sẵn. Thì bây giờ chúng ta chạy
+0:07:40 - 0:07:45, file Python mà chúng ta đã tải về hồi
+0:07:42 - 0:07:45, nãy.
+0:07:56 - 0:08:00, Rồi và đầu tiên các bạn có thể nhận thấy
+0:07:58 - 0:08:03, ngay đó là chúng ta đang thực hiện quá
+0:08:00 - 0:08:07, trình training nhưng tốc độ nó đang khá
+0:08:03 - 0:08:08, chậm. nó ch tới hàng trăm mây cho mỗi B
+0:08:07 - 0:08:12, và
+0:08:08 - 0:08:15, GPU ở bên này các bạn có thể thấy GB GPU
+0:08:12 - 0:08:17, utilization ở đây
+0:08:15 - 0:08:20, chỉ có vài chục phần trăm thôi và còn
+0:08:17 - 0:08:23, CPU utilization thì đang đến 80% như vậy
+0:08:20 - 0:08:27, có nghĩa là chúng ta vẫn chưa dùng được
+0:08:23 - 0:08:30, GPU ha. Đó
+0:08:27 - 0:08:34, nếu các bạn quan sát kỹ cái thông báo
+0:08:30 - 0:08:34, báo lúc mà
+0:08:38 - 0:08:44, nếu các bạn quan sát kỹ thông báo lúc
+0:08:42 - 0:08:47, trước khi bắt đầu vào quening training,
+0:08:44 - 0:08:50, các bạn sẽ thấy ở đây một thông báo
+0:08:47 - 0:08:52, warning là
+0:08:50 - 0:08:55, ignoring visible
+0:08:52 - 0:09:00, GPU device ha. có nghĩa là máy tính của
+0:08:55 - 0:09:03, chúng ta có cài có cắm GPU sẵn nhưng à
+0:09:00 - 0:09:05, Tenser Flow mặc định họ chỉ chạy Rock
+0:09:03 - 0:09:07, Cam Tensor Flow ha Rock Cam Tenser Flow
+0:09:05 - 0:09:11, mà là một phiên bản Tensor Flow khác do
+0:09:07 - 0:09:14, AMD họ cung cấp để các bạn sử dụng chung
+0:09:11 - 0:09:18, với card của AMD GPU thì họ chỉ hỗ trợ
+0:09:14 - 0:09:23, các cái version này thôi đây.
+0:09:18 - 0:09:26, Còn version của card 6700XT là version
+0:09:23 - 0:09:29, có mã hiệu mặc dù khác nhau chỉ một tí
+0:09:26 - 0:09:32, thôi ha. GFX 1031 còn được hỗ trợ là
+0:09:29 - 0:09:34, 1030 nên card của chúng ta bị ignore
+0:09:32 - 0:09:39, không dùng đến.
+0:09:34 - 0:09:41, A muốn sử dụng đến cái
+0:09:39 - 0:09:44, card này chúng ta sẽ phải chạy với một
+0:09:41 - 0:09:46, cái tham số hay một cái environment
+0:09:44 - 0:09:49, variable.
+0:09:46 - 0:09:51, Environment variable là các cái biến của
+0:09:49 - 0:09:53, hệ điều hành ha. Đây là biến của hệ điều
+0:09:51 - 0:09:55, hành không phải là biến trong Python
+0:09:53 - 0:09:58, nha. Và các bạn sẽ gán giá trị cho các
+0:09:55 - 0:10:01, cái biến này trước khi các bạn chạy lệnh
+0:09:58 - 0:10:04, Python. Đó. Ở đây chúng ta sẽ gán
+0:10:01 - 0:10:06, override GFX version à có nghĩa là chúng
+0:10:04 - 0:10:09, ta
+0:10:06 - 0:10:11, Python à chúng ta rockam tenser flow
+0:10:09 - 0:10:13, nhận cái GPU của chúng ta là phiên bản
+0:10:11 - 0:10:15, 10.3.0
+0:10:13 - 0:10:17, chứ không phải là 10.3.1 số 1 như hồi
+0:10:15 - 0:10:20, nãy nó nhận ra.
+0:10:17 - 0:10:20, Đó.
+0:10:21 - 0:10:27, Rồi nếu như chúng ta chạy với tham số
+0:10:24 - 0:10:32, này với cái environment variable này thì
+0:10:27 - 0:10:35, bây giờ lệnh chạy của chúng ta
+0:10:32 - 0:10:37, rồi đã có một chút thay đổi ha. Đó các
+0:10:35 - 0:10:40, bạn có thể thấy ở đây thông báo là
+0:10:37 - 0:10:42, created device thay vì ignoring device.
+0:10:40 - 0:10:45, Và nếu như các bạn chạy thử trên máy
+0:10:42 - 0:10:48, mình bây giờ các bạn sẽ thấy máy sẽ bị
+0:10:45 - 0:10:50, lagắ khá đáng kể tại vì GPU đang được
+0:10:48 - 0:10:53, huy động.
+0:10:50 - 0:10:55, Đó các bạn nhìn bên tay phải ha. À có
+0:10:53 - 0:10:59, thể video bây giờ nó sẽ hơi giật tại vì
+0:10:55 - 0:11:03, GPU đang được huy động gần như là 100%
+0:10:59 - 0:11:06, đó. Và nó xung đột với cái phần mềm thu
+0:11:03 - 0:11:08, quay phim v hình bài giảng. Nhưng mà bù
+0:11:06 - 0:11:11, lại các bạn có thể nhìn thấy thời gian
+0:11:08 - 0:11:15, chạy
+0:11:11 - 0:11:20, của một patch nó đang a cải thiện khá là
+0:11:15 - 0:11:23, nhiều ha. Đó. Rồi chúng ta sẽ tạm à dừng
+0:11:20 - 0:11:23, cái
+0:11:23 - 0:11:31, việc training model ở đây ha. Đó tại vì
+0:11:26 - 0:11:34, à GPU được utilize quá nhiều thì phần
+0:11:31 - 0:11:36, giao diện đồ họa mà các bạn làm việc với
+0:11:34 - 0:11:38, máy nó cũng sẽ bị ảnh hưởng ha. Do máy
+0:11:36 - 0:11:41, chúng ta chỉ có một GPU duy nhất thôi.
+0:11:38 - 0:11:43, Nó phải handle quá nhiều công việc. Đó.
+0:11:41 - 0:11:47, Đó cũng là nhược điểm giữa GPU của máy
+0:11:43 - 0:11:49, tính cá nhân so với các GPU trên server.
+0:11:47 - 0:11:51, Trừ khi các bạn có nhiều máy tính thì
+0:11:49 - 0:11:53, các bạn dùng riêng hoặc các bạn có máy
+0:11:51 - 0:11:55, tính nhiều GPU thì các bạn mới có thể
+0:11:53 - 0:11:58, tránh khỏi cái vấn đề này. Thì ở đây các
+0:11:55 - 0:12:01, bạn có thể thấy thời gian training cho
+0:11:58 - 0:12:03, một patch nó dao động khá là nhiều. Đó
+0:12:01 - 0:12:05, do GPU được huy động cho nhiều công việc
+0:12:03 - 0:12:10, khác nhau nhưng mà nhìn chung nó nhanh
+0:12:05 - 0:12:14, hơn là chúng ta sử dụng so với CPU.
+0:12:10 - 0:12:14, Rồi và cuối cùng hình như để
+0:12:16 - 0:12:21, cho cái quá trình training này mược hơn
+0:12:18 - 0:12:23, thì các bạn sẽ phải set thêm một cái
+0:12:21 - 0:12:28, environment nữa. Environment này là của
+0:12:23 - 0:12:33, TFOW ha. Đó có nghĩa là Fox GPU allow
+0:12:28 - 0:12:35, growth. Rồi do tensor flow mặc định khi
+0:12:33 - 0:12:39, tensor flow hoạt động nó sẽ chiếm dụng
+0:12:35 - 0:12:42, toàn bộ tài nguyên GPU của máy.
+0:12:39 - 0:12:45, Vì thường trên các cái máy server GPU
+0:12:42 - 0:12:47, sinh ra chỉ để
+0:12:45 - 0:12:49, phục vụ cho các cái hoạt động tính toán
+0:12:47 - 0:12:52, nên Tor Flow nó sẽ huy động toàn bộ cái
+0:12:49 - 0:12:55, GPU của máy. Còn trên máy tính cá nhân
+0:12:52 - 0:12:57, thì các bạn dùng GPU cho nhiều công việc
+0:12:55 - 0:12:59, thì các bạn set cái environment này bằng
+0:12:57 - 0:13:03, true.
+0:12:59 - 0:13:04, GPU allow cross có nghĩa là
+0:13:03 - 0:13:07, mặc định tens flow sẽ không chiếm dụng
+0:13:04 - 0:13:10, toàn bộ GPU mà khi nào nó cần dùng thì
+0:13:07 - 0:13:12, nó mới xin cấp phát tài nguyên. Việc này
+0:13:10 - 0:13:16, có thể khiến cho cái quá trình training
+0:13:12 - 0:13:19, nó chậm đi ha. nhưng mà bù lại nó không
+0:13:16 - 0:13:22, ảnh hưởng nhiều so đến với các cái
+0:13:19 - 0:13:24, process khác trên máy.
+0:13:22 - 0:13:26, Hi vọng là quá trình chạy với máy tính
+0:13:24 - 0:13:29, cá nhân các bạn xét cái environment
+0:13:26 - 0:13:34, variable này thì quá trình chạy nó sẽ
+0:13:29 - 0:13:37, mượt mà hơn. Đó.
+0:13:34 - 0:13:40, Rồi và bây giờ các bạn có thể thấy GPU
+0:13:37 - 0:13:42, của chúng ta nó cũng đang được huy động
+0:13:40 - 0:13:44, khá là nhiều nhưng nó không bị chiếm
+0:13:42 - 0:13:48, dụng toàn bộ như lần trước.
+0:13:44 - 0:13:53, Và CPU thì đang nghỉ ngơi rất là chiêu
+0:13:48 - 0:13:55, ha. CPU utilization chỉ
+0:13:53 - 0:13:59, loanh quanh đâu đó cỡ 15% thôi. Chủ yếu
+0:13:55 - 0:14:03, là để lấy dữ liệu và đưa cho
+0:13:59 - 0:14:09, GPU làm việc. C đó con Ryzen 5950X nó
+0:14:03 - 0:14:13, đang khá là chiêu. À còn con 6700XT của
+0:14:09 - 0:14:16, chúng ta thì đ các bạn thấy chỗ GFX à
+0:14:13 - 0:14:20, utilization này nó lên tới khoảng 90%.
+0:14:16 - 0:14:23, Nó đang làm việc à rất là vất vả
+0:14:20 - 0:14:27, nhưng mà bù lại đó. Nếu các bạn quan sát
+0:14:23 - 0:14:30, thời gian chạy cho mỗi patch cũng như
+0:14:27 - 0:14:34, thời gian chạy cho toàn bộ một vòng lập
+0:14:30 - 0:14:37, một eort trong quá trình training nó đã
+0:14:34 - 0:14:40, giảm đi đáng kể.
+0:14:37 - 0:14:42, Đó với ở đây chúng ta thấy có một số ebo
+0:14:40 - 0:14:45, chạy nhanh nhất thì nó chỉ khoảng 14
+0:14:42 - 0:14:45, giây thôi.
+0:14:46 - 0:14:51, Ebo đầu tiên thì luôn luôn là lâu do máy
+0:14:49 - 0:14:52, phải chuẩn bị dữ liệu. Còn các ebo sau
+0:14:51 - 0:14:56, thì các bạn thấy thường ra rất là ổn
+0:14:52 - 0:15:00, định, chỉ khoảng 14 giây cho một ebo
+0:14:56 - 0:15:04, trong khi nếu các bạn còn nhớ với GPU ha
+0:15:00 - 0:15:06, cũng là GPU Tesla T4 mà Nvida cung cấp
+0:15:04 - 0:15:10, cho các bạn thì thời gian cho một EBOS
+0:15:06 - 0:15:13, thường khoảng 50 giây. Đó như vậy cái
+0:15:10 - 0:15:16, GPU dân dụng của chúng ta, cái GPU cho
+0:15:13 - 0:15:20, người dùng cá nhân con 6700X
+0:15:16 - 0:15:23, đó à cỡ 7 triệu mấy này nó chạy nhanh
+0:15:20 - 0:15:27, gần gấp ba lần
+0:15:23 - 0:15:29, GPU của Google Collab cung cấp ha. Nếu
+0:15:27 - 0:15:31, các bạn biết cách setup, cài đặt và sử
+0:15:29 - 0:15:34, dụng thì các bạn có thể sử dụng GPU trên
+0:15:31 - 0:15:35, máy tính cá nhân của mình.
+0:15:34 - 0:15:39, Nhưng mà không phải máy tính cá nhân của
+0:15:35 - 0:15:41, ai cũng có GPU này và không phải GPU nào
+0:15:39 - 0:15:46, cũng có thể hỗ trợ quá trình training
+0:15:41 - 0:15:48, nhé các bạn. Đó, các bạn sẽ phải
+0:15:46 - 0:15:50, học hỏi và làm quen với khá nhiều kiến
+0:15:48 - 0:15:52, thức mới nếu như các bạn muốn sử dụng
+0:15:50 - 0:15:55, máy của mình cho các cái hoạt động liên
+0:15:52 - 0:15:58, quan đến machine learning. Bụ lại các
+0:15:55 - 0:16:02, bạn có thể có cái máy nó chạy nhanh hơn
+0:15:58 - 0:16:05, là cái phiên bản default miễn phí trên
+0:16:02 - 0:16:07, Google Collab ha. Thì trong món này các
+0:16:05 - 0:16:08, bạn có thể sử dụng phương pháp nào cũng
+0:16:07 - 0:16:11, được ha. Các bạn có thể sử dụng Google
+0:16:08 - 0:16:14, Collab cho nó đơn giản để chúng ta làm
+0:16:11 - 0:16:16, quen với bài học. Và nếu muốn thì các
+0:16:14 - 0:16:19, bạn hoàn toàn vẫn có thể chạy cái chương
+0:16:16 - 0:16:21, trình Python này trên máy của mình.
+0:16:19 - 0:16:24, Trong các bài tiếp theo, chúng ta sẽ đi
+0:16:21 - 0:16:26, sâu hơn về ngôn ngữ lập trình Byon. để
+0:16:24 - 0:16:32, giúp các bạn có thể tự tin làm chủ ngôn
+0:16:26 - 0:16:32, ngữ này cho những bài học sắp tới.
+0:16:36 - 0:16:48, [âm nhạc]

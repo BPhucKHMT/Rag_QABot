@@ -1,0 +1,305 @@
+0:00:14 - 0:00:19, Trong phần tiếp theo thì chúng ta sẽ
+0:00:16 - 0:00:22, cùng ôn tập những cái chủ đề mà chúng ta
+0:00:19 - 0:00:24, đã tìm hiểu trong môn học à CS114 học
+0:00:22 - 0:00:27, máy.
+0:00:24 - 0:00:31, Thì à ba cái chủ đề chính mà chúng ta đã
+0:00:27 - 0:00:35, cùng tìm hiểu đó chính là về superving,
+0:00:31 - 0:00:35, tức là học có giám sát.
+0:00:40 - 0:00:46, Rồi unsupervice learning tức là học
+0:00:43 - 0:00:46, không có giám sát.
+0:00:47 - 0:00:54, Và cuối cùng đó là
+0:00:51 - 0:00:54, học tăng cường.
+0:00:57 - 0:01:04, Thế thì cái sự khác biệt giữa ba cái
+0:01:00 - 0:01:07, hình thức học này đó là gì? Đối với à
+0:01:04 - 0:01:11, học có giám sát thì chúng ta sẽ có cái
+0:01:07 - 0:01:14, dữ liệu đầu vào và cái dữ liệu đầu ra rõ
+0:01:11 - 0:01:18, ràng. Thì cái dữ liệu y này nè là cái dữ
+0:01:14 - 0:01:21, liệu mình gọi là nhãn là do một cái tập
+0:01:18 - 0:01:24, người dùng họ đã gán nhãn trước và có
+0:01:21 - 0:01:28, một cái quy trình kiểm tra rất là nghiêm
+0:01:24 - 0:01:32, ngặc. Thì cái y này là cái nhãn tương
+0:01:28 - 0:01:34, đối là sạch và có thể có nhiễu nhưng mà
+0:01:32 - 0:01:36, cái việc nhiễu này là chấp nhận được.
+0:01:34 - 0:01:40, Tại vì mô hình của mình nó sẽ phải có
+0:01:36 - 0:01:42, khả năng là chấp nhận những cái ngoại lệ
+0:01:40 - 0:01:45, hoặc là những cái điểm nhiễu. Nhưng mà
+0:01:42 - 0:01:48, nhìn chung đó là cái nhãn Y này là cái
+0:01:45 - 0:01:51, dữ liệu sạch. Còn đối với cái học không
+0:01:48 - 0:01:54, có giám sát thì ở đây chúng ta không có
+0:01:51 - 0:01:57, cái nhãn Y mà chúng ta chỉ có cái dữ
+0:01:54 - 0:02:00, liệu X mà thôi. Đó, chúng ta không có Y.
+0:01:57 - 0:02:03, Thế thì mục tiêu của cái học
+0:02:00 - 0:02:05, có giám sát đó là chúng ta tìm một cái
+0:02:03 - 0:02:09, hàm à chúng ta sẽ phải ước lượng một cái
+0:02:05 - 0:02:11, hàm để ánh xạ từ x sang sang y này. Đó
+0:02:09 - 0:02:15, thì mục tiêu của mình chính là mapping
+0:02:11 - 0:02:17, là một cái hàm ánh xạ. Còn mục tiêu của
+0:02:15 - 0:02:18, ờ
+0:02:17 - 0:02:20, mô hình học không có giám sát đó là
+0:02:18 - 0:02:24, chúng ta sẽ đi học cái phân bố của dữ
+0:02:20 - 0:02:27, liệu và từ đó chúng ta sẽ gom nhóm tạo
+0:02:24 - 0:02:29, ra thành những cái phân lớp khác nhau.
+0:02:27 - 0:02:33, Tuy nhiên ở đây sẽ là những cái phân lớp
+0:02:29 - 0:02:36, là giống như trong cái bài toán về phân
+0:02:33 - 0:02:40, khúc khách hàng thì đó là do chúng ta tự
+0:02:36 - 0:02:43, đặt ra các cái class này. Đó. Còn đối
+0:02:40 - 0:02:45, với học không học tăng cường thì ở đây
+0:02:43 - 0:02:48, cái chủ đề mà chúng ta cái input của
+0:02:45 - 0:02:52, chúng ta nó sẽ là các cái trạng thái và
+0:02:48 - 0:02:54, các cái action. Thì một trong những cái
+0:02:52 - 0:02:57, lĩnh vực mà được sử dụng nhiều trong học
+0:02:54 - 0:03:00, tăng cường đó chính là lĩnh vực về game.
+0:02:57 - 0:03:02, Đó. Trạng thái ở đây nó có thể là cái
+0:03:00 - 0:03:04, trạng thái của một cái bàn cờ, một cái
+0:03:02 - 0:03:07, thế cờ.
+0:03:04 - 0:03:09, Còn action đó là cái hoạt động, cái bước
+0:03:07 - 0:03:12, đi tiếp theo của chúng ta khi chúng ta
+0:03:09 - 0:03:14, đến cái lượt đi của mình. Thì mục tiêu
+0:03:12 - 0:03:17, của reinforcement learning đó là làm sao
+0:03:14 - 0:03:19, cho cái
+0:03:17 - 0:03:21, reward của mình đó là cao nhất, cái phần
+0:03:19 - 0:03:24, thưởng của mình là cao nhất.
+0:03:21 - 0:03:28, Thế thì đối với cái mô hình học có giám
+0:03:24 - 0:03:31, sát thì chúng ta sẽ phải so sánh giữa
+0:03:28 - 0:03:34, cái giá trị dự đoán so với lại cái
+0:03:31 - 0:03:37, target tức là cái giá trị thực tế. Và từ
+0:03:34 - 0:03:40, cái độ lỗi này chúng ta sẽ đi cập nhật
+0:03:37 - 0:03:42, lại cái mô hình để làm sao cho cái độ
+0:03:40 - 0:03:45, lỗi của mình có xu hướng càng về sau là
+0:03:42 - 0:03:48, càng nhỏ. Còn đối với học không giám sát
+0:03:45 - 0:03:51, thì chúng ta không có cái biến, không có
+0:03:48 - 0:03:53, cái nhãn này nên chúng ta sẽ phải dựa
+0:03:51 - 0:03:57, trên cái mật độ, dựa trên cái phân bố để
+0:03:53 - 0:04:00, chúng ta nhóm. Và học tăng cường thì
+0:03:57 - 0:04:03, chúng ta sẽ đi đánh giá cái hàm reward
+0:04:00 - 0:04:06, và chúng ta sẽ chọn những cái action nào
+0:04:03 - 0:04:09, để cho nó cực đại hóa, tối đa hóa cái
+0:04:06 - 0:04:11, phần thưởng của mình. Đó thì chúng ta sẽ
+0:04:09 - 0:04:15, so sánh, chúng ta đã so sánh ba cái hình
+0:04:11 - 0:04:18, thức học này. Thì
+0:04:15 - 0:04:20, trong máy học
+0:04:18 - 0:04:25, thì chúng ta sẽ có một cái cấu trúc cây
+0:04:20 - 0:04:25, như sau. Đó là học có giám sát
+0:04:28 - 0:04:32, rồi không giám sát
+0:04:36 - 0:04:39, và học tăng cường.
+0:04:48 - 0:04:55, Thì đối với học có giám sát thì chúng ta
+0:04:51 - 0:04:59, sẽ lại có hai cái bài toán đó là hồi quy
+0:04:55 - 0:04:59, là regression
+0:05:01 - 0:05:05, và phân lớp là classification.
+0:05:11 - 0:05:16, Rồi thì ứng với từng cái bài toán này
+0:05:13 - 0:05:20, thì chúng ta sẽ có những cái mô hình à
+0:05:16 - 0:05:21, khác nhau. Đối với bài toán hồi quy và
+0:05:20 - 0:05:24, bài toán followup thì chúng ta cũng sẽ
+0:05:21 - 0:05:26, có hai tình huống. Đó là cái dữ liệu của
+0:05:24 - 0:05:29, mình nó có cái tính chất đó là tuyến
+0:05:26 - 0:05:29, tính
+0:05:30 - 0:05:36, và phi tuyến.
+0:05:34 - 0:05:38, phí tuyến tính.
+0:05:36 - 0:05:42, Thế thì đối với những cái mô hình tuyến
+0:05:38 - 0:05:43, tính thì chúng ta sẽ có các cái à mô
+0:05:42 - 0:05:45, hình đối với cái dữ liệu mà có tính chất
+0:05:43 - 0:05:47, tuyến tính thì chúng ta sẽ có các cái mô
+0:05:45 - 0:05:51, hình. Ví dụ đối với regression thì chúng
+0:05:47 - 0:05:51, ta sẽ có mô hình là linear regression.
+0:05:56 - 0:06:00, Còn đối với bài toán phân loại thì chúng
+0:05:58 - 0:06:02, ta sẽ có mô hình đó là logistic
+0:06:00 - 0:06:05, regression. Ta sẽ viết tắt ha. logistic
+0:06:02 - 0:06:07, regression.
+0:06:05 - 0:06:10, Còn đối với cái tình huống mà phi tuyến
+0:06:07 - 0:06:12, thì chúng ta sẽ có rất nhiều những cái
+0:06:10 - 0:06:15, mô hình có thể giải quyết được các cái
+0:06:12 - 0:06:19, bài toán à phi tuyến tính. Ví dụ như là
+0:06:15 - 0:06:19, mô hình neuro network.
+0:06:23 - 0:06:28, Thế thì đối với trường hợp mà tuyến tính
+0:06:25 - 0:06:31, thì chúng ta còn một cái mô hình nữa đó
+0:06:28 - 0:06:34, là support vector machine đó là SVM. Tuy
+0:06:31 - 0:06:38, nhiên SVM này nó không chỉ
+0:06:34 - 0:06:41, ờ là giải quyết cái bài toán tuyến tính
+0:06:38 - 0:06:44, mà nó cũng có thể à sử dụng cho cái
+0:06:41 - 0:06:47, trường hợp là phi tuyến tính nếu như
+0:06:44 - 0:06:49, chúng ta có sử dụng thêm
+0:06:47 - 0:06:52, cái col
+0:06:49 - 0:06:52, phương pháp
+0:06:54 - 0:06:59, ví dụ như là polynomial hoặc là
+0:06:57 - 0:07:01, ABF k vân vân.
+0:06:59 - 0:07:06, Ngoài ra thì chúng ta sẽ còn các cái mô
+0:07:01 - 0:07:06, hình khác nữa ví dụ như là DC Centry.
+0:07:08 - 0:07:12, Và trong cái nhóm cây này thì chúng ta
+0:07:10 - 0:07:15, sẽ còn một cái giải thuật nữa đó là
+0:07:12 - 0:07:15, Random Forest.
+0:07:19 - 0:07:24, Là cái cây ngẫu nhiên à cái rừng ngẫu
+0:07:20 - 0:07:25, nhiên. Rồi à ngoài ra thì nó còn rất
+0:07:24 - 0:07:28, nhiều những cái mô hình phí tuyến tính
+0:07:25 - 0:07:31, khác nữa. Còn đối với học không giám sát
+0:07:28 - 0:07:38, thì chúng ta sẽ có hai cái bài toán đó
+0:07:31 - 0:07:38, là ờ gom cụm, gom nhóm, clustering
+0:07:39 - 0:07:43, và giảm chiều.
+0:07:46 - 0:07:52, Thì đối với cái thuật toán mà clustering
+0:07:49 - 0:07:56, thì chúng ta sẽ có cái các cái giải
+0:07:52 - 0:07:56, thuật ví dụ như là camin
+0:07:56 - 0:08:00, hoặc là DB Scan
+0:08:02 - 0:08:06, hoặc là Spectral Clustering.
+0:08:13 - 0:08:18, Đối với thực toán mà giảm chiều dữ liệu
+0:08:15 - 0:08:21, thì chúng ta sẽ có các cái giải thuật.
+0:08:18 - 0:08:25, Ví dụ như là PCA là principal component
+0:08:21 - 0:08:27, analysis. Thì cái thuộc tán PCA này á là
+0:08:25 - 0:08:29, dùng cho cái tình huống đó là dữ liệu
+0:08:27 - 0:08:32, của mình nó có cái tính chất đó là tuyến
+0:08:29 - 0:08:32, tính.
+0:08:34 - 0:08:39, Rồi à tsni
+0:08:39 - 0:08:44, thì là cho cái tình huống đó là phi
+0:08:41 - 0:08:44, tuyến.
+0:08:45 - 0:08:49, Đó thì đây là một vài cái thuật toán
+0:08:47 - 0:08:52, giảm chiều dữ liệu. Thì trong cái phạm
+0:08:49 - 0:08:55, vi của môn học này thì có một vài cái à
+0:08:52 - 0:08:58, thuật toán thì chúng ta sẽ được tìm hiểu
+0:08:55 - 0:09:00, và cài đặt. Tuy nhiên không phải mọi mô
+0:08:58 - 0:09:03, hình chúng ta đều có thể có thời gian để
+0:09:00 - 0:09:06, cài đặt. Thì ở đây chúng ta sẽ để một số
+0:09:03 - 0:09:08, cái tên để chúng ta có thể cùng tìm
+0:09:06 - 0:09:12, hiểu.
+0:09:08 - 0:09:15, Ngoài ra thì chúng ta cũng có một số cái
+0:09:12 - 0:09:19, ứng dụng khác ví dụ như là cho bài toán
+0:09:15 - 0:09:19, à recommendation hệ khuyến nghị.
+0:09:23 - 0:09:29, Thì cái ý tưởng của cái hệ khuyến nghị
+0:09:25 - 0:09:33, đó là nó sẽ dùng các cái à phương pháp
+0:09:29 - 0:09:37, về gọi là matric factorization, tức là à
+0:09:33 - 0:09:41, phân tích cái ma trận à để tìm cái sự
+0:09:37 - 0:09:43, liên hệ giữa à user và item, tức là một
+0:09:41 - 0:09:46, cái người khách hàng và một cái sản phẩm
+0:09:43 - 0:09:48, mua hàng. Thì đây là một cái ứng dụng
+0:09:46 - 0:09:51, khác của máy học. Còn đối với học tăng
+0:09:48 - 0:09:57, cường thì cái chủ đề chính mà chúng ta
+0:09:51 - 0:10:01, cần phải làm việc đó chính là cái agent
+0:09:57 - 0:10:03, nó sẽ tương tác qua lại với lại cái môi
+0:10:01 - 0:10:05, trường environment
+0:10:03 - 0:10:08, thì ta viết tắt ở đây ha. Thì mục tiêu
+0:10:05 - 0:10:12, của cái học tăng cường đó là chúng ta sẽ
+0:10:08 - 0:10:16, phải tìm ra các cái action làm sao cho
+0:10:12 - 0:10:18, cực đại hóa cái hàm reward tức là cái
+0:10:16 - 0:10:20, phần thưởng của mình. Thì ở đây nó sẽ có
+0:10:18 - 0:10:23, một số cái nhóm thực toán ví dụ như là Q
+0:10:20 - 0:10:23, Learning.
+0:10:25 - 0:10:32, Gần đây thì chúng ta biết rằng là chat
+0:10:28 - 0:10:34, GPT thì có sử dụng một cái kỹ thuật đó
+0:10:32 - 0:10:38, là reinforcement learning
+0:10:34 - 0:10:41, with human feedback.
+0:10:38 - 0:10:41, Là đây là human
+0:10:42 - 0:10:45, feedback.
+0:10:48 - 0:10:54, Rồi
+0:10:49 - 0:10:57, đối với cái à học sau mà có suy luận thì
+0:10:54 - 0:11:02, chúng ta có các cái thuật toán ví dụ như
+0:10:57 - 0:11:07, là GRPO thì đây là một cái à
+0:11:02 - 0:11:10, thuậc toán mà reasoning để mà suy luận
+0:11:07 - 0:11:13, dùng trong giải toán và dipsit là một
+0:11:10 - 0:11:16, trong những cái mô hình nổi tiếng mà có
+0:11:13 - 0:11:19, sử dụng cái thuục toán này. này thì dips
+0:11:16 - 0:11:22, là một cái phần mềm open source về deep
+0:11:19 - 0:11:26, learning có sử dụng cái grpo. Thế thì
+0:11:22 - 0:11:29, trên đây là tổng quan một vài cái hướng
+0:11:26 - 0:11:31, tiếp cận trong máy học và
+0:11:29 - 0:11:33, những cái tình huống sử dụng cho các cái
+0:11:31 - 0:11:35, mô hình máy học này. Đối với cái trường
+0:11:33 - 0:11:38, hợp mà dữ liệu của mình tuyến tính thì
+0:11:35 - 0:11:40, chúng ta có thể sử dụng các cái mô hình
+0:11:38 - 0:11:43, có giám sát như là linear regression,
+0:11:40 - 0:11:46, logistic regression hoặc là SVM. Còn đối
+0:11:43 - 0:11:49, với các cái mô hình mà phi tuyến tính
+0:11:46 - 0:11:53, thì chúng ta có thể sử dụng như là mạng
+0:11:49 - 0:11:56, Neuro Network, Decision Try rồi SVM
+0:11:53 - 0:11:58, à vân vân. Và đối với các cái thuật toán
+0:11:56 - 0:12:00, mà học
+0:11:58 - 0:12:03, không giám sát thì chúng ta sẽ có hai
+0:12:00 - 0:12:05, cái giải thuật đó là hai cái bài toán đó
+0:12:03 - 0:12:07, là gom nhóm và giảm chiều dữ liệu. Thì
+0:12:05 - 0:12:10, gom nhóm chúng ta có thể sử dụng thuậc
+0:12:07 - 0:12:11, toán như là Camin, DB Scan. Còn giảm
+0:12:10 - 0:12:13, chiều dữ liệu thì chúng ta sẽ có hai
+0:12:11 - 0:12:15, tình huống. Nếu dữ liệu của mình có tính
+0:12:13 - 0:12:18, chất tuyến tính thì chúng ta sẽ sử dụng
+0:12:15 - 0:12:20, PCI, còn phi tuyến thì chúng ta sẽ sử
+0:12:18 - 0:12:22, dụng là TSNI. Thì đây cũng là một trong
+0:12:20 - 0:12:25, những cái kỹ thuật để phục vụ cho cái
+0:12:22 - 0:12:28, việc đó là trực quan hóa rất là hiệu
+0:12:25 - 0:12:28, quả.
+0:12:32 - 0:12:37, Và đối với học tăng cường thì nó mặc dù
+0:12:35 - 0:12:39, không phải là cái chủ đề chính của cái
+0:12:37 - 0:12:42, môn học này nhưng chúng ta cũng được
+0:12:39 - 0:12:45, giới thiệu sơ qua về cái nguyên lý của
+0:12:42 - 0:12:49, nó. Đó là nó sẽ không học dựa trên cái
+0:12:45 - 0:12:53, dữ liệu gán nhãn à mà nó sẽ dựa trên các
+0:12:49 - 0:12:57, cái yếu tố về môi trường à về agent, về
+0:12:53 - 0:13:00, môi trường, về request để mà chúng ta sẽ
+0:12:57 - 0:13:03, tối ưu hóa cái action của mình sao cho à
+0:13:00 - 0:13:06, cái cái reward tức là cái phần thưởng
+0:13:03 - 0:13:07, của mình đạt được là là cao nhất. Thì ở
+0:13:06 - 0:13:10, đây là một vài cái thuật toán mà
+0:13:07 - 0:13:12, reinforcement learning nổi tiếng gần đây
+0:13:10 - 0:13:18, đó là Q learning, reinforcement learning
+0:13:12 - 0:13:23, with human feedback rồi GRPO vân vân.
+0:13:18 - 0:13:26, Thì hy vọng rằng qua cái à môn học CS114
+0:13:23 - 0:13:30, học máy chúng ta đã được giới thiệu qua
+0:13:26 - 0:13:34, một vài cái mô hình học máy căn bản. Các
+0:13:30 - 0:13:37, cái mô hình này thì mặc dù nó đã có từ
+0:13:34 - 0:13:39, rất là lâu nhưng mà cái ứng dụng của nó
+0:13:37 - 0:13:42, cho đến bây giờ vẫn rất là nhiều. Ví dụ
+0:13:39 - 0:13:45, như các cái mô hình linear regression và
+0:13:42 - 0:13:48, logistic regression mặc dù là những cái
+0:13:45 - 0:13:50, mô hình tuyến tính nhưng mà các cái tổ
+0:13:48 - 0:13:53, chức tín dụng hiện nay họ vẫn sử dụng
+0:13:50 - 0:13:56, các cái mô hình này để xây dựng các cái
+0:13:53 - 0:13:58, mô hình. Nó có nhiều lý do. Lý do đầu
+0:13:56 - 0:14:01, tiên đó chính là cái tính dễ hiểu và dễ
+0:13:58 - 0:14:05, giải thích được. Cái thứ hai đó là nhờ
+0:14:01 - 0:14:07, các cái nhà gọi là data scientist, tức
+0:14:05 - 0:14:09, là những cái nhà khoa học dữ liệu họ đã
+0:14:07 - 0:14:12, rút trích ra được những cái đặc trưng đủ
+0:14:09 - 0:14:14, tốt thì khi đó cái việc mà dự đoán cái
+0:14:12 - 0:14:17, output của mình nó trở nên dễ dàng hơn.
+0:14:14 - 0:14:18, Do đó các cái mô hình trến tính là đủ có
+0:14:17 - 0:14:20, thể để giải quyết được cái vấn đề của
+0:14:18 - 0:14:24, mình rồi.
+0:14:20 - 0:14:26, Còn trong cái trường hợp mà ờ mô hình
+0:14:24 - 0:14:28, của mình phức tạp, dữ liệu của mình phức
+0:14:26 - 0:14:30, tạp thì chúng ta có thể sử dụng các cái
+0:14:28 - 0:14:34, mô hình phức tạp hơn. Ví dụ như là Neuro
+0:14:30 - 0:14:36, Network, SVM hoặc Decision. Nhưng mà các
+0:14:34 - 0:14:38, cái mô hình này thì cũng sẽ có những cái
+0:14:36 - 0:14:42, đánh đổi liên quan đến cái độ phức tạp
+0:14:38 - 0:14:45, và cái
+0:14:42 - 0:14:47, hiện tượng nó gọi là overfitting.
+0:14:45 - 0:14:50, Overfitting tức là cái hiện tượng mà à
+0:14:47 - 0:14:53, dữ liệu của mình nó được huấn luyện thì
+0:14:50 - 0:14:57, rất tốt nhưng mà khi chúng ta ứng dụng
+0:14:53 - 0:14:59, đem vào thực tế thì nó có thể bị sai. Lý
+0:14:57 - 0:15:02, do đó là vì mô hình của mình vì nó quá
+0:14:59 - 0:15:05, phức tạp nên nó sẽ tìm cách đó là học
+0:15:02 - 0:15:08, thuộc những cái tình huống khó và bỏ qua
+0:15:05 - 0:15:10, những cái tình huống tổng quát.
+0:15:08 - 0:15:13, Còn đối với các cái thực toán về gom
+0:15:10 - 0:15:16, nhóm thì cho đến bây giờ dùng vẫn rất là
+0:15:13 - 0:15:19, nhiều trong các cái ứng dụng như là xác
+0:15:16 - 0:15:21, định phân khúc khách hàng hoặc là trực
+0:15:19 - 0:15:22, quan hóa dữ liệu thì đây là một trong
+0:15:21 - 0:15:24, những cái ứng dụng mà được sử dụng rất
+0:15:22 - 0:15:26, là nhiều của
+0:15:24 - 0:15:29, học không giám sát.
+0:15:26 - 0:15:31, Còn học tăng cường thì trước đây không
+0:15:29 - 0:15:33, có nhiều cái ứng dụng trong thực tế. Tuy
+0:15:31 - 0:15:36, nhiên gần đây với những cái thành tựu
+0:15:33 - 0:15:39, của Deep Learning và học sâu thì chúng
+0:15:36 - 0:15:42, ta đã có được những cái thành tựu đầu
+0:15:39 - 0:15:44, tiên. Ví dụ như trong các cái game thì
+0:15:42 - 0:15:48, học tăng cường nó đã chiến thắng được
+0:15:44 - 0:15:52, các cái kiện tướng cờ vâ cờ vua vân vân.
+0:15:48 - 0:15:54, Và trong ứng dụng đến đại chúng thì có
+0:15:52 - 0:15:56, cái ứng dụng chat GPT hoặc là Dipsic là
+0:15:54 - 0:15:59, sử dụng những cái phương pháp học tăng
+0:15:56 - 0:16:01, cường kết hợp với lại học sau.
+0:15:59 - 0:16:03, Hy vọng rằng là qua khóa học này chúng
+0:16:01 - 0:16:06, ta đã được giới thiệu những cái kiến
+0:16:03 - 0:16:11, thức nền tảng và chúng ta trang bị những
+0:16:06 - 0:16:13, cái à kiến thức đó để mà dùng cho những
+0:16:11 - 0:16:16, cái môn học nâng cao hơn sắp tới. Ví dụ
+0:16:13 - 0:16:20, như là máy học nâng cao hoặc là các cái
+0:16:16 - 0:16:20, mô hình học sâu và ứng dụng.

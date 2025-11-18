@@ -1,0 +1,160 @@
+0:00:00 - 0:00:26, Chủ đề 3. Chúng ta sẽ bắt đầu vào một kiến trúc mạng rất nổi tiếng trong lĩnh vực học sâu, đó chính là mạng Convolutional Neural Network hay là mạng CNN.
+0:00:26 - 0:00:33, Thì ở phần đầu tiên, chúng ta sẽ giới thiệu qua về cái bài toán phân loại ảnh với cái mạng Neural Network.
+0:00:33 - 0:00:41, Tức là trong bài 2, chúng ta đã học và học đến cái bài về mạng học sâu đầu tiên, đó là mạng Neural Network.
+0:00:41 - 0:00:49, Tuy nhiên khi chúng ta áp dụng cái mạng này đối với một cái loại dữ liệu ảnh và cho một cái bài toán nó tương đối là phức tạp,
+0:00:49 - 0:00:51, thì điều gì sẽ xảy ra?
+0:00:51 - 0:00:56, Đầu tiên, chúng ta sẽ giới thiệu qua bài toán phân loại ảnh.
+0:00:56 - 0:00:58, Và ảnh ở đây sẽ có hai dạng.
+0:00:58 - 0:01:00, Loại đầu tiên là ảnh mức xám.
+0:01:00 - 0:01:07, Mỗi một pixel này sẽ biểu diễn bởi một giá trị màu.
+0:01:07 - 0:01:11, Và cái giá trị này thì thông thường sẽ biểu diễn bởi một con số.
+0:01:11 - 0:01:14, Từ 0 cho đến 255.
+0:01:14 - 0:01:18, Ví dụ như với ảnh Lena ở bên tay trái,
+0:01:18 - 0:01:21, thì cái dạng biểu diễn ở đây là mang tính chất minh họa thôi,
+0:01:21 - 0:01:26, thì nó sẽ mô tả bởi một cái ma trận,
+0:01:26 - 0:01:29, trong đó từng cái phần tử của ma trận nó sẽ nhận các cái giá trị
+0:01:29 - 0:01:31, từ 0 cho đến 255.
+0:01:31 - 0:01:35, Và ở đây chúng ta sẽ có các cái thông tin về bề ngang và bề cao,
+0:01:35 - 0:01:37, tương ứng là hai chiều không gian tấm ảnh.
+0:01:39 - 0:01:41, Đối với cái loại ảnh thứ hai đó là ảnh màu,
+0:01:41 - 0:01:47, và ảnh màu thì thông thường sẽ được biểu diễn bởi 3 kênh màu là red, green và blue,
+0:01:47 - 0:01:49, tương ứng là đỏ, xanh lá và xanh dương.
+0:01:49 - 0:01:51, Thì để tạo ra tấm ảnh màu này,
+0:01:51 - 0:01:54, chúng ta sẽ có 3 cái kênh Red, Green và Blue,
+0:01:54 - 0:01:57, và tương ứng từng cái kênh này,
+0:01:57 - 0:01:59, chúng ta sẽ có các cái ma trận.
+0:01:59 - 0:02:01, Đây là ma trận biểu diễn cho kênh Red,
+0:02:01 - 0:02:04, đây là ma trận biểu diễn cho kênh Green,
+0:02:04 - 0:02:06, rồi là kênh màu xanh lá,
+0:02:06 - 0:02:09, và đây sẽ là ma trận biểu diễn cho kênh Blue,
+0:02:09 - 0:02:10, tức là màu xanh dương.
+0:02:10 - 0:02:14, Và 3 kênh màu này nó sẽ tương ứng với một cái thông số,
+0:02:14 - 0:02:17, đó gọi là độ sâu.
+0:02:17 - 0:02:23, Và toàn bộ ma trận này khi chúng ta ghép lại với nhau,
+0:02:23 - 0:02:26, thì nó sẽ được gọi là một cái tensor.
+0:02:26 - 0:02:34, Rồi bây giờ chúng ta sẽ tiến hành sử dụng cái mạng Neural Network
+0:02:34 - 0:02:38, để đi giải quyết cái bài toán đó là bài toán phân loại ảnh.
+0:02:38 - 0:02:42, Bài toán phân loại ảnh thì đầu vào của mình sẽ là một cái tấm ảnh.
+0:02:42 - 0:02:49, Và đầu ra mình sẽ có các cái nhãn tương ứng để cho biết cái loại đối tượng ở bên trong tấm ảnh này là gì.
+0:02:49 - 0:02:55, Thì cái loại đối tượng này nó sẽ có thể là cái nhãn xe cộ, nhà cửa và con người.
+0:02:55 - 0:03:01, Thế thì nếu như cái mạng Neural Network này mà nhận diện đúng thì nó sẽ phải trả ra cái nhãn đó là con người.
+0:03:01 - 0:03:10, Và điều gì sẽ xảy ra nếu như chúng ta sẽ thiết kế một cái mạng Neural Network với một cái kích thước gọi là tối thiểu?
+0:03:10 - 0:03:19, Tối thiểu này thể hiện ở tấm ảnh đầu vào của mình, kích thước rất lớn.
+0:03:19 - 0:03:29, Với những chuẩn ảnh hiện tại, chúng ta thấy là Full HD có thể lên trên 800-1000 pixel trong 1 chiều ngang hoặc chiều dọc.
+0:03:29 - 0:03:37, Nhưng ở đây chúng ta đang xét 1 tấm ảnh tối thiểu có kích thước 200x200.
+0:03:37 - 0:03:45, Và cái mạng này chỉ bao gồm duy nhất là 1 layer.
+0:03:45 - 0:03:53, Và với cái mạng này thì số node của cái mạng Neural Network này,
+0:03:53 - 0:03:57, chúng ta sẽ cho đúng bằng số phần tử của ảnh đầu vào,
+0:03:57 - 0:04:01, thì 200 x 200 tương ứng là 40.000.
+0:04:01 - 0:04:07, Như vậy là layer duy nhất này sẽ có chứa 40 nghìn node.
+0:04:09 - 0:04:13, Và điều gì sẽ xảy ra với kiến trúc mạng tối thiểu này?
+0:04:13 - 0:04:20, Chúng ta sẽ xem xét tổng số trọng số của mạng tối thiểu này.
+0:04:20 - 0:04:26, Mỗi trọng số tương ứng là một cạnh nối từ điểm ảnh đầu vào đến một node đầu ra.
+0:04:26 - 0:04:33, Đầu ra, thì ở đây chúng ta sẽ có cái khái niệm gọi là fully connected, tức là kết nối đầy đủ.
+0:04:33 - 0:04:39, Mỗi một cái node đầu ra sẽ được kết nối đầy đủ với tất cả các điểm ảnh đầu vào.
+0:04:41 - 0:04:44, Thì số tham số trong trường hợp này sẽ là bao nhiêu?
+0:04:45 - 0:04:55, Do là kết nối đầy đủ nên chúng ta sẽ có số lượng tham số của cái tầng này là (200 x 200), tức là số điểm ảnh đầu vào, nhân với 40.000 đó chính là số node đầu ra.
+0:04:56 - 0:05:02, Và 40.000 đó chính là số node đầu ra.
+0:05:02 - 0:05:08, Như vậy (200 x 200) x 40.000 thì chúng ta có thể dùng máy tính để tính,
+0:05:08 - 0:05:14, nó sẽ ra là khoảng 1,6 tỷ tham số.
+0:05:14 - 0:05:19, Và với 1,6 tỷ tham số này thì chúng ta có kết luận là gì?
+0:05:19 - 0:05:25, Nó quá nhiều tham số. Thế thì khi số lượng tham số quá nhiều thì điều gì sẽ xảy ra?
+0:05:25 - 0:05:33, Khi số tham số của mình nhiều thì chúng ta sẽ bị hiện tượng nó gọi là overfitting.
+0:05:33 - 0:05:37, Nó sẽ bị hiện tượng overfitting.
+0:05:37 - 0:05:40, Overfitting nghĩa là sao? Khi mô hình của mình nó học,
+0:05:40 - 0:05:45, nó sẽ cố gắng bắt chước trên những mẫu dữ liệu mình đang có,
+0:05:45 - 0:05:53, nhưng mà không có tổng quát khi áp dụng lên trên những tập dữ liệu test thì độ chính xác cực kỳ thấp.
+0:05:53 - 0:05:58, Overfitting là tốt trên tập Train,
+0:06:00 - 0:06:06, nhưng rất là tệ trên tập Test.
+0:06:07 - 0:06:09, Thì điều này có thể minh họa,
+0:06:09 - 0:06:15, nó có thể lấy một ví dụ giống như trong giải hệ phương trình hồi xưa mình học.
+0:06:15 - 0:06:18, Nếu hệ phương trình của mình có 3 ẩn X, Y, Z,
+0:06:18 - 0:06:25, chúng ta cần bao nhiêu phương trình để giải được 3 cái ẩn này?
+0:06:25 - 0:06:29, Rõ ràng là nếu chúng ta chỉ có 2 hệ phương trình,
+0:06:29 - 0:06:38, (Ví dụ) 3x cộng cho 4y cộng cho 6z trừ 5 bằng 0,
+0:06:38 - 0:06:46, 7x trừ cho 6y cộng cho 3z cộng 1.
+0:06:46 - 0:06:53, Nếu như chỉ có 2 mẫu dữ liệu này, thì nó sẽ có vô số nghiệm X, Y, Z.
+0:06:53 - 0:07:04, Và xác suất để tìm ra được một nghiệm cuối của kiến trúc mạng này là xác suất của nó sẽ là bằng một phần vô cùng.
+0:07:04 - 0:07:08, Tại vì ở đây chúng ta có vô số nghiệm, tức là xác suất là bằng 0.
+0:07:08 - 0:07:19, Do đó muốn mà tìm ra được các nghiệm X, Y, Z, tức là tìm ra cái bộ trọng số đúng cho cái kiến trúc mạng này thì chúng ta sẽ phải cần thêm ít nhất một phương trình nữa.
+0:07:19 - 0:07:28, Một phương trình nữa, thì cứ mỗi một phương trình thì tương ứng nó sẽ là một cái mẫu dữ liệu.
+0:07:28 - 0:07:31, Một cái mẫu dữ liệu.
+0:07:31 - 0:07:39, Như vậy thì ở bên đây chúng ta có 1,6 tỷ tham số, tức là chúng ta sẽ cần đâu đó khoảng 1,6 tỷ mẫu dữ liệu.
+0:07:39 - 0:07:47, Cái mức độ nó tương đối là như vậy. Và các bạn tưởng tượng cái con số 1,6 tỷ này nó tương đương là dân số của Trung Quốc.
+0:07:47 - 0:07:53, Tức là với mỗi người Trung Quốc chúng ta sẽ phải yêu cầu họ đi tạo cho chúng ta một cái mẫu dữ liệu.
+0:07:53 - 0:07:56, Vì vậy đây là một con số vô cùng kinh khủng.
+0:07:56 - 0:08:02, Vì vậy với việc áp dụng mạng Neural Network cho loại dữ liệu ảnh,
+0:08:02 - 0:08:04, với kiến trúc rất tối thiểu,
+0:08:04 - 0:08:07, thì chúng ta sẽ bị ngay vấn đề đó là quá nhiều tham số,
+0:08:07 - 0:08:10, và gây ra hiện tượng overfitting.
+0:08:10 - 0:08:14, Vì vậy bây giờ làm sao để có thể giảm được số lượng tham số này?
+0:08:14 - 0:08:16, Thì chúng ta sẽ có một cơ chế đầu tiên,
+0:08:16 - 0:08:20, đó là thay vì chúng ta fully connected,
+0:08:20 - 0:08:24, thì chúng ta sẽ chuyển sang là Locally Connected, nghĩa là sao?
+0:08:24 - 0:08:27, Mỗi một cái node của mạng Neural,
+0:08:27 - 0:08:33, thay vì chúng ta kết nối với tất cả các điểm ảnh của ảnh đầu vào,
+0:08:33 - 0:08:36, thì bây giờ nó sẽ kết nối với một cái vùng cục bộ.
+0:08:36 - 0:08:43, Và cái vùng cục bộ này nó sẽ có cái kích thước mình lấy ví dụ như là 10 x 10,
+0:08:43 - 0:08:45, tức là bề ngang là 10 và bề cao là 10.
+0:08:45 - 0:08:48, Còn những cái điểm ảnh khác nó sẽ không kết nối,
+0:08:48 - 0:08:50, nó sẽ không có kết nối tới.
+0:08:50 - 0:08:56, Thì điểm ảnh sẽ tổng hợp thông tin trên một vùng cục bộ như thế này thôi.
+0:08:56 - 0:08:58, Vậy thì trong trường hợp này,
+0:08:58 - 0:09:02, khi mỗi 1 cái node sẽ được kết nối với 1 vùng có kích thước là 10 x 10,
+0:09:02 - 0:09:07, vậy thì hỏi tổng số tham số trong trường hợp này sẽ là bao nhiêu?
+0:09:07 - 0:09:11, Và đáp số đó chính là
+0:09:11 - 0:09:14, chúng ta có 40.000 node đúng không?
+0:09:14 - 0:09:18, Chúng ta có 40.000 node và mỗi node kết nối vào vùng 10 x 10.
+0:09:18 - 0:09:22, Thế như vậy tổng số tham số của mình sẽ là
+0:09:22 - 0:09:29, nhân vô các con số này sẽ ra là 4 triệu tham số.
+0:09:29 - 0:09:35, Vậy thì từ 1,6 tỷ nó đã giảm xuống còn 4 triệu.
+0:09:35 - 0:09:39, Tức là chúng ta cảm nhận được sự sụt giảm rất là đáng kể.
+0:09:39 - 0:09:42, Nhưng mà 4 triệu tham số này thì liệu là nhiều hay ít?
+0:09:42 - 0:09:45, Thì chúng ta cũng hiểu là 4 triệu tham số,
+0:09:45 - 0:09:47, thì chúng ta sẽ cần đâu đó xấp xỉ khoảng
+0:09:47 - 0:09:49, 4 triệu mẫu đi.
+0:10:06 - 0:10:09, Nhưng tuy nhiên nó cũng đã giảm một cách đáng kể,
+0:10:09 - 0:10:11, so với lại cái phiên bản là fully connected rồi.
+0:10:11 - 0:10:17, Vậy thì bây giờ làm thế nào để có thể giảm thêm được số lượng tham số này?
+0:10:17 - 0:10:18, 4 triệu còn bao nhiêu?
+0:10:18 - 0:10:20, Chúng ta làm sao có thể giảm được?
+0:10:20 - 0:10:24, Cơ chế đó chính là chia sẻ tham số giữa các node.
+0:10:24 - 0:10:25, Nghĩa là sao?
+0:10:25 - 0:10:31, Cái node này và node này được biểu diễn bởi hai màu đen và màu đỏ.
+0:10:31 - 0:10:33, Node này biểu diễn bởi màu xanh lá, xanh dương,
+0:10:33 - 0:10:36, thì nó đang sử dụng các bộ trọng số khác nhau.
+0:10:36 - 0:10:40, Và bây giờ mình sẽ tạo một cơ chế đó là dùng chung.
+0:10:40 - 0:10:51, Chúng ta sẽ chia sẻ bộ trọng số này, nghĩa là bộ trọng số dùng cho cái node này cũng chính là bộ trọng số dùng cho cái node này.
+0:10:51 - 0:10:58, Nó gọi là Weight-sharing Locally Connected.
+0:10:58 - 0:11:05, Tham số được chia sẻ trên toàn bộ các vùng của ảnh cần biến đổi, nghĩa là trên cái vị trí này,
+0:11:05 - 0:11:08, nó sẽ dùng cái bộ tham số giống như tại đây,
+0:11:08 - 0:11:13, dùng với cùng một cái bộ tham số trên cái vùng tại đây, tức là
+0:11:13 - 0:11:18, đó sẽ có một cái bộ tham số trượt qua hết toàn bộ tấm hình.
+0:11:18 - 0:11:23, Và cứ mỗi một cái lần mà chúng ta sẽ dừng ở đây,
+0:11:23 - 0:11:27, chúng ta sẽ trích rút thông tin và tạo ra giá trị cho cái node này.
+0:11:27 - 0:11:32, Và như vậy thì nhìn cái hình này chúng ta sẽ liên tưởng đến cái việc đó là,
+0:11:32 - 0:11:37, khi chúng ta thực hiện phép tổng hợp thông tin, thì nó sẽ tạo ra một tấm ảnh.
+0:11:37 - 0:11:45, Nó sẽ tạo ra một tấm ảnh khi chúng ta trượt một bộ tham số lên trên toàn bộ các vị trí ảnh.
+0:11:45 - 0:11:52, Trên đây chúng ta cũng sẽ trượt và điền các giá trị lên trên vùng ảnh output này.
+0:11:52 - 0:12:00, Đây chính là phép biến đổi convolution, một trong những phép biến đổi rất nổi tiếng trong lĩnh vực xử lý tín hiệu.
+0:12:00 - 0:12:05, Và phép biến đổi convolution này bản chất là một phép biến đổi tuyến tính.
+0:12:05 - 0:12:10, Chỉ là các thao tác nhân, sau đó cộng tổng hợp này thôi.
+0:12:10 - 0:12:15, Và ý nghĩa của phép biến đổi convolution này là nó trích rút đặc trưng hình ảnh.
+0:12:15 - 0:12:21, Ở đây chúng ta lấy ví dụ là một bộ lọc tên là Sobel, tên của một nhà khoa học.
+0:12:21 - 0:12:33, Thì các trọng số cho filter 1, 2, 1, 0, 0, 0, trừ 1, trừ 2, trừ 1.
+0:12:33 - 0:12:40, Ý nghĩa của tham số là nó sẽ lấy tổng các pixel ở bên tay trái
+0:12:40 - 0:12:43, trừ tổng các pixel bên tay phải.
+0:12:43 - 0:12:51, Khi chúng ta đem filter này trượt trên toàn bộ tấm hình này,
+0:12:51 - 0:12:54, khi trượt đến đâu thì tương ứng chúng ta sẽ điền giá trị màu,
+0:12:54 - 0:12:57, và giá trị kết quả sau khi thực hiện điền lên đây.
+0:12:57 - 0:13:00, Và chúng ta quan sát kết quả thì chúng ta thấy là
+0:13:00 - 0:13:02, cái feature này,
+0:13:02 - 0:13:05, cái đặc trưng này nó có tính chất gì?
+0:13:05 - 0:13:09, Đặc trưng này nó có tính chất đó là nó
+0:13:09 - 0:13:13, thể hiện được những cái biên cạnh theo chiều dọc,
+0:13:13 - 0:13:18, những cái biên theo chiều dọc.
+0:13:18 - 0:13:30, Và các nhà khoa học Sobel họ nghĩ ra trọng số cho filter này, đúng không?
+0:13:30 - 0:13:39, Tuy nhiên thì mạng CNN sau này nó sẽ tự học và tự điền các giá trị trọng số cho các kernel này dựa trên,
+0:13:39 - 0:13:47, và được huấn luyện. Như vậy, trọng số này thay vì được gắn nhãn bởi kinh nghiệm của các nhà khoa học,
+0:13:47 - 0:13:54, thì trọng số này sẽ được tự động điền bằng cách huấn luyện với thuật toán Gradient Descent,
+0:13:54 - 0:13:59, thuật toán Backpropagation, nó dựa trên ý tưởng của Gradient Descent.

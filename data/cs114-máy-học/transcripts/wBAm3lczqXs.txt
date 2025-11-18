@@ -1,0 +1,344 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:19 - 0:00:23, Hồi quy tuyến tính đa biến.
+0:00:26 - 0:00:31, Hồi quy tiến tính nhiều biến Multiple
+0:00:28 - 0:00:34, linear regression là phương pháp mở rộng
+0:00:31 - 0:00:36, của hồi quy tuyến tính một biến.
+0:00:34 - 0:00:39, Mô hình hóa mối quan hệ tuyến tính giữa
+0:00:36 - 0:00:41, nhiều biến đầu vào và một biến đầu ra
+0:00:39 - 0:00:44, liên tục.
+0:00:41 - 0:00:46, Mô hình của mối quan hệ này là một siêu
+0:00:44 - 0:00:48, phẳng hyperplan trong không gian nhiều
+0:00:46 - 0:00:51, chiều thay vì chỉ là một đường thẳng như
+0:00:48 - 0:00:53, trường hợp một biến đầu vào. Ví dụ như
+0:00:51 - 0:00:55, dự đoán giá nhà dựa trên các yếu tố như
+0:00:53 - 0:00:58, diện tích, vị trí, số phòng, năm xây
+0:00:55 - 0:01:00, dựng vân vân.
+0:00:58 - 0:01:03, Tại sao chúng ta cần nhiều biến? Bởi vì
+0:01:00 - 0:01:06, trong thực tế một kết quả output thường
+0:01:03 - 0:01:07, bị chi phối bởi nhiều yếu tố khác nhau.
+0:01:06 - 0:01:10, Ví dụ giá nhà không chỉ phụ thuộc vào
+0:01:07 - 0:01:13, diện tích mà còn phụ thuộc vào vị trí số
+0:01:10 - 0:01:16, phòng năm xây dựng. Nếu chỉ dùng một
+0:01:13 - 0:01:19, biến mô hình bỏ qua nhiều thông tin quan
+0:01:16 - 0:01:22, trọng dẫn tới dự đoán kém chính xác
+0:01:19 - 0:01:24, underfitting không phản ánh được đầy đủ
+0:01:22 - 0:01:26, mối quan hệ trong dữ liệu thực tế.
+0:01:24 - 0:01:28, Trong thực tế thì ta thường có nhiều đặc
+0:01:26 - 0:01:30, trưng để mô tả đối tượng. Việc sử dụng
+0:01:28 - 0:01:32, nhiều biến giúp chúng ta khai thác tối
+0:01:30 - 0:01:35, đa giá trị của dữ liệu và sử dụng nhiều
+0:01:32 - 0:01:37, biến giúp mô hình dự đoán chính xác hơn,
+0:01:35 - 0:01:42, có thể phân tích được ảnh hưởng của từng
+0:01:37 - 0:01:42, yếu tố đến kết quả đầu ra.
+0:01:42 - 0:01:46, Để minh họa cụ thể cho bài toán hồi quy
+0:01:44 - 0:01:48, tuyến tính nhiều biến, chúng ta sẽ sử
+0:01:46 - 0:01:50, dụng một bộ dữ liệu giả lập về giá nhà.
+0:01:48 - 0:01:53, Trong bảng này thì mỗi dòng đại diện cho
+0:01:50 - 0:01:55, một căn nhà với các thông tin đặc chân
+0:01:53 - 0:01:58, như diện tích mét vuông, số phòng ngủ,
+0:01:55 - 0:02:00, năm xây dựng, tình trạng tổng thể, đánh
+0:01:58 - 0:02:02, giá chất lượng theo thang điểm từ 1 đến
+0:02:00 - 0:02:04, 10. Và cột cuối cùng là giá nhà thực tế
+0:02:02 - 0:02:06, tính bằng đơn vị triệu Việt Nam đồng.
+0:02:04 - 0:02:08, Đây chính là biến đầu ra mà chúng ta
+0:02:06 - 0:02:09, muốn dự đoán.
+0:02:08 - 0:02:12, Với dữ liệu như thế này thì mô hình sẽ
+0:02:09 - 0:02:14, không chỉ dựa vào một yếu tố mà sẽ học
+0:02:12 - 0:02:17, cách kết hợp đồng thời nhiều yếu tố từ
+0:02:14 - 0:02:19, đó đưa ra giá trị dự đoán hợp lý và xát
+0:02:17 - 0:02:21, thực tế hơn.
+0:02:19 - 0:02:23, Như vậy bài toán dự đoán giá nhà không
+0:02:21 - 0:02:25, còn đơn giản là càng rộng càng đắc mà
+0:02:23 - 0:02:30, còn phải xét đến số phòng, độ mới, chất
+0:02:25 - 0:02:30, lượng tổng thể và nhiều yếu tố khác.
+0:02:31 - 0:02:35, Tương tự thì chúng ta sẽ
+0:02:35 - 0:02:40, thiết kế cái mô hình toán học cho bài
+0:02:36 - 0:02:42, toán hồi ký tuyến tính nhiều biến thì nó
+0:02:40 - 0:02:46, sẽ được mô tả bằng một tập hợp các cái
+0:02:42 - 0:02:48, đặc trưng. Ở đây là XJ là feature thứ J
+0:02:46 - 0:02:52, với J chạy từ 1 đến n. Trong đó N là số
+0:02:48 - 0:02:54, lượng đặc trưng. XY
+0:02:52 - 0:02:57, là vectơ đặc trưng của mẫu thứ y. Ví dụ
+0:02:54 - 0:03:00, nếu y = 2 thì chúng ta sẽ thấy cái giống
+0:02:57 - 0:03:04, như tương tự biểu diễn dưới dạng à biểu
+0:03:00 - 0:03:04, đồ vecơ cột.
+0:03:04 - 0:03:09, Thì chúng ta vừa học cách mô tả của một
+0:03:06 - 0:03:12, đối tượng ví dụ như căn nhà bằng vecơ
+0:03:09 - 0:03:13, đặc trưng x để dự đoán giá trị. Ví dụ
+0:03:12 - 0:03:16, giá nhà thì chúng ta xây dựng một mô
+0:03:13 - 0:03:20, hình hồi quyến tính. Trong đó mỗi đặc
+0:03:16 - 0:03:21, chân được gán với một trọng số à WJ. Thế
+0:03:20 - 0:03:24, thì như vậy chúng ta sẽ có công thức
+0:03:21 - 0:03:28, tổng quát là FWBX
+0:03:24 - 0:03:32, thì bằng W1X1 + W2X2
+0:03:28 - 0:03:34, cộng WN Xn + B.
+0:03:32 - 0:03:36, Thì ở đây B là hệ số chặn, X là vectơ
+0:03:34 - 0:03:39, đặc trưng của một đối tượng và WJ là
+0:03:36 - 0:03:42, trọng số hệ số tương ứng với đặc trưng
+0:03:39 - 0:03:44, XJ.
+0:03:42 - 0:03:46, Để công thức gọn hơn thì chúng ta dùng
+0:03:44 - 0:03:49, ký hiệu vecơ gom tất cả trọng số vào
+0:03:46 - 0:03:53, thành vectơ W. Tất cả các đặc trưng thì
+0:03:49 - 0:03:56, thành vectơ x. Và khi đó thì mô hình
+0:03:53 - 0:03:59, chúng ta sẽ còn chỉ còn viết lại là w x
+0:03:56 - 0:04:02, + pi và trong đó wx là tích vô hướng hai
+0:03:59 - 0:04:02, vectơ.
+0:04:02 - 0:04:08, Ở phần trước thì chúng ta biết hàm mất
+0:04:05 - 0:04:10, mát MSC dùng để đo lường mức độ sai lệch
+0:04:08 - 0:04:13, giữa giá trị thực tế và giá trị dự đoán
+0:04:10 - 0:04:15, của mô hình. Thì khi mổ rộng sang hồi
+0:04:13 - 0:04:17, quy nhiều biến thì chúng ta vẫn sử dụng
+0:04:15 - 0:04:19, MSC như là hàm bất mắt lot function và
+0:04:17 - 0:04:21, định nghĩa hàm chi phí cost function
+0:04:19 - 0:04:25, JWB.
+0:04:21 - 0:04:29, À như chúng ta thấy trên slide ở đây.
+0:04:25 - 0:04:32, Ở đây thì W là trọng vectơ trọng số và
+0:04:29 - 0:04:35, hệ số chặn. XY là vectơ đặc trưng của
+0:04:32 - 0:04:37, mẫu thứ y và M là số lượng mẫu trong tập
+0:04:35 - 0:04:41, huấn luyện. Mục tiêu của thuật toán là
+0:04:37 - 0:04:43, tìm W và B sao cho hàm chi phí JW WB đạt
+0:04:41 - 0:04:48, giá trị nhỏ nhất, tức là mô hình dự đoán
+0:04:43 - 0:04:48, càng gần với giá trị thực tế càng tốt.
+0:04:51 - 0:04:55, Để giải cái bài toán tối ưu này thì
+0:04:53 - 0:04:57, chúng ta dùng thuật toán gradient design
+0:04:55 - 0:04:59, tương tự giống như hồi quy tiến tính một
+0:04:57 - 0:05:02, biến. Thì trước khi đi vào cụ thể thì
+0:04:59 - 0:05:04, chúng ta hãy nhìn vào một cách tổng quát
+0:05:02 - 0:05:06, của thuậc toán gradient sau hiệu kỳ tiến
+0:05:04 - 0:05:08, tính nhiều biến.
+0:05:06 - 0:05:10, Thì ở mỗi bước lập thì chúng ta sẽ cập
+0:05:08 - 0:05:12, nhật lại trọng số của WJ theo hướng
+0:05:10 - 0:05:16, ngược lại với đạo hàm riêng của hàm chi
+0:05:12 - 0:05:20, phí JW đối với WJ với tốc độ điều chỉnh
+0:05:16 - 0:05:20, do tham số lên ray quyết định.
+0:05:25 - 0:05:29, Ở đây thì chúng ta có công thức của đạo
+0:05:27 - 0:05:33, hình riêng của hàm chi phí J theo từng
+0:05:29 - 0:05:37, WJ và từ đó thì chúng ta sẽ có công thức
+0:05:33 - 0:05:40, cập nhật cho từng trọng số WJ và pi là
+0:05:37 - 0:05:43, như trên hình mà chúng ta thấy. Cái này
+0:05:40 - 0:05:45, các bạn có thể kiểm tra lại chi tiết
+0:05:43 - 0:05:48, hơn. Và cuối cùng thì đây là cái thuật
+0:05:45 - 0:05:51, toán gradient des thì nó cũng sẽ gồm có
+0:05:48 - 0:05:53, ba bước chính. Thứ nhất là khởi tạo và
+0:05:51 - 0:05:55, thông thường thì các giá trị khởi tạo
+0:05:53 - 0:05:57, các giá trị của trọng số và hệ số chặn
+0:05:55 - 0:06:00, thường là không hoặc là lấy một cái giá
+0:05:57 - 0:06:02, trị ngẫu nhiên và chúng ta lập cho tới
+0:06:00 - 0:06:04, khi hội tụ thì chúng ta sẽ tính đạo hàm
+0:06:02 - 0:06:07, chi phí theo từng
+0:06:04 - 0:06:10, wj và pi và sau đó chúng ta sẽ cập nhật
+0:06:07 - 0:06:14, lại các trọng số đó theo cái tốc độ học
+0:06:10 - 0:06:17, learning ray alpha và dừng lại khi thuật
+0:06:14 - 0:06:19, toán nó hội tụ tức là khi ví dụ như khi
+0:06:17 - 0:06:23, à các thay đổi của đập
+0:06:19 - 0:06:26, L và B rất nhỏ hoặc là số vòng lọc đạt
+0:06:23 - 0:06:26, tối đa.
+0:06:32 - 0:06:36, Một số vấn đề khi huấn luyện.
+0:06:36 - 0:06:40, Chúng ta sẽ tìm hiểu một kỹ thuật giúp
+0:06:38 - 0:06:42, radian design hoạt động hiệu quả hơn
+0:06:40 - 0:06:44, trong trường hợp nhiều đặc trưng đó là
+0:06:42 - 0:06:47, feature scaling.
+0:06:44 - 0:06:49, Tỷ lệ hóa đặc trưng. Trong thực tế thì
+0:06:47 - 0:06:51, các đặc trưng trong dữ liệu thường có
+0:06:49 - 0:06:55, giải giá trị rất khác nhau. Ví dụ như
+0:06:51 - 0:06:57, khi dự đoán giá nhà, diện tích giá nhà
+0:06:55 - 0:07:00, có thể từ vài trăm đến vài nghìn. Trong
+0:06:57 - 0:07:02, khi đó số phòng ngủ thì chỉ từ 0 đến 5.
+0:07:00 - 0:07:04, Điều này dẫn đến việc các trọng số tương
+0:07:02 - 0:07:05, ứng cũng phải điều chỉnh theo. Trọng số
+0:07:04 - 0:07:08, gắn với đặc trưng lớn thường nhỏ, còn
+0:07:05 - 0:07:10, đặc trưng nhỏ thì ngược lại. Nếu ta vẽ
+0:07:08 - 0:07:12, các tham số và hàm chi phí thì sẽ thấy
+0:07:10 - 0:07:14, các đường đồng mức bị kéo dài và dẹt
+0:07:12 - 0:07:16, khiến cho gradient des phải đi loanh
+0:07:14 - 0:07:20, quanh mất nhiều thời gian để hội tụ cực
+0:07:16 - 0:07:22, tiểu. Giải pháp là chúng ta sẽ dùng vure
+0:07:20 - 0:07:24, scaling tức là biến đổi các đặc trưng về
+0:07:22 - 0:07:26, cùng một giải giá trị. Ví dụ như đều
+0:07:24 - 0:07:28, trong khoảng từ 0 đến 1. Khi đó các
+0:07:26 - 0:07:30, đường đồng bức sẽ trở nên tròn hơn
+0:07:28 - 0:07:33, gradient desen có thể đi thẳng tới cực
+0:07:30 - 0:07:34, tiểu nhanh hơn. Tóm lại là khi có các
+0:07:33 - 0:07:36, giải giá trị đặt khác biệt thì việc
+0:07:34 - 0:07:41, chuẩn hóa giúp tăng tốc và ổn định quá
+0:07:36 - 0:07:41, trình hóa tối ưu hóa của gradient desen.
+0:07:43 - 0:07:46, Chúng ta sẽ tìm hiểu về một phương pháp
+0:07:44 - 0:07:49, feature scan rất phổ biến đó là min
+0:07:46 - 0:07:51, normalization. Thì min normalization là
+0:07:49 - 0:07:54, một kỹ thuật để đưa dữ liệu về quanh giá
+0:07:51 - 0:07:56, trị zero dựa vào giá trị trung bình và
+0:07:54 - 0:07:58, nổ rộng của khoảng giá trị. Thì cách làm
+0:07:56 - 0:08:00, này giúp các feature có than đo khác
+0:07:58 - 0:08:02, biệt được đưa về cùng một mặt bằng và từ
+0:08:00 - 0:08:05, đó giúp mô hình machine learning học
+0:08:02 - 0:08:07, hiệu quả hơn. Công thức của min
+0:08:05 - 0:08:08, nobelization được trình bày như trên
+0:08:07 - 0:08:10, hình vẽ.
+0:08:08 - 0:08:12, Ở trong đó thì chúng ta thấy thấy sau
+0:08:10 - 0:08:15, khi giá trị sau khi hồi tụ thì bằng giá
+0:08:12 - 0:08:19, trị góc trừ tức là giá trị trung bình
+0:08:15 - 0:08:22, min của feature và và chia cho x max trừ
+0:08:19 - 0:08:24, x min là lần lượt là giá trị lớn nhất và
+0:08:22 - 0:08:25, nhỏ nhất của feature. Thì sau khi áp
+0:08:24 - 0:08:27, dụng công thức này các giá trị của
+0:08:25 - 0:08:29, feature sẽ được phân bố quanh 0 nhưng
+0:08:27 - 0:08:33, giá trị có thể nằm ngoài -1 hoặc 1 tùy
+0:08:29 - 0:08:33, vào phân bối của dữ liệu.
+0:08:35 - 0:08:40, Chúng ta sẽ cùng phân tích ưu và nhược
+0:08:37 - 0:08:42, điểm và khi nào nên sử dụng phương pháp
+0:08:40 - 0:08:44, min normalization. Đối với ưu điểm thì
+0:08:42 - 0:08:46, min normalization giúp đưa các feature
+0:08:44 - 0:08:49, về quan zero và từ đó giảm được hiện
+0:08:46 - 0:08:51, tượng byas do các feature có scale khác
+0:08:49 - 0:08:54, biệt. Ngoài ra phương pháp này rất đơn
+0:08:51 - 0:08:57, giản và dễ tính toán phù hợp, dễ để áp
+0:08:54 - 0:08:58, dụng nhanh trong nhiều trường hợp. Tuy
+0:08:57 - 0:09:00, nhiên phương pháp này cũng có một số
+0:08:58 - 0:09:02, nhược điểm.
+0:09:00 - 0:09:04, Min normalization khá nhạy cảm với
+0:09:02 - 0:09:07, outlier. Tức là nếu dữ liệu có các giá
+0:09:04 - 0:09:09, trị ngoại lệ lớn thì giá trị max hoặc
+0:09:07 - 0:09:11, min sẽ bị kéo lên làm cho kết quả chuẩn
+0:09:09 - 0:09:13, hóa không còn ý nghĩa. Phương pháp này
+0:09:11 - 0:09:16, cũng không phù hợp với các dữ liệu có
+0:09:13 - 0:09:17, phân phối lệch mạnh vì trung bình và
+0:09:16 - 0:09:20, khoảng giá trị sẽ không phản ánh đúng
+0:09:17 - 0:09:23, bản chất của dữ liệu. Vậy khi nào chúng
+0:09:20 - 0:09:26, ta nên dùng min normalization? Thứ nhất
+0:09:23 - 0:09:27, là dữ liệu bạn không có outlier quá lớn.
+0:09:26 - 0:09:29, Và thứ hai khi bạn muốn các feature được
+0:09:27 - 0:09:31, chuẩn hóa về quanh không nhưng vẫn giữ
+0:09:29 - 0:09:34, được tỉ lệ giờ các giá trị chứ không bị
+0:09:31 - 0:09:38, nén vào một khoảng cố định như min max
+0:09:34 - 0:09:40, scaling từ -1 tới 1. Như vậy
+0:09:38 - 0:09:41, normalization min normalization là một
+0:09:40 - 0:09:43, lựa chọn tốt trong các trường hợp dữ
+0:09:41 - 0:09:46, liệu khá sạch không có ngoại lệ lớn và
+0:09:43 - 0:09:48, bạn muốn giữ lại sự tỷ lệ giữa các giá
+0:09:46 - 0:09:49, trị góc
+0:09:48 - 0:09:52, chúng ta sẽ tìm hiểu về một phương pháp
+0:09:49 - 0:09:53, chuẩn khoác khóa khác đó là Z score
+0:09:52 - 0:09:55, normalization hay còn gọi là
+0:09:53 - 0:09:57, standardization
+0:09:55 - 0:10:00, thì khác với min normalization yes score
+0:09:57 - 0:10:02, normalization chuẩn hóa dữ liệu dựa trên
+0:10:00 - 0:10:06, trung bình và độ lệch chuẩn của từng
+0:10:02 - 0:10:09, features sau khi áp dụng phương pháp này
+0:10:06 - 0:10:11, các giá trị sẽ được chuyển về có dạng
+0:10:09 - 0:10:14, trung bình là 0 và độ lịch chuẩn là 1.
+0:10:11 - 0:10:16, Công thức của score như sau. Tức x' thì
+0:10:14 - 0:10:18, bằng x là giá trị góc ban đầu trừ mi và
+0:10:16 - 0:10:20, chia cho
+0:10:18 - 0:10:22, sigma.
+0:10:20 - 0:10:26, Trong đó thì mi là giá trị trung bình
+0:10:22 - 0:10:26, của feature và sigma là độ lịch chuẩn.
+0:10:28 - 0:10:34, Ưu điểm của
+0:10:31 - 0:10:37, Z score normalization là giúp dữ liệu có
+0:10:34 - 0:10:39, phân phối gần chuẩn được chuẩn hóa hiệu
+0:10:37 - 0:10:40, quả loại bỏ ảnh hưởng của scale đồng
+0:10:39 - 0:10:42, thời không bị giới hạn trong một khoảng
+0:10:40 - 0:10:45, cố định như min max scaling. Tuy nhiên
+0:10:42 - 0:10:47, nếu dữ liệu có outl và giá trị chuẩn hóa
+0:10:45 - 0:10:49, có thể vượt xa khoảng -11 nên chúng ta
+0:10:47 - 0:10:52, cũng cần lưu ý khi áp dụng phương pháp
+0:10:49 - 0:10:54, này.
+0:10:52 - 0:10:56, Feature engineering. Chúng ta sẽ cùng
+0:10:54 - 0:10:57, tìm hiểu về Future Engineering, một biết
+0:10:56 - 0:11:00, rất quan trọng trong quá trình xây dựng
+0:10:57 - 0:11:02, mô hình học máy. Feuture Engineering hay
+0:11:00 - 0:11:04, còn gọi là kỹ thuật xây dựng đặc trưng
+0:11:02 - 0:11:06, là quá trình tạo ra hoặc biến đổi các
+0:11:04 - 0:11:08, đặc trưng đầu vào cho mô hình học máy.
+0:11:06 - 0:11:10, Có nhiều cách thực hiện điều này. Điều
+0:11:08 - 0:11:13, đơn giản nhất là biến đổi feature gốc.
+0:11:10 - 0:11:16, Ví dụ như lấy lock bình phương hoặc lấy
+0:11:13 - 0:11:18, căn bậc hai của một features. Ngoài ra
+0:11:16 - 0:11:21, chúng ta cũng có thể kết hợp các feature
+0:11:18 - 0:11:22, góc với nhau để tạo ra feature mới. Ví
+0:11:21 - 0:11:24, dụ điện hình với dữ liệu nhà đất thay vì
+0:11:22 - 0:11:26, chỉ dùng chiều rộng và chiều sau thì
+0:11:24 - 0:11:30, chúng ta có thể tạo ra thêm future diện
+0:11:26 - 0:11:32, tích bằng cách nhân hai giá trị này lại.
+0:11:30 - 0:11:33, Việc xây dựng được những đặc trưng phù
+0:11:32 - 0:11:35, hợp sẽ giúp mô hình học tốt hơn và dự
+0:11:33 - 0:11:37, đoán chính xác hơn. Thậm chí trong nhiều
+0:11:35 - 0:11:39, trường hợp thực tế, Feature Engineering
+0:11:37 - 0:11:42, còn quan trọng hơn cả việc lựa chọn thực
+0:11:39 - 0:11:44, toán học máy. Nhờ Feature Engineering,
+0:11:42 - 0:11:46, mô hình có khả năng khai thác và tận
+0:11:44 - 0:11:48, dụng các mối quan hệ phức tạp ẩn trong
+0:11:46 - 0:11:50, dữ liệu mà các mô hình tuyến tính thông
+0:11:48 - 0:11:52, thường có thể bỏ qua. Đây chính là lý do
+0:11:50 - 0:11:54, mà kỹ thuật này luôn được xem là một
+0:11:52 - 0:11:58, trong những yếu tố then chốt quyết định
+0:11:54 - 0:12:01, đến hiệu quả của hệ thống học máy.
+0:11:58 - 0:12:03, Polynomial regression. Tiếp theo thì
+0:12:01 - 0:12:04, chúng ta sẽ tìm hiểu về polynomial
+0:12:03 - 0:12:07, regression hay còn gọi là hồi quy đa
+0:12:04 - 0:12:09, thức. Polynomial regression là một mở
+0:12:07 - 0:12:11, rộng của linear regression cho phép mô
+0:12:09 - 0:12:13, hình hóa các mối quan hệ phi tuyến tính
+0:12:11 - 0:12:16, giữa đặc chân đầu vào và giá trị cần dự
+0:12:13 - 0:12:18, đoán. Cụ thể, thay vì sử dụng feature
+0:12:16 - 0:12:20, góc thì chúng ta sẽ tạo thêm các feature
+0:12:18 - 0:12:23, mới bằng cách lấy luy thừa của feature
+0:12:20 - 0:12:26, ví dụ như x bình x m 3. Vậy tại sao
+0:12:23 - 0:12:28, chúng ta cần polynomial regression?
+0:12:26 - 0:12:30, Thì linear regression chỉ phù hợp khi dữ
+0:12:28 - 0:12:32, liệu có xu hướng tiến tính. Tức là các
+0:12:30 - 0:12:35, điểm dữ liệu nằm gần một đường thẳng.
+0:12:32 - 0:12:37, Tuy nhiên trong thực tế nhiều bài toán
+0:12:35 - 0:12:39, có dữ liệu dạng công hoặc phức tạp khi
+0:12:37 - 0:12:41, đó line region có thể không mô hình hóa
+0:12:39 - 0:12:43, tốt mối quan hệ giữa feature và target.
+0:12:41 - 0:12:45, Thế thì polynomial regression sẽ giúp
+0:12:43 - 0:12:47, chúng ta khắc phục nhược điểm này bằng
+0:12:45 - 0:12:50, cách cho phép mô hình học các mối quan
+0:12:47 - 0:12:52, hệ phi tuyến. Ví dụ với các bài toán dự
+0:12:50 - 0:12:54, báo giá nhà theo diện tích, nếu dữ liệu
+0:12:52 - 0:12:56, thực tế có dạng cong thì lini regression
+0:12:54 - 0:12:58, sẽ không cho kết quả chính xác. Nhưng
+0:12:56 - 0:13:01, với polynomial regression, mô hình có
+0:12:58 - 0:13:05, thể fitting được một đường cong phù hợp
+0:13:01 - 0:13:05, hơn với xu hướng dữ liệu của thực tế.
+0:13:08 - 0:13:12, Tiếp theo thì chúng ta sẽ xem cách xây
+0:13:09 - 0:13:13, dựng polynomial regression và cách kỹ
+0:13:12 - 0:13:16, thuật này liên quan đến feature
+0:13:13 - 0:13:17, engineering. Thực chất thì polynomial
+0:13:16 - 0:13:18, regression là một ví dụ điển hình của
+0:13:17 - 0:13:21, việc xây dựng đặc chân feature
+0:13:18 - 0:13:22, engineering. Ở đây thay vì chỉ sử dụng
+0:13:21 - 0:13:24, feature gốc thì chúng ta chủ động tạo ra
+0:13:22 - 0:13:26, các feature mới bằng cách lấy lũy thừa
+0:13:24 - 0:13:29, bậc hai, bậc ba hoặc áp dụng các phép
+0:13:26 - 0:13:30, biến đổi phi tuyến khác lên feature gốc.
+0:13:29 - 0:13:32, Ví dụ với dữ liệu diện tích giá nhà thì
+0:13:30 - 0:13:35, có thể tạo thêm diện tích bình phương
+0:13:32 - 0:13:37, hoặc diện tích mũ 3. Và sau khi mở rộng
+0:13:35 - 0:13:39, tập feature như vậy thì chúng ta vẫn áp
+0:13:37 - 0:13:42, dụng linear regression để huấn luyện mô
+0:13:39 - 0:13:43, hình trên các feature mới này. Nhờ quá
+0:13:42 - 0:13:45, trình feature engineering, mô hình không
+0:13:43 - 0:13:47, còn bị giới hạn trong việc học các mối
+0:13:45 - 0:13:49, quan hệ tuyến tính mà có thể học được cả
+0:13:47 - 0:13:52, mối quan hệ phi tuyến giữa feature và
+0:13:49 - 0:13:55, giá trị báo. Tuy nhiên thì khi sử dụng
+0:13:52 - 0:13:57, polynomial regression có một số điểm cần
+0:13:55 - 0:13:59, lưu ý đó là các feature bậc cao thường
+0:13:57 - 0:14:01, có giá trị rất lớn gây mất cân bằng và
+0:13:59 - 0:14:04, làm cho quá trình tối ưu trở nên khó
+0:14:01 - 0:14:06, khăn. Vì vậy chúng ta nên thực hiện
+0:14:04 - 0:14:09, feature scaling để chuẩn hóa tất cả các
+0:14:06 - 0:14:10, feature về cùng một thang đo. Ngoài ra
+0:14:09 - 0:14:12, việc lựa chọn bậc đa thức cũng rất quan
+0:14:10 - 0:14:14, trọng. Nếu chọn bậc đ thấp quá thấp thì
+0:14:12 - 0:14:16, mô hình sẽ không đủ linh hoạt under
+0:14:14 - 0:14:18, fitting. Còn nếu mô hình chọn bậc quá
+0:14:16 - 0:14:20, cao thì sẽ dẫn đến hiện tượng
+0:14:18 - 0:14:22, overfitting tức là mô hình học thuộc
+0:14:20 - 0:14:26, lòng dữ liệu mà không tổng quạt khóa
+0:14:22 - 0:14:26, được cho dữ liệu mới.
+0:14:31 - 0:14:38, Đây là các cái ví dụ liên quan tới
+0:14:36 - 0:14:43, underfitting, overfitting và good fit mà
+0:14:38 - 0:14:43, chúng ta đã đề cập ở bài trước.
+0:14:46 - 0:14:58, [âm nhạc]

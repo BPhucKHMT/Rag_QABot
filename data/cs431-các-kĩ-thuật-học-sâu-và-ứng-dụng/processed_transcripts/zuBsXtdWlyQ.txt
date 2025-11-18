@@ -1,0 +1,87 @@
+0:00:00 - 0:00:07, Tiếp theo, chúng ta sẽ cùng tìm hiểu về lịch sử hình thành và thành tựu của trí tuệ nhân tạo nói chung.
+0:00:07 - 0:00:16, Và học sâu Deep Learning nói riêng, thì thuật ngữ về AI, trí tuệ nhân tạo hay còn gọi là tên tiếng Anh là Artificial Intelligence.
+0:00:16 - 0:00:20, cùng tìm hiểu về lịch sử hình thành và thành tựu của trí tuệ nhân tạo nói chung
+0:00:20 - 0:00:23, và học sâu Deep Learning nói riêng
+0:00:23 - 0:00:27, thì thuật ngữ về AI, trí tuệ nhân tạo
+0:00:27 - 0:00:30, hay còn gọi là tên tiếng Anh là Artificial Intelligence
+0:00:30 - 0:00:32, không phải có trong vài năm ở đây đâu
+0:00:32 - 0:00:35, mà thật ra là ngay từ khi máy tính ra đời
+0:00:35 - 0:00:37, thì các nhà khoa học máy tính
+0:00:37 - 0:00:40, họ đã nung nấu cho mình một ước mơ đó là làm sao
+0:00:40 - 0:04:02, cho máy tính có khả năng thông minh như con người
+0:00:44 - 0:04:03, Và khái niệm này đã có từ những năm 1950.
+0:00:49 - 0:04:04, Sau đó thì các thành tựu của AI thực ra tại thời điểm này cũng không có quá nhiều.
+0:00:55 - 0:04:05, Mãi cho đến khi vào những năm 1980, đó là các nhà khoa học họ mới thấy rằng là
+0:01:01 - 0:04:06, nếu mà chúng ta thiết kế các thuật toán một cách tường minh, tức là có giải thuật rõ ràng
+0:01:07 - 0:04:07, thì nó sẽ bị mất đi tính linh động
+0:01:10 - 0:04:08, mà linh động là một cái thứ mà trí tuệ nhân tạo cần phải có
+0:01:15 - 0:04:09, tại vì chúng ta biết rằng là bộ não của chúng ta nó có khả năng linh động
+0:01:18 - 0:04:10, có khả năng học và phát triển theo thời gian
+0:01:21 - 0:04:11, do đó thì cái khái niệm Machine Learning, máy học đã có từ thời điểm này
+0:01:26 - 0:04:12, và ý tưởng của máy học đó chính là gì?
+0:01:30 - 0:04:13, là chương trình của chúng ta sẽ không phát triển một cách tường minh
+0:01:33 - 0:04:14, mà chúng ta sẽ được học từ dữ liệu
+0:01:36 - 0:04:15, Tức là nếu như chúng ta nạp cho máy tính dữ liệu thì nó sẽ thông minh dần theo thời gian
+0:01:41 - 0:04:16, Còn nếu chúng ta ngưng không nạp cho nó dữ liệu thì nó sẽ cứ giữ nguyên như vậy hoài
+0:01:46 - 0:04:17, Thì cái khái niệm về Machine Learning nó đã có từ thời điểm này
+0:01:49 - 0:04:18, Sau đó thì đến những năm 2010 và đặc biệt là cột mốc năm 2012
+0:01:55 - 0:04:19, Vào năm này thì mô hình học sâu đã có những bước phát triển nhảy vọt
+0:02:01 - 0:04:20, cho kết quả phân loại hình ảnh tốt hơn so với các phương pháp máy học truyền thống
+0:02:08 - 0:04:21, và kỷ nguyên của Deep Learning có từ thời điểm này.
+0:02:16 - 0:04:22, Sau đây là một số thành tựu của Deep Learning
+0:02:19 - 0:04:23, có thể nói là nổi tiếng nhất và được cộng đồng biết nhiều nhất
+0:02:23 - 0:04:24, đó chính là thông qua các game máy tính có khả năng chiến thắng được các chuyên gia trong lĩnh vực
+0:02:30 - 0:04:25, Ví dụ như máy tính có thể thắng được các kỳ thủ cờ vây
+0:02:34 - 0:04:26, máy tính có thể thắng được các game thủ trong các game như StarCraft, WarCraft
+0:02:42 - 0:04:27, Rồi máy tính cũng có thể thay thế cho các chuyên gia trong lĩnh vực xử lý dữ liệu về tài chính
+0:02:50 - 0:04:28, Rồi máy tính cũng có khả năng xử lý ảnh
+0:02:53 - 0:04:29, Ví dụ như gần đây chúng ta thấy là có các hệ thống xe tự lái
+0:02:58 - 0:04:30, thì xe tự lái này sẽ vận dụng những công nghệ liên quan đến xử lý hình ảnh.
+0:03:02 - 0:04:31, Rồi ứng dụng của Amazon Go, tức là chúng ta sẽ đến các cửa hàng tiện lợi
+0:03:08 - 0:04:32, và chúng ta chỉ cần lấy hàng đi và máy tính sẽ tự động trừ tiền của chúng ta
+0:03:12 - 0:04:33, dựa trên việc quan sát các hàng chúng ta lấy ra khỏi cửa hàng tiện lợi này.
+0:03:18 - 0:04:34, Ngoài ra thì chúng ta còn rất nhiều những ứng dụng liên quan đến xử lý hình ảnh khác.
+0:03:23 - 0:04:35, Rồi gần đây thì chúng ta thấy cái thành tựu trong xử lý ngôn ngữ tự nhiên
+0:03:29 - 0:04:36, và chúng ta thấy có rất nhiều những cái ứng dụng, ví dụ như là ChatGPT, Copilot
+0:03:34 - 0:04:37, Ví dụ Copilot là lập trình viên, chúng ta có thể sử dụng Copilot
+0:03:40 - 0:04:38, để mà lập trình một cách rất là nhanh chóng, chúng ta chỉ cần mô tả cho máy tính biết
+0:03:44 - 0:04:39, là chúng ta đang muốn viết những cái hàm cơ bản nào
+0:03:46 - 0:04:40, máy tính sẽ tự tạo cho chúng ta những cái hàm cơ bản đó
+0:03:51 - 0:04:41, và thực ra chúng ta cũng có thể sửa lại để cho chương trình nó có thể hoàn thiện tốt hơn
+0:03:57 - 0:04:42, nhưng mà cơ bản phần code mà máy tính tạo ra nó cũng đã chiếm đến 70-80%
+0:04:02 - 0:04:43, giúp chúng ta giảm được thời gian rất là đáng kể.
+0:04:06 - 0:04:44, Rồi máy tính, trí tuệ nhân tạo đã có rất nhiều thành tựu trong những lĩnh vực ứng dụng
+0:04:14 - 0:04:45, như là y sinh, chăm sóc sức khỏe, tài chính, thương mại điện tử
+0:04:18 - 0:04:46, hoặc là cho môi trường thông minh thì chắc hẳn chúng ta biết xe tự lái,
+0:04:23 - 0:04:47, rồi các ứng dụng trợ lý ảo, Cortana, rồi chúng ta cũng có thể điều khiển TV bằng giọng nói,
+0:04:31 - 0:04:48, có thể đăng nhập các thiết bị di động bằng gương mặt,
+0:04:34 - 0:04:49, thì đây là những ứng dụng của Deep Learning để làm cho môi trường tương tác của chúng ta ngày càng thông minh hơn.
+0:04:39 - 0:04:50, Về demo thì chúng ta có thể tham khảo với đường dẫn như sau,
+0:04:47 - 0:04:51, đó là github.com/features/Copilot
+0:04:49 - 0:04:51, thì trong cái demo này
+0:04:51 - 0:04:53, thì chúng ta sẽ thấy máy tính
+0:04:53 - 0:04:55, sẽ tự động tạo ra
+0:04:55 - 0:04:57, các cái dòng code để hỗ trợ cho
+0:04:57 - 0:04:59, các lập trình viên chỉ dựa trên những cái
+0:04:59 - 0:05:01, câu mô tả ngắn gọn đầu vào.
+0:05:03 - 0:05:05, rồi gần đây thì chúng ta thấy là
+0:05:05 - 0:05:07, máy tính có khả năng tạo ra
+0:05:07 - 0:05:09, nội dung, ví dụ như
+0:05:09 - 0:05:11, một trong những cái ứng dụng thương mại
+0:05:11 - 0:05:13, nổi tiếng hiện nay liên quan đến
+0:05:13 - 0:05:15, việc tạo nội dung hình ảnh, đó chính là
+0:05:15 - 0:05:24, Các công ty, ví dụ như OpenAI, họ đã tạo ra mô hình DALL-E 2.
+0:05:24 - 0:05:29, Mô hình này có cho phép sáng tạo ra những hình ảnh dựa trên câu mô tả đầu vào.
+0:05:29 - 0:05:35, Trong lĩnh vực nghiên cứu, chúng ta sẽ có mô hình Stable Diffusion, cũng tương tự như vậy.
+0:05:35 - 0:05:45, là một cái Open Source để cho chúng ta có thể tự triển khai một cái mô hình học sâu để tạo hình ảnh
+0:05:45 - 0:05:53, Đây là một số cái ví dụ, ví dụ như chúng ta có một cái câu mô tả như thế này
+0:05:53 - 0:05:59, và máy tính sẽ tự động tạo ra với 3 cái mô hình như trên
+0:05:59 - 0:06:04, Với cùng một câu mô tả thì Midjourney đã tạo ra tấm ảnh như thế này
+0:06:04 - 0:06:08, rồi DALL-E 2 tạo ra tấm ảnh như thế này
+0:06:08 - 0:06:10, và Stable Diffusion
+0:06:10 - 0:06:14, thì điểm chung của cả 3 mô hình này chúng ta thấy là
+0:06:14 - 0:06:16, nó đều rất là nghệ thuật phải không
+0:06:18 - 0:06:23, Và tất cả những cái demo, những cái ứng dụng đã đề cập ở trên
+0:06:23 - 0:06:26, thì đều sử dụng máy tính
+0:06:26 - 0:06:28, để học từ rất nhiều dữ liệu
+0:06:28 - 0:06:30, đó là dựa trên học sâu

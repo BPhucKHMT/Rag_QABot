@@ -1,0 +1,587 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:21 - 0:00:26, Bạn có bao giờ tự hỏi điều gì ảnh hưởng
+0:00:23 - 0:00:30, đến giá nhà không? Có phải diện tích lớn
+0:00:26 - 0:00:32, thì giá cao hơn hay là số phòng ngủ
+0:00:30 - 0:00:35, quyết định giá trị của căn nhà? Hồi
+0:00:32 - 0:00:37, quyến tính line regression là một trong
+0:00:35 - 0:00:39, những phương pháp đơn giản nhưng mạnh mẽ
+0:00:37 - 0:00:42, để giúp chúng ta hiểu và dự đoán những
+0:00:39 - 0:00:44, mối quan hệ như thế này. Vậy hồi quyến
+0:00:42 - 0:00:47, tính hoạt động như thế nào? Hãy cùng
+0:00:44 - 0:00:49, khám phá ngay sau đây.
+0:00:47 - 0:00:52, Hồi quy tiến tính là một phương pháp học
+0:00:49 - 0:00:55, có giám sát supervise learning. có nghĩa
+0:00:52 - 0:00:58, là chúng ta sẽ sử dụng dữ liệu có nhãn
+0:00:55 - 0:01:01, để huấn luyện mô hình.
+0:00:58 - 0:01:05, Mục tiêu chính của
+0:01:01 - 0:01:08, mô hình này là tìm ra mối quan hệ tiến
+0:01:05 - 0:01:12, tính giữa các biến đầu vào và biến đầu
+0:01:08 - 0:01:15, ra. Vì biến đầu vào là gì? Đây là những
+0:01:12 - 0:01:17, yếu tố ảnh hưởng đến kết quả đầu ra. Ví
+0:01:15 - 0:01:20, dụ như trong bài toán dự đoán giá nhà,
+0:01:17 - 0:01:23, các đặc điểm như diện tích nhà, số phòng
+0:01:20 - 0:01:27, ngủ, vị trí địa lý chính là những biến
+0:01:23 - 0:01:30, đầu vào. Còn biến đầu ra thì sao? Đó
+0:01:27 - 0:01:34, chính là giá trị chúng ta muốn dự đoán
+0:01:30 - 0:01:36, trong trường hợp này là giá nhà.
+0:01:34 - 0:01:39, Công việc chính của mô hình hồi quy
+0:01:36 - 0:01:43, tuyến tính là tìm ra đường thẳng phù hợp
+0:01:39 - 0:01:47, nhất với dữ liệu hoặc là siêu phẳn để từ
+0:01:43 - 0:01:50, đó giúp chúng ta dự đoán giá trị mới dựa
+0:01:47 - 0:01:50, trên dữ liệu đồ vạo.
+0:01:51 - 0:01:55, Hồi quy tuyến tính được ức dụng rộng rãi
+0:01:54 - 0:01:58, trong nhiều lĩnh vực khác nhau từ bất
+0:01:55 - 0:02:01, động sản, kinh doanh tài chính cho đến y
+0:01:58 - 0:02:02, tế và sức khỏe. Đối với lĩnh vực bất
+0:02:01 - 0:02:04, động sản,
+0:02:02 - 0:02:06, chắc hẳn là các bạn đã từng nghe đến
+0:02:04 - 0:02:08, việc dự đoán giá nhà.
+0:02:06 - 0:02:11, Hồi quy tuyến tính giúp ta ước tính giá
+0:02:08 - 0:02:13, trị bất động sản trên các yếu tố như
+0:02:11 - 0:02:16, diện tích, vị trí, số phòng ngủ và nhiều
+0:02:13 - 0:02:18, yếu tố khác. Ngoài ra, nó cũng được sử
+0:02:16 - 0:02:21, dụng để ước tính mức giá thuê cho một
+0:02:18 - 0:02:23, căn hộ hoặc văn phòng dựa trên những đặc
+0:02:21 - 0:02:25, điểm cụ thể.
+0:02:23 - 0:02:28, Đối với lĩnh vực kinh doanh và tài
+0:02:25 - 0:02:30, chính, một lĩnh vực mà dữ liệu đóng vai
+0:02:28 - 0:02:34, trò vô cùng quan trọng. Hồi quyến tính
+0:02:30 - 0:02:36, giúp các doanh nghiệp phân tích mối quan
+0:02:34 - 0:02:39, hệ giữa chi phí marketing và doanh thu,
+0:02:36 - 0:02:41, từ đó tối ưu hóa ngân sách quảng cáo.
+0:02:39 - 0:02:44, Không chỉ vậy, nó còn được dùng để dự
+0:02:41 - 0:02:46, báo doanh số bán hàng theo mùa và đánh
+0:02:44 - 0:02:50, giá tác động của các yếu tố kinh tế vĩ
+0:02:46 - 0:02:53, mô giúp các công ty đưa ra quyết định
+0:02:50 - 0:02:54, kinh doanh chính xác hơn. Trong y tế và
+0:02:53 - 0:02:56, sức khỏe thì hồi quyến tính cũng đóng
+0:02:54 - 0:02:58, vai trò quan trọng. Nó có thể phân tích
+0:02:56 - 0:03:00, mối liên hệ giữa chế độ ăn uống và các
+0:02:58 - 0:03:02, chỉ số sức khỏe giúp chúng ta hiểu rõ
+0:03:00 - 0:03:05, hơn về các tác động của thực phẩm đối
+0:03:02 - 0:03:07, với cơ thể. Ngoài ra, mô hình này cũng
+0:03:05 - 0:03:11, còn giúp ước tính nguy cơ bệnh dựa vào
+0:03:07 - 0:03:15, các chỉ số sinh học dựa trên áp lượng
+0:03:11 - 0:03:15, đường trong máu hay là chỉ số BMI.
+0:03:17 - 0:03:22, Hồi quy tính có nhiều ứng dụng thực tế
+0:03:20 - 0:03:24, nhưng có bao giờ chúng ta tự hỏi tại sao
+0:03:22 - 0:03:26, hồi quy tính tiếng tính lại quan trọng?
+0:03:24 - 0:03:29, Thứ nhất, hồi quy tiến tính đơn giản và
+0:03:26 - 0:03:31, dễ hiểu. Đây là một trong những mô hình
+0:03:29 - 0:03:33, học máy cơ bản nhất, dễ dàng triển khai
+0:03:31 - 0:03:34, và chức khoan.
+0:03:33 - 0:03:36, Điều này khiến nó trở thành một điểm
+0:03:34 - 0:03:39, khởi đầu lý tưởng cho những ai mới tìm
+0:03:36 - 0:03:41, hiểu về học máy. Thứ hai, mặc dù là đơn
+0:03:39 - 0:03:43, giản, hồi quyến tính lại tỏ ra hiệu quả
+0:03:41 - 0:03:45, trong việc giải quyết nhiều bài toán
+0:03:43 - 0:03:47, thực tế
+0:03:45 - 0:03:49, như
+0:03:47 - 0:03:50, tài chính, y tế, kinh doanh. Điều này
+0:03:49 - 0:03:52, cho thấy sức mạnh của mô hình ngay cả
+0:03:50 - 0:03:55, khi so sánh với những phương pháp thứ
+0:03:52 - 0:03:57, tạp hơn. Thứ ba là hồi quyến tính có khả
+0:03:55 - 0:04:00, năng diễn giải cao. Các hệ số của mô
+0:03:57 - 0:04:02, hình không chỉ giúp dự đoán kết quả
+0:04:00 - 0:04:04, mà còn cho chúng ta biết mức độ ảnh
+0:04:02 - 0:04:06, hưởng của từng biến đầu vào lên biến đầu
+0:04:04 - 0:04:09, ra.
+0:04:06 - 0:04:12, Điều này giúp rất quan trọng đặc biệt
+0:04:09 - 0:04:14, trong các lĩnh vực như kinh tế và y học.
+0:04:12 - 0:04:16, Nơi việc hiểu rõ mối quan hệ giữa các
+0:04:14 - 0:04:18, yếu tố là điều bắt buộc.
+0:04:16 - 0:04:20, Và cuối cùng hồi quy tiến tính chính là
+0:04:18 - 0:04:23, nền tảng cho các mô hình phức tạp hơn.
+0:04:20 - 0:04:25, Khi bạn hiểu rõ về nó, bạn sẽ dễ dàng
+0:04:23 - 0:04:27, tiếp cận các phương pháp nâng cao như
+0:04:25 - 0:04:30, hồi quy logistic bài toán phân loại hoặc
+0:04:27 - 0:04:33, là hội quy lo hay thậm chí cả mạng nhân
+0:04:30 - 0:04:36, tạo. Tóm lại thì việc hồi quyến tính
+0:04:33 - 0:04:38, không chỉ đơn giản mà còn rất mạnh mẽ và
+0:04:36 - 0:04:40, hữu ích. Đây là lý do tại sao nó là một
+0:04:38 - 0:04:45, trong những mô hình đầu tiên mà bất kỳ
+0:04:40 - 0:04:45, ai học về học máy cũng nên nắm vững.
+0:04:46 - 0:04:52, Trong học máy thì chúng ta muốn sử dụng
+0:04:50 - 0:04:54, dữ liệu để đưa ra dự đoán hoặc tối ưu
+0:04:52 - 0:04:56, hóa một hệ thống.
+0:04:54 - 0:04:58, Nhưng làm thế nào để chuyển một vấn đề
+0:04:56 - 0:05:00, thực tế thành một bài toán mà máy có thể
+0:04:58 - 0:05:02, hiểu và giải quyết.
+0:05:00 - 0:05:04, Để làm được điều đó thì chúng ta cần
+0:05:02 - 0:05:06, tuân theo một cái quy trình tổng quát.
+0:05:04 - 0:05:08, Hãy cùng tìm hiểu các bước quan trọng
+0:05:06 - 0:05:11, trong việc xây dựng mô hình học máy theo
+0:05:08 - 0:05:13, quy trình này.
+0:05:11 - 0:05:16, Bước đầu tiên là chúng ta chuyển đổi bài
+0:05:13 - 0:05:19, toán từ mô tả bằng lời sang mô hình toán
+0:05:16 - 0:05:21, học. Khi đối mặt với một bài toán thực
+0:05:19 - 0:05:24, tế, chúng ta thường mô tả nó bằng ngôn
+0:05:21 - 0:05:25, ngữ tự nhiên. Chẳng hạn như làm thế nào
+0:05:24 - 0:05:27, để dịu đoán giá nhà dựa trên diện tích
+0:05:25 - 0:05:30, và vị trí.
+0:05:27 - 0:05:33, Mô tả bằng lời giúp chúng ta hiểu rõ bản
+0:05:30 - 0:05:35, chất và các yếu tố quan trọng của bài
+0:05:33 - 0:05:37, toán. Nhưng nó không thể giúp máy tính
+0:05:35 - 0:05:41, thực hiện các phép tính hay đưa ra kết
+0:05:37 - 0:05:43, quả một cách tự động. Vì vậy, chúng ta
+0:05:41 - 0:05:45, cần chuyển đổi bài toán này thành một mô
+0:05:43 - 0:05:48, hình toán học, sử dụng các biến số, công
+0:05:45 - 0:05:51, thức và quy tắc rõ ràng.
+0:05:48 - 0:05:53, Sau khi có mô hình toán học, bước tiếp
+0:05:51 - 0:05:56, theo là xác định lời giải dựa trên mô
+0:05:53 - 0:05:59, hình này. Chúng ta sẽ áp dụng các phương
+0:05:56 - 0:06:01, pháp toán học để tìm ra kết quả mong
+0:05:59 - 0:06:02, muốn.
+0:06:01 - 0:06:04, Ví dụ nếu bài toán của chúng ta liên
+0:06:02 - 0:06:06, quan đến dự đoán giá nhạc, ta có thể sử
+0:06:04 - 0:06:09, dụng hồi quy tiến tính để tìm cái mối
+0:06:06 - 0:06:12, quan hệ giữa các biến. Nếu bài toán liên
+0:06:09 - 0:06:14, quan tới tối ưu hóa như lộ tìm lộ trình
+0:06:12 - 0:06:18, giao hàng tối ưu thì ta có thể sử dụng
+0:06:14 - 0:06:18, thuộc toán tìm đường đi ngắn nhất.
+0:06:21 - 0:06:25, Sau khi đã chuyển đổi bài toán thành mô
+0:06:23 - 0:06:28, hình toán học
+0:06:25 - 0:06:29, và xác định cách giải quyết, bước tiếp
+0:06:28 - 0:06:31, theo là chúng ta phát triển thuật toán
+0:06:29 - 0:06:32, và triển khai chương trình trên máy
+0:06:31 - 0:06:34, tính.
+0:06:32 - 0:06:36, Đây là một bước quan trọng vì nó giúp
+0:06:34 - 0:06:39, chúng ta hiện thực hóa mô hình và cho
+0:06:36 - 0:06:41, phép máy tính tự động tìm ra lời giải.
+0:06:39 - 0:06:46, Đầu tiên, chúng ta cần lựa chọn cái
+0:06:41 - 0:06:48, thuật toán phù hợp với bài toán cụ thể.
+0:06:46 - 0:06:50, Ví dụ nếu liên quan đến dự đoán giá trị
+0:06:48 - 0:06:52, liên tục thì chúng ta có thể chọn hồi
+0:06:50 - 0:06:56, quy tiếng tính. Nếu bài toán phân loại
+0:06:52 - 0:06:58, các thuật toán như KNN hay là cây quyết
+0:06:56 - 0:07:00, định decision tree có thể là lựa chọn
+0:06:58 - 0:07:02, tốt.
+0:07:00 - 0:07:05, Sau khi chọn thực toán thì chúng ta sẽ
+0:07:02 - 0:07:07, cài đặt nó bằng cách sử dụng các thư
+0:07:05 - 0:07:09, viện lập trình.
+0:07:07 - 0:07:13, Trong Python có rất nhiều thư viện hỗ
+0:07:09 - 0:07:17, trợ như Num Pie, SP, Sci learn, Tenser
+0:07:13 - 0:07:20, Flow. giúp chúng ta triển khai mô hình
+0:07:17 - 0:07:22, một cách nhanh chóng.
+0:07:20 - 0:07:24, Ngoài ra khi cần thiết chúng ta cũng có
+0:07:22 - 0:07:29, thể viết thêm các hàm mới để tùy chỉnh
+0:07:24 - 0:07:29, thuật toán sao cho phù hợp với thực tế.
+0:07:30 - 0:07:34, Tuy nhiên việc xây dựng chương trình chỉ
+0:07:31 - 0:07:37, là một phần của quá trình. Chúng ta còn
+0:07:34 - 0:07:39, cần đánh giá và phân tích mô hình.
+0:07:37 - 0:07:41, Để đánh giá hiệu suất của mô hình, chúng
+0:07:39 - 0:07:44, ta sử dụng các tiêu chí như độ chính
+0:07:41 - 0:07:47, xác, accuracy, thời gian chạy, ront, mức
+0:07:44 - 0:07:50, độ sử dụng tài nguyên, computational
+0:07:47 - 0:07:52, cost. Nếu mô hình không đạt yêu cầu,
+0:07:50 - 0:07:55, chúng ta cần phân tích nguyên nhân và
+0:07:52 - 0:07:56, tìm cách cải tiến. Ví dụ, nếu mô hình
+0:07:55 - 0:07:59, chưa chính xác, chúng ta có thể tin
+0:07:56 - 0:08:01, chỉnh tham siêu tham số hyper hyper
+0:07:59 - 0:08:03, parameter
+0:08:01 - 0:08:04, hoặc thử nghiệm thuật toán khác.
+0:08:03 - 0:08:06, Nếu chương trình chạy quá chậm, ta có
+0:08:04 - 0:08:08, thể tối ưu code hoặc sử dụng thuật toán
+0:08:06 - 0:08:11, hiệu quả hơn.
+0:08:08 - 0:08:13, Tóm lại, quá trình phát triển thuật toán
+0:08:11 - 0:08:15, không chỉ dừng lại ở việc viết code mà
+0:08:13 - 0:08:18, còn là một vòng lập liên tục giữa xây
+0:08:15 - 0:08:21, dựng, đánh giá và cải tiến để đạt kết
+0:08:18 - 0:08:21, quả tốt nhất.
+0:08:27 - 0:08:30, Khi bắt đầu tìm hiểu về hồi quy tiến
+0:08:28 - 0:08:32, tính, tại sao chúng ta lại bắt đầu với
+0:08:30 - 0:08:34, hồi quy tiến tính một biến thay vì nhiều
+0:08:32 - 0:08:36, biến cùng một lúc?
+0:08:34 - 0:08:38, Trên thực tế, việc học một mô hình đơn
+0:08:36 - 0:08:41, giản trước sẽ giúp chúng ta dễ dàng hiểu
+0:08:38 - 0:08:43, rõ bản chất của phương pháp này trước
+0:08:41 - 0:08:44, khi mở rộng sang các trường hợp phức tạp
+0:08:43 - 0:08:46, hơn.
+0:08:44 - 0:08:48, Thứ nhất, hội quy tiến tính một biến là
+0:08:46 - 0:08:50, cách tiếp cận đơn giản nhất. Nó cho phép
+0:08:48 - 0:08:52, chúng ta tập trung vào những khái niệm
+0:08:50 - 0:08:54, cốt lõi như mối quan hệ tuyến tính, hệ
+0:08:52 - 0:08:58, số hồi quy và cách tìm đường thẳng tốt
+0:08:54 - 0:09:01, nhất để mô tả dữ liệu.
+0:08:58 - 0:09:04, Thứ hai, với chỉ một biến đầu vào X và
+0:09:01 - 0:09:07, một biến đầu ra Y, chúng ta có thể dễ
+0:09:04 - 0:09:09, dàng hình dung mối quan hệ này trên đồ
+0:09:07 - 0:09:11, thị.
+0:09:09 - 0:09:14, Khi vẽ dữ liệu trên mặt phẳng, ta có thể
+0:09:11 - 0:09:16, thấy một đường thẳng mô tả xu hướng.
+0:09:14 - 0:09:19, Điều này trực quan hơn rất nhiều so với
+0:09:16 - 0:09:21, hồi quy nhiều biến
+0:09:19 - 0:09:24, nơi việc biểu diễn dữ liệu trở nên phức
+0:09:21 - 0:09:26, tạp hơn.
+0:09:24 - 0:09:28, Cuối cùng việc nắm vững hồi quy một biến
+0:09:26 - 0:09:30, sẽ giúp chúng ta dễ dàng mở rộng sang
+0:09:28 - 0:09:33, hồi quy nhiều biến nơi chúng ta có thể
+0:09:30 - 0:09:36, sử dụng nhiều đặc trưng để dự đoán kết
+0:09:33 - 0:09:38, quả. Nếu hiểu chắc về mô hình đơn giản,
+0:09:36 - 0:09:42, chúng ta sẽ không gặp khó khăn khi làm
+0:09:38 - 0:09:42, việc với các mô hình phức tạp hơn.
+0:09:47 - 0:09:52, Giả sử bạn đang muốn mua một căn nhà và
+0:09:49 - 0:09:55, tự hỏi giá nhà sẽ thay đổi như thế nào
+0:09:52 - 0:09:57, khi diện tích thay đổi?
+0:09:55 - 0:09:59, Có vẻ như những ngôi nhà lớn hơn sẽ có
+0:09:57 - 0:10:03, giá cao hơn. Nhưng làm thế nào để định
+0:09:59 - 0:10:05, lượng mối quan hệ này và dự đoán giá một
+0:10:03 - 0:10:08, cách chính xác?
+0:10:05 - 0:10:10, Đây chính là một bài toán điển hình mà
+0:10:08 - 0:10:12, chúng ta có thể giải quyết bằng hồi quy
+0:10:10 - 0:10:14, tiến tính.
+0:10:12 - 0:10:17, Hãy cùng bắt đầu bằng mô tả bài toán này
+0:10:14 - 0:10:19, bằng ngôn ngữ tự nhiên.
+0:10:17 - 0:10:21, Bài toán của chúng ta như sau. Người
+0:10:19 - 0:10:24, dùng muốn dự đoán giá nhà dựa trên diện
+0:10:21 - 0:10:26, tích. Quan sát thực tế cho thấy những
+0:10:24 - 0:10:28, căn nhà có diện tích lớn hơn thường có
+0:10:26 - 0:10:31, giá cao hơn.
+0:10:28 - 0:10:33, Do đó chúng ta có thể giả định rằng có
+0:10:31 - 0:10:35, một mối quan hệ giữa diện tích và giá
+0:10:33 - 0:10:39, nhà. Và nhiệm vụ của chúng ta là tìm ra
+0:10:35 - 0:10:39, cái quy luật này.
+0:10:40 - 0:10:44, Mục tiêu của bài toán là xây dựng một
+0:10:41 - 0:10:47, phương pháp giúp dự đoán giá nhà của một
+0:10:44 - 0:10:49, căn nhà mới chỉ cần biết diện tích của
+0:10:47 - 0:10:51, nó.
+0:10:49 - 0:10:53, Nếu biết có một cách để mô hình hóa mối
+0:10:51 - 0:10:57, quan hệ này, chúng ta có thể sử dụng nó
+0:10:53 - 0:11:01, để đưa ra các dự đoán chính xác.
+0:10:57 - 0:11:03, Tuy nhiên, có một vấn đề mô tả này mang
+0:11:01 - 0:11:05, tính định tính và chung chung.
+0:11:03 - 0:11:07, Chúng ta chỉ biết giá nhà tăng khi diện
+0:11:05 - 0:11:10, tích tăng nhưng không có công thức cụ
+0:11:07 - 0:11:13, thể, không có cách nào để tự động hóa
+0:11:10 - 0:11:16, việc dự đoán trên máy tính. Điều này
+0:11:13 - 0:11:19, khiến việc tính toán trở nên khó khăn.
+0:11:16 - 0:11:22, Vậy làm thế nào để chuyển bài toán từ mô
+0:11:19 - 0:11:26, hình mô tả bằng lời sang mô hình toán
+0:11:22 - 0:11:26, học mà máy tính có thể xử lý?
+0:11:35 - 0:11:38, Chúng ta đã mô tả bài toán dự đoán giá
+0:11:36 - 0:11:39, nhà bằng lời nhưng để máy tính có thể xử
+0:11:38 - 0:11:42, lý thì chúng ta cần chuyển nó thành một
+0:11:39 - 0:11:43, mô hình toán học.
+0:11:42 - 0:11:46, Vậy mô hình nào phù hợp để giải quyết
+0:11:43 - 0:11:48, bài toán này?
+0:11:46 - 0:11:50, Vì giá nhà có xu hướng tăng hay diện
+0:11:48 - 0:11:52, tích tăng? Một cách tự nhiên chúng ta có
+0:11:50 - 0:11:55, thể giả định rằng giá nhà và diện tích
+0:11:52 - 0:11:57, có mối quan hệ tiến tính.
+0:11:55 - 0:12:00, Điều này dẫn chúng ta đến mô hình hồi
+0:11:57 - 0:12:02, quyến tính.
+0:12:00 - 0:12:04, Bài toán dự đoán giá nhà sẽ được giải
+0:12:02 - 0:12:08, quyết bằng cách tiếp cận học máy có giám
+0:12:04 - 0:12:08, sát Supervide Learning.
+0:12:11 - 0:12:16, Cụ thể
+0:12:13 - 0:12:19, thì supervning sẽ có cái quá trình này
+0:12:16 - 0:12:21, sẽ gồm có ba bước chính. Bước thứ nhất
+0:12:19 - 0:12:23, là thu thập dữ liệu huấn luyện. Trending
+0:12:21 - 0:12:26, set sẽ bao gồm các cặp giá trị diện tích
+0:12:23 - 0:12:26, và giá nhà.
+0:12:27 - 0:12:32, Thứ hai là chúng ta huấn luyện mô hình
+0:12:30 - 0:12:34, sử dụng cái tập dữ liệu này để tìm ra
+0:12:32 - 0:12:37, các tham số sao cho mô hình có thể dự
+0:12:34 - 0:12:41, đoán giá nhà chính xác nhất. Và thứ ba
+0:12:37 - 0:12:43, là sau khi huấn luyện mô hình có thể
+0:12:41 - 0:12:49, nhận đầu vào là diện tích mới của một
+0:12:43 - 0:12:49, căn nhà và dự đoán giá bán của nó.
+0:12:54 - 0:12:58, Chúng ta có thể sử dụng hồi quy tiến
+0:12:56 - 0:13:01, tính để ước lượng giá trị của một ngôi
+0:12:58 - 0:13:02, nhà dựa trên diện tích của nó. Công thức
+0:13:01 - 0:13:05, tổng quát của mô hình hồi quy tiến tính
+0:13:02 - 0:13:08, được một biến được biểu diễn như sau. y
+0:13:05 - 0:13:11, = wx + b.
+0:13:08 - 0:13:13, Trong đó x là biến đầu vào hay còn gọi
+0:13:11 - 0:13:17, là đặc chân hay là còn gọi là biến độc
+0:13:13 - 0:13:18, lập là biến dùng để dự đoán và diện tích
+0:13:17 - 0:13:21, sử dụng để dự đoán. Ví dụ như diện tích
+0:13:18 - 0:13:24, nhà, Y là giá trị dự đoán hay còn gọi là
+0:13:21 - 0:13:27, biến phụ thuộc là kết quả cần dự đoán
+0:13:24 - 0:13:30, chẳng hạn như là giá nhà
+0:13:27 - 0:13:30, W
+0:13:30 - 0:13:34, còn gọi là hệ số hồi quy hay trong
+0:13:32 - 0:13:36, trường hợp này gọi là slope thì tham là
+0:13:34 - 0:13:39, một cái tham số quan trọng thể hiện mức
+0:13:36 - 0:13:42, độ ảnh hưởng của X đến Y. Ví dụ như nếu
+0:13:39 - 0:13:45, x với W lớn hơn 0 thì giá nhà tăng khi
+0:13:42 - 0:13:47, diện tích tăng.
+0:13:45 - 0:13:51, Nếu W nhỏ hơn 0 thì giá nhà giảm khi
+0:13:47 - 0:13:51, diện tích giảm.
+0:13:53 - 0:13:59, Ví dụ như là chúng ta thấy là nếu mà hệ
+0:13:55 - 0:14:01, số W bằng 5000 thì điều đó có nghĩa là
+0:13:59 - 0:14:04, cứ mỗi mét vuông diện tích tăng lên thì
+0:14:01 - 0:14:06, giá nhà sẽ tăng thêm 5000 đơn vị tiện
+0:14:04 - 0:14:09, tệ.
+0:14:06 - 0:14:14, Một tham số khác đó là B
+0:14:09 - 0:14:17, là hệ số chặn. Đây là giá trị Y.
+0:14:14 - 0:14:20, của y khi mà x = 0, tức là giá nhà dự
+0:14:17 - 0:14:21, đoán khi diện tích bằng 0. Hệ số này
+0:14:20 - 0:14:24, giúp mô hình phù hợp hơn với dữ liệu
+0:14:21 - 0:14:24, thực tế.
+0:14:26 - 0:14:29, Trong thực tế thì giá nhà không chỉ phụ
+0:14:27 - 0:14:32, thuộc vào diện tích mà còn ảnh hưởng bởi
+0:14:29 - 0:14:34, nhiều yếu tố khác như vị trí, số phòng,
+0:14:32 - 0:14:38, phòng ngủ, diện tích xung quanh. Cho nên
+0:14:34 - 0:14:41, nếu ví dụ như nếu B mà bằng 20.000 000 à
+0:14:38 - 0:14:42, b = 200 thì điều đó có ý nghĩa là khi
+0:14:41 - 0:14:46, diện tích bằng 0 giá nhà vẫn có giá trị
+0:14:42 - 0:14:47, dự đoán là 200 đơn vị tiền tệ hệ số chặn
+0:14:46 - 0:14:49, giúp điều chỉnh mô hình để phản ánh tốt
+0:14:47 - 0:14:52, hơn xu hướng của dữ liệu, tránh đưa ra
+0:14:49 - 0:14:55, các dự đoán phi thực tế ví dụ như là giá
+0:14:52 - 0:14:55, nhã âm
+0:14:58 - 0:15:01, khi xây dựng mô hình học máy, điều quan
+0:15:00 - 0:15:05, trọng đầu tiên là chúng ta cần có dữ
+0:15:01 - 0:15:07, liệu huấn luyện. Dữ liệu huấn luyện là
+0:15:05 - 0:15:10, một tập hợp các giá trị xy được thu thập
+0:15:07 - 0:15:12, từ thực tế. Trong bài toán dự đoán giá
+0:15:10 - 0:15:16, nhà, mỗi cặp giá trị này tương ứng với x
+0:15:12 - 0:15:17, là diện tích à nhà đơn vị tính là mét
+0:15:16 - 0:15:21, vuông. Đây là biên đầu vào hay còn gọi
+0:15:17 - 0:15:22, là feature. Y là giá nhà. Ví dụ đơn vị
+0:15:21 - 0:15:24, tính là triệu Việt Nam đồng thì đây là
+0:15:22 - 0:15:27, giá trị đầu ra hay còn gọi là giá trị
+0:15:24 - 0:15:29, tget. Ví dụ như là chúng ta có một cái
+0:15:27 - 0:15:32, bảng dữ liệu sau.
+0:15:29 - 0:15:34, Mỗi dòng đại diện cho một mẫu dữ liệu và
+0:15:32 - 0:15:38, mỗi mẫu dữ liệu thì chứa một cặp giá trị
+0:15:34 - 0:15:40, xy y. Trong đó xy là diện tích của nhà
+0:15:38 - 0:15:44, của mẫu dữ liệu thứ y và y là giá bán
+0:15:40 - 0:15:47, tương ứng của căn nhà đó.
+0:15:44 - 0:15:49, Tại sao dữ liệu huấn luyện quan trọng?
+0:15:47 - 0:15:51, Mô hình học từ các mẫu dữ liệu này để
+0:15:49 - 0:15:53, tìm ra mối quan hệ giữa diện tích nhà và
+0:15:51 - 0:15:56, giá nhà. Nếu dữ liệu huấn luyện chính
+0:15:53 - 0:16:00, xác và đủ lớn, mô hình sẽ có khả năng dự
+0:15:56 - 0:16:00, đoán tốt hơn khi gặp các mẫu dữ liệu.
+0:16:03 - 0:16:08, Chúng ta hãy cùng xem một minh họa trực
+0:16:06 - 0:16:11, quan về dữ liệu huấn luyện và hội quy
+0:16:08 - 0:16:15, tiến tính. Trên đồ thị, mỗi điểm màu
+0:16:11 - 0:16:17, xanh biểu diễn một cặp dữ liệu XY
+0:16:15 - 0:16:19, trong tập dữ liệu huấn luyện. Đây là
+0:16:17 - 0:16:22, những quan sát thực tế về diện tích giá
+0:16:19 - 0:16:23, nhà và giá bán tương ứng.
+0:16:22 - 0:16:26, Đường thẳng màu đỏ là đường hồi quyến
+0:16:23 - 0:16:29, tính, mô hình mà chúng ta đang xây dựng.
+0:16:26 - 0:16:31, Nó thể hiện mối tương quan, mối quan hệ
+0:16:29 - 0:16:33, giữa diện tích và giả nhà mà mô hình học
+0:16:31 - 0:16:36, được.
+0:16:33 - 0:16:39, Mô hình này cố gắng tìm ra một cái đường
+0:16:36 - 0:16:42, thẳng tối ưu nhất để mô tả mối quan hệ
+0:16:39 - 0:16:45, giữa diện tích và giá nhà.
+0:16:42 - 0:16:50, Ngoài ra, các đường gạch chấm màu xanh
+0:16:45 - 0:16:53, lá cây biểu diễn độ sai lệch hay còn gọi
+0:16:50 - 0:16:54, là residual.
+0:16:53 - 0:16:57, Chúng cho thấy sự chên lệch giữa giá
+0:16:54 - 0:16:59, thực tế và giá dự đoán.
+0:16:57 - 0:17:02, Độ dài của các đường này càng lớn nghĩa
+0:16:59 - 0:17:04, là mô hình có sai số càng cao. Tuy nhiên
+0:17:02 - 0:17:06, dù chưa hoàn toàn chính xác mô hình này
+0:17:04 - 0:17:09, vẫn cố gắng mô tả xu hướng chung của dữ
+0:17:06 - 0:17:09, liệu.
+0:17:11 - 0:17:16, Thực toán học máy thì sẽ tìm một cái
+0:17:13 - 0:17:19, đường thẳng tối ưu để mô tả mối quan hệ
+0:17:16 - 0:17:21, giữa diện tích và giá nhà. Vậy làm thế
+0:17:19 - 0:17:23, nào để tìm được đường thẳng tối ưu trong
+0:17:21 - 0:17:25, mô hình hồi quy tiến tính?
+0:17:23 - 0:17:27, Chúng ta cần xác định hai tham số quan
+0:17:25 - 0:17:29, trọng W là độ dốc và B là giao điểm với
+0:17:27 - 0:17:31, chủng tung.
+0:17:29 - 0:17:34, Nhưng thế nào là tối ưu? Chúng ta cần
+0:17:31 - 0:17:36, một tiêu chí đo lường mức độ sai lệch
+0:17:34 - 0:17:37, giữa dự giá trị dự đoán và giá trị thực
+0:17:36 - 0:17:39, tế.
+0:17:37 - 0:17:43, Để làm điều này thì ta sử dụng hàm mất
+0:17:39 - 0:17:45, mát. Hàm này cho biết sai lệch giữa giá
+0:17:43 - 0:17:47, trị dự đoán và giá trị thực tế trên một
+0:17:45 - 0:17:50, mẫu dữ liệu.
+0:17:47 - 0:17:54, Một lựa chọn phổ biến là min square
+0:17:50 - 0:17:56, error msi. đo bằng bình phương sai số
+0:17:54 - 0:17:58, giữa giá trị thực tế và giá trị thực
+0:17:56 - 0:18:00, đoán.
+0:17:58 - 0:18:02, Tuy nhiên, chúng ta không chỉ quan tâm
+0:18:00 - 0:18:05, đến một mẫu mà cần đánh giá trên toàn bộ
+0:18:02 - 0:18:08, tập dữ liệu huấn luyện. Vì vậy, ta sử
+0:18:05 - 0:18:11, dụng hàm chi phí là trung bình của tất
+0:18:08 - 0:18:13, cả các giá trị hàm mất mát.
+0:18:11 - 0:18:17, Mục tiêu của thuật toán là tìm ra W và B
+0:18:13 - 0:18:21, sao cho hàm chi phí JWB
+0:18:17 - 0:18:21, đạt giá trị nhỏ nhất.
+0:18:23 - 0:18:27, Chúng ta hãy cùng quan sát đồ thị bên
+0:18:24 - 0:18:31, trái. Đây là một ví dụ về đoạn hồi quy
+0:18:27 - 0:18:34, tiến tính với một giá trị cụ thể của W.
+0:18:31 - 0:18:38, Đường màu xanh thể hiện mô hình dự đoán,
+0:18:34 - 0:18:40, còn các điểm màu đỏ là dữ liệu thực tế.
+0:18:38 - 0:18:43, Bây giờ hãy nhìn vào cái đồ thị bên
+0:18:40 - 0:18:45, phải. Đây là hàm chi phí JW.
+0:18:43 - 0:18:49, Trục ngang là giá trị của W, còn trục
+0:18:45 - 0:18:52, dọc là giá trị hàm chi phí tương ứng.
+0:18:49 - 0:18:55, Ta thấy rằng khi W thay đổi, giá trị JW
+0:18:52 - 0:18:57, cũng thay đổi theo. Đường cong màu xanh
+0:18:55 - 0:19:00, biểu xị thự thay đổi của hàm chi phí.
+0:18:57 - 0:19:04, Điểm màu đỏ trên đồ thị thể hiện giá trị
+0:19:00 - 0:19:07, của CW tại W = 50.
+0:19:04 - 0:19:09, Mục tiêu của chúng ta là làm tìm giá trị
+0:19:07 - 0:19:14, J sao cho JW đoạt giá trị nhỏ nhất, tức
+0:19:09 - 0:19:14, là điểm nằm ở đáy của đường cong này.
+0:19:18 - 0:19:22, Trước đó thì chúng ta đã xem xét cách JW
+0:19:20 - 0:19:25, thay đổi theo W. Tuy nhiên, trong mô
+0:19:22 - 0:19:28, hình hồi quyến tính thì cả hai tham số W
+0:19:25 - 0:19:32, và B đều ảnh hưởng đến giá trị của JWB.
+0:19:28 - 0:19:33, Hãy cùng quan sát hai đồ thị trên.
+0:19:32 - 0:19:36, Đồ thị bên trái cho thấy một đường hồi
+0:19:33 - 0:19:41, quy tiến tính với các giá trị cụ thể của
+0:19:36 - 0:19:41, W là 50 và B là 2000.
+0:19:43 - 0:19:46, Đường màu xanh thể hiện mô hình dự đoán
+0:19:45 - 0:19:49, trong khi các điểm màu đỏ là dữ liệu
+0:19:46 - 0:19:52, thực tế.
+0:19:49 - 0:19:55, Đồ thị bên phải là biểu đồ đường đồng
+0:19:52 - 0:19:57, mức của dây WB. Trục ngang là W, trục
+0:19:55 - 0:20:01, dọc là BI. Và các đường cong trong đồ
+0:19:57 - 0:20:04, thị thể hiện các mức giá trị của WB.
+0:20:01 - 0:20:06, JWB. Một điểm quan trọng là các điểm nằm
+0:20:04 - 0:20:09, trên cùng một đường sẽ có cùng giá trị
+0:20:06 - 0:20:12, JWB. Điều này có nghĩa là nếu chúng ta
+0:20:09 - 0:20:15, di chuyển dọc theo một đường elipse giá
+0:20:12 - 0:20:16, trị hàm chi phí này không đổi.
+0:20:15 - 0:20:19, Mục tiêu của chúng ta là tìm điểm thấp
+0:20:16 - 0:20:21, nhất trên độ thì này tương ứng với JWB
+0:20:19 - 0:20:24, nhỏ nhất. Đây chính là giá trị tối ưu
+0:20:21 - 0:20:27, của W và B giúp mô hình có khả năng dự
+0:20:24 - 0:20:27, đoán tốt nhất.
+0:20:30 - 0:20:34, Gradient design là thuật toán tối ưu hóa
+0:20:33 - 0:20:37, giúp chúng ta tìm ra giá trị nhỏ nhất
+0:20:34 - 0:20:40, của hàm chi phí, tức là tìm ra các tham
+0:20:37 - 0:20:41, số W và B sao cho JWB đạt giá trị thấp
+0:20:40 - 0:20:44, nhất.
+0:20:41 - 0:20:47, Ý tưởng chính của thuật toán này là thay
+0:20:44 - 0:20:49, vì thử hết mọi giá trị để tìm điểm tối
+0:20:47 - 0:20:52, ưu, ta sẽ lần lượt điều chỉnh tham số
+0:20:49 - 0:20:56, theo hướng làm giảm hàm chi phí nhanh
+0:20:52 - 0:20:57, nhất dựa vào độ dốc hiện tại của hàm.
+0:20:56 - 0:20:59, Các bạn hãy tưởng tượng là mình đang
+0:20:57 - 0:21:01, đứng trên sườn một thung lũng trong
+0:20:59 - 0:21:03, sương mù, không thể nhìn thấy toàn bộ
+0:21:01 - 0:21:04, địa hình.
+0:21:03 - 0:21:07, Nhiệm vụ của chúng ta là đi xuống điểm
+0:21:04 - 0:21:09, thấp nhất của thung lũng
+0:21:07 - 0:21:12, nhưng chỉ có thể cảm nhận được độ dốc
+0:21:09 - 0:21:14, dưới chân để xác định hướng đi.
+0:21:12 - 0:21:16, Tương tự như trong quá trình tối ưu thì
+0:21:14 - 0:21:18, chúng ta dựa vào độ dốc của hàm chi phí
+0:21:16 - 0:21:20, tại vị trí hiện tại để quyết định nên
+0:21:18 - 0:21:23, điều chỉnh các tham số theo hướng nào và
+0:21:20 - 0:21:25, với hướng đi bao nhiêu. Nếu độ dốc lớn
+0:21:23 - 0:21:27, thì ta có thể đi nhanh hơn, bước dài
+0:21:25 - 0:21:30, hơn. Nếu độ dốc nhỏ thì ta bước đi nên
+0:21:27 - 0:21:32, ngắn để tránh bước qua điểm thấp nhất.
+0:21:30 - 0:21:35, Quá trình này được lặp lại nhiều lần.
+0:21:32 - 0:21:37, Sau mỗi bước ta lại kiểm tra độ dốc ở vị
+0:21:35 - 0:21:40, trí mới và tiếp tục điều chỉnh cho đến
+0:21:37 - 0:21:43, khi gần như không còn độ dốc nữa, tức là
+0:21:40 - 0:21:46, đã tiến gần đến điểm tối ưu mà chúng ta
+0:21:43 - 0:21:46, cần tìm.
+0:21:47 - 0:21:52, Sau khi hiểu được cái ý nghĩa trực quan,
+0:21:50 - 0:21:53, ý tưởng trực quan của gradient des, bây
+0:21:52 - 0:21:55, giờ chúng ta sẽ cùng nhau chuyển sang
+0:21:53 - 0:21:58, cách mô tả thuật toán này bằng ngôn ngữ
+0:21:55 - 0:22:01, toán học. Đầu tiên khi bắt đầu quá trình
+0:21:58 - 0:22:02, tối ưu các tham số W và pi thường được
+0:22:01 - 0:22:05, khởi tạo với giá trị ngẫu nhiên hoặc đơn
+0:22:02 - 0:22:07, giản là bằng 0. Từ thời điểm xuất phát
+0:22:05 - 0:22:09, này thì chúng ta sẽ cập nhật các tham số
+0:22:07 - 0:22:12, từng bước một dựa vào gradient tức là độ
+0:22:09 - 0:22:15, dốc của hàm tại vị trí hiện tại.
+0:22:12 - 0:22:18, Gradient thì cho chúng ta biết hướng và
+0:22:15 - 0:22:19, độ lớn của sự thay đổi. Để giảm hàm chi
+0:22:18 - 0:22:22, phí ta sẽ điều chỉnh tham số ngược lại
+0:22:19 - 0:22:24, theo hướng của gradient. Độ lớn của mỗi
+0:22:22 - 0:22:26, bước điều chỉnh này được kiểm soát bởi
+0:22:24 - 0:22:30, một siêu tham số.
+0:22:26 - 0:22:33, gọi là learning ray tốc độ học ký hiệu
+0:22:30 - 0:22:34, là alpha learning ray là quyết định mỗi
+0:22:33 - 0:22:37, lần cập nhật chúng ta sẽ bước một đoạn
+0:22:34 - 0:22:40, lớn hay nhỏ trên con đường đi thuống
+0:22:37 - 0:22:44, xung lũng ở mỗi bước lập thì chúng ta sẽ
+0:22:40 - 0:22:46, cập nhật cái giá trị của W và B bằng
+0:22:44 - 0:22:48, cách trừ đi một phần gradient nhân với
+0:22:46 - 0:22:50, learning ray và quá trình này cứ lặp đi
+0:22:48 - 0:22:52, lặp lại cho đến khi hàm chi phí không
+0:22:50 - 0:22:55, còn giảm đáng kể nữa. tức là nó đã đạt
+0:22:52 - 0:22:58, đến hoặc tiến đến rất gần với điểm cực
+0:22:55 - 0:22:59, tiểu. Ở mình minh họa bên phải thì các
+0:22:58 - 0:23:03, bạn có thể quan sát quá trình dịch
+0:22:59 - 0:23:05, chuyển của điểm tham số từ vị trí ban
+0:23:03 - 0:23:08, đầu xuống đáy của hàm chi phí. Mỗi mũi
+0:23:05 - 0:23:10, tên thể hiện một lần cập nhật tham số,
+0:23:08 - 0:23:12, di chuyển từng bước một về phía cực
+0:23:10 - 0:23:14, tiểu. Khi các bước di chuyển càng nhỏ
+0:23:12 - 0:23:17, dần và điểm tham số này nằm gần đáy của
+0:23:14 - 0:23:21, thung lũng, tức là chúng ta đã gần như
+0:23:17 - 0:23:24, đạt đến điểm tối ưu nhất của mô hình.
+0:23:21 - 0:23:26, Việc lựa chọn learning ray phù hợp là
+0:23:24 - 0:23:28, rất quan trọng là nếu chọn quá lớn, mô
+0:23:26 - 0:23:29, hình có thể vượt qua điểm tối ưu hoặc
+0:23:28 - 0:23:32, dao động quanh đáy thung lũng mà không
+0:23:29 - 0:23:35, hồi tụ. Nếu chọn quá nhỏ thì quá trình
+0:23:32 - 0:23:40, học sẽ rất chậm. Chúng ta sẽ tìm hiểu kỹ
+0:23:35 - 0:23:40, hơn về điều này ở các slide tiếp theo.
+0:23:41 - 0:23:45, Sau khi đã hiểu ý tưởng của mô hình toán
+0:23:43 - 0:23:46, học của Gradin Design, tiếp theo là
+0:23:45 - 0:23:49, chúng ta sẽ tìm hiểu về các bước cụ thể
+0:23:46 - 0:23:51, để thực hiện thuật toán này.
+0:23:49 - 0:23:53, Đầu tiên là chúng ta khởi tạo các tham
+0:23:51 - 0:23:56, số của mô hình thường là W và B với giá
+0:23:53 - 0:23:57, trị ban đầu tùy chọn có thể là zero hoặc
+0:23:56 - 0:24:01, là ngẫu nhiên.
+0:23:57 - 0:24:03, Sau đó thực toán sẽ lặp lại các bước cập
+0:24:01 - 0:24:06, nhật tham số dựa trên gradient cho tới
+0:24:03 - 0:24:08, khi hội tụ. Cụ thể là ở mỗi vòng lập ta
+0:24:06 - 0:24:11, sẽ tính toán giá trị đạo hàm của hàm chi
+0:24:08 - 0:24:14, phí theo từng tham số W và B.
+0:24:11 - 0:24:16, Dựa vào giá trị gradient này, chúng ta
+0:24:14 - 0:24:18, cập nhật W và B theo hướng ngược lại với
+0:24:16 - 0:24:22, chiều tăng của hàm chi phí với lượng
+0:24:18 - 0:24:24, điều chỉnh bằng learning ray đã chọn.
+0:24:22 - 0:24:26, Quá trình này được lặp đi lặp lại nhiều
+0:24:24 - 0:24:29, lần. Sau mỗi lần cập nhật ta sẽ kiểm tra
+0:24:26 - 0:24:31, điều kiện dừng. Ví dụ như còn nằm còn
+0:24:29 - 0:24:34, hàm chi phí không còn giảm đáng kể hoặc
+0:24:31 - 0:24:37, là đạt đến số vòng lập tối đa. Khi đó
+0:24:34 - 0:24:41, thì các tham số W và B cuối cùng chính
+0:24:37 - 0:24:42, là nghiệm tối ưu mà chúng ta cần tìm.
+0:24:41 - 0:24:45, Như vậy gradient des là một quá trình
+0:24:42 - 0:24:46, tối ưu lập liên tục điều chỉnh các tham
+0:24:45 - 0:24:48, số để tiến dần đến điểm cực tiểu của hàm
+0:24:46 - 0:24:50, chi phí.
+0:24:48 - 0:24:52, Đây là nền tảng rất quan trọng không kị
+0:24:50 - 0:24:56, chỉ cho hội quý tuyến tính mà còn cho
+0:24:52 - 0:24:56, nhiều thực toán máy học máy khác.
+0:24:58 - 0:25:01, Đến đây thì chúng ta hãy cùng nhau tổng
+0:24:59 - 0:25:04, kết lại những kiến thức quan trọng đã
+0:25:01 - 0:25:07, học về hồi quyến tính một biến. Đầu tiên
+0:25:04 - 0:25:08, hồi quy tuyến tính dùng công thức y = WB
+0:25:07 - 0:25:11, để mô tả mối quan hệ giữa biến đầu vào
+0:25:08 - 0:25:13, và giá trị dự đoán.
+0:25:11 - 0:25:14, Để đánh giá mức độ sai lệch giữa giá trị
+0:25:13 - 0:25:17, dự đoán và giá trị thực tế thì chúng ta
+0:25:14 - 0:25:19, sử dụng hàm mất mát phổ biến nhất là min
+0:25:17 - 0:25:22, square error msi bình phương sai số
+0:25:19 - 0:25:24, trung bình.
+0:25:22 - 0:25:26, Khi xét trên toàn bộ dữ liệu huấn luyện,
+0:25:24 - 0:25:30, chúng ta có hàm chi phí là trung bình
+0:25:26 - 0:25:32, của các giá trị mất mát.
+0:25:30 - 0:25:35, Mục tiêu của quá trình huấn luyện là tìm
+0:25:32 - 0:25:37, ra bộ tham số W và B sao cho giá trị của
+0:25:35 - 0:25:40, hàm chi phí này là nhỏ nhất.
+0:25:37 - 0:25:42, Học có giám sát hay còn gọi là supervise
+0:25:40 - 0:25:44, learning chính là quá trình sử dụng tập
+0:25:42 - 0:25:47, dữ liệu có nhãn để huấn luyện mô hình
+0:25:44 - 0:25:50, giúp máy tính tự động tìm ra bộ thóm số
+0:25:47 - 0:25:51, tối ưu. Và cuối cùng bài toán tối ưu này
+0:25:50 - 0:25:54, thường được giải bằng thuật toán
+0:25:51 - 0:25:56, gradient des giúp mô hình từng bước điều
+0:25:54 - 0:26:01, chỉnh các tham số để tiến gần đến điểm
+0:25:56 - 0:26:01, cực tiểu toàn cục của hàm chi phí.
+0:26:09 - 0:26:21, [âm nhạc]

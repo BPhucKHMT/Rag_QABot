@@ -1,0 +1,296 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:17, Trong phần tiếp theo thì để có thể hiểu
+0:00:15 - 0:00:20, rõ cái thực toán Ren
+0:00:17 - 0:00:24, đã chạy như thế nào thì chúng ta sẽ cùng
+0:00:20 - 0:00:26, mô phỏng với một cái dữ liệu như sau.
+0:00:24 - 0:00:29, Chúng ta sẽ có hai trục, trục X và trục
+0:00:26 - 0:00:32, Y. Thì trong đó X chính là cái đặc trưng
+0:00:29 - 0:00:34, của mình. đặc trưng đồ vào của mình và y
+0:00:32 - 0:00:38, chính là cái giá trị đầu ra chúng ta cần
+0:00:34 - 0:00:41, dự đoán. Thì à giả sử như x và y của
+0:00:38 - 0:00:41, mình
+0:00:41 - 0:00:46, nó có mối quan hệ tuyến tính và các cái
+0:00:45 - 0:00:48, điểm dữ liệu của mình nó xoay xung quanh
+0:00:46 - 0:00:54, một cái đường thẳng mà chúng ta biết
+0:00:48 - 0:00:54, trước đó là y ví dụ như là bằng 3x
+0:00:54 - 0:00:58, - 5.
+0:00:56 - 0:01:02, Đó thì đây là chúng ta đã biết trước
+0:00:58 - 0:01:06, trong đầu mình. Và khi huấn luyện mô cái
+0:01:02 - 0:01:09, mô hình xong thì W và B của mình liệu nó
+0:01:06 - 0:01:11, có tiến về các cái giá trị mà chúng ta
+0:01:09 - 0:01:15, đã biết trước hay không? Cụ thể đó là W
+0:01:11 - 0:01:18, có tiến về số 3 và B có tiến về -5 hay
+0:01:15 - 0:01:20, không thì chúng ta sẽ kết luận được là
+0:01:18 - 0:01:23, cái mô hình của mình có đang thực thi
+0:01:20 - 0:01:26, đúng hay không. Thế thì ở đây chúng ta
+0:01:23 - 0:01:29, sẽ sử dụng một cái
+0:01:26 - 0:01:31, code Python. Đầu tiên chúng ta sẽ import
+0:01:29 - 0:01:33, nump
+0:01:31 - 0:01:37, snp.
+0:01:33 - 0:01:40, Rồi trước tiên thì chúng ta sẽ khởi tạo
+0:01:37 - 0:01:44, à các điểm dữ liệu
+0:01:40 - 0:01:44, thì x sẽ là bằng np.
+0:01:44 - 0:01:48, Và giá trị chúng ta lấy từ 1 cho đến 3
+0:01:47 - 0:01:52, với bước nhảy. Ví dụ như ở đây chúng ta
+0:01:48 - 0:01:56, chọn là 0.2 2 đi
+0:01:52 - 0:02:01, rồi và y thì là bằng 3x
+0:01:56 - 0:02:03, - 5. Rồi sau đó chúng ta sẽ in ra x và
+0:02:01 - 0:02:05, in ra y
+0:02:03 - 0:02:07, để xem cái giá trị của mình nó nhìn như
+0:02:05 - 0:02:10, thế nào. Thì để chạy chúng ta sẽ nhấn
+0:02:07 - 0:02:12, Ctrl Shift P. Chúng ta sẽ chọn cái
+0:02:10 - 0:02:14, Python Interpreter
+0:02:12 - 0:02:17, và chọn ví dụ ở đây chúng ta chọn cái
+0:02:14 - 0:02:21, Python của Anaconda ha. Rồi để chạy thì
+0:02:17 - 0:02:23, chúng ta sẽ nhấn cái nút ở đây.
+0:02:21 - 0:02:25, Rồi thì chúng ta thấy là x sẽ là bằng 1
+0:02:23 - 0:02:28, 1.2 1.4. Tức là cái bước nhảy của mình
+0:02:25 - 0:02:30, là 0.2
+0:02:28 - 0:02:33, và lên đến 2.8. Tức là nó chưa chạm đến
+0:02:30 - 0:02:37, được cái số 3 là nó sẽ dừng. Rồi y thì
+0:02:33 - 0:02:42, sẽ là bằng ví dụ như x mà bằng 1 thì y
+0:02:37 - 0:02:46, sẽ là bằng 3 x 1 - 5. Tức là à 3 x 1 - 5
+0:02:42 - 0:02:50, là bằng -2. Rồi ví dụ như nếu x của mình
+0:02:46 - 0:02:52, mà bằng 2 đi thì 2 x 3 là 6 - 1 - 5 là
+0:02:50 - 0:02:55, còn còn 1. Tức là cái giá trị của mình
+0:02:52 - 0:02:59, sẽ là 1 ở đây. Rồi tuy nhiên nếu mà
+0:02:55 - 0:03:01, chúng ta à để dữ liệu như thế này thì sẽ
+0:02:59 - 0:03:03, hơi khó để trực quan hóa. Do đó chúng ta
+0:03:01 - 0:03:07, sẽ dùng một cái công cụ đó là M plist để
+0:03:03 - 0:03:07, trực quan hóa
+0:03:09 - 0:03:14, rồi. Và ở đây sẽ là import
+0:03:12 - 0:03:17, MLI list.
+0:03:14 - 0:03:17, chpot
+0:03:18 - 0:03:24, và để trực quan hóa thì chúng ta sẽ dùng
+0:03:20 - 0:03:24, là hàm plt.S
+0:03:24 - 0:03:29, truyền vào x và y. Trong đó thì với mỗi
+0:03:27 - 0:03:32, một cái cặp giá trị x và y thì chúng ta
+0:03:29 - 0:03:39, sẽ dùng một cái dấu chấm màu đỏ. Dấu màu
+0:03:32 - 0:03:41, đỏ là rấu chấm sẽ là dùng số 0. Rồi. À
+0:03:39 - 0:03:45, rồi thì bây giờ à ở đây chúng ta sẽ dùng
+0:03:41 - 0:03:49, hàm là hàm plot ha. unlock. Và sau khi
+0:03:45 - 0:03:49, chúng ta thực hiện xong thì là plt.show
+0:03:49 - 0:03:54, rồi chúng ta lưu lại và chạy.
+0:03:53 - 0:03:57, Tuy nhiên cái dữ liệu này thì chúng ta
+0:03:54 - 0:03:59, thấy là nó thẳng tóc à đúng như trên một
+0:03:57 - 0:04:02, cái đường thẳng nhưng mà thực tế thì cái
+0:03:59 - 0:04:04, dữ liệu của chúng ta nó sẽ dao động vì
+0:04:02 - 0:04:06, các cái yếu tố nhiễu trong cái quá trình
+0:04:04 - 0:04:08, lấy mẫu. Do đó chúng ta sẽ phải thêm vô
+0:04:06 - 0:04:10, một cái đại lượng nhiễu nữa là bằng
+0:04:08 - 0:04:14, np.random
+0:04:10 - 0:04:19, chn normal.
+0:04:14 - 0:04:22, Và normal chúng ta sẽ dùng là mi của nó
+0:04:19 - 0:04:24, là bằng 0 và sigma là bằng 1. Và cái số
+0:04:22 - 0:04:27, chiều của mình thì nó cũng đúng bằng cái
+0:04:24 - 0:04:31, số chiều của x
+0:04:27 - 0:04:33, chấm sh kích thước của x. Rồi chúng ta
+0:04:31 - 0:04:39, sẽ lấy cái số phần tử của nó. Còn không
+0:04:33 - 0:04:41, thì chúng ta có thể lấy là lens của x
+0:04:39 - 0:04:43, thì cách nào cũng được.
+0:04:41 - 0:04:45, Rồi đó thì chúng ta thấy là nó đã có cái
+0:04:43 - 0:04:47, sự dao động.
+0:04:45 - 0:04:48, Muốn tăng cái độ dao động này lên chúng
+0:04:47 - 0:04:51, ta có thể nhân với cái hệ số ví dụ như
+0:04:48 - 0:04:53, là 2. Rồi
+0:04:51 - 0:04:57, đó chúng ta thấy là đã có cái sự dao
+0:04:53 - 0:04:57, động khá là nhiều
+0:04:57 - 0:05:01, rồi. Thì ở đây chúng ta thôi để một cái
+0:04:59 - 0:05:05, đại lượng nhiễu vừa phải
+0:05:01 - 0:05:05, là ví dụ như 1.5 thôi.
+0:05:07 - 0:05:13, Đó thì tiếp theo đó là chúng ta sẽ đi
+0:05:09 - 0:05:16, cài đặt cái mô hình của mình. Thì cái
+0:05:13 - 0:05:20, trong cái mô hình của mình thì ờ chúng
+0:05:16 - 0:05:23, ta sẽ phải cài cái hàm loss và
+0:05:20 - 0:05:25, chúng ta sẽ đi tính đạo hàm của nó. Thế
+0:05:23 - 0:05:30, thì ban đầu bước đầu tiên là chúng ta sẽ
+0:05:25 - 0:05:30, phải khởi tạo trước thì là W và B.
+0:05:33 - 0:05:38, Thì W đương nhiên chúng ta đã biết cái
+0:05:36 - 0:05:41, giá trị ở đây là 3 nhưng chúng ta không
+0:05:38 - 0:05:43, có gán nó bằng 3 mà chúng ta sẽ gán bằng
+0:05:41 - 0:05:49, một cái giá trị ngẫu nhiên nào đó. Ví dụ
+0:05:43 - 0:05:51, như B bằng à W là bằng -10 đi. Rồi B
+0:05:49 - 0:05:53, chúng ta biết là nó sẽ tiến về -5 nhưng
+0:05:51 - 0:05:55, mà chúng ta không nên chọn B = -5 mà
+0:05:53 - 0:05:59, chúng ta chọn cái giá trị nào đó. Ví dụ
+0:05:55 - 0:06:02, như ờ 6 đi. Đó thì đây là các cái giá
+0:05:59 - 0:06:06, trị ngẫu nhiên.
+0:06:02 - 0:06:09, Rồi sau đó thì chúng ta sẽ ờ
+0:06:06 - 0:06:11, tiến hành đó là lập cho đến khi hội tụ.
+0:06:09 - 0:06:14, Thì để cài đặt cho vòng lập này thì
+0:06:11 - 0:06:16, chúng ta sẽ dùng vòng lập white. Nhưng
+0:06:14 - 0:06:18, mà hiện giờ chúng ta chưa biết là mình
+0:06:16 - 0:06:22, lập cho đến khi nào xong. Do đó chúng ta
+0:06:18 - 0:06:22, cứ để là true
+0:06:22 - 0:06:28, các cái hàm tính đạo hàm.
+0:06:25 - 0:06:31, Thì đạo hàm của hàm los theo W, đạo hàm
+0:06:28 - 0:06:33, của hàm loss theo B thì chúng ta sẽ có
+0:06:31 - 0:06:38, công thức đó là bằng trung bình cộng nè
+0:06:33 - 0:06:42, của wx cộng B trừ cho Y tất cả nhân với
+0:06:38 - 0:06:47, lại xy. Rồi thì chúng ta sẽ tính đạo hàm
+0:06:42 - 0:06:50, theo W trước đi ha. Thì derivative
+0:06:47 - 0:06:52, theo W sẽ là bằng
+0:06:50 - 0:06:58, wx. Ở đây chúng ta sẽ ghi với dạng công
+0:06:52 - 0:07:02, thức à giống như đại số trước cộng b rồi
+0:06:58 - 0:07:06, sau đó chúng ta sẽ trừ cho y là cái giá
+0:07:02 - 0:07:06, trị mà trú
+0:07:06 - 0:07:11, rồi tất cả nhân với lại x rồi chúng ta
+0:07:09 - 0:07:13, sẽ lấy tổng và chia bình quân thì tổng
+0:07:11 - 0:07:16, và chia bình quân chúng ta có thể dùng
+0:07:13 - 0:07:20, hàm np. min
+0:07:16 - 0:07:24, như thế này. Rồi thì W nhân với X cộng
+0:07:20 - 0:07:26, cho B rồi trừ cho Y rồi tất cả nhân với
+0:07:24 - 0:07:33, lại X.
+0:07:26 - 0:07:35, Thì đây là đạo hàm ờ của hàm ờ sai số
+0:07:33 - 0:07:37, của hàm mất mát theo cái biến W. Tương
+0:07:35 - 0:07:42, tự như vậy, chúng ta sẽ có cái công thức
+0:07:37 - 0:07:43, đạo hàm cho B. Thì đạo hàm cho B thì nó
+0:07:42 - 0:07:45, sẽ là cũng là bằng trung bình cộng.
+0:07:43 - 0:07:46, Nhưng có điều là chúng ta sẽ không có
+0:07:45 - 0:07:49, cái thành phần
+0:07:46 - 0:07:51, à xy ở đây. Chúng ta không có. Như vậy
+0:07:49 - 0:07:55, thì công thức chúng ta cũng có thể kế
+0:07:51 - 0:07:57, thừa là bỏ đi cái thằng x này là xong.
+0:07:55 - 0:08:02, Vậy cái việc code này cũng khá là đơn
+0:07:57 - 0:08:05, giản. Tiếp theo thì trong cái bước của
+0:08:02 - 0:08:08, phòng lập nó sẽ là cập nhật W là bằng W
+0:08:05 - 0:08:10, trừ cho alpha nhân cho đạo hàm của W.
+0:08:08 - 0:08:12, Rồi tương tự như vậy, B là bằng B trừ
+0:08:10 - 0:08:15, cho alpha
+0:08:12 - 0:08:18, nhân cho đạo hàm theo B. Khi đó thì
+0:08:15 - 0:08:20, chúng ta thiếu một cái tham số alpha.
+0:08:18 - 0:08:24, Alpha giả sử ở đây chúng ta chọn alpha
+0:08:20 - 0:08:27, là bằng à ví dụ như 0.01
+0:08:24 - 0:08:29, đi. Rồi thì khi đó chúng ta sẽ cập nhật
+0:08:27 - 0:08:32, lại nè
+0:08:29 - 0:08:36, W và B.
+0:08:32 - 0:08:43, Ở đây là tính đạo hàm
+0:08:36 - 0:08:43, của hàm mất mát theo W và B.
+0:08:44 - 0:08:50, Rồi thì W là bằng W trừ cho alpha
+0:08:50 - 0:08:56, nhân cho đạo hàm
+0:08:54 - 0:08:59, theo W. Tương tự như vậy, chúng ta sẽ có
+0:08:56 - 0:08:59, B
+0:09:00 - 0:09:07, rồi. Và cái việc này nó sẽ lặp lại khi
+0:09:03 - 0:09:09, nào thì dừng. Khi cái đạo hàm theo W và
+0:09:07 - 0:09:12, B này đủ nhỏ thì chúng ta sẽ dừng. Như
+0:09:09 - 0:09:14, vậy thì cái điều kiện dừng
+0:09:12 - 0:09:21, đó là if
+0:09:14 - 0:09:23, ABS của đạo hàm theo W à đuổi nhỏ đủ nhỏ
+0:09:21 - 0:09:28, một cái ngưỡng epsilon. Thì giả sử như ở
+0:09:23 - 0:09:28, đây silon của mình là bằng 0.001.
+0:09:28 - 0:09:36, Đồng thời là đạo hàm của
+0:09:33 - 0:09:39, B. Đạo hàm theo B cũng đủ nhỏ thì chúng
+0:09:36 - 0:09:41, ta sẽ break. Và khi break thì chúng ta
+0:09:39 - 0:09:44, sẽ in ra
+0:09:41 - 0:09:48, là cái W
+0:09:44 - 0:09:48, à sau khi huấn luyện.
+0:09:49 - 0:09:55, Đó. Rồi chúng ta sẽ in ra W. Tương tự
+0:09:52 - 0:09:57, như vậy, chúng ta sẽ có tham số B
+0:09:55 - 0:10:02, sau khi huấn luyện. Thì bây giờ chúng ta
+0:09:57 - 0:10:02, lưu lại và chạy cái chương trình này.
+0:10:04 - 0:10:13, Rồi thì chúng ta thấy là W sau khi huấn
+0:10:08 - 0:10:17, luyện đó thì nó sẽ ra là bằng 2,69.
+0:10:13 - 0:10:19, Ở trên đây chúng ta thấy là cái
+0:10:17 - 0:10:24, phương trình góc của mình nó sẽ là y =
+0:10:19 - 0:10:28, 3x - 5 và w của mình thì nó đã tiến đến
+0:10:24 - 0:10:33, là 2,69 tức là gần bằng 2,7 là cũng xắp
+0:10:28 - 0:10:36, xỉ với số 3 rồi. À cái hệ số b của mình
+0:10:33 - 0:10:39, đáng lẽ nó phải ra là -5 thì ở đây nó ra
+0:10:36 - 0:10:41, là -4. Thì nguyên nhân đó là do ở đây
+0:10:39 - 0:10:44, chúng ta có một cái đại lượng nhiễu khá
+0:10:41 - 0:10:46, là lớn. dẫn đến là cái
+0:10:44 - 0:10:48, W và B sau khi huấn luyện nó chưa chạm
+0:10:46 - 0:10:52, được đến cái giá trị 3 và 5. Thì cái
+0:10:48 - 0:10:54, điều này là cũng là dễ hiểu đó. Rồi tiếp
+0:10:52 - 0:10:58, theo thì chúng ta sẽ mô phỏng xem trong
+0:10:54 - 0:11:00, cái quá trình mà thực toán nó cập nhật
+0:10:58 - 0:11:02, thì nó đã thay đổi ra sao cái phương
+0:11:00 - 0:11:03, trình đường thẳng của mình. Thế thì ở
+0:11:02 - 0:11:07, đây chúng ta sẽ thêm một cái phần nữa đó
+0:11:03 - 0:11:07, là trực quan hóa.
+0:11:09 - 0:11:17, Ờ cái mô hình
+0:11:12 - 0:11:19, thì cũng tương tự chúng ta sẽ blog XY à
+0:11:17 - 0:11:23, ở đây chúng ta sẽ không show ở đây ha.
+0:11:19 - 0:11:23, Rồi chúng ta sẽ plot xy.
+0:11:23 - 0:11:27, Rồi sau đó chúng ta sẽ vẽ cái phương
+0:11:25 - 0:11:29, trình đường thẳng của mình. Thế thì để
+0:11:27 - 0:11:32, vẽ đường phương trình đường thẳng thì
+0:11:29 - 0:11:34, chúng ta sẽ lấy ra một cái cặp điểm. bắt
+0:11:32 - 0:11:39, đầu và điểm kết thúc. Thế thì điểm bắt
+0:11:34 - 0:11:42, đầu là với x là bằng 1 và điểm kết thúc
+0:11:39 - 0:11:47, của x sẽ là bằng 3. Do đó chúng ta sẽ
+0:11:42 - 0:11:47, cho cái cặp là 1 và 3.
+0:11:47 - 0:11:54, Còn tọa độ y thì sao?
+0:11:50 - 0:11:57, Tọa độ Y thì tương ứng nó sẽ là bằng W
+0:11:54 - 0:12:04, nhân với lại 1 cộng cho
+0:11:57 - 0:12:06, B. Rồi W lại à 3 cộng cho B. Tức là
+0:12:04 - 0:12:14, chúng ta đang vẽ một cái đường thẳng để
+0:12:06 - 0:12:19, nối cái điểm là à 1 3 đến cái điểm là à
+0:12:14 - 0:12:22, W1 + B rồi W3 + B. Đó. Rồi sau đó chúng
+0:12:19 - 0:12:25, ta sẽ dừng một chút xíu plt. F chúng ta
+0:12:22 - 0:12:27, dừng ví dụ như 0,5 giây.
+0:12:25 - 0:12:30, Rồi thì bây giờ chúng ta sẽ xem cái
+0:12:27 - 0:12:30, chương trình nó chạy ha.
+0:12:31 - 0:12:36, Đó thì càng về sau chúng ta sẽ thấy là
+0:12:34 - 0:12:39, nó đang có xu hướng là
+0:12:36 - 0:12:41, à ở đây là
+0:12:39 - 0:12:44, chúng ta nhầm ha. Ở đây chúng ta nhầm
+0:12:41 - 0:12:47, tức là lẽ ra chúng ta phải đi theo một
+0:12:44 - 0:12:52, cặp tức là W
+0:12:47 - 0:12:55, B ờ WB ở đây nó sẽ phải đi với số 1. Rồi
+0:12:52 - 0:12:57, số 3 ở đây thì sẽ đi với lại W3 cộng B.
+0:12:55 - 0:13:01, Cái này mới đúng. Rồi bây giờ chúng ta
+0:12:57 - 0:13:01, sẽ chạy lại ha.
+0:13:08 - 0:13:12, Thì tại sao ở đây nó không có? Tại vì
+0:13:10 - 0:13:18, ban đầu khi khởi tạo thì các cái giá trị
+0:13:12 - 0:13:18, của mình là nó không có ở khu vực này.
+0:13:24 - 0:13:31, Rồi cái tốc độ hội tụ của nó hơi chậm.
+0:13:28 - 0:13:32, Tốc độ hội tụ hơi chậm.
+0:13:31 - 0:13:35, Tại sao cái điểm này nó lại là cứ cố
+0:13:32 - 0:13:37, định là 13 ta? À hồi nãy là chúng ta đã
+0:13:35 - 0:13:39, đúng rồi nhưng mà chúng ta lại đi sửa
+0:13:37 - 0:13:43, lại nó thành sai ha. À nó sẽ đi theo cặp
+0:13:39 - 0:13:47, là x1 x2 trước. Nó sẽ đi theo cặp x1 x2
+0:13:43 - 0:13:47, rồi y1 y2
+0:13:51 - 0:13:58, rồi 1 3 và w nhân bà w x 3 + b. Cái này
+0:13:56 - 0:14:00, mới đúng.
+0:13:58 - 0:14:02, Rồi và ở đây thì để cho nhanh chúng ta
+0:14:00 - 0:14:05, sẽ giảm cái thời gian chờ xuống là còn
+0:14:02 - 0:14:05, khoảng 0.1
+0:14:06 - 0:14:09, đó.
+0:14:19 - 0:14:26, Rồi thì chúng ta thấy cái sự dịch chuyển
+0:14:22 - 0:14:26, của cái mô hình của mình.
+0:14:32 - 0:14:37, Rồi thì cái bước nhảy ở đây chúng ta
+0:14:34 - 0:14:39, thấy là nó đi hơi chậm nên cái đường
+0:14:37 - 0:14:42, thẳng của mình nó sẽ không có xoay. Nó
+0:14:39 - 0:14:45, sẽ không có xoay à nhanh. Do đó chúng ta
+0:14:42 - 0:14:47, sẽ à tăng cái tốc độ hội tụ của mình
+0:14:45 - 0:14:50, lên. Tăng cái tốc độ huấn luyện lên bằng
+0:14:47 - 0:14:54, cách đó là 10 lần là alpha. Thay vì là
+0:14:50 - 0:14:55, để 0.01 chúng ta sẽ cho alpha bằng 0.1.
+0:14:54 - 0:14:58, Tức là cái tốc độ huấn luyện nó sẽ nhanh
+0:14:55 - 0:14:58, hơn.
+0:15:02 - 0:15:07, Đó thì chúng ta sẽ thấy là dần dần cái
+0:15:05 - 0:15:10, đường thẳng của mình nó sẽ xoay. Nó sẽ
+0:15:07 - 0:15:10, xoay
+0:15:11 - 0:15:18, và nó sẽ đi vào trong tập các cái điểm
+0:15:14 - 0:15:18, dữ liệu màu đỏ của mình.
+0:15:23 - 0:15:30, Đó thì đây chính là cái à cách mà mô
+0:15:27 - 0:15:32, hình của mình nó cập nhật. Ban đầu thì
+0:15:30 - 0:15:36, là ở cái đường thẳng như thế này. Nó khá
+0:15:32 - 0:15:39, là xa đó, khá là xa. Sau đó thì nó sẽ
+0:15:36 - 0:15:40, nhảy một bước, nhảy một bước và càng về
+0:15:39 - 0:15:43, sau thì cái đường thẳng của mình nó sẽ
+0:15:40 - 0:15:46, càng tiến về cái khu vực có cái điểm dữ
+0:15:43 - 0:15:48, liệu. Rồi sau đó khi mà nó đã tận tiến
+0:15:46 - 0:15:51, đến đây xong rồi thì nó sẽ bắt đầu nó
+0:15:48 - 0:15:53, xoay. Nó sẽ xoay
+0:15:51 - 0:15:56, và xoay làm sao cho các cái đường thẳng
+0:15:53 - 0:15:58, của mình nó sẽ đi xuyên qua được các cái
+0:15:56 - 0:16:00, điểm sao cho tổng cái size số cái khoảng
+0:15:58 - 0:16:03, cách từ các cái điểm dữ liệu đến cái
+0:16:00 - 0:16:06, đường thẳng của mình là là nhỏ nhất.
+0:16:03 - 0:16:08, Thì đó chính là cái cách mà mô hình của
+0:16:06 - 0:16:11, mình nó huấn luyện với thực toán radian
+0:16:08 - 0:16:11, des.
+0:16:15 - 0:16:27, [âm nhạc]

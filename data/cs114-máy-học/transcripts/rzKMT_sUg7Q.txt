@@ -1,0 +1,272 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:43, Rồi, thì rõ ràng là không có cách nào chúng ta có thể tìm được một cái đường thẳng
+0:00:43 - 0:00:46, có thể chia hai tập điểm màu xanh màu đỏ này ra làm hai
+0:00:46 - 0:00:52, Tuy nhiên, đây là một cái dĩ liệu điểm ngoại lệ và có thể đây sẽ là một cái điểm nhũ
+0:00:52 - 0:00:55, tức là cái nhãn của nó được gắn xai
+0:00:55 - 0:01:09, Nếu chúng ta cố gắng tìm một mô hình để phân loại điểm màu xai này, thì vô hình chúng ta đang làm xay lệch đi bản chất của mô hình của mình
+0:01:09 - 0:01:18, Do đó chúng ta sẽ thích lập thuộc tán SVM để nó có thể chấp nhận cho một vài điểm dữ liệu ngoại lệ
+0:01:18 - 0:01:20, với assumption, với giải định rằng là
+0:01:20 - 0:01:23, cái điểm ngoại lệ của mình phải đủ ít
+0:01:23 - 0:01:27, và những điểm dữ liệu mà được gán nhãn chuẩn của mình sẽ là số đông
+0:01:27 - 0:01:30, ví dụ như ở đây chúng ta thấy là tập hợp các điểm này
+0:01:30 - 0:01:34, là những điểm gán nhãn đúng thì nó sẽ chiếm đa số
+0:01:34 - 0:01:37, còn điểm ngoại lại, ngoại lệ thì nó chỉ là thiểu số thôi
+0:01:37 - 0:01:42, thì mô hình SVM, thực tế SVM nó sẽ chấp nhận một vài điểm ngoại lệ này
+0:01:42 - 0:01:45, chúng ta sẽ đến tình huống thứ 2
+0:01:45 - 0:01:50, tức là bản chất dữ liệu của mình là phi tuyến
+0:01:50 - 0:01:52, bản chất dữ liệu của mình là phi tuyến rồi
+0:01:52 - 0:01:56, và không thể nào mà chúng ta có thể tìm được 1 hyperplane để phân tách ra làm 2
+0:01:56 - 0:01:58, ví dụ như ở đây chúng ta thấy
+0:01:58 - 0:02:02, không thể nào chúng ta có thể tìm được 1 đường đẳng để tắt ra làm 2 phần
+0:02:02 - 0:02:06, do đó thì chúng ta sẽ xử lý như thế nào
+0:02:06 - 0:02:10, thì thay vì chỉ giới hạn hyperplane tuyến tính
+0:02:10 - 0:02:19, Thay vì là hyperplane tuyến tính, thì chúng ta sẽ là trong cái không gian ban đầu
+0:02:19 - 0:02:23, thì chúng ta sẽ nâng cấp, tạm gọi là nâng cấp
+0:02:23 - 0:02:25, nâng cấp cái không gian của mình lên
+0:02:25 - 0:02:30, và SVM sẽ sử dụng cách tiếp cận đó là biến đổi đặc trưng
+0:02:30 - 0:02:32, biến đổi đặc trưng tạo ra đặc trưng mới
+0:02:32 - 0:02:37, và bổ sung thêm, đó là z là bằng x bình cộng y bình
+0:02:37 - 0:02:39, trong cái ngữ cảnh này, z là bằng x bình cộng y bình
+0:02:39 - 0:02:44, khi đó, chữ liệu từ không gian OSE
+0:02:44 - 0:02:47, chúng ta sẽ chuyển sang một không gian mới
+0:02:47 - 0:02:49, là OXZ
+0:02:49 - 0:02:52, X vẫn giữ nguyên
+0:02:52 - 0:02:54, chúng ta thấy là từ trái sang vải
+0:02:54 - 0:02:55, X vẫn giữ nguyên
+0:02:55 - 0:02:57, nhưng mà trục Y của mình
+0:02:57 - 0:03:00, thay vì như trong không gian góc
+0:03:00 - 0:03:02, thì Y của mình
+0:03:02 - 0:03:04, trục tung của mình
+0:03:04 - 0:03:07, là Z sẽ là bằng X bình cộng Y bình
+0:03:07 - 0:03:10, tức là lấy giá trị theo trục y bình phương lên
+0:03:10 - 0:03:11, cộng cho x bình phương lên
+0:03:11 - 0:03:14, thì nói cách khác đó chính là cái khoảng cách
+0:03:14 - 0:03:17, nó chính là cái bình phương của cái khoảng cách
+0:03:17 - 0:03:19, đến các cái điểm này
+0:03:19 - 0:03:21, thì khi đó chúng ta thấy là cái trục z này sẽ là
+0:03:21 - 0:03:23, nhận những cái giá trị dương
+0:03:23 - 0:03:25, nó nằm ở phía trên của cái
+0:03:25 - 0:03:27, nó sẽ nằm ở phía trên
+0:03:27 - 0:03:31, của cái trục z của mình
+0:03:31 - 0:03:32, trục o x của mình
+0:03:32 - 0:03:34, và khi đó chúng ta thấy là
+0:03:34 - 0:03:37, hoàn toàn dễ dàng có thể chia tắt nó ra làm 2
+0:03:37 - 0:03:39, bằng một cái siêu phẳng như thế này
+0:03:39 - 0:03:41, có thể chia tách nó làm 2
+0:03:51 - 0:03:54, đây là một cái siêu phẳng mới trong một cái không gian mới
+0:03:54 - 0:03:57, thay vì chúng ta tìm nó trong không gian osz
+0:03:57 - 0:04:00, thì chúng ta tìm nó trong cái không gian osz
+0:04:00 - 0:04:09, Như vậy thì trong tình huống dữ liệu không có tuyến tính hay là phi tuyến tính
+0:04:09 - 0:04:16, thì dữ liệu của mình không thể phân tác được hoàn toàn bằng một đường thẳng hay là siêu phẳng
+0:04:16 - 0:04:18, duy nhất trong không gian góc
+0:04:18 - 0:04:20, thì ở đây chúng ta sẽ có một số tình huống
+0:04:20 - 0:04:22, ở bên trái là Linear Separable
+0:04:22 - 0:04:26, tức là có thể tìm được một siêu phẳng chia tách làm 2
+0:04:26 - 0:04:29, còn 2 tình huống bên đây là Non-linear Separable
+0:04:29 - 0:04:35, thì các cái điểm này nó sẽ được phân tác ra bởi những cái đường cong như thế này
+0:04:35 - 0:04:41, hoặc là trong tình huống này thì là một cái đường cong kép kín như thế này
+0:04:41 - 0:04:45, thì đây là hai cái tình huống mà phi tuyến tính
+0:04:45 - 0:04:52, và để có cái giải pháp cho cái tình huống phi tuyến tính này thì chúng ta sẽ có hai cái giải pháp
+0:04:52 - 0:04:53, SVM nó có hai giải pháp
+0:04:53 - 0:04:58, giải pháp đầu tiên đó là soft margin và giải pháp thứ hai đó là kernel trick
+0:04:58 - 0:05:00, tức là chúng ta sử dụng cái phương pháp kernel
+0:05:02 - 0:05:04, đối với cái giải pháp soft margin
+0:05:04 - 0:05:07, là nó sẽ cho phép một số cái dữ liệu của mình
+0:05:07 - 0:05:09, nó sẽ vi phạm
+0:05:09 - 0:05:11, nó sẽ vi phạm
+0:05:11 - 0:05:12, cái vi phạm này có nghĩa là sao?
+0:05:12 - 0:05:14, tức là nó nằm xa phía
+0:05:14 - 0:05:15, nó nằm xa phía
+0:05:15 - 0:05:17, lẽ ra nó nằm bên phía bên phải
+0:05:17 - 0:05:19, thì nó lại nằm phía bên trái
+0:05:19 - 0:05:21, lẽ ra nằm ở trên thì nó lại nằm ở dưới ví dụ vậy
+0:05:21 - 0:05:23, nó sẽ nằm ở xa phía
+0:05:23 - 0:05:25, trong cái vùng margin của mình
+0:05:25 - 0:05:27, và mục đích đó là gì?
+0:05:27 - 0:05:30, là tăng khả năng tổng hoa khóa của mô hình lên
+0:05:30 - 0:05:32, và xử lý được những dữ liệu nhỉu
+0:05:32 - 0:05:34, nhỉu ở đây thì chúng ta có thể hiểu
+0:05:34 - 0:05:37, đó là những điểm mà nó có thể gán nhãn sai
+0:05:43 - 0:05:47, thực tế thì việc mà gán nhãn dữ liệu mà bị sai
+0:05:47 - 0:05:49, là một việc rất phổ biến
+0:05:49 - 0:05:54, và các mô hình của chúng ta phải tìm cách
+0:05:54 - 0:05:56, để mà có thể thích ứng được trong những tình huống như thế này
+0:05:56 - 0:06:02, thì cơ chế đó là chúng ta sẽ cân bằng giữa cái việc là tối đa hóa cái marine
+0:06:02 - 0:06:06, cái mục tiêu ban đầu của chúng ta, đây là cái mục tiêu ban đầu nè
+0:06:12 - 0:06:18, nhưng nếu chúng ta chỉ chăm chăm, bám theo cái mục tiêu ban đầu này á
+0:06:18 - 0:06:25, thì nó sẽ rất là khó khăn trong việc học khi có những điểm nhiễu như thế này
+0:06:25 - 0:06:28, do đó chúng ta phải cân bằng được cái yếu tố thứ 2
+0:06:28 - 0:06:31, đó là phải giảm được cái lỗi phân loại
+0:06:31 - 0:06:37, tức là vừa tối đa hóa cái margin nhưng đồng thời là cái lỗi phân loại của mình nó sẽ là thấp nhất
+0:06:37 - 0:06:44, thì khi đó chúng ta sẽ ứng dụng cái phương pháp shop margin này
+0:06:44 - 0:06:49, chúng ta ứng dụng cái phương pháp shop margin này khi dữ liệu của mình gần như tuyến tính
+0:06:49 - 0:06:52, nhưng mà nó có nhiễu, nó gần như tuyến tính thôi
+0:06:52 - 0:07:00, thì ở trong sơ đồ bên trái là một ví dụ mình họa dữ liệu là Linear Separable
+0:07:00 - 0:07:05, tức là chúng ta thấy có một cái đường phân tích nó làm 2
+0:07:05 - 0:07:09, tức là nó hoàn toàn là Linear Separable
+0:07:09 - 0:07:13, nhưng có một cái điểm nhiễu thì ở đây chúng ta thấy có cái điểm này
+0:07:13 - 0:07:18, nó lại nằm rất gần so với các điểm màu xanh bên đây mặc dù cái nhãn của nó là màu đỏ
+0:07:18 - 0:07:24, Thế thì, mô hình của mình phải có cơ chế để cho phép chấp nhận điểm nhiều này
+0:07:24 - 0:07:30, Chứ nếu không chấp nhận thì đường phân lớp của mình không phải nằm ở đây
+0:07:30 - 0:07:32, Mà đúng ra nó phải nằm ở đây mới đúng
+0:07:34 - 0:07:35, Tại vì nó cần bằng
+0:07:35 - 0:07:37, À xin lỗi là nó phải nằm ở đây mới đúng
+0:07:41 - 0:07:45, Tức là đúng ra là đường phân lớp của mình sẽ phải nằm ở đây
+0:07:45 - 0:07:48, tại vì tại vị trí này thì nó sẽ chia hai tạp màu
+0:07:48 - 0:07:50, màu xanh màu đỏ ra làm hai
+0:07:50 - 0:07:52, và cái margin của mình lúc này là lớn nhất
+0:07:52 - 0:07:54, nhưng rõ ràng chúng ta thấy là
+0:07:54 - 0:07:56, cái điểm này về mặt trực quan
+0:07:56 - 0:07:58, thì đó là một cái điểm nhịu
+0:07:58 - 0:08:00, do đó nó cần phải xem xét lại bỏ cái điểm này đi
+0:08:00 - 0:08:02, để mà kéo cái đường biên của mình về đây
+0:08:02 - 0:08:04, thì với cái đường biên của mình về đây
+0:08:04 - 0:08:06, thì cái tính tổng bắt hóa của nó
+0:08:06 - 0:08:08, nó sẽ cao hơn
+0:08:08 - 0:08:10, cái tình huống bên tay phải đó là
+0:08:10 - 0:08:12, dữ liệu thì không linear separable
+0:08:12 - 0:08:14, ví dụ chúng ta thấy là ở đây không có cách nào
+0:08:14 - 0:08:17, có cách nào để chúng ta có thể chia nó ra làm 2 phần
+0:08:17 - 0:08:20, không có cách nào để chia ra làm 2 phần mà bằng 1 đường thẳng hết á
+0:08:20 - 0:08:23, thì tuy nhiên nó lại gần linear separable
+0:08:23 - 0:08:26, tức là nó ngoại trừ những cái điểm như thế này
+0:08:26 - 0:08:29, những cái điểm như thế này
+0:08:29 - 0:08:32, hoặc là những cái điểm như thế này
+0:08:32 - 0:08:35, thì tất cả những cái, nếu bỏ đi 4 cái điểm này đi thì chúng ta thấy là nó là linear separable
+0:08:35 - 0:08:38, và cái margin của mình
+0:08:38 - 0:08:41, mà tách ra làm 2 thì nó hoàn toàn là
+0:08:41 - 0:08:47, và margin càng lớn thì tính tổng hóa quá sẽ càng cao
+0:08:47 - 0:08:50, thì đây là 2 cái thình huống
+0:08:50 - 0:08:53, là dữ liệu gần như linear separable
+0:08:53 - 0:08:56, tức là gần như có thể phi phân tách được ra bởi một đường thẳng
+0:08:56 - 0:08:59, tuy nhiên vì có một số điểm nhiễu
+0:08:59 - 0:09:01, nó sẽ ép cái mode của mình
+0:09:01 - 0:09:04, khiến cho cái margin của mình rất là bé
+0:09:04 - 0:09:05, tức là không có tính tổng hóa
+0:09:05 - 0:09:07, còn bên đây là
+0:09:07 - 0:09:12, Chữ liệu của mình nó hoàn toàn không có linear separable nhưng mà nó gần gần
+0:09:12 - 0:09:16, Thì cái khái niệm gần gần này có nghĩa là sao? Nó chỉ có một vài
+0:09:16 - 0:09:20, Nếu chúng ta bỏ một vài điểm rất là ít như là bà chị ở đây
+0:09:20 - 0:09:24, Thì nó sẽ chuyển sang cái dạng là linear separable
+0:09:24 - 0:09:30, Và cái giải pháp mà chúng ta sẽ sử dụng trong cái tình huống này đó là kernel trick
+0:09:30 - 0:09:35, Tức là chúng ta sẽ tìm một cái phép biến đổi sao cho cái dữ liệu ban đầu
+0:09:35 - 0:09:39, không phân biệt tuyến tính được sang một cái không gian mới
+0:09:39 - 0:09:45, tức là ban đầu dữ liệu của mình không thể nào phân biệt được, phân tách được ra bằng một cái siêu phẳng
+0:09:45 - 0:09:47, thì chúng ta sẽ biến nó sang một cái không gian mới
+0:09:47 - 0:09:52, và ở cái không gian mới này dữ liệu này hoàn toàn có thể phân biệt được một cách tuyến tính
+0:09:52 - 0:09:57, ví dụ như ở đây chúng ta thấy cái dữ liệu trong cái không gian góc
+0:09:59 - 0:10:04, thì rõ ràng chúng ta chỉ có thể phân tách nó ra bởi một cái vòng tròn thôi
+0:10:04 - 0:10:06, và rõ ràng vòng tròn là không có tiến tính
+0:10:08 - 0:10:11, thì chúng ta sẽ tìm cách map nó vào cái không gian nhiều chiều hơn
+0:10:11 - 0:10:14, thì ở đây chúng ta thấy đây là một không gian 2 chiều
+0:10:14 - 0:10:16, khi chuyển sang cái không gian 3 chiều
+0:10:17 - 0:10:19, thì nó đưa về một cái parabole
+0:10:19 - 0:10:24, và chúng ta có thể cắt nó ra bằng một cái mặt phẳng
+0:10:24 - 0:10:26, thì đây là một cái hyper
+0:10:30 - 0:10:32, parameter, ờ, một cái hyperplane
+0:10:32 - 0:10:37, 1 cái siêu phẳng có thể tách nó ra làm 2
+0:10:37 - 0:10:40, thì đây chính là phương pháp kernel trick
+0:10:40 - 0:10:42, và một số kernel trick phổ biến
+0:10:42 - 0:10:44, ví dụ như linear kernel
+0:10:44 - 0:10:46, công thức rất đơn giản
+0:10:46 - 0:10:52, trong đó x,y và x,y chính là 2 cái đặc trưng đầu vào
+0:10:52 - 0:10:54, là 2 cái vector đặc trưng đầu vào
+0:10:54 - 0:10:56, thì kernel này của mình
+0:10:56 - 0:11:00, đó là chỉ đơn giản là lấy x,y nhân với lại x,y
+0:11:00 - 0:11:04, ý nghĩa đó là chỉ là cái tích vô hướng giữa hai vector đặc trưng
+0:11:04 - 0:11:06, và nó được dùng khi
+0:11:06 - 0:11:09, dữ liệu của mình là gần như tuyến tính
+0:11:09 - 0:11:13, dữ liệu của mình là gần như tuyến tính, tức là có thể phân tách được ra làm 2 bởi
+0:11:13 - 0:11:18, 1 cái siêu phẳng, hoặc là nó chỉ có 1 vài điểm nhịu nhỏ
+0:11:18 - 0:11:20, nó chỉ có 1 vài điểm nhịu nhỏ
+0:11:20 - 0:11:24, còn nếu bỏ đi những điểm nhịu đó thì nó sẽ tắt ra được bằng 1 cái siêu phẳng
+0:11:24 - 0:11:27, hoặc là khi số chiều của mình rất cao
+0:11:27 - 0:11:36, Ví dụ như trong bài toán phân loại văn bản, số chiều của mình rất là cao
+0:11:36 - 0:11:42, Cơ nổ phổ biến tiếp theo là polynomial kernel
+0:11:42 - 0:11:48, Cơ nổ sẽ là xy xz cộng cho xe tất cả mũ đe
+0:11:48 - 0:11:50, Đây là mũ của đa thức
+0:11:50 - 0:11:55, Đây là cái bậc của đa thức của mình
+0:11:55 - 0:12:07, và ý nghĩa đó là cho phép mô hình học quan hệ ở bậc cao hơn
+0:12:07 - 0:12:13, nó cho phép mô hình học ở bậc cao hơn của rạch trưng
+0:12:13 - 0:12:19, và nó thường được sử dụng khi dữ liệu của mình có quan hệ phi tiến tính
+0:12:19 - 0:12:23, mối quan hệ phi tiến tính nhưng không quá phức tạp
+0:12:23 - 0:12:27, tại đây là đa thức, nó không quá phức tạp
+0:12:27 - 0:12:30, và nhược điểm của nó là tính toán rất chậm khi đa thức bậc cao
+0:12:30 - 0:12:34, đa thức bậc càng cao thì tốc độ tính toán của chúng ta sẽ càng chậm
+0:12:34 - 0:12:39, và một kernel rất phổ biến cho trường hợp phi tiến tính đó là RBF
+0:12:39 - 0:12:43, Radio Biasis Function, gào sinh
+0:12:43 - 0:12:45, tên gọi khác là gào sinh kernel
+0:12:45 - 0:12:50, công thức của nó là k của xe và xe sẽ là bằng hàm e mũ
+0:12:50 - 0:12:52, exponential
+0:12:52 - 0:12:54, trừ xy, trừ xz
+0:12:54 - 0:12:56, tất cả bình chia cho 2 sigma bình
+0:12:56 - 0:12:58, thì đây chính là công thức Gaussian
+0:12:58 - 0:13:00, và ý nghĩa của nó là
+0:13:00 - 0:13:02, ánh xạ một dữ liệu
+0:13:02 - 0:13:04, sang một không gian vô hạn chiều
+0:13:04 - 0:13:06, ánh xạ
+0:13:06 - 0:13:08, sang một không gian vô hạn chiều
+0:13:08 - 0:13:10, và nó thường được sử dụng khi
+0:13:10 - 0:13:12, hầu hết các tình huống
+0:13:12 - 0:13:14, phi tuyến tính thì thường
+0:13:14 - 0:13:16, chúng ta sẽ sử dụng cái RBF kernel này
+0:13:16 - 0:13:18, tức là khi chúng ta biết rằng là
+0:13:18 - 0:13:21, Cái dữ liệu của mình có mối quan hệ là phi tiến tính
+0:13:21 - 0:13:22, thì
+0:13:24 - 0:13:27, Mặc nhiên ban đầu chúng ta nên sử dụng cái RBF kernel này trước
+0:13:27 - 0:13:31, Do đó thì đây là một cái kernel rất là phủng
+0:13:31 - 0:13:34, Dùng cái từ gọi là đặc biệt phổ biến trong thực tế
+0:13:34 - 0:13:36, Và ưu điểm của nó đó là rất là mạnh mẽ
+0:13:36 - 0:13:38, và linh hoàng
+0:13:38 - 0:13:40, Và nhược điểm của nó đó là
+0:13:40 - 0:13:42, Nó sẽ cần phải tối ưu
+0:13:42 - 0:13:45, Nó sẽ cần phải tìm ra cái tham số sigma phù hợp
+0:13:45 - 0:13:47, Chứ nếu không thì nó sẽ
+0:13:47 - 0:13:51, dễ bị hiện tượng là Overfitting, tức là quá khớp với dữ liệu
+0:13:52 - 0:13:56, Rồi một kernel tiếp theo nữa đó là SIGMOY kernel
+0:13:56 - 0:13:58, thì công thức của nó sẽ là bằng tanh của alpha
+0:13:58 - 0:14:00, nhân với XA nhân với XZ cộng C
+0:14:00 - 0:14:04, tuy nhiên kernel này thì nó không có phổ biến lắm
+0:14:04 - 0:14:07, ý nghĩ của nó thì nó cũng tương tự như một cái
+0:14:07 - 0:14:08, neural network
+0:14:08 - 0:14:10, nó cũng tương tự như một cái neural network
+0:14:10 - 0:14:11, có một lớp ẩn
+0:14:11 - 0:14:15, với cái hàm kích hoạt là hàm tanh
+0:14:15 - 0:14:17, đây là cái hàm Activation Function
+0:14:17 - 0:14:19, và nó được dùng khi
+0:14:19 - 0:14:20, ờ
+0:14:20 - 0:14:22, một cái phép thử trong cái
+0:14:22 - 0:14:24, đôi khi dùng trong như một cái phép thử
+0:14:24 - 0:14:26, trong cái dữ liệu phi tiến tính
+0:14:26 - 0:14:28, còn thực tế thì cái này là
+0:14:28 - 0:14:30, rất là ít sử dụng
+0:14:33 - 0:14:35, và nó ít dùng hơn so với RBS
+0:14:35 - 0:14:37, hoặc là Linear Kernel rất là nhiều
+0:14:37 - 0:14:40, khi dữ liệu phi tiến tính thì chúng ta dùng Linear Kernel
+0:14:40 - 0:14:43, khi dữ liệu phi tiến tính thì thường chúng ta dùng RBS
+0:14:43 - 0:14:45, nguyên nhân đó là vì
+0:14:45 - 0:14:47, nó dễ gây ra bất bổn khi
+0:14:47 - 0:14:49, và các thông tin không phù hợp
+0:14:51 - 0:14:56, Hình bên đây là một trực quan hóa cho đường bao
+0:14:56 - 0:14:58, đường phân tách các tập dữ liệu của mình
+0:15:01 - 0:15:03, trong một số tình huống là kernel
+0:15:03 - 0:15:05, thì ở đây chúng ta sẽ thấy là
+0:15:05 - 0:15:09, đặc trưng của mình sẽ là kiếp SelecWidth và SelecLand
+0:15:09 - 0:15:13, và chúng ta sẽ chia nó ra làm các cái thơ phần này
+0:15:13 - 0:15:17, và ở đây chúng ta đang lấy một ví dụ đó là phân lớp là nhiều lớp
+0:15:17 - 0:15:20, thì trong phần sau chúng ta sẽ nói rõ hơn
+0:15:20 - 0:15:23, đó là SVM hoàn toàn không phải chỉ có thể phân lớp nhị phân
+0:15:23 - 0:15:27, mà nó có thể phân lớp nhiều lớp
+0:15:27 - 0:15:29, ví dụ trong trường hợp này là 3 lớp
+0:15:30 - 0:15:33, thì ở trong cái ví dụ này, cái ví dụ trực hoan hóa này
+0:15:33 - 0:15:38, chúng ta chỉ thấy được là cái đường biên của linear kernel
+0:15:38 - 0:15:41, là chúng ta thấy nó rất là thẳng, nó thẳng thớm
+0:15:41 - 0:15:51, Còn đường biên của ABF rất là smooth, cong và trơn
+0:15:51 - 0:15:59, Còn polinomial và sigmoid, đặc biệt là sigmoid kernel rất là tệ
+0:15:59 - 0:16:03, Do đó thì thường chúng ta sẽ không sử dụng sigmoid kernel
+0:16:03 - 0:16:09, Còn polinomial kernel thì nó sẽ tạo ra các đường cong
+0:16:09 - 0:16:13, nhưng mà cái đường cong này nó cũng còn tương đối là đơn giản
+0:16:16 - 0:16:22, cái RBS kernel thì nó sẽ tạo ra các đường cong nó sẽ uốn lượng và nó sẽ phức tạp hơn
+0:16:26 - 0:16:31, và vì nó phức tạp hơn nên nó có thể phủ được nhiều tình huống sử dụng trong thực tế hơn
+0:16:39 - 0:16:43, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

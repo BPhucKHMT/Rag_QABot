@@ -1,0 +1,149 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:20, Như vậy thì ở đây chúng ta sẽ có các cái
+0:00:17 - 0:00:25, biến à viết tắc là bias ha là sẽ là bằng
+0:00:20 - 0:00:30, bias của cái neuron thứ index.
+0:00:25 - 0:00:32, Rồi cái thành phần là P1 param 1 thì sẽ
+0:00:30 - 0:00:35, là
+0:00:32 - 0:00:40, ờ param
+0:00:35 - 0:00:44, và nó là cái chỉ số 0 rồi nhưng mà cái
+0:00:40 - 0:00:47, hidden thứ index cái neuron thứ index
+0:00:44 - 0:00:49, tương tự như vậy cho cái param 2
+0:00:47 - 0:00:53, là
+0:00:49 - 0:00:56, param 1 và cái chỉ số của neuron là
+0:00:53 - 0:01:02, index rồi. Rồi thì cái công thức ở đây
+0:00:56 - 0:01:02, chúng ta sẽ plot plt.pl plot
+0:01:05 - 0:01:09, -1 1.
+0:01:09 - 0:01:16, Và ở đây chúng ta sẽ dùng cái công thức
+0:01:12 - 0:01:24, mà chúng ta đã đề cập hồi nãy đó là
+0:01:16 - 0:01:30, trừ của param 1 là p1 trừ cho bias.
+0:01:24 - 0:01:33, tất cả chia cho param 2.
+0:01:30 - 0:01:39, Param 1 là chúng ta sẽ nhân với x.
+0:01:33 - 0:01:41, Rồi thế thì khi x là bằng -1, khi x là
+0:01:39 - 0:01:46, bằng -1 thì chúng ta thế qua đây thì nó
+0:01:41 - 0:01:51, sẽ là -1. Do đó thì đảo dấu này lại sẽ
+0:01:46 - 0:01:51, là bằng p1 - chia cho p2.
+0:01:52 - 0:01:59, Rồi khi chúng ta thế x là bằng 1 vào thì
+0:01:56 - 0:02:06, ở đây chúng ta sẽ
+0:01:59 - 0:02:10, trừ P1 nhân với lại 1 rồi à trừ cho B là
+0:02:06 - 0:02:10, B ha. PS ở đây là B
+0:02:10 - 0:02:17, tất cả chia cho P2 đó thì nhân với 1 thì
+0:02:14 - 0:02:20, chúng ta không cần để ở đây. Như vậy thì
+0:02:17 - 0:02:23, khi chúng ta vẽ lên trên cái biểu đồ thì
+0:02:20 - 0:02:28, nó sẽ ra là cái đường thẳng của mình.
+0:02:23 - 0:02:31, đó thì chúng ta thấy là các cái đường mà
+0:02:28 - 0:02:32, có cái trọng số cao á à các cái neuron
+0:02:31 - 0:02:36, mà có trọng số cao thì khi chúng ta vẽ
+0:02:32 - 0:02:39, lên chúng ta thấy là nó tạo ra các cái
+0:02:36 - 0:02:42, đường thẳng mà trong đó những cái điểm
+0:02:39 - 0:02:46, mà nằm trong
+0:02:42 - 0:02:48, cái vùng được khoanh bởi
+0:02:46 - 0:02:50, năm cái đường thẳng này thì chúng ta
+0:02:48 - 0:02:53, thấy nó là những cái điểm màu xanh lá.
+0:02:50 - 0:02:55, Còn những cái điểm mà nằm phía bên ngoài
+0:02:53 - 0:02:57, thì đó sẽ là những cái điểm màu đỏ. Đó,
+0:02:55 - 0:03:00, phía bên này là sao màu đỏ. Thì ở đây
+0:02:57 - 0:03:02, cái ý nghĩa của nó đó là gì? Với mỗi một
+0:03:00 - 0:03:05, cái đường thẳng ở đây, ví dụ như cái
+0:03:02 - 0:03:06, đường màu tím ở đây thì nó là một cái bộ
+0:03:05 - 0:03:08, phân loại yếu là một cái quick
+0:03:06 - 0:03:12, classifier.
+0:03:08 - 0:03:15, Trong đó nó phân loại ở phía nửa phía
+0:03:12 - 0:03:19, trên bên trái đó là những điểm màu đỏ.
+0:03:15 - 0:03:22, Còn những cái điểm mà nằm phía bên dưới
+0:03:19 - 0:03:25, thì đó là vừa đỏ vừa xanh. Thế thì nếu
+0:03:22 - 0:03:26, như nó kết luận rằng cái quick
+0:03:25 - 0:03:29, classifier này nó kết luận rằng đó là
+0:03:26 - 0:03:32, màu đỏ thì đó chắc chắn là màu đỏ. Nhưng
+0:03:29 - 0:03:34, ngược lại nếu nó không phải là màu đỏ
+0:03:32 - 0:03:37, thì nó sẽ phải cần dựa thêm cái thông
+0:03:34 - 0:03:40, tin của các cái wi classifier khác. Ví
+0:03:37 - 0:03:43, dụ như ở đây là cái đường màu à màu xanh
+0:03:40 - 0:03:46, lá. Màu xanh lá là phía trên bên tay
+0:03:43 - 0:03:48, phải là màu đỏ. Thì nếu nó kết luận như
+0:03:46 - 0:03:50, vậy thì chắc chắn nó là màu đỏ. Nhưng
+0:03:48 - 0:03:53, ngược lại thì mình sẽ không chắc nó là
+0:03:50 - 0:03:55, màu đỏ hay màu xanh.
+0:03:53 - 0:03:59, Thế thì để kết luận được nó là màu xanh
+0:03:55 - 0:04:02, á thì nó sẽ phải là
+0:03:59 - 0:04:05, hội đủ của cả năm cái quick classifier
+0:04:02 - 0:04:08, này. Đó thì nếu như nó nằm phía dưới của
+0:04:05 - 0:04:10, đường màu tím, nó nằm phía dưới của màu
+0:04:08 - 0:04:13, xanh lá, nó nằm bên tay trái của cái
+0:04:10 - 0:04:15, đường màu đỏ này, nó nằm phía trên của
+0:04:13 - 0:04:17, cái đường màu cam này, nó nằm phía trên
+0:04:15 - 0:04:20, của cái đường màu xanh lá này thì đó
+0:04:17 - 0:04:23, chính là các cái điểm màu xanh lá. Đó.
+0:04:20 - 0:04:26, Thì cái ý nghĩa của mỗi một cái neuron
+0:04:23 - 0:04:28, network à mỗi một cái neuron đó là một
+0:04:26 - 0:04:29, cái bộ phân loại yếu nhưng mà kết hợp
+0:04:28 - 0:04:32, nhiều cái bộ phân loại yếu này lại với
+0:04:29 - 0:04:33, nhau thì nó sẽ tạo ra một cái bộ phân
+0:04:32 - 0:04:35, loại mạnh. Đó thì cái output của mình nó
+0:04:33 - 0:04:39, sẽ là một cái phân loại mạnh. Bây giờ
+0:04:35 - 0:04:42, chúng ta sẽ thử xem vẽ xem một cái
+0:04:39 - 0:04:44, neuron mà có cái trọng số thấp thì nhìn
+0:04:42 - 0:04:49, như thế nào. Thì ví dụ như ở đây chúng
+0:04:44 - 0:04:49, ta à thử với cái neuron là
+0:04:54 - 0:05:03, rồi n ví dụ ở đây là 0 nè 1 2 3 4. Chúng
+0:04:59 - 0:05:03, ta sẽ thử cái neuron số 4.
+0:05:05 - 0:05:10, Đó thì chúng ta thấy đó là cái đường này
+0:05:07 - 0:05:11, nó sẽ không đi ra giữa. Nó sẽ không đi
+0:05:10 - 0:05:13, ra cái giữa khoảng không này mà nó nằm ở
+0:05:11 - 0:05:16, tuốt phía trên. Thì đây là một cái qu
+0:05:13 - 0:05:18, classifier nhưng mà nó không tốt tại vì
+0:05:16 - 0:05:20, nó vẫn còn để cái điểm màu đỏ ở đây nè.
+0:05:18 - 0:05:23, Đó để thừa một cái điểm màu đỏ các cái
+0:05:20 - 0:05:25, điểm màu đỏ ở đây. Lẽ ra nó phải kéo từ
+0:05:23 - 0:05:27, đây sang thì nó sẽ tận dụng được tốt
+0:05:25 - 0:05:29, hơn, nó sẽ phân loại tốt hơn các cái
+0:05:27 - 0:05:34, điểm màu đỏ. Rồi bây giờ chúng ta sẽ thử
+0:05:29 - 0:05:37, nghiệm bằng cách đó là cho cái à số lớp
+0:05:34 - 0:05:38, neuron này, số neuron ở lớp ẩn này giảm
+0:05:37 - 0:05:41, xuống. Ví dụ như chúng ta giảm xuống còn
+0:05:38 - 0:05:46, khoảng
+0:05:41 - 0:05:46, 4 neuron thôi thì xem điều gì sẽ xảy ra.
+0:05:48 - 0:05:54, Rồi sau đó thì chúng ta sẽ chạy lại các
+0:05:50 - 0:05:54, cái đoạn code của mình.
+0:06:07 - 0:06:14, Rồi chúng ta thấy là à lot sẽ bắt đầu
+0:06:10 - 0:06:16, giảm nè. Đó
+0:06:14 - 0:06:18, còn 0.4
+0:06:16 - 0:06:23, 0.3
+0:06:18 - 0:06:23, đó nó bắt đầu giảm nhanh hơn 0.2 0.1 1
+0:06:28 - 0:06:33, 0.06.
+0:06:31 - 0:06:35, Rồi chúng ta thấy là cái đường đi của nó
+0:06:33 - 0:06:38, nó khá là không có đều đúng không? Nhưng
+0:06:35 - 0:06:40, mà miễn sao là nó đi xuống là được. Rồi
+0:06:38 - 0:06:43, thì sau khi huấn luyện xong thì chúng ta
+0:06:40 - 0:06:47, sẽ xem cái trọng số của cái lớp à cuối
+0:06:43 - 0:06:49, của mình. Thìở đây chúng ta thấy đó là
+0:06:47 - 0:06:51, các cái trọng số cao sẽ là bao gồm ba
+0:06:49 - 0:06:54, cái neuron cuối. Còn trọng số thấp là
+0:06:51 - 0:06:55, cái neuron đầu tiên. Lưu ý là ở đây cao
+0:06:54 - 0:06:57, hay thấp á chúng ta phải dựa trên cái
+0:06:55 - 0:07:00, giá trị tuyệt đối chứ chúng ta không có
+0:06:57 - 0:07:02, dựa trên cái con số là âm dương ha. Rồi
+0:07:00 - 0:07:08, thì ba cái thằng cuối chúng ta sẽ trực
+0:07:02 - 0:07:08, quan là 0 à là 1 2 3
+0:07:09 - 0:07:13, đó thì nó sẽ ra cái đường như thế này
+0:07:11 - 0:07:16, đúng như là nó đúng như chúng ta đã lập
+0:07:13 - 0:07:18, luận ha tức là nó những cái điểm màu
+0:07:16 - 0:07:22, xanh lá thì nó sẽ nằm ở phủ bên trong
+0:07:18 - 0:07:28, đây. Còn cái đường kiner số 0 là trọng
+0:07:22 - 0:07:31, số thấp nhất đó thì cũng được 0 1
+0:07:28 - 0:07:33, 2 3
+0:07:31 - 0:07:37, thì có vẻ hai cái đường này là nó hơi
+0:07:33 - 0:07:40, thừa nó trùng cái vai trò của nhau thì
+0:07:37 - 0:07:43, nó chỉ cần lấy ra một cái trọng số của
+0:07:40 - 0:07:45, một cái thôi. Thì ví dụ như cái -2 này
+0:07:43 - 0:07:48, nó sẽ cho trọng số thấp để bù lại cho
+0:07:45 - 0:07:50, cái -9 hoặc là cái -10 chẳng hạn.
+0:07:48 - 0:07:53, Rồi như vậy thì chúng ta đã kết thúc cái
+0:07:50 - 0:07:55, bài hướng dẫn thực hành cho mạng Neuro
+0:07:53 - 0:07:57, Network. Thì hy vọng rằng các bạn đã
+0:07:55 - 0:08:00, hiểu được cái nguyên lý tại sao mạng
+0:07:57 - 0:08:03, Neuro Network có thể giải quyết được các
+0:08:00 - 0:08:06, cái bài toán phức tạp phi tuyến tính. Đó
+0:08:03 - 0:08:09, là vì nó kết hợp nhiều cái bộ phân loại
+0:08:06 - 0:08:11, yếu để tạo ra một cái bộ phân loại mạnh
+0:08:09 - 0:08:23, hơn.
+0:08:11 - 0:08:23, [âm nhạc]

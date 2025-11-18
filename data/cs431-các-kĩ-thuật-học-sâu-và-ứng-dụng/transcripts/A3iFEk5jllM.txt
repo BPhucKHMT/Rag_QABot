@@ -1,0 +1,205 @@
+0:00:00 - 0:00:11, Đối với tầng activation, chúng ta sử dụng hàm ReLU và công thức của hàm ReLU là bằng ReLU của hàm z.
+0:00:11 - 0:00:25, Z là đầu vào, sẽ là bằng max của 0 và z. Hiểu một cách nôm na là những dữ liệu z mà bé hơn 0 thì nó sẽ triệt tiêu đi, nó sẽ đưa về con số đó là 0.
+0:00:25 - 0:00:34, Còn những dữ liệu Z, những giá trị đầu vào của mình là những giá trị lớn hơn không thì nó sẽ giữ nguyên
+0:00:34 - 0:00:42, Hay hiểu một cách nôm na ReLU này, nó sẽ lọc những thông tin không cần thiết
+0:00:45 - 0:00:48, Và chỉ chừa những thông tin quan trọng mà thôi
+0:00:48 - 0:01:00, Và trong mạng CNN, tầng ReLU là thường phải ngay sau tầng Convolution
+0:01:00 - 0:01:07, Tại vì tầng này là tuyến tính, ngay sau tuyến tính thì phải có phép biến đổi phi tuyến
+0:01:07 - 0:01:12, Ngoài ra ReLU thì chúng ta có thể thay cho hàm khác
+0:01:12 - 0:01:15, Là hàm Sigmoid, hàm Tanh, Leaky ReLU, Mish
+0:01:15 - 0:01:21, Nhưng mà như chúng ta nói, biến thể của mạng CNN trong thời gian gần đây
+0:01:21 - 0:01:25, người ta rất hay sử dụng ReLU là vì nó giúp cho mạng mình huấn luyện nhanh
+0:01:25 - 0:01:29, Trong phần bài tập, chúng ta sẽ có phần thử nghiệm
+0:01:29 - 0:01:31, Thay vì sử dụng ReLU, chúng ta sẽ dùng Sigmoid
+0:01:31 - 0:01:35, Khi chúng ta đưa vô với hàm Sigmoid, nó sẽ huấn luyện rất chậm
+0:01:35 - 0:01:39, Nhưng nếu chúng ta sử dụng hàm ReLU, tốc độ huấn luyện sẽ rất là nhanh
+0:01:39 - 0:01:49, Rồi, thì ở đây chúng ta sẽ có một cái bài tập để tính toán trên cái phép biến đổi trên cái tầng activation này
+0:01:49 - 0:02:00, Giả sử như chúng ta có một cái input là một cái tensor 3x3, 3x2, 3x3x2
+0:02:00 - 0:02:06, Thì ở đây chúng ta sẽ có hai lớp cắt, thì ở đây mỗi cái ma trận này nó tương ứng là một cái lớp cắt
+0:02:06 - 0:02:09, thì chúng ta sẽ có các giá trị này
+0:02:09 - 0:02:12, và nếu như chúng ta
+0:02:12 - 0:02:17, xin lỗi chúng ta thực hiện với cái tầng activation và hàm ReLU
+0:02:17 - 0:02:21, thì cái output của mình nó sẽ ra như thế nào
+0:02:21 - 0:02:23, thì các bạn sẽ tính toán thử
+0:02:23 - 0:02:26, số 0 nó sẽ biến thành số 0
+0:02:26 - 0:02:28, trừ 1 nó sẽ biến thành số 0
+0:02:28 - 0:02:30, 0 sẽ biến thành số 0
+0:02:30 - 0:02:31, cứ như vậy
+0:02:31 - 0:02:34, số này là số dương, nó sẽ giữ nguyên
+0:02:34 - 0:02:35, Rồi
+0:02:42 - 0:02:45, Thì đây là những số màu đỏ
+0:02:45 - 0:02:49, đó chính là kết quả sau khi chúng ta thực hiện với lại cái phép biến đổi
+0:02:49 - 0:02:51, Rectified Linear Unit ReLU
+0:02:53 - 0:02:58, Tầng thứ 3 trong kiến trúc mạng CNN chính là tầng Pooling
+0:02:58 - 0:03:02, Thì Pooling này là phi tham số
+0:03:02 - 0:03:08, Phi tham số nghĩa là sao? Tức là chúng ta sẽ không có cái tham số để huấn luyện
+0:03:08 - 0:03:11, Không có cái tham số huấn luyện
+0:03:11 - 0:03:20, Nhiệm vụ của cái tầng Pooling này nói chứ đơn giản là để giảm cái kích thước của cái feature map của mình
+0:03:20 - 0:03:27, Ví dụ trong trường hợp này, chúng ta có một cái ảnh 4x4 khi áp dụng với cái filter 2x2
+0:03:27 - 0:03:29, 2 x 2
+0:03:29 - 0:03:31, và với bước nhảy là 2
+0:03:31 - 0:03:33, thì đâu đó chúng ta sẽ thấy là ảnh 4 x 4
+0:03:33 - 0:03:35, nó sẽ giảm xuống
+0:03:35 - 0:03:37, còn một cái ảnh kích thước là 2 x 2
+0:03:37 - 0:03:39, và cái cách thức chúng ta sẽ thực hiện
+0:03:39 - 0:03:41, với hai cái phép biến đổi Max Pooling
+0:03:41 - 0:03:43, và Average Pooling
+0:03:43 - 0:03:45, Max Pooling là gì? Khi chúng ta
+0:03:45 - 0:03:47, ờ... khi chúng ta
+0:03:47 - 0:03:49, đưa cái filter này lên trên đây
+0:03:49 - 0:03:51, thì chúng ta sẽ lấy ra được 4
+0:03:51 - 0:03:53, giá trị là 2,0,1,1
+0:03:53 - 0:03:55, và chúng ta sẽ thực hiện
+0:03:55 - 0:04:01, Với phép biến đổi là max, thì 2,0,1,1 giá trị lớn nhất của mình là 2, chúng ta sẽ điền 2 vào đây
+0:04:01 - 0:04:09, Và 2,0,1,1 trung bình cộng, nó sẽ ra là 1
+0:04:09 - 0:04:14, Do đó thì giá trị lớn nhất Max Pooling thì tại đây nó sẽ ra là 2
+0:04:14 - 0:04:17, Nhưng mà Average Pooling thì ở đây nó sẽ ra là 1
+0:04:17 - 0:04:24, Rồi chúng ta sẽ trượt với bước nhảy, stride là bằng 2, như vậy chúng ta bỏ qua cái ô này
+0:04:24 - 0:04:28, chúng ta bỏ qua đây, và đến đây thì chúng ta sẽ điền tiếp các giá trị
+0:04:28 - 0:04:32, Max của nó sẽ là 4 và trung bình của nó sẽ là 2
+0:04:32 - 0:04:37, rồi lại tiếp tục nhảy cóc vào đây, Max của nó sẽ là 3, trung bình sẽ là 2
+0:04:37 - 0:04:41, rồi Max sẽ là 5 và trung bình sẽ là 3
+0:04:41 - 0:04:44, thì đây chính là cái phép biến đổi Pooling
+0:04:44 - 0:04:50, và Stride thì thường có kích thước bằng với cái kích thước của filter
+0:04:50 - 0:04:52, Ví dụ như ở đây filter là 2
+0:04:52 - 0:04:55, Nhân 2 thì Stride của mình sẽ là bằng 2
+0:04:55 - 0:04:59, Và các filter này thì được áp dụng độc lập
+0:04:59 - 0:05:01, Ừ, áp dụng độc lập
+0:05:01 - 0:05:03, Trong ví dụ như
+0:05:03 - 0:05:07, Feature map đầu vào của mình
+0:05:07 - 0:05:10, Nó sẽ có độ sâu là D
+0:05:10 - 0:05:14, Thì nó sẽ lấy kernel này, nó sẽ áp dụng độc lập
+0:05:14 - 0:05:16, Trên từng lớp feature này
+0:05:16 - 0:05:22, và sau đó nó sẽ tạo ra với cái phép Pooling này
+0:05:22 - 0:05:28, với cái phép Pooling nó sẽ tạo ra một cái feature map kích thước
+0:05:28 - 0:05:32, có cái độ sâu đúng bằng D luôn
+0:05:32 - 0:05:34, ví dụ ở đây là D thì ở đây đúng bằng D
+0:05:34 - 0:05:37, tại vì cứ một cái lớp cắt bên đây nó sẽ tạo ra một lớp cắt bên đây
+0:05:37 - 0:05:40, một cái lớp cắt bên đây nó sẽ tạo ra một lớp cắt bên đây
+0:05:40 - 0:05:44, còn kích thước của bề ngang, bề cao thì có thể thay đổi nha
+0:05:44 - 0:05:48, do stride bằng 2 thì kích thước này nó có thể giảm xuống còn một nửa thôi
+0:05:49 - 0:05:52, rồi, và cuối cùng đó chính là
+0:05:52 - 0:05:54, tầng Fully Connected
+0:05:54 - 0:05:57, thì trước khi thực hiện cái tầng Fully Connected này
+0:05:57 - 0:05:59, nó sẽ có một cái bước, nó là Flattening
+0:05:59 - 0:06:02, tại sao lại như vậy? tại vì sao?
+0:06:02 - 0:06:06, cái phép biến đổi Convolution, đúng không? nó biến
+0:06:06 - 0:06:08, một cái
+0:06:08 - 0:06:11, tensor, nó sẽ biến thành
+0:06:11 - 0:06:13, một cái tensor
+0:06:14 - 0:06:28, Rồi, cái phép ReLU, cái hàm kích hoạt ReLU thì nó cũng sẽ biến đổi một cái tensor thành một cái tensor
+0:06:31 - 0:06:43, Rồi, cái phép biến đổi Pooling thì nó cũng sẽ biến đổi một cái tensor
+0:06:44 - 0:06:48, tuy nhiên cái tensor này thường nó sẽ có kích thước nhỏ hơn
+0:06:50 - 0:06:53, thì chung quy lại, Convolution, ReLU và Pooling
+0:06:53 - 0:06:55, một chuỗi phối hợp các phép biến đổi này
+0:06:55 - 0:06:58, nó sẽ biến tensor thành một cái tensor
+0:06:59 - 0:07:03, mà tensor thì nó không phải là cái dạng chuẩn đầu vào
+0:07:03 - 0:07:06, để mà cho chúng ta thực hiện với phép Fully Connected
+0:07:06 - 0:07:08, đây chính là cái mạng neural
+0:07:09 - 0:07:11, đây chính là cái mạng neural network của mình
+0:07:11 - 0:07:24, Chúng ta sẽ phải có một bước để chuyển đổi tensor này, biến nó thành một vector để làm đầu vào cho Fully Connected
+0:07:24 - 0:07:32, Rồi thì ở đây chúng ta giả sử có 1 cái tensor kích thước là 2 x 2
+0:07:32 - 0:07:40, Và ở đây thì chúng ta sẽ cắt cái thằng này ra, đúng không? Mỗi lớp cắt chính là tạo ra ở đây
+0:07:40 - 0:07:46, Thì 0,1,0,1, mỗi cái lớp cắt này chúng ta sẽ có cái giá trị đầu vào như thế này
+0:07:46 - 0:07:54, Flatten là bản chất duỗi 1 tensor 3D để tạo thành 1 tensor 1D
+0:07:54 - 0:07:57, thì số 0 chép qua đây
+0:07:57 - 0:07:59, số 1 chép qua đây
+0:07:59 - 0:08:02, và số 0 chép qua đây
+0:08:02 - 0:08:04, số 1 chép qua đây
+0:08:06 - 0:08:07, và số 0
+0:08:12 - 0:08:14, thì nó sẽ tạo thành vector
+0:08:14 - 0:08:18, và với vector này, nó sẽ thực hiện phép biến đổi Fully Connected
+0:08:18 - 0:08:22, để tạo ra từ một vector, tạo ra thành một vector khác
+0:08:22 - 0:08:31, Trong trường hợp, ví dụ như bài này chúng ta nhận dạng 3 lớp, đó là nhà cửa, người, cây, ở đây sẽ có 3 cái node đầu ra
+0:08:31 - 0:08:42, Ở đây chúng ta sẽ có cái bộ tham số theta để phân loại đặc trưng đã rút trích được từ cái bước là Convolution, ReLU và Pooling
+0:08:42 - 0:08:44, Đây là cái đặc trưng
+0:08:44 - 0:08:51, Và chúng ta sẽ đi qua cái Fully Connected này như là một cái máy phân lớp
+0:08:51 - 0:08:56, Để phân lớp và tạo ra một cái neuron output
+0:08:56 - 0:09:04, Thì đây chính là các cái thành phần để tạo ra một cái mạng CNN
+0:09:04 - 0:09:11, Như vậy tổng kết thì mạng CNN nó sẽ kế thừa từ cái mạng neural network
+0:09:11 - 0:09:18, Và đầu tiên của nó là nó không sử dụng phép biến đổi Fully Connected
+0:09:20 - 0:09:23, Nó sẽ không còn sử dụng cơ chế Fully Connected nữa
+0:09:23 - 0:09:27, Mà nó sẽ dùng cơ chế chia sẻ trọng số và kết nối cục bộ
+0:09:27 - 0:09:30, Thì bản chất của nó chính là phép Convolution
+0:09:30 - 0:09:42, đồng thời CNN sẽ bao gồm các tầng biến đổi, tầng Convolution, Activation, Pooling và Fully Connected
+0:09:42 - 0:09:51, sau đây mình sẽ vẽ một cái mạng CNN mà có sự kết nối giữa các tầng này
+0:09:51 - 0:09:56, và đương nhiên cái mạng CNN này thì chúng ta sẽ vẽ ở mức độ là đơn giản thôi
+0:09:56 - 0:09:59, đầu vào của mình nó sẽ có một cái tấm ảnh
+0:09:59 - 0:10:03, và thường ảnh này là ảnh màu
+0:10:03 - 0:10:05, thì depth ở đây nó sẽ là bằng 3
+0:10:05 - 0:10:10, qua phép biến đổi Convolution
+0:10:10 - 0:10:15, với D filter
+0:10:15 - 0:10:20, thì chúng ta sẽ tạo ra một feature map
+0:10:20 - 0:10:24, có kích thước là D
+0:10:24 - 0:10:33, sau đó chúng ta kết hợp cả Convolution này cộng với ReLU
+0:10:33 - 0:10:36, thì nó sẽ tạo ra feature map như thế này
+0:10:36 - 0:10:38, sau đó chúng ta thực hiện phép Pooling
+0:10:38 - 0:10:41, thì nó sẽ tạo ra feature map
+0:10:41 - 0:10:44, có bề ngang và bề cao nhỏ hơn 1 nửa
+0:10:44 - 0:10:46, nếu như stride là bằng 2
+0:10:46 - 0:10:48, nó sẽ nhỏ hơn 1 nửa
+0:10:48 - 0:10:51, và độ sâu của mình cũng giữ nguyên
+0:10:51 - 0:10:52, nó là bằng D
+0:10:52 - 0:10:58, Tại vì phép Pooling này sẽ thực hiện độc lập trên từng kênh
+0:10:58 - 0:11:05, Do đó ở đây có D là lớp cắt, thì qua bên đây sẽ có D là lớp cắt
+0:11:05 - 0:11:10, Rồi sau đó nó lại tiếp tục Convolution kết hợp với lại ReLU
+0:11:10 - 0:11:14, Nó sẽ tạo ra một cái tensor
+0:07:06 - 0:07:08, đây chính là cái mạng neural
+0:11:14 - 0:11:17, Và số lượng tensor này có thể thay đổi
+0:11:17 - 0:11:20, Do là số lượng filter của mình thay đổi
+0:11:20 - 0:11:23, nó sẽ ra là D'
+0:11:23 - 0:11:25, rồi sau đó nó lại Pooling
+0:11:31 - 0:11:35, rồi sau đó nó sẽ thực hiện cái này là phép Pooling
+0:11:35 - 0:11:38, rồi sau đó nó sẽ thực hiện phép Flatten
+0:11:40 - 0:11:42, để tạo ra thành một cái vector
+0:11:44 - 0:11:48, rồi cái vector này chúng ta sẽ thực hiện
+0:11:48 - 0:11:51, Phép biến đổi Fully Connected
+0:11:51 - 0:11:54, Fully Connected viết tắt là FC
+0:11:54 - 0:12:00, Và lưu ý là phép Fully Connected này sẽ có thể kết hợp nhiều phép Fully Connected với nhau
+0:12:00 - 0:12:04, Ví dụ như đây là 1 lớp, chúng ta sẽ tạo ra thêm 1 lớp nữa
+0:12:04 - 0:12:06, Rồi là FC
+0:12:06 - 0:12:10, Rồi cái lớp cuối thì chúng ta sẽ qua hàm Softmax
+0:12:10 - 0:12:16, Để tạo nó ra thành 1 vector, nó thoả mãn 1 phân bố xác suất
+0:12:16 - 0:12:32, Rồi, thì đây chính là cái bước số 1. Toàn bộ nãy giờ mình nói đó chính là cái bước số 1 trong cái việc thiết kế F theta x.
+0:12:32 - 0:12:40, Thế thì cái câu hỏi đó là cái bước số 2, không? Cái bước số 2 là hàm Loss của mình.
+0:12:40 - 0:12:42, trong trường hợp này là như thế nào?
+0:12:42 - 0:12:46, thì ở đây chúng ta có cái giá trị là y ngã là giá trị dự đoán
+0:12:46 - 0:12:51, và mình sẽ có cái giá trị y là giá trị thực tế
+0:12:51 - 0:12:54, và để hai cái thằng này gần xấp xỉ với nhau
+0:12:54 - 0:12:57, thì chúng ta sẽ sử dụng một cái hàm Loss theta
+0:12:57 - 0:12:59, và hàm Loss này chúng ta sẽ sử dụng luôn
+0:12:59 - 0:13:03, đó chính là công thức Cross Entropy
+0:13:03 - 0:13:09, y chang như cái bài Softmax
+0:13:09 - 0:13:15, Đây là toàn bộ mạng CNN khi chúng ta đã biến đổi
+0:13:15 - 0:13:21, Giai đoạn đầu là Feature Extraction, hay Rút trích đặc trưng
+0:13:25 - 0:13:34, Giai đoạn sau tương ứng là phân lớp các đặc trưng
+0:07:06 - 0:07:08, đây chính là cái mạng neural
+0:13:36 - 0:13:39, và đã sử dụng mạng Neural Network
+0:13:39 - 0:13:46, khi đã có Loss này rồi, thì sẽ sử dụng thuật toán Gradient Descent
+0:13:46 - 0:13:54, với tên gọi khác cho mạng CNN này là thuật toán Backpropagation
+0:13:54 - 0:14:03, Và lưu ý, Backpropagation này đâu đó trong Deep Learning Framework
+0:14:03 - 0:14:12, nó đã giúp chúng ta đi tối ưu, tìm Theta để cho hàm Loss này là nhỏ nhất rồi
+0:14:12 - 0:14:15, Ở đây chúng ta sẽ có một câu hỏi Theta của mình là cái gì
+0:14:15 - 0:14:20, Theta của mình trong trường hợp này chính là những trọng số
+0:14:20 - 0:14:23, Đó là những trọng số, đây là Theta 1 luôn
+0:14:23 - 0:14:30, đến đây Pooling là không có tham số, đến đây là Convolution là theta 2,
+0:14:30 - 0:14:36, rồi Pooling không có tham số, đến đây là FC, chúng ta sẽ có theta 3,
+0:14:36 - 0:14:39, đến đây chúng ta sẽ có theta 4,
+0:14:39 - 0:14:46, thì toàn bộ theta 1, theta 2 cho đến theta 4 chính là những tham số của mạng CNN của mình.
+0:14:46 - 0:14:56, Và cái mạng CNN này nó có ứng dụng cực kỳ nhiều trong các bài toán của lĩnh vực thị giác máy tính.
+0:14:56 - 0:15:01, Nó có ứng dụng trong bài toán là phân loại, phân lớp, phân lớp đối tượng.
+0:15:01 - 0:15:05, Nó có ứng dụng trong cái bài là định vị đối tượng.
+0:15:05 - 0:15:11, Tức là khi chúng ta đã phân lớp là biết trong tấm hình này nó đã có cái đối tượng tên là con mèo rồi.
+0:15:11 - 0:15:15, Thì chúng ta sẽ cho biết là cái vị trí của con mèo này nó nằm ở đâu.
+0:15:15 - 0:15:24, Và chúng ta sẽ có thể dùng cái mạng CNN này để ứng dụng cho cái bài toán là Object Detection
+0:15:24 - 0:15:28, Tức là phát hiện xem trong tấm hình này có những loại đối tượng gì
+0:15:28 - 0:15:34, Đây là khu vực có hình con chó, đây là khu vực có hình con vịt, đây là khu vực có hình con mèo
+0:15:34 - 0:15:36, Nó sẽ chỉ ra được cái vị trí
+0:15:36 - 0:15:40, Và trong trường hợp Object Detection thì nó sẽ là nhiều object
+0:15:40 - 0:15:42, Có thể phát hiện cùng lúc nhiều object
+0:15:42 - 0:15:48, Và ở cấp độ cao nhất của việc định vị đối tượng đó chính là Instance Segmentation
+0:15:48 - 0:15:52, Tức là chúng ta sẽ khoanh vùng chính xác đến cấp độ pixel
+0:15:52 - 0:15:58, Đối với Object Detection thì chúng ta phân vùng chính xác đến cấp độ bounding box
+0:15:58 - 0:16:02, Còn Instance Segmentation thì nó sẽ chính xác đến cấp độ pixel
+0:16:02 - 0:16:09, Và mạng CNN của mình cho đến bây giờ tất cả các mô hình Object Localization, định vị object
+0:16:09 - 0:16:16, Rồi phát hiện đối tượng, rồi phân đoạn ngữ nghĩa đối tượng thì đều sử dụng kiến trúc mạng CNN.

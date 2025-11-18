@@ -1,0 +1,94 @@
+0:00:00 - 0:00:07, Tiếp theo, chúng ta sẽ xem xét về mối quan hệ về mặt ngữ nghĩa của các từ này.
+0:00:07 - 0:00:13, Chúng ta sẽ xét 4 từ là king, queen, man và woman.
+0:00:13 - 0:00:22, Nếu chúng ta lấy vector king trừ cho man, chúng ta sẽ có vector đỏ.
+0:00:22 - 0:00:27, Lấy woman trừ cho man, chúng ta sẽ có vector đỏ.
+0:00:27 - 0:00:31, và người ta quan sát rằng là hình như hai cái vector này xấp xỉ nhau
+0:00:31 - 0:00:37, đó là cái vector nó thể hiện mối quan hệ về mặt giới tính
+0:00:37 - 0:00:39, giữa giới tính nam và giới tính nữ
+0:00:39 - 0:00:43, nếu như giới tính nam gọi là men thì giới tính nữ gọi là woman
+0:00:43 - 0:00:44, thì tương tự như vậy
+0:00:44 - 0:00:50, người đàn ông mà quyền lực là king thì người phụ nữ quyền lực là queen, nữ hoàng
+0:00:50 - 0:00:57, Chúng ta sẽ xét một ví dụ để kiểm tra tính bảo toàn mối quan hệ về mặt giới tính
+0:00:57 - 0:01:00, đó là King
+0:01:00 - 0:01:04, chúng ta sẽ xét xem các pattern này có gần nhau hay không
+0:01:04 - 0:01:07, nếu chúng ta đặt Queen là x
+0:01:07 - 0:01:15, thì x trừ King có bằng woman trừ cho man hay không
+0:01:15 - 0:01:20, thì ở đây, ở đây là x nè
+0:01:24 - 0:01:27, Rồi, và chúng ta xem coi x
+0:01:27 - 0:01:35, chúng ta sẽ kiểm tra xem x có xấp xỉ, hoặc có gần
+0:01:35 - 0:01:40, với từ Queen hay không
+0:01:40 - 0:02:00, Nếu như x trừ King bằng woman trừ man
+0:02:00 - 0:02:09, Khi muốn tính x, chúng ta đem vector king qua bên tay phải và thay dấu trừ thành dấu cộng
+0:02:09 - 0:02:17, Vì vậy chúng ta sẽ thấy woman và king là positive tức là dấu cộng, man là âm
+0:02:17 - 0:02:23, thì ở đây chúng ta sẽ dùng model.most_similar
+0:02:23 - 0:02:27, và positive tức là dấu cộng là Woman và King
+0:02:27 - 0:02:31, và negative sẽ là Man
+0:02:31 - 0:02:35, thì để xem kết quả ra như thế nào
+0:02:39 - 0:02:43, kết quả là từ gần với x này nhất
+0:02:43 - 0:02:49, Từ gần với x này nhất là Queen
+0:02:49 - 0:02:56, Từ gần tiếp theo là Monarch
+0:02:56 - 0:02:59, Từ tiếp theo là Princess
+0:02:59 - 0:03:02, Từ gần nhất là Queen
+0:03:02 - 0:03:07, Vậy thì rõ ràng là cái mệnh đề này là đúng
+0:03:07 - 0:03:08, Tức là cái giả thuyết này là đúng
+0:03:08 - 0:03:10, Vector màu đỏ này là trùng nhau
+0:03:10 - 0:03:12, Hoặc là có giá trị xấp xỉ nhau
+0:03:12 - 0:03:22, Bây giờ chúng ta sẽ xem cái góc độ của câu này. Cái góc độ này có dạng là câu hỏi.
+0:03:22 - 0:03:32, Nếu như người đàn ông mà quyền lực thì gọi là vua, thì hỏi người phụ nữ quyền lực là gì?
+0:03:32 - 0:03:39, Thì đây chính là cái dạng công thức, cái dạng mà đưa về câu hỏi giả thuyết.
+0:03:39 - 0:03:46, Nếu như người đàn ông là quyền lực, người phụ nữ là quyền lực là gì?
+0:03:46 - 0:03:48, thì chúng ta sẽ có được công thức này
+0:03:48 - 0:03:51, Vậy thì bây giờ chúng ta sẽ thử trả lời câu hỏi sau
+0:03:51 - 0:03:57, Nếu vua mà là đàn ông thì hỏi nữ hoàng là gì?
+0:03:57 - 0:04:04, ở đây chúng ta sẽ có nếu vua king trừ man
+0:04:04 - 0:04:13, tức là king là đàn ông thì hỏi queen là gì? tức là x
+0:04:13 - 0:04:21, từ cái này chúng ta sẽ suy ra là x sẽ là bằng Queen trừ cho King cộng cho Man.
+0:04:21 - 0:04:33, Vì vậy chúng ta sẽ thấy Queen và Man là positive tức là dấu cộng, King là âm.
+0:04:33 - 0:04:48, positive sẽ là Queen và Man, và negative sẽ là King.
+0:04:48 - 0:04:58, thì ở đây chúng ta nên có một câu lệnh in ra cho nó hợp lý một chút cho nó dễ hiểu một chút
+0:04:58 - 0:05:02, thì ở đây gọi là kết quả trung gian này chúng ta sẽ gọi là result
+0:05:02 - 0:05:18, Và đây chúng ta sẽ in ra màn hình là if king is a man then queen is a
+0:05:18 - 0:05:22, Rồi, thì chúng ta sẽ lấy cái kết quả cuối cùng
+0:05:22 - 0:05:26, Result không
+0:05:26 - 0:05:34, xin lỗi, cái kết quả đầu tiên, tức là cái vector nào, cái từ nào gần với x này nhất
+0:05:34 - 0:05:51, nếu vua là đàn ông thì nữ hoàng là phụ nữ, nữ Woman thì đây là một trong những cái tính chất bảo toàn về quan hệ về giới tính
+0:05:51 - 0:05:58, Bây giờ chúng ta sẽ làm các ví dụ tương tự các bài tập cho mối quan hệ về thủ đô quốc gia
+0:05:58 - 0:06:03, danh từ số ít số nhiều, động từ và v3
+0:06:03 - 0:06:10, Đầu tiên là cho quan hệ thủ đô quốc gia
+0:06:10 - 0:06:32, Thủ đô của Việt Nam là Hà Nội, thì thủ đô của Đức là gì?
+0:06:32 - 0:06:37, Vậy ta có công thức: X = Germany - Vietnam + Hanoi.
+0:06:37 - 0:06:41, đây là mối quan hệ về đất nước, thủ đô
+0:06:41 - 0:06:44, hỏi đất nước Germany thì thủ đô sẽ là gì?
+0:06:44 - 0:06:47, chúng ta sẽ đưa công thức này ra là
+0:06:47 - 0:06:52, x sẽ là bằng Germany
+0:06:52 - 0:06:55, Việt Nam và Hà Nội đem qua bên vế phải
+0:06:55 - 0:06:57, đúng không? Việt Nam và Hà Nội đem qua bên phải
+0:06:57 - 0:07:07, Germany cộng cho Hà Nội và trừ cho Việt Nam
+0:07:07 - 0:07:13, Copying nội dung trên đây
+0:07:13 - 0:07:22, Positive sẽ là Germany, Hà Nội; Negative sẽ là Việt Nam
+0:07:22 - 0:07:25, và ở đây chúng ta sẽ có câu là
+0:07:25 - 0:07:49, If Hà Nội is the capital of Vietnam, then the capital of Germany is...
+0:07:49 - 0:07:52, Rồi, chúng ta sẽ xem cái kết quả của mình là gì
+0:07:52 - 0:08:02, Nếu Hà Nội là thủ đô của Việt Nam thì thủ đô của Đức sẽ là Berlin
+0:08:02 - 0:08:06, Và chúng ta hoàn toàn có thể thay thế cho những đất nước khác
+0:08:06 - 0:08:10, Ví dụ như là China, Trung Quốc và Bắc Kinh
+0:08:10 - 0:08:14, Thì đây là mối quan hệ về thủ đô quốc gia
+0:08:14 - 0:08:19, Tương tự như vậy, chúng ta sẽ có danh từ số ít số nhiều
+0:08:19 - 0:08:23, Để cho nhanh, chúng ta sẽ có book
+0:08:23 - 0:08:26, Tương ứng sẽ là books
+0:08:26 - 0:08:28, Chúng ta sẽ xem trong từ box
+0:08:28 - 0:08:31, Tương ứng là gì
+0:08:31 - 0:08:42, X sẽ là bằng box cộng cho books trừ cho book
+0:08:42 - 0:08:55, Rồi, như vậy Positive sẽ là Box và Books, và Negative sẽ là Book.
+0:08:55 - 0:09:02, Để cho nhanh thì chúng ta không cần ghi câu dẫn nhập
+0:09:02 - 0:09:07, và động từ v3
+0:09:07 - 0:09:16, tương tự như vậy cho mối quan hệ động từ v3
+0:09:16 - 0:09:25, ví dụ như động từ có Go thì tương ứng là Gone
+0:09:25 - 0:09:44, x sẽ là bằng Tag cộng cho Gone trừ cho Go
+0:09:44 - 0:09:45, Rồi
+0:09:48 - 0:09:54, Positive sẽ là Tag và Gone, và negative sẽ là Go.
+0:09:57 - 0:09:58, Tagged
+0:09:59 - 0:10:02, Thì đây chính là v3 của từ Tag
+0:10:02 - 0:10:07, Như vậy thì trong cái tutorial này thì chúng ta đã cùng lượt qua
+0:10:07 - 0:10:17, mô hình Word2Vec và thử nghiệm với một số cách để tính vector biểu diễn, so sánh giữa các từ với nhau
+0:10:17 - 0:10:24, thông qua vector biểu diễn và kiểm tra xem mối quan hệ về mặt ngữ nghĩa của các từ trong câu.

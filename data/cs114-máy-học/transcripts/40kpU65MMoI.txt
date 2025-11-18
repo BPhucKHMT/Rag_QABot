@@ -1,0 +1,198 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:42, thì hạn chế của một cái mạng perceptron đơn lẽ, tức là chỉ có một perceptron đó là nó chỉ có thể tạo ra được một cái range-of-quý định thẳng hoặc là tuyến tính
+0:00:46 - 0:00:56, hay nói cách khác đó là bản chất của cái perceptron đơn lẽ này nó chính là một cái logistic, là một cái logistic regression
+0:01:00 - 0:01:02, là một mô hình hội quy luận lý
+0:01:03 - 0:01:06, do đó nó chỉ có thể giải quyết được các bài toán tiến tính
+0:01:06 - 0:01:09, chỉ tắt được các bài toán phân tách
+0:01:09 - 0:01:11, chỉ giải quyết được các bài toán phân tách tiến tính
+0:01:11 - 0:01:15, tuy nhiên nó sẽ thất bại trong bài toán phức tạp hơn
+0:01:15 - 0:01:18, ví dụ như ở đây chúng ta có một bài toán đó là XOR
+0:01:18 - 0:01:22, đầu vào của mình sẽ là các giá trị là X
+0:01:22 - 0:01:26, đầu vào của mình sẽ là các giá trị là
+0:01:26 - 0:01:28, X1 và X2
+0:01:28 - 0:01:37, output x1 x2 là x2
+0:01:37 - 0:01:45, x2 là nếu 2 giá trị khác nhau thì x1 x2 là 1
+0:01:45 - 0:01:49, nếu 2 giá trị x1 x2 giống nhau thì x1 x2 là 0
+0:01:49 - 0:01:54, class 1 là những điểm màu xanh
+0:01:54 - 0:01:56, class 0 là những điểm màu đỏ
+0:01:56 - 0:02:03, thì chúng ta thấy là không thể nào chúng ta có thể chia tắt tập màu đỏ và màu xanh ra làm 2 phần được
+0:02:03 - 0:02:07, không thể tắt ra bằng 2 phần mà với 1 đường thẳng
+0:02:07 - 0:02:10, dù như thế này cũng không tắt được
+0:02:10 - 0:02:12, như thế này cũng không tắt được
+0:02:12 - 0:02:16, mà chúng ta chỉ có thể tắt được bằng 1 dạng đường như thế này
+0:02:16 - 0:02:26, phía bên này là class
+0:02:26 - 0:02:33, phía bên này là class
+0:02:33 - 0:02:42, còn bên trong khu vực này là class 1
+0:02:42 - 0:02:52, do đó giải pháp là chúng ta sẽ kết hợp nhiều cái neuron lại, nhiều cái perceptron này lại
+0:02:52 - 0:03:00, và tổ chức thành các lớp, một cái lớp đầu vào, một hoặc là nhiều cái lớp ẩn, một hoặc nhiều
+0:03:00 - 0:03:05, tối thiểu là bằng một thì nó mới được gọi là multi layer perceptron, một cái lớp đầu ra
+0:03:05 - 0:03:12, Và đây chính là kiến trúc đa lớp, hay gọi là MLP Multi Layer Processing
+0:03:12 - 0:03:19, để tạo ra MLP này có khả năng học được răn giới quyết định dạng phi tiến tính
+0:03:19 - 0:03:25, là răn giới quyết định dạng phi tiến tính
+0:03:25 - 0:03:27, thì đây là răn giới quyết định
+0:03:27 - 0:03:31, và răn giới này thì sẽ bao gồm 2 đường này
+0:03:31 - 0:03:37, về phía bên đây là 1 cái ranh giới, về phía bên này là 1 ranh giới, còn phần ở giữa sẽ là 1 ranh giới
+0:03:37 - 0:03:43, thì rõ ràng là đây là 1 cách phân chia theo kiểu là phi tiến tính
+0:03:43 - 0:03:50, do đó nó có thể giải quyết được các bài toán mà 1 Percept trong đơn lẽ không thể làm được
+0:03:50 - 0:03:56, ở đây chúng ta sẽ có 1 vấn đề cần phải bàn, đó chính là hàm kích hoạt
+0:03:56 - 0:04:02, hàm kích hoạt sẽ quyết định tín hiệu đầu ra của một cái neuron
+0:04:02 - 0:04:07, chúng ta biết là một cái neuron sẽ nhận tín hiệu đầu vào
+0:04:07 - 0:04:13, là bao gồm bias x1, x2, cho đến xn
+0:04:13 - 0:04:18, rồi sau đó nó sẽ truyền tín hiệu đầu ra
+0:04:18 - 0:04:24, để truyền tín hiệu đầu ra thì chúng ta sẽ có một cái mô đun kích hoạt ở đây
+0:04:24 - 0:04:29, Phần đầu là tuyến tính rồi, nhân là cộng
+0:04:29 - 0:04:36, Phần đầu sẽ là tổng trọng số của tín hiệu đầu vào với trọng số của các cạnh nối này
+0:04:36 - 0:04:37, Đó là một hàm tuyến tính
+0:04:37 - 0:04:43, Và để quyết định xem tín hiệu đầu ra nó như thế nào thì chúng ta sẽ cần một hàm kích hoạt
+0:04:43 - 0:04:47, Và hàm này thì phải là một hàm phi tuyến
+0:04:49 - 0:04:53, Đây là một hàm có vai trò rất quan trọng
+0:04:53 - 0:04:55, hay nó kết khác là quan trọng nhất
+0:04:55 - 0:04:59, tại vì nếu như không có hàm kích hoạt phi tuyến tính này
+0:04:59 - 0:05:02, thì bản chất của mô hình của mình
+0:05:02 - 0:05:05, nó cũng chỉ là một cái mạng tuyến tính
+0:05:05 - 0:05:11, mà một mạng tuyến tính thì không thể giải quyết được các bài tảng phức tạp
+0:05:11 - 0:05:17, tại sao chúng ta lại phải cần một cái hàm kích hoạt tốt quan trọng như thế này
+0:05:17 - 0:05:18, thì chúng ta sẽ có cái lý do
+0:05:18 - 0:05:21, nếu không có cái hàm kích hoạt phi tuyến
+0:05:21 - 0:05:26, thì mỗi lớp của một cái mạng thực hiện một cái phép biến đổi tiến tính
+0:05:26 - 0:05:32, tức là mặc dù chúng ta thấy số lượng Neural rất là nhiều
+0:05:36 - 0:05:41, chúng ta thấy là để chúng ta vẽ cho tiết kiệm thời gian
+0:05:41 - 0:05:44, thì chúng ta sẽ vẽ cái dấu x như thế này, tức là hàm ý kết nối đầy đủ
+0:05:44 - 0:05:48, mặc dù số nodes đầu ra có thể là hàng chục hàng trăm Neural
+0:05:48 - 0:05:51, nhưng nếu không có hàm kích hoạt thì suy cho cùng
+0:05:52 - 0:05:55, ở đây nó cũng chỉ là một phép biến đổi tiến tính
+0:05:56 - 0:05:58, thì giả sử như ở layer số 1 này là z
+0:05:59 - 0:06:00, ký hiệu là số 1
+0:06:02 - 0:06:04, còn đầu vào của mình sẽ là z0
+0:06:08 - 0:06:10, thì z số 1
+0:06:11 - 0:06:16, nếu như không có hàm kích hoạt thì bản chất nó chỉ là
+0:06:18 - 0:06:23, bản chất chỉ là z1 là bằng w1
+0:06:23 - 0:06:26, nhân với lại z0
+0:06:26 - 0:06:39, rồi giả sử sau đó chúng ta lại tiếp tục có một cái mạng thứ 2
+0:06:39 - 0:06:41, xin lỗi một cái lớp biến đổi thứ 2
+0:06:41 - 0:06:44, thì z2
+0:06:44 - 0:06:59, G2 bằng W nữa, tức là các trọng số ở layer này
+0:06:59 - 0:07:04, W2 nâng cho Z1
+0:07:04 - 0:07:10, Nâng với tín hiệu từ lớp 61 truyền vào
+0:07:10 - 0:07:13, Z1 lấy từ công thức này
+0:07:13 - 0:07:17, W1
+0:07:17 - 0:07:21, W2
+0:07:21 - 0:07:38, Gosh!
+0:07:38 - 0:07:44, Nên thử president chọn W
+0:07:44 - 0:07:46, và dùng W phải nào đó thôi
+0:07:47 - 0:07:48, rồi nhân với lại z
+0:07:48 - 0:07:49, z0
+0:07:50 - 0:07:52, như vậy thì chúng ta thực hiện biến đổi rất là nhiều
+0:07:52 - 0:07:55, biến đổi rất là nhiều nhưng cuối cùng
+0:07:55 - 0:07:58, thì cái z2 tức là cái output sau hai lớp biến đổi
+0:07:58 - 0:08:01, bản chất của nó cũng chỉ là một cái phép biến đổi tuyến tính
+0:08:03 - 0:08:05, của cái lớp z0 đầu vào này
+0:08:08 - 0:08:11, hay dùng cái thuật ngữ của bên
+0:08:11 - 0:08:13, đại số tuyến tính đó là
+0:08:13 - 0:08:17, Z2 chính là một tổ hợp tuyến tính của Z0
+0:08:17 - 0:08:21, Cho dù ở giữa chúng ta có biến đổi 100 lớp đi ra nữa mà không có hàm kích hoạt
+0:08:21 - 0:08:25, Thì cuối cùng Z2 cũng chỉ là một tổ hợp tuyến tính của Z0
+0:08:25 - 0:08:29, Thì do đó hàm kích hoạt này giúp cho chúng ta phi tuyến tính hóa
+0:08:29 - 0:08:38, Thì khi đó nếu chúng ta có hàm kích hoạt giả sử như hàm này ký hiệu là sigmoid này đi
+0:08:38 - 0:08:46, thì khi đó z2 của chúng ta sẽ là bằng sigmoid của w2
+0:08:46 - 0:08:49, nhân với đầu ra là z1
+0:08:49 - 0:08:53, và z1 thì nó lại bằng sigmoid của w1
+0:08:53 - 0:08:58, z0
+0:08:58 - 0:09:08, Nhờ hàng kích hoạt ở giữa này, nó sẽ không cho phép chúng ta lấy W2 nhân với W1 để tạo thành tổ hợp triển tính
+0:09:08 - 0:09:23, Vai trò của hàng kích hoạt là giúp chúng ta phi tuyến hóa cái output các lớp phía sau
+0:09:23 - 0:09:26, nhằm giúp chúng ta giải quyết được những bài toán phức tạp
+0:09:29 - 0:09:30, Rồi, kết luận
+0:09:30 - 0:09:34, hàm kích hoạt phi tuyến chính là chiều khóa của Deep Learning về sau
+0:09:35 - 0:09:36, các mô hình Deep Learning
+0:09:36 - 0:09:39, mà muốn giải quyết được bài toán siêu phức tạp
+0:09:39 - 0:09:43, thì buộc chúng ta sẽ phải sử dụng hàm kích hoạt phi tuyến tính
+0:09:46 - 0:09:49, và có rất nhiều loại hàm kích hoạt khác nhau
+0:09:49 - 0:09:52, thì có thể kể đến đó là hàm SIGMOID
+0:09:52 - 0:09:54, là một trong những hàm cơ bản nhất
+0:09:54 - 0:09:59, Đặc điểm của nó đó là với dữ kiện x đầu vào
+0:09:59 - 0:10:03, thì x này có thể thuộc miền r
+0:10:03 - 0:10:06, tức là từ trừ vô cùng cho đến cọng vô cùng
+0:10:06 - 0:10:08, nhưng mà qua hàm sigmoid này
+0:10:08 - 0:10:14, thì nó sẽ đưa về một giá trị nằm trong khoảng từ 0 cho đến 1
+0:10:14 - 0:10:20, như vậy thì chúng ta gọi là nén mọi giá trị đầu vào
+0:10:20 - 0:10:23, và nó sẽ chạm vào khoảng từ 0 cho đến 1
+0:10:23 - 0:10:27, và nó rất hữu ích trong việc biểu diện sát xuất
+0:10:27 - 0:10:33, tại vì chúng ta biết rồi sát xuất của một biến cố đó là 1 con số từ 0 cho đến 1
+0:10:33 - 0:10:37, do đó nó sẽ hữu ích trong việc biểu diện yếu tố sát xuất
+0:10:37 - 0:10:40, và dạng thức của hàm này sẽ có cái dạng như sau
+0:10:40 - 0:10:45, lưu ý ở đây là nó sẽ chạm, không chạm về 0
+0:10:45 - 0:10:49, nó sẽ cứ tiệm cận về 0 thôi chứ không chạm về 0
+0:10:49 - 0:10:52, Còn ở đây sẽ là tiệm cận về 1, chứ nó không chạm đến 1
+0:10:52 - 0:10:59, Nhưng mà cơ bản là khi giá trị Z đầu vào này từ 5 trở lên
+0:10:59 - 0:11:15, thì sigmoid của 5 là nó sắp sỉ 1, gần như chạm 1
+0:11:15 - 0:11:17, Còn ở đây là sigmoid của trừ năm
+0:11:18 - 0:11:20, Thì nó sẽ xấp xỉ là bằng không luôn
+0:11:20 - 0:11:23, Nó không bằng không nhưng mà nó sẽ gần như là chạm đến không
+0:11:23 - 0:11:24, Nó rất là mau bảo hòa
+0:11:24 - 0:11:26, Với cái G này là
+0:11:26 - 0:11:27, Cái đầu vào của mình là
+0:11:27 - 0:11:29, Chỉ khoảng từ trừ năm tới năm thôi nó đã bảo hòa rồi
+0:11:29 - 0:11:31, Do đó thì cũng chính cái vấn đề này
+0:11:31 - 0:11:33, Nó sẽ gây ra cái hiện tượng gọi là
+0:11:33 - 0:11:35, Vanishing Radian
+0:11:35 - 0:11:36, Tức là
+0:11:36 - 0:11:38, Tiêu biến cái đảo hàm
+0:11:38 - 0:11:43, Nếu như cái mô hình học sâu của mình mà có chứa quá nhiều cái hàm kích hoạt này
+0:11:43 - 0:11:45, Thì dẫn đến đó là
+0:11:45 - 0:11:48, mô hình sẽ mau bị bảo hoa
+0:11:48 - 0:11:51, và bị tiêu biến đi đạo hàm
+0:11:51 - 0:11:54, tiêu biến đạo hàm này thì việc huấn luyện
+0:11:57 - 0:11:59, sẽ rất là chậm
+0:11:59 - 0:12:01, và thậm chí là không huấn luyện được
+0:12:04 - 0:12:06, do đó thì hàm sigmoid này
+0:12:06 - 0:12:09, nó đơn giản về mặt công thức
+0:12:09 - 0:12:12, nhưng mà đây là được sử dụng trong những giai đoạn đầu
+0:12:15 - 0:12:31, sau đó, từ năm 2012 trở về sau, người ta sử dụng hàm rectify linear unit
+0:12:31 - 0:12:50, Hàm rectify linear unit sẽ có công thức như ở đây và dạng đồ thị hàm số sẽ như thế này
+0:12:50 - 0:12:59, Từ năm 2012 trở về sau, người ta hạn chế dùng gần như không sử dụng hàm sigmoid như hàm kích hoạt
+0:12:59 - 0:13:01, mà họ sử dụng hàm Relu này
+0:13:01 - 0:13:05, thì đây là một sự lựa chọn phổ biến cho các lớp ẩn
+0:13:05 - 0:13:10, và nó sẽ giúp cho mình giảm thiểu đáng kể hiện tượng Banishing Radiance
+0:13:10 - 0:13:12, tức là hiện tượng tiêu biến đạo hàm
+0:13:12 - 0:13:14, tại vì với đầu vào của chúng ta
+0:13:14 - 0:13:23, Chúng ta chỉ làm từ trừ năm trở đi hoặc từ trừ năm trở về sau là tự nhiên đạo hàm của mình gần như sắp xỉ bằng không
+0:13:23 - 0:13:26, Tại vì nó gần như tiềm gận vô đường này
+0:13:26 - 0:13:28, Đạo hàm gần như bằng không
+0:13:28 - 0:13:35, Mà đạo hàm gần như bằng không thì quá trình cập nhật của mình sẽ rất chậm đối với thực ván Radiant Descent
+0:13:35 - 0:13:45, Chúc nửa chúng ta sẽ bàn về giải thuật này để huấn luyện
+0:13:45 - 0:13:51, Tóm lại Ray Relu sẽ giúp chúng ta giảm thiểu hiện tượng tiêu biến đạo hàm này
+0:13:51 - 0:13:54, Do đó tốc độ huấn luyện sẽ ổn định hơn
+0:13:54 - 0:13:59, Một loại hàm kích hoạt nữa đó là hàm Soap Max
+0:13:59 - 0:14:03, Mục tiêu của hàm Soap Max không phải là để tổng hợp thông tin
+0:14:03 - 0:14:07, Mục tiêu của nó là để nén phân bố sát xuất
+0:14:07 - 0:14:10, cho nó có tổng là bằng một
+0:14:10 - 0:14:14, với đầu vào của mình là một vector
+0:14:14 - 0:14:16, ví dụ ở đây chúng ta có một vector
+0:14:16 - 0:14:20, qua hàm kết hoạch softmax
+0:14:20 - 0:14:22, nó sẽ đưa về không gian sát xuất
+0:14:22 - 0:14:28, không gian sát xuất là tầng phần tử này
+0:14:28 - 0:14:31, ví dụ ở đây chúng ta có y ngã là cái vector này
+0:14:31 - 0:14:33, từng phần tử y ngã này
+0:14:34 - 0:14:37, nó sẽ là lớn hơn 0 và bé hơn 1
+0:14:37 - 0:14:39, trong thời thái lớn hơn 0 và bé hơn 1
+0:14:39 - 0:14:42, trong đó tổng tất cả các y ngã này
+0:14:43 - 0:14:45, thì đều là bằng 1
+0:14:45 - 0:14:47, tổng các giá trị này cộng lại bằng 1
+0:14:47 - 0:14:49, thì đây là một cái không gian sát xuất
+0:14:49 - 0:14:51, và nó phục vụ thường là ở lớp cuối cùng
+0:14:51 - 0:14:56, để giúp chúng ta có thể dễ dàng đọc được kết quả của mình
+0:14:58 - 0:15:00, là sự lựa chọn bắt buộc cho các lớp output
+0:15:00 - 0:15:05, Bắt buộc cho lớp Output để cộ bài toán phân loại đa lớp
+0:15:06 - 0:15:11, Và ưu điểm đó là cho kết quả ra dạng sát xuất dễ diễn dãi
+0:15:11 - 0:15:13, Ví dụ như với hình này chúng ta có thể nói là
+0:15:14 - 0:15:17, Output với dữ kiện đầu vào
+0:15:17 - 0:15:22, Ở đây là dữ kiện đầu vào trước khi qua hàm sóc mắt, đây là lớp cuối cùng
+0:15:22 - 0:15:38, Qua hàm sop mắc sẽ chuẩn hóa output này thay vì các giá trị 1,3,5,2,0,7,1 không được chuẩn hóa
+0:15:38 - 0:15:45, Sau khi chuẩn hóa về sát xuất xong, chúng ta sẽ đọc quyết đoả này và có thể kết luận theo ngôn ngữ của sát xuất
+0:15:45 - 0:15:48, 90% là nó thuộc về lớp số 2
+0:15:50 - 0:15:55, 2% là thuộc về lớp số 1
+0:15:55 - 0:15:57, 5% là thuộc về lớp số 3
+0:15:57 - 0:16:03, Vì việc đọc giá trị output này sẽ diễn đạt rất dễ hiểu
+0:16:04 - 0:16:07, Lớp có sát suốt cao nhất chính là dự đoán của mình
+0:16:07 - 0:16:08, Như vậy mình kết luận
+0:16:08 - 0:16:18, mình kết luận đó là phân loại sẽ là cái class số 2

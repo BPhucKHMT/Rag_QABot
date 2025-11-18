@@ -1,0 +1,101 @@
+0:00:01 - 0:00:14, [âm nhạc]
+0:00:13 - 0:00:17, Trong phần thảo luận tiếp theo thì chúng
+0:00:14 - 0:00:19, ta sẽ cùng xem có những cái biến thể nào
+0:00:17 - 0:00:22, để mà
+0:00:19 - 0:00:25, ờ tính toán cái sự sai số giữa giá trị
+0:00:22 - 0:00:28, dự đoán và giá trị thực tế. Thì đây là
+0:00:25 - 0:00:31, cái công thức mà chúng ta đã được tìm
+0:00:28 - 0:00:33, hiểu ở trong những phần trước. Thế thì
+0:00:31 - 0:00:39, giá trị dự đoán của chúng ta chính là
+0:00:33 - 0:00:44, wxy cộng cho b. Còn đây là dự đoán.
+0:00:39 - 0:00:44, Còn giá trị thực tế thì chính là y.
+0:00:47 - 0:00:51, Thì đây là cái công thức mà mặc định
+0:00:49 - 0:00:53, chúng ta đã được học. Tuy nhiên có những
+0:00:51 - 0:00:56, cái biến thể nào và cái ưu khuyết điểm
+0:00:53 - 0:00:59, của nó ra sao thì chúng ta sẽ cùng tìm
+0:00:56 - 0:01:01, hiểu. Cái biến thể đầu tiên đó là chúng
+0:00:59 - 0:01:03, ta đã thảo luận ở trong câu hỏi trước đó
+0:01:01 - 0:01:05, là liệu chúng ta có thể dùng hàm bậc một
+0:01:03 - 0:01:07, hay được hay không? Thì câu trả lời là
+0:01:05 - 0:01:09, không. Tại vì nếu chúng ta sử dụng hàm
+0:01:07 - 0:01:13, bậc một thì
+0:01:09 - 0:01:15, một đó là nó sẽ bị triệt tiêu các cái
+0:01:13 - 0:01:17, size số đi. Có những size số âm, size số
+0:01:15 - 0:01:21, dương chúng ta cộng lại nó sẽ triệt tiêu
+0:01:17 - 0:01:24, đi. Đó. Và hai đó là nó một cái hàm bậc
+0:01:21 - 0:01:26, một thì nó sẽ không có giá trị nhỏ nhất.
+0:01:24 - 0:01:29, Cái biến thể thứ hai đó là chúng ta có
+0:01:26 - 0:01:35, thể sử dụng cái
+0:01:29 - 0:01:39, thế thì cái mee tức là j của w b thì sẽ
+0:01:35 - 0:01:45, là bằng trung bình cộng của tổng của trị
+0:01:39 - 0:01:47, tuyệt đối của y trừ cho w xy
+0:01:45 - 0:01:50, cộng b.
+0:01:47 - 0:01:53, Thì cái công thức này về mặt à con số
+0:01:50 - 0:01:55, thì nó đúng là thể hiện cái sai số giữa
+0:01:53 - 0:01:57, giá trị dự đoán và giá trị thực tế. Tuy
+0:01:55 - 0:02:00, nhiên vì cái dấu trị tuyệt đối này nè
+0:01:57 - 0:02:02, khiến cho cái việc tính đạo hàm à nó sẽ
+0:02:00 - 0:02:04, khó khăn hơn. À công thức của mình nó sẽ
+0:02:02 - 0:02:06, không có đẹp.
+0:02:04 - 0:02:09, Và biến thể tiếp theo đó là chúng ta sẽ
+0:02:06 - 0:02:11, có cái hàm bậc hai như thế này. Và tại
+0:02:09 - 0:02:14, câu hỏi là tại sao chúng ta không sử
+0:02:11 - 0:02:21, dụng những cái hàm bậc chẳng. Ví dụ như
+0:02:14 - 0:02:24, là J của W B bằng 1/N
+0:02:21 - 0:02:27, của tổng à của một cái hàm bậc chẳng. Ví
+0:02:24 - 0:02:31, dụ như là yy trừ
+0:02:27 - 0:02:33, ờ w xy
+0:02:31 - 0:02:36, cộng b
+0:02:33 - 0:02:38, thì công thức này chúng ta thấy là bậc à
+0:02:36 - 0:02:41, bậc 4 đi chẳng hạn. Thì rõ ràng đây là
+0:02:38 - 0:02:42, một cái hàm chẳng nên cái size số này
+0:02:41 - 0:02:45, khi chúng ta cộng dồn nó sẽ không bị
+0:02:42 - 0:02:48, triệt tiêu cho nhau. Đó. Tại sao chúng
+0:02:45 - 0:02:49, ta lại sử dụng hàm bậc hai? Thì rõ ràng
+0:02:48 - 0:02:52, giữa một cái hàm bậc 4 và một cái hàm
+0:02:49 - 0:02:55, bậc hai thì cái hàm bậc 4 nó sẽ phức tạp
+0:02:52 - 0:02:58, hơn. Và khi chúng ta tính đạo hàm thì
+0:02:55 - 0:03:00, cái J phẩ á tính đạo hàm thì nó sẽ là
+0:02:58 - 0:03:03, một cái hàm bậc 3.
+0:03:00 - 0:03:06, Mà một cái hàm bậc 3 thì khi chúng ta
+0:03:03 - 0:03:09, tính toán sai số rồi tính đạo hàm nó
+0:03:06 - 0:03:11, cũng sẽ khó hơn và phức tạp hơn. Do đó
+0:03:09 - 0:03:13, thì chúng ta có một cái nguyên lý nó gọi
+0:03:11 - 0:03:17, là nguyên lý cam.
+0:03:13 - 0:03:20, Tức là giữa cái việc chọn bậc hai, bậc
+0:03:17 - 0:03:23, ba, bậc 4, bậc 6 thì chúng ta chọn cái
+0:03:20 - 0:03:25, bậc nào đơn giản nhất? nhưng mà nó hiệu
+0:03:23 - 0:03:27, quả thì chúng ta sẽ chọn. Thì đó là lý
+0:03:25 - 0:03:29, do tại sao chúng ta chọn cái hàm bậc
+0:03:27 - 0:03:31, hai. Nó vừa giải quyết được cái vấn đề
+0:03:29 - 0:03:33, của cái hàm bậc một không giải quyết
+0:03:31 - 0:03:35, được. Đó là bị triệt tiêu các cái sai
+0:03:33 - 0:03:39, số. Và đồng thời là cái đạo hàm của cái
+0:03:35 - 0:03:41, hàm bậc hai là khi chúng ta tính đạo hàm
+0:03:39 - 0:03:43, xong thì đạo hàm của nó sẽ là một cái
+0:03:41 - 0:03:46, hàm bậc một. Và một cái hàm bậc một thì
+0:03:43 - 0:03:49, tính toán rất là dễ dàng. Đó. Và chúng
+0:03:46 - 0:03:50, ta cũng có thêm một biến thể nữa. Thì
+0:03:49 - 0:03:53, cái biến thể này thực ra không có quá
+0:03:50 - 0:03:56, quan trọng nhưng mà có nhiều cái tài
+0:03:53 - 0:03:59, liệu thì họ lại dùng cái biến thể này.
+0:03:56 - 0:04:02, Đó là chúng ta thêm cái số 2 ở đằng mẫu
+0:03:59 - 0:04:07, số như thế này. Rồi sau đó tính tổng của
+0:04:02 - 0:04:09, y trừ cho wxy
+0:04:07 - 0:04:11, cộng b.
+0:04:09 - 0:04:13, Đó rồi tất cả bình phương. Thì tại sao
+0:04:11 - 0:04:16, nó lại có cái con số 2 này?
+0:04:13 - 0:04:19, Đó thì mục tiêu đó là để cho khi chúng
+0:04:16 - 0:04:21, ta tính đạo hàm xong á thì nó sẽ đẹp.
+0:04:19 - 0:04:23, Con số 2 này nó sẽ biến mất. Tại vì một
+0:04:21 - 0:04:25, cái hàm bậc hai thì khi tính đạo hàm ra
+0:04:23 - 0:04:27, nó sẽ là bằng 2 nhân cho cái đạo hàm
+0:04:25 - 0:04:29, nhân cho cái bậc 1 đúng không? Thì 2
+0:04:27 - 0:04:31, nhân cho 1/2 ở đây thì nó sẽ triệt tiêu
+0:04:29 - 0:04:33, đi. Thì cái công thức này nó sẽ là đẹp
+0:04:31 - 0:04:36, công thức thôi. Còn về mặt ý nghĩa thì
+0:04:33 - 0:04:39, nó không có nhiều ý nghĩa.
+0:04:36 - 0:04:42, Thì đây là một vài cái biến thể của cái
+0:04:39 - 0:04:45, hàm mất mát trong cái mô hình hồi quy
+0:04:42 - 0:04:45, logistic.
+0:04:45 - 0:04:57, [âm nhạc]

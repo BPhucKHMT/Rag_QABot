@@ -1,0 +1,148 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:32, cho bài toán hồi quyền.
+0:00:33 - 0:00:35, Quá trình sẽ gồm hai bước.
+0:00:35 - 0:00:39, Đầu tiên, chúng ta sẽ chia không gian đặc trưng.
+0:00:39 - 0:00:45, Không gian đặc trưng ở đây là tập hợp các giá trị có thể của
+0:00:45 - 0:00:51, x1, x2, xp hay còn gọi là các cột đặc trưng
+0:00:51 - 0:00:57, thành di vùng riêng biệt r1, r2 và rg.
+0:00:57 - 0:01:00, R, ở đây là bí tắc của region
+0:01:02 - 0:01:07, Tiếp theo, với mỗi mẫu trong vùng RG
+0:01:07 - 0:01:14, chúng ta đưa ra một giá trị dự đoán cho tất cả các mẫu thuộc về vùng đó
+0:01:14 - 0:01:22, chính là giá trị trung bình của các giá trị bản hồi cho các mẫu huấn luyện trong vùng RG
+0:01:22 - 0:01:26, Giá trị bản hồi ở đây thực ra là giá trị hầu quý các bạn.
+0:01:34 - 0:01:40, Như vậy thì bây giờ chúng ta sẽ quan tâm quá trình phân tầng không gian đặc trưng
+0:01:40 - 0:01:42, nó sẽ diễn ra như thế nào
+0:01:42 - 0:01:49, và là thế nào chúng ta sẽ xây dựng các vùng R1, R2 và RG.
+0:01:49 - 0:01:55, Đầu tiên chúng ta sẽ quan tâm đặc điểm của các vùng này
+0:01:55 - 0:02:08, Các vùng này sẽ được giới hạn trong các vùng có dạng hình chữ nhật và xong xong với các trục hay còn được gọi là các đặc trưng
+0:02:08 - 0:02:20, sau khi chúng ta quan tâm tới đặc điểm của các vùng, bước tiếp theo chúng ta sẽ đi tìm mục tiêu của bài toán
+0:02:20 - 0:02:27, đó là chúng ta sẽ cố gắng giảm thiểu giá trị Residual Sum Square
+0:02:27 - 0:02:43, Giả sử chúng ta sẽ có G vùng và chúng ta sẽ đi duyệt tuần vùng
+0:02:43 - 0:02:52, và ấn với mẫu vùng, chúng ta sẽ đi chuyệt tuần mẫu trong vùng đó
+0:02:52 - 0:03:01, và chúng ta sẽ đi tính đổi lỗi của giá trị dự đoán
+0:03:01 - 0:03:10, YY là giá trị thật của mẫu thứ Y
+0:03:10 - 0:03:18, YY đoán cho vùng Z được nguy hiểm như sau
+0:03:18 - 0:03:27, Ở đây để dĩa hình dung hơn thì giả sử chúng ta sẽ có 1 cái cây có 3 vùng
+0:03:27 - 0:03:31, Chúng ta sẽ tưởng tượng sẽ có 1 cái cây như thế này
+0:03:31 - 0:03:36, Chúng ta có 3 vùng, ở đây thì chỉ số G sẽ chạy
+0:03:36 - 0:03:43, Chúng ta sẽ có vùng thứ nhất, vùng thứ 2 và vùng thứ 3
+0:03:43 - 0:03:47, Trong này có 3 điện giới liệu
+0:03:47 - 0:03:53, Y của chúng ta sẽ chạy trong 3 mẫu này
+0:03:53 - 0:03:59, Ở đây chúng ta chỉ có 2 mẫu và ở đây chúng ta có 4 mẫu
+0:03:59 - 0:04:12, dì bằng 1, dì bằng 2, và dì bằng 3
+0:04:12 - 0:04:20, như vậy thì chúng ta có thể lưu ý rằng
+0:04:20 - 0:04:27, dì của chúng ta sẽ tương đương với số nút lá của cái bí quyết định
+0:04:27 - 0:04:32, trong trường hợp này là cho bài toán hồi huy
+0:04:32 - 0:04:39, như vậy thì chúng ta sẽ có rất nhiều cách để chia
+0:04:39 - 0:04:44, không gian này trước bắt đầu thành các vùng
+0:04:44 - 0:04:49, về mặt lý thuyết thì chúng ta có thể tìm ra tất cả các tổ hợp các vùng
+0:04:49 - 0:04:53, sau đó chúng ta sẽ chọn
+0:04:53 - 0:05:00, Cái cách phân vùng mà sao cho chúng ta sẽ có độ lỗi thấp nhất.
+0:05:00 - 0:05:05, Tuy nhiên, việc này là không thể.
+0:05:05 - 0:05:17, Trong thật tế, để thay thế cho thực toán bé cạn thì người ta sẽ sử dụng thực toán than lan để đi giải quyết bài toán phân vùng.
+0:05:17 - 0:05:31, Như vậy, chúng ta có thể thấy rằng, việc tìm ra tất cả các tổ hợp, các vùng quyết định, hay nói cách khác là tìm ra tất cả các cây quyết định cho bài toán hồi quy là điều không thể.
+0:05:32 - 0:05:44, Như vậy, chúng ta sẽ tìm một hướng giải quyết khác. Đơn giản hơn, chúng ta sẽ tìm ra một lời giải không phải là hoàn hảo, tuy nhiên bằng cho cái quả tốt.
+0:05:44 - 0:05:47, Đó là thực toán tham lam.
+0:05:47 - 0:05:51, Ý tưởng của thực toán này là phân chia nhị phân đề huy.
+0:05:51 - 0:05:55, Chúng ta sẽ tiếp cận phân chia vùng từ trang súng.
+0:05:55 - 0:06:02, Cụ thể là, đầu tiên chúng ta sẽ bắt đầu từ đỉnh của cái quyết định.
+0:06:02 - 0:06:06, Tất cả các điểm đều thuộc về một vùng duy nhất.
+0:06:06 - 0:06:18, Có nghĩa là tất cả các điểm trong bộ dữ liệu được hồi huy với một giá trị duy nhất nếu như chúng ta dừng lại thực toán tại đây.
+0:06:18 - 0:06:32, Nếu không, tiếp tục chúng ta sẽ tìm biến phần GIG hay nói cách khác là chúng ta sẽ đi lập tất cả các cột đặc trưng trong dữ liệu đồ vào.
+0:06:32 - 0:06:48, Ấn với mỗi cầu đặt trân như vậy, chúng ta sẽ tìm ra một điểm phân chia x, hay còn được vi tắc là slip point
+0:06:48 - 0:06:59, Đây là một cái từ mà chúng ta sẽ thấy quen thuộc trên các trang hướng dẫn của các diễn đàn về khoa máy tính
+0:06:59 - 0:07:12, Và chúng ta sẽ đi tìm điểm x sau cho giảm thiểu ResidualSumSquare nhiều nhất so với vòng ban đầu
+0:07:12 - 0:07:24, Để dĩ hình dung hơn, dạ sử bắt đầu tập dữ liệu của chúng ta sẽ gồm chân 2 điểm
+0:07:24 - 0:07:34, Và chúng ta sẽ chia thành 2 vùng dữ liệu
+0:07:34 - 0:07:39, Dạ xử đây chúng ta sẽ slip theo hướng này
+0:07:39 - 0:07:44, Thì chúng ta sẽ có một số điểm bên trái và một số điểm bên phải
+0:07:44 - 0:07:54, Và độ giảm giá trì lỗi sẽ là nhiều nhất khi chúng ta chọn các slip này
+0:07:54 - 0:08:05, Tiếp theo, chúng ta sẽ tiếp tục lập lại cho từng vùng mà chúng ta đã chia tại bước đầu tiên
+0:08:05 - 0:08:13, Tương tự cách ở bước 2 cho đến khi chúng ta sẽ thỏa mạng tiêu chí dừng
+0:08:13 - 0:08:24, Bởi vậy đây là một thuật toán lập cho nên chúng ta sẽ phải định nghĩa ra một tiêu chí dần
+0:08:24 - 0:08:33, Một điểm đáng lưỡi ở đây là thuật toán tham lam sẽ không nhìn về ký trước để xem xét các bước tiếp theo
+0:08:33 - 0:08:46, có nghĩa là khi mà chúng ta phân chia các vùng ở bước này thì chúng ta không còn quan tâm đến kết quả của bước trước nữa
+0:08:46 - 0:08:52, chúng ta coi như đây là một bộ dữ liệu mới
+0:08:52 - 0:09:02, Ở các slide trước, chúng ta có đề cập đến việc các vùng của chúng ta sẽ là các hộp hình chữ nhật và xong xong và cắt trục
+0:09:02 - 0:09:13, Ở đây, chúng ta sẽ có hai cách chia, hay là hai cách phân các vùng, cách bên trái và cách bên phải
+0:09:13 - 0:09:26, Ở đây chúng ta có thể thấy rằng các vùng bên trái không thể được thực hiện bởi thuật toán mà chúng ta đã đề ra
+0:09:26 - 0:09:37, Ướn với thuật toán mà chúng ta đã mô tả trong các phần trước thì tại mỗi bước chúng ta sẽ phân chia dữ liệu thành 2 vùng
+0:09:37 - 0:09:51, Như vậy, chúng ta có thể hình dung là, giả sử ban đầu chúng ta sẽ có không gian đặc trưng gốc gồm x2 và x1
+0:09:51 - 0:10:01, Tại bước đầu tiên, chúng ta sẽ đi lập tất cả các điểm trong đặc trưng x1
+0:10:01 - 0:10:05, sau đó chúng ta sẽ chọn ra điểm slip point
+0:10:06 - 0:10:09, có độ lỗi giảm nhiều nhất
+0:10:10 - 0:10:16, tương tự như vậy chúng ta sẽ đi lập tất cả các điểm slip point trong đặc trình x2
+0:10:16 - 0:10:23, và chúng ta chọn ra một điểm có độ giảm lỗi nhiều nhất
+0:10:23 - 0:10:29, và chúng ta sẽ coi hai giá trị giảm lỗi trong x1 và x2
+0:10:29 - 0:10:34, bên nào có độ giảm lỗi cao nhất thì chúng ta sẽ tiến hành slip
+0:10:34 - 0:10:41, như vậy giả sở đây chúng ta sẽ có giá trị giảm lỗi trong x1 là nhiều nhất
+0:10:41 - 0:10:44, và chúng ta sẽ tiến hành phân chia vùng
+0:10:44 - 0:10:49, chúng ta chọn một điểm slip-boy trang x1
+0:10:49 - 0:10:53, và chúng ta sẽ tiến hành phần vùng
+0:10:53 - 0:11:03, như vậy chúng ta có thể thấy rằng ít nhất sẽ có một đường thẳng
+0:11:03 - 0:11:08, mà nó vùng góc với một chục đặt chân
+0:11:08 - 0:11:15, ở đây thì chúng ta sẽ để ý rằng trong cách phần vùng bên trái
+0:11:15 - 0:11:24, không có đường thẳng nào mà cắt toàn bộ một vùng
+0:11:24 - 0:11:30, như trong ví dụ mà chúng ta vừa mình hỏa
+0:11:30 - 0:11:36, chúng ta có thể thấy rằng ở cách phân vùng thứ 2
+0:11:36 - 0:11:42, đầu tiên thì chúng ta sẽ kẽ đường này để phân vùng
+0:11:42 - 0:11:47, Tiếp theo, chúng ta sẽ có vòng bên trái và vòng bên phải
+0:11:47 - 0:11:57, thì ở đây chúng ta sẽ có thể chia theo cách này
+0:11:57 - 0:12:04, chúng ta coi như đây là một bộ dữ liệu độc lập chỉ còn R2 và R1
+0:12:04 - 0:12:11, Tiếp theo, chúng ta coi phần dữ liệu bên phải là phần dữ liệu độc lập
+0:12:11 - 0:12:16, thì chúng ta có thể Slip thành 2 phần
+0:12:17 - 0:12:22, và tiếp theo chúng ta có thể coi cái phần còn lại là một bộ dĩ liệu độc lập
+0:12:22 - 0:12:24, và chúng ta sẽ Slip
+0:12:29 - 0:12:32, và đây là một cách phân vùng hợp lệ
+0:12:32 - 0:12:46, Trong các slide trước, đặc biệt là thực toán, xây dựng, cái quyết định hầu y, chúng ta có đề cập đáng khái niệm tiêu chỉ dừng.
+0:12:46 - 0:12:51, Đây là một cái điểm quan trọng để giúp chúng ta dừng thực toán.
+0:12:51 - 0:13:04, Về mặt lý thiết, chúng ta sẽ dừng lại khi mà chúng ta phân chia các vùng, khi mà trong vùng đó chỉ còn một điểm dữ liệu duy nhất.
+0:13:04 - 0:13:15, Ưng với tình huống đó thì chúng ta sẽ tạo ra một cái cây quyết định rất là lớn và nó sẽ tốn vẻ mặt chi phí kinh toán.
+0:13:15 - 0:13:20, Thực tế thì nó có thể không tổn quát tốt cho dữ liệu mới.
+0:13:20 - 0:13:31, Tại vì chúng ta có thể hành dung rằng bản chất của bài toán tiền kế quyết định thì tại mỗi nút lá,
+0:13:31 - 0:13:39, việc giá trị dự đoán nó sẽ có nghĩa là tất cả các tiền dữ liệu thuộc về một vùng.
+0:13:39 - 0:13:47, Nó sẽ được dự đoán bằng giá trị trung bình tất cả các màu dữ liệu thuộc về vùng đó.
+0:13:47 - 0:13:52, Hay nói cách khác, thì chúng ta dự đoán giá trị của một mẫu dữ liệu mới
+0:13:52 - 0:13:59, nó sẽ là giá trị trôn bình của những mẫu dữ liệu mà có đặc trưng tương đồng với nó nhất.
+0:14:01 - 0:14:11, Thì tiêu chỉ dừng ở đây, có thể là chúng ta sẽ giới hạn kích thức của cây bằng cách kiểm soát hiện tượng quá khắc.
+0:14:11 - 0:14:19, Hiện nay, các tiêu chỉ khổ biến để định nghĩa tiêu chỉ dừng cho cây quyết định bao gồm
+0:14:19 - 0:14:28, số lượng mẫu trong một nút lá nhỏ hơn một số nhất định thì chúng ta sẽ dừng
+0:14:28 - 0:14:35, độ tinh khiết của nút lớn hơn một số nhất định
+0:14:35 - 0:14:48, Thực ra chúng ta sẽ có khái niệm về độ tinh khiết trong phần xây dựng cây quyết định cho bài toán phân loại
+0:14:48 - 0:14:54, Đồ tinh khiết ở đây thì chúng ta nghĩ đơn giản nó tương tự với độ thuần khiết thôi
+0:14:54 - 0:15:06, Dạ sự chúng ta sẽ có một dữ liệu phăng loại gồm 3 mẫu thuộc lớp O và 1 mẫu thuộc lớp X
+0:15:06 - 0:15:09, Đây là bộ dữ thứ nhất đi hành
+0:15:09 - 0:15:14, Dạ sự chúng ta sẽ tiếp tục có một bộ dữ liệu thứ 2
+0:15:14 - 0:15:22, D2 gồn 4 màu dữ liệu thuộc về lớp O
+0:15:22 - 0:15:28, thì chúng ta có thể thấy là giả sử chúng ta coi O như là nước đi hấp
+0:15:33 - 0:15:37, và x ở đây là 1
+0:15:38 - 0:15:40, hạt sạn đi
+0:15:40 - 0:15:49, Chúng ta có thể nói rằng bộ dĩa lưu điểm 1 này chưa thuần khiết nước hoàn toàn,
+0:15:49 - 0:15:55, còn bộ dĩa thứ 2 này được coi là nước thuần khiết.
+0:15:55 - 0:16:05, Có nghĩa là nó sẽ không chứa các tập chất khác.
+0:16:05 - 0:16:17, Và trong bài toán này, chúng ta sẽ nói rằng một bộ dữ liệu hay một vùng nó thuần khiết một lớp nào đó
+0:16:17 - 0:16:29, Chả hạn như chúng ta sẽ có một bộ D3, nó gồm 3 mẫu ít, thì chúng ta có thể nói nó thuần khiết về một lớp ít
+0:16:29 - 0:16:37, Ngoài ra thì tiêu chỉ dừng của chúng ta sẽ có thể định nghĩa bằng độ sau của 1 cây
+0:16:37 - 0:16:45, Nếu như 1 cây mà có độ sau quá lớn thì nó có thể là một hiện tượng overfit
+0:16:45 - 0:16:53, và khi mà trong tình huống tất cả các giá trị tẳng hồi
+0:16:53 - 0:17:00, ở đây là chúng ta sẽ hiểu là giá trị hồi huy đều giống hệt nhau hả?
+0:17:00 - 0:17:12, có nghĩa là một cái cây hồi huy như thế này mà tất cả giá trị mà dự đoán cho bài tấn hồi huy á
+0:17:12 - 0:17:13, ở đây nó giống nhau luôn
+0:17:13 - 0:17:14, v1
+0:17:15 - 0:17:15, v1
+0:17:16 - 0:17:17, v1
+0:17:19 - 0:17:22, thì ở đây chúng ta có thể hình dung là giống như là trong cái môn
+0:17:22 - 0:17:23, nhập môn lập trình đó
+0:17:24 - 0:17:26, việc chúng ta viết các cái lèn x
+0:17:28 - 0:17:30, cái lèn điều kiện đó các bạn
+0:17:30 - 0:17:32, nhưng mà trong cái
+0:17:35 - 0:17:35, việc quyết định
+0:17:37 - 0:17:39, trong cái hàng cuối cùng á
+0:17:39 - 0:17:41, thì tất cả các cái công việc nó đều như nhau
+0:17:41 - 0:17:44, thì thôi chúng ta khỏi viết luyện ích để còn hơn
+0:17:45 - 0:17:50, Và tương tự như vậy, trong tình huống này, tất cả các giá trị phản hồi đều giống như hệt nhau
+0:17:50 - 0:17:56, thì thôi chúng ta sẽ chỉ cần tạo ra một cái cây mà nó chỉ có một nút thôi
+0:17:57 - 0:18:03, Nó cách khác, thì chúng ta thà không phân chia các vùng còn hơn
+0:18:03 - 0:18:09, Chỉ đơn thuần là chúng ta kết luận là bộ dữ liệu này chỉ có một giá trị phản hồi mà thôi
+0:18:11 - 0:18:24, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

@@ -1,0 +1,177 @@
+0:00:00 - 0:00:10, Ưng dụng tiếp theo của mạng CNN trong các bài toán liên quan đến thị giác máy tính chính là phát hiện đối tượng.
+0:00:10 - 0:00:17, Và đây có thể nói là một trong những bài toán có sức ảnh hưởng rất lớn về mặt ứng dụng.
+0:00:17 - 0:00:27, Nó có ứng dụng trong xe tự hành, ví dụ như khi chiếc xe trên đường sẽ được trang bị các camera đặt ở tất cả các hướng nhìn của xe.
+0:00:27 - 0:00:32, và nó sẽ phát hiện xem xung quanh có những cái xe hoặc các cái phương tiện đi lại
+0:00:32 - 0:00:35, hoặc là những cái người bộ hành và những cái vật cảng nào
+0:00:35 - 0:00:39, để từ đó nó đưa ra quyết định là xe nên đi theo vương nào.
+0:00:40 - 0:00:47, Và bài tán phát hiện tới tượng này thì mất vô từ một trực quan hóa của mạng CNN.
+0:00:48 - 0:00:53, Trước đây thì chúng ta đã từng thảo luận về bài Deep Visualization Tuned Box
+0:00:53 - 0:01:06, Và nó có một số tính chấp của feature map trong mạng CNN, đó chính là tính bất biến về trình tự không gian
+0:01:06 - 0:01:17, và tỉ lệ. Ví dụ trong tấm hình này, chúng ta thấy người đàn ông ngồi trước mạng hình, đây chính là feature map
+0:01:17 - 0:01:27, Và cái đốn sáng này có cái concept, có cái ý nghĩa đó chính là thể hiện cái concept là ngươi mặt.
+0:01:27 - 0:01:35, Chính cái tấm ảnh này là chính cái tấm ảnh mà làm cho cái feature map này là phát sáng nhất.
+0:01:35 - 0:01:41, Thì chúng ta thấy điểm chung của tất cả các cái ảnh này đó chính là có cái ngươi mặt.
+0:01:41 - 0:01:46, Và khi cái người này di chuyển thì chúng ta sẽ thấy là cái đốn sáng này cũng di chuyển theo.
+0:01:46 - 0:01:53, và sau đó sẽ có một người đàn ông khác mặc áo màu đen đi vào khung hình
+0:01:53 - 0:01:57, thì chúng ta thấy là cái người này nằm ở phía tay trái, đúng không?
+0:01:57 - 0:02:01, thì cái đống sáng tương ứng nó cũng nằm phía tay trái so với cái đống sáng lớn này
+0:02:01 - 0:02:04, tức là trình tự về không gian
+0:02:04 - 0:02:08, cái người mặc áo đen đứng về phía đằng xa và đứng sau
+0:02:08 - 0:02:13, thì cái đống sáng này cũng đứng về đằng xa và phía sau
+0:02:13 - 0:02:16, là tương ứng với lại cái vị trí của cái người áo đen.
+0:02:16 - 0:02:18, Đồng thời về mặt tỷ lệ,
+0:02:18 - 0:02:22, chúng ta thấy là cái gương mặt của cái người mặt áo đen
+0:02:22 - 0:02:27, đó bằng khoảng một nửa, theo một chiều nữa, hoặc là bằng một phần tư về mặt diện tích thôi.
+0:02:27 - 0:02:30, Thôi bây giờ chúng ta sẽ nói về chiều ngang, chiều dọc đi.
+0:02:30 - 0:02:33, Thì cái mặt của cái người áo đen bằng một khoảng một nửa
+0:02:33 - 0:02:36, so với lại cái người mặt áo tím ở đây,
+0:02:36 - 0:02:39, thì cái đốn sáng tương ứng cũng sẽ bằng một nửa.
+0:02:39 - 0:02:43, Như vậy, đây chính là tính bất biến về mặt tỉa lại.
+0:02:43 - 0:02:51, Và dựa trên đặc điểm này, chúng ta ấn dụng các feature maps của mạng CNN
+0:02:51 - 0:02:55, để giải quyết các bài toán về phát hiện đối tượng.
+0:02:55 - 0:03:02, Ví dụ như đốm sáng này là đại diện cho concept về mặt mưu mặt
+0:03:02 - 0:03:08, và chúng ta sẽ dùng các thuật ván để ước lượng bounding box
+0:03:08 - 0:03:12, để ước lượng bounding box xung quanh đống sáng này
+0:03:12 - 0:03:22, sau khi đã ước lượng xong, chúng ta sẽ nổi suy ra bounding box ở ảnh góc
+0:03:22 - 0:03:27, Tại vì chúng ta đã biết bề ngang và bề cao của tấm ảnh này rồi.
+0:03:27 - 0:03:32, Chúng ta biết bề ngang và bề cao của feature map rồi.
+0:03:32 - 0:03:35, Thì khi đó chúng ta hoàn toàn có thể thực hiện được thao tác tội suy.
+0:03:35 - 0:03:38, Tuy nhiên thì đây chỉ là ý tưởng xơ khởi
+0:03:38 - 0:03:47, và làm sao để cho mạng của mình có khả năng học và đoán được vị trí bounding box
+0:03:47 - 0:03:49, từ đầu tới cuối.
+0:03:49 - 0:03:53, thì chúng ta sẽ phải thiết kế lại mạng CNN
+0:03:53 - 0:03:59, chúng ta phải điều chỉnh lại mạng CNN một chút để đạt được nhiệm vụ đó là phát hiện đối tượng
+0:03:59 - 0:04:06, và lưu ý là bài toán phát hiện đối tượng sẽ có một tính chấp là cái object của mình
+0:04:06 - 0:04:10, nó sẽ không xuất hiện trọn vẹn bên trong khu hình
+0:04:10 - 0:04:14, mà ở đâu đó nó chỉ xuất hiện ở một khu vực nhỏ đâu đó thôi
+0:04:14 - 0:04:17, và nhiệm vụ của mình sẽ là phải tìm ra vị trí đó
+0:04:17 - 0:04:23, và trong hình này có thể có rất nhiều object khác
+0:04:23 - 0:04:26, hoặc có rất nhiều loại đối tượng khác
+0:04:26 - 0:04:30, và thậm chí không có đối tượng nào cả
+0:04:30 - 0:04:33, thì đó chính là bài toán phát hiện đối tượng
+0:04:33 - 0:04:36, và nó khác như thế nào so với bài toán phân loại đối tượng
+0:04:36 - 0:04:41, và đây là khái niệm
+0:04:41 - 0:04:43, thì chúng ta đã đề cập rồi
+0:04:43 - 0:04:48, Tức là trong tấm hình này có rất nhiều loại đối tượng khác nhau
+0:04:49 - 0:04:52, Và có đồng thời, cũng có khả năng là có hai đối tượng cùng loại
+0:04:52 - 0:04:56, Ví dụ ở đây là cái chai, thì ở đây cũng có xuất hiện là cái chai
+0:04:56 - 0:05:00, Rồi, và ở đây là có cái tli
+0:05:00 - 0:05:05, Và cũng có những đối tượng mà một loại, ví dụ như là cái tô, cái laptop
+0:05:05 - 0:05:09, Thì đây là nhiệm vụ chính của bài tán phát hiện đối tượng
+0:05:09 - 0:05:12, Đó chính là chúng ta sẽ xác định vùng hình hột
+0:05:12 - 0:05:15, Vùng hình hột hay còn gọi là vùng bounding box
+0:05:15 - 0:05:19, Nếu có sự xuất hiện của một hoặc nhiều đối tượng trong tấm hình này
+0:05:19 - 0:05:24, Chúng ta sẽ phải tính đến cả tình huống trong tấm hình không có object nào
+0:05:24 - 0:05:30, Thì để ứng dụng mạng CNN cho bài toán phát hiện đối tượng này
+0:05:30 - 0:05:32, thì có rất nhiều hướng tiếp cận
+0:05:32 - 0:05:36, trong đó hướng tiếp cận về 2 giai đoạn
+0:05:36 - 0:05:44, Và nổi tiếng nhất đó chính là cái mô hình là R-CNN, Fast R-CNN và Faster R-CNN.
+0:05:44 - 0:05:49, Thì chúng ta sẽ không có thời gian để mà đi hết được toàn bộ các kiến trúc này.
+0:05:49 - 0:05:57, Chúng ta sẽ bàn về cái mô hình mà nổi tiếng và gần nhất trong 3 cái mô hình này.
+0:05:57 - 0:06:02, Và ý tưởng của nó cũng được sử dụng cho rất nhiều những cái thuốc tán phát hiện đối tượng về sau.
+0:06:02 - 0:06:08, và có sử dụng những mô hình tiên tiến nhất của Deep Learning như Vision Transformer.
+0:06:08 - 0:06:14, Đầu tiên, đó là giai đoạn số 1. Chúng ta sẽ phải xác định xem vùng có khả năng đối tượng,
+0:06:14 - 0:06:21, tức là trong tấm hình này. Mình sẽ chỉ ra những khu vực nào có khả năng có đối tượng.
+0:06:21 - 0:06:27, Nhưng đối tượng đó là đối tượng gì? Hạ vụ phân giải, chúng ta sẽ tính sau.
+0:06:27 - 0:06:36, Thì sang giai đoạn số 2, chúng ta sẽ phân loại xem ứng với từng cái bounding box đó
+0:06:36 - 0:06:44, thì ở đây nó sẽ là cái class của nó là cái gì, cái tên của cái đối tượng trong cái bounding box này là gì
+0:06:44 - 0:06:51, đồng thời chúng ta có thể sẽ phải tinh chỉnh lại cái bounding box sao cho nó khớp với đối tượng hơn
+0:06:51 - 0:06:59, Vùng màu đen này chỉ là khu vực tạm thời thôi để localize vị trí có hành hăng của đối tượng
+0:06:59 - 0:07:07, Sau đó chúng ta sẽ thực hiện bước lượng bounding box một cách chính xác nhất vào đối tượng của mình
+0:07:07 - 0:07:16, Đó chính là ý tưởng của phương pháp phát hiện đối tượng 2 giai đoạn
+0:07:16 - 0:07:24, Đối với thật quán Faster ACNN, nó sẽ khai thác đặc trưng Deep Feature và ở hai bước.
+0:07:24 - 0:07:29, Bước đầu tiên đó chính là Reasoned Proposal Network, RPN.
+0:07:29 - 0:07:34, Nhìn vụ của bước này đó chính là xác định những khu vực có khả năng có đối tượng.
+0:07:34 - 0:07:38, Và cách thức để xác định những vùng có khả năng đối tượng đó là dựa trên quan sát.
+0:07:38 - 0:07:43, Khi chúng ta rút trích ra feature map, chúng ta sẽ thấy có những chỗ có respawn.
+0:07:43 - 0:07:48, Thì đây chính là những cái chỗ có khả năng phó đối tượng
+0:07:48 - 0:07:52, Và từ những cái đốn sáng này, những cái chỗ Respo này
+0:07:52 - 0:07:57, Mình sẽ đưa qua một cái mạng Neural Network để chỉ ra những cái báo điện bóc
+0:07:57 - 0:08:03, Chỉ ra được những cái báo điện bóc là chỗ đó có khả năng phó đối tượng
+0:08:03 - 0:08:09, Sau đó với cái báo điện bóc này, chúng ta sẽ kết hợp với một cái feature map
+0:08:09 - 0:08:14, Và lưu ý là feature map này nó được chia sẻ, nó share feature,
+0:08:14 - 0:08:17, tức là feature map này và feature map này là một.
+0:08:17 - 0:08:21, Feature map này kết hợp với lại cái bounding box
+0:08:21 - 0:08:24, mà qua cái mạng region proposal network,
+0:08:24 - 0:08:27, nó sẽ khoanh vùng cái feature map này,
+0:08:27 - 0:08:30, nó sẽ trích cái feature map này ra.
+0:08:30 - 0:08:32, Và từ cái feature map này,
+0:08:32 - 0:08:36, đi đến đến thực hiện cái công đoạn nó gọi là detector,
+0:08:36 - 0:08:38, Chúng ta sẽ chỉ ra vị trí chính xác hơn
+0:08:38 - 0:08:41, Chúng ta sẽ chỉ ra vị trí chính xác hơn
+0:08:41 - 0:08:44, Cái BoundingBox chính xác
+0:08:49 - 0:08:53, Đồng thời là chúng ta sẽ phải có thêm cái class
+0:08:53 - 0:08:58, Cái class name tức là cái tên của cái đối tượng đó là gì
+0:08:58 - 0:09:03, Thì đây chính là cái ý tưởng của Faster ACNN
+0:09:03 - 0:09:12, và hướng tiếp cận Faster CNN thì nó sẽ có một cái điểm yếu là nó sẽ chậm và nó phải tách ra làm hai giai đoạn
+0:09:12 - 0:09:19, thì bây giờ người ta có ý tưởng là làm sao train từ đầu đến cuối, tức là chúng ta sẽ thực thi từ đầu đến cuối
+0:09:19 - 0:09:27, chỉ cần fit vào một tấm ảnh đầu ra nó sẽ ra được cái bounding box của các object luôn mà không cần phải chia ra làm hai bước
+0:09:27 - 0:09:31, tại vì chia ra làm hai bước thì nó sẽ có tình trạng là bước này phải chờ bước kia nó sẽ chậm
+0:09:31 - 0:09:37, Còn cứu kích cận 1 giai đoạn thì nó sẽ loại bỏ hoàn toàn bước đổi xếp đối tượng
+0:09:37 - 0:09:44, hoặc là region proposal network mà nó sẽ thực thi từ đầu đến cuối hay là end to end 1 cái mạng CNN luôn.
+0:09:44 - 0:09:51, Rồi, và cái ý tưởng của cái hướng 1 giai đoạn này nổi tiếng nhất chính là YOLO.
+0:09:51 - 0:09:55, Và cái YOLO thì ở đây chúng ta đang nói là YOLO phiên bản đầu.
+0:09:55 - 0:10:01, Tuy nhiên, YOLO cho đến thời điểm hiện nay, năm 2024, là nó đã có YOLO phiên mạng 10.
+0:10:01 - 0:10:03, Tức là cứ cải tiến nhiều.
+0:10:03 - 0:10:09, Nhưng mà ý tưởng chính nhất của nó, mẫu chính là làm sao fit một cái tấm ảnh đầu vào.
+0:10:10 - 0:10:13, Đây chính là cái ảnh thô đầu vào.
+0:10:15 - 0:10:18, Và cái output đầu ra của mình nó sẽ là một cái tensor.
+0:10:18 - 0:10:22, Và cái tensor này nó có thể encode.
+0:10:22 - 0:10:26, Tức là nó có chứa đủ được cái thông tin về mặt ClassName
+0:10:28 - 0:10:30, Rồi về mặt BoundingBox
+0:10:36 - 0:10:39, Thì ở đây nó sẽ có cái trick
+0:10:39 - 0:10:44, là mỗi một cái ảnh của mình
+0:10:44 - 0:10:46, thì nó giả sử là
+0:10:47 - 0:10:49, nó chia ra một cái ô lưới
+0:10:52 - 0:10:59, Ví dụ như trong trường hợp này, nó nghĩ rằng là cái ô lưới của mình sẽ là kích thước là 7 x 7
+0:10:59 - 0:11:03, Tức là object của mình đâu đó chỉ xuất hiện trong những khu vực 7 x 7 này mà thôi
+0:11:03 - 0:11:09, Và nó sẽ có cái tình huống đó là với một cái ô này
+0:11:09 - 0:11:13, Thì nó có khả năng là có hiện tượng chồng đối tượng
+0:11:13 - 0:11:17, Tức là hiện tượng mẹ mùng con, một đối tượng ở đằng trước và một đối tượng ở đằng sau
+0:11:17 - 0:11:23, thì nó sẽ thiết kế cái TensorFlow này làm sao đó đủ để có thể encode được cả những cái tình huống đó
+0:11:23 - 0:11:26, tức là có những cái object này nó trồng lên cái object kia
+0:11:26 - 0:11:31, và tất cả mọi thứ nó sẽ encode trong cái 30 triều độ sau này
+0:11:31 - 0:11:37, trong cái 30 triều độ sau này nó sẽ phải có đầy đủ là className
+0:11:37 - 0:11:48, đó sẽ phải có đầy đủ là tỏa độ x, tỏa độ y, quid và height của các object trong đó
+0:11:48 - 0:11:57, và với mỗi một cell ở đây, chúng ta sẽ có được thông tin vị trí của một object trong đó
+0:11:57 - 0:12:06, Thì như vậy là ý tưởng của YOLO là biến một tỉnh đầu vào, feed-through để tạo thành một tensor, tensor, tensor, tensor.
+0:12:06 - 0:12:16, Rồi, cuối cùng chúng ta sẽ ra được một cái tensor và cái tensor này có khả năng encode được thông tin, vã độ và vị trí
+0:12:16 - 0:12:23, cũng như là cái nhãn của cái object ở bên trong cái khu vực đó.
+0:12:23 - 0:12:27, thì các phiên bản sau của YOLO có rất nhiều cải tiến
+0:12:27 - 0:12:31, nó cũng kế thừa rất nhiều thành tựu của Deep Learning
+0:12:31 - 0:12:34, trong việc thay đổi kiến trúc
+0:12:34 - 0:12:37, và trong việc thiết kế output làm sao cho nó tiện nhất
+0:12:37 - 0:12:41, và có khả năng giải quyết được bài bản Object Detection trong tình huống
+0:12:41 - 0:12:44, đó là object của mình nó nhỏ
+0:12:44 - 0:12:46, tức là cái bấn đề về Scale
+0:12:46 - 0:12:50, rồi cái bấn đề về trồng lấp occlusion
+0:12:50 - 0:12:52, Đi chông lắc
+0:12:58 - 0:13:04, Còn nguyên nhiên là cái tốc độ luôn luôn là điểm mạnh của các hướng tiếp cậu vào một giai đoạn
+0:13:04 - 0:13:07, Thì nó vẫn luôn luôn là làm sao cho cải tiến với tốc độ càng lúc càng nhanh
+0:13:07 - 0:13:15, Nhưng đồng thời là nó vẫn phải đảm bảo được cái độ chính xác ngang bằng hoặc là thậm chí là cố gắng để tốt hơn các hướng tiếp cậu 2 giai đoạn
+0:13:15 - 0:13:36, Nếu so phương tiếp cận YOLO V3, thì so với faster ACNN, YOLO V3 cho tốc độ nhanh hơn faster ACNN rất nhiều lần.
+0:13:36 - 0:13:44, Ví dụ YOLO V3 có 45 frames per second, tức là nó đã có thể thực thi được thời gian thực.
+0:13:44 - 0:13:48, trong khi đó Faster R-CNN là 7 frames per second
+0:13:48 - 0:13:57, nó dưới mức 24 fps để tạm gọi là có thể thực hiện được thời gian thực
+0:13:57 - 0:14:03, nhưng đồng thời nó sẽ đánh đổi độ chính xác
+0:14:03 - 0:14:09, Faster R-CNN cho độ chính xác cao hơn YOLO đến hơn 10%
+0:14:09 - 0:14:13, Thực sự trong bài toán Detection thì 10% là một con số rất là lớn
+0:14:13 - 0:14:17, và tùy vào cái nhu cầu cũng như là cái ngự cảng
+0:14:17 - 0:14:20, và mình sẽ quyết định xem chọn được cái môi nào
+0:14:20 - 0:14:27, nếu như chúng ta không cần phải thực hiện cái thực phán quá nhanh, real time
+0:14:27 - 0:14:31, và chúng ta cần độ chính xác thì chúng ta sẽ sử dụng luyện tiết cờ 2 gia đoạn
+0:14:31 - 0:14:37, và cụ thể là Faster AC Name cũng như là các biến thể của Faster AC Name PY
+0:14:37 - 0:14:42, còn nếu như chúng ta cần thực thi theo thời gian thực thì lúc đó
+0:14:42 - 0:14:46, và chúng ta cũng phải cân bằng được kiểu vô vẻ độ chính xác
+0:14:46 - 0:14:50, thì lúc đó YOLO, các phiên bản của YOLO cũng như SSD
+0:14:50 - 0:14:53, đây là một cái tên của một cái thức toán khác
+0:14:53 - 0:14:58, thì chúng ta sẽ chọn cái nguyên tiết cận là một giai đoạn để sử dụng
+0:14:58 - 0:15:01, và với cái sâu đồ này thì chúng ta thấy là
+0:15:01 - 0:15:04, sự tương quan giữa các nguyên tiết cận
+0:15:04 - 0:15:11, thì YOLO là cho MIP 50, tức là một độ đo, thể hiện độ chính xác
+0:15:11 - 0:15:14, Time, tức là thời gian để thực thi
+0:15:14 - 0:15:20, YOLO V3 cho tốc độ cao nhất trong số khuếng tiếp cận
+0:15:20 - 0:15:21, Right
+0:15:21 - 0:15:27, Về độ chính xác, YOLO V3 là 51%
+0:15:27 - 0:15:31, Thua sau với Feature Pyramid Network
+0:15:31 - 0:15:37, Cũng là một trong những khuếng tiếp cận của Object Detection rất nổi tiếng

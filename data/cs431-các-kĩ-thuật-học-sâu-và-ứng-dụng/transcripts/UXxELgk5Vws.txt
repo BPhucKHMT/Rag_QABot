@@ -1,0 +1,153 @@
+0:00:00 - 0:00:08, Ý tưởng của Transformer đó là nếu như trong các kiến trúc cũ là Recurrent Neural Network,
+0:00:08 - 0:00:13, thì trong quá trình tính toán chúng ta sẽ phải lan truyền thông tin một cách tuần tự.
+0:00:13 - 0:00:21, Nghĩa là tại cái từ ở đây, khi chúng ta xử lý tính toán đến cái từ cuối cùng trong giao đoạn encode,
+0:00:21 - 0:00:27, thì chúng ta sẽ phải lan truyền tuần tự đi lên, đi qua, đi lên, đi qua.
+0:00:27 - 0:00:31, Như vậy thì nó sẽ tố rất nhiều bước xử lý tuần tự
+0:00:31 - 0:00:38, Và thông tin của cái từ đầu tiên này khi đến được nơi này thì nó cũng đã bị mai một, cũng đã bị mất đi rất là nhiều
+0:00:38 - 0:00:42, Thì đó chính là cái điểm yếu của Recurrent Neural Network
+0:00:42 - 0:00:50, Và đồng thời cái việc thực hiện tuần tự này cũng sẽ khiến cho chúng ta không thể xử lý song song sử dụng các sức mạnh của GPU
+0:00:50 - 0:00:53, Còn kiến trúc của Transformer
+0:00:53 - 0:01:03, Cơ chế cell extension cho phép chúng ta xử lý xong xong
+0:01:03 - 0:01:12, Tại vì khi chúng ta tính toán tại đây, chúng ta không cần phải phụ thuộc vào các giá trị được tính toán tại đây
+0:01:12 - 0:01:17, Tức là các nodes ở trên cùng sẽ được thực hiện một cách độc lập
+0:01:17 - 0:01:30, Chúng ta muốn tính toán tại vị trí này, tại hidden này, thì chúng ta sẽ phải tính toán ở đây trước, rồi sau đó mới đến đây, tính đến đây, xong chúng ta mới đến đây được.
+0:01:30 - 0:01:35, Còn ở đây là các node ở đây là tính độc lập, mà độc lập thì có thể sử dụng GPU được.
+0:01:35 - 0:01:42, Do đó thì mỗi số phép tính xong xong của mình sẽ không phụ thuộc vào chiều dài của chuỗi.
+0:01:42 - 0:01:48, Tức là khi cái chuỗi này, cái chuỗi này mà dài, rất là dài, thì nó vẫn có thể thực hiện xong xong được.
+0:01:48 - 0:01:57, Và đồng thời, chúng ta thấy các cái chết nối dày đặt này, nó sẽ cho phép chúng ta có thể tương tác, tương tác giữa các cái từ.
+0:01:57 - 0:02:05, Nếu như ở đây, để mà có thể tương tác được cái từ đầu tiên và cái từ cuối cùng, cái từ đầu tiên và cái từ cuối cùng này,
+0:02:05 - 0:02:14, Tại đây thì chúng ta sẽ cần có rất nhiều bước tuân tự mới lang truyền để mà có thể tương tác được
+0:02:14 - 0:02:20, Trong khi đó tại đây, cái từ đầu tiên, cái từ đầu tiên này, nó đã có thể tương tác được
+0:02:20 - 0:02:27, Thông qua cái lớp trước đó là lớp số 1, lớp số 2 sẽ dùng thông tin của lớp số 1
+0:02:27 - 0:02:33, và nó cũng dựa trên thông tin của từ cuối cùng của lớp.
+0:02:33 - 0:02:43, Tại layer số 2, nó đã có thể truy xuất đến thông tin của từ đầu tiên và từ cuối cùng của lớp trước đó
+0:02:43 - 0:02:47, một cách trực tiếp và không cần thực hiện cách tuôn tự.
+0:02:47 - 0:02:51, Đây chính là những ưu điểm của Transformer.
+0:02:51 - 0:02:54, Và hình vẽ trên đây đó chính là
+0:02:55 - 0:02:58, sơ đồ kiến trúc của Transformer
+0:02:58 - 0:03:01, thì khi chúng ta mới bắt đầu chúng ta nhìn vô cái sơ đồ này
+0:03:01 - 0:03:04, chúng ta sẽ rất là rối vì nó có quá nhiều cái mô đun
+0:03:04 - 0:03:08, và chúng ta cũng không biết tại sao nó lại có những cái mô đun này
+0:03:08 - 0:03:12, Thế thì bây giờ tại cái bước này, tại cái hình vẽ này
+0:03:12 - 0:03:13, thì chúng ta chỉ cần hình dung
+0:03:13 - 0:03:15, đó là Transformer Power
+0:03:15 - 0:03:18, hai thành phần đó là Encoder và Decoder
+0:03:18 - 0:03:21, Đây là Encoder và đây là Decoder
+0:03:21 - 0:03:23, Và đây là kiến trúc của Encoder.
+0:03:23 - 0:03:25, Và đây là kiến trúc của Decoder.
+0:03:25 - 0:03:30, Chúng ta sẽ cùng đến với từng thành phần của Transformer.
+0:03:30 - 0:03:33, Đầu tiên đó chính là Encoder.
+0:03:33 - 0:03:42, Thì cái module xử lý tính toán đầu tiên của Encoder đó chính là cell retention.
+0:03:42 - 0:03:47, Cell retention chính là một cái module chính của Transformer.
+0:03:47 - 0:03:49, Đó là một cái module chính.
+0:03:49 - 0:03:57, Và với dữ kiện đầu vào là các tờ của mình hoặc là các token của mình qua input embedding
+0:03:57 - 0:04:03, Tức là chúng ta sẽ biến một tờ trong một văn bảng thành một vector biểu diễn
+0:04:03 - 0:04:11, Và vector biểu diễn này sẽ đến mô đun cell attention
+0:04:11 - 0:04:15, Và cell attention nó dựa trên cơ chế của attention
+0:04:15 - 0:04:23, Thế thì attention nó cũng na ná, nó cũng tương đương với lại một phép truy vấn trong bảng dữ liệu của mình
+0:04:23 - 0:04:29, Có điều nếu như truy vấn trong bảng dữ liệu của mình, chúng ta có một query ở đây
+0:04:29 - 0:04:33, Chúng ta sẽ trả trong cơ sở dữ liệu của mình các key value
+0:04:33 - 0:04:36, Thông qua chúng ta sẽ sort khớp dựa trên các key
+0:04:36 - 0:04:39, Vậy chúng ta lấy thông tin của key value
+0:04:39 - 0:04:45, Chúng ta sẽ hình dung các khái niệm là Query, Key và Value
+0:04:45 - 0:04:51, Chúng ta sẽ hình dung các khái niệm liên quan đến một ứng dụng trong thực tế
+0:04:51 - 0:04:56, đó chính là các hệ thống tìm kiếm về multimedia
+0:04:56 - 0:04:59, Query của mình chính là các keyword
+0:04:59 - 0:05:28, Chúng ta muốn tìm kiếm một video về Transformer thì ký quả sẽ là Transformer Architecture và ký là tiêu đề của các video trong kênh YouTube của chúng ta.
+0:05:28 - 0:05:33, Và cái value của mình trả về, nó chính là những cái nội dung của video của mình.
+0:05:33 - 0:05:37, Đó chính là nội dung video.
+0:05:37 - 0:05:42, Rồi, ví dụ như là mô tạm, mô tạm cái video.
+0:05:42 - 0:05:45, Thì đó chính là các cái value của mình.
+0:05:45 - 0:05:53, Thì đây chính là sự liên tưởng đến cái hệ thống tìm kiếm các hệ thống truy vấn trong thế giới thực của mình.
+0:05:53 - 0:05:59, Còn attention của mình đó sẽ khác so với lại truy vấn trong bảng dữ liệu của mình ở chỗ
+0:05:59 - 0:06:04, đó là chúng ta sẽ phải trích xuất ra thông tin của rất nhiều
+0:06:04 - 0:06:07, của rất nhiều những cái key và value
+0:06:07 - 0:06:09, Ở đây là chúng ta trích xuất một lột
+0:06:09 - 0:06:11, chúng ta sẽ lấy ánh xạ
+0:06:11 - 0:06:17, chúng ta sẽ lấy mỗi cái query của mình, nó sẽ ánh xạ đến một cặp key và value
+0:06:17 - 0:06:25, Query Quy sẽ ánh sạ một lột đến một cái cập key và value
+0:06:25 - 0:06:31, Trong khi đó, ở Attention thì mỗi một cái query của mình
+0:06:31 - 0:06:35, Nó sẽ khớp với mỗi key, nó sẽ so khớp với các cái key này của mình
+0:06:35 - 0:06:39, Và nó sẽ trả về tổng tất cả các cái value
+0:06:40 - 0:06:44, Có điều ở đây chúng ta sẽ thấy là nó sẽ có trọng số nha
+0:06:44 - 0:06:53, Nếu có trọng số thì những kỳ và value liên quan đến query này thì nó mới có trọng số lớn.
+0:06:53 - 0:07:06, Còn những kỳ và value có trọng số thấp, tức là x có sự liên quan, thì khi nó cộng lại thì nó sẽ ít tham gia vào giá trị output của mình.
+0:07:06 - 0:07:10, Trong hình hình này, chúng ta thấy đây là những cái giá trị mà có trọng số thấp.
+0:07:11 - 0:07:13, Đây là những cái giá trị có trọng số thấp.
+0:07:16 - 0:07:22, Còn những cái key value mà chúng ta tô đỏ ở đây chính là những cái mà có trọng số cao.
+0:07:22 - 0:07:30, Thì khi đó, tỷ trọng, trọng lượng thông tin của V1, V3, V4, khi chúng ta tổng hợp thông tin sẽ là nhiều nhất.
+0:07:30 - 0:07:34, V0, V2, V5, V6
+0:07:34 - 0:07:39, Hàm lượng thông tin tổng gợp sẽ rất thấp
+0:07:39 - 0:07:45, Đó là sự khác nhau như Attention với truy vấu trong mạng dữ liệu của mình
+0:07:45 - 0:07:52, Khi này, chúng ta sẽ có công thức cho cell Attention trong encoder của mình
+0:07:52 - 0:07:57, Bước số 1 là với mỗi một từ, cái này chính là emletting
+0:07:57 - 0:07:59, Embedding vector của mình
+0:07:59 - 0:08:03, Đây là embedding vector của một cái từ
+0:08:03 - 0:08:14, Với mỗi từ nó sẽ chia ra thành ba cái giá trị, đó là query, key và value tương ứng là các cái màu
+0:08:14 - 0:08:17, Chúng ta sẽ theo dõi dựa trên màu cho dễ dụt
+0:08:17 - 0:08:22, Query nó sẽ phải ánh sạ từ embedding vector đó về cái không gian
+0:08:22 - 0:08:25, Về ánh sạ về cái không gian của query của mình
+0:08:25 - 0:08:34, XI sẽ nhân với MyTrậnK để ánh sạp về không gian của key của mình
+0:08:34 - 0:08:39, XI nhân với V để ánh sạp về không gian của kevalu của mình
+0:08:39 - 0:08:45, Sang cái bước thứ 2, chúng ta sẽ tính attention score giữa query và key
+0:08:45 - 0:08:52, Trong trường hợp này query và key của mình đã có cùng một số chiều và phải đưa về cùng một số chiều
+0:08:52 - 0:09:03, Chúng ta chỉ việc thực hiện cái phép tích vô ứng giữa một query và một key thứ chi bất kỳ.
+0:09:03 - 0:09:09, Chúng ta sẽ trả về là relation, tức là sự liên hệ giữa query và key này.
+0:09:09 - 0:09:13, Query thứ y và key thứ chi này.
+0:09:13 - 0:09:19, Sau đó chúng ta sẽ chuẩn hóa, xe mũa thứ 3 là chúng ta chuẩn hóa giá trị này về không gian sát xuất.
+0:09:19 - 0:09:27, Thông qua hàm softmax và công thức của softmax, chúng ta sẽ có alpha az,
+0:09:27 - 0:09:35, chính là extension distribution hay extension score mà chúng ta đã được chọn hóa.
+0:09:35 - 0:09:40, Sài gòn số 4 là chúng ta sẽ tính tổng trọng số của các value,
+0:09:40 - 0:09:48, Tức là các trọng số alpha az này sẽ nhân với value chương ứng để chúng ta trả kết quả về output i
+0:09:48 - 0:09:52, Tức là output cho query thứ i
+0:09:52 - 0:09:56, Output cho query thứ i của mình
+0:10:00 - 0:10:03, Và khi này thì chúng ta sẽ có
+0:10:03 - 0:10:07, Nếu chúng ta thực hiện trên vétter, vétter hóa
+0:10:07 - 0:10:13, Tức là chúng ta sẽ gom các query lại với nhau.
+0:10:13 - 0:10:18, Thì bước số 1, các từ x, y sẽ được gột lại vào x.
+0:10:18 - 0:10:21, Ở đây chúng ta sẽ thực hiện theo pass, thực hiện theo khối.
+0:10:21 - 0:10:28, Trong cái slide trước, là chúng ta tính trên từng từng.
+0:10:28 - 0:10:35, Trong slide này, chúng ta sẽ gom tất cả các từ trong câu input của mình
+0:10:35 - 0:10:38, Vào thành một cái ma trận là ma trận x
+0:10:38 - 0:10:41, Khi đó chúng ta tính toán trên cái ma trận x này
+0:10:41 - 0:10:45, Nó sẽ tính toán nhanh hơn và có thể thực hiện được một cách xong xong
+0:10:45 - 0:10:47, Giờ sức mạnh tính toán của GPU
+0:10:47 - 0:10:51, XI này sẽ là một vector dạng cục như thế này của mình
+0:10:51 - 0:10:55, Chúng ta sẽ gom tất cả xI này lại với nhau
+0:10:55 - 0:10:59, x y sẽ gom tất cả các x y lại với nhau
+0:10:59 - 0:11:02, thì chúng ta sẽ có được 1 ma trận
+0:11:02 - 0:11:07, toàn bộ x y gom lại sẽ là ma trận x
+0:11:10 - 0:11:14, nguyên cộ hợp của các x y sẽ là ma trận x
+0:11:14 - 0:11:18, và khi đó chúng ta cũng có phong thức tương tự như vậy
+0:11:18 - 0:11:21, x nâng với ma trận y
+0:11:21 - 0:11:27, x nhân với trận huy, thì chúng ta sẽ có x huy, x tương ứng trong không gian query
+0:11:27 - 0:11:32, x ca tương ứng là x khi nhân với nại ca
+0:11:32 - 0:11:36, thì chúng ta sẽ có trong không gian key
+0:11:36 - 0:11:40, và x v, tức là trong không gian value
+0:11:40 - 0:11:51, Bước thứ 2, chúng ta sẽ tính attention score giữa query và key của mình.
+0:11:51 - 0:11:57, Chúng ta sẽ có 3 trận là xquay nhân vài nạy xcar
+0:11:57 - 0:12:04, Khi này chúng ta sẽ tính giữa các query và các key
+0:12:04 - 0:12:09, Chúng ta sẽ tính trên 1 chuỗi tất cả các cặp query và key với nhau
+0:12:09 - 0:12:20, Nhưng lưu ý là ở bước cell attention này query và key của mình sẽ tự tên
+0:12:20 - 0:12:33, Chúng ta sẽ có các vétter sau khi chúng ta đã chiếu về không gian query key và balloon
+0:12:33 - 0:12:41, Mỗi từ này sẽ đi so với các từ và thậm chí so với cả chính nó nữa để tính ra cái score
+0:12:41 - 0:12:44, xquay nhân với xk
+0:12:44 - 0:12:49, và truyển khai ra thì xquay chính là x nhân với lại ma trận quay
+0:12:49 - 0:12:54, xk chính là x nhân với lại ma trận k
+0:12:54 - 0:12:55, Tất cả chuyển vị
+0:12:55 - 0:13:00, Khi chúng ta truyển khai chuyển vị vào bên trong dấu hoạt này
+0:13:00 - 0:13:04, thì nó sẽ là x chuyển vị đem ra và k chuyển vị đem lên trước
+0:13:04 - 0:13:10, Như vậy thì công thức của ma trận biến đổi, xin lỗi, của ma trận attention score của mình
+0:13:10 - 0:13:13, đó chính là xquay nhân với nầy ca chuyển vị, nhân với x chuyển vị
+0:13:14 - 0:13:17, Và sang bước thứ 3, chúng ta sẽ tính
+0:13:17 - 0:13:20, Attention Distribution với hàm Sopart
+0:13:21 - 0:13:23, thì chúng ta sẽ có ma trận A
+0:13:25 - 0:13:27, Và sang bước số 4, chúng ta sẽ tổng hợp
+0:13:27 - 0:13:29, là Output, là bằng cái công thức ở đây
+0:13:31 - 0:13:36, Rồi, thì đây là cái công thức ở dạng Vector-Oá cho Cell Attention
+0:13:37 - 0:13:39, Và khi chúng ta triển khai hết
+0:13:40 - 0:13:52, Chúng ta sẽ có output là bằng softmax của xquay ca chuyển quỵ x chuyển quỵ
+0:13:52 - 0:13:57, Qua hàm softmax xong để tính ra được, đây là cái handfan
+0:13:57 - 0:14:06, Chúng ta sẽ nhân với lại cái sv để tổng hợp thông tin, đây sẽ là trọng số
+0:14:06 - 0:14:11, và toàn bộ cái này sẽ là tổng hợp thông tin
+0:14:11 - 0:14:21, tổng hợp toàn bộ những cái thông tin của giai đoạn cell retention, tức là giai đoạn encode

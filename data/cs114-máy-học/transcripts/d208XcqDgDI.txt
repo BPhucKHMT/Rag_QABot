@@ -1,0 +1,320 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:20, Tiếp theo thì để minh họa cho thuật toán
+0:00:16 - 0:00:23, logistication với phương pháp huấn luyện
+0:00:20 - 0:00:26, đó là raden des thì chúng ta cũng sẽ mô
+0:00:23 - 0:00:28, phỏng cái dữ liệu của mình ở trong cái
+0:00:26 - 0:00:30, không gian hai chiều. Thì trong trường
+0:00:28 - 0:00:34, hợp này thì hai cái chiều đặc trưng của
+0:00:30 - 0:00:37, mình nó sẽ được ký hiệu là x1 và x2. Và
+0:00:34 - 0:00:41, một cái điểm của mình thì sẽ là một cái
+0:00:37 - 0:00:44, tọa độ cặp tọa độ là x1 và x2. Đồng thời
+0:00:41 - 0:00:46, nó sẽ có cái nhãn y. Thì ví dụ như những
+0:00:44 - 0:00:49, cái điểm nào mà nằm ở phía trên thì cái
+0:00:46 - 0:00:50, nhãn của mình sẽ là bằng 0. Và những cái
+0:00:49 - 0:00:54, điểm nào ở phía dưới thì nhãn của mình
+0:00:50 - 0:00:56, là bằng 1. Ví dụ vậy.
+0:00:54 - 0:00:58, Rồi đây là y = 0.
+0:00:56 - 0:01:02, Và chúng ta sẽ có rất nhiều những cái
+0:00:58 - 0:01:02, tập điểm.
+0:01:03 - 0:01:08, Và khi chúng ta huấn luyện thì chúng ta
+0:01:05 - 0:01:10, sẽ tìm ra được một cái đường để phân
+0:01:08 - 0:01:14, tách hai cái tập điểm này ra làm hai
+0:01:10 - 0:01:16, phần giống như ở trên à cái hình vẽ. Thế
+0:01:14 - 0:01:19, thì ở đây chúng ta sẽ dùng cái thư viện
+0:01:16 - 0:01:19, lên
+0:01:20 - 0:01:27, để khởi bước đầu tiên đó là khởi tạo à
+0:01:23 - 0:01:31, các cái dữ liệu. Thì ở đây X của mình nó
+0:01:27 - 0:01:34, sẽ là các cái giá trị là ờ các cái cặp
+0:01:31 - 0:01:36, giá trị thì các cái cặp giá trị này thì
+0:01:34 - 0:01:38, nó sẽ xoay xung quanh các cái điểm. Thì
+0:01:36 - 0:01:41, lấy ví dụ như
+0:01:38 - 0:01:45, ở đây chúng ta sẽ có một cái điểm tâm
+0:01:41 - 0:01:45, ha. cái tâm
+0:01:46 - 0:01:51, thì cái tâm này ví dụ như là 1 và 3.
+0:01:50 - 0:01:54, Rồi, tương tự như vậy, các cái điểm dấu
+0:01:51 - 0:01:58, cộng ở đây thì nó sẽ có một cái điểm
+0:01:54 - 0:01:58, tâm. Ví dụ như ở đây là
+0:02:00 - 0:02:07, 1 thì chúng ta sẽ có hai cái tập điểm
+0:02:03 - 0:02:10, thì NP chấm
+0:02:07 - 0:02:10, array
+0:02:11 - 0:02:18, rồi thì chúng ta sẽ có cái tập điểm đó
+0:02:14 - 0:02:18, là 1 và 3
+0:02:24 - 0:02:31, rồi. Rồi sau đó thì chúng ta sẽ cộng cho
+0:02:27 - 0:02:31, một cái đại lượng random noise
+0:02:37 - 0:02:44, với cái phân bố đó là 01
+0:02:42 - 0:02:50, min là bằng 0 và standard deviation là
+0:02:44 - 0:02:52, bằng 1. Rồi và ở đây thì nó sẽ có hai
+0:02:50 - 0:02:56, chiều. Do đó thì ở đây chúng ta sẽ sửa
+0:02:52 - 0:02:56, lại một chút xíu.
+0:02:56 - 0:03:00, Và cái kích thước của mình thì nó sẽ là
+0:02:58 - 0:03:02, bằng
+0:03:00 - 0:03:05, đầu tiên đó là số chiều của mình sẽ là
+0:03:02 - 0:03:10, hai hàng nhưng mà cái số dòng á thì nó
+0:03:05 - 0:03:12, sẽ là số mẫu dữ liệu. Thế thì n sample
+0:03:10 - 0:03:16, ví dụ như chúng ta muốn mỗi một cái tập
+0:03:12 - 0:03:17, dữ liệu của mình, mỗi một cái nhóm dữ
+0:03:16 - 0:03:22, liệu của mình nó sẽ có 10 mẫu đi thì ở
+0:03:17 - 0:03:22, đây n sẽ là bằng bằng 10.
+0:03:23 - 0:03:28, Rồi bây giờ chúng ta sẽ in ra thử xem x
+0:03:26 - 0:03:32, của mình nó nhìn như thế nào ha. Thì
+0:03:28 - 0:03:36, chúng ta sẽ lưu lại và run. Đó.
+0:03:32 - 0:03:38, Rồi thì bây giờ chúng ta sẽ à khởi tạo
+0:03:36 - 0:03:42, cho các cái tập điểm thứ hai đó là các
+0:03:38 - 0:03:44, cái điểm mà dấu cộng. Thì đây là x1 thì
+0:03:42 - 0:03:46, tương ứng chúng ta sẽ có à không ở đây
+0:03:44 - 0:03:48, sẽ là x
+0:03:46 - 0:03:53, dùng cho đúng từ ha. Kẹo không chúng ta
+0:03:48 - 0:03:55, sẽ bị nhầm. Còn đây là rin đi là hai tập
+0:03:53 - 0:03:59, điểm. Thì cái tập điểm thứ hai nó sẽ
+0:03:55 - 0:04:01, xoay xung quanh cái tọa độ đó là 3 và 1.
+0:03:59 - 0:04:03, Và bây giờ chúng ta sẽ vẽ lên trên cái
+0:04:01 - 0:04:07, thay vì chúng ta in ra thì chúng ta sẽ
+0:04:03 - 0:04:07, dùng hàm mlip
+0:04:08 - 0:04:14, chp pipo
+0:04:11 - 0:04:14, slt
+0:04:15 - 0:04:20, rồi chúng ta sẽ trực quan hóa.
+0:04:20 - 0:04:27, Thì đối với các cái điểm màu màu đỏ thì
+0:04:22 - 0:04:31, chúng ta sẽ dùng là plt.plot
+0:04:27 - 0:04:34, và tọa độ sẽ là x
+0:04:31 - 0:04:38, rồi lấy tọa độ là từ 0
+0:04:34 - 0:04:41, cho đến h
+0:04:38 - 0:04:43, 0 phẩ cho đến h và
+0:04:41 - 0:04:48, x
+0:04:43 - 0:04:51, red tọa độ 1 lấy cho đến h. Và với mỗi
+0:04:48 - 0:04:57, một cái điểm này thì chúng ta sẽ dùng
+0:04:51 - 0:05:03, cái ký hiệu đó là R ha màu đỏ và
+0:04:57 - 0:05:03, một cái dấu chấm. Rồi plt.S
+0:05:04 - 0:05:09, tương tự như vậy thì chúng ta sẽ có cái
+0:05:05 - 0:05:09, điểm màu xanh.
+0:05:15 - 0:05:22, Rồi và ở đây thì chúng ta sẽ dùng màu là
+0:05:18 - 0:05:24, màu rin và dấu cộng.
+0:05:22 - 0:05:27, Rồi bây giờ chúng ta sẽ chạy thử để xem
+0:05:24 - 0:05:29, chương trình nó ra như thế nào. Thì rõ
+0:05:27 - 0:05:32, ràng chúng ta thấy là nó đã tách ra làm
+0:05:29 - 0:05:34, hai. Tuy nhiên vì cái nhiễu của chúng ta
+0:05:32 - 0:05:36, khá lớn nên có thể là nó sẽ có cái phần
+0:05:34 - 0:05:39, giao thoa ở đây một chút. Thì để tránh
+0:05:36 - 0:05:40, cái vùng giao thoa này thì chúng ta có
+0:05:39 - 0:05:42, thể
+0:05:40 - 0:05:43, [âm nhạc]
+0:05:42 - 0:05:47, nhân cái hệ số của mình thấp hơn một
+0:05:43 - 0:05:47, chút. Ví dụ như ở đây là 0.5.
+0:05:48 - 0:05:52, Rồi ở đây là 0.5.
+0:05:54 - 0:05:58, Rồi
+0:05:57 - 0:06:02, đó thì chúng ta thấy là hai cái tập điểm
+0:05:58 - 0:06:04, của mình nó đã tách biệt ra hoàn toàn.
+0:06:02 - 0:06:08, Nó đã tách ra hoàn toàn. Tiếp theo thì
+0:06:04 - 0:06:12, chúng ta sẽ ờ
+0:06:08 - 0:06:12, cài đặt cái thực toán
+0:06:13 - 0:06:18, radient design. Thế thì bước đầu tiên
+0:06:16 - 0:06:20, chúng ta cũng sẽ là khởi tạo. Bước thứ
+0:06:18 - 0:06:23, hai đó là chúng ta sẽ tính đạo hàm.
+0:06:20 - 0:06:26, Và chúng ta sẽ đi cập nhật cái tham số
+0:06:23 - 0:06:30, đó thì nó còn một cái bước số ba nữa đó
+0:06:26 - 0:06:32, là chúng ta sẽ đi cập nhật cái tham số
+0:06:30 - 0:06:35, rồi và chúng ta sẽ lặp lại cho đến khi
+0:06:32 - 0:06:37, nào mà cái
+0:06:35 - 0:06:39, đạo hàm của mình nó sẽ hội tụ tức là nó
+0:06:37 - 0:06:43, sẽ tiến về không. Rồi bây giờ chúng ta
+0:06:39 - 0:06:47, sẽ tiến hành cài đặt cho các cái bước
+0:06:43 - 0:06:47, đầu tiên đó là khởi tạo.
+0:06:48 - 0:06:55, Thế thì các cái tham số ở đây của mình á
+0:06:51 - 0:06:59, nó sẽ có các tham số đó là W1,
+0:06:55 - 0:07:02, W2 và B. Tại sao W1 và W2 mà không phải
+0:06:59 - 0:07:06, là W? Thì vì cái đặc trưng X của mình á
+0:07:02 - 0:07:08, là nó sẽ có hai phần là thành phần trục
+0:07:06 - 0:07:11, X1 và thành phần theo trục X2. Do đó nó
+0:07:08 - 0:07:13, sẽ phải có hai tham số.
+0:07:11 - 0:07:16, À ở trên phần khởi tạo dữ liệu thì chúng
+0:07:13 - 0:07:19, ta chưa có cái dữ liệu y đúng không? Thì
+0:07:16 - 0:07:21, y của mình nó sẽ có hai phần đó là cho
+0:07:19 - 0:07:27, ir
+0:07:21 - 0:07:30, sẽ là e np chấm ví dụ là zero.
+0:07:27 - 0:07:32, Và cái số mẫu dữ liệu của mình thì sẽ là
+0:07:30 - 0:07:35, x.s
+0:07:32 - 0:07:35, Sét
+0:07:35 - 0:07:46, rồi I rim thì sẽ là bằng NP.1 tức là các
+0:07:41 - 0:07:46, cái giá trị là số 1 và x.s
+0:07:48 - 0:07:53, rồi thì các cái giá trị W1 và W2 thì
+0:07:51 - 0:07:54, chúng ta khởi tạo ví dụ như cho là bằng
+0:07:53 - 0:08:00, 12.
+0:07:54 - 0:08:03, W1 là bằng W2 là bằng 34 rồi B sẽ là
+0:08:00 - 0:08:06, bằng 5. Thì đây là những cái con số mang
+0:08:03 - 0:08:10, tính chất rất là ngẫu nhiên. Sau đó thì
+0:08:06 - 0:08:11, chúng ta sẽ vào cái phòng lập Y true thì
+0:08:10 - 0:08:14, trong cái Y true này chúng ta sẽ đi tính
+0:08:11 - 0:08:16, đạo hàm
+0:08:14 - 0:08:20, theo từng phần
+0:08:16 - 0:08:23, ờ từng tầng từng tham số.
+0:08:20 - 0:08:27, Thì chúng ta thấy là đạo hàm theo W thì
+0:08:23 - 0:08:30, nó sẽ là bằng 1 m à tức là trung bình
+0:08:27 - 0:08:34, cộng ha. 1/ m của tổng thì đây là chính
+0:08:30 - 0:08:40, là trung bình cộng. Còn à cái thành phần
+0:08:34 - 0:08:42, này thì tương ứng nó sẽ là sigmo của wx
+0:08:40 - 0:08:46, + b.
+0:08:42 - 0:08:48, Còn y đây chính là rout.
+0:08:46 - 0:08:52, Đây là rout.
+0:08:48 - 0:08:54, Do đó thì chúng ta sẽ tính toán cái đạo
+0:08:52 - 0:09:00, hàm của nó. Thì derivative
+0:08:54 - 0:09:03, theo W1 thì sẽ là bằng min np ch min min
+0:09:00 - 0:09:04, của hàm sigmo thì ở đây chúng ta chưa
+0:09:03 - 0:09:09, có. Chúng ta sẽ cài đặt cho cái hàm
+0:09:04 - 0:09:14, sigmo def của sig
+0:09:09 - 0:09:19, của x thì nó sẽ là return cho np chấm à
+0:09:14 - 0:09:25, 1 cộng cho 1 chia cho 1
+0:09:19 - 0:09:28, cộng cho np ch exponential của -x.
+0:09:25 - 0:09:30, Rồi thì ở đây chúng ta sẽ có cái công
+0:09:28 - 0:09:34, thức của cái hàm sig rồi thì bây giờ sẽ
+0:09:30 - 0:09:37, là sigmo
+0:09:34 - 0:09:44, của
+0:09:37 - 0:09:48, W1 nhân cho x1 cộng cho W2 nhân cho X2
+0:09:44 - 0:09:53, cộng cho B. Tất cả trừ cho Y xong rồi
+0:09:48 - 0:09:53, lại nhân với lại à X.
+0:09:54 - 0:10:00, X thì ở đây nếu chúng ta đang ở cái
+0:09:57 - 0:10:03, thành phần nào của W thì chúng ta sẽ lấy
+0:10:00 - 0:10:06, cái thành phần tương ứng đó. Ví dụ chúng
+0:10:03 - 0:10:10, ta đang tính đạo hàm cho W1 thì ở đây nó
+0:10:06 - 0:10:14, sẽ là X1. Thế thì bây giờ X1 của mình là
+0:10:10 - 0:10:16, gì? X1 nó sẽ là
+0:10:14 - 0:10:19, X
+0:10:16 - 0:10:22, à để ở đây cho gọn chúng ta sẽ gom cả XR
+0:10:19 - 0:10:25, và Xin lại với nhau
+0:10:22 - 0:10:31, thành một cái X chung
+0:10:25 - 0:10:31, là bằng à NP.CONC conc
+0:10:33 - 0:10:38, của XR và XR.
+0:10:38 - 0:10:47, Rồi tương tự như vậy i thì chúng ta cũng
+0:10:42 - 0:10:47, sẽ gom lại à là bằng
+0:10:49 - 0:10:54, nối với lại NP chấm
+0:11:02 - 0:11:06, rồi chúng ta nối lại ha.
+0:11:08 - 0:11:15, Rồi sau khi nối xong thì chúng ta sẽ lấy
+0:11:10 - 0:11:16, cái thành phần x ờ đầu tiên đó là x 0
+0:11:15 - 0:11:20, hai chấm.
+0:11:16 - 0:11:23, Thành phần x thứ hai sẽ là x ở trên là x
+0:11:20 - 0:11:27, của chúng ta là viết viết hoa. Do đó ở
+0:11:23 - 0:11:27, đây chúng ta cũng sẽ viết hoa.
+0:11:29 - 0:11:37, Rồi x12 chấm
+0:11:32 - 0:11:40, cộng bà ở đây sẽ là x
+0:11:37 - 0:11:43, 1 2 chấm.
+0:11:40 - 0:11:45, À thì cái min này của chúng ta sẽ đặt ở
+0:11:43 - 0:11:45, bên
+0:11:46 - 0:11:51, tính luôn cả cái phần x này. Rồi như vậy
+0:11:49 - 0:11:57, thì chúng ta sẽ sửa lại công thức này
+0:11:51 - 0:12:00, một chút xíu là sigma trừ y rồi tất cả
+0:11:57 - 0:12:01, sẽ nhân với x.
+0:12:00 - 0:12:05, Nếu mà chúng ta tách nó ra như thế này
+0:12:01 - 0:12:05, cho nó dễ nhìn ha.
+0:12:05 - 0:12:12, Đó thì cái
+0:12:08 - 0:12:15, NP min này nè sẽ được tính cho toàn bộ
+0:12:12 - 0:12:17, cái vế này. Đó trong đó cái vế này thì
+0:12:15 - 0:12:23, nó sẽ tách ra là hai phần. Phần bên trái
+0:12:17 - 0:12:26, sẽ là hiệu số của à sig trừ y. Sigmo trừ
+0:12:23 - 0:12:28, y. Còn bên phải sẽ là x của mình. Thì x
+0:12:26 - 0:12:31, ở đây t x0 ha. X0 tại vì chúng ta đang
+0:12:28 - 0:12:35, tính cho cái thành phần đầu tiên.
+0:12:31 - 0:12:40, Tương tự như vậy cho W2
+0:12:35 - 0:12:42, thì chúng ta sẽ sửa lại đây sẽ là à nhân
+0:12:40 - 0:12:46, với lại x1.
+0:12:42 - 0:12:49, Đó. Rồi và thành phần cuối cùng đó là
+0:12:46 - 0:12:52, đạo hàm theo B
+0:12:49 - 0:12:54, thì nó sẽ là à ở đây chúng ta sẽ không
+0:12:52 - 0:12:55, nhân với X nữa. Chúng ta sẽ bỏ thành
+0:12:54 - 0:12:57, phần đi. Hay nói cách khác đây chính là
+0:12:55 - 0:13:00, 1.
+0:12:57 - 0:13:00, Rồi
+0:13:01 - 0:13:07, bây giờ chúng ta sẽ thử cập nhật cái
+0:13:10 - 0:13:21, W 1, W2 và B thì W1 sẽ là bằng W1 trừ
+0:13:16 - 0:13:26, cho alpha nhân cho đạo hàm của
+0:13:21 - 0:13:28, W1. Tương tự như vậy, chúng ta sẽ có W2
+0:13:26 - 0:13:32, cập nhật lại
+0:13:28 - 0:13:32, rồi B
+0:13:33 - 0:13:40, đạo hàm theo theo B.
+0:13:37 - 0:13:43, Rồi và bây giờ thì điều kiện dừng đó là
+0:13:40 - 0:13:49, gì? Đó là if đạo hàm à if trị tuyệt đối
+0:13:43 - 0:13:52, của derivative của W1 đủ nhỏ
+0:13:49 - 0:13:52, and
+0:13:57 - 0:14:07, đạo hàm của W2 đủ nhỏ và đạo hàm theo B
+0:14:03 - 0:14:10, đủ nhỏ thì chúng ta sẽ break rồi và
+0:14:07 - 0:14:14, alpha ở đây chúng ta chưa có alpha và
+0:14:10 - 0:14:17, silon thì giả sử alpha ở đây là bằng 0.1
+0:14:14 - 0:14:21, và silon là bằng 0.00
+0:14:17 - 0:14:25, 01. Rồi bây giờ chúng ta sẽ thử chạy cái
+0:14:21 - 0:14:28, thực toán này ha để xem có lỗi gì không.
+0:14:25 - 0:14:31, Rồi thì ở đây nó sẽ có cái lỗi trong cái
+0:14:28 - 0:14:34, quá trình mà tính W2
+0:14:31 - 0:14:40, à không biết có cái lỗi gì tại sao 4 ờ
+0:14:34 - 0:14:40, 10 ở đây lại là 310 ha W2
+0:14:47 - 0:14:55, rồi ở đây sẽ là W1 nhân cho X W2 nh X +
+0:14:53 - 0:14:59, B tr- y
+0:14:55 - 0:15:04, rồi trừ cho x1 à ở đây phải là 0 hai
+0:14:59 - 0:15:04, chấm ở đây phải là 1 2 chấm
+0:15:04 - 0:15:11, rồi chúng ta sẽ chạy lại
+0:15:09 - 0:15:12, rồi nhưng mà bây giờ làm sao chúng ta
+0:15:11 - 0:15:14, biết là cái thuật toán này nó đã chạy
+0:15:12 - 0:15:17, thành công thì chúng ta phải trực quan
+0:15:14 - 0:15:19, hóa. Thế thì để trực quan hóa cũng tương
+0:15:17 - 0:15:23, tự, chúng ta sẽ
+0:15:19 - 0:15:25, ờ có một cái bước trực quan
+0:15:23 - 0:15:27, chúng đầu tiên chúng ta sẽ plot các cái
+0:15:25 - 0:15:33, điểm dữ liệu ra trước sau đó thì chúng
+0:15:27 - 0:15:35, ta sẽ vẽ cái đường thẳng ra thì plt ch
+0:15:33 - 0:15:40, pl clot thì cái điểm bên biên trái của
+0:15:35 - 0:15:44, mình nó sẽ là điểm ví dụ như là à 1 và 3
+0:15:40 - 0:15:48, à 1 và bên trái là 1 và bên phải của
+0:15:44 - 0:15:51, mình sẽ là ờ 4. Ví dụ vậy. Và tương ứng
+0:15:48 - 0:15:52, thì chúng ta sẽ có cái hệ số. Thế thì
+0:15:51 - 0:15:54, bây giờ hệ số của mình sẽ được tính như
+0:15:52 - 0:15:56, thế nào?
+0:15:54 - 0:16:00, bên bên trái của mình biên trái sẽ là 1
+0:15:56 - 0:16:03, ha và biên phải của mình sẽ là 4. Thì
+0:16:00 - 0:16:06, bây giờ mình sẽ tính toán cái giá trị
+0:16:03 - 0:16:08, theo trục y như thế nào. Thế thì chúng
+0:16:06 - 0:16:10, ta biết rằng là cái bộ hệ số của chúng
+0:16:08 - 0:16:17, ta cho cái phương trình đường thẳng đó
+0:16:10 - 0:16:19, là w1 x1 cộng cho w2 x2 cộng cho b là
+0:16:17 - 0:16:22, bằng 0.
+0:16:19 - 0:16:24, Đó là bằng 0. Thế thì chúng ta đã có x1
+0:16:22 - 0:16:27, rồi. X1 của chúng ta là chúng ta lấy là
+0:16:24 - 0:16:31, 1 và 4. Thì khi chúng ta thế vào chúng
+0:16:27 - 0:16:37, ta sẽ có được cái x2. Thì x2
+0:16:31 - 0:16:43, sẽ là bằng gì? Sẽ là bằng trừ của w1x1
+0:16:37 - 0:16:45, cộng b tất cả chia cho w à chia cho w2.
+0:16:43 - 0:16:47, Thì đây là cái công thức để tính cho cái
+0:16:45 - 0:16:55, x2 của mình. Do đó thì ở đây chúng ta sẽ
+0:16:47 - 0:16:59, sửa lại nó sẽ là bằng trừ của w1 x1
+0:16:55 - 0:17:02, cộng b tất cả chia cho w2 ha. Thì à thế
+0:16:59 - 0:17:06, vô w1 chính là cái giá trị w1 của mình.
+0:17:02 - 0:17:10, Rồi x1 thì thực ra nó chính là giá trị
+0:17:06 - 0:17:13, từ đầu tiên nó sẽ là số 1 đó
+0:17:10 - 0:17:17, cộng b chia cho w2.
+0:17:13 - 0:17:21, Rồi tương tự như vậy thì ở đây sẽ là W1
+0:17:17 - 0:17:23, nhân cho 4 + B chia W2.
+0:17:21 - 0:17:27, Rồi bây giờ chúng ta sẽ pause nó một
+0:17:23 - 0:17:27, chút. PLT.p
+0:17:28 - 0:17:34, ở đây là 0.2. Rồi bây giờ chúng ta sẽ
+0:17:31 - 0:17:34, chạy thực toán.
+0:17:36 - 0:17:42, Rồi chúng ta thấy là ở đây nó có cái sự
+0:17:39 - 0:17:45, dịch chuyển nhưng mà cái tốc độ của mình
+0:17:42 - 0:17:47, là nó khá là chậm. À cái tốc độ cập nhật
+0:17:45 - 0:17:51, của mình nó khá là chậm. Do đó thì chúng
+0:17:47 - 0:17:55, ta sẽ tăng tốc lên.
+0:17:51 - 0:17:58, Một là chúng ta sẽ cho cái alpha này
+0:17:55 - 0:18:01, tăng lên. Ví dụ như là 0.5.
+0:17:58 - 0:18:01, Alpha tăng lên là 0.5.
+0:18:14 - 0:18:22, Rồi chúng ta thấy là cái đường thẳng của
+0:18:17 - 0:18:26, mình à nó đã tiến về và dần dần nó sẽ
+0:18:22 - 0:18:28, xoay để mà nó tách hai cái tập màu đỏ và
+0:18:26 - 0:18:31, màu xanh hoặc là hình tròn và dấu cộng ở
+0:18:28 - 0:18:31, đây ra làm hai phần.
+0:18:48 - 0:18:54, Rồi thì ở đây nếu mà cái biên trái chúng
+0:18:50 - 0:18:59, ta cho nó là 1 thì nó sẽ rõ ràng hơn ha.
+0:18:54 - 0:19:01, À là 0 thì nó vẽ tới bên bên trái luôn.
+0:18:59 - 0:19:04, Và bên trái của mình sẽ cho lên khoảng
+0:19:01 - 0:19:04, 3.5 là vừa.
+0:19:12 - 0:19:18, Rồi thì ở đây chúng ta sẽ thứ nhất là
+0:19:15 - 0:19:21, cho tốc độ của nó nhanh hơn. Cái thứ hai
+0:19:18 - 0:19:24, đó là biên trái của mình là số 0.
+0:19:21 - 0:19:27, Biên phải của mình là khoảng 3.5
+0:19:24 - 0:19:31, thì 0 ở đây chúng ta sẽ nhân vô 0. Còn ở
+0:19:27 - 0:19:33, đây sẽ là 3.5 5
+0:19:31 - 0:19:33, rồi.
+0:19:48 - 0:20:00, [âm nhạc]

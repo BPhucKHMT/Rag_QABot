@@ -1,0 +1,430 @@
+{
+  "playlist_id": "PLb62OySGqC9xl1_deMF_UXP5tA2Tvt17_",
+  "title": "CS431 - Các kĩ thuật học sâu và ứng dụng",
+  "description": "",
+  "published_at": "2023-06-19T07:52:35.698563Z",
+  "channel_title": "Trường Đại học Công nghệ Thông tin - UIT",
+  "total_videos": 70,
+  "videos": [
+    {
+      "video_id": "6sTFEFKDDqI",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.1: Giới thiệu môn học",
+      "url": "https://www.youtube.com/watch?v=6sTFEFKDDqI",
+      "published_at": "2023-06-19T07:58:47Z"
+    },
+    {
+      "video_id": "zuBsXtdWlyQ",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.2: Lịch sử AI và thành tựu của Deep learning",
+      "url": "https://www.youtube.com/watch?v=zuBsXtdWlyQ",
+      "published_at": "2023-06-19T08:00:25Z"
+    },
+    {
+      "video_id": "CYWH9ZBN5Gc",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.3.1: Ôn tập nền tảng đại số tuyến tính (Part 1)",
+      "url": "https://www.youtube.com/watch?v=CYWH9ZBN5Gc",
+      "published_at": "2023-06-19T08:01:22Z"
+    },
+    {
+      "video_id": "88y0wnXxCUo",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.3.3: Ôn tập nền tảng đại số tuyến tính (Part 3)",
+      "url": "https://www.youtube.com/watch?v=88y0wnXxCUo",
+      "published_at": "2023-06-19T08:02:29Z"
+    },
+    {
+      "video_id": "N-9Uq1_lIzI",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.3.2: Ôn tập nền tảng đại số tuyến tính (Part 2)",
+      "url": "https://www.youtube.com/watch?v=N-9Uq1_lIzI",
+      "published_at": "2023-06-19T08:02:33Z"
+    },
+    {
+      "video_id": "YSi7G6hDhks",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.4.2: Ôn tập nền tảng giải tích (Part 2)",
+      "url": "https://www.youtube.com/watch?v=YSi7G6hDhks",
+      "published_at": "2023-06-19T08:03:24Z"
+    },
+    {
+      "video_id": "jwfLIgOeneE",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.4.1: Ôn tập nền tảng giải tích (Part 1)",
+      "url": "https://www.youtube.com/watch?v=jwfLIgOeneE",
+      "published_at": "2023-06-19T08:06:48Z"
+    },
+    {
+      "video_id": "qPQT04u0kCs",
+      "title": "[CS431 - Các kĩ thuật học sâu và ứng dụng] Video 1.3.4: Ôn tập nền tảng đại số tuyến tính (Part 4)",
+      "url": "https://www.youtube.com/watch?v=qPQT04u0kCs",
+      "published_at": "2023-06-26T09:22:35Z"
+    },
+    {
+      "video_id": "GdKIVY6CsTw",
+      "title": "[CS431 - Chương 2] Part 1: Mô hình học tổng quát",
+      "url": "https://www.youtube.com/watch?v=GdKIVY6CsTw",
+      "published_at": "2024-07-10T03:13:20Z"
+    },
+    {
+      "video_id": "m8uqtMEg8-E",
+      "title": "[CS431 - Chương 2] Part 2a_1: Mô hình hồi quy tuyến tính (Linear Regression)",
+      "url": "https://www.youtube.com/watch?v=m8uqtMEg8-E",
+      "published_at": "2024-07-10T03:14:20Z"
+    },
+    {
+      "video_id": "MtJDVr5xHB4",
+      "title": "[CS431 - Chương 2] Part 2a_2: Mô hình hồi quy tuyến tính (Linear Regression)",
+      "url": "https://www.youtube.com/watch?v=MtJDVr5xHB4",
+      "published_at": "2024-07-10T03:14:51Z"
+    },
+    {
+      "video_id": "T2xJmTiRM5o",
+      "title": "[CS431 - Chương 2] Part 3a: Mô hình hồi quy luận lý (Logistic Regression)",
+      "url": "https://www.youtube.com/watch?v=T2xJmTiRM5o",
+      "published_at": "2024-07-10T03:15:39Z"
+    },
+    {
+      "video_id": "G4lcEPrfETo",
+      "title": "[CS431 - Chương 2] Part 4a: Mô hình hồi quy Softmax (SoftmaxRegression)",
+      "url": "https://www.youtube.com/watch?v=G4lcEPrfETo",
+      "published_at": "2024-07-10T03:16:33Z"
+    },
+    {
+      "video_id": "aXB_C9IAyMg",
+      "title": "[CS431 - Chương 2] Part 5a: Mạng neural Network (Neural Network)",
+      "url": "https://www.youtube.com/watch?v=aXB_C9IAyMg",
+      "published_at": "2024-07-10T03:17:10Z"
+    },
+    {
+      "video_id": "jl9v7IDMTsk",
+      "title": "[CS431 - Chương 2] Part 3b_1: Cài đặt mô hình logistic regression",
+      "url": "https://www.youtube.com/watch?v=jl9v7IDMTsk",
+      "published_at": "2024-07-10T03:19:56Z"
+    },
+    {
+      "video_id": "istYhrhklqs",
+      "title": "[CS431 - Chương 2] Part 3b_2: Cài đặt mô hình logistic regression",
+      "url": "https://www.youtube.com/watch?v=istYhrhklqs",
+      "published_at": "2024-07-10T03:20:25Z"
+    },
+    {
+      "video_id": "G71D3dacAds",
+      "title": "[CS431 - Chương 2] Part 4b: Cài đặt mô hình softmax regression",
+      "url": "https://www.youtube.com/watch?v=G71D3dacAds",
+      "published_at": "2024-07-10T03:20:56Z"
+    },
+    {
+      "video_id": "DGNdZGdwihs",
+      "title": "[CS431 - Chương 2] Part 5b_1: Cài đặt mạng neural network",
+      "url": "https://www.youtube.com/watch?v=DGNdZGdwihs",
+      "published_at": "2024-07-10T03:21:34Z"
+    },
+    {
+      "video_id": "XBS1JuTrxVI",
+      "title": "[CS431 - Chương 2] Part 5b_2: Cài đặt mạng neural network",
+      "url": "https://www.youtube.com/watch?v=XBS1JuTrxVI",
+      "published_at": "2024-07-10T03:22:03Z"
+    },
+    {
+      "video_id": "q3oZyk3l8EU",
+      "title": "[CS431 - Chương 3] Part 1: Giới thiệu mạng CNN",
+      "url": "https://www.youtube.com/watch?v=q3oZyk3l8EU",
+      "published_at": "2024-07-10T04:05:38Z"
+    },
+    {
+      "video_id": "SKcHedTJIL0",
+      "title": "[CS431 - Chương 3] Part 2_1: Một số thành phần của mạng CNN",
+      "url": "https://www.youtube.com/watch?v=SKcHedTJIL0",
+      "published_at": "2024-07-10T04:06:19Z"
+    },
+    {
+      "video_id": "A3iFEk5jllM",
+      "title": "[CS431 - Chương 3] Part 2_2: Một số thành phần của mạng CNN",
+      "url": "https://www.youtube.com/watch?v=A3iFEk5jllM",
+      "published_at": "2024-07-10T04:06:46Z"
+    },
+    {
+      "video_id": "KeNRQw9j_ps",
+      "title": "[CS431 - Chương 3] Part 3_1: Cài đặt mạng CNN",
+      "url": "https://www.youtube.com/watch?v=KeNRQw9j_ps",
+      "published_at": "2024-07-10T04:07:52Z"
+    },
+    {
+      "video_id": "TNrJYPuDADM",
+      "title": "[CS431 - Chương 3] Part 3_2: Cài đặt mạng CNN",
+      "url": "https://www.youtube.com/watch?v=TNrJYPuDADM",
+      "published_at": "2024-07-10T04:08:13Z"
+    },
+    {
+      "video_id": "rVpEwMijtvQ",
+      "title": "[CS431 - Chương 3] Part 3_3: Cài đặt mạng CNN",
+      "url": "https://www.youtube.com/watch?v=rVpEwMijtvQ",
+      "published_at": "2024-07-10T04:08:35Z"
+    },
+    {
+      "video_id": "7YLMIKqygPU",
+      "title": "[CS431 - Chương 3] Part 4_1: Trực quan hóa mạng CNN",
+      "url": "https://www.youtube.com/watch?v=7YLMIKqygPU",
+      "published_at": "2024-07-10T04:09:08Z"
+    },
+    {
+      "video_id": "gmQTGRTHH2o",
+      "title": "[CS431 - Chương 3] Part 4_2: Trực quan hóa mạng CNN",
+      "url": "https://www.youtube.com/watch?v=gmQTGRTHH2o",
+      "published_at": "2024-07-10T04:09:31Z"
+    },
+    {
+      "video_id": "PyC3pl_r8jw",
+      "title": "[CS431 - Chương 4] Part 1_1: Ôn tập kiến trúc mạng CNN và một số biến thể phổ biến hiện nay",
+      "url": "https://www.youtube.com/watch?v=PyC3pl_r8jw",
+      "published_at": "2024-07-10T04:58:30Z"
+    },
+    {
+      "video_id": "KoBIBuqGb9A",
+      "title": "[CS431 - Chương 4] Part 1_2: Ôn tập kiến trúc mạng CNN và một số biến thể phổ biến hiện nay",
+      "url": "https://www.youtube.com/watch?v=KoBIBuqGb9A",
+      "published_at": "2024-07-10T04:58:57Z"
+    },
+    {
+      "video_id": "tMKUb4k5nZw",
+      "title": "[CS431 - Chương 4] Part 1_3: Ôn tập kiến trúc mạng CNN và một số biến thể phổ biến hiện nay",
+      "url": "https://www.youtube.com/watch?v=tMKUb4k5nZw",
+      "published_at": "2024-07-10T04:59:23Z"
+    },
+    {
+      "video_id": "MNHY9TA4fZs",
+      "title": "[CS431 - Chương 4] Part 1_4: Ôn tập kiến trúc mạng CNN và một số biến thể phổ biến hiện nay",
+      "url": "https://www.youtube.com/watch?v=MNHY9TA4fZs",
+      "published_at": "2024-07-10T04:59:47Z"
+    },
+    {
+      "video_id": "0I8uw0ELYj4",
+      "title": "[CS431 - Chương 4] Part 2: Sử dụng mạng huấn luyện sẵn",
+      "url": "https://www.youtube.com/watch?v=0I8uw0ELYj4",
+      "published_at": "2024-07-10T05:00:16Z"
+    },
+    {
+      "video_id": "RVFApjx4KKI",
+      "title": "[CS431 - Chương 5] Part 1-2: Ứng dụng trong bài toán phân loại và bài toán truy vấn ảnh",
+      "url": "https://www.youtube.com/watch?v=RVFApjx4KKI",
+      "published_at": "2024-07-10T07:16:28Z"
+    },
+    {
+      "video_id": "Til9AdPO7JE",
+      "title": "[CS431 - Chương 5] Part 3: Ứng dụng mạng CNN cho bài toán Phát hiện đối tượng",
+      "url": "https://www.youtube.com/watch?v=Til9AdPO7JE",
+      "published_at": "2024-07-10T07:16:46Z"
+    },
+    {
+      "video_id": "4p0L74qD7Lg",
+      "title": "[CS431 - Chương 5] Part 4: Ứng dụng mạng CNN cho bài toán Phân đoạn ngữ nghĩa đối tượng",
+      "url": "https://www.youtube.com/watch?v=4p0L74qD7Lg",
+      "published_at": "2024-07-10T07:17:08Z"
+    },
+    {
+      "video_id": "_KvZN8-SyvQ",
+      "title": "[CS431 - Chương 7] Part 1: Giới thiệu mạng RNN - Xử lý dữ liệu dạng chuỗi",
+      "url": "https://www.youtube.com/watch?v=_KvZN8-SyvQ",
+      "published_at": "2024-07-10T07:58:18Z"
+    },
+    {
+      "video_id": "TqKBlC-zyKY",
+      "title": "[CS431 - Chương 7] Part 2_1: Kiến trúc mạng RNN",
+      "url": "https://www.youtube.com/watch?v=TqKBlC-zyKY",
+      "published_at": "2024-07-10T07:58:51Z"
+    },
+    {
+      "video_id": "ptwSPTt2XnM",
+      "title": "[CS431 - Chương 7] Part 2_2: Kiến trúc mạng RNN",
+      "url": "https://www.youtube.com/watch?v=ptwSPTt2XnM",
+      "published_at": "2024-07-10T07:59:04Z"
+    },
+    {
+      "video_id": "8-3xv_NElG0",
+      "title": "[CS431 - Chương 7] Part 3_1: Một số vấn đề của mạng RNN",
+      "url": "https://www.youtube.com/watch?v=8-3xv_NElG0",
+      "published_at": "2024-07-10T07:59:35Z"
+    },
+    {
+      "video_id": "IKD0O35NOUI",
+      "title": "[CS431 - Chương 7] Part 3_2: Một số vấn đề của mạng RNN",
+      "url": "https://www.youtube.com/watch?v=IKD0O35NOUI",
+      "published_at": "2024-07-10T07:59:57Z"
+    },
+    {
+      "video_id": "qJj_LY1r91U",
+      "title": "[CS431 - Chương 8] Part 1_1: Một số biến thể của RNN: LSTM",
+      "url": "https://www.youtube.com/watch?v=qJj_LY1r91U",
+      "published_at": "2024-07-10T08:04:55Z"
+    },
+    {
+      "video_id": "_Km_A2iRUds",
+      "title": "[CS431 - Chương 8] Part 1_2: Một số biến thể của RNN: LSTM",
+      "url": "https://www.youtube.com/watch?v=_Km_A2iRUds",
+      "published_at": "2024-07-10T08:05:08Z"
+    },
+    {
+      "video_id": "_Cu7kGoRaE0",
+      "title": "[CS431 - Chương 8] Part 2: Một số biến thể của RNN: Bidirectional RNN",
+      "url": "https://www.youtube.com/watch?v=_Cu7kGoRaE0",
+      "published_at": "2024-07-10T08:05:30Z"
+    },
+    {
+      "video_id": "KjPEqyGCtUs",
+      "title": "[CS431 - Chương 8] Part 3: Một số biến thể của RNN: Deep Stacked RNN",
+      "url": "https://www.youtube.com/watch?v=KjPEqyGCtUs",
+      "published_at": "2024-07-10T08:05:47Z"
+    },
+    {
+      "video_id": "0DGe4fjr1aw",
+      "title": "[CS431 - Chương 8] Part 4_1: Hướng dẫn lập trình với kiến trúc mạng RNN và LSTM",
+      "url": "https://www.youtube.com/watch?v=0DGe4fjr1aw",
+      "published_at": "2024-07-10T09:05:20Z"
+    },
+    {
+      "video_id": "wKMBVF_bJdw",
+      "title": "[CS431 - Chương 8] Part 4_2: Hướng dẫn lập trình với kiến trúc mạng RNN và LSTM",
+      "url": "https://www.youtube.com/watch?v=wKMBVF_bJdw",
+      "published_at": "2024-07-10T09:05:33Z"
+    },
+    {
+      "video_id": "4EdX3Ga9YoM",
+      "title": "[CS431 - Chương 9] Part 1_1: Giới thiệu bài toán Dịch máy",
+      "url": "https://www.youtube.com/watch?v=4EdX3Ga9YoM",
+      "published_at": "2024-07-10T09:19:20Z"
+    },
+    {
+      "video_id": "--JpgsDEL40",
+      "title": "[CS431 - Chương 9] Part 1_2: Giới thiệu bài toán Dịch máy",
+      "url": "https://www.youtube.com/watch?v=--JpgsDEL40",
+      "published_at": "2024-07-10T09:19:25Z"
+    },
+    {
+      "video_id": "ROIgZ5tyDFo",
+      "title": "[CS431 - Chương 9] Part 2_1: Cơ chế Attention trong Sequence-to-Sequence",
+      "url": "https://www.youtube.com/watch?v=ROIgZ5tyDFo",
+      "published_at": "2024-07-10T09:19:31Z"
+    },
+    {
+      "video_id": "S8__bXkLSbM",
+      "title": "[CS431 - Chương 9] Part 2_2: Cơ chế Attention trong Sequence-to-Sequence",
+      "url": "https://www.youtube.com/watch?v=S8__bXkLSbM",
+      "published_at": "2024-07-10T09:19:36Z"
+    },
+    {
+      "video_id": "my3qRjVJ7VM",
+      "title": "[CS431 - Chương 9] Part 3: Một số biến thể của Attention",
+      "url": "https://www.youtube.com/watch?v=my3qRjVJ7VM",
+      "published_at": "2024-07-10T09:19:41Z"
+    },
+    {
+      "video_id": "1tCmeHf1Xk0",
+      "title": "[CS431 - Chương 10] Part 1: Ôn tập kiến trúc mạng RNN và cơ chế Attention",
+      "url": "https://www.youtube.com/watch?v=1tCmeHf1Xk0",
+      "published_at": "2024-07-10T10:12:17Z"
+    },
+    {
+      "video_id": "5DE5HXG8FWk",
+      "title": "[CS431 - Chương 10] Part 2: Động lực của kiến trúc Transformer",
+      "url": "https://www.youtube.com/watch?v=5DE5HXG8FWk",
+      "published_at": "2024-07-10T10:12:37Z"
+    },
+    {
+      "video_id": "NsWX_5oV8bY",
+      "title": "[CS431 - Chương 10] Part 3: Cơ chế Self-Attention",
+      "url": "https://www.youtube.com/watch?v=NsWX_5oV8bY",
+      "published_at": "2024-07-10T10:12:58Z"
+    },
+    {
+      "video_id": "jKnjyvvXzXI",
+      "title": "[CS431 - Chương 10] Part 5: Kiến trúc Transformer: Bộ Decoder",
+      "url": "https://www.youtube.com/watch?v=jKnjyvvXzXI",
+      "published_at": "2024-07-10T10:14:14Z"
+    },
+    {
+      "video_id": "fEGw6eEre2I",
+      "title": "[CS431 - Chương 10] Part 6: Một số vấn đề của Transformer",
+      "url": "https://www.youtube.com/watch?v=fEGw6eEre2I",
+      "published_at": "2024-07-10T10:14:46Z"
+    },
+    {
+      "video_id": "iMfkIHkU6NM",
+      "title": "[CS431 - Chương 10] Part 7: Một số ứng dụng của kiến trúc mạng Transformer",
+      "url": "https://www.youtube.com/watch?v=iMfkIHkU6NM",
+      "published_at": "2024-07-10T10:15:05Z"
+    },
+    {
+      "video_id": "30kCjQ0BdUc",
+      "title": "[CS431 - Chương 6] Part 1: Giới thiệu lĩnh vực xử lý ngôn ngữ tự nhiên (NLP)",
+      "url": "https://www.youtube.com/watch?v=30kCjQ0BdUc",
+      "published_at": "2024-07-10T13:39:16Z"
+    },
+    {
+      "video_id": "utOha-d0prc",
+      "title": "[CS431 - Chương 6] Part 2: Hướng tiếp cận Deep learning cho các bài toán NLP",
+      "url": "https://www.youtube.com/watch?v=utOha-d0prc",
+      "published_at": "2024-07-10T13:39:36Z"
+    },
+    {
+      "video_id": "O57P9YHZOE0",
+      "title": "[CS431 - Chương 6] Part 3: Biểu diễn từ bằng Vector",
+      "url": "https://www.youtube.com/watch?v=O57P9YHZOE0",
+      "published_at": "2024-07-10T13:39:51Z"
+    },
+    {
+      "video_id": "UJNyIptbcNM",
+      "title": "[CS431 - Chương 6] Part 4_1: Mô hình Word2Vec",
+      "url": "https://www.youtube.com/watch?v=UJNyIptbcNM",
+      "published_at": "2024-07-10T13:40:32Z"
+    },
+    {
+      "video_id": "AkHEcgasvkw",
+      "title": "[CS431 - Chương 6] Part 4_2: Mô hình Word2Vec",
+      "url": "https://www.youtube.com/watch?v=AkHEcgasvkw",
+      "published_at": "2024-07-10T13:40:44Z"
+    },
+    {
+      "video_id": "WAiLM7OFU9A",
+      "title": "[CS431 - Chương 6] Part 5_1: Hướng dẫn lập trình với Word2Vec",
+      "url": "https://www.youtube.com/watch?v=WAiLM7OFU9A",
+      "published_at": "2024-07-10T13:41:16Z"
+    },
+    {
+      "video_id": "UfLLBOPvgOU",
+      "title": "[CS431 - Chương 6] Part 5_2: Hướng dẫn lập trình với Word2Vec",
+      "url": "https://www.youtube.com/watch?v=UfLLBOPvgOU",
+      "published_at": "2024-07-10T13:41:28Z"
+    },
+    {
+      "video_id": "sPoJ8VS7nLc",
+      "title": "[CS431 - Chương 2] Part 2b_1: Cài đặt mô hình linear regression",
+      "url": "https://www.youtube.com/watch?v=sPoJ8VS7nLc",
+      "published_at": "2024-07-31T09:24:10Z"
+    },
+    {
+      "video_id": "sPqwytzfxqM",
+      "title": "[CS431 - Chương 2] Part 2b_2: Cài đặt mô hình linear regression",
+      "url": "https://www.youtube.com/watch?v=sPqwytzfxqM",
+      "published_at": "2024-07-31T09:24:29Z"
+    },
+    {
+      "video_id": "CqnM7BT7oSU",
+      "title": "[CS431 - Chương 2] Part 2b_3: Cài đặt mô hình linear regression",
+      "url": "https://www.youtube.com/watch?v=CqnM7BT7oSU",
+      "published_at": "2024-07-31T09:25:04Z"
+    },
+    {
+      "video_id": "UXxELgk5Vws",
+      "title": "[CS431 - Chương 10] Part 4_1: Kiến trúc Transformer: Bộ Encoder",
+      "url": "https://www.youtube.com/watch?v=UXxELgk5Vws",
+      "published_at": "2024-07-31T09:25:24Z"
+    },
+    {
+      "video_id": "JGxo_olUl2U",
+      "title": "[CS431 - Chương 10] Part 4_2: Kiến trúc Transformer: Bộ Encoder",
+      "url": "https://www.youtube.com/watch?v=JGxo_olUl2U",
+      "published_at": "2024-07-31T09:25:45Z"
+    },
+    {
+      "video_id": "7AZr_li6ZtA",
+      "title": "[CS431 - Chương 2] Part 4_3: Kiến trúc Transformer: Bộ Encoder",
+      "url": "https://www.youtube.com/watch?v=7AZr_li6ZtA",
+      "published_at": "2024-07-31T09:26:09Z"
+    }
+  ]
+}

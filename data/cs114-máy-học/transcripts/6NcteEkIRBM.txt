@@ -1,0 +1,81 @@
+0:00:00 - 0:00:01, Types seguinte, b ne online internally đang GEessel teing để match ch z
+0:00:03 - 0:00:16, Quick
+0:00:16 - 0:00:20, Giờ怖 lelyn lική emperor
+0:00:24 - 0:00:28, Klaus market
+0:00:30 - 0:00:32, đó là cho biết đặt quân cờ tiếp theo ở đâu
+0:00:33 - 0:00:35, và phần thưởng của mình đó sẽ là
+0:00:35 - 0:00:38, cộng 1 nếu thắng ở cuối trò chơi hoặc là bằng không
+0:00:38 - 0:00:41, nếu chúng ta thua, thì ở trên cái
+0:00:41 - 0:00:43, màn hình ở đây chúng ta thấy đó là những thuật toán
+0:00:43 - 0:00:46, AlphaGo, AlphaZero và AlphaSyncKey
+0:00:46 - 0:00:49, thì ở đây chúng ta thấy là
+0:00:49 - 0:00:51, nổi tiếng nhất đó là AlphaGo
+0:00:51 - 0:00:54, đây là một thuật toán mà chơi cờ vai
+0:00:54 - 0:00:56, đã giúp cho máy tính
+0:00:56 - 0:00:59, có thể chiến thắng được các đại kiện tướng cờ vai
+0:00:59 - 0:01:04, sau đó là có Alpha Zero, đây là một thực toán chơi các thể loại cờ khác nhau
+0:01:04 - 0:01:17, và khó của việc chơi cờ, đặc biệt là cờ vay, chính là không gian trạng thái rất lớn
+0:01:17 - 0:01:31, Với không gian trạng thái lớn này, nó sẽ gây khó khăn cho mô hình của mình trong việc đưa ra quyết định, các hành động
+0:01:31 - 0:01:38, và một số cái khái niệm khác đó là chính sách của hành động hay còn gọi là policy ký hiệu là chữ P
+0:01:38 - 0:01:44, thì đây là một cái chiến lược của agent để chọn ra cái hành động tại mỗi trạng thái
+0:01:44 - 0:01:47, nó sẽ chọn ra cái hành động tại mỗi trạng thái
+0:01:47 - 0:01:52, và nó chính là cái xác xúc chọn cái hành động
+0:01:52 - 0:01:57, thì xác vệ đặc điểm thì nó có thể là một cái chiến thuật đơn giản
+0:01:57 - 0:02:00, nó có thể là một cái policy đơn giản đó là một cái bản tra
+0:02:00 - 0:02:08, Nếu mà ở trạng thái này, thì chúng ta sẽ chọn cái hành động này
+0:02:08 - 0:02:11, Nếu mà ở trạng thái này thì chúng ta sẽ chọn cái hành động này
+0:02:11 - 0:02:12, Đó là một cái bảng tra
+0:02:12 - 0:02:15, Nhưng nó cũng có thể là một cái phức tạp
+0:02:15 - 0:02:17, Là một cái chiến thuật phức tạp
+0:02:17 - 0:02:21, Là một cái hàm số hoặc nó có thể là một cái mạng neural network
+0:02:21 - 0:02:28, Với cái dữ liệu đầu vào chúng ta sẽ chọn cái hành động tiếp theo là gì
+0:02:28 - 0:02:36, Ví dụ như người chơi cờ sẽ có chiến thuật là ưu tiên ăn những quân có giá trị cao trước
+0:02:36 - 0:02:44, Ví dụ như dở biệt là chúng ta ăn quân mã và quân hậu thì chúng ta sẽ ưu tiên ăn quân hậu trước
+0:02:44 - 0:02:46, Ví dụ vậy, thì đây cũng là một chiến thuật
+0:02:46 - 0:02:58, Cái hai đó là trong xe tự lái thì nếu như chúng ta gặp cái trạng thái đó là đèn đỏ thì cái action, cái policy cho cái action chúng ta
+0:02:58 - 0:03:06, đó là chúng ta phải dừng, tại vì nếu như chúng ta không dừng thì có thể chúng ta sẽ bị phạt và lúc đó thì cái reward của mình nó sẽ bị đẩy về không
+0:03:06 - 0:03:14, rồi đèn xanh thì chúng ta sẽ là đã đi, thì đây chính là cái chiến thuật cho cái policy chính sách hành động cho xe tự lái
+0:03:14 - 0:03:19, chúng ta sẽ có nhiều loại policy khác nhau
+0:03:19 - 0:03:21, Đầu tiên là Deterministic Policy
+0:03:21 - 0:03:25, tức là với mỗi một trạng thái S
+0:03:25 - 0:03:28, thì chúng ta sẽ có duy nhất một hành động
+0:03:28 - 0:03:30, một hành động duy nhất là A
+0:03:30 - 0:03:33, và A sẽ là bằng P của S
+0:03:33 - 0:03:35, một cái S đầu vào
+0:03:35 - 0:03:37, thì chúng ta sẽ có duy nhất một cái Action
+0:03:37 - 0:03:39, trong xe tự lái
+0:03:39 - 0:03:41, thì ví dụ như hồi nãy chúng ta đã nói
+0:03:41 - 0:03:44, nếu chúng ta gặp đèn đỏ thì hành động luôn là
+0:03:44 - 0:03:56, trong game Cờ Vua thì một agent có chiến thuật cố định không bao giờ chọn nước đi nào khác ngoài nước đi tối ưu tại cái trạng thái đó
+0:03:56 - 0:04:05, tức là tại một cái trạng thái chúng ta sẽ có rất nhiều cách đi nhưng mà chúng ta sẽ luôn chọn duy nhất một nước đi tối ưu nhất
+0:04:05 - 0:04:11, chúng ta sẽ không thử những nước đi khác mà chúng ta chỉ chọn duy nhất một nước đi tối ưu
+0:04:11 - 0:04:20, Và cái Deterministic Policy này thì nó sẽ dùng khi mà môi trường của mình ít có tính ngộ nhiên và nó có tính ổn định
+0:04:20 - 0:04:31, Nhưng trong lĩnh vực về game thì ế tố ngộ nhiên nó khá là cao tại vì nó sẽ dựa trên phong cách chơi của từng game thủ khác nhau
+0:04:31 - 0:04:34, Tại những thời điểm khác nhau họ sẽ có những ế tố ngộ nhiên khác nhau
+0:04:34 - 0:04:38, Nên thường trong game nó sẽ không dùng Deterministic Policy
+0:04:38 - 0:04:44, Agen đã học đủ tốt để không cần phải thử thêm
+0:04:44 - 0:04:46, không cần phải thử thêm những policy khác
+0:04:46 - 0:04:49, thì nó sẽ chọn đơn định
+0:04:49 - 0:04:51, Deterministic Policy
+0:04:51 - 0:04:53, Stochastic Policy
+0:04:53 - 0:04:56, Tại mỗi trạng thái S
+0:04:56 - 0:05:00, chúng ta sẽ ánh xà thành phân phối sát xuất cho các hành động
+0:05:00 - 0:05:03, tức là với 1 cái S đầu vào cho trước
+0:05:03 - 0:05:07, thì chúng ta sẽ có phân bố action A
+0:05:07 - 0:05:09, thì nó sẽ tương ứng là một cái phân bố sát xuất
+0:05:09 - 0:05:11, cho trước S
+0:05:11 - 0:05:15, thì chúng ta sẽ có ActionA này là sát xuất
+0:05:15 - 0:05:18, chứ không phải lúc nào chúng ta cũng sẽ chọn ActionA này
+0:05:18 - 0:05:22, thì đây là Stochastic Policy
+0:05:22 - 0:05:23, ví dụ như trong game Batman
+0:05:23 - 0:05:25, khi chưa biết hướng đi nào tốt nhất
+0:05:25 - 0:05:28, thì Aitren sẽ chọn cái hướng ngộ nhiên
+0:05:28 - 0:05:31, đó là lên xuống trái phải để thử
+0:05:31 - 0:05:33, để thử
+0:05:33 - 0:05:36, và học từ cái kết quả mà mình trả về
+0:05:36 - 0:05:41, và Reinforcement in trong game phức tạp hơn, ví dụ như Starap, Cvade
+0:05:41 - 0:05:46, thì Agent có thể pha trộn các hành động để khó đoán hơn cho đối thủ của mình
+0:05:46 - 0:05:55, Stochastic Policy thì thường dùng khi môi trường của mình không chắc chắn và có yếu tố sát xuất
+0:05:55 - 0:05:59, Vì trong game, đó là một trong những môi trường mà có yếu tố không chắc chắn
+0:05:59 - 0:06:01, Agent cần khám phá thêm nhiều hành động
+0:06:01 - 0:06:10, và trong tình hu đối kháng và tránh để đối phương đoán trước những hành vi của mình

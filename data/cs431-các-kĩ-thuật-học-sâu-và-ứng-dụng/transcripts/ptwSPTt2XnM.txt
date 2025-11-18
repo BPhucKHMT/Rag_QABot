@@ -1,0 +1,88 @@
+0:00:00 - 0:00:08, Bước thứ hai của quá trình xây dựng một mô hình máy học, đó chính là chúng ta thiết kế hàm mất mát.
+0:00:08 - 0:00:12, Thì ở đây chúng ta sẽ có các giá trị dự đoán.
+0:00:14 - 0:00:19, Và ở phía trên chúng ta sẽ có các giá trị thực, thực tế.
+0:00:21 - 0:00:25, Là chúng ta ký hiệu là y, y_t, y_hat_t.
+0:00:25 - 0:00:30, và chúng ta luôn mong muốn là hai cái giá trị này nó xấp xỉ với nhau, đúng không?
+0:00:30 - 0:00:36, thì chúng ta sẽ có cái hàm loss tại cái thời điểm thứ T, tức là chúng ta sẽ tính tại đây trước
+0:00:36 - 0:00:42, và chi phí, cái hàm chi phí hàm loss của mình sẽ được tính bằng công thức như sau
+0:00:42 - 0:00:52, đó là hàm loss khi tại thời điểm thứ T theo theta thì nó sẽ là bằng công thức giống như công thức cross-entropy mà chúng ta đã học trước đây
+0:00:52 - 0:01:02, Và công thức của nó sẽ là tổng với j chạy từ 1 cho đến V trong đó V
+0:01:02 - 0:01:09, Lưu ý là trong cái bài này, trong cái ví dụ này thì V của mình là tập từ điển của mình nha
+0:01:09 - 0:01:14, Nó bị trùng một chút xíu, đây chính là tập từ điển của mình
+0:01:14 - 0:01:24, Tại vì sao? Tại vì cái y này nó sẽ là một cái vector
+0:01:24 - 0:01:30, Để cho biết là cái giá trị output của mình
+0:01:30 - 0:01:34, Nếu như đây là một cái bài toán đoán từ
+0:01:34 - 0:01:41, Thì đây sẽ là một cái vector có độ dài là số từ trong tập từ điển
+0:01:41 - 0:01:44, và chúng ta ký hiệu là trị tuyệt đối của V
+0:01:44 - 0:01:46, lưu ý cái V này là V từ điển
+0:01:46 - 0:01:49, nó không phải là cái ma trận V ở đây
+0:01:49 - 0:01:51, nó không phải là ma trận V ở đây
+0:01:51 - 0:01:54, và ở đây sẽ là số từ trong tập từ điển của mình
+0:01:54 - 0:01:58, rồi, nó sẽ tính trên từng cái phần tử
+0:01:58 - 0:02:02, j tại thời điểm thứ T
+0:02:02 - 0:02:08, rồi, nó sẽ là y_{t,j} nhân log của y_hat_{t,j}
+0:02:08 - 0:02:14, Và như vậy thì chúng ta có cái chuỗi với tất cả là T bước, đúng không?
+0:02:14 - 0:02:18, Cái chuỗi của chúng ta là x1 cho đến x_T
+0:02:18 - 0:02:24, Thì chúng ta sẽ phải tính tổng tất cả các cái sai số cho các cái time step t
+0:02:24 - 0:02:31, Vậy thì chúng ta sẽ có là loss tổng thể sẽ là bằng trung bình cộng
+0:02:31 - 0:02:33, Trung bình cộng của các cái loss thành phần
+0:02:33 - 0:02:47, trong đó cái loss thành phần thì nó sẽ có công thức là trừ của tổng y_{t,j} nhân log của y_hat_{t,j}
+0:02:49 - 0:02:55, và chúng ta sẽ tính trên tất cả các cái timestamp tính với t chạy từ 1 cho đến T lớn
+0:02:55 - 0:03:01, Rồi, như vậy thì chúng ta đã thiết kế được cái hàm loss.
+0:03:01 - 0:03:04, Cách thức thiết kế hàm loss này cũng rất là đơn giản.
+0:03:04 - 0:03:12, Chúng ta sẽ sử dụng độ đo cross-entropy cho từng loss thành phần để tính ra được L_t.
+0:03:12 - 0:03:18, Và tổng tất cả L_t tính trung bình cộng lại, chúng ta sẽ có cái hàm loss trung bình.
+0:03:18 - 0:03:23, Thì đó là thiết kế cho cái hàm mất mát của việc dự đoán.
+0:03:23 - 0:03:31, Và sau đây thì chúng ta sẽ thể hiện một số tình huống sử dụng của mạng RNN
+0:03:31 - 0:03:33, Tình huống sử dụng nghĩa là sao?
+0:03:33 - 0:03:39, Mạng RNN có thể áp dụng cho rất nhiều bài toán của NLP
+0:03:39 - 0:03:43, Ví dụ như trong tình huống đầu tiên đó là 1-to-1
+0:03:43 - 0:03:50, Tức là đầu vào của mình sẽ có x1 và đầu ra của mình sẽ có y_1
+0:03:50 - 0:03:54, thì ở đây chúng ta chỉ dự đoán trên một phần tử thôi
+0:03:54 - 0:03:59, thì ý nghĩa của nó có thể là cho cái bài toán là dịch
+0:03:59 - 0:04:01, dịch một cái từ nào đó
+0:04:01 - 0:04:02, chúng ta có thể là dịch từ
+0:04:02 - 0:04:05, đầu vào là một cái từ tiếng Anh
+0:04:05 - 0:04:08, và đầu ra sẽ là một cái từ tiếng Việt
+0:04:08 - 0:04:11, đối với bài toán one to many
+0:04:11 - 0:04:14, thì đầu vào của mình sẽ là một từ
+0:04:14 - 0:04:16, và đầu ra của mình sẽ là nhiều từ
+0:04:16 - 0:04:19, thì ở đây, cái ngữ cảnh của mình nó có thể là
+0:04:19 - 0:04:23, mình cho đầu vào là một cái từ của một cái chủ đề
+0:04:23 - 0:04:25, ví dụ như mình có chủ đề là về biển
+0:04:25 - 0:04:29, và đầu ra của mình sẽ là một cái bài thơ
+0:04:29 - 0:04:33, một cái bài thơ về biển
+0:04:33 - 0:04:37, thì đây là một cái ngữ cảnh, một cái tình huống sử dụng của RNN
+0:04:37 - 0:04:40, cho cái dạng là OneToMany
+0:04:40 - 0:04:42, đối với cái dạng ManyToOne
+0:04:42 - 0:04:45, thì đầu vào của mình sẽ là rất nhiều từ
+0:04:45 - 0:04:50, Và đầu ra thì chúng ta chỉ có duy nhất một cái đầu ra thôi
+0:04:50 - 0:04:56, Và ngữ cảnh cho tình huống này đó là chúng ta có thể có một cái đoạn comment trên một cái mạng xã hội
+0:04:56 - 0:05:03, Và đầu ra của mình có thể là cho biết là đó là thể loại của mình là thể loại gì
+0:05:03 - 0:05:09, hoặc là cái cảm xúc của mình đó là positive, negative hay là neutral
+0:05:09 - 0:05:14, hoặc là có thể là cho cái bài toán spam detection
+0:05:14 - 0:05:18, đầu vào của mình sẽ là email, nội dung của một cái đoạn email
+0:05:18 - 0:05:25, và đầu ra thì cho biết đó là spam hay không phải là non spam
+0:05:27 - 0:05:32, thì đó là cho cái dạng Many to Many, à xin lỗi cho Many to One
+0:05:32 - 0:05:48, Rồi, đối với cái Many to Many thì chúng ta sẽ có hai dạng. Dạng đầu tiên là Many to Many dạng 1 và Many to Many bên đây là Many to Many dạng 2.
+0:05:48 - 0:05:52, Thì Many to Many dạng 1, nó khác gì so với lại Many to Many dạng 2?
+0:05:52 - 0:06:04, Many to Many dạng 1 là chúng ta sẽ phải đọc xong hết toàn bộ cái nội dung này, rồi sau đó chúng ta mới đi ra, mới đưa ra cái phán đoán.
+0:06:04 - 0:06:16, Còn Many to Many dạng 2 là chúng ta đưa cái từ nào đến đâu thì chúng ta sẽ tính ra cái output đến đó, đưa đến đâu, ra đến đó, đưa đến đâu, ra đến đó.
+0:06:16 - 0:06:27, Do đó, thì ở đây chúng ta sẽ có cái ngữ cảnh cho cái bài toán, cho cái dạng là Many to Many dạng 1, đó là bài toán dịch máy.
+0:06:27 - 0:06:40, Rõ ràng là chúng ta sẽ phải đọc hết toàn bộ cái nội dung của một cái đoạn văn, của một câu, xong rồi chúng ta mới có thể bắt đầu dịch được, đúng không?
+0:06:40 - 0:06:42, hoặc là bài toán tóm tắt văn bản
+0:06:42 - 0:06:44, đầu vào là chúng ta sẽ nhận một cái văn bản rất là dài
+0:06:44 - 0:06:46, và sau khi đọc xong hết
+0:06:46 - 0:06:49, thì chúng ta mới đưa ra cái bản tóm tắt
+0:06:49 - 0:06:52, thì đó là cho ứng dụng, ngữ cảnh ứng dụng
+0:06:52 - 0:06:54, cho cái Many to Many dạng 1
+0:06:54 - 0:06:56, đối với cái Many to Many dạng 2
+0:06:56 - 0:06:58, thì chúng ta sẽ đưa đến đâu?
+0:06:58 - 0:07:00, chúng ta đưa ra cái phán đoán đến đó
+0:07:00 - 0:07:02, thì ở đây nó có thể là
+0:07:02 - 0:07:04, cho cái bài toán là POS Tagging
+0:07:06 - 0:07:08, tức là đưa vô một cái từ
+0:07:08 - 0:07:11, Chúng ta sẽ cho biết từ đó là chủ ngữ
+0:07:11 - 0:07:15, Đưa vô một từ tiếp theo, đó sẽ là động từ
+0:07:15 - 0:07:21, Đưa vô cái từ tiếp theo, đó sẽ là vị ngữ
+0:07:21 - 0:07:26, Thì đây là một ngữ cảnh ứng dụng cho bài toán Many to Many v.2

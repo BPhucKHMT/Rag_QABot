@@ -1,0 +1,123 @@
+0:00:00 - 0:00:08, Bây giờ chúng ta sẽ đến với phần về công thức. Nãy giờ là chúng ta đang mô phỏng cách thức vận hành của một cơ chế attention.
+0:00:08 - 0:00:11, Còn về công thức tính thì chúng ta sẽ tính như thế nào?
+0:00:11 - 0:00:19, Tại đây chúng ta sẽ có các hệ thống ký hiệu. Với encoder chúng ta sẽ ký hiệu bằng chữ S.
+0:00:19 - 0:00:24, S1, S2, S3 cho đến SN
+0:00:24 - 0:00:28, Quá trình decoder thì sẽ ký hiệu H
+0:00:28 - 0:00:31, Quá trình decoder thì sẽ ký hiệu H
+0:00:31 - 0:00:34, và H ở đây sẽ là đi theo trục thời gian
+0:00:34 - 0:00:40, Và tại thời điểm đầu tiên thì T thời gian sẽ là bằng 1
+0:00:40 - 0:00:46, Tiếp theo thì nó sẽ lấy HT này đi nhân tích vô hướng với các giá trị S
+0:00:46 - 0:00:54, HT sẽ nhân tích vô hướng với S1, HT với S2, HT với S3, HT với SN
+0:00:54 - 0:00:59, sau khi chúng ta tính xong chúng ta được các cái score chúng ta sẽ chuẩn hóa nó
+0:00:59 - 0:01:02, và để chuẩn hóa về không gian xác suất thì không hàm nào khác
+0:01:02 - 0:01:06, chúng ta đã từng học đó chính là chúng ta sử dụng hàm softmax
+0:01:06 - 0:01:08, chúng ta sẽ sử dụng hàm softmax
+0:01:08 - 0:01:17, và ký hiệu cho toàn bộ kết quả tính Attention Score là R
+0:01:17 - 0:01:22, để tính Attention Distribution thì chúng ta sẽ ký hiệu là chữ alpha
+0:01:22 - 0:01:27, alpha là thể hiện trọng số đã được chuẩn hóa của R
+0:01:27 - 0:01:30, vậy thì alpha T sẽ là bằng softmax của RT
+0:01:30 - 0:01:34, alpha chính là đã chuẩn hóa của RT
+0:01:34 - 0:01:47, Sau khi chúng ta đã có được bộ trọng số alpha này rồi, chúng ta sẽ bắt đầu tổng hợp thông tin cho Attention Output và ký hiệu nó bằng chữ C
+0:01:47 - 0:01:53, C này còn có một ý nghĩa khác, nó chính là Context
+0:01:53 - 0:02:02, và C này sẽ là tổng có trọng số của các trạng thái của các vector ẩn của encoder
+0:02:02 - 0:02:06, của quá trình encoder, chính là S1, S2, S3, S4
+0:02:06 - 0:02:10, còn trọng số tương ứng của nó chính là alpha Ti
+0:02:10 - 0:02:15, trong đó T là đại diện cho thời điểm T
+0:02:15 - 0:02:22, T là đại diện cho thời điểm T mà mình bắt đầu quá trình giải mã
+0:02:22 - 0:02:26, i là duyệt từ 1 cho đến n
+0:02:26 - 0:02:30, Duyệt từ đầu cho đến cuối, cuối đoạn của encoder
+0:02:35 - 0:02:39, Vector Output, Attention Output này, đó là CT
+0:02:39 - 0:02:42, nó sẽ được thực hiện ghép nối
+0:02:42 - 0:02:47, ký hiệu là dấu chấm phẩy, nó nối chuỗi, ghép nối lại với nhau
+0:02:47 - 0:02:52, để tạo ra 1 vector tổng hợp
+0:02:52 - 0:03:02, và từ vector tổng hợp này, chúng ta sẽ đi tính giá trị y ngã T
+0:03:02 - 0:03:09, và đây chính là cái cách tính dựa hoàn toàn vào tình huống có attention
+0:03:09 - 0:03:20, tức là y ngã T thì nó sẽ là bằng softmax của v nhân với lại cái vector này
+0:03:20 - 0:03:25, nhân với cái vector CT chấm phẩy HT
+0:03:25 - 0:03:38, Đây là cách tính khi có attention, cũng giống như trường hợp áp dụng attention
+0:03:38 - 0:03:57, Rồi, và ở đây thì chúng ta sẽ có một cái bài tập đó là nếu như chúng ta giả định cái vector HT này nó có kích thước là R^d, tức là H là một cái vector d chiều
+0:03:57 - 0:04:14, RT là một cái vector có kích thước bao nhiêu, alpha T là một vector có kích thước bao nhiêu, CT và HT là kích thước bao nhiêu
+0:04:14 - 0:04:21, CT, vector Attention Output sẽ có kích thước bao nhiêu
+0:04:21 - 0:04:30, Bây giờ chúng ta sẽ tính toán cái dấu chấm hỏi này sẽ là các giá trị gì
+0:04:30 - 0:04:37, Nếu như bạn nào nhanh trí thì có thể nhìn vô đây là R này là tập hợp của các dấu hình tròn này
+0:04:37 - 0:04:43, Ở đây có bao nhiêu? Có N, có N phần tử như vậy
+0:04:43 - 0:04:48, R này sẽ là R^n, tương ứng là R
+0:04:48 - 0:04:57, Và mỗi phần tử HT nhân với SI là một giá trị vô hướng
+0:04:57 - 0:05:05, Tập hợp của giá trị vô hướng sẽ tạo ra một vector và có n giá trị vô hướng như vậy
+0:05:05 - 0:05:18, Alpha là vector attention distribution của vector chuẩn hóa của RT
+0:05:18 - 0:05:24, do đó số chiều của alpha T không thay đổi so với RT
+0:05:24 - 0:05:27, nếu ở đây là R^n thì ở đây cũng sẽ là R^n
+0:05:27 - 0:05:32, bước tiếp theo là chúng ta sẽ thực hiện phép ghép nối
+0:05:32 - 0:05:34, nhưng mà để ghép nối được, chúng ta phải có cái CT
+0:05:34 - 0:05:37, nhưng mà chúng ta chưa có CT, nhưng mà chúng ta phải tính cái này trước
+0:05:38 - 0:05:41, CT bản chất là tổng trọng số
+0:05:41 - 0:05:42, của các cái SI
+0:05:43 - 0:05:44, đây là giá trị scalar
+0:05:46 - 0:05:49, đây là giá trị scalar, còn đây là vector
+0:05:49 - 0:05:52, mà vector SI thì để mà có thể
+0:05:52 - 0:05:55, nhân được cái S với lại cái H, đúng không?
+0:05:55 - 0:05:57, để mà S và H có thể nhân được với nhau
+0:05:57 - 0:05:59, thì tụi nó phải có cùng số chiều
+0:05:59 - 0:06:08, do đó thì SI ở đây cũng là một cái R^d, tức là vector d chiều
+0:06:08 - 0:06:10, như vậy thì ở đây là vector d chiều
+0:06:10 - 0:06:17, tổng trọng số của các vector d chiều thì nó sẽ là 1 cái vector d chiều
+0:06:17 - 0:06:20, đó là 1 cái vector d chiều
+0:06:20 - 0:06:25, rồi, và khi chúng ta ghép nối 2 cái này lại với nhau
+0:06:25 - 0:06:28, CT là một vector d chiều
+0:06:29 - 0:06:32, HT là một vector d chiều
+0:06:32 - 0:06:36, Vậy ở đây sẽ là 2D
+0:06:37 - 0:06:41, Đây là đáp án cho bài tập của mình
+0:06:41 - 0:06:44, Hi vọng khi bạn làm được bài tập này
+0:06:44 - 0:06:50, Các bạn có thể hiểu được cơ chế vận hành của Attention
+0:06:51 - 0:06:54, Tại sao Attention thì hiệu quả
+0:06:54 - 0:06:56, Attention cho hiệu suất cao hơn hẳn
+0:06:56 - 0:06:58, so với lại các phương pháp trước đây
+0:06:58 - 0:07:04, thì hiệu suất cao hơn này được thể hiện qua việc mà chúng ta thực nghiệm
+0:07:04 - 0:07:06, nhưng mà nếu mà nói về mặt lý thuyết
+0:07:06 - 0:07:12, thì quá trình decoder
+0:07:12 - 0:07:17, nó sẽ cho phép nhìn lại toàn bộ câu văn nguồn của mình
+0:07:17 - 0:07:31, Như chúng ta đã thấy là khi chúng ta tính cái y ngã T, chúng ta sẽ phải dựa trên cái thông tin của cả HT mà kết hợp với lại cả thông tin CT
+0:07:31 - 0:07:37, Trong đó thông tin CT là có chứa thông tin của toàn bộ cái câu văn nguồn của mình
+0:07:37 - 0:07:46, Ngoài ra, decoder cho phép chúng ta tập trung hơn tại một số phần nhất định trong câu văn nguồn.
+0:07:46 - 0:07:49, ở đây chúng ta quan sát
+0:07:50 - 0:07:53, để tính ra output y ngã T
+0:07:53 - 0:07:56, chúng ta sẽ có sự tổng hợp thông tin của CT
+0:07:56 - 0:08:00, và CT là tổng trọng số
+0:08:01 - 0:08:04, tổng trọng số của attention distribution này
+0:08:04 - 0:08:06, với vector ẩn
+0:08:06 - 0:08:09, như vậy nó vừa cho phép chúng ta
+0:08:09 - 0:08:12, nhìn lại toàn bộ nội dung
+0:08:12 - 0:08:13, của
+0:08:13 - 0:08:18, câu văn nguồn, nhưng nó cũng không phải là tổng hợp
+0:08:18 - 0:08:22, Nó sẽ không tổng hợp đều, mà cũng không phải là trung bình cộng tất cả các thông tin này
+0:08:22 - 0:08:30, Mà nó chỉ chú tâm đến những vị trí nào của encoder
+0:08:30 - 0:08:33, mà nó thực sự liên quan đến quá trình giải mã ở đây
+0:08:33 - 0:08:37, Ví dụ như ở đây nó sẽ chú tâm đến từ đầu tiên là từ 'ai' nhiều hơn
+0:08:37 - 0:08:39, so với các từ khác
+0:08:39 - 0:08:50, Chỉ cần để tập trung vào một số phần chứ không phải là nó sẽ đi nhìn hết nội dung của câu văn nguồn
+0:08:50 - 0:08:56, Attention giải quyết được vấn đề điểm nghẽn như chúng ta đã đề cập ở những slide đầu
+0:08:56 - 0:09:04, Attention giúp chúng ta giải quyết được vấn đề Vanishing Gradient khi nó tạo được các đường tắt
+0:09:04 - 0:09:09, Thì cái đường tắt này chính là cái skip connection
+0:09:09 - 0:09:16, Và cái cơ chế skip connection này lại một lần nữa chúng ta nhắc đến
+0:09:16 - 0:09:21, Nó là sự kế thừa của mạng CNN, một cái biến thể của CNN đó chính là ResNet
+0:09:21 - 0:09:27, Và nó đã được chứng minh trong rất nhiều những cái bài báo khoa học
+0:09:27 - 0:09:31, Skip connection sẽ giúp chúng ta chống được hiện tượng vanishing rất là tốt
+0:09:31 - 0:09:49, Với công thức rất đơn giản, X là hàm biến đổi, X là hàm giảm thiểu hiện tượng vanishing.
+0:09:49 - 0:10:01, và Attention cho phép chúng ta một khả năng nữa cũng rất là thú vị
+0:10:01 - 0:10:08, đó chính là khả năng diễn đạt hay còn gọi là khả năng giải thích kết quả và trực quan hóa
+0:10:08 - 0:10:15, thì ở đây, vậy cái gì trong Attention giúp chúng ta có khả năng diễn đạt được?
+0:10:15 - 0:10:21, đó chính là attention distribution
+0:10:21 - 0:10:23, Với attention distribution thì tại thời điểm T
+0:10:23 - 0:10:26, chúng ta biết là chúng ta phải để tâm đến từ nào
+0:10:26 - 0:10:30, thì họ sẽ tìm cách visualize ma trận alpha
+0:10:30 - 0:10:32, visualize alpha T
+0:11:02 - 0:11:06, Và nó chỉ phát sáng trên nguyên cái cột này thì nó chỉ phát sáng tại duy nhất vị trí này
+0:11:07 - 0:11:08, Thì ánh xạ sang đây
+0:11:08 - 0:11:10, Và chính là cái từ này của tiếng Pháp
+0:11:10 - 0:11:16, nhưng ở một số từ nó có sự phát sáng trên nhiều giá trị
+0:11:16 - 0:11:21, ví dụ, ở đây chúng ta thấy là cái từ 'size'
+0:11:21 - 0:11:29, nó đã phát sáng trên 3 từ là 'a', 's', 'size'
+0:11:29 - 0:11:35, thì từ 'size' trong tiếng Anh này đã được chia theo thì bị động quá khứ
+0:11:35 - 0:11:42, và tương ứng trong tiếng Pháp, để chia được bị động quá khứ, nó cũng sẽ cần có 3 chữ này
+0:11:42 - 0:11:44, x, x, y
+0:11:44 - 0:11:52, thì đây là lý giải tại sao từ tiếng Anh này có sự liên đới đến các từ tiếng Pháp

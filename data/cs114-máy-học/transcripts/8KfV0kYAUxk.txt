@@ -1,0 +1,104 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:18, Tiếp theo thì chúng ta sẽ cùng à minh
+0:00:16 - 0:00:20, họa cho cái tình huống đó là dữ liệu của
+0:00:18 - 0:00:24, mình nó bị mất cân bằng. Thì ở đây chúng
+0:00:20 - 0:00:27, ta giả sử cái tập dữ liệu red của mình
+0:00:24 - 0:00:29, nó sẽ gấp nhiều lần so với lại tập dữ
+0:00:27 - 0:00:33, liệu rin. Thì ở đây số mẫu thay vì chúng
+0:00:29 - 0:00:36, ta đánh đồng là đều n sample. Thì ở đây
+0:00:33 - 0:00:39, chúng ta sẽ cho à ví dụ như là 10 nhân
+0:00:36 - 0:00:43, cho n sample và y tương tự như vậy cũng
+0:00:39 - 0:00:45, sẽ là 10
+0:00:43 - 0:00:47, nhân cho tổng số sample.
+0:00:45 - 0:00:49, Rồi bây giờ chúng ta sẽ chạy thử cái
+0:00:47 - 0:00:52, code này. Chúng ta thấy là cái đám m
+0:00:49 - 0:00:55, điểm màu đỏ nó dày đặt đó. Rất là dày
+0:00:52 - 0:00:55, đặt.
+0:00:58 - 0:01:03, Rồi
+0:01:00 - 0:01:06, và các cái điểm màu xanh lá thì nó sẽ
+0:01:03 - 0:01:10, thưa hơn. Và chúng ta sẽ thấy là cái
+0:01:06 - 0:01:13, đường của mình á nó càng lúc là nó sẽ
+0:01:10 - 0:01:16, tiến về cái khu vực mà có thể tách ra
+0:01:13 - 0:01:16, làm hai phần.
+0:01:18 - 0:01:25, Rồi bây giờ chúng ta sẽ cùng à chờ đợi
+0:01:21 - 0:01:28, một lúc nữa để xem coi là cái à đường
+0:01:25 - 0:01:31, thẳng của mình nó sẽ dừng ở đâu. Nhưng
+0:01:28 - 0:01:34, mà ở trên hình chúng ta cũng có thể thấy
+0:01:31 - 0:01:37, sơ bộ được ha. Đó có thể thấy sơ bộ
+0:01:34 - 0:01:37, được.
+0:01:42 - 0:01:50, Đó là ờ cái tập điểm màu đỏ nó có một
+0:01:46 - 0:01:54, cái khoảng cách khá là xa à khá là xa so
+0:01:50 - 0:01:54, với lại các cái tập điểm
+0:01:54 - 0:02:00, đó.
+0:01:56 - 0:02:00, Thì ở đây nó sẽ khá là xa.
+0:02:03 - 0:02:08, Còn các cái điểm màu xanh thì chúng ta
+0:02:05 - 0:02:11, thấy là cái khoảng cách nó ngắn hơn.
+0:02:08 - 0:02:13, Thì điều này cho thấy đó là cái lực đẩy
+0:02:11 - 0:02:16, của
+0:02:13 - 0:02:20, số lượng điểm mà gấp 10 lần nó sẽ khiến
+0:02:16 - 0:02:21, cho cái mô hình của mình bị lùi về bị
+0:02:20 - 0:02:24, lùi về phía của những cái tập điểm ít
+0:02:21 - 0:02:27, hơn. Còn những cái điểm ít hơn cái lực
+0:02:24 - 0:02:31, đẩy của mình nó ít nên đâm ra là nó sẽ
+0:02:27 - 0:02:34, bị kéo về phía của nó. Đó thì với cái ví
+0:02:31 - 0:02:38, dụ này chúng ta hoàn toàn có thể à thấy
+0:02:34 - 0:02:38, được cái tình huống đó là
+0:02:39 - 0:02:46, nếu như có một cái điểm nào đó
+0:02:42 - 0:02:49, mà ở gần cái khu vực này ví dụ có một
+0:02:46 - 0:02:51, cái điểm màu hình tròn ở đây thì rõ ràng
+0:02:49 - 0:02:54, chúng ta thấy với cái cách chúng ta sử
+0:02:51 - 0:02:56, dụng cái đường phân lớp này thì à cái
+0:02:54 - 0:02:59, đường màu tròn hình tròn này nó sẽ biến
+0:02:56 - 0:03:02, thành màu đỏ Nhưng thực tế thì chúng ta
+0:02:59 - 0:03:04, thấy là nó xứng đáng là hướng về cái
+0:03:02 - 0:03:06, điểm màu xanh đúng không? Nó xứng đáng
+0:03:04 - 0:03:08, thuộc về cái bề màu xanh tại vì nó gần
+0:03:06 - 0:03:12, các cái điểm màu xanh hơn. Thì đó chính
+0:03:08 - 0:03:15, là cái à tình huống mà khi cái dữ liệu
+0:03:12 - 0:03:19, của mình nó bị bất cân xứng nó sẽ khiến
+0:03:15 - 0:03:22, cho cái mô hình của mình nó sẽ bị bias
+0:03:19 - 0:03:24, vào các cái à quyết định. Cụ thể ở đây
+0:03:22 - 0:03:26, đó là bias vào cái tập màu đỏ. Tại vì
+0:03:24 - 0:03:30, khi nó tách nó bị đẩy lùi ra khỏi các
+0:03:26 - 0:03:34, điểm màu đỏ thì khi đó những cái điểm
+0:03:30 - 0:03:36, như thế này xác suất cao là nó sẽ kéo về
+0:03:34 - 0:03:39, cái điểm màu đỏ luôn để tạo ra cái sự
+0:03:36 - 0:03:43, gọi là bias. Sự bias của các cái điểm
+0:03:39 - 0:03:45, màu đỏ. hay nói một cách nô na đó là nếu
+0:03:43 - 0:03:47, như cái số điểm màu đỏ lớn hơn cái số
+0:03:45 - 0:03:50, điểm màu xanh thì khi chúng ta đưa ra
+0:03:47 - 0:03:53, cái dự đoán á thì một cách nhắm mắt
+0:03:50 - 0:03:55, chúng ta có thể dự đoán luôn cái điểm
+0:03:53 - 0:03:57, của mình đó là điểm màu đỏ tại vì xác
+0:03:55 - 0:03:59, suất của nó cao hơn cái điểm màu xanh
+0:03:57 - 0:04:03, nên khi chúng ta chọn cái điểm này là
+0:03:59 - 0:04:07, điểm màu đỏ thì khả năng chúng ta sẽ
+0:04:03 - 0:04:09, chành được cái độ chính xác là cao.
+0:04:07 - 0:04:12, Tuy nhiên cái cách làm như vậy thì chúng
+0:04:09 - 0:04:15, ta thấy những cái điểm này mà được gán
+0:04:12 - 0:04:17, vào cái nhãn màu đỏ thì trong thực tế
+0:04:15 - 0:04:20, trong thực tế cái đường thẳng
+0:04:17 - 0:04:22, để phân lớp á thì lẽ ra nó phải là đường
+0:04:20 - 0:04:24, như thế này.
+0:04:22 - 0:04:27, đó. Lẽ ra nó phải là đường như thế này
+0:04:24 - 0:04:31, thì chúng ta lại đi đẩy cái điểm của
+0:04:27 - 0:04:33, mình ra ra xa nó cái đường này ra và nó
+0:04:31 - 0:04:37, hướng về cái điểm màu xanh khiến cho cái
+0:04:33 - 0:04:39, việc mà ờ thử nghiệm khi chúng ta test
+0:04:37 - 0:04:42, thì cái độ chính xác của cái đường này
+0:04:39 - 0:04:44, nó sẽ kém.
+0:04:42 - 0:04:48, Còn cái đường nét đứt này nó chia ra đều
+0:04:44 - 0:04:50, hơn đó thì nó sẽ hiệu quả hơn.
+0:04:48 - 0:04:51, Rồi trong cái sơ đồ này chúng ta cũng
+0:04:50 - 0:04:55, thấy tương tự như vậy sau khi đã chạy
+0:04:51 - 0:04:55, hồi tụng hồi xong
+0:04:59 - 0:05:06, thì chúng ta sẽ thấy là cái khoảng không
+0:05:01 - 0:05:08, ở bên đây à nó sẽ rộng rãi hơn. Còn ở
+0:05:06 - 0:05:13, bên đây cái khoảng không của mình à nó
+0:05:08 - 0:05:16, hẹp hơn. thì dẫn đến đó là cái mô hình
+0:05:13 - 0:05:20, của mình nó sẽ thiên hướng là bias để
+0:05:16 - 0:05:21, đẩy ra xa khỏi cái điểm màu màu đỏ để
+0:05:20 - 0:05:24, cho cái độ chính xác khi chúng ta dự
+0:05:21 - 0:05:27, đoán trên cái điểm màu đỏ là cao hơn tại
+0:05:24 - 0:05:39, vì nó chiếm số đông.
+0:05:27 - 0:05:39, [âm nhạc]

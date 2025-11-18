@@ -1,0 +1,134 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:19, Tiếp theo thì chúng ta sẽ cùng à thảo
+0:00:16 - 0:00:21, luận cái câu hỏi à đó là tại sao chúng
+0:00:19 - 0:00:23, ta không kế thừa cái mô hình hồi quy
+0:00:21 - 0:00:25, tuyến tính để giải quyết bài toán phân
+0:00:23 - 0:00:26, loại nhị phân.
+0:00:25 - 0:00:28, Thì trong cái mô hình hồi quy tiến tính
+0:00:26 - 0:00:32, chúng ta biết rằng là cái công thức của
+0:00:28 - 0:00:35, mình đó là y = wx + b.
+0:00:32 - 0:00:41, Thì một cái phương trình đường thẳng thì
+0:00:35 - 0:00:43, nó sẽ đưa về cái dạng đó là wx cộng b là
+0:00:41 - 0:00:45, bằng 0. Thì cái này chúng ta đã thảo
+0:00:43 - 0:00:48, luận trong à những cái phần trước rồi
+0:00:45 - 0:00:50, đó. Thì khi những cái điểm mà thế vào wx
+0:00:48 - 0:00:52, + b = 0 thì nó sẽ nằm trên một cái đường
+0:00:50 - 0:00:54, thẳng.
+0:00:52 - 0:00:56, Và những cái điểm nào mà nằm về cùng một
+0:00:54 - 0:00:59, phía thì khi chúng ta thế vào thì nó sẽ
+0:00:56 - 0:01:02, là cùng âm hoặc là cùng dương. Ví dụ với
+0:00:59 - 0:01:06, cái điểm màu xanh ở đây khi chúng ta thế
+0:01:02 - 0:01:08, vào thì wx + b sẽ là một con số lớn hơn
+0:01:06 - 0:01:10, hoặc bằng 0.
+0:01:08 - 0:01:12, Và tất cả những cái điểm nào mà nằm về
+0:01:10 - 0:01:15, cùng một phía thì cũng đều có tính chất
+0:01:12 - 0:01:17, này. Ở khía cạnh ngược lại thì tất cả
+0:01:15 - 0:01:20, những cái điểm nào
+0:01:17 - 0:01:23, mà nằm về phía đối diện thì đ khi thế
+0:01:20 - 0:01:26, vào wx + b
+0:01:23 - 0:01:28, thì nó sẽ ra con số là bé hơn 0. Và
+0:01:26 - 0:01:31, chính nhờ cái tính chất mà phân chia ra
+0:01:28 - 0:01:34, làm hai phần như thế này thì nó sẽ dẫn
+0:01:31 - 0:01:37, đến chúng ta có thể viết một cái hàm mô
+0:01:34 - 0:01:41, hình để mà dự đoán xem cái nhãn của mình
+0:01:37 - 0:01:43, là nhãn âm à là nhãn 1 hay là nhãn 0
+0:01:41 - 0:01:46, bằng cách đó là chúng ta sẽ viết bằng
+0:01:43 - 0:01:49, công thức f của x
+0:01:46 - 0:01:53, là bằng đây là hàm dự đoán ha đây là hàm
+0:01:49 - 0:02:00, dự đoán sẽ là bằng 1 nếu
+0:01:53 - 0:02:01, wx cộng b lớn hơn hoặc bằng 0 và bằng 0
+0:02:00 - 0:02:06, nếu
+0:02:01 - 0:02:09, wx cộng bé hơn 0
+0:02:06 - 0:02:10, thì như vậy là hàm này chúng ta sẽ thấy
+0:02:09 - 0:02:13, nó có một cái tính chất đó là nó không
+0:02:10 - 0:02:13, liên tục
+0:02:16 - 0:02:22, đồng thời đó là hàm này nó sẽ khó tính
+0:02:20 - 0:02:25, đạo hàm vì cái sự không liên tục này nên
+0:02:22 - 0:02:28, nó sẽ khó tính đạo hàm được. Đó do đó
+0:02:25 - 0:02:31, thì à chúng ta sẽ không có sử dụng cái
+0:02:28 - 0:02:33, hàm này à tại vì cái thuật toán chính mà
+0:02:31 - 0:02:38, dùng để huấn luyện cho các cái mô hình
+0:02:33 - 0:02:40, hồi quyến tính và à hồi quym hồi quy
+0:02:38 - 0:02:43, logistic thì đều dựa trên là radian
+0:02:40 - 0:02:43, design.
+0:02:44 - 0:02:48, Mà trong cái thuật toán gradient des
+0:02:47 - 0:02:53, thì chúng ta thấy nó có cái thao tác đó
+0:02:48 - 0:02:59, là W là bằng W trừ cho alpha nhân cho
+0:02:53 - 0:03:02, đạo hàm của J theo à W.
+0:02:59 - 0:03:04, Mà cái thao tác quan trọng nhất của
+0:03:02 - 0:03:06, chúng ta chính là thao tác tính đạo hàm.
+0:03:04 - 0:03:08, Mà chúng ta tính không được thì làm sao
+0:03:06 - 0:03:11, chúng ta có thể cập nhật được cái thuật
+0:03:08 - 0:03:14, toán design này. À cập nhật được cái
+0:03:11 - 0:03:17, tham số này. Do đó thì chúng ta sẽ phải
+0:03:14 - 0:03:20, có một cái hàm đó là hàm sigmo gắn thằng
+0:03:17 - 0:03:24, trước. Thế thì cái lợi điểm khi chúng ta
+0:03:20 - 0:03:28, gắn vào cái hàm sigo ở đây đó là gì?
+0:03:24 - 0:03:31, Khi gắn vào Sigmo thì chúng ta sẽ đưa
+0:03:28 - 0:03:34, cái miền giá trị của mình thay vì là từ
+0:03:31 - 0:03:37, cộng vô cùng à từ trừ vô cùng cho đến
+0:03:34 - 0:03:39, cộng vô cùng thì qua cái hàm set nó sẽ
+0:03:37 - 0:03:43, không có từ trừ vô cùng đến cộng vô cùng
+0:03:39 - 0:03:47, nữa mà nó sẽ
+0:03:43 - 0:03:51, kéo về cái đoạn là từ 0 cho đến 1.
+0:03:47 - 0:03:51, bạn từ 0 cho đến 1.
+0:03:55 - 0:04:03, Cái dạng thức của cái hàm sigmo của mình
+0:03:57 - 0:04:03, á thì nó sẽ có cái dạng là như thế này.
+0:04:06 - 0:04:13, Đó thì nó sẽ đi từ 0 cho đến cho đến 1.
+0:04:12 - 0:04:17, Thế thì ở đây chúng ta sẽ thấy nó có một
+0:04:13 - 0:04:21, cái ngưỡng là 0.5 5 ở đây
+0:04:17 - 0:04:24, thì nếu như wx + b mà bằng 0 á thì lúc
+0:04:21 - 0:04:27, đó tương ứng sig của wx + b lúc đó sẽ là
+0:04:24 - 0:04:30, bằng 0.5 thì đây sẽ là cái ngưỡng ở giữa
+0:04:27 - 0:04:34, để nó sẽ không biết là thuộc về cái điểm
+0:04:30 - 0:04:37, màu xanh hay là màu cam. Đó thì thay vì
+0:04:34 - 0:04:38, chúng ta dùng cái phân ngưỡng là 0 thì
+0:04:37 - 0:04:42, bây giờ cái phân ngưỡng của chúng ta lúc
+0:04:38 - 0:04:44, này nó chính là 0.5. Nhưng mà cái điểm
+0:04:42 - 0:04:50, lợi khi chúng ta sử dụng hàm sigmo ở đây
+0:04:44 - 0:04:53, đó là hàm sigmo nó sẽ ờ tính đạo hàm rất
+0:04:50 - 0:04:57, là đẹp. Cụ thể đó là đạo hàm của
+0:04:53 - 0:05:00, sig x thì nó sẽ là bằng sigmo nhân cho 1
+0:04:57 - 0:05:00, - sig.
+0:05:02 - 0:05:08, Đó thì công thức này nó cũng tương đối
+0:05:05 - 0:05:09, là đẹp. Và
+0:05:08 - 0:05:13, ngoài ra thì chúng ta sẽ phải kết hợp
+0:05:09 - 0:05:16, cái hàm sigmo này với một cái hàm
+0:05:13 - 0:05:19, so max, một cái hàm log loss để mà tính
+0:05:16 - 0:05:23, cái size số. Còn bản thân cái hàm sigmo
+0:05:19 - 0:05:27, của wx + b nó đã ép cái giá trị từ 0 cho
+0:05:23 - 0:05:30, đến 1 rồi. Nếu nó gần cái giá trị 0 hơn
+0:05:27 - 0:05:33, thì cái nhãn y của mình sẽ là bằng 0.
+0:05:30 - 0:05:36, Nếu nó gần cái số 1 hơn thì nhãn y của
+0:05:33 - 0:05:39, mình nó sẽ là bằng 1. Như vậy là qua cái
+0:05:36 - 0:05:42, hàm sig nó đã đưa cái miền giá trị từ
+0:05:39 - 0:05:44, trừ vô cùng cộng vô cùng về chính cái
+0:05:42 - 0:05:47, miền giá trị mà có hai cái phân cực là
+0:05:44 - 0:05:49, hai cái nhãn chúng ta cần phân loại đó
+0:05:47 - 0:05:52, là 0 và 1. Đó.
+0:05:49 - 0:05:54, Rồi thì đó chính là hai cái tiện lợi khi
+0:05:52 - 0:05:56, chúng ta sử dụng hàm sigmo đó là đưa về
+0:05:54 - 0:06:00, chính cái không gian nhãn của mình luôn
+0:05:56 - 0:06:03, là 0 và 1. Và đạo hàm của nó thì là liên
+0:06:00 - 0:06:06, tục và tính một cách dễ dàng.
+0:06:03 - 0:06:09, Mặt khác khi chúng ta sử dụng cái hàm à
+0:06:06 - 0:06:11, sig này thì khi cái giải giá trị từ 0
+0:06:09 - 0:06:13, cho đến 1 chúng ta cũng có thể tính được
+0:06:11 - 0:06:18, cái hàm loss. Tính được cái hàm loss một
+0:06:13 - 0:06:22, cách dễ dàng giữa i và p. Đó, trong
+0:06:18 - 0:06:25, trường hợp này thì p
+0:06:22 - 0:06:28, sigma của wx + b ha. Thì lúc này nó chỉ
+0:06:25 - 0:06:32, đơn giản nó là bằng trừ của p à trừ của
+0:06:28 - 0:06:36, y log p
+0:06:32 - 0:06:40, và trừ của 1 - y
+0:06:36 - 0:06:42, log của 1 - p.
+0:06:40 - 0:06:45, Thì cái công thức này cũng hoàn toàn có
+0:06:42 - 0:06:48, thể tính đạo hàm được một cách dễ dàng
+0:06:45 - 0:06:50, và nó là một cái hàm liên tục thì giúp
+0:06:48 - 0:06:53, cho cái việc huấn luyện cái thuật toán
+0:06:50 - 0:06:56, rent của mình nó sẽ dễ dàng hơn. Thì đó
+0:06:53 - 0:06:58, chính là lý do tại sao chúng ta sử dụng
+0:06:56 - 0:07:00, mô hình hồi quyến tính. không sử dụng mô
+0:06:58 - 0:07:04, đồ tiến tính mà chúng ta phải có thêm
+0:07:00 - 0:07:04, cái thành phần đó là sigmo ở đây.
+0:07:06 - 0:07:18, [âm nhạc]

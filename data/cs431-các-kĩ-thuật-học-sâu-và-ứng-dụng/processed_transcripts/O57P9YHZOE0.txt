@@ -1,0 +1,117 @@
+0:00:00 - 0:00:14, Biểu diễn từ bằng vector là vai trò cực kỳ quan trọng trong các mô hình mạng thần kinh.
+0:00:14 - 0:00:20, Tất cả các mô hình mạng thần kinh hiện nay đều phải xử lý tính toán dưới dạng các con số.
+0:00:20 - 0:00:28, và các con số này thì nó sẽ có thể tính toán như là vector nhân vector, vector nhân ma trận, hoặc là ma trận nhân ma trận
+0:00:28 - 0:00:34, và thậm chí là chúng ta có thể tính toán trên cái khối lượng lớn ví dụ như là tensor nhân với lại tensor
+0:00:34 - 0:00:43, như vậy thì cái nhu cầu là làm sao biểu diễn được một cái từ dưới dạng các cái vector đó là một trong những cái nhu cầu rất là thiết yếu
+0:00:43 - 0:00:50, Và các kỹ thuật hiện nay thường được sử dụng là, đầu tiên, chúng ta có thể biểu diễn dưới dạng One-Hot Vector.
+0:00:50 - 0:00:55, Tức là một cái từ của mình trong tập từ điển nó xuất hiện ở vị trí nào,
+0:00:55 - 0:01:03, thì tương ứng là trong vector của mình, vị trí đó sẽ bật lên là 1 và những phần tử còn lại sẽ bật là 0.
+0:01:03 - 0:01:06, Chút nữa chúng ta sẽ nói rõ hơn cái ví dụ này.
+0:01:06 - 0:01:09, Thứ hai, đó là chúng ta có thể sử dụng mô hình Bag-of-Words.
+0:01:09 - 0:01:16, tức là cái vector của mình nó có thể biểu diễn cho 1 câu hoặc là 1 đoạn văn
+0:01:16 - 0:01:22, và thứ 3, đó chính là chúng ta có thể biểu diễn từ bằng ngữ cảnh
+0:01:22 - 0:01:28, tức là 1 từ nếu như đứng một mình nó thì nó sẽ không có được ý nghĩa trọn vẹn
+0:01:28 - 0:01:33, mà chúng ta phải đối chiếu nó trong cái ngữ cảnh xung quanh
+0:01:33 - 0:01:44, Ví dụ như cái từ ông già hồi nãy, trong cái từ tiếng Việt, cái từ ông già này nếu mà mình để một nghĩa thông thường thì mình sẽ hiểu đó là một cái người lớn tuổi
+0:01:44 - 0:01:56, Nhưng mà nếu như mình đang nói về hai người bạn thân với nhau, đang trao đổi về chuyện gia đình thì có thể là chúng ta hiểu ông già này hàm ý là cái người cha của mình
+0:01:56 - 0:02:06, Như vậy thì muốn biết ý nghĩa của từ ông già này như thế nào thì chúng ta phải xem bối cảnh xung quanh để biết được ý nghĩa thực sự của từ này
+0:02:06 - 0:02:12, Rồi, chúng ta sẽ đến với cách biểu diễn đầu tiên đó là One-Hot Vector
+0:02:12 - 0:02:18, Trước đây chúng ta xem một từ được xem là một phần tử trong một từ điển, đúng không?
+0:02:18 - 0:02:23, Vì vậy, bây giờ, chúng ta có cách biểu diễn One-Hot Vector như sau?
+0:02:23 - 0:02:26, Ý nghĩa của One-Hot là cái từ One-Hot
+0:02:29 - 0:02:32, Chính là có một con số 1 sẽ...
+0:02:32 - 0:02:35, Dịch sang tiếng Việt nó gọi là Vector Đơn Trội
+0:02:35 - 0:02:40, Tiếng Việt của mình là Vector Đơn Trội
+0:02:42 - 0:02:44, Tức là chỉ có một thằng trội lên thôi
+0:02:44 - 0:02:48, và còn lại là số 0
+0:02:49 - 0:02:57, và ý nghĩa của số 1 này đó chính là vị trí của từ trong từ điển của mình
+0:02:57 - 0:02:58, là vị trí từ trong từ điển
+0:02:58 - 0:03:02, ví dụ như ở đây, chúng ta sẽ có hai từ là motel và hotel
+0:03:03 - 0:03:07, thì vị trí từ motel là nó xuất hiện ở đây trong tập từ điển
+0:03:07 - 0:03:10, còn vị trí từ hotel thì nó xuất hiện ở đây
+0:03:10 - 0:03:11, nên ở đây nó sẽ bật lên 1
+0:03:11 - 0:03:14, tất cả những vị trí còn lại sẽ để là số 0
+0:03:14 - 0:03:18, thì đây là một cách biểu diễn rất là đơn giản và dễ hiểu.
+0:03:18 - 0:03:23, Tuy nhiên, với cách biểu diễn này thì nó vẫn chứa trong đó những cái vấn đề.
+0:03:23 - 0:03:28, Vấn đề đầu tiên đó là khi chúng ta tìm kiếm với từ khóa trên mạng internet, ví dụ vậy,
+0:03:28 - 0:03:35, và chúng ta tìm kiếm với từ là Saigon Hotel.
+0:03:35 - 0:03:44, Thì như vậy thì cái từ khóa Saigon Hotel lẽ ra nó sẽ phải trả về các văn bản và các trang web
+0:03:44 - 0:03:49, mà có chứa cả hai từ khóa là Saigon Hotel và Saigon Motel
+0:03:49 - 0:03:54, Tại vì xét về mặt ý nghĩa là chúng ta đang tìm một nơi để mà mình dừng chân, mình nghỉ ngơi
+0:03:54 - 0:03:58, thì Saigon Hotel và Motel thì nó cũng sẽ giống nhau về mặt ý nghĩa đó
+0:03:58 - 0:04:01, thì lẽ ra cái kết quả nó sẽ phải trả về
+0:04:01 - 0:04:08, Nhưng nếu như chúng ta sử dụng hai cái từ đó dưới dạng là cái vector One-Hot
+0:04:09 - 0:04:14, Nếu như chúng ta biểu diễn hai cái từ Hotel và Motel dưới dạng là cái One-Hot vector
+0:04:14 - 0:04:20, thì cả hai cái vector này sẽ có tính chất trực giao với nhau nên sự tương đồng là bằng không
+0:04:21 - 0:04:24, Và hai cái từ khóa mà có độ tương đồng là không
+0:04:24 - 0:04:30, tức là khi chúng ta tìm kiếm thì rõ ràng là cái kết quả trả về những cái từ Motel nó sẽ không được trả về
+0:04:31 - 0:04:36, Nếu như chúng ta search với từ khóa là hotel
+0:04:36 - 0:04:42, Với những điểm yếu của cách biểu diễn One-Hot Embedding
+0:04:42 - 0:04:46, Các từ được xem như độc lập nhau
+0:04:46 - 0:04:49, Hotel và Motel nó xem như độc lập nhau
+0:04:49 - 0:04:53, Nó không xem xét đến ý nghĩa của từ đó là gì
+0:04:53 - 0:04:56, Chúng ta sẽ nảy sinh ra cách biểu diễn thứ hai
+0:04:56 - 0:04:59, Đó là biểu diễn từ bằng ngữ cảnh
+0:04:59 - 0:05:05, Và chúng ta có một câu nói rất là nổi tiếng của ông Firth vào năm 1957
+0:05:05 - 0:05:11, đó là bạn sẽ biết được một cái từ bằng cách nhìn vào những từ xung quanh nó
+0:05:11 - 0:05:13, Bằng những cái từ xung quanh nó
+0:05:13 - 0:05:15, Lấy ví dụ ha
+0:05:15 - 0:05:21, Chúng ta sẽ lấy ví dụ là có một câu tiếng Anh là I love ... so much
+0:05:21 - 0:05:23, I love ... so much
+0:05:23 - 0:05:27, Thì cái từ mà chúng ta có thể điền vô ở đây được á
+0:05:27 - 0:05:31, thì nó sẽ có cùng cái ngữ cảnh với nhau.
+0:05:31 - 0:05:36, Ví dụ, I love you so much, I love him so much,
+0:05:36 - 0:05:37, và I love her so much.
+0:05:37 - 0:05:43, Các cái từ you, him, her đều có thể thay thế để điền vô vị trí ở giữa này.
+0:05:43 - 0:05:46, Do đó chúng ta có thể nói rằng từ you, him, her
+0:05:46 - 0:05:50, nó sẽ có cùng mối quan hệ về mặt ngữ cảnh.
+0:05:50 - 0:05:53, Tất cả từ này có thể thay thế được cho từ kia.
+0:05:53 - 0:06:02, Và như vậy thì một cái vector khi biểu diễn thì nó sẽ gọi là Word Vector
+0:06:02 - 0:06:06, Vector biểu diễn trong một từ thì nó gọi là Word Vector
+0:06:06 - 0:06:09, Và đó là cái vector biểu diễn trong từ
+0:06:09 - 0:06:14, Trong đó các cái từ có cùng ngữ cảnh thì được biểu diễn tương đồng nhau
+0:06:14 - 0:06:19, nghĩa là sao những cái từ nào mà có thể thay thế cho nhau trong cùng một ngữ cảnh
+0:06:19 - 0:06:23, thì nó có khả năng là phải có cái tính tương đồng
+0:06:23 - 0:06:27, và để đo được cái sự tương đồng của hai vector
+0:06:27 - 0:06:30, thì chúng ta sẽ sử dụng cái công thức đó là tích vô hướng
+0:06:30 - 0:06:32, hay còn tên tiếng Anh đó là Dot Product
+0:06:32 - 0:06:34, và chúng ta sẽ có một cái ví dụ như sau
+0:06:34 - 0:06:37, hai vector hotel và motel
+0:06:37 - 0:06:41, thì hai vector này chúng ta sẽ thấy nó có cái sự tương đồng
+0:06:41 - 0:06:43, tại sao? Tại vì ở cái phần tử đầu tiên
+0:06:43 - 0:06:47, chúng ta thấy đó là một cái giá trị dương là khoảng 0.28
+0:06:47 - 0:06:50, thì ở đây cũng là một cái giá trị dương 0.4
+0:06:50 - 0:06:53, ở đây là một cái giá trị dương là 0.79
+0:06:53 - 0:06:56, thì ở đây là một cái giá trị dương 0.58
+0:06:56 - 0:06:57, như vậy là có sự tương đồng
+0:06:57 - 0:07:01, và khi đến cái giá trị thứ 3 nó rớt xuống còn là giá trị âm
+0:07:01 - 0:07:03, đúng không? thì ở đây nó cũng ra giá trị âm
+0:07:03 - 0:07:08, rồi riêng cái phần tử thứ 4 thì nó sẽ khác nhau
+0:07:08 - 0:07:10, đây là dương còn đây là âm
+0:07:10 - 0:07:11, thì điều này cũng dễ hiểu thôi
+0:07:11 - 0:07:15, Tại vì bản chất là hai từ hotel và motel nó cũng mặc dù nó giống nhau,
+0:07:15 - 0:07:20, nó có một số chỗ giống nhau về mặt ý nghĩa, nhưng nó cũng sẽ có những cái điểm khác biệt.
+0:07:21 - 0:07:24, Chứ không thể nào mà hai vector này nó tương đồng nhau hoàn toàn.
+0:07:25 - 0:07:29, Thành phần thứ 5 cũng là các con số dương, 0.1,
+0:07:30 - 0:07:31, và đây là 0.2,
+0:07:31 - 0:07:32, và đây là con số 0,
+0:07:32 - 0:07:33, thì đây cũng là con số 0.
+0:07:34 - 0:07:36, Vì vậy hai vector này có tính tương đồng, tương đối là cao.
+0:07:37 - 0:07:40, Xét về cách biểu diễn theo ngữ cảnh này.
+0:07:40 - 0:07:50, Và Word Vector còn một tên gọi khác trong các thuật ngữ tiếng Anh, đó chính là Word Embedding hoặc Word Representation.
+0:07:50 - 0:07:55, Nếu như sau này chúng ta xem các tài liệu, thì chúng ta thấy là khi nói về Word Vector,
+0:07:55 - 0:07:59, hoặc là khi nói về Word Embedding, hoặc là khi nói về Word Representation,
+0:07:59 - 0:08:07, thì tất cả đều có chung một ý nghĩa, đó chính là làm sao có thể biểu diễn một từ dưới dạng một vector.
+0:08:07 - 0:08:17, Và để trực quan hóa không gian embedding, chúng ta đang sử dụng cái khái niệm ở đây, sử dụng cái cách dùng từ ở đây
+0:08:17 - 0:08:23, để trực quan hóa một cái từ trong một cái không gian embedding, thì chúng ta sẽ có cái ví dụ như sau
+0:08:23 - 0:08:33, Ví dụ như các từ pink, white, blue, thì đây là những cái từ mà đều có cái vai trò ngữ cảnh giống nhau
+0:08:33 - 0:08:43, Ví dụ như là mình thích màu vàng, I like pink, và mình thích màu vàng, I like yellow, I like pink, I like white, I like blue
+0:08:43 - 0:08:49, thì tất cả những từ pink, white, blue đều có thể thay thế được cho nhau trong cái ngữ cảnh đó
+0:08:49 - 0:08:54, do đó thì từ pink, white và blue sẽ nằm gần nhau trong cái không gian embedding
+0:08:54 - 0:09:02, Tương tự như vậy các động từ is, am, are và was, were thì nằm gần nhau
+0:09:02 - 0:09:07, Rồi từ hotel và motel sẽ nằm gần nhau
+0:09:07 - 0:09:13, Và những cái từ nào mà nó khác biệt nhau về mặt ngữ cảnh
+0:09:13 - 0:09:17, thì chúng ta sẽ thấy là cái vị trí của nó trong không gian cũng cách xa nhau
+0:09:17 - 0:09:25, Ví dụ như pink, white, blue thì nó sẽ rất là xa so với lại các cái động từ to be ở đây
+0:09:25 - 0:09:30, Vì chúng nó có cái mối quan hệ về mặt ngữ cảnh rất là khác nhau
+0:09:30 - 0:09:32, Cảm ơn.

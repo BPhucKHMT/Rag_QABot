@@ -1,0 +1,283 @@
+0:00:00 - 0:00:13, Chủ đề, học sâu, machine learning, logistic regression, ImageNet.
+0:00:30 - 0:00:38, Qua lấp layer cuối cùng, chúng ta đã tính ra được y ngã là phân bố sát xuất thuộc về lấp nào đó
+0:00:39 - 0:00:41, Tuy nhiên đó là giá trị chúng ta dự đoán
+0:00:45 - 0:00:50, Và chúng ta mong muốn giá trị này phải sắp xỉ với giá trị y, tức là giá trị thực tế
+0:00:50 - 0:01:02, để giả trị dự đoán và giá trị thực tế giống nhau, chúng ta phải có hàm mất mát, hàm loss
+0:01:02 - 0:01:06, đó là lý do có nội dung này
+0:01:06 - 0:01:13, mục đích đó là đo lường sai số giữa giá trị dự đoán và giá trị thực tế
+0:01:13 - 0:01:18, quy tắc đó là loss càng cao thì dự đoán sẽ càng tệ
+0:01:18 - 0:01:21, tại vì cái size số giữa y ngã và y này càng lớn
+0:01:21 - 0:01:24, tức là y ngã nó không khớp với cái y
+0:01:24 - 0:01:26, tức là chúng ta đang đoán rất là tệ
+0:01:26 - 0:01:29, loss càng thấp thì cái dự đoán sẽ là càng tốt
+0:01:29 - 0:01:32, loss càng thấp có nghĩa là y ngã nó sắp xỉ với cái y
+0:01:32 - 0:01:36, tức là chúng ta đang đoán đúng, đoán đúng tức là cái kết quả dự đoán rất là tốt
+0:01:36 - 0:01:39, và mục tiêu của cái việc huấn luyện này đó là
+0:01:39 - 0:01:43, tìm ra được một cái bộ trọng số của một cái mô hình neural network này
+0:01:43 - 0:01:46, trong cái mô hình neural network này nó sẽ có cái bộ trọng số
+0:01:46 - 0:01:52, tức là cái giá trị trọng số của các cạnh nối của mạng Neural
+0:01:56 - 0:02:01, trọng số chính là cái giá trị của các cạnh nối này
+0:02:05 - 0:02:08, mục tiêu đó là tìm ra bộ trọng số và độ lệch
+0:02:08 - 0:02:09, để bias
+0:02:10 - 0:02:13, để cho chúng ta tối hiệu hóa hàm loss
+0:02:13 - 0:02:16, tối hiệu hóa giá trị mức mát này
+0:02:16 - 0:02:24, Ví dụ về hàm loss mức mát, đối với bài toán hồi quy thì thường chúng ta sẽ sử dụng mean square error
+0:02:24 - 0:02:27, tức là các độ đo thi hướng về khoảng cách
+0:02:31 - 0:02:37, Còn đối với mô hình phân loại thì chúng ta thường sẽ sử dụng cross entropy
+0:02:37 - 0:02:40, tức là các độ đo có ếu tố hàm loss trong đó
+0:02:40 - 0:02:45, Tại vì nó sẽ giúp chúng ta khuất đại được giá trị sai số
+0:02:45 - 0:02:51, Mà mô hình của mình khuất đại được sai số thì nó sẽ giúp cho việc huấn luyện nó sẽ nhanh hơn
+0:02:51 - 0:02:56, Cái này nói cho vui, đó là thương cho rơi cho vọt
+0:02:56 - 0:03:06, Tức là khi mà hà mất mát này càng lớn thì mô hình của mình sẽ thập mau chóng để giảm bớt tối đa sai số này
+0:03:10 - 0:03:20, và để mà từ cái ham loss chúng ta tìm cái tham số để cho cái loss của mình là nhỏ nhất
+0:03:20 - 0:03:25, thì nó có một cái thuộc toán là gọi là thuộc toán Lan truyền ngược hay còn gọi là Back propagation
+0:03:25 - 0:03:32, vấn đề đó là khi chúng ta đã có loss rồi, tức là cái size số rồi thì làm sao để cập nhật cái trọng số nữa
+0:03:32 - 0:03:39, tiếp theo để cho cái việc cập nhật trọng số này nó sẽ có xu hướng khiến cho cái loss của mình là đi xuống
+0:03:39 - 0:03:42, Tại vì hồi nãy chúng ta có một nguyên tắc đó là loss
+0:03:42 - 0:03:44, mà càng nhỏ là càng tốt
+0:03:44 - 0:03:47, Thực toán của chúng ta là lang truyền ngược
+0:03:47 - 0:03:50, Nhưng mà trước khi để thực hiện được thực toán lang truyền ngược
+0:03:50 - 0:03:54, thì chúng ta sẽ phải thực hiện thực toán feedforward process
+0:03:54 - 0:03:56, là chúng ta sẽ lang truyền theo chiều thuận
+0:03:56 - 0:04:02, chúng ta lang truyền theo chiều thuận
+0:04:02 - 0:04:11, sau đó đến được giá trị dự đoán, đây là y ngã
+0:04:11 - 0:04:18, y ngã này chúng ta sẽ đi so sánh với y thực tế để tính ra giá trị là Loss
+0:04:18 - 0:04:22, khi đã có Loss này rồi thì chúng ta sẽ tiến hành Backward
+0:04:22 - 0:04:28, Delta này chính là size số, chúng ta sẽ đi ngược lại
+0:04:28 - 0:04:31, Cứ mỗi lần chúng ta đi ngược lại thì chúng ta sẽ cập nhập cái trọng số này
+0:04:31 - 0:04:34, Đi ngược lại chúng ta sẽ cập nhập cái trọng số
+0:04:34 - 0:04:37, Với hy vọng khi chúng ta thay đổi cái trọng số này
+0:04:37 - 0:04:41, thì cái loss này sẽ có cái xu hướng là giảm số
+0:04:41 - 0:04:47, Mục tiêu đó là tính mức độ đóng góp của mỗi trọng số trong cái hàm loss
+0:04:47 - 0:04:53, Thì công cụ để tính toán mức độ đóng góp của mỗi trọng số cho cái loss này
+0:04:53 - 0:04:55, là công cụ tính đạo hàm
+0:04:55 - 0:04:58, đạo hàm của loss theo từng trọng số
+0:04:58 - 0:05:04, khi nói đến radian, tức là đạo hàm cho một bector
+0:05:04 - 0:05:07, tức là cho một tổ hợp tất cả các trọng số
+0:05:07 - 0:05:12, công cụ đạo hàm này sẽ cho biết 2 điều
+0:05:12 - 0:05:14, điều đầu tiên là cho biết hướng
+0:05:14 - 0:05:16, là trọng số này
+0:05:16 - 0:05:19, xu hướng, trọng số này
+0:05:19 - 0:05:23, chúng ta sẽ tăng lên hay giảm xuống
+0:05:23 - 0:05:28, Thì hướng của đạo hàm sẽ cho chúng ta biết chúng ta nên cập nhật theo chiều nào
+0:05:28 - 0:05:30, Tăng lên hay giảm xuống
+0:05:30 - 0:05:33, Trọng số này là tăng lên hay giảm xuống
+0:05:33 - 0:05:36, Và thứ 2 đó là cái độ lớn
+0:05:36 - 0:05:39, Khi chúng ta đã biết là tăng lên hay giảm xuống rồi
+0:05:39 - 0:05:42, Thì chúng ta sẽ thay đổi là nhiều hay là ít
+0:05:42 - 0:05:44, Tăng nhiều hay là tăng ít
+0:05:44 - 0:05:46, Giảm nhiều hay là giảm ít
+0:05:46 - 0:05:50, Và cái việc cập nhật trọng số thì chúng ta sẽ có một cái thuật toán
+0:05:50 - 0:05:52, Nó gọi là thuật toán Radian Descent
+0:05:52 - 0:05:58, Thục toán Radian Descent là một thuật toán để cập nhật trọng số nhằm giảm giá trị loss này
+0:05:58 - 0:06:01, Và idea cũng rất là đơn giản
+0:06:01 - 0:06:05, Ý tưởng đó là với một cái hàm mất mát
+0:06:05 - 0:06:08, Nếu chúng ta xem cái hàm mất mát của mình
+0:06:08 - 0:06:13, Nó là một cái thung lũng giống như trong hình này hoặc trong hình này
+0:06:13 - 0:06:18, Thì hai cái hình này là hai cái hình mà ở hình bên trái là cái hàm mất mát
+0:06:18 - 0:06:20, mà ở dạng liên tục
+0:06:20 - 0:06:26, chúng ta thấy là vẽ bằng các đường nét liên tục
+0:06:26 - 0:06:28, màu từ đỏ xuống xanh
+0:06:28 - 0:06:30, đỏ là những cái màu nóng là ở trên cao
+0:06:30 - 0:06:33, còn màu xanh là ở dưới đáy là ở dưới vùng thấp
+0:06:33 - 0:06:36, thì chúng ta tưởng tượng cái hàm Loss này là cái thung lũng
+0:06:36 - 0:06:40, thì mục tiêu đó là chúng ta sẽ bắt đầu bằng một cái trọng số
+0:06:40 - 0:06:42, cái không gian trọng số ở đây
+0:06:42 - 0:06:44, không gian trọng số
+0:06:44 - 0:06:54, Với một trọng số, chúng ta có cái Loss tại vị trí này
+0:06:54 - 0:07:02, Giả sử như vị trí này là chúng ta đang đặt quả bóng trong cái tham số của mô hình
+0:07:02 - 0:07:06, thì chúng ta nhìm vụ là phải cho cái quả bóng này lăng xuống
+0:07:06 - 0:07:10, để đến được cái vị trí màu xanh dương đậm nhất
+0:07:10 - 0:07:13, chính là cái khu vực mà cái hàm Loss của mình có cái giá trị nhỏ nhất
+0:07:13 - 0:07:17, tại vì chúng ta nhắc lại cái nguyên tắc của mình là Loss càng nhỏ thì càng tốt
+0:07:17 - 0:07:22, do đó thì chúng ta phải cho cái quả bóng này đến cái nơi chuẩn nhất của cái thùng lũn
+0:07:22 - 0:07:26, và cái tại cái vị trí này thì đây chính là cái bộ tham số
+0:07:26 - 0:07:29, đây chính là cái bộ tham số tối ưu nhất của mình
+0:07:29 - 0:07:35, nếu bạn nhìn bên đây thì chúng ta nhìn nó ở một góc độ đó là đường bình độ
+0:07:35 - 0:07:40, mỗi đường nét như thế này, đó là có độ cao giống nhau
+0:07:40 - 0:07:45, và càng xuống dưới thì đường bình độ này sẽ có xu hướng là độ cao càng thấp
+0:07:45 - 0:07:53, và ban đầu quả bóng của mình ở đây, sau đó nó sẽ nhảy qua đây, nhảy qua đây, nhảy qua đây
+0:07:53 - 0:07:56, cho đến một hồi nó sẽ chạm đến cái điểm cuối cùng
+0:07:56 - 0:08:00, Đây là một cách biểu diễn khác, nó không dựa trên độ sau
+0:08:00 - 0:08:03, Nó lại bỏ đi với tổ độ sau
+0:08:03 - 0:08:06, Giống như chúng ta đang nhìn từ phía trên nhìn xuống
+0:08:06 - 0:08:09, Cái hình này chính là cái hình mà nhìn từ phía trên nhìn xuống
+0:08:09 - 0:08:12, Không thấy được cái độ sau
+0:08:12 - 0:08:16, Thì cái đường đi của tham số của mình sẽ như thế này, đi zigzag như thế này
+0:08:16 - 0:08:23, Với cái mục tiêu này, chúng ta sẽ có công thức cập nhật rất là đơn giản
+0:08:23 - 0:08:27, Thục toán Radiant Ascent là một thuật toán đơn giản và dễ cài đạt
+0:08:28 - 0:08:30, Đó là cái bộ trọng số mới
+0:08:31 - 0:08:34, thì sẽ bằng cái bộ trọng số hiện tại hay là trọng số cũ
+0:08:34 - 0:08:37, trừ đi Learning Rate, tức là cái hệ số học
+0:08:37 - 0:08:39, nhân với lại cái đạo hàm
+0:08:39 - 0:08:41, Đạo hàm của cái trọng số
+0:08:41 - 0:08:42, Đạo hàm của hàm Loss
+0:08:45 - 0:08:48, Đạo hàm của hàm Loss theo cái trọng số
+0:08:49 - 0:08:51, theo cái trọng số W của mình
+0:08:51 - 0:08:59, Và sơ độ ở đây là mình họa một cách trực quan, là quá trình huấn luyện, một cái training loop
+0:08:59 - 0:09:04, Cái việc học của một cái mạng neural network nó sẽ được thực hiện lần lượt theo các cái bước như sau
+0:09:04 - 0:09:10, Đầu tiên chúng ta sẽ có một cái bộ dữ liệu, nó là một cái data set, input data set
+0:09:10 - 0:09:19, Chúng ta có hình ảnh như là Airplane, Automobile, Bird, Cat, Deer, Dog
+0:09:19 - 0:09:23, và với từng ảnh này, chúng ta truyền vào mạng Neural Network
+0:09:23 - 0:09:28, qua nhiều các lớp ẩn, ra đến lớp Output, nó gọi là Feed Forward
+0:09:28 - 0:09:30, toàn bộ quá trình này là Feed Forward
+0:09:30 - 0:09:35, thì nó sẽ ra được giá trị dự đoán
+0:09:35 - 0:09:38, đây là giá trị dự đoán
+0:09:38 - 0:09:51, Với ảnh này, chúng ta đoán là trắc, tức là những chỗ màu đỏ là chúng ta đang đáng sai
+0:09:51 - 0:09:56, Còn những cái màu xanh chính là cái chúng ta đáng đúng
+0:09:56 - 0:10:02, Đây là cái target, tức là cái thực tế, hay còn gọi là cái route
+0:10:02 - 0:10:06, thì khi chúng ta so lẽ ra thằng này phải là airplane nhưng cuối cùng nó lại để là truck
+0:10:06 - 0:10:09, lẽ ra là automobo thì nó lại để là deer
+0:10:09 - 0:10:11, lẽ ra là deer thì nó lại để là automobo
+0:10:11 - 0:10:12, tức là nó đang bị sai
+0:10:12 - 0:10:16, thì từ cái giá trị dự đoán và giá trị thực tế này
+0:10:16 - 0:10:18, chúng ta sẽ đi tính cái loss
+0:10:19 - 0:10:20, có cái loss này rồi
+0:10:20 - 0:10:23, thì chúng ta sẽ đi điều chỉnh lại
+0:10:23 - 0:10:26, điều chỉnh lại Adjust Way and Bias
+0:10:26 - 0:10:28, điều chỉnh lại cái bộ trọng số
+0:10:28 - 0:10:30, điều chỉnh lại các cái bộ trọng số này
+0:10:32 - 0:10:38, Điều chỉnh cái bội trong số này vâng vâng
+0:10:38 - 0:10:43, Để làm sao đó, hi vọng là cái Loss này có xu hướng là giảm xuống
+0:10:43 - 0:10:47, Và cứ cái việc này nó sẽ được thực hiện đi, thực hiện lại nhiều lần
+0:10:47 - 0:10:51, Repeat until là cái error này nó thấp dưới một cái ngưỡng nào đó
+0:10:51 - 0:10:55, Hoặc là khi chúng ta lập nhiều hơn cái số lần mà chúng ta kỳ vọng
+0:10:55 - 0:10:58, Thì cái việc mà chúng ta từ cái Loss Function này nè
+0:10:58 - 0:11:03, Chúng ta đi ngược trở về để cập nhật lại cái bộ trọng số này
+0:11:03 - 0:11:07, thì nó gọi là Back Propagation, tức là thuật toán lan truyền ngược
+0:11:07 - 0:11:10, và cái Back Propagation này thì nó vẫn phải...
+0:11:10 - 0:11:13, khi chúng ta tính toán xong các giá trị đạo hàm rồi
+0:11:13 - 0:11:18, thì chúng ta sẽ đi update nó bằng thuật toán Radiant Descent
+0:11:19 - 0:11:22, Back Propagation để đi tính đạo hàm trên từng cái trọng số này
+0:11:23 - 0:11:25, tính đạo hàm trên từng cái trọng số này
+0:11:25 - 0:11:29, sau đó chúng ta sẽ cập nhật theo công thức của Radiant Descent đã được hậu ở đây
+0:11:29 - 0:11:37, thì Radiant này sẽ được tính bằng Backpropagation
+0:11:37 - 0:11:43, sau khi tính xong đạo hàm này xong thì chúng ta sẽ đi cập nhật mới theo thuốc toán Radiant Descent ở đây
+0:11:43 - 0:11:50, và trong quá trình huấn luyện thì nó sẽ có một khái niệm gọi là Hyperprimator
+0:11:50 - 0:11:52, tức là siêu tham số
+0:11:52 - 0:11:54, ở trong mô hình mạng Neural Network
+0:11:54 - 0:11:56, thì chúng ta có các
+0:11:56 - 0:11:58, trọng số
+0:11:58 - 0:12:00, là tham số
+0:12:04 - 0:12:07, chính là những trọng số của các cạnh nối này
+0:12:08 - 0:12:11, là trọng số của các cạnh nối này
+0:12:11 - 0:12:15, và chúng ta sẽ có khái niệm là hyperparameter
+0:12:15 - 0:12:18, ở đây là parameter, còn bên đây là hyperparameter
+0:12:18 - 0:12:21, thì các siêu tham số trong 1 quá trình huấn luyện sẽ bao gồm
+0:12:21 - 0:12:23, Đầu tiên đó là cái Epoch
+0:12:23 - 0:12:27, tức là 1 lượt toàn bộ dữ liệu đi qua cái mạng
+0:12:27 - 0:12:30, giả sử như cái bộ dữ liệu này của mình có 1000 mẫu
+0:12:32 - 0:12:35, thì mỗi 1 cái lượt mà huấn luyện hết 1000 mẫu này
+0:12:36 - 0:12:37, đó là 1 Epoch
+0:12:38 - 0:12:41, Thì thuật toán của chúng ta sẽ huấn luyện qua bao nhiêu Epoch
+0:12:41 - 0:12:42, tức là chúng ta sẽ
+0:12:42 - 0:12:45, đọc đi đọc lại 1000 mẫu này bao nhiêu lần
+0:12:45 - 0:12:47, ví dụ nếu Epoch của chúng ta là bằng 3
+0:12:48 - 0:12:54, 3 epoch, tức là chúng ta sẽ duyệt qua 1 ngàn mẫu này 3 lần
+0:12:54 - 0:12:56, huấn luyện đi, huấn luyện lại nhiều lần
+0:12:56 - 0:13:01, thì ví dụ như đến epoch số 80, epoch số 3
+0:13:01 - 0:13:03, với epoch số 3, giả sử ở đây
+0:13:03 - 0:13:08, chúng ta thấy là cái loss của mình mới giảm, chưa có đủ nhiều
+0:13:08 - 0:13:12, chúng ta phải cho huấn luyện đi, huấn luyện lại 1 ngàn mẫu này
+0:13:12 - 0:13:16, 80 lần thì chúng ta thấy là nó sẽ có xu hướng là hết cập nhật được nhiều rồi
+0:13:16 - 0:13:18, thì đến đây chúng ta có thể dừng
+0:13:19 - 0:13:22, thì siêu thăm số đầu tiên đó là ipop
+0:13:22 - 0:13:23, là số lượt mẫu
+0:13:24 - 0:13:27, chúng ta hướng luyện trên toàn bộ dữ liệu
+0:13:27 - 0:13:29, kêu tổ thứ 2 đó là pass size
+0:13:29 - 0:13:30, thì trong trường hợp đó là
+0:13:30 - 0:13:31, cái
+0:13:31 - 0:13:34, dữ liệu của mình nó quá lớn, nó nặng quá
+0:13:34 - 0:13:36, chúng ta không thể nào mà lót hết một lượt 1000 mẫu
+0:13:36 - 0:13:39, thì chúng ta chỉ có thể là lót một subset, một tập con
+0:13:41 - 0:13:43, một tập con của 1000 mẫu này thôi, ví dụ như là
+0:13:43 - 0:13:44, 128 mẫu
+0:13:45 - 0:13:45, một lần
+0:13:46 - 0:13:55, 1 subset này gọi là batch size là số lượng mẫu dữ liệu trong 1 lần cập nhật
+0:13:55 - 0:14:00, chúng ta sẽ lấy ra 128 mẫu này để cập nhật trong số thôi chứ không lấy hết
+0:14:00 - 0:14:02, thì nó gọi là batch size
+0:14:02 - 0:14:07, trong đường hợp dữ liệu lớn phức tạp và mô hình phức tạp
+0:14:07 - 0:14:10, siêu tham số tiếp theo là learning rate
+0:14:10 - 0:14:12, learning rate này rất quan trọng
+0:14:12 - 0:14:16, Nó quyết định đến việc thành bại trong việc huấn luyện
+0:14:16 - 0:14:18, Ở trong hình ví dụ ở đây
+0:14:18 - 0:14:26, Nếu learning rate là cái gì?
+0:14:26 - 0:14:29, Learning rate chính là cái hệ số học ở đây
+0:14:29 - 0:14:37, Nó sẽ cho biết độ lớn, quyết định độ lớn của việc huấn luyện
+0:14:37 - 0:14:45, Cảm ơn các bạn đã xem video hãy đăng ký kênh để ủng hộ kênh để xem video mới nhất.
+0:15:07 - 0:15:09, và nó phân kỳ
+0:15:09 - 0:15:11, thế thì learning rate quá lớn
+0:15:11 - 0:15:13, thì nó sẽ hội tụ không ổn định
+0:15:14 - 0:15:15, thậm chí là không hội tụ
+0:15:15 - 0:15:17, và nếu mà learning rate quá nhỏ
+0:15:17 - 0:15:18, thì nó sẽ hội tụ rất là chậm
+0:15:20 - 0:15:22, và một số cái loại neuro
+0:15:22 - 0:15:23, một số cái loại mạng
+0:15:23 - 0:15:25, neuro network phổ biến hiện nay
+0:15:25 - 0:15:28, thì trong cái kiến trúc mà chúng ta vừa mới tìm hiểu
+0:15:28 - 0:15:29, nó gọi là MLP
+0:15:30 - 0:15:32, tuy nhiên cái kiến trúc này thì nó cũng đã khá là cũ
+0:15:32 - 0:15:36, và nó không còn hiệu lực trong thời gian gần đây
+0:15:36 - 0:15:38, nó không còn phổ biến trong thời gian còn đây
+0:15:38 - 0:15:41, một số cái mạng Deep Neural Network mới
+0:15:41 - 0:15:47, nó cũng dựa trên ANN, cái mạng Neural Network cũ
+0:15:47 - 0:15:50, đó chính là mạng CNN, là Convolutional Neural Network
+0:15:50 - 0:15:56, thì chuyên để xử lý cho cái loại dữ liệu là 2 chiều, là dữ liệu 2D image
+0:15:56 - 0:16:01, đầu vào thì nó sẽ giống như một cái ma trận địa mảnh như thế này
+0:16:01 - 0:16:03, nó sẽ là một cái ma trận địa mảnh
+0:16:03 - 0:16:05, thì ở đây chúng ta thấy là nó sẽ có 2 chiều
+0:16:06 - 0:16:07, 1 cái lưới 2 chiều
+0:16:07 - 0:16:12, thì nó sẽ ứng dụng trong lĩnh vực thị giác máy tính để nhận diện hình ảnh, phân loại video
+0:16:12 - 0:16:14, hoặc là cho cái xe tự lái
+0:16:14 - 0:16:18, thì ở đây chúng ta thấy là cái input đầu vào của mình sẽ là 1 cái tấm ảnh
+0:16:19 - 0:16:20, 2 chiều
+0:16:20 - 0:16:22, và output của mình sẽ là cái vector
+0:16:22 - 0:16:26, thế cái sự khác biệt giữa cái mạng CNN và cái mạng NLP
+0:16:26 - 0:16:28, mạng Neural Network
+0:16:28 - 0:16:29, đó chính là
+0:16:29 - 0:16:31, nó sẽ không phải nằm ở đây
+0:16:31 - 0:16:33, Đây chính là kiến trúc cũ
+0:16:33 - 0:16:36, Chỗ mới của nó chính là ở chỗ này
+0:16:36 - 0:16:39, Đó là các lớp biến đổi là convolution
+0:16:39 - 0:16:40, Và lớp convolution này
+0:16:40 - 0:16:44, Giúp chúng ta rút trích đặt trưng hợp hiệu quả hơn
+0:16:44 - 0:16:47, Sau khi đặt trưng đã đủ tiến tính rồi
+0:16:47 - 0:16:50, Chúng ta sẽ đưa vào mạng fully connected
+0:16:50 - 0:16:54, Tức là mạng neural network MLP của mình
+0:16:54 - 0:16:57, Phần sau chính là phần cũ
+0:16:57 - 0:16:59, Còn phần đầu sẽ là phần mới
+0:16:59 - 0:17:08, Mạng Recurrent Neural Network sẽ chuyên xử lý cho dữ liệu dạng chuỗi hoặc là có ếu tố tuần tự
+0:17:08 - 0:17:14, Ví dụ như trong lĩnh vực xử lý văn bản, chúng ta có 3 chữ là chữ Do, U và Understand
+0:17:14 - 0:17:21, Nhưng mà 3 chữ này nếu mà để theo thư tự này thì đây sẽ là câu hỏi
+0:17:21 - 0:17:26, Nhưng cũng là 3 chữ này nhưng chúng ta sẽ xếp lại là You Do Understand
+0:17:26 - 0:17:33, Lúc này nó không còn là câu hỏi nữa mà nó đã là một câu khẳng định
+0:17:33 - 0:17:40, Do đó nó đão thay đổi nghĩa của mình hoàn toàn
+0:17:40 - 0:17:42, Chỉ cần chúng ta thay đổi thứ tự
+0:17:42 - 0:17:48, Do đó thì cái mạng ANN này sẽ giúp chúng ta xử lý được tình huống dữ liệu có yếu tố thứ tự này
+0:17:48 - 0:17:52, Nó sẽ ngầm encode thứ tự của mình
+0:17:52 - 0:18:00, Thông qua các dấu mũi tên chuyển từ trạng thái thứ T sang thứ T cộng 1
+0:18:00 - 0:18:03, Rồi chuyển trạng thái từ thứ T cộng 1 sang T cộng 2
+0:18:03 - 0:18:07, Các dấu mũi tên này chính là việc encode tính tuần tự của mình
+0:18:07 - 0:18:09, Như vậy tổng kết lại đó là
+0:18:09 - 0:18:15, Mạng MLP, mạng Multi-layer Perceptron hoặc là mạng Neural Network
+0:18:15 - 0:18:19, Nó lấy cảm hứng từ cái nảo bộ của con người
+0:18:19 - 0:18:26, bao gồm là input, trọng số, độ lật, bias và output
+0:18:26 - 0:18:31, kiến trúc của mình sẽ từ lấp input qua các lớp ẩn để đến lấp output
+0:18:31 - 0:18:38, hoạt động của mô hình này sẽ bao gồm thực toán là lang truyền xuôi, lang truyền thuận
+0:18:38 - 0:18:42, là forward propagation để đưa ra giá trị dự đoán
+0:18:42 - 0:18:47, từ x, chúng ta sẽ qua hàm forward để ra giá trị dự đoán y ngã
+0:18:47 - 0:18:53, và trong lang truyền thuận này thì nó sẽ có các hàm kích hoạt, là các hàm activation function
+0:18:53 - 0:18:55, để nhằm phi tiến hóa bài toán của mình
+0:18:55 - 0:18:59, và khi chúng ta tính ra được cái y ngã này rồi
+0:18:59 - 0:19:05, thì chúng ta sẽ đi so sánh cái y ngã này với giá trị thực tế để có cái hàm loss
+0:19:05 - 0:19:09, và có cái loss này rồi thì chúng ta sẽ lang truyền ngược lại để update
+0:19:09 - 0:19:13, để cập nhật trọng số của mạng Neural Network ở đây
+0:19:13 - 0:19:17, Đó là thuật toán Backpropagation để tỉ tính radian
+0:19:17 - 0:19:22, Khi chúng ta đã có được radian theo từng trọng số rồi
+0:19:22 - 0:19:24, thì chúng ta sẽ dùng thuật toán radian để xem
+0:19:24 - 0:19:26, chúng ta sẽ cập nhật lại trọng số
+0:19:26 - 0:19:32, w mới sẽ là bằng w cũ
+0:19:32 - 0:19:38, trừ cho learning rate tức là alpha nhân ra đạo hàm của hàm loss
+0:19:38 - 0:19:42, theo các biến trọng số của mô hình
+0:19:42 - 0:19:46, Mục tiêu của mình là để cho cái loss này càng dãm
+0:19:46 - 0:19:53, Thì đây chính là toàn bộ nội dung của bài mạng neuro nhân tạo

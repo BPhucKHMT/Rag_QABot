@@ -1,0 +1,260 @@
+0:00:00 - 0:00:09, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:32, một cái hành động tại cái trạng thái đó
+0:00:32 - 0:00:35, nó sẽ giúp cho Agent không chỉ nhìn vào những cái phần thưởng ngắn hạn
+0:00:35 - 0:00:38, tại vì trong nhiều cái tình huống các cái bài toán
+0:00:38 - 0:00:40, nếu như chúng ta chỉ dựa trên cái hành động ngắn hạn
+0:00:40 - 0:00:44, thì có thể là kết quả dài hạn của mình nó rất là tệ
+0:00:44 - 0:00:46, đặc biệt là trong cái game chơi cờ đúng không
+0:00:46 - 0:00:49, ví dụ như đối thủ của mình họ có thể là
+0:00:49 - 0:00:51, nhữ cho chúng ta ăn một cái con nào đó
+0:00:51 - 0:00:52, nhưng mà sau khi chúng ta ăn xong
+0:00:52 - 0:00:54, thì có thể chúng ta sẽ bị chiêu bí
+0:00:54 - 0:00:56, do đó thì cái phần thưởng dài hạn
+0:00:56 - 0:00:58, sẽ là một cái
+0:00:58 - 0:01:05, Kỳ vọng rất là quan trọng để chúng ta cần phải ước lượng và có thể đưa ra những action phù hợp tối ưu
+0:01:05 - 0:01:11, Đặc điểm của nó chính là giá trị vài value của trạng thái
+0:01:11 - 0:01:19, Giá trị của trạng thái là bằng phần thưởng tại thời điểm hiện tại
+0:01:19 - 0:01:22, Cộng với lại phần thưởng kỳ vọng trong tương lai
+0:01:22 - 0:01:25, Tại vì trong tương lai là cái thứ mà chúng ta
+0:01:25 - 0:01:28, nó sẽ có cái yếu tố khó đoán định
+0:01:28 - 0:01:33, Stochastic nó khó đoán định do đó nó sẽ phải dùng cái từ đó là từ kỳ vọng
+0:01:33 - 0:01:34, Kỳ vọng trong tương lai thôi
+0:01:34 - 0:01:39, Và đây là cái công cụ để mà đánh giá chất lượng của một chính sách
+0:01:39 - 0:01:40, Chất lượng của một policy
+0:01:40 - 0:01:44, Là tốt hay không tốt dựa trên cái giá trị trạng thái
+0:01:44 - 0:01:48, Giá trị kỳ vọng trong vài hạng này
+0:01:48 - 0:01:49, Phần thưởng trong vài hạng này
+0:01:49 - 0:01:52, Bí dụ thay vì chúng ta ăn một cái đồng su
+0:01:52 - 0:01:54, nhưng mà ăn đồng su đó nó sẽ bị rớt vào cái hố
+0:01:54 - 0:01:59, thì Mario nó sẽ bỏ qua cái đồng su đó để nhảy qua cái hố
+0:01:59 - 0:02:02, tức là ưu tiên không ăn cái đồng su
+0:02:02 - 0:02:04, vì nó sẽ rớt vào cái hố
+0:02:04 - 0:02:06, để mà chọn cái action tiếp theo
+0:02:06 - 0:02:08, đó là nhảy qua cái hố
+0:02:08 - 0:02:10, để duy trì cái mạng sống của cái nhân vật game này
+0:02:10 - 0:02:12, đạt được cái điểm cao hơn về sau
+0:02:12 - 0:02:14, tức là bỏ qua cái tối ngắn hạng
+0:02:14 - 0:02:18, để mà có thể đạt được cái reward trong giai hạn
+0:02:18 - 0:02:21, thì cái robot mà chọn đường vòng
+0:02:21 - 0:02:27, Chọn đường vòng xa hơn nhưng ít chứng ại vật hơn
+0:02:27 - 0:02:32, Trong khi đó nếu chúng ta đi đường thẳng mà gặp rất nhiều chứng ại vật giữa đường
+0:02:32 - 0:02:37, Rõ ràng là đi đường vòng mà ít chứng ại vật sẽ tốt hơn
+0:02:37 - 0:02:43, Cho phần thưởng cao hơn, đạt đi đến được đích đến nhanh hơn
+0:02:43 - 0:02:48, Và giá trị kỳ vọng của mình thì hàm giá trị trạng thái
+0:02:48 - 0:02:50, Hành giá trị trạng thái
+0:02:50 - 0:02:54, S là đầu vào của mình
+0:02:54 - 0:02:55, S đầu vào
+0:02:55 - 0:03:00, V là giá trị của kỳ vọng của mình
+0:03:07 - 0:03:14, Nó sẽ là bằng công thức kỳ vọng trên tập policy của mình
+0:03:14 - 0:03:24, Với policy hiện tại của mình, kỳ vọng của policy này sẽ là kỳ vọng của tổng của biểu thức này
+0:03:24 - 0:03:30, Trong đó là giá trị kỳ vọng của tổng các phần thưởng
+0:03:30 - 0:03:38, Trong tương lai, nó được ký hiệu bởi R T cộng 1
+0:03:38 - 0:03:41, R chính là reward và T cộng 1 tức là tương lai
+0:03:41 - 0:03:45, và t sẽ chạy từ 0 cho đến vô cùng
+0:03:45 - 0:03:47, chạy từ 0 cho đến vô cùng
+0:03:47 - 0:03:49, tức là từ thời điểm t trở về sau
+0:03:49 - 0:03:52, và nếu như chúng ta bắt đầu tại trạng thái S
+0:03:52 - 0:03:56, tức là đây là điều kiện cho trước
+0:03:56 - 0:04:05, cho trước trạng thái bắt đầu của mình
+0:04:11 - 0:04:20, đây là giá trị kỳ vọng tổng phần thưởng trong tương lai nếu chúng ta bắt đầu ở trạng thái S
+0:04:20 - 0:04:28, gamma này là ý tố về xác xúc của mình
+0:04:28 - 0:04:32, P-A cho trước S là xác xúc
+0:04:32 - 0:04:37, Công thức này sẽ được diễn đạt ra bằng công thức như thế này
+0:04:37 - 0:04:45, trong đó là P-A cho trước S là xác xúc để chọn hành động này
+0:04:45 - 0:04:48, khi chúng ta ở trạng thái S
+0:04:48 - 0:04:51, P-S-S-A
+0:04:51 - 0:04:57, Tức là cái xác suất chuyển từ cái trạng thái S sang cái trạng thái S phải
+0:04:57 - 0:05:00, khi chúng ta thực hiện cái hành động A
+0:05:00 - 0:05:01, đó là gì?
+0:05:01 - 0:05:04, xác suất để mà từ trạng thái này sang trạng thái này
+0:05:04 - 0:05:06, khi chúng ta thực hiện cái hành động A
+0:05:06 - 0:05:08, rồi R
+0:05:08 - 0:05:10, S A S phải
+0:05:10 - 0:05:11, tức là cái phần thưởng
+0:05:11 - 0:05:15, nhận được khi chúng ta chuyển từ S sang S phải
+0:05:15 - 0:05:16, và
+0:05:16 - 0:05:18, khi thực hiện cái hành động A
+0:05:18 - 0:05:25, Vần thưởng khi thực hiện nguyên bộ x sang s phải sử dụng hành động ra
+0:05:25 - 0:05:34, Công thức này sẽ thể hiện được giá trị kỳ vọng của trạng thái
+0:05:34 - 0:05:37, Hàm giá trị trạng thái
+0:05:37 - 0:05:44, Và khái niệm tiếp theo là giá trị hành động
+0:05:44 - 0:05:47, thì ở đây sẽ là cái hiệu bằng chữ Quy
+0:05:47 - 0:05:49, đó là cái giá trị hành động
+0:05:49 - 0:05:52, là giá trị kỳ vọng khi ở trạng thái S
+0:05:52 - 0:05:54, khi ở trạng thái S
+0:05:54 - 0:05:58, ta chọn cái hành động A
+0:05:58 - 0:06:04, rồi tiếp tục thực hiện theo cái policy P
+0:06:04 - 0:06:09, thì đây sẽ là kỳ vọng trên cái policy P
+0:06:09 - 0:06:13, và nó sẽ là bằng tổng
+0:06:13 - 0:06:19, Các cái tổng các cái reward trong tương lai
+0:06:19 - 0:06:24, Khi chúng ta ở trạng thái S và sử dụng các hành động A
+0:06:24 - 0:06:27, Thì cái công thức diễn đạt ra của nó sẽ là như thế này
+0:06:27 - 0:06:34, Trong đó, tương tự như vậy thì P của AS tức là cái sát xuất để chúng ta chọn
+0:06:34 - 0:06:38, Sát xuất, ví dụ ở đây là sát xuất chọn các hành động A phải
+0:06:38 - 0:06:42, Tiếp theo, khi cho trước cái trạng thái S phải
+0:06:42 - 0:06:53, PS phải SA chính là sát xuất chuyển từ trạng thái S sang trạng thái S phải
+0:06:53 - 0:06:55, với hành động A
+0:06:57 - 0:07:06, RSA phải tức là phần thưởng nhận được khi chuyển từ trạng thái S sang trạng thái S phải với hành động A
+0:07:06 - 0:07:12, Với công thức này, chúng ta thấy nó có vẻ khá phức tạp
+0:07:12 - 0:07:17, Nhưng ý tưởng chung của nó là giá trị kỳ vọng
+0:07:17 - 0:07:21, Tại trạng thái S mà khi chúng ta thực hiện chọn hành động A
+0:07:21 - 0:07:29, Với mô hình reinforcement learning, nó sẽ có khái niệm
+0:07:29 - 0:07:31, đó chính là Markov Decision Process
+0:07:31 - 0:07:35, Tức là quá trình mà đưa ra quyết định Markov
+0:07:35 - 0:07:42, MDP là một mô hình toán học để mô tả một bài toán ra quyết định
+0:07:42 - 0:07:47, Mô tả một bài toán ra quyết định trong môi trường không chắc chắn
+0:07:47 - 0:07:52, Markov là nổi tiếng với ý tố không chắc chắn
+0:07:52 - 0:07:55, Và nó chỉ là khung lý thuyết với các thành phần
+0:07:55 - 0:07:57, S là tập trạng thái môi trường
+0:07:57 - 0:08:00, A là tập hợp các hành động mà agent có thể thực hiện được
+0:08:00 - 0:08:09, P là sát xuất để chuyển trạng thái từ S sang S phải khi thực hiện các hành động A này
+0:08:09 - 0:08:15, R là phần thưởng nhận được khi thực hiện các hành động A tại trạng thái S
+0:08:15 - 0:08:23, Gamma là mức độ coi trọng phần thưởng trong tương lai
+0:08:23 - 0:08:28, Dĩa biến của Markov Decision Process là
+0:08:28 - 0:08:34, T bằng 0, môi trường xin ra trạng thái băng đầu là S0
+0:08:34 - 0:08:38, Và với mỗi bước T, Aison sẽ chọn Action là AT
+0:08:38 - 0:08:41, Môi trường sẽ trả về là RT
+0:08:41 - 0:08:44, Môi trường sẽ trả về phần thưởng là RT
+0:08:44 - 0:08:48, Môi trường sẽ xin ra trạng thái mới là ST cộng 1
+0:08:48 - 0:08:50, và agent sẽ nhận được là
+0:08:50 - 0:08:54, cái RT và cái ST cộng 1
+0:08:54 - 0:09:00, mục tiêu đó là chúng ta sẽ đi tìm cái chính sách tối U,P sau
+0:09:00 - 0:09:04, để cho tối đa hóa tổng cái phần tưởng tích lưỡi
+0:09:04 - 0:09:08, tổng cái phần tưởng tích lưỡi là như thế này
+0:09:08 - 0:09:12, tổng của T với T lớn không, tức là T chạy từ 0 cho đến vô cùng
+0:09:12 - 0:09:15, của gamma T RT
+0:09:15 - 0:09:23, Mục tiêu là tìm chính sách p-sal tối ưu, sao cho cái này là lớn nhất
+0:09:23 - 0:09:33, Và chính sách tối ưu p-sal trong Markov này là làm sao cho tổng phần thưởng nhận được lớn nhất
+0:09:33 - 0:09:38, Môi trường sẽ có yếu tố ngộ nhiên
+0:09:38 - 0:09:44, Trạng thái ban đầu và sát xuất chuyện trạng thái là những yếu tố ngộ nhiên
+0:09:44 - 0:09:48, bắt đầu chúng ta sẽ không biết chúng ta sẽ rớt vô cái trạng thái nào
+0:09:48 - 0:09:51, rồi cái xác xúc để chuyển từ trạng thái S sang cái trạng thái S
+0:09:51 - 0:09:55, S phải nó cũng là một cái yếu tố ngộ nhiên
+0:09:55 - 0:10:03, vì vậy ta sẽ không thể tối ưu cái phần thưởng này một cách tuyệt đối mà chúng ta chỉ có thể là tối ưu cái kỳ vọng thôi
+0:10:03 - 0:10:05, tối ưu cái kỳ vọng của tổng cái phần thưởng thôi
+0:10:05 - 0:10:07, do đó thì cái P sau
+0:10:07 - 0:10:10, là chúng ta sẽ đi cần tìm cái thằng P
+0:10:10 - 0:10:16, sau cho kỳ vọng của phần thưởng trong tương lai
+0:10:16 - 0:10:17, đó là cao nhất
+0:10:19 - 0:10:25, trong đó S0 chính là trạng thái ban đầu được lấy theo phân phối sát xuất ban đầu
+0:10:25 - 0:10:27, là P của S0
+0:10:27 - 0:10:33, rồi AT là bằng P của ST
+0:10:33 - 0:10:37, tức là cái hành động được dựa chọn dựa trên chính sách P
+0:10:37 - 0:10:44, Chúng ta sẽ chọn hành động tiếp theo là gì khi cho trước trạng thái ST
+0:10:44 - 0:10:49, ST cộng 1 cho trước sát xuất của STAT
+0:10:49 - 0:10:56, Tức là trạng thái tiếp theo sẽ được lựa chọn dựa trên sát xuất từ trạng thái hiện tại và action hiện tại
+0:10:56 - 0:10:59, Gamma là hệ số chiếc khấu phần thưởng
+0:10:59 - 0:11:12, Vấn đề đối với Markov process là chúng ta sẽ không biết trước được sát xuất chuyển trạng thái từ S sang ST và khi cho trước hành động A
+0:11:12 - 0:11:24, Chúng ta sẽ không biết trước chính xác hàm phần thưởng RSA là gì, Reward SA và không thể duyệt hết tất cả trạng thái vì nó quá lớn
+0:11:24 - 0:11:30, Đó chính là những vấn đề khi chúng ta làm với Markov Decision Process
+0:11:30 - 0:11:36, Do đó thì lý thuyết về Markov Decision Process thường là chuẩn nhưng nó không có khả thi trong thực tế
+0:11:36 - 0:11:38, Nó sẽ không khả thi trong thực tế
+0:11:38 - 0:11:43, Và học tăng cường thì Reinforcement Link nó xuất hiện
+0:11:43 - 0:11:47, Nó làm tự học chính sách tối ưu thông qua trải nghiệm thử và sai
+0:11:47 - 0:11:50, Nó sẽ học chính sách tối ưu thông qua thử và sai
+0:11:50 - 0:11:53, Tức là cho agent nó sẽ chơi nhiều lần
+0:11:53 - 0:11:55, nó sẽ nhận phần thưởng hoặc bị phạt
+0:11:55 - 0:11:57, rồi từ đó nó sẽ điều chỉnh hành vi của mình
+0:11:57 - 0:11:59, và học tăng cường
+0:11:59 - 0:12:03, nó là một giải pháp để giải quyết vấn đề của
+0:12:03 - 0:12:05, Markov Decision Process
+0:12:05 - 0:12:08, học tăng cường nó xuất hiện để học các chính sách tối ưu
+0:12:08 - 0:12:09, thông qua trải nghiệm
+0:12:09 - 0:12:11, thay vì chỉ cần biết trước quy luật của môi trường
+0:12:11 - 0:12:13, thì
+0:12:13 - 0:12:19, một số thuộc toán hoặc phương pháp học tăng cường
+0:12:19 - 0:12:20, ví dụ như Monte Carlo
+0:12:20 - 0:12:21, ý tưởng đó là
+0:12:21 - 0:12:25, Học bằng cách chơi lại trò chơi nhiều lần
+0:12:25 - 0:12:26, Chúng ta sẽ chơi đi chơi lại trò chơi
+0:12:26 - 0:12:31, Giống như là khi chúng ta mới học tập chơi cờ thì chúng ta sẽ tìm cách chơi nhiều lần
+0:12:31 - 0:12:36, Và mỗi lần lần thua hoặc lần thắng thì chúng ta sẽ đúc kết ra được những kinh nghiệm cho mình
+0:12:36 - 0:12:45, Mỗi lần chơi xong khi nhận được kết quả chúng ta sẽ tính trung bình để ước lượng giá trị từ đó phù hợp
+0:12:45 - 0:12:48, Để mà chơi tới cuối ván chơi
+0:12:48 - 0:12:53, để có thể chơi cho đến cuối ván
+0:12:53 - 0:12:56, Phương pháp tiếp theo là Temporal Difference TD
+0:12:56 - 0:12:59, Ý tưởng là học từng chút một trong khi chơi
+0:12:59 - 0:13:01, và không cần chờ đến tới cuối
+0:13:01 - 0:13:05, và cập nhật giá trị ngay khi có dữ tiệu mới
+0:13:05 - 0:13:09, và thường phương pháp Temporal Difference này sẽ nhanh hơn Monte Carlo
+0:13:09 - 0:13:12, và áp dụng được trong môi trường không có điểm kết thúc
+0:13:12 - 0:13:16, Queue Learning đây cũng là một trong những phương pháp hiện đại
+0:13:16 - 0:13:19, được đề cập trong rất nhiều các nghiên cứu gần đây
+0:13:19 - 0:13:22, ý tưởng đó là xây dựng một bảng giá trị Qtable
+0:13:22 - 0:13:25, cho mỗi một hành động hoặc một trạng thái
+0:13:25 - 0:13:29, và học cách chọn hành động nào mang lại kết quả tốt nhất
+0:13:29 - 0:13:32, thì đây là phương pháp nền tảng nhưng khó áp dụng
+0:13:32 - 0:13:35, khi không gian trạng thái của mình quá lớn
+0:13:35 - 0:13:37, thì phương pháp này rất khó áp dụng
+0:13:40 - 0:13:42, policy radian
+0:13:42 - 0:13:46, là ý tưởng đó là học trực tiếp chính sách thay vì là Qtable
+0:13:46 - 0:13:49, dùng để tối ưu hóa cái Radiant Ascent
+0:13:49 - 0:13:51, để mà cải thiện chính sách của mình
+0:13:51 - 0:13:54, thích hợp cho các bài toán ra quyết định hành động
+0:13:54 - 0:13:56, có tính chấp liên tục
+0:13:56 - 0:13:59, ví dụ như điều khiển robot thì là policy radiant
+0:13:59 - 0:14:02, là phù hợp tại vì cái radiant này nó chỉ có thể là
+0:14:02 - 0:14:04, thực thi được trên những cái
+0:14:04 - 0:14:07, hàm mà
+0:14:08 - 0:14:10, có dạng liên tục thôi
+0:14:10 - 0:14:15, Deep reinforcement learning, ý tưởng là kết hợp học tăng cường với lại học sâu
+0:14:15 - 0:14:22, để dùng neural network để sắp xỉ chính sách và xử lý được môi trường, phức tạp, nhiều trạng thái
+0:14:22 - 0:14:34, DQN, Deep Q Network, Actor Critic đã thành công trong việc chơi game như Atari, AlphaGo, robot, xe tự lái
+0:14:34 - 0:14:39, Deep reinforcement learning là một trong những hướng tiếp cận cho nhiều thành tự
+0:14:39 - 0:14:56, và học tăng cường với multi-agent, tức là nguyên lý chúng ta sẽ cho nhiều agent cùng học và cùng tương tác trong môi trường
+0:14:56 - 0:15:02, ứng dụng cụ thể là chiến thuật game, ví dụ như chúng ta có AlphaStar của DeepMind
+0:15:02 - 0:15:06, để chơi game Starcraft 2 và đạt được trình độ chuyên nghiệp.
+0:15:06 - 0:15:12, Rồi robot phối hợp, nhiều robot cùng làm việc trong kho hàng của Amazon Robotics
+0:15:12 - 0:15:18, điều phối giao thông thông minh để điều chỉnh tín hiệu để giảm tắt ngãn.
+0:15:18 - 0:15:24, Rồi học tăng cường từ dữ liệu có sẵn, Offline Reinforcement Learning.
+0:15:24 - 0:15:31, Nguyên lý đó là học các chính sách từ dữ liệu có sẵn ví dụ như là log hoặc là lịch sử mà không cần phải tương tác trực tiếp
+0:15:31 - 0:15:37, Thì đây là những dữ liệu mà chúng ta thu thập sẵn từ trước, nó gọi là Offline Reinforcement
+0:15:37 - 0:15:44, Và ứng dụng trong thực tế đó là phân tích dữ liệu lịch sử bình án để gợi ý các phát đồ điều trị
+0:15:44 - 0:15:49, Trong lĩnh vực tài chính, đó là học từ các dữ liệu giao dịch trong quá khứ để tối ưu hóa danh mục đầu tư
+0:15:49 - 0:15:55, recommender system tức là Netflix dùng học tăng cường để gợi ý các phim tự lóc của người dùng
+0:15:55 - 0:16:03, sau đây là một vài thành tự mà đáng kể chúng ta có thể thấy trong thời gian gần đây
+0:16:03 - 0:16:07, ví dụ như năm 2016 là các cao thủ kà vây của Hàn Quốc
+0:16:07 - 0:16:12, thì AlphaGo đã thắng với tỷ số 41
+0:16:12 - 0:16:18, và Lee Sedol là người duy nhất thắng được 1 gà ván trước AlphaGo thôi
+0:16:18 - 0:16:21, Còn lại là AlphaGo đã thắng đến 4 ván
+0:16:21 - 0:16:25, Rồi năm 2017 kỳ thủ số 1 thế giới lúc cái giờ là Trung Quốc
+0:16:25 - 0:16:28, thì AlphaGo đã thắng được là 3-0
+0:16:28 - 0:16:31, tức là không có cho cơ hội nào cho kỳ thủ này
+0:16:31 - 0:16:32, có thể thắng được AlphaGo một lần
+0:16:32 - 0:16:37, Rồi ứng dụng học tăng cường trong tối ưu năng lượng của các tòa nhà
+0:16:37 - 0:16:41, điều khiển các hệ thống là Mac tòa nhà bằng học tăng cường
+0:16:41 - 0:16:46, kết quả đó là nó có thể tiết kiệm được năng lượng từ 9% cho đến 13%
+0:16:46 - 0:16:50, Ưng dụng học tăng cường trong gợi ý Netflix
+0:16:50 - 0:16:52, Ưng dụng học tăng cường trong Chatbot
+0:16:52 - 0:16:56, Đây có thể nói là một trong những ứng dụng học tăng cường
+0:16:56 - 0:16:58, được sử dụng phổ biến nhất hiện nay
+0:16:58 - 0:17:00, Đó là trên công cụ ChatGPT
+0:17:00 - 0:17:04, ChatGPT hiện nay là nó đã học tăng cường
+0:17:04 - 0:17:06, từ Human Feedback
+0:17:06 - 0:17:08, để tinh chỉnh ChatGPT
+0:17:08 - 0:17:09, sao cho nó có thể trả lời tự nhiên
+0:17:09 - 0:17:11, và an toàn hơn
+0:17:11 - 0:17:14, Trong các xe tự hành của Waymo hoặc Tesla
+0:17:14 - 0:17:17, cũng đều có áp dụng công nghệ của học tăng cường này
+0:17:19 - 0:17:22, Chúng ta sẽ cùng đến với ý cuối cùng
+0:17:22 - 0:17:25, đó là ưu điểm và nhược điểm của học tăng cường
+0:17:25 - 0:17:28, Chúng ta sẽ không cần gán nhãn như Supervibe Learning
+0:17:28 - 0:17:30, học tăng cường là chúng ta không cần phải gán nhãn
+0:17:30 - 0:17:32, học từ trải nghiệm
+0:17:32 - 0:17:35, không cần biết trước mô hình của môi trường
+0:17:35 - 0:17:37, có khả năng tổng bác hoa cao
+0:17:37 - 0:17:39, chúng ta có thể áp dụng trong rất nhiều những lĩnh vực khác nhau
+0:17:39 - 0:17:42, ví dụ như trong game, tài chính, robot
+0:17:42 - 0:17:43, xe tự hành
+0:17:43 - 0:17:48, nó có thể thích nghi cao để học được khi môi trường thay đổi
+0:17:48 - 0:17:52, tức là nếu như trong môi trường mà cố định thì chúng ta không nói
+0:17:52 - 0:17:58, kể cả môi trường thay đổi theo thời gian thì tính thích nghi của học tăng cường cũng rất cao
+0:17:58 - 0:18:03, và tối ưu trong dài hạn cân bằng giữa lợi ích ngán hạn và lợi ích dài hạn
+0:18:03 - 0:18:07, nược điểm đó là nó tốn rất nhiều dữ liệu và thời gian
+0:18:07 - 0:18:10, tại vì nó cần phải có những trải nghiệm thử và sai
+0:18:10 - 0:18:17, chi phí cao do khó áp dụng thử sai tốn kém
+0:18:17 - 0:18:22, tức là nếu như mỗi lần thử mà sai nhiều thì chúng ta sẽ tốn kém rất là nhiều chi phí
+0:18:22 - 0:18:26, thì nếu mà cái thử sai nhiều quá thì nó cũng sẽ gây ra chi phí cao
+0:18:26 - 0:18:31, tính không ổn định sẽ dễ bị mắc kẹt ở những chiến lược mà chưa có được tối ưu
+0:18:31 - 0:18:36, thì đó chính là những ưu nhược điểm của các phương pháp học tăng cường hiện nay
+0:18:40 - 0:18:50, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

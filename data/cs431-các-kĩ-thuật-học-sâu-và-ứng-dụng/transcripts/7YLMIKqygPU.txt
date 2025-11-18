@@ -1,0 +1,167 @@
+0:00:00 - 0:00:05, Chủ đề: Học sâu, Machine Learning, ImageNet.
+0:00:05 - 0:00:10, Chủ đề: Học sâu, Machine Learning, ImageNet.
+0:00:30 - 0:00:34, thì không cách nào khác, đó là chúng ta phải trực quan hóa mạng CNN.
+0:00:34 - 0:00:38, Thế thì có rất nhiều các cách thức để chúng ta có thể trực quan hóa được mạng CNN.
+0:00:38 - 0:00:41, Cách đầu tiên đó là chúng ta sẽ
+0:00:41 - 0:00:44, hiển thị tất cả các feature map
+0:00:44 - 0:00:48, mà thực hiện được trong suốt quá trình mạng CNN
+0:00:48 - 0:00:52, thực hiện các phép biến đổi như convolution, pooling, ReLU.
+0:00:52 - 0:00:55, Đầu vào chúng ta thấy là có một ảnh
+0:00:55 - 0:00:58, độ sâu là 3, tức là tương ứng 3 kênh màu.
+0:00:58 - 0:01:03, thì cái này là chúng ta trực quan hóa và con người nhìn vào là có thể hiểu một cách dễ dàng.
+0:01:03 - 0:01:07, Sau đó thì chúng ta sẽ tiến hành phép biến đổi là Convolution.
+0:01:07 - 0:01:12, Thì ở phép biến đổi Convolution ở lớp đầu tiên, nó sẽ tạo ra một cái mạng,
+0:01:12 - 0:01:14, xin lỗi, nó sẽ tạo ra một cái feature map.
+0:01:14 - 0:01:19, Và feature map này có độ sâu là D,
+0:01:19 - 0:01:26, thì chúng ta sẽ trực quan hóa bằng cách đó là cắt ra các lá cắt ở độ sâu D này.
+0:01:26 - 0:01:29, Và ứng với mỗi lá cắt, chúng ta sẽ hiển thị
+0:01:29 - 0:01:34, trên màn hình để xem coi là cái gì nằm ở bên trong lá cắt này.
+0:01:34 - 0:01:39, Từ trong ra bên ngoài,
+0:01:39 - 0:01:41, chúng ta sẽ có D cái lá cắt
+0:01:41 - 0:01:45, và có bao nhiêu lá cắt thì chúng ta sẽ hiển thị lên trên màn hình.
+0:01:45 - 0:01:51, Từ trong ra ngoài có bao nhiêu lá cắt thì chúng ta sẽ hiển thị lên hết.
+0:01:51 - 0:02:04, Cách trực quan thứ hai là khi mạng CNN huấn luyện xong thì nó sẽ có các filter.
+0:02:04 - 0:02:15, Và filter này là các trọng số mà mạng CNN đã huấn luyện và tự động điền các giá trị ở bên trong filter này.
+0:02:15 - 0:02:22, và chúng ta sẽ trực quan hóa filter này để xem coi sau khi huấn luyện xong thì các filter này nó nhìn như thế nào.
+0:02:22 - 0:02:27, thì đây là 2 cách chính để giúp cho chúng ta có thể trực quan hóa một mạng CNN.
+0:02:27 - 0:02:37, Rồi, thì ở đây có các nhà khoa học họ đã tạo ra một công cụ đó là Deep Visualization Toolbox.
+0:02:37 - 0:02:41, thì chúng ta có thể gọi từ khóa là Deep Visualization Toolbox như ở trên
+0:02:41 - 0:02:52, và nó sẽ ra video đầu tiên. Với video đầu tiên này, chúng ta sẽ cùng quan sát xem các tác giả đã tiến hành trực quan hóa như thế nào.
+0:02:52 - 0:02:58, Thì đây là tên của công trình nghiên cứu của các tác giả làm về Deep Visualization Toolbox.
+0:02:58 - 0:03:10, Chúng ta sẽ xem qua giao diện của ứng dụng này.
+0:03:10 - 0:03:17, Đầu tiên, ở phía trên bên tay trái, đó chính là tấm ảnh đầu vào của mạng CNN.
+0:03:17 - 0:03:19, Đây chính là ảnh màu.
+0:03:19 - 0:03:25, Các tác giả đã thiết kế chương trình để cho phép chúng ta có thể truyền vào ảnh tĩnh,
+0:03:25 - 0:03:27, chúng ta có thể truyền vào một đoạn video
+0:03:27 - 0:03:29, thì khi chúng ta đưa vào video
+0:03:29 - 0:03:31, thì chúng ta sẽ quan sát xem
+0:03:31 - 0:03:34, feature map nó sẽ biến đổi như thế nào
+0:03:34 - 0:03:37, trong suốt quá trình chúng ta chuyển động ở bên trong video.
+0:03:37 - 0:03:41, Rồi, ở phía trên thì chúng ta sẽ thấy là
+0:03:41 - 0:03:43, có các lớp biến đổi
+0:03:43 - 0:03:47, ví dụ như là convolution, pooling, normalize, convolution số 2,
+0:03:47 - 0:03:50, và convolution số 3, convolution số 5,
+0:03:50 - 0:03:53, rồi các lớp biến đổi là FC,
+0:03:53 - 0:03:57, và lớp cuối cùng là Softmax để tạo ra các phân bố xác suất.
+0:03:57 - 0:04:02, thì ở đây người ta đang focus vào lớp convolution số 1.
+0:04:02 - 0:04:06, và nhìn vào hình này thì các bạn có thể đoán ra xem
+0:04:06 - 0:04:10, feature map sau khi thực hiện lớp convolution số 1
+0:04:10 - 0:04:13, là có độ sâu là bao nhiêu.
+0:04:13 - 0:04:15, các bạn thử tính toán xem.
+0:04:15 - 0:04:28, Nếu xét trên hàng có 10 ô tương ứng là 10 lá cắt,
+0:04:28 - 0:04:32, Còn theo chiều dọc, chúng ta có 3, 6 và 9.
+0:04:32 - 0:04:37, Như vậy là nguyên khối này là có 10 nhân 9, tức là 90 lá cắt.
+0:04:37 - 0:04:43, Cộng thêm 3, 6, tức là 6 feature map ở phía cuối nữa.
+0:04:43 - 0:04:45, Như vậy là tổng chúng ta sẽ có là 96.
+0:04:45 - 0:04:47, Như vậy là lớp feature map đầu tiên.
+0:04:47 - 0:04:52, Lớp feature map đầu tiên đó chính là có 96 lá cắt.
+0:04:52 - 0:05:00, Rồi, và chúng ta sẽ nhìn vào hình thù của các lá cắt này nó như thế nào ha.
+0:05:00 - 0:05:08, Thì ở đây chúng ta sẽ nhìn vào, đâu đó chúng ta sẽ đoán hình dạng của đối tượng trên ảnh gốc.
+0:05:08 - 0:05:17, Ví dụ ở đây chúng ta thấy có ngựa vằn, thì ở trên feature map các bạn cũng có thể thấy đâu đó có bóng dáng của đối tượng chính của mình, đó là con ngựa vằn.
+0:05:17 - 0:05:21, Nhưng đương nhiên ở đây mình đoán trước khi mình thấy được ảnh đầu vào thôi.
+0:05:24 - 0:05:28, Và khi thay đổi các hình này thì feature map của mình sẽ thay đổi.
+0:05:32 - 0:05:35, Rồi, bây giờ, chúng ta sẽ xem một phần rất là thú vị.
+0:05:35 - 0:05:43, Đó chính là chúng ta sẽ thử nghiệm đưa vào một chuỗi video frame ở phía trên bên trái.
+0:05:43 - 0:05:47, và chúng ta sẽ xem feature map ở bên phải nó thay đổi như thế nào.
+0:05:48 - 0:05:51, Thì chúng ta sẽ quan sát là có một số feature map
+0:05:52 - 0:05:55, có độ phản hồi hay là độ sáng.
+0:05:55 - 0:05:58, Nó rất là sáng so với những feature map khác.
+0:05:58 - 0:06:00, Ví dụ như chúng ta thấy ở trung tâm màn hình,
+0:06:00 - 0:06:03, có hai feature map này, nó rất là sáng.
+0:06:04 - 0:06:07, Còn các feature map này thì chúng ta nhìn thấy có bóng dáng của
+0:06:07 - 0:06:11, người đang thực hiện demo ở đây, nhưng mà độ sáng nó yếu hơn.
+0:06:12 - 0:06:13, Vậy thì hai feature map này
+0:06:13 - 0:06:16, Nó có ý nghĩa là gì? Các bạn có thể đoán được hay không?
+0:06:27 - 0:06:31, Bây giờ, chúng ta sẽ mở thêm một cửa sổ nữa ở đây.
+0:06:32 - 0:06:38, Đó là cửa sổ này, đó là phóng to của feature map mà chúng ta đang highlight ở đây.
+0:06:38 - 0:06:42, Chúng ta nhấp vào chọn feature map ở đây và bên đây nó sẽ là phóng to ra.
+0:06:42 - 0:06:47, thì các bạn có thể đoán ra được là tính chất của feature map này
+0:06:47 - 0:06:51, đó chính là tạo ra các biên cạnh theo chiều dọc.
+0:06:51 - 0:06:54, Tạo ra các biên cạnh theo chiều dọc.
+0:06:54 - 0:06:57, Tuy nhiên, các bạn có để ý là các biên cạnh theo chiều dọc
+0:06:57 - 0:07:00, thì feature map bên phải
+0:07:00 - 0:07:03, nó cũng có hình thù tương tự như vậy.
+0:07:03 - 0:07:06, Và cũng tạo ra các biên cạnh theo chiều dọc tương tự như vậy.
+0:07:06 - 0:07:10, Vậy thì sự khác nhau giữa hai feature map này là gì?
+0:07:10 - 0:07:12, Cuary, flavors are available.
+0:07:12 - 0:07:16, Separate fields are available.
+0:07:16 - 0:07:18, Can you childhood code?
+0:07:18 - 0:07:21, nav
+0:07:21 - 0:07:23, feature
+0:07:23 - 0:07:25,
+0:07:25 - 0:07:27, vùng
+0:07:27 - 0:07:29, feature map
+0:07:29 - 0:07:31, feature map
+0:07:31 - 0:07:33, feature map
+0:07:33 - 0:07:34, feature map
+0:07:34 - 0:07:36, feature map
+0:07:36 - 0:07:37, feature map
+0:07:37 - 0:07:41, biên cạnh theo chiều dọc nhưng mà nó sẽ có hai ý nghĩa khác nhau.
+0:07:41 - 0:07:46, Feature map bên tay trái là nó sẽ phát sáng, nó sẽ phản hồi.
+0:07:46 - 0:07:55, Khi bên trái là vùng sáng và bên phải là vùng tối, thì nó sẽ phản hồi.
+0:07:57 - 0:08:01, Rồi khi đưa tờ giấy này qua,
+0:08:01 - 0:08:09, khi đưa tờ giấy này qua, bên đây thì các bạn sẽ cùng xem, cùng theo dõi feature map bên tay phải.
+0:08:09 - 0:08:15, Chiếu ra đây, chúng ta thấy là feature map bên tay phải cũng là biên cạnh theo chiều dọc và nó mới bắt đầu phát sáng.
+0:08:15 - 0:08:20, Trong khi đó, feature map bên tay trái đã tối, nó không còn phát sáng biên cạnh nữa.
+0:08:20 - 0:08:29, Biên cạnh theo chiều dọc này có ý nghĩa là nó dịch chuyển từ vùng tối sang vùng sáng hơn.
+0:08:29 - 0:08:35, Bên trái chúng ta thấy là cái rèm màn, đó là có màu tối, còn bên phải đó là vùng sáng.
+0:08:35 - 0:08:39, Thì nó trái ngược với feature map này.
+0:08:39 - 0:08:45, Feature map này là bên trái sáng, bên phải tối thì nó sẽ phản hồi.
+0:08:45 - 0:08:52, Còn feature map bên đây thì là bên trái tối, bên phải sáng thì nó sẽ phản hồi.
+0:08:52 - 0:08:55, Thì đó chính là ý nghĩa của hai feature map này.
+0:08:55 - 0:08:58, Direct to light.
+0:08:58 - 0:09:05, Vậy tương tự như hồi nãy đã đề cập thì hai feature map tương ứng ở hai vị trí này
+0:09:05 - 0:09:08, thì nó được tạo ra bởi các filter khác nhau
+0:09:08 - 0:09:13, và ở đây chúng ta sẽ cùng trực quan hóa filter của hai feature map này.
+0:09:13 - 0:09:17, Đối với feature map bên tay phải thì chúng ta sẽ trực quan lên
+0:09:17 - 0:09:22, chúng ta thấy những vùng nào có giá trị thấp sẽ là màu tối
+0:09:22 - 0:09:25, và vùng nào có giá trị cao thì sẽ là màu sáng.
+0:09:25 - 0:09:30, thì chúng ta thấy là đúng như là hình minh họa của filter mask,
+0:09:30 - 0:09:33, thì đối với filter nó cũng có tính chất tương tự như vậy.
+0:09:33 - 0:09:36, filter chúng ta sẽ thấy là bên trái sẽ có vùng tối
+0:09:36 - 0:09:40, và bên phải nó sẽ có vùng sáng.
+0:09:40 - 0:09:43, tương tự filter ở bên tay trái,
+0:09:43 - 0:09:47, bên trái sẽ là vùng sáng và bên phải sẽ là vùng tối.
+0:09:47 - 0:09:52, Ý nghĩa của hai filter này là lọc các biên cạnh theo chiều dọc.
+0:09:52 - 0:09:58, Nhưng mà filter này sẽ làm chuyển từ tối sang sáng,
+0:09:58 - 0:10:03, còn filter này thì chuyển từ sáng sang tối.
+0:10:10 - 0:10:15, Sau đó thì chúng ta sẽ tiến hành trực quan hóa các lớp pooling, normalization.
+0:10:15 - 0:10:18, Trong bài học chúng ta không đề cập đến normalization,
+0:10:18 - 0:10:22, nhưng mà normalize chính là một phép để chuẩn hóa feature map của mình.
+0:10:22 - 0:10:30, Rồi, lớp Convolution số 3, thì chúng ta thấy là đến lớp Convolution số 3 thì số lượng feature map của mình nhiều hơn
+0:10:30 - 0:10:34, và đồng thời là kích thước của nó cũng sẽ nhỏ hơn.
+0:10:34 - 0:10:41, Nhưng mà đồng thời thì khi chúng ta nhìn vào các feature map này, chúng ta sẽ khó mường tượng hơn đối tượng gốc ở đây,
+0:10:41 - 0:10:48, chúng ta sẽ thấy các đốm sáng, còn chúng ta sẽ không còn thấy bóng dáng của đối tượng gốc ở trên ảnh đầu vào nữa.
+0:10:48 - 0:10:53, và cho phép bộ ảnh được xử lý để phát hiện tăng tăng tăng.
+0:10:53 - 0:10:55, Chúng ta có thể tiếp tục tìm hiểu...
+0:10:55 - 0:10:58, Và đến lớp convolution cuối cùng, đó là lớp convolution số 5.
+0:10:58 - 0:11:02, Chúng ta sẽ trực quan hóa một vài feature map.
+0:11:02 - 0:11:08, Và ở đây chúng ta thấy là có một feature map rất là sáng.
+0:11:08 - 0:11:14, Và khi phóng to lên ở đây, chúng ta thấy là nó sẽ có một số tính chất gì đó.
+0:11:14 - 0:11:19, thì để làm sao biết ý nghĩa của feature map này là gì,
+0:11:19 - 0:11:21, thì người ta có một tip, một mẹo
+0:11:21 - 0:11:27, đó là với feature map này
+0:11:27 - 0:11:31, người ta sẽ thống kê lại top 9 tấm ảnh
+0:11:31 - 0:11:38, mà làm cho feature map này sáng nhiều nhất, sáng rực nhất.
+0:11:38 - 0:11:44, thì các bạn đoán xem, điểm chung của tất cả 9 tấm ảnh này là gì?
+0:11:44 - 0:11:49, thì chúng ta sẽ biết được concept, ý nghĩa của feature map này là gì.
+0:11:49 - 0:11:53, thì chắc là các bạn có thể đoán ra được rồi đúng không?
+0:11:53 - 0:11:57, Chính những tấm ảnh này, điểm chung của nó đều là có gương mặt
+0:11:57 - 0:12:00, và chúng ta cũng để ý đó là
+0:12:00 - 0:12:03, trên khu vực mà nó phát sáng ở đây,
+0:12:03 - 0:12:06, thì chúng ta ánh xạ lên trên ảnh gốc,
+0:12:06 - 0:12:08, chúng ta ánh xạ lên trên ảnh gốc,
+0:12:08 - 0:12:13, thì chúng ta cũng thấy đó là vùng gương mặt là nó phát sáng.
+0:12:13 - 0:12:18, Vùng gương mặt cũng tương ứng với vị trí mà mình phát sáng ở đây.
+0:12:18 - 0:12:25, Đó là chúng ta hình dung concept của lớp Convolution số 5 tại feature map này.
+0:12:25 - 0:12:30, Ý nghĩa của concept này là thể hiện sự xuất hiện của gương mặt.
+0:12:30 - 0:12:52, Và khi người đàn ông này, họ di chuyển về tay phải, thì feature map tương ứng các bạn thấy là vùng đốm sáng của mình cũng di chuyển về tay phải, thì điều này nó thể hiện chuyện gì?
+0:12:52 - 0:12:55, Thì trước tiên, chúng ta sẽ cùng bình luận.
+0:12:55 - 0:12:58, Sau đó, một người đàn ông áo đen
+0:12:58 - 0:13:01, họ bước vào khung hình và chúng ta thấy lại có một sự xuất hiện
+0:13:01 - 0:13:04, của một đốm sáng nữa. Thì chúng ta thấy là
+0:13:04 - 0:13:07, Ok, như vậy giả thuyết của chúng ta là đã đúng
+0:13:07 - 0:13:10, đó là concept chung của 9 tấm hình này
+0:13:10 - 0:13:13, đó chính là có sự xuất hiện của gương mặt
+0:13:13 - 0:13:16, thì khi có một gương mặt mới đi vào thì đốm sáng
+0:13:16 - 0:13:19, của gương mặt đó cũng phát sáng.

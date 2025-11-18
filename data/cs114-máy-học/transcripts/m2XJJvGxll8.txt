@@ -1,0 +1,268 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:18, Sau đây thì chúng ta sẽ cùng thảo luận
+0:00:16 - 0:00:23, về một số vấn đề khi chúng ta huấn luyện
+0:00:18 - 0:00:25, với môi nồi Q đa biến. Thì vấn đề đầu
+0:00:23 - 0:00:28, tiên đó chính là vấn đề về feature
+0:00:25 - 0:00:30, scaling. Tức là là chúng ta chuẩn hóa
+0:00:28 - 0:00:32, các cái đặc trưng của mình.
+0:00:30 - 0:00:36, Nếu như trong mô hình hồi quy đơn biến
+0:00:32 - 0:00:39, thì chúng ta chỉ có duy nhất một biến x
+0:00:36 - 0:00:43, à và trọng số tương ứng của nó.
+0:00:39 - 0:00:46, Để thể hiện cái mối quan trọng của x tác
+0:00:43 - 0:00:49, động lên cái giá trị dự đoán thì đối với
+0:00:46 - 0:00:53, cái mô hình hồi quy đa biến thì nó không
+0:00:49 - 0:00:55, phải chỉ có 1x mà nó sẽ có nhiều hơn một
+0:00:53 - 0:01:01, giá trị, một cái đặc trưng. Thì lúc này
+0:00:55 - 0:01:05, chúng ta sẽ có là x1, x2 vân vân cho đến
+0:01:01 - 0:01:11, xm à xn. Và tương ứng thì chúng ta sẽ có
+0:01:05 - 0:01:14, cái trọng số của nó đó là w1, w2 và wn.
+0:01:11 - 0:01:18, Rồi sau đó chúng ta sẽ cộng lại.
+0:01:14 - 0:01:21, À thì cái w nó sẽ thể hiện cái tầm quan
+0:01:18 - 0:01:24, trọng của à đặc trưng thứ y.
+0:01:21 - 0:01:27, Thì ở đây chúng ta sẽ xét một cái ví dụ
+0:01:24 - 0:01:30, là đặc trưng của mình là gồm các cái giá
+0:01:27 - 0:01:32, trị nhưng mà nó có giải giá trị rất là
+0:01:30 - 0:01:35, khác nhau. Có giải giá trị rất là khác
+0:01:32 - 0:01:37, nhau. Ví dụ như trong bài toán dự đoán
+0:01:35 - 0:01:40, giá nhà thì chúng ta sẽ có cái thông tin
+0:01:37 - 0:01:44, diện tích căn nhà thì có thể là từ 300
+0:01:40 - 0:01:46, cho đến 2000 m². Tức là cái con số này
+0:01:44 - 0:01:49, rất là lớn. Trong khi đó chúng ta lại có
+0:01:46 - 0:01:51, một cái đặc trưng khác. Ví dụ như là số
+0:01:49 - 0:01:53, phòng ngủ thì nó chỉ có là từ 0 cho đến
+0:01:51 - 0:01:57, 5 phòng ngủ. Thì đây là một cái con số
+0:01:53 - 0:01:59, khá là bé. Thế thì điều gì xảy ra khi
+0:01:57 - 0:02:04, trong cái mô hình của mình nó có hai cái
+0:01:59 - 0:02:07, đặc trưng x1 và x2 và có cái giải giá
+0:02:04 - 0:02:10, trị chênh biệt chên lệch rất là lớn như
+0:02:07 - 0:02:12, thế này. Thì cái hệ quả đầu tiên đó là
+0:02:10 - 0:02:16, cái trọng số lớn. À cái đặc trưng lớn
+0:02:12 - 0:02:18, thì thường là có cái trọng số nhỏ và cái
+0:02:16 - 0:02:21, đặc trưng nhỏ thì thường là có trọng số
+0:02:18 - 0:02:24, lớn. Điều này có nghĩa là gì? Khi chúng
+0:02:21 - 0:02:28, ta ở đây chúng ta xét cái ví dụ là x1 là
+0:02:24 - 0:02:30, một cái đặc trưng mà có cái giá trị lớn
+0:02:28 - 0:02:33, ha. Nó gọi ký hiệu à viết tắc là đặc
+0:02:30 - 0:02:37, trưng lớn.
+0:02:33 - 0:02:39, Còn x2 sẽ là cái đặc trưng nhỏ tức là
+0:02:37 - 0:02:45, cái giá trị nhỏ.
+0:02:39 - 0:02:50, thì cái trọng số cho cái W à X W1 cho
+0:02:45 - 0:02:54, cái X1 và W2 cho X2 thì thông thường là
+0:02:50 - 0:02:57, cái trọng số cho cái W1 sẽ nhỏ hơn cái
+0:02:54 - 0:03:01, trọng số cho W2 cho X2.
+0:02:57 - 0:03:07, Đó, tức là nếu mà x1 lớn x2 nhỏ thì
+0:03:01 - 0:03:07, thường là w1 sẽ nhỏ hơn
+0:03:08 - 0:03:14, nó sẽ nhỏ hơn W2 tức là nó sẽ nghịch đảo
+0:03:11 - 0:03:16, lại. Thế thì tại sao nó lại có vấn đề
+0:03:14 - 0:03:18, này?
+0:03:16 - 0:03:24, Tại vì khi chúng ta đưa ra cái mô hình
+0:03:18 - 0:03:26, dự đoán thì ờ nếu giả sử như cả x1 và x2
+0:03:24 - 0:03:30, cùng có cái vai trò trong cái việc là dự
+0:03:26 - 0:03:34, đoán cái giá trị y thì cái giá trị lớn
+0:03:30 - 0:03:36, nó sẽ bị tác động nhiều hay ít thì
+0:03:34 - 0:03:38, thường nó sẽ bị tác động ít hơn. Lý do
+0:03:36 - 0:03:41, đó là vì mỗi lần chúng ta thay đổi một
+0:03:38 - 0:03:43, đơn vị của W à W này chỉ cần chúng ta
+0:03:41 - 0:03:46, thay đổi một đơn vị thôi thì nó sẽ khiến
+0:03:43 - 0:03:47, cho cái giá trị Y này thay đổi rất là
+0:03:46 - 0:03:50, lớn.
+0:03:47 - 0:03:53, Mặt khác cái W2 tương ứng với lại cái
+0:03:50 - 0:03:56, đặc trưng nhỏ thì vì cái giá trị giải
+0:03:53 - 0:04:00, giá trị của x2 nó nhỏ nên khi chúng ta
+0:03:56 - 0:04:04, tăng một cái đơn vị của W2 thì nó sẽ làm
+0:04:00 - 0:04:06, cho cái Y này thay đổi rất là ít. Đó. Do
+0:04:04 - 0:04:09, đó và vì chúng ta giả định rằng là cả x1
+0:04:06 - 0:04:12, và x2 đều có cái vai trò trong cái việc
+0:04:09 - 0:04:15, là dự đoán y thì để cho nó cân bằng để
+0:04:12 - 0:04:18, nó cân bằng trở lại thì cái trọng số của
+0:04:15 - 0:04:20, W1 thường nó sẽ giảm xuống. Nó sẽ giảm
+0:04:18 - 0:04:23, xuống tại vì cái giá trị của x1 nó đã
+0:04:20 - 0:04:26, lớn rồi nên w1 nó phải giảm xuống để
+0:04:23 - 0:04:30, không có lấn ác cái x2. Ngược lại vì x2
+0:04:26 - 0:04:33, nó quá nhỏ so với x1
+0:04:30 - 0:04:36, nên cái để cân bằng lại thì cái w2 nó sẽ
+0:04:33 - 0:04:38, lớn hơn. để bù lại để cho cả hai cái x1
+0:04:36 - 0:04:42, và x2 nó cùng tham gia vô cái quá trình
+0:04:38 - 0:04:46, dự đoán cái à giá trị y. Thì đó chính là
+0:04:42 - 0:04:48, cái lý do tại sao cái đặc trưng của à
+0:04:46 - 0:04:49, cái trọng số của các cái đặc trưng lớn
+0:04:48 - 0:04:52, thì thường là nhỏ và trọng số của cái
+0:04:49 - 0:04:54, đặc trưng nhỏ thì thường là lớn.
+0:04:52 - 0:04:57, Và chính vì cái sự bất cân xứng này nó
+0:04:54 - 0:05:00, sẽ khiến cho cái đường đồng mức của cái
+0:04:57 - 0:05:03, hàm chi phí của mình nó sẽ bị kéo dài và
+0:05:00 - 0:05:03, dẹt.
+0:05:04 - 0:05:10, Ví dụ đây là cái đường động mức của mình
+0:05:06 - 0:05:10, thôi. Rồi
+0:05:11 - 0:05:17, thì khi chúng ta huấn luyện cái mô hình
+0:05:15 - 0:05:20, thì nó sẽ khiến cho cái mô hình của mình
+0:05:17 - 0:05:23, nó sẽ dịch chuyển zíz
+0:05:20 - 0:05:26, đó. nó sẽ dịch chuyển zíz rồi sau đó nó
+0:05:23 - 0:05:29, mới à tiến về được cái giá trị tối ưu
+0:05:26 - 0:05:33, toàn cục ở đây thì nó sẽ khiến cho cái
+0:05:29 - 0:05:36, việc mà hội tụ của mình nó bị chậm.
+0:05:33 - 0:05:39, Và với cái hệ quả như vậy thì chúng ta
+0:05:36 - 0:05:41, sẽ có những cái giải pháp gì? thì đương
+0:05:39 - 0:05:44, nhiên là nguyên nhân nào thì hệ thì cái
+0:05:41 - 0:05:48, giải pháp đó nguyên nhân đó là do cái x1
+0:05:44 - 0:05:50, và x2 đó là những cái giá trị mà ờ có
+0:05:48 - 0:05:52, cái sự chênh lệch về giải giá trị lớn
+0:05:50 - 0:05:55, thì chúng ta sẽ kéo nó lại thành cái
+0:05:52 - 0:05:57, giải giá trị nó giống nhau. Thì cụ thể ở
+0:05:55 - 0:05:59, đây chúng ta sẽ đưa đặc trưng về cùng
+0:05:57 - 0:06:01, một giải giá trị. Đưa về cùng một giải
+0:05:59 - 0:06:03, giá trị.
+0:06:01 - 0:06:04, Và ví dụ như ở đây chúng ta chọn cái
+0:06:03 - 0:06:06, giải giá trị là 01. Nhưng mà đương nhiên
+0:06:04 - 0:06:09, đây không phải là một giải giá trị duy
+0:06:06 - 0:06:13, nhất mà chúng ta sẽ có những cái cách
+0:06:09 - 0:06:16, để mà normaliz chuẩn hóa về à khác nhau.
+0:06:13 - 0:06:18, Rồi thì khi cái cầm tu của chúng ta ờ
+0:06:16 - 0:06:20, cái đường đồng mức của mình á nó không
+0:06:18 - 0:06:24, còn ở dạng dài và dẹt như thế này nữa mà
+0:06:20 - 0:06:26, nó sẽ trở về cái dạng là giò tròn hơn.
+0:06:24 - 0:06:28, [âm nhạc]
+0:06:26 - 0:06:31, Và khi đường động mức mình nó tròn hơn
+0:06:28 - 0:06:33, thì cái radian của mình nó sẽ hội tụ
+0:06:31 - 0:06:36, nhanh hơn. À nó sẽ hội tụ nhanh hơn. nó
+0:06:33 - 0:06:40, đi theo cái đường trực diện hơn. Thì đó
+0:06:36 - 0:06:42, chính là cái giải pháp để mà khắc chế
+0:06:40 - 0:06:44, trong cái trường hợp mà đặc trưng của
+0:06:42 - 0:06:47, mình nó có cái sự chênh lệch lớn về giải
+0:06:44 - 0:06:51, giá trị. Thì sau đây chúng ta sẽ có một
+0:06:47 - 0:06:53, vài cái phương pháp để mà à chuẩn hóa.
+0:06:51 - 0:06:55, Thì chuẩn hóa đầu tiên đó là mean
+0:06:53 - 0:06:57, normalization
+0:06:55 - 0:07:00, là một cái kỹ thuật đưa cái dữ liệu về
+0:06:57 - 0:07:04, quanh số 0 dựa vào cái mức độ trung bình
+0:07:00 - 0:07:06, và độ rộng của khoảng giá trị. Thì me
+0:07:04 - 0:07:10, normalization thì cái công thức của mình
+0:07:06 - 0:07:10, đó là lấy cái giá trị góc
+0:07:10 - 0:07:15, cái giá trị góc trừ cho cái trung bình
+0:07:13 - 0:07:18, là cái trung bình của mình đó là giá trị
+0:07:15 - 0:07:19, min của feature. Thì trong cái cột x của
+0:07:18 - 0:07:23, mình, trong cái cột đặc trưng của mình
+0:07:19 - 0:07:26, thì chúng ta sẽ trừ cho min của x.
+0:07:23 - 0:07:30, Mi của x là giá trị trung bình của cái
+0:07:26 - 0:07:34, các cái đặc trưng x. Sau rồi à chia cho
+0:07:30 - 0:07:36, cái khoảng max trừ min.
+0:07:34 - 0:07:41, Thì cái việc lấy x trừ cho mu của x nó
+0:07:36 - 0:07:45, sẽ đưa cái giá trị x của mình về cái một
+0:07:41 - 0:07:45, cái con số quanh số 0.
+0:07:47 - 0:07:55, và chia cho x tr x max trừ cho x min thì
+0:07:52 - 0:07:57, cái việc chia cho x max trừ x min á thì
+0:07:55 - 0:08:00, nó sẽ đưa cho cái khoảng giá trị của
+0:07:57 - 0:08:03, chúng ta về cùng một cái khoảng là từ 0
+0:08:00 - 0:08:06, cho đến 1 hay nói cách khác đó là cái
+0:08:03 - 0:08:09, khoảng của mình nó sẽ nhỏ lại và nó chỉ
+0:08:06 - 0:08:12, khoảng là bằng một đơn vị
+0:08:09 - 0:08:15, thì khi đó cái khoảng cách giữa giá trị
+0:08:12 - 0:08:19, lớn nhất và giá trị nhỏ nhất của mình nó
+0:08:15 - 0:08:24, chỉ là bằng khoảng một đơn vị thôi.
+0:08:19 - 0:08:25, Rồi và cái cách mà chúng ta min
+0:08:24 - 0:08:28, normalization như thế này á tức là chuẩn
+0:08:25 - 0:08:30, hóa theo kiểu trung bình thì nó sẽ có
+0:08:28 - 0:08:34, cái ưu điểm đó là feature mà sẽ về quanh
+0:08:30 - 0:08:38, số 0 và do đó thì nó sẽ giảm được cái độ
+0:08:34 - 0:08:40, lạch giảm cái bias do cái có cái sự khác
+0:08:38 - 0:08:42, biệt về mặt tỉ lệ à do có cái scale khác
+0:08:40 - 0:08:45, biệt giữa các cái đặc trưng với nhau.
+0:08:42 - 0:08:50, Thì ví dụ như chúng ta có
+0:08:45 - 0:08:53, x1 và x2 thì nếu như mà x1 mà đặc trưng
+0:08:50 - 0:08:56, này lớn hơn x2 thì nó sẽ có cái hiện
+0:08:53 - 0:08:59, tượng là bias vào cái x2. Tức là mô hình
+0:08:56 - 0:09:02, của mình nó sẽ chăm chăm nó ưu tiên để
+0:08:59 - 0:09:05, học cho cái x1 chiều hơn. Lý do đó là vì
+0:09:02 - 0:09:07, cái việc mà thay đổi cái x1 nó sẽ ảnh
+0:09:05 - 0:09:10, hưởng lớn đến toàn bộ cái quá trình mà
+0:09:07 - 0:09:12, tính toán ra cái giá trị y. Đó thì cái
+0:09:10 - 0:09:14, việc mà chúng ta cân bằng x1 và x2 lại
+0:09:12 - 0:09:17, với nhau thì nó sẽ khiến cho chúng ta
+0:09:14 - 0:09:20, giảm cái sự chân nè, giảm cái sự phụ
+0:09:17 - 0:09:23, thuộc và giảm cái sự bias vào cái một
+0:09:20 - 0:09:26, cái đặc trưng nào đó. Nó sẽ giúp cho hai
+0:09:23 - 0:09:29, cái x1 và x2 nó sẽ cân bằng hơn. Cân
+0:09:26 - 0:09:32, bằng hơn. Và cái phương pháp scaling,
+0:09:29 - 0:09:34, feature scaling này thì nó cũng khá là
+0:09:32 - 0:09:36, đơn giản và dễ dàng có thể tính toán
+0:09:34 - 0:09:37, được. công thức của nó rất là gọn và
+0:09:36 - 0:09:40, chúng ta nhiều khi chỉ cần tính toán
+0:09:37 - 0:09:43, trong nếu mà tính khéo thì chúng ta cũng
+0:09:40 - 0:09:45, chỉ có code một hai dòng code là xong.
+0:09:43 - 0:09:49, Và các cái thư vị hiện nay thì cũng có
+0:09:45 - 0:09:54, hỗ trợ các cái phép biến đổi ờ chuẩn hóa
+0:09:49 - 0:09:58, này. Cái dược điểm đó là vì cái công
+0:09:54 - 0:10:04, thức của chúng ta là có x trừ cho mu
+0:09:58 - 0:10:05, chia cho x max trừ cho x min.
+0:10:04 - 0:10:07, Thì những chính những cái giá trị max và
+0:10:05 - 0:10:10, min này á
+0:10:07 - 0:10:12, là nó có thể khả năng đó là nó nhận
+0:10:10 - 0:10:14, những cái outlayer
+0:10:12 - 0:10:18, tức là những cái giá trị mà rất khác
+0:10:14 - 0:10:21, biệt trong cái à không gian của mình. Đó
+0:10:18 - 0:10:23, thì trong cái phân bố của mình
+0:10:21 - 0:10:27, thì đâu đó nó sẽ có những cái giá trị là
+0:10:23 - 0:10:28, out layer nó sẽ nằm ở rất là xa.
+0:10:27 - 0:10:31, Nó sẽ nằm ở rất là xa. Thì những cái giá
+0:10:28 - 0:10:33, trị này
+0:10:31 - 0:10:36, nó sẽ khiến cho cái việc chuẩn hóa và
+0:10:33 - 0:10:39, tạo ra các cái đặc trưng mới mà nó cũng
+0:10:36 - 0:10:42, bị nhạy cảm với lại các cái giá trị
+0:10:39 - 0:10:46, outlayer. Thì nếu được thì chúng ta có
+0:10:42 - 0:10:48, thể chọn cái X max và Xmin này thay bằng
+0:10:46 - 0:10:50, những cái giá trị khác mà nó không bị
+0:10:48 - 0:10:52, ảnh hưởng nhiều bởi các cái outlayer
+0:10:50 - 0:10:58, này. Ví dụ như chúng ta có thể chọn ra
+0:10:52 - 0:11:01, các cái ngưỡng là one 25% hoặc là one
+0:10:58 - 0:11:05, 75% ví dụ vậy để mà mình à giảm bớt cái
+0:11:01 - 0:11:08, sự phụ thuộc vào những cái giá trị mà ở
+0:11:05 - 0:11:11, nằm ở ngoài cận biên của cái
+0:11:08 - 0:11:11, giải giá trị.
+0:11:12 - 0:11:18, và nó sẽ không phù hợp à với cái dữ liệu
+0:11:15 - 0:11:22, mà có cái phân phối nó bị lệch. À thì rõ
+0:11:18 - 0:11:23, ràng cái cách cái cách mà chúng ta ờ
+0:11:22 - 0:11:26, chia ra như thế này đúng không? cái cách
+0:11:23 - 0:11:28, mà chúng ta chia cho xap trừ x min thì
+0:11:26 - 0:11:31, đối với những cái dữ liệu mà nó có phân
+0:11:28 - 0:11:33, bố mà bị lệch mạnh ví dụ như là giải giá
+0:11:31 - 0:11:36, trị của mình tập trung phần nhiều là ở
+0:11:33 - 0:11:39, đây nhưng mà phần cuối thì lại kéo dài,
+0:11:36 - 0:11:41, kéo rất là dài thì những cái đuôi như
+0:11:39 - 0:11:45, thế này á nó sẽ khiến cho cái việc chuẩn
+0:11:41 - 0:11:46, hóa của chúng ta không có phù hợp, nó sẽ
+0:11:45 - 0:11:49, bị ảnh hưởng bởi những cái giá trị này
+0:11:46 - 0:11:51, rất là cao. Đó thì giải pháp cũng tương
+0:11:49 - 0:11:53, tự như vậy. chúng ta sẽ phải chọn cái
+0:11:51 - 0:11:57, ngưỡng để mà chúng ta scale lại cho nó
+0:11:53 - 0:11:59, phù hợp hơn. Vậy thì khi nào thì dùng
+0:11:57 - 0:12:01, min normalization? Đó là khi dữ liệu
+0:11:59 - 0:12:04, không có cái outayer quá lớn và khi
+0:12:01 - 0:12:06, chúng ta muốn dữ liệu nó về quay quanh
+0:12:04 - 0:12:09, xung số 0 nhưng mà vẫn giữ được cái
+0:12:06 - 0:12:11, thang đo tỷ lệ. Một cái kỹ thuật tiếp
+0:12:09 - 0:12:14, theo của feature scaling đó chính là
+0:12:11 - 0:12:19, score normalization. Thì trái ngược với
+0:12:14 - 0:12:23, lại cái kỹ thuật à x mean normalization
+0:12:19 - 0:12:28, thì ở đây thay vì chúng ta trừ cho mu và
+0:12:23 - 0:12:32, chia cho cái x max
+0:12:28 - 0:12:34, trừ cho x min.
+0:12:32 - 0:12:38, Thế thì cái các cái giá trị max và min
+0:12:34 - 0:12:41, này á thì nó sẽ rất dễ bị các cái giá
+0:12:38 - 0:12:44, trị outayer
+0:12:41 - 0:12:46, gọi là chi phối. Do đó thì để giảm bớt
+0:12:44 - 0:12:50, cái sự ảnh hưởng của các cái giá trị mà
+0:12:46 - 0:12:53, max và min mà tạo bởi các cái out layer
+0:12:50 - 0:12:56, thì chúng ta sẽ dùng cái độ lệch chuẩn.
+0:12:53 - 0:12:59, Và độ lịch chuẩn thì chúng ta sẽ ký hiệu
+0:12:56 - 0:13:03, bằng sigma. Thì cái công thức của mình
+0:12:59 - 0:13:06, đó sẽ là x' là bằng x trừ cho mi chia
+0:13:03 - 0:13:08, cho sigma.
+0:13:06 - 0:13:11, Và sau khi chuẩn hóa xong thì cái
+0:13:08 - 0:13:15, feature x' của mình nó sẽ có cái trung
+0:13:11 - 0:13:17, bình thì vẫn là bằng 0. À nhưng mà cái
+0:13:15 - 0:13:21, độ lệch của nó, độ lịch chuẩn của nó thì
+0:13:17 - 0:13:25, sẽ là bằng 1. Thì nó sẽ đưa về cái dạng
+0:13:21 - 0:13:27, mà gần với lại cái phân bố phân bố chuẩn
+0:13:25 - 0:13:32, trong đó min.
+0:13:27 - 0:13:32, là bằng 0 và standard deviation là bằng
+0:13:33 - 0:13:45, [âm nhạc]

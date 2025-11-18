@@ -1,0 +1,84 @@
+0:00:00 - 0:00:06, Trong vòng tiếp theo, chúng ta sẽ cùng tìm hiểu về hướng tiếp cận học sâu
+0:00:06 - 0:00:08, trong lĩnh vực xử lý ngu ở tự nhiên.
+0:00:08 - 0:00:13, Học sâu, chúng ta nhắc lại, đó là một cái nhánh của representation learning.
+0:00:13 - 0:00:17, Tức là chúng ta sẽ tìm cách học từ dữ liệu thô.
+0:00:17 - 0:00:22, Dữ liệu đồ vào trước đây của chúng ta phải là các feature vector.
+0:00:22 - 0:00:28, Tức là chúng ta đã dựa trên chi thức chuyên gia để đưa vào bên trong các mạng neural.
+0:00:28 - 0:00:33, Bây giờ, với mạng học sau, chúng ta chỉ cần đưa dữ liệu đầu vào là dữ liệu nguyên bản.
+0:00:33 - 0:00:38, Và chúng ta không cần phải có kiến thức của chuyên gia để rút trích ra thành những đặc trưng quan trọng nữa.
+0:00:38 - 0:00:46, Mà tự mô hình sẽ đi tìm cách để học và biểu diễn các dữ liệu hoặc là các đặc trưng đó cho mình.
+0:00:46 - 0:00:52, Và đương nhiên, chúng ta sẽ phải cung cấp cho các mô hình máy học này rất nhiều dữ liệt.
+0:00:52 - 0:00:59, Và khi cung cấp cho nó rất nhiều dữ liệu thì nó sẽ đúc kết ra được những tri thức chung của tất cả những dữ liệu đó.
+0:00:59 - 0:01:07, Và tất cả những thành tựu liên quan đến học sâu hiện nay mà có được là nhờ những yếu tố sau.
+0:01:07 - 0:01:10, Đầu tiên đó là yếu tố dữ liệu ngày càng lớn.
+0:01:10 - 0:01:17, Trước đây thì thật ra internet thì nó đã có từ những năm 1990 trở về trước.
+0:01:17 - 0:01:20, từ những ngày 1990.
+0:01:20 - 0:01:24, Tuy nhiên, cho đến những năm gần đây, chúng ta thấy là mạng internet
+0:01:24 - 0:01:27, đã có mỹ thành tựu rất là đáng kể.
+0:01:27 - 0:01:32, Thứ nhất, đó là nó đã phủ sống được cho rất là nhiều người có thể cùng tiếp cận.
+0:01:32 - 0:01:36, Và với việc phủ sống được rất nhiều người có khả năng tiếp cận,
+0:01:36 - 0:01:40, thì mỗi người trong chúng ta sẽ có khả năng là một cái người tạo ra
+0:01:40 - 0:01:42, một cái nội dung có giá trị trên mạng internet,
+0:01:42 - 0:01:44, thông qua các cái mạng xã hội.
+0:01:44 - 0:01:58, Và các mạng xã hội hiện nay đã góp phần tạo ra rất nhiều kho dữ liệu quan trọng cho các hệ thống AI hiện nay để có thể sử dụng dữ liệu đó để huấn luyện cho các mô hình máy học.
+0:01:58 - 0:02:08, Và chúng ta có thể kể đến một số mạng xã hội quan trọng đã góp phần cho thành tựu của xử lý môn người tự nhiên, ví dụ như Wiki, Pedia.
+0:02:08 - 0:02:19, các trang mạng xã hội khác, ví dụ như là Start Overflow cho những bạn nào làm về lập trình
+0:02:19 - 0:02:27, thì sẽ biết rõ trang này. Các mạng xã hội khác mà cung cấp rất nhiều những diễn liệu dịch thuật, ví dụ như là YouTube
+0:02:27 - 0:02:36, Trên trang Youtube thì chúng ta thấy là bên cạnh cái video góc, nó sẽ có các cái caption,
+0:02:36 - 0:02:46, tức là các cái bảng phiên ra lời thoại và có rất nhiều những tình nguyện viên họ đã phiên ra những ngôn ngữ khác nhau.
+0:02:46 - 0:02:54, Ví dụ như video góc thì nói về tiếng Anh và nội dung của lời thoại là đương nhiên là họ sẽ tạo ra tiếng Anh
+0:02:54 - 0:03:01, Đồng thời sẽ có một số người cộng tác, họ tạo ra những lời thoại cho rất nhiều nguyên vô hưởng khác trong đó có tiếng Việt.
+0:03:01 - 0:03:09, Như vậy thì kênh YouTube này cũng góp phần ngạc cung cấp cho các kho diễn liệu về máy học hiện nay một cách đáng trẻ.
+0:03:09 - 0:03:16, Và một cái lý do nữa để khiến cho học sâu phát triển trong những năm gần đây chính là sức mạnh tính toán ngày càng tăng.
+0:03:16 - 0:03:27, trước đây thì chúng ta có các cdu và các cdu này cho dù nó tăng tốc độ đến độ đạo đi chăng nữa thì tại một thời điểm nó cũng chỉ có thể thực hiện được khoảng một trong
+0:03:27 - 0:03:38, còn cdu là một cái thiết bị phần cưng khác cho phép mình có thể tính toán xong xong rất nhiều cái phép toán tương tự và độc lập nhau
+0:03:38 - 0:03:43, tại một thời điểm nó có thể tính các phép toán tương tự độc lập nhau
+0:03:43 - 0:03:52, Đồng thời, không thể không kể đến các mô hình cũng như các tụ tán ngày nay đã cải tiến rất nhiều.
+0:03:52 - 0:03:59, Các mô hình có thể giúp chúng ta học được nhiều dữ liệu hơn với thời gian huấn luyện ít hơn
+0:03:59 - 0:04:03, và tránh được rất nhiều hiện tượng đó là overfitting,
+0:04:03 - 0:04:08, tức là chỉ là tốt cho dữ liệu trend nhưng không tốt cho dữ liệu test như vậy.
+0:04:08 - 0:04:16, thì thành tựu của các cái này học sâu hiện nay là đã giúp cho Deep Learning phát triển một cách vượt mập.
+0:04:20 - 0:04:26, Rồi, và sơ đổ ở bên đây thì chúng ta có thể thấy là trước đây các hệ thống của mình nó sẽ dựa trên rule,
+0:04:26 - 0:04:36, hoặc là những cái hệ thống gọi là kinh điển thì nó đều phải có những cái hand design program,
+0:04:36 - 0:04:43, tức là các cái chương trình này sẽ do những cái chi thức của các chuyên gia họ thiết kế ra.
+0:04:43 - 0:04:47, Và ở cái mức độ là Classic Machine Learning,
+0:04:47 - 0:04:57, thì nó sẽ có các feature, có các công cụ để mapping giữa các feature và thậm chí là các chuyên gia họ sẽ phải thiết kế các đặc trưng này.
+0:04:57 - 0:05:04, Ví dụ khi chúng ta làm việc trên hình ảnh, thì chúng ta biết là mối quan hệ giữa các pixel với các nguồn đồng chập,
+0:05:04 - 0:05:08, chúng ta sẽ thiết kế các phép viễn đổi là filter
+0:05:08 - 0:05:13, và trọng số của các filter sẽ là do chuyên gia họ thiết kế.
+0:05:13 - 0:05:15, Tương tự như vậy, trong lĩnh vực xử lý ngôn ngựt,
+0:05:15 - 0:05:19, tương nhiên chúng ta sẽ có những cái trick, những cái mẹo
+0:05:19 - 0:05:21, để giúp cho học các mô hình,
+0:05:22 - 0:05:26, ví dụ như LSTM, hoặc là phẩm mô độc sâu.
+0:05:26 - 0:05:31, Tuy nhiên thì trước đây người ta không có sử dụng các mô hình mà tự vấn luyện
+0:05:31 - 0:05:37, để tạo ra các trọng số mà họ phải thi kế trước các trọng số dựa trên một số luật,
+0:05:37 - 0:05:43, ví dụ như là môn dựa trên bias để thống kê xem là cái từ này xuất hiện,
+0:05:43 - 0:05:46, thì sát xuất của cái từ tiếp theo sẽ là bao nhiêu? Họ sẽ thống kê.
+0:05:49 - 0:05:54, Rồi, và gần đây thì Representation Learning và điển hình đó là Deep Learning,
+0:05:54 - 0:06:01, thì nó sẽ đưa vào những cái Simple Feature và thậm chí như mình phải có đề cập đó,
+0:06:01 - 0:06:04, Nó là chúng ta không cần phải đưa đặc trưng của nó
+0:06:04 - 0:06:07, và chúng ta có thể đưa dữ liệu thô đầu vào
+0:06:07 - 0:06:08, thì máy vẫn có thể học được.
+0:06:09 - 0:06:10, Rồi.
+0:06:10 - 0:06:14, Và lĩnh vượt học sau nó đã có những thành tựu vượt bập
+0:06:14 - 0:06:15, trong một số bài toán.
+0:06:15 - 0:06:19, Không phải trong một số bài toán mà trong rất nhiều bài toán.
+0:06:19 - 0:06:22, Và nổi tiếng nhất chính là cái bài toán về dịch máy,
+0:06:22 - 0:06:25, về chatbot, về gợi ý nội dung trong email.
+0:06:25 - 0:06:28, Và một số mô hình nổi tiếng gần đây chúng ta
+0:06:28 - 0:06:31, được nghe rất là nhiều, đó chính là Transformer.
+0:06:31 - 0:06:32, Tất cả các mô hình
+0:06:33 - 0:06:36, trong sự yên ngôn ngữ tự nhiên hiện nay đều có
+0:06:36 - 0:06:39, gốc từ kiến trúc Transformer.
+0:06:39 - 0:06:42, Ví dụ như, con chatbot rất nổi tiếng hiện nay
+0:06:42 - 0:06:45, đó là ChatGBT. ChatGBT thì cái chữ T
+0:06:45 - 0:06:47, chính là Transformer.
+0:06:47 - 0:06:51, Chuyện T là một trong những mô hình ngôn ngữ lớn
+0:06:51 - 0:06:54, và có chữ T thì T ở đây cũng chính là Transformer.
+0:06:54 - 0:07:01, Và dưới đây là, ở trên đây đó là những hình ảnh trập ra từ một con bốt của CorePilot,
+0:07:01 - 0:07:07, của người phát triển bởi Microsoft, thì chúng ta có thể yêu cầu dịch một đoạn quang mạng,
+0:07:07 - 0:07:15, từ tiếng Anh sang tiếng Việt. Chúng ta có thể soạn email một cách dễ dàng hơn bằng cách chúng ta chỉ cần gõ vai đưa khóa,
+0:07:15 - 0:07:22, là cái hệ thống sẽ tự nhắc cho chúng ta, cái từ tiếp theo sẽ đi là gì, chúng ta chỉ cần nhấn phím tác,
+0:07:22 - 0:07:25, là nập tức nó có thể thành thiện cái nội dung cho mình.
+0:07:25 - 0:07:31, Các cái nội dung mà nó sẽ chét sau đây, nó sẽ dựa trên những cái nội dung trao đổi trước đó của mình.
+0:07:31 - 0:07:33, Một cách từ đầu.

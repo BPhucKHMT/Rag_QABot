@@ -1,0 +1,177 @@
+0:00:00 - 0:00:08, Chúng ta sẽ cùng tìm hiểu về phân đoạn ngữ nghĩa cho đối tượng.
+0:00:08 - 0:00:18, Chúng ta sẽ có định nghĩa bài toán phân đoạn ngữ nghĩa đối tượng là chúng ta sẽ xác định vị trí của đối tượng, các đối tượng cần quan tâm,
+0:00:18 - 0:00:22, và chính xác đến cấp độ điểm ảnh.
+0:00:22 - 0:00:26, tức là trước đây nếu như chúng ta phát hiện đối tượng
+0:00:26 - 0:00:30, object detection, thì đây chúng ta chỉ cần chỉ ra cái bounding box
+0:00:30 - 0:00:34, bao xung quanh cái đối tượng.
+0:00:34 - 0:00:40, thì ở đây chúng ta sẽ phải chỉ đến cái cấp độ đó là pixel.
+0:00:40 - 0:00:44, tức là pixel này thì nó sẽ thuộc về đối tượng là con bò.
+0:00:44 - 0:00:48, Còn pixel này thì sẽ thuộc về đối tượng là cái bãi cỏ.
+0:00:48 - 0:00:50, Tương tự như vậy.
+0:00:50 - 0:00:53, Ở đây, trước đây thì chúng ta sẽ chỉ ra cái Bounding Box.
+0:00:53 - 0:00:59, Còn bây giờ thì chúng ta sẽ chỉ ra chi tiết đến từng cái pixel.
+0:00:59 - 0:01:07, Vì vậy thì cái bài toán phân đoạn ngữ nghĩa đối tượng, nó sẽ giúp chúng ta giải quyết triệt để hơn cái bài toán Object Detection.
+0:01:07 - 0:01:11, Tại vì trong Object Detection thì nó sẽ có cái vùng của cái Bounding Box
+0:01:11 - 0:01:14, mà không thực sự là thuộc đối tượng.
+0:01:14 - 0:01:16, Ví dụ như trong ảnh ở đây, chúng ta thấy
+0:01:16 - 0:01:22, mặc dù nó nằm trong bounding box nhưng nó không thực sự là nằm trong đối tượng là con bò.
+0:01:24 - 0:01:27, Trong số những cái cách tiếp cận cho
+0:01:27 - 0:01:30, phân đoạn ngữ nghĩa đối tượng thì kiến trúc U-Net,
+0:01:30 - 0:01:35, mặc dù nó ra đời từ khoảng năm 2015
+0:01:35 - 0:01:38, 2016 rất là lâu rồi.
+0:01:38 - 0:01:44, Nhưng có thể nói cho đến nay, đây là một trong những kiến trúc rất tổng quát
+0:01:44 - 0:01:47, và được tái sử dụng cho rất nhiều mô hình
+0:01:47 - 0:01:53, và ý tưởng của nó đó chính là sử dụng các skip connection.
+0:01:57 - 0:02:00, Rồi, thì tại sao lại như vậy?
+0:02:00 - 0:02:04, Đầu tiên nếu như không có skip connection này
+0:02:04 - 0:02:11, thì ảnh của mình sẽ được down sample, tức là được giảm độ phân giải xuống.
+0:02:11 - 0:02:18, Ví dụ ban đầu là 572 x 572, sau đó sẽ giảm xuống còn 284 x 284,
+0:02:18 - 0:02:23, rồi kéo xuống một hồi sẽ còn là 30 x 30, 28 x 28.
+0:02:23 - 0:02:26, Và đây là kết thúc quá trình encode.
+0:02:26 - 0:02:37, Để mà có thể tái tạo lại feature map hoặc là kết quả có độ phân giải giống với độ phân giải ban đầu,
+0:02:37 - 0:02:46, thì buộc feature map ở đây sẽ phải tăng kích thước của 2 chiều không gian bề ngang và bề cao lên.
+0:02:46 - 0:02:49, 2 chiều không gian bề ngang và bề cao lên,
+0:02:49 - 0:02:52, ví dụ ở đây chúng ta thấy là từ 28 x 28
+0:02:52 - 0:02:54, tăng lên là 56 x 56 rồi,
+0:02:54 - 0:02:56, sau đó là tăng lên 112,
+0:02:56 - 0:02:59, tăng lên 200 x 200,
+0:02:59 - 0:03:01, rồi tăng lên 392
+0:03:01 - 0:03:03, nhân cho 392.
+0:03:03 - 0:03:05, thì cái thao tác mà upsample
+0:03:05 - 0:03:07, hay là upsampling
+0:03:07 - 0:03:11, là nó sẽ làm giảm
+0:03:11 - 0:03:14, cái độ phân giải của tấm hình của mình.
+0:03:14 - 0:03:15, nó sẽ làm giảm cái độ phân giải.
+0:03:15 - 0:03:17, Tức là đường nét của mình không còn sắc nét nữa.
+0:03:17 - 0:03:20, Thì cái này là một cái việc rất là bình thường.
+0:03:20 - 0:03:25, Khi chúng ta từ một cái không gian mà nhiều thông tin nén xuống không gian ít thông tin,
+0:03:25 - 0:03:28, xong từ không gian ít thông tin mở rộng trở lại,
+0:03:28 - 0:03:31, thì nó sẽ bị thiếu sót thông tin.
+0:03:31 - 0:03:34, Do đó, nó sẽ có cái Skip Connection này.
+0:03:34 - 0:03:38, Skip Connection này sẽ tận dụng được cái thông tin gốc,
+0:03:38 - 0:03:42, tận dụng được độ chi tiết và nó sẽ giữ được độ phân giải.
+0:03:42 - 0:03:53, Từ đó là nó sẽ kết nối với lại feature map ở các lớp đã được upsampling từ giai đoạn encode.
+0:03:53 - 0:04:01, Sau đó nó sẽ concat, kết nối với lại feature map tại lớp trước đó
+0:04:01 - 0:04:11, Trước khi thực hiện quá trình encode, như vậy ở đây sẽ giúp chúng ta giữ được độ phân giải.
+0:04:11 - 0:04:21, Về lý thuyết của ResNet, với Residual Block thì nó cũng sẽ có các skip connection.
+0:04:21 - 0:04:28, Và cái skip connection này ngoài việc giữ được độ phân giải của feature map output,
+0:04:28 - 0:04:33, thì mình sẽ còn có một tính năng nữa đó là giúp cho quá trình huấn luyện nhanh hơn.
+0:04:33 - 0:04:38, Nó đỡ tránh được hiện tượng Vanishing Gradient.
+0:04:38 - 0:04:41, Không bị hiện tượng
+0:04:44 - 0:04:46, Vanishing
+0:04:47 - 0:04:49, Gradient.
+0:04:51 - 0:04:57, Rồi, để có thể thực hiện được các thao tác upsampling lên,
+0:04:57 - 0:05:02, thì chúng ta sẽ có các phép là Unpooling và Deconvolution.
+0:05:02 - 0:05:10, Nếu như pooling, chúng ta lưu giá trị nhỏ nhất hoặc giá trị lớn nhất hoặc giá trị trung bình tại đây,
+0:05:10 - 0:05:17, thì khi chúng ta tái tạo, chúng ta sẽ không biết phải thế giá trị này vào vị trí nào.
+0:05:17 - 0:05:26, Do đó, trong quá trình pooling, chúng ta sẽ lưu các switch variables để lưu vị trí giá trị lớn nhất hoặc giá trị nhỏ nhất hoặc giá trị trung bình đó.
+0:05:26 - 0:05:31, Ví dụ, ở đây chúng ta biết giá trị này là giá trị lớn nhất,
+0:05:31 - 0:05:35, Thứ nhất, chúng ta sẽ đưa giá trị đó vào pool map,
+0:05:35 - 0:05:42, nhưng đồng thời đánh dấu là cái vị trí này là chứa giá trị mà mình vừa mới được thực hiện pooling.
+0:05:42 - 0:05:50, Khi quá trình unpooling, chúng ta sẽ lấy giá trị này chép ngược trở lại về vị trí này.
+0:05:50 - 0:05:54, Và lưu ý là 3 giá trị ở đây sẽ để là 3 con số 0,
+0:05:54 - 0:05:58, tại vì nó không có thông tin để trả giá trị về.
+0:05:58 - 0:06:08, Rồi, đối với phép deconvolution, thì nó tổng hợp thông tin từ một vùng giả sử như đây là kích thước 3x3.
+0:06:08 - 0:06:14, Nó sẽ tổng hợp thông tin về một cái ô. Thì deconvolution là cái công việc ngược lại.
+0:06:14 - 0:06:25, Tức là từ một cái ô có kích thước là 1x1, nó sẽ lan truyền cái thông tin này đến cái vùng có kích thước là 3x3 ở feature map output.
+0:06:25 - 0:06:33, và nó cũng sẽ có các bộ filter để thực hiện phép **deconvolution**, tương tự như phép convolution.
+0:06:33 - 0:06:39, Một kiến trúc khác cũng rất là nổi tiếng và đó chính là DeepLab V3.
+0:06:39 - 0:06:50, Ý tưởng của DeepLab V3 sẽ dựa trên phép tính toán, đó là atrous convolution hoặc là tên khác, đó là dilated convolution.
+0:06:50 - 0:07:00, Nếu như phép biến đổi Convolution là, nếu như đây là Input, đây là Output,
+0:07:00 - 0:07:07, Rồi, thì nó sẽ tổng hợp thông tin của vùng có kích thước là 3 x 3
+0:07:07 - 0:07:14, để tổng hợp thông tin và điền vào 1 cái điểm ở trên feature map ở đây,
+0:07:14 - 0:07:18, thì cái việc này sẽ dẫn đến vấn đề đó là
+0:07:18 - 0:07:24, nó sẽ không tổng hợp được thông tin ở những vùng có kích thước lớn hơn.
+0:07:24 - 0:07:29, muốn tổng hợp thông tin ở những vùng lớn hơn thì chúng ta phải thực hiện
+0:07:29 - 0:07:31, cái phép convolution liên tiếp nhiều lần.
+0:07:31 - 0:07:36, còn cái phép atrous, và đương nhiên cái việc mà chúng ta thực hiện nhiều lần như vậy
+0:07:36 - 0:07:41, thì nó sẽ tăng chi phí tính toán đồng thời là không giải quyết được vấn đề về scale,
+0:07:41 - 0:07:50, scale, vấn đề về độ bất biến trong phân đoạn ngữ nghĩa với những đối tượng nhỏ hoặc là những đối tượng rất lớn.
+0:07:50 - 0:08:01, Thì ở đây, phép atrous convolution, thay vì chúng ta chỉ lấy các vùng ba nhân ba liên tiếp nhau thì chúng ta có thể skip,
+0:08:01 - 0:08:04, chúng ta sẽ bỏ qua những cái ô ở giữa.
+0:08:04 - 0:08:07, thì ở trong cái ví dụ này thì cái rate
+0:08:07 - 0:08:10, rate nó thể hiện là cái skip của mình là bằng 2.
+0:08:10 - 0:08:14, trong cái ví dụ này thì cái rate của mình
+0:08:14 - 0:08:16, rate bằng 1,
+0:08:16 - 0:08:18, tức là nó chỉ nhảy cóc 1 đơn vị,
+0:08:18 - 0:08:23, còn cái này là nhảy cóc 2 đơn vị để lấy cái giá trị để tổng hợp thông tin lên đây.
+0:08:23 - 0:08:26, và cái phép atrous convolution
+0:08:26 - 0:08:36, Nó là sự kết hợp, concat của thông tin tại rất nhiều vùng với các cái kích thước khác nhau.
+0:08:36 - 0:08:42, Ví dụ như là từ một cái vùng 1 x 1, từ cái vùng là 3 x 3,
+0:08:42 - 0:08:46, Thực ra cái 1 x 1 convolution này nếu như mình nhìn một cái góc độ nào đó
+0:08:46 - 0:08:50, Nó chính là rate bằng 0.
+0:08:50 - 0:08:58, Tức là các giá trị của mình không có nhảy ra để tổng hợp thông tin mà nó cứ đứng yên vậy đó.
+0:08:58 - 0:09:06, Rate bằng 0. Còn convolution, 3x3 convolution với rate bằng 6,
+0:09:06 - 0:09:14, tức là khoảng cách giữa các điểm mà mình lấy mẫu để tổng hợp thông tin, thì khoảng cách này là 6.
+0:09:14 - 0:09:30, Rate bằng 12, Rate bằng 18, thì khoảng cách giữa 2 điểm ảnh trên feature map để tổng hợp thông tin là 18.
+0:09:30 - 0:09:34, thì nhắc lại lần nữa là cái 1x1 convolution này hiểu một cách
+0:09:34 - 0:09:39, là extreme case thì nó chính là 3x3
+0:09:39 - 0:09:47, nhưng mà rate bằng không là cái điểm mà mình lấy mẫu không có nhảy ra ngoài mà cứ đứng yên một chỗ,
+0:09:47 - 0:09:53, đồng thời nó sẽ kết hợp với lại cái phép biến đổi là image pooling như bình thường,
+0:09:53 - 0:09:55, nó sẽ downsampling như bình thường.
+0:09:55 - 0:10:03, Như vậy thì cả 5 feature maps này sẽ concat lại với nhau, tức là nó sẽ trồng lại lên nhau,
+0:10:03 - 0:10:11, và đồng thời nó sẽ thực hiện phép 1x1 convolution để tổng hợp thông tin về 1 feature map.
+0:10:11 - 0:10:18, Tức là ban đầu các phép tính 1x1 convolution sẽ tạo ra 1 feature map như thế này,
+0:10:18 - 0:10:43, Phép 3x3 convolution với rate bằng 6, nó sẽ tạo ra một cái feature map mới, rồi với rate bằng 12, với rate bằng 18.
+0:10:43 - 0:10:48, Thở
+0:10:48 - 0:10:52, Thở
+0:10:52 - 0:10:58, Rồi, thì sau khi chúng ta thực hiện phép 1x1 convolution thì nó sẽ tổng hợp lại thành duy nhất
+0:10:58 - 0:11:03, ờ, nó sẽ tổng hợp lại thành duy nhất một cái feature map mà thôi.
+0:11:03 - 0:11:22, Rồi, sau đó nó sẽ thực hiện phép upsampling, Bilinear upsampling,
+0:11:22 - 0:11:30, tức là không có tham số để tái tạo ra một cái ảnh kết quả mà có cái độ phân giải cao.
+0:11:30 - 0:11:33, Đây là ý tưởng DeepLabV3.
+0:11:33 - 0:11:38, Ý chính của DeepLabV3 chính là phép Atrous Convolution hay Dilated Convolution.
+0:11:38 - 0:11:43, Nằm trong Atrous Spatial Pyramid Pooling.
+0:11:43 - 0:11:48, Nó sẽ concat thông tin khi thực hiện Atrous Convolution
+0:11:48 - 0:11:51, với rất nhiều rate khác nhau.
+0:11:51 - 0:11:56, Sau đó chúng ta tổng hợp lại thông qua phép concat kết hợp với 1x1 Convolution.
+0:11:56 - 0:12:06, Rồi, như vậy thì trên đây, đó là chúng ta đã **tóm tắt** rất nhiều những cái ứng dụng kinh điển, điển hình của mạng CNN,
+0:12:06 - 0:12:17, từ các cái ứng dụng liên quan đến bài toán phân loại đối tượng trên những cái loại đối tượng mà có cái **cấp độ** rất là mịn.
+0:12:17 - 0:12:27, Tức là, thay vì chúng ta nhận diện hoa so với lại các đối tượng khác như là cây cối, thì ở đây hoa, chúng ta sẽ phân ra rất nhiều loài hoa.
+0:12:28 - 0:12:36, Tương tự như vậy, đối với xe hơi, chúng ta cũng sẽ có rất nhiều loại xe hơi, các dòng xe hơi, các niên đại của nó.
+0:12:37 - 0:12:43, Rồi, đối với bài toán nhận diện gương mặt, chúng ta sẽ phải phân biệt được định danh của người này với người kia.
+0:12:43 - 0:12:50, thì đó là cái ứng dụng trong bài toán Classification nhưng mà ở cấp độ là fine-grained Classification.
+0:12:51 - 0:12:59, Và cái ứng dụng tiếp theo đó là cho cái bài toán truy vấn, tức là tấm ảnh của mình nó sẽ được convert sang cái dạng Embedding Vector.
+0:12:59 - 0:13:07, Và cái Embedding Vector này sẽ được sử dụng để đi so sánh với lại các Embedding Vector của những cái tấm ảnh khác trong cơ sở dữ liệu.
+0:13:07 - 0:13:11, Và cái việc so sánh này thì cũng tương tự như là các cái thao tác truy vấn bình thường.
+0:13:11 - 0:13:17, Đó là chúng ta có thể sử dụng các độ đo tích vô hướng, cosine hoặc là sử dụng độ đo khoảng cách.
+0:13:17 - 0:13:22, Rồi sau đó lấy top các giá trị mà có độ tương đồng cao để chúng ta trả về.
+0:13:22 - 0:13:30, Và cái ứng dụng nữa đó chính là có thể thực hiện các thao tác liên quan đến phát hiện đối tượng.
+0:13:30 - 0:13:36, Tức là chúng ta sẽ chỉ ra chính xác, chúng ta có thể chỉ ra được vị trí của đối tượng đến cấp độ là bounding box.
+0:13:36 - 0:13:41, Và đối với bài toán SEMANTIC SEGMENTATION, tức là phân đoạn ngữ nghĩa đối tượng,
+0:13:41 - 0:13:45, thì chúng ta có thể chỉ ra được vị trí của đối tượng đến cấp độ là pixel.
+0:13:45 - 0:13:50, Và trong các kiến trúc tiếp cận thì hướng tiếp cận U-Net
+0:13:50 - 0:13:56, với cấu trúc encoder và decoder, đó là một trong những kiến trúc cho đến bây giờ
+0:13:56 - 0:13:57, vẫn được sử dụng rất là nhiều.
+0:13:57 - 0:14:00, Có rất nhiều những biến thể khác nhau nhưng mà ý tưởng chung
+0:14:00 - 0:14:04, đó là có skip connection giữa lớp encoder sang lớp decoder
+0:14:04 - 0:14:11, để đảm bảo được độ phân giải giữa ảnh đầu vào với ảnh output
+0:14:11 - 0:14:16, nó có độ phân giải và đường nét sắc nét và độ chính xác cao.
+0:14:17 - 0:14:19, Bên cạnh các ứng dụng trên thì còn rất nhiều những ứng dụng khác,
+0:14:19 - 0:14:22, ví dụ như là ứng dụng tăng độ phân giải ảnh,
+0:14:22 - 0:14:30, tức là từ một ảnh có kích thước và ví dụ như 200 x 200,
+0:14:30 - 0:14:39, Sau khi thực hiện phép Super Resolution xong, nó có thể tạo thành ảnh có kích thước lên đến 1 ngàn,
+0:14:39 - 0:14:44, nhân với 1 ngàn. Ví dụ vậy, nó sẽ tăng độ phân giải của ảnh lên.
+0:14:44 - 0:14:50, Và đương nhiên nó vẫn phải giữ được tính chất, sự sắc nét của ảnh,
+0:14:50 - 0:14:54, chứ nó không phải chỉ sử dụng thao tác upsampling theo kiểu Bilinear,
+0:14:54 - 0:15:01, tức là song tuyến, một cách gọi là phi tham số để mà repeat, tức là chỉ lặp lại các điểm ảnh nhiều lần
+0:15:01 - 0:15:04, tạo ra cái ảnh không được sắc nét cho lắm.
+0:15:04 - 0:15:14, Chuyển đổi phong cách ảnh, tức là chúng ta sẽ có thể chuyển đổi một cái domain, một cái không gian của ảnh tại cái domain hiện tại sang một cái domain khác.
+0:15:14 - 0:15:21, Ví dụ như chúng ta có được một cái tấm ảnh trong đời thực của mình, hoặc chúng ta có thể chuyển sang cái phong cách đó là ảnh hoạt hình.
+0:15:21 - 0:15:31, thì đây có lẽ là một trong những ứng dụng mà có rất nhiều sự chú ý của cộng đồng trong thời gian gần đây liên quan đến cái mạng generative AI.
+0:15:31 - 0:15:34, Tiếp theo đó là các bài toán liên quan đến theo dõi đối tượng,
+0:15:34 - 0:15:42, tức là một đối tượng nó sẽ xuất hiện trong suốt rất nhiều frame của video
+0:15:42 - 0:15:46, và làm sao mình biết đối tượng này cũng chính là đối tượng này,
+0:15:46 - 0:15:51, Đối tượng này, cái ID của đối tượng, thông qua cái ID của đối tượng khi di chuyển qua nhiều frame.
+0:15:53 - 0:15:55, Đối tượng này cũng chính là đối tượng này.
+0:15:55 - 0:15:57, Thì đó là bài toán Tracking.
+0:15:58 - 0:16:04, Và các cái kiến trúc mạng trong các cái bài toán này thì có cái mức độ ảnh hưởng lớn
+0:16:04 - 0:16:08, và nó sẽ dẫn dắt cái ý tưởng chủ đạo cho các kiến trúc về sau.
+0:16:08 - 0:16:14, Mặc dù những kiến trúc, phương pháp, thuật toán, mô hình
+0:16:14 - 0:16:17, mà được giới thiệu trong bài học ngày hôm nay
+0:16:17 - 0:16:21, cũng có từ cách đây 4-5 năm trước.
+0:16:21 - 0:16:25, Tuy nhiên, những ý tưởng này vẫn như đã đề cập,
+0:16:25 - 0:16:28, đối với kiến trúc U-Net hoặc một số kiến trúc như là
+0:16:28 - 0:16:34, phát hiện đối tượng với một giai đoạn hoặc phát hiện đối tượng với hai giai đoạn.
+0:16:34 - 0:16:38, Các hướng tiếp cận gần đây vẫn kế thừa những ý tưởng chủ đạo đó
+0:16:38 - 0:16:41, để mà tạo ra những cái công trình nghiên cứu mới nhất.

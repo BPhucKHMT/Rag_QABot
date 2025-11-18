@@ -1,0 +1,142 @@
+0:00:00 - 0:00:05, Mô hình Continuous Bag of Words.
+0:00:05 - 0:00:14, Continuous Bag of Words sẽ đi đoán từ ở giữa khi cho trước từ xung quanh.
+0:00:14 - 0:00:18, Trước đây là cho trước từ ở giữa đoán từ xung quanh.
+0:00:18 - 0:00:22, Bây giờ mình sẽ đi đoán từ ở giữa khi biết từ xung quanh.
+0:00:22 - 0:00:27, Lúc này là mũi tên của mình sẽ là ngược lại.
+0:00:27 - 0:00:34, Từ những từ t-2, t-1, chúng ta sẽ đi đoán từ thứ t.
+0:00:35 - 0:00:44, Và chúng ta sẽ có công thức của hàm loss của mình là bằng trừ là bằng trung bình cộng.
+0:00:44 - 0:00:56, là âm của trung bình cộng, của log, của P(Wt | Wt-m, ..., Wt-1, Wt+1, ..., Wt+m).
+0:00:56 - 0:01:03, Lưu ý là từ đây, ở cái chỗ này nè, thì chúng ta sẽ không có Wt.
+0:01:03 - 0:01:07, Chúng ta sẽ không có Wt. Từ Wt-m nó sẽ nhảy lên Wt+1 luôn.
+0:01:07 - 0:01:21, Rồi, và ở đây thì tương tự như Skip-gram thì chúng ta cũng sẽ sử dụng một cái mạng Neural Network cho cái mô hình Continuous Bag of Words.
+0:01:21 - 0:01:31, Và dựa trên các cái đầu vào thì chúng ta sẽ tính cái vector h bằng cách đó là lấy tổng hoặc trung bình cộng của các cái vector tương ứng.
+0:01:31 - 0:01:50, Với mỗi khối này, nó sẽ ánh xạ từ x1k về một dạng vector, x2k về một dạng vector, xk về một dạng vector.
+0:01:50 - 0:01:58, và chúng ta sẽ tính tổng tất cả các vector đó để tạo ra h.
+0:01:59 - 0:02:05, Và như vậy thì chúng ta sẽ có công thức là h sẽ là bằng W chuyển vị nhân với lại x1.
+0:02:05 - 0:02:07, cộng cho x2 cộng cho xt.
+0:02:10 - 0:02:15, Rồi, và qua đó thì chúng ta sẽ
+0:02:15 - 0:02:41, Tính lớp Output Layer bằng hàm tương tự như Skip-gram, y ngã, bằng softmax của W và W' chuyển vị.
+0:02:41 - 0:02:44, Cái này là tương tự Skip-gram.
+0:02:52 - 0:02:56, Và khi đó hàm lỗi của mình lúc này sẽ đơn giản hơn.
+0:02:56 - 0:03:06, Tại vì nó sẽ không phải tính trên tổng của dự đoán từ t-1, t-2 cho đến t+1, t+2 nữa.
+0:03:06 - 0:03:08, Mà nó chỉ đoán tại thời điểm thứ t.
+0:03:08 - 0:03:18, Và do đó thì cái vector này nó sẽ là bằng y ngã [chỉ số của Wt].
+0:03:18 - 0:03:29, Thì nó sẽ là lấy cái phần tử có chỉ số là chỉ số của cái từ thứ Wt.
+0:03:29 - 0:03:35, Tức là cái từ ở giữa, cái từ ở giữa nó sẽ có một cái chỉ số.
+0:03:35 - 0:03:39, Vì vậy, từ đó sẽ có một cái chỉ số, ví dụ như từ đó nó nằm ở đây.
+0:03:39 - 0:03:43, Thì ở đây chúng ta sẽ tính là log của y ngã.
+0:03:43 - 0:03:48, Ví dụ trong vị trí này là 012, chỉ số của mình là 2.
+0:03:48 - 0:03:52, Tương ứng là vị trí của cái từ Wt.
+0:03:52 - 0:03:56, Thì khi đó chúng ta sẽ lấy y ngã[2].
+0:03:56 - 0:04:02, Rồi, và chúng ta tối ưu hóa cái hàm loss này,
+0:04:02 - 0:04:06, chúng ta sẽ tìm được các bộ trọng số W và W'.
+0:04:06 - 0:04:09, thì tương tự như trong ký hiệu hồi nãy,
+0:04:09 - 0:04:11, chúng ta đã nói theta của mình
+0:04:11 - 0:04:16, nó sẽ bao gồm một bộ là W và W'.
+0:04:16 - 0:04:19, theta của mình sẽ bao gồm một bộ tham số.
+0:04:19 - 0:04:24, Rồi, bây giờ thì công việc đó là huấn luyện.
+0:04:24 - 0:04:29, chúng ta đã có hàm mô hình cho từng mô hình Skip-gram và Continuous Bag of Words.
+0:04:29 - 0:04:35, chúng ta có hàm loss cho từng mô hình, vậy thì dữ liệu lấy ở đâu?
+0:04:35 - 0:04:40, Dữ liệu được thu thập từ các trang Wikipedia và những trang web mà uy tín khác.
+0:04:40 - 0:04:48, Sau đó thì chúng ta sẽ huấn luyện trong nhiều tuần với rất nhiều GPU.
+0:04:48 - 0:04:53, Thực sự để huấn luyện được các mô hình Skip-gram và Continuous Bag of Words này
+0:04:53 - 0:04:58, thì phải dựa trên sức mạnh tính toán của các tập đoàn công nghệ
+0:04:58 - 0:05:03, được trang bị rất nhiều những server siêu máy tính mới có thể thực hiện được.
+0:05:03 - 0:05:08, Cụ thể ở đây chúng ta biết là thư viện của FastText
+0:05:08 - 0:05:17, là của Facebook, là nơi cung cấp rất nhiều word embedding
+0:05:17 - 0:05:21, cho các từ của các ngôn ngữ phổ biến nhất hiện nay.
+0:05:21 - 0:05:28, sau khi huấn luyện xong, chúng ta lưu ý là có ma trận W và W'.
+0:05:28 - 0:05:37, thì ma trận W sẽ chứa toàn bộ các word vector của các từ trong từ điển.
+0:05:37 - 0:05:45, Ví dụ, cái ma trận W của mình có kích thước là V nhân N.
+0:05:49 - 0:05:51, Đây là V và đây là N.
+0:05:51 - 0:05:54, Giả sử như chúng ta có một cái từ là 'k'.
+0:05:54 - 0:05:59, Chúng ta muốn biết cái word embedding của từ 'k' là gì.
+0:05:59 - 0:06:02, Thì chúng ta sẽ tra coi 'k' trong tập từ điển của mình.
+0:06:02 - 0:06:11, Chỉ số của từ 'k' xuất hiện trong từ điển tại vị trí thứ y.
+0:06:11 - 0:06:16, Tương ứng trong ma trận W, chúng ta sẽ dò đến vị trí thứ y.
+0:06:16 - 0:06:22, và chúng ta sẽ trích ra vector dòng này.
+0:06:22 - 0:06:32, Và cái vector này sẽ có n phần tử.
+0:06:32 - 0:06:42, Thì đây chính là cái word vector của từ 'k'.
+0:06:42 - 0:06:57, Đó chính là mô hình Word2Vec và lưu ý là với mỗi mô hình Skip-gram hoặc là Continuous Bag of Words,
+0:06:57 - 0:07:03, thì chúng ta sẽ có một ma trận riêng, tức là mỗi mô hình, chúng ta có thể tiếp cận bằng hai cách khác nhau.
+0:07:03 - 0:07:08, Mỗi mô hình sẽ cho sản sinh ra một bộ trọng số.
+0:07:08 - 0:07:13, Từ mỗi trọng số này thì chúng ta sẽ lấy vector biểu diễn cho từ đó.
+0:07:13 - 0:07:20, Và mỗi một vector biểu diễn của một từ tương ứng là một hàng trong ma trận W.
+0:07:20 - 0:07:29, Khi người ta trực quan hóa các vector biểu diễn của các từ trong không gian,
+0:07:29 - 0:07:34, thì người ta mới thấy là có những cái mối quan hệ rất là thú vị.
+0:07:34 - 0:07:41, ví dụ người ta vẽ cái... người ta biểu diễn các cái từ như là king, queen trong không gian
+0:07:41 - 0:07:48, và princess, hero, heroine, rồi he, she, v.v.
+0:07:48 - 0:07:55, thì chúng ta thấy là các cái từ mà có thể hiện cái vector ánh xạ từ queen sang king,
+0:07:55 - 0:08:04, Từ Princess sang Prince, rồi từ She sang He, hình như nó đều có cái vector giống nhau.
+0:08:04 - 0:08:06, Nó đều có cái vector giống nhau.
+0:08:06 - 0:08:11, Và bây giờ người ta sẽ nảy sinh ra một cái ý tưởng đó là,
+0:08:11 - 0:08:17, Nếu như mình lấy cái vector từ Men sang Woman, đúng không?
+0:08:17 - 0:08:20, Mình lấy cái vector Woman trừ cho vector Men, mình có cái vector này.
+0:08:20 - 0:08:29, Lấy vector này đem xuống đây, sau đó chúng ta sẽ lấy vector biểu diễn của từ king.
+0:08:29 - 0:08:35, Ánh xạ lên với cùng vector giống như là từ Men sang Woman thì hỏi
+0:08:35 - 0:08:42, Vector x ở đây nó sẽ là cái từ nào trong không gian embedding?
+0:08:42 - 0:08:50, Và công thức chúng ta sẽ mô hình hóa ý tưởng này dưới dạng công thức sau:
+0:08:50 - 0:08:54, Đó là Vector(woman) - Vector(man) = Vector(x) - Vector(king).
+0:08:54 - 0:08:57, Giả sử đây là hai cái vector biểu diễn nha.
+0:08:57 - 0:09:03, Đây chính là cái vector, đây là cái word vector của từ woman nha.
+0:09:03 - 0:09:05, Đây là word vector của từ man.
+0:09:05 - 0:09:11, Vector(woman) trừ cho Vector(man) là Vector(x) trừ cho Vector(king).
+0:09:11 - 0:09:16, từ đó chúng ta sẽ đem trừ king qua bên kia.
+0:09:16 - 0:09:21, Vector(x) là Vector(woman) trừ Vector(man) cộng Vector(king).
+0:09:21 - 0:09:24, Và như vậy chúng ta sẽ lấy vector biểu diễn của từ man,
+0:09:24 - 0:09:29, lấy vector biểu diễn của từ woman, từ man và từ king.
+0:09:29 - 0:09:34, chúng ta thực hiện với các công thức Vector(woman) trừ Vector(man) sau đó cộng cho Vector(king),
+0:09:34 - 0:09:36, chúng ta sẽ được vector.
+0:09:36 - 0:09:37, Và với cái vector này,
+0:09:37 - 0:09:41, thì chúng ta sẽ xem xem từ nào
+0:09:41 - 0:09:43, nằm gần với cái từ
+0:09:43 - 0:09:47, mà biểu diễn bởi cái vector x này nhất.
+0:09:47 - 0:09:53, thì rất là thú vị, đó chính là từ nữ hoàng.
+0:09:53 - 0:09:57, Thì ở đây nếu mà dịch sang một cái ngữ nghĩa nào đó,
+0:09:57 - 0:10:00, thì chúng ta có thể thấy là,
+0:10:00 - 0:10:03, nếu như cái người đàn ông
+0:10:03 - 0:10:08, mà quyền lực là vua, gọi là vua,
+0:10:08 - 0:10:12, thì hỏi người đàn bà quyền lực thì gọi là gì?
+0:10:12 - 0:10:17, thì người đàn bà quyền lực đó chính là nữ hoàng.
+0:10:17 - 0:10:21, Thì đây chính là một mối quan hệ về mặt ngữ nghĩa rất là thú vị.
+0:10:21 - 0:10:25, Thì mối quan hệ ở đây chính là mối quan hệ về mặt giới tính.
+0:10:25 - 0:10:28, mối quan hệ về mặt giới tính.
+0:10:28 - 0:10:36, Và tương tự như vậy, thì chúng ta sẽ có các mối quan hệ ngữ nghĩa khác.
+0:10:36 - 0:10:43, Lấy ví dụ, apple và apples, thì ở đây nó chính là mối quan hệ về số ít, số nhiều.
+0:10:43 - 0:10:55, Số nhiều bên đây là số ít của một từ danh từ.
+0:10:55 - 0:11:01, Và với công thức này, Vector(x) sẽ bằng Vector(apples) trừ cho Vector(apple) cộng Vector(car).
+0:11:01 - 0:11:04, Như vậy thì câu hỏi đặt ra đó là,
+0:11:04 - 0:11:13, Từ nào gần với vector biểu diễn của vector x này nhất thì rất là thú vị. Đó chính là từ cars.
+0:11:15 - 0:11:24, Và tương tự như vậy cho các mối quan hệ về tính từ, và adverb.
+0:11:24 - 0:11:33, Rồi, mối quan hệ về đất nước và thủ đô, đây là thủ đô nè.
+0:11:33 - 0:11:36, Đây là đất nước nè.
+0:11:41 - 0:11:47, Thì nếu như thủ đô của Đức là Berlin thì thủ đô của Pháp là gì?
+0:11:47 - 0:11:55, Vì vậy, vector x này cũng cho ra được một kết quả rất là thú vị, đó chính là Paris.
+0:11:58 - 0:12:09, Rồi, chúng ta sẽ còn rất rất nhiều những mối quan hệ ngữ nghĩa khác và nó cũng đều thỏa mãn được kiến thức trong thực tế như vậy.
+0:12:10 - 0:12:16, Một mô hình Word2Vec khi được train trên một kho dữ liệu cực kỳ lớn
+0:12:17 - 0:12:25, thì nó vẫn sẽ lưu được những cái thông tin, mối quan hệ khác bên cạnh mối quan hệ về mặt ngữ pháp.
+0:12:25 - 0:12:28, nó vẫn có những mối quan hệ khác nữa.
+0:12:28 - 0:12:32, Và mối quan hệ về thủ đô đất nước, mối quan hệ về so sánh hơn,
+0:12:32 - 0:12:41, rồi mối quan hệ về đất nước, rồi mối quan hệ về kim loại và ký hiệu
+0:12:41 - 0:12:43, và ký hiệu trong cái bảng phân loại tuần hoàn,
+0:12:43 - 0:12:47, rồi mối quan hệ về các công ty sản phẩm v.v.
+0:12:47 - 0:12:53, thì mô hình Word2Vec thể hiện được trong không gian embedding.
+0:12:53 - 0:13:00, Và như vậy thì chúng ta đã tìm hiểu về mô hình,
+0:13:00 - 0:13:03, một trong những mô hình rất quan trọng
+0:13:03 - 0:13:06, cho lĩnh vực xử lý ngôn ngữ tự nhiên trở về sau.
+0:13:06 - 0:13:12, Tại vì Word2Vec sẽ là đầu vào cho các mô hình máy học.
+0:13:12 - 0:13:20, Chúng ta sẽ phải biến các từ thành một dạng vector biểu diễn.
+0:13:20 - 0:13:27, Và có vector biểu diễn này rồi thì các mô hình máy học bản chất chính là các phép toán,
+0:13:27 - 0:13:30, Các hàm toán học trên đại số tuyến tính.
+0:13:30 - 0:13:35, Thực hiện cộng trừ nhân chia thì nó phải thực hiện trên đối tượng vector này.
+0:13:35 - 0:13:42, Nó không thể nào thực hiện phép cộng trừ nhân chia với các từ ở dưới dạng là chuỗi được,
+0:13:42 - 0:13:44, nó phải chuyển sang dạng vector.
+0:13:46 - 0:13:50, Và từ nay trở về sau thì chúng ta sử dụng Word2Vec
+0:13:50 - 0:13:53, như là một trong những công cụ để làm đầu vào
+0:13:53 - 0:13:55, cho các mô hình về sau.
+0:13:55 - 0:13:59, Và có rất nhiều mô hình Word2Vec hiện nay
+0:13:59 - 0:14:02, và nổi tiếng và cho độ chính xác cao.
+0:14:02 - 0:14:05, Đó chính là GloVe,
+0:14:05 - 0:14:08, là viết tắt của chữ Global Vectors.
+0:14:08 - 0:14:16, Các thư viện của Python hiện giờ đều cho phép hỗ trợ GloVe embedding.
+0:14:19 - 0:14:24, Và đây là các tài liệu tham khảo sử dụng trong bài học của ngày hôm nay.

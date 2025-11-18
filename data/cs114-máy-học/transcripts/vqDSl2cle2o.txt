@@ -1,0 +1,563 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:18, Trong phần tiếp theo thì chúng ta sẽ
+0:00:15 - 0:00:21, cùng à tiến hành thực hành với mạng
+0:00:18 - 0:00:25, Neuron nhân tạo. thì có thể nói các cái
+0:00:21 - 0:00:28, kiến trúc mạng hiện đại à hiện nay à ví
+0:00:25 - 0:00:31, dụ như là deep learning thì đều dựa trên
+0:00:28 - 0:00:33, lý thuyết của mạng neuron nhân tạo. Tuy
+0:00:31 - 0:00:35, nhiên làm sao mạng neuron nhân tạo có
+0:00:33 - 0:00:39, thể giải quyết được các cái bài toán
+0:00:35 - 0:00:43, hiện đại và nó có thể tổng quát hóa để
+0:00:39 - 0:00:45, có thể phát triển thành những cái mạng
+0:00:43 - 0:00:49, nâng cao ví dụ như là mạng CNN hoặc là
+0:00:45 - 0:00:52, mạng RNN. Và gần đây hơn thì có cái kiến
+0:00:49 - 0:00:52, trúc mạng là Transformer
+0:00:53 - 0:01:01, thì mạng Neuro Network nó đã tạo một cái
+0:00:57 - 0:01:02, tiền đề để có thể phát triển những cái
+0:01:01 - 0:01:05, kiến thức mạng deep learning, những cái
+0:01:02 - 0:01:08, mạng học sau về sau. Vậy thì bằng cách
+0:01:05 - 0:01:10, nào mà mạng Neuronetwork có thể giúp cho
+0:01:08 - 0:01:13, chúng ta giải quyết được các cái bài
+0:01:10 - 0:01:15, toán phức tạp hay cụ thể hơn đó là các
+0:01:13 - 0:01:17, cái bài toán phi tiếng tính? Thì trong
+0:01:15 - 0:01:21, nội dung của bài thực hành này, chúng ta
+0:01:17 - 0:01:22, sẽ đến với à những cái bước đi đầu tiên
+0:01:21 - 0:01:27, trong việc là cài đặt một cái mạng
+0:01:22 - 0:01:30, neuron nhân tạo. Và chúng ta sẽ lý giải
+0:01:27 - 0:01:33, tại sao mạng Nuron nhân tạo có thể giải
+0:01:30 - 0:01:35, quyết được các cái bài toán phức tạp.
+0:01:33 - 0:01:38, Thì nội dung của bài thực hành ngày hôm
+0:01:35 - 0:01:42, nay sẽ có những cái phần chính như sau.
+0:01:38 - 0:01:44, Đầu tiên đó là chúng ta sẽ cài đặt một
+0:01:42 - 0:01:46, cái kiến trúc mạng neuron nhân tạo đơn
+0:01:44 - 0:01:50, giản. Thì ở đây chỉ bao gồm là một lớp
+0:01:46 - 0:01:52, ẩn. Rồi sau đó thì chúng ta sẽ cùng trực
+0:01:50 - 0:01:54, quan hóa và tìm hiểu cái vai trò của lớp
+0:01:52 - 0:01:57, ẩn trong cái việc là giải quyết các cái
+0:01:54 - 0:02:00, bài toán phi tuyến tính. Tức là tại sao
+0:01:57 - 0:02:02, chúng ta có thể dùng lớp ẩn thêm một cái
+0:02:00 - 0:02:04, lớp ẩn thì nó sẽ giải quyết được một cái
+0:02:02 - 0:02:06, bài toán phi tuyến tính. Trong khi đó
+0:02:04 - 0:02:08, nếu như chỉ có hai lớp input và lớp
+0:02:06 - 0:02:10, output thôi thì lại không có thể giải
+0:02:08 - 0:02:11, quyết được các cái bài toán phi tiếng
+0:02:10 - 0:02:13, tính.
+0:02:11 - 0:02:15, Và chúng ta sẽ tiến hành trực quan hóa
+0:02:13 - 0:02:19, cái mạng neuron nhân tạo này trong cái
+0:02:15 - 0:02:21, việc đó là à các cái mạng neuron ở các
+0:02:19 - 0:02:23, cái lớp ẩn, các cái neuron ở lớp ẩn nó
+0:02:21 - 0:02:26, đã giúp cho chúng ta
+0:02:23 - 0:02:32, phi tuyến hóa và giải quyết các cái bài
+0:02:26 - 0:02:32, toán phức tạp như thế nào. Thế thì để
+0:02:32 - 0:02:36, ạ neuro nhân tạo thì chúng ta sẽ phải có
+0:02:34 - 0:02:39, một cái tập dữ liệu để thực nghiệm. Thì
+0:02:36 - 0:02:41, cụ thể ở đây đó là tập bao gồm hai cái
+0:02:39 - 0:02:44, vòng tròn.
+0:02:41 - 0:02:46, lồng nhau. Thì với cái tập dữ liệu là
+0:02:44 - 0:02:50, hai màu đỏ và màu xanh chúng ta thấy ở
+0:02:46 - 0:02:54, đây thì đây là một cái tập dữ liệu mà nó
+0:02:50 - 0:02:54, có tính chất phi tuyến tính.
+0:02:54 - 0:02:58, Thế thì cái tính chất phi tuyến tính á
+0:02:56 - 0:03:01, nó thể hiện ở chỗ nào? Cái tính chất phi
+0:02:58 - 0:03:05, tuyến tính nó thể hiện ở chỗ là không
+0:03:01 - 0:03:08, thể chia hai cái tập ờ màu đỏ và màu
+0:03:05 - 0:03:10, xanh này bằng duy nhất một cái đường
+0:03:08 - 0:03:13, thẳng. Chúng ta thấy là với cái đường
+0:03:10 - 0:03:16, thẳng này thì nó chỉ có thể tách ra là
+0:03:13 - 0:03:19, màu đỏ và một vùng còn lại là vừa có đỏ
+0:03:16 - 0:03:21, và xanh. Đó. Hoặc đường này thì chúng ta
+0:03:19 - 0:03:23, thấy là nó chia ra làm hai phần. Tuy
+0:03:21 - 0:03:26, nhiên cả hai phần thì đều có các điểm
+0:03:23 - 0:03:28, màu đỏ và màu xanh. Như vậy thì rõ ràng
+0:03:26 - 0:03:31, không thể nào có thể chia tách ra được
+0:03:28 - 0:03:32, bằng một đường thẳng. Mà nếu muốn chia
+0:03:31 - 0:03:35, tách được thì chúng ta sẽ phải có một
+0:03:32 - 0:03:38, cái đường cong như thế này thì mới có
+0:03:35 - 0:03:41, thể chia ra làm hai phần thôi. Như vậy
+0:03:38 - 0:03:42, thì trong cái
+0:03:41 - 0:03:45, tập dữ liệu mà có tính chất phi tuyến
+0:03:42 - 0:03:47, tính này và lưu ý là cái dữ liệu này nó
+0:03:45 - 0:03:50, cũng chỉ mới là một cái dữ liệu bước đầu
+0:03:47 - 0:03:52, thôi chứ nó chưa thực sự quá là phức
+0:03:50 - 0:03:55, tạp. Trong các cái bài toán phức tạp hơn
+0:03:52 - 0:03:57, thì cái tính chất phi tuyến tính và cái
+0:03:55 - 0:03:58, tính zízắc của nó nó còn nhiều hơn như
+0:03:57 - 0:04:00, thế này nữa. Đây chỉ là một cái tập dữ
+0:03:58 - 0:04:03, liệu đơn giản thôi. Nhưng với cái dữ
+0:04:00 - 0:04:06, liệu đơn giản này thì nó chúng ta giúp
+0:04:03 - 0:04:08, cho chúng ta có thể lý giải được tại sao
+0:04:06 - 0:04:11, khi chúng ta thêm vô một cái lớp ẩn tức
+0:04:08 - 0:04:12, là một cái hidden layer thì nó lại có
+0:04:11 - 0:04:15, thể giúp cho chúng ta giải quyết được
+0:04:12 - 0:04:18, các cái bài toán phi tuyến tính này.
+0:04:15 - 0:04:21, Thì vai trò của mỗi cái notốe neuron ở
+0:04:18 - 0:04:25, đây đó là gì? Đó thì chúng ta sẽ cùng
+0:04:21 - 0:04:26, tìm hiểu ở trong cái bài thực hành này.
+0:04:25 - 0:04:29, Và trong bài thực hành này thì chúng ta
+0:04:26 - 0:04:32, sẽ thực nghiệm là có rất nhiều cái mạng
+0:04:29 - 0:04:35, à có rất nhiều cái neuron. Thì cụ thể ở
+0:04:32 - 0:04:37, đây là cái lớp Hidden layer sẽ có 8
+0:04:35 - 0:04:40, neuron.
+0:04:37 - 0:04:41, Vì cái à yếu tố là đơn giản hóa của hình
+0:04:40 - 0:04:43, ảnh thì ở đây chúng ta chỉ vẽ tượng
+0:04:41 - 0:04:46, trưng là bốn thôi chứ còn nếu để vẽ 8
+0:04:43 - 0:04:50, neuron thì nó sẽ rất là dày đặc ha. Rồi
+0:04:46 - 0:04:53, thì chúng ta sẽ cùng qua cái
+0:04:50 - 0:04:59, bài lab. Chúng ta sẽ cùng qua sử dụng
+0:04:53 - 0:05:02, cog của lap để có thể cài đặt bài này.
+0:04:59 - 0:05:05, Rồi thì trên hình chúng ta thấy là có
+0:05:02 - 0:05:07, cái đồ vào của mình là bao gồm à cái lớp
+0:05:05 - 0:05:10, input của mình sẽ bao gồm
+0:05:07 - 0:05:13, giá trị. Thì hai cái giá trị này á nó
+0:05:10 - 0:05:17, tương ứng sẽ là hai cái điểm à hai cái
+0:05:13 - 0:05:19, tọa độ theo trục hoành và trục tung. Tức
+0:05:17 - 0:05:21, là cái tọa độ của các cái điểm trong
+0:05:19 - 0:05:25, không gian. Còn cái output này của mình
+0:05:21 - 0:05:27, á thì nó chỉ có một neuron thôi. Thì lý
+0:05:25 - 0:05:30, do đó là vì chúng ta chỉ phân loại ra
+0:05:27 - 0:05:32, làm hai tập dữ liệu đó là nằm cái vòng
+0:05:30 - 0:05:34, tròn nằm trong và vòng tròn nằm bên
+0:05:32 - 0:05:36, ngoài. Thì với cái bài toán mà phân loại
+0:05:34 - 0:05:40, nhị phân như thế này á thì chúng ta chỉ
+0:05:36 - 0:05:43, cần sử dụng một cái lớp neuron và cái
+0:05:40 - 0:05:47, hàm loss ở đây chúng ta sẽ sử dụng là
+0:05:43 - 0:05:47, binary cross centropy.
+0:05:53 - 0:05:56, hàm loss
+0:05:57 - 0:06:03, để phân tách
+0:05:59 - 0:06:06, để giúp phân tách ra
+0:06:03 - 0:06:06, làm hai.
+0:06:07 - 0:06:12, Rồi sau đây thì chúng ta sẽ tiến hành à
+0:06:10 - 0:06:15, thử nghiệm. Thì trong cái bài láp này
+0:06:12 - 0:06:18, thì chúng ta sẽ sử dụng cái thư viện Kas
+0:06:15 - 0:06:20, và có các cái lớp là input và dance.
+0:06:18 - 0:06:21, Trong đó dance là một cái lớp kết nối
+0:06:20 - 0:06:23, đầy đủ.
+0:06:21 - 0:06:25, các cái lớp đằng trước với lại cái lớp
+0:06:23 - 0:06:28, đằng sau chúng ta sẽ có đầy đủ các cái
+0:06:25 - 0:06:31, trọng số thì nó gọi là dance. Và đóng
+0:06:28 - 0:06:35, gói lại hết cả input và output thì chúng
+0:06:31 - 0:06:38, ta sẽ có đó là model.
+0:06:35 - 0:06:41, Rồi thì đây là cái lớp mà đã được tạo
+0:06:38 - 0:06:44, sẵn và chúng ta sẽ cùng tiến hành cài
+0:06:41 - 0:06:47, đặt ở những cái dòng code mà có cái hiện
+0:06:44 - 0:06:50, chữ todo. Thì cái class neuronetwork sẽ
+0:06:47 - 0:06:52, có một cái phương thức là build à để xây
+0:06:50 - 0:06:55, dựng cái mô hình của mình. Trong đó
+0:06:52 - 0:06:58, input dimension là cho biết cái số chiều
+0:06:55 - 0:07:00, của cái dữ liệu đầu vào. Thì cụ thể ở
+0:06:58 - 0:07:03, đây chúng ta sẽ có input dimension là
+0:07:00 - 0:07:06, bằng 2. Tại vì các cái điểm mà chúng ta
+0:07:03 - 0:07:08, sẽ sử dụng ở đây sẽ là các cái điểm
+0:07:06 - 0:07:10, trong không gian hai chiều. Output dim ở
+0:07:08 - 0:07:12, đây chính là cái số chiều của cái lớp
+0:07:10 - 0:07:15, output. Thì cụ thể ở đây chúng ta sẽ là
+0:07:12 - 0:07:18, 1 tại vì như đã đề cập đó là chúng ta là
+0:07:15 - 0:07:20, phân lớp nhị phân nên ở đây chỉ cần là 1
+0:07:18 - 0:07:24, neuron thôi.
+0:07:20 - 0:07:27, Rồi thì à cái lớp input này
+0:07:24 - 0:07:30, ờ ở đây thì cái geni nó đã giúp cho
+0:07:27 - 0:07:33, chúng ta ờ khởi tạo đúng không? Khởi tạo
+0:07:30 - 0:07:34, cái đoạn code. Thì ở đây chúng ta sẽ xem
+0:07:33 - 0:07:36, ha.
+0:07:34 - 0:07:39, Để cho đơn g giảng thì chúng ta chỉ cần
+0:07:36 - 0:07:42, để là input thôi. Đặt tên biến là input
+0:07:39 - 0:07:45, và nó sẽ gọi cái
+0:07:42 - 0:07:48, đối tượng đó là input và truyền vào cái
+0:07:45 - 0:07:52, shap là bằng là input dim. Sau đó thì
+0:07:48 - 0:07:56, chúng ta sẽ gọi cái lớp dense để tạo ra
+0:07:52 - 0:07:59, cái lớp hidden đó. Thì hidden sẽ là bằng
+0:07:56 - 0:07:59, dance.
+0:08:01 - 0:08:07, Rồi thì chúng ta sẽ có cái unit tức là
+0:08:03 - 0:08:10, cái số neuron đầu ra của cái lớp hiden
+0:08:07 - 0:08:12, này. Thì như đã nói tức là chúng ta có 8
+0:08:10 - 0:08:16, neuron đầu ra. Chúng ta có 8 neuron đầu
+0:08:12 - 0:08:19, ra nên ở đây output sẽ là 8.
+0:08:16 - 0:08:21, Tiếp theo đó là activation. Thì
+0:08:19 - 0:08:23, activation ở đây chúng ta có thể dùng
+0:08:21 - 0:08:25, hàm relue hoặc là sigmid. Nhưng mà để
+0:08:23 - 0:08:28, đơn giản thì chúng ta sẽ sử dụng cái
+0:08:25 - 0:08:32, phiên bản đời đầu của Nuro Network đó
+0:08:28 - 0:08:32, chính là à
+0:08:32 - 0:08:35, Sigmile.
+0:08:37 - 0:08:44, Rồi tiếp theo đó là chúng ta có sử dụng
+0:08:41 - 0:08:48, bias hay không. Thì ở đây chúng ta sẽ có
+0:08:44 - 0:08:51, một cái thuộc tính đó là use by. thì mặc
+0:08:48 - 0:08:54, định use bằng true nhưng mà tuy nhiên để
+0:08:51 - 0:08:59, cho từ minh thì chúng ta sẽ cài đặt
+0:08:54 - 0:09:02, luôn. Use bias là bằng true. Rồi thì ở
+0:08:59 - 0:09:04, đây chúng ta mới chỉ khởi tạo cái đối
+0:09:02 - 0:09:06, tượng là một cái lớp ẩn. Chúng ta sẽ
+0:09:04 - 0:09:10, phải cho biết là nó nhận đầu vào. Nó
+0:09:06 - 0:09:12, nhận đầu vào là cái cái biến nào thì cái
+0:09:10 - 0:09:14, đầu vào của mình nó sẽ là input. Do đó ở
+0:09:12 - 0:09:18, đây chúng ta về mặt khú pháp chúng ta sẽ
+0:09:14 - 0:09:21, để thêm input đầu vào. Nó sẽ nhận đầu
+0:09:18 - 0:09:23, vào là lớp input. Sau đó nó sẽ tra trả
+0:09:21 - 0:09:25, ra là cái hidden. Rồi tiếp theo là từ
+0:09:23 - 0:09:28, cái hidden này
+0:09:25 - 0:09:33, chúng ta tiếp tục có một cái lớp kết nối
+0:09:28 - 0:09:33, đầy đủ để tạo ra cái lớp output
+0:09:38 - 0:09:44, thì sẽ là bằng dense và 1. Tương tự như
+0:09:41 - 0:09:46, vậy, activation
+0:09:44 - 0:09:48, thì ở đây chúng ta cũng dùng hàm là
+0:09:46 - 0:09:52, sigmo
+0:09:48 - 0:09:56, và use by
+0:09:52 - 0:09:58, bằng true. Và cái đầu vào cho cái lớp
+0:09:56 - 0:10:00, output để mà tạo ra được cái lớp output
+0:09:58 - 0:10:02, này thì nó phải có cái đầu vào và đầu
+0:10:00 - 0:10:05, vào của mình chính là cái lớp input đằng
+0:10:02 - 0:10:08, trước đó chính là lớp hidden. Rồi đó
+0:10:05 - 0:10:11, chúng ta sẽ để đây là hidden.
+0:10:08 - 0:10:13, Rồi sau đó thì chúng ta sẽ đóng gói à
+0:10:11 - 0:10:15, chúng ta sẽ đóng gói cái model của mình
+0:10:13 - 0:10:18, lại
+0:10:15 - 0:10:22, bằng cái input và cái output này. Rồi
+0:10:18 - 0:10:25, sau đó chúng ta sẽ trả ra cho cái
+0:10:22 - 0:10:27, s.model.
+0:10:25 - 0:10:30, Rồi như vậy là chúng ta đã tạo xong, đã
+0:10:27 - 0:10:32, cài đặt xong cái kiến trúc của mô hình
+0:10:30 - 0:10:35, của mình. Đó thì cái model của mình nó
+0:10:32 - 0:10:37, sẽ được đóng gói vào cái thuộc tính đó
+0:10:35 - 0:10:41, là sale.model. Và khi chúng ta gọi cái
+0:10:37 - 0:10:44, hàm trend thì nó sẽ sử dụng cái
+0:10:41 - 0:10:47, optimizer đó là stocastic gradient
+0:10:44 - 0:10:50, design với cái tham số learning ray là
+0:10:47 - 0:10:53, 0.1 và momentum là 0.9.
+0:10:50 - 0:10:54, Thì đây là cái cấu hình mặc định. Rồi
+0:10:53 - 0:10:56, hàm loss ở đây chúng ta sẽ sử dụng là
+0:10:54 - 0:11:00, binary cross central tại vì ở đây chúng
+0:10:56 - 0:11:03, ta đang phân loại nhị phân.
+0:11:00 - 0:11:05, Rồi và dữ liệu trend chúng ta sẽ truyền
+0:11:03 - 0:11:07, dữ liệu trend với bass size là bằng 64
+0:11:05 - 0:11:09, và số ipox và chúng ta huấn luyện là
+0:11:07 - 0:11:12, 500. Thì đây là các cái tham số mặc
+0:11:09 - 0:11:16, định. Sau đó thì chúng ta sẽ tiến hành
+0:11:12 - 0:11:20, thực thi cái đoạn code này.
+0:11:16 - 0:11:22, Rồi à tiếp theo thì chúng ta sẽ à load
+0:11:20 - 0:11:24, cái dữ liệu thực nghiệm. Thì cái dữ liệu
+0:11:22 - 0:11:28, thực nghiệm ở đây chúng ta sẽ dùng một
+0:11:24 - 0:11:30, cái à tập nó gọi là circle. Thì để mà có
+0:11:28 - 0:11:33, thể tạo ra được cái tập circle này thì
+0:11:30 - 0:11:36, chúng ta sẽ dùng
+0:11:33 - 0:11:39, cái phương thức là make circle của
+0:11:36 - 0:11:41, module dataset của thư viện size kitl.
+0:11:39 - 0:11:43, Rồi sau đó chúng ta sẽ có được cái dữ
+0:11:41 - 0:11:46, liệu xtrend và
+0:11:43 - 0:11:48, rồi sau đó thì chúng ta sẽ gán nhãn cho
+0:11:46 - 0:11:50, nó.
+0:11:48 - 0:11:54, Đối với những cái điểm màu đỏ thì trend
+0:11:50 - 0:11:59, của mình là bằng nếu mà trend của mình
+0:11:54 - 0:12:02, là bằng 0 và x trend của mình à màu xanh
+0:11:59 - 0:12:04, sẽ là trend của mình là bằng 1. Đó thì
+0:12:02 - 0:12:06, nếu như cái trend nào mà có nhãn bằng 0
+0:12:04 - 0:12:08, thì đó chính là những cái điểm màu đỏ
+0:12:06 - 0:12:10, bên ngoài. Còn nếu trend của mình mà
+0:12:08 - 0:12:13, bằng 1 thì đó là những cái điểm màu xanh
+0:12:10 - 0:12:16, bên trong. Và chúng ta gọi cái hàm map
+0:12:13 - 0:12:19, plot lip để truyền lần lượt là cái trục
+0:12:16 - 0:12:20, x và trục Y. trục hoành và trục tung.
+0:12:19 - 0:12:25, Đối với những cái điểm màu đỏ thì chúng
+0:12:20 - 0:12:28, ta sẽ dùng cái marker đó là R0. R là red
+0:12:25 - 0:12:30, và O chính là cái O chính là cái biểu
+0:12:28 - 0:12:32, tượng hình tròn.
+0:12:30 - 0:12:36, Đối với những điểm màu xanh thì chúng ta
+0:12:32 - 0:12:38, sẽ dùng là G mũ. G là rin là màu xanh lá
+0:12:36 - 0:12:40, và mũ là cái ký hiệu cho hình tam giác.
+0:12:38 - 0:12:44, Thế thì chúng ta sẽ chạy cái đoạn code
+0:12:40 - 0:12:46, này và sẽ thấy đó là cái tập dữ liệu của
+0:12:44 - 0:12:49, mình à tập dữ liệu của mình thì nó sẽ
+0:12:46 - 0:12:52, bao gồm hai cái điểm nằm trong và nằm
+0:12:49 - 0:12:53, ngoài vòng tròn. Thì với đây chính là
+0:12:52 - 0:12:56, cái tập dữ liệu mà đã được đề cập ở
+0:12:53 - 0:12:59, trong cái slide của mình.
+0:12:56 - 0:13:01, Rồi tiếp theo thì chúng ta sẽ khởi tạo
+0:12:59 - 0:13:03, và xây dựng mô hình. Thì đối tượng mà
+0:13:01 - 0:13:05, chúng ta sẽ khởi tạo đó là một cái class
+0:13:03 - 0:13:08, là một cái đối tượng thuộc cái class là
+0:13:05 - 0:13:11, neuro network đã cài đặt ở trên.
+0:13:08 - 0:13:13, là neuronetwork model là khởi tạo. Sau
+0:13:11 - 0:13:16, đó chúng ta sẽ gọi hàm build với cái
+0:13:13 - 0:13:19, input đầu vào là 2. Thì tại sao ở đây
+0:13:16 - 0:13:21, lại là 2? là vì trục hoành và trục tung
+0:13:19 - 0:13:23, tương ứng là cái tọa độ của các cái điểm
+0:13:21 - 0:13:26, trong cái không gian của mình ở đây và
+0:13:23 - 0:13:27, output của mình là bằng 1 thì vì ở đây
+0:13:26 - 0:13:31, chúng ta chỉ là phân loại nhị phân nên
+0:13:27 - 0:13:34, output sẽ là bằng 1.
+0:13:31 - 0:13:38, Rồi sau đó thì chúng ta sẽ tiến hành đó
+0:13:34 - 0:13:40, là huấn luyện và thực thi. Thì ở đây là
+0:13:38 - 0:13:44, cái đoạn cái này chúng ta chưa có dịch
+0:13:40 - 0:13:44, ha. Sau đó là sẽ huấn luyện.
+0:13:46 - 0:13:49, và
+0:13:50 - 0:13:54, vẽ cái biểu đồ.
+0:13:55 - 0:13:59, Thì cái bài tutorial này là mình đã soạn
+0:13:58 - 0:14:01, trước đây nhưng mà bằng phiên bản tiếng
+0:13:59 - 0:14:04, Anh.
+0:14:01 - 0:14:07, Rồi thì chúng ta thấy là trong cái quá
+0:14:04 - 0:14:10, trình huấn luyện á thì cái L của mình á
+0:14:07 - 0:14:17, càng về sau là càng giảm. Chúng ta thấy
+0:14:10 - 0:14:21, là từ 0.65 6 5 4 rồi 3. Rồi đó
+0:14:17 - 0:14:21, ở những cái vòng đầu tiên
+0:14:25 - 0:14:32, đó là nó bằng là 0.4 mấy đó.
+0:14:34 - 0:14:41, Ở những cái đầu tiên đó là khoảng 0.69.
+0:14:37 - 0:14:47, Sau một hồi thì nó giảm xuống.
+0:14:41 - 0:14:47, đó và chỉ còn là khoảng à 0.003.
+0:14:48 - 0:14:53, Rồi thì để đơn giản để cho nó không có
+0:14:51 - 0:14:57, bị chiếm nhiều cái không gian thì chúng
+0:14:53 - 0:14:59, ta sẽ xóa này đi
+0:14:57 - 0:15:02, và chúng ta sẽ vẽ lại ha. Chúng ta sẽ vẽ
+0:14:59 - 0:15:05, lại cái history này.
+0:15:02 - 0:15:07, Đó thì ban đầu chúng ta sẽ thấy là
+0:15:05 - 0:15:09, cái loss của mình nó sẽ rớt nó sẽ gần
+0:15:07 - 0:15:12, như là đi ngang. Tuy nhiên đến một cái
+0:15:09 - 0:15:14, ngưỡng nào đó thì mô hình của mình nó
+0:15:12 - 0:15:17, bắt đầu nó tìm ra được cái trọng số đúng
+0:15:14 - 0:15:19, thì nó giảm xuống rất là nhanh. Nó giảm
+0:15:17 - 0:15:21, xuống rất là nhanh và đến một cái mức độ
+0:15:19 - 0:15:24, nào đó chúng ta thấy là nó gần như là đi
+0:15:21 - 0:15:26, ngang bảo hòa là không có huấn luyện
+0:15:24 - 0:15:30, thêm được nữa.
+0:15:26 - 0:15:32, Thì đây chính là cái biểu đồ của à cái
+0:15:30 - 0:15:36, giá trị loss theo ipox. thì đâu đó đến
+0:15:32 - 0:15:38, khoảng số 200 trở đi thì nó mới bắt đầu
+0:15:36 - 0:15:40, là giảm xuống một cách gọi là rất là
+0:15:38 - 0:15:42, mạnh.
+0:15:40 - 0:15:44, Thì sau khi huấn luyện xong thì chúng ta
+0:15:42 - 0:15:47, sẽ tiến hành à sử dụng cái mô hình dự
+0:15:44 - 0:15:49, đoán để mà
+0:15:47 - 0:15:52, dự đoán trên lưới các cái điểm dữ liệu
+0:15:49 - 0:15:56, của mình. Sau đó chúng ta sẽ vẽ các cái
+0:15:52 - 0:15:58, bộ phân loại yếu. Thế thì à để mà chúng
+0:15:56 - 0:16:03, ta có thể trực quan hóa được thì chúng
+0:15:58 - 0:16:05, ta sẽ phải xem là cái trọng số của à cái
+0:16:03 - 0:16:08, mô hình của mình như thế nào. Đó. Thế
+0:16:05 - 0:16:12, thì cái mô hình của mình
+0:16:08 - 0:16:15, là nó sẽ nằm ở trong neuro network model
+0:16:12 - 0:16:17, và nó sẽ nằm trong một cái thuộc tính đó
+0:16:15 - 0:16:20, là model.
+0:16:17 - 0:16:23, Thế thì model này á nó sẽ có rất nhiều
+0:16:20 - 0:16:25, layer thì chúng ta sẽ bỏ cái layer đầu
+0:16:23 - 0:16:27, tiên.
+0:16:25 - 0:16:30, Ở đây chúng thấy ta thấy là có layer số
+0:16:27 - 0:16:33, 1 nè là input nè, rồi layer hidden nè và
+0:16:30 - 0:16:35, layer output. Thì cái layer của mình từ
+0:16:33 - 0:16:38, trái sang phải cũng sẽ được đánh số.
+0:16:35 - 0:16:40, Layer input sẽ là số 0 và layer
+0:16:38 - 0:16:45, ion của mình sẽ là số 1. Mà chúng ta
+0:16:40 - 0:16:48, muốn lấy cái trọng số của cái ờ player
+0:16:45 - 0:16:54, số 1. Do đó chúng ta cái trọng số lớ của
+0:16:48 - 0:16:54, lớp ẩn nên chúng ta sẽ để là layer 1.
+0:17:00 - 0:17:08, Rồi sau đó là getway.
+0:17:03 - 0:17:11, Thế thì chúng ta quan sát cái ờ
+0:17:08 - 0:17:12, các cái giá trị trọng số. Chúng ta sẽ
+0:17:11 - 0:17:15, quan sát các cái giá trị trọng số ở đây
+0:17:12 - 0:17:15, ha.
+0:17:19 - 0:17:25, Rồi thì à
+0:17:22 - 0:17:28, ở đây nó sẽ có hai phần. Chúng ta thấy
+0:17:25 - 0:17:31, là cái phần đầu tiên là một cái cấu trúc
+0:17:28 - 0:17:31, array.
+0:17:31 - 0:17:36, Và thứ hai cũng là một cấu trúc array.
+0:17:33 - 0:17:39, Trong đó vì chúng ta có sử dụng bias nên
+0:17:36 - 0:17:43, cái thành phần thứ hai này sẽ là cái
+0:17:39 - 0:17:46, bias của mình. Đó. Rồi bây giờ chúng ta
+0:17:43 - 0:17:50, sẽ có ờ thành phần đầu tiên á thì bao
+0:17:46 - 0:17:51, gồm là một cái ma trận.
+0:17:50 - 0:17:54, R chúng ta sẽ tách nó ra ha. Chúng ta sẽ
+0:17:51 - 0:17:57, tách nó ra
+0:17:54 - 0:17:57, là quay.
+0:17:58 - 0:18:01, Rồi
+0:18:07 - 0:18:14, thành phần đầu tiên nó sẽ là cái trọng
+0:18:09 - 0:18:19, số của à tương ứng với lại từng cái
+0:18:14 - 0:18:22, neuron đầu vào số 1 và số 2 thì chúng ta
+0:18:19 - 0:18:28, sẽ thấy là đây là trọng số của hai cái
+0:18:22 - 0:18:30, input của mình và cái trọng số.
+0:18:28 - 0:18:36, Ok. Thì đây chúng ta sẽ in ra là wave 0.
+0:18:30 - 0:18:36, Đó. Rồi sau đó sẽ là cái trọng số wave
+0:18:36 - 0:18:43, 1 tức là tương ứng là cái bias.
+0:18:40 - 0:18:43, Thì chúng ta sẽ in ra
+0:18:46 - 0:18:51, trọng số của các cái bias
+0:18:52 - 0:18:55, rồi.
+0:19:03 - 0:19:06, [Vỗ tay]
+0:19:16 - 0:19:22, Rồi và nếu cần thì chúng ta sẽ in ra cái
+0:19:19 - 0:19:22, set của nó.
+0:19:35 - 0:19:42, Rồi thì ở cái trọng số của cái hidden á
+0:19:39 - 0:19:45, thì nó sẽ có kích thước là 2 x 8. Lý do
+0:19:42 - 0:19:47, đó là vì ở đây chúng ta kết nối đầy đủ,
+0:19:45 - 0:19:49, đầu vào của chúng ta là có 2 và đầu ra
+0:19:47 - 0:19:52, của chúng ta là có 8 narol nên nó là một
+0:19:49 - 0:19:54, cái ma trận kích thước là 2 x 8. Còn
+0:19:52 - 0:19:58, bias của chúng ta thì vì chúng ta có 8
+0:19:54 - 0:20:01, naron nên nó sẽ có tám cái bias.
+0:19:58 - 0:20:05, Nó sẽ có tám cái bias.
+0:20:01 - 0:20:08, Rồi như vậy thì chúng ta sẽ quan sát xem
+0:20:05 - 0:20:12, là ý nghĩa của các cái neuron này đó là
+0:20:08 - 0:20:14, gì. Thì mỗi một cái neuron như trong cái
+0:20:12 - 0:20:18, bài linear à bài logistic chúng ta đã
+0:20:14 - 0:20:21, biết mỗi một cái nro này nó tương ứng sẽ
+0:20:18 - 0:20:24, là một cái mạng là một cái logistication
+0:20:21 - 0:20:27, nó là một cái đường phân lớp nhị phân
+0:20:24 - 0:20:28, tức là nó là một cái đường thẳng à nó là
+0:20:27 - 0:20:32, một cái đường thẳng
+0:20:28 - 0:20:36, như vậy thì chúng ta sẽ tìm cách là trực
+0:20:32 - 0:20:38, quan hóa từng cái bộ phân lớp của từng
+0:20:36 - 0:20:41, cái neuro này. Mỗi neuro này tương ứng
+0:20:38 - 0:20:45, là một cái đường thẳng để mà phân loại
+0:20:41 - 0:20:47, nhị phân. Vậy thì ở đây có bao nhiêu cái
+0:20:45 - 0:20:49, neuron thì chúng ta sẽ vẽ bấy nhiêu
+0:20:47 - 0:20:53, đường thẳng. Tuy nhiên chúng ta sẽ xem
+0:20:49 - 0:20:56, xét xem là cái trọng số của từng neuron
+0:20:53 - 0:20:59, để mà nó tạo ra cái output này giá trị
+0:20:56 - 0:21:02, của nó sẽ là bao nhiêu. Thì chúng ta sẽ
+0:20:59 - 0:21:05, cùng quan sát xem là cái trọng số đầu
+0:21:02 - 0:21:07, ra, trọng số đầu ra của từng của tám cái
+0:21:05 - 0:21:09, neuro này nó ảnh hưởng đến cái output
+0:21:07 - 0:21:11, này như thế nào. Thì với những cái
+0:21:09 - 0:21:14, neuron nào mà có cái trọng số cao thì
+0:21:11 - 0:21:17, chúng ta sẽ ưu tiên vẽ trước. Còn những
+0:21:14 - 0:21:20, cái trọng số nào mà có thấp thì chúng ta
+0:21:17 - 0:21:22, sẽ vẽ sau. Thế thì ở đây chúng ta sẽ
+0:21:20 - 0:21:25, thêm một cái đoạn code nữa để lấy cái
+0:21:22 - 0:21:29, trọng số của cái lớp
+0:21:25 - 0:21:32, thứ hai à layer số 2.
+0:21:29 - 0:21:32, Rồi
+0:21:34 - 0:21:41, đây sẽ là cái hidden
+0:21:38 - 0:21:41, away
+0:21:42 - 0:21:47, tức là cái trọng số của các cái neuron
+0:21:44 - 0:21:50, hidden.
+0:21:47 - 0:21:50, Rồi.
+0:21:54 - 0:21:59, Rồi thì khi chúng ta quan sát vào cái
+0:21:57 - 0:22:02, trọng số của cái lớp hidden thì chúng ta
+0:21:59 - 0:22:06, sẽ thấy như thế này.
+0:22:02 - 0:22:09, Ở đây sẽ là một cái ma trận 8 x 1. Nó sẽ
+0:22:06 - 0:22:12, là một cái ma trận 8 x 1 tại vì đầu vào
+0:22:09 - 0:22:15, của mình là 8 và đầu ra của mình là 1.
+0:22:12 - 0:22:17, Thế thì chúng ta sẽ quan sát xem cái giá
+0:22:15 - 0:22:19, trị của các cái cạnh này nè, giá trị của
+0:22:17 - 0:22:22, các cái trọng số này nè lần lượt sẽ là
+0:22:19 - 0:22:22, bao nhiêu?
+0:22:23 - 0:22:30, Thì chúng ta thấy là sẽ có những cái
+0:22:25 - 0:22:33, trọng số rất là cao. Ví dụ như là 9 4 -
+0:22:30 - 0:22:38, 3 6 đó. Nhưng cũng sẽ có những cái trọng
+0:22:33 - 0:22:41, số rất là thấp. Ví dụ như là à -1 hoặc
+0:22:38 - 0:22:46, là -2 thì đó là những cái trọng số thấp.
+0:22:41 - 0:22:48, Còn trọng số cao như là 9 - 8 - 8 4 - 6
+0:22:46 - 0:22:52, đó thì đó là trọng số cao. Thế thì bây
+0:22:48 - 0:22:56, giờ chúng ta sẽ cùng trực quan hóa các
+0:22:52 - 0:22:57, cái ờ neuron mà có trọng số cao trước và
+0:22:56 - 0:23:00, các cái neuron có trọng số thấp chúng ta
+0:22:57 - 0:23:03, sẽ trực quan hóa sau. Thì ở đây chúng ta
+0:23:00 - 0:23:10, sẽ có những neuron có trọng số cao. Ví
+0:23:03 - 0:23:14, dụ như là neuron số 0 nè, 1 nè,
+0:23:10 - 0:23:15, 3 nè, 0
+0:23:14 - 0:23:20, 5
+0:23:15 - 0:23:25, à 7. Thì ở đây chúng ta sẽ là duyệt qua
+0:23:20 - 0:23:26, 0 1 3 5 7.
+0:23:25 - 0:23:29, Còn những cái trọng số còn lại là trọng
+0:23:26 - 0:23:31, số thấp thì chúng ta sẽ vẽ sau ha. Thế
+0:23:29 - 0:23:36, thì bây giờ chúng ta sẽ vẽ cái hyperpl
+0:23:31 - 0:23:39, tức là cái đường phân loại như thế nào?
+0:23:36 - 0:23:42, Thì ở đây chúng ta đã được khởi tạo
+0:23:39 - 0:23:46, trước là các cái trọng số của cái lớp
+0:23:42 - 0:23:50, hidden đó. Theta chính là cái trọng số
+0:23:46 - 0:23:54, của hidden. Trong bias thì là theta0
+0:23:50 - 0:23:56, theta 1 và trọng số theta 0 sẽ là nằm
+0:23:54 - 0:24:00, trong cái biến param. thì chúng ta sẽ sử
+0:23:56 - 0:24:02, dụng hai cái biến này để mà chúng ta à
+0:24:00 - 0:24:07, trực quan hóa. Thế thì chúng ta sẽ quay
+0:24:02 - 0:24:07, lại cái slide ở đây.
+0:24:18 - 0:24:24, Rồi thì trong cái slide này,
+0:24:21 - 0:24:27, mỗi một cái neuron này thì tương ứng sẽ
+0:24:24 - 0:24:29, là một cái
+0:24:27 - 0:24:33, một cái
+0:24:29 - 0:24:36, phân lớp, một cái đường thẳng.
+0:24:33 - 0:24:39, Thì ví dụ như cái neuro này nó sẽ chứa
+0:24:36 - 0:24:41, cái thông tin của cái đường thẳng này.
+0:24:39 - 0:24:45, Thì ở đây chúng ta thấy là Nuro này nó
+0:24:41 - 0:24:48, sẽ có ba thành phần. Thành phần đầu tiên
+0:24:45 - 0:24:52, đó chính là bias.
+0:24:48 - 0:24:55, Và hai cái trọng số này
+0:24:52 - 0:24:59, tương ứng thì nó sẽ nằm ở trong cái biến
+0:24:55 - 0:24:59, nó gọi là cái biến param.
+0:25:05 - 0:25:09, Hai cái cạnh này nè sẽ là nằm trong cái
+0:25:07 - 0:25:11, biến param.
+0:25:09 - 0:25:13, Còn cái
+0:25:11 - 0:25:16, giá trị của cạnh này thì nó sẽ nằm trong
+0:25:13 - 0:25:19, cái biến là bias. Vậy thì bây giờ chúng
+0:25:16 - 0:25:21, ta làm sao có thể trực quan hóa được cái
+0:25:19 - 0:25:24, đường thẳng này dựa trên các cái thông
+0:25:21 - 0:25:26, tin của ba cái cạnh này. Thế thì chúng
+0:25:24 - 0:25:28, ta biết rằng là hồi xưa khi mà chúng ta
+0:25:26 - 0:25:33, nói về phương trình đường thẳng thì
+0:25:28 - 0:25:35, chúng ta sẽ có cái công thức đó là à
+0:25:33 - 0:25:37, ax
+0:25:35 - 0:25:41, cộng cho
+0:25:37 - 0:25:43, by cộng cho c bằng 0 đúng không? Thì đây
+0:25:41 - 0:25:46, là một cái phương trình đường thẳng tổng
+0:25:43 - 0:25:49, quát. Thì trong cái ngữ cảnh này, trong
+0:25:46 - 0:25:52, cái ngữ cảnh này thì cái bias của chúng
+0:25:49 - 0:25:56, ta chính là C. Bias của chúng ta chính
+0:25:52 - 0:25:59, là C. Và cái trọng số A và B chính là
+0:25:56 - 0:26:01, hai cái trọng số của cái param này. Thì
+0:25:59 - 0:26:03, ở giả sử chúng ta ký hiệu đây là param 1
+0:26:01 - 0:26:06, và param 2 ha. Thì cái công thức của
+0:26:03 - 0:26:09, mình nó sẽ là
+0:26:06 - 0:26:09, param
+0:26:09 - 0:26:17, param 1
+0:26:12 - 0:26:20, nhân với x. cộng cho param
+0:26:17 - 0:26:23, 2 nhân với y
+0:26:20 - 0:26:23, rồi cộng cho bias
+0:26:24 - 0:26:31, bằng 0. Vậy thì chúng ta muốn xác định
+0:26:28 - 0:26:35, được cái đường thẳng này thì chúng ta sẽ
+0:26:31 - 0:26:38, phải lấy cái tọa độ của hai điểm ít nhất
+0:26:35 - 0:26:38, tọa độ của hai điểm.
+0:26:38 - 0:26:44, Rồi thì đối với cái điểm bên trái
+0:26:42 - 0:26:50, thì giả sử như x ở đây chúng ta lấy là
+0:26:44 - 0:26:50, -1. À ví dụ chúng ta lấy cái điểm này
+0:26:51 - 0:26:59, thì x của mình là -1. Mình thế vào x là
+0:26:55 - 0:27:01, bằng -1 thì hỏi cái y của mình sẽ là bao
+0:26:59 - 0:27:05, nhiêu? thì chúng ta sẽ có được cái tọa
+0:27:01 - 0:27:09, độ ở đây là -1 và chấm hỏi. Tương tự như
+0:27:05 - 0:27:13, vậy à với cái điểm ở trên đây ở trên
+0:27:09 - 0:27:13, cùng đây ha. Ví dụ như là 1 đi.
+0:27:17 - 0:27:21, Rồi thì cái y của mình nó sẽ là bao
+0:27:19 - 0:27:23, nhiêu? để chúng ta có được một cái cặp
+0:27:21 - 0:27:26, điểm, từ đó chúng ta có thể vẽ được cái
+0:27:23 - 0:27:29, đường thẳng này. Thì bây giờ từ cái
+0:27:26 - 0:27:31, phương trình này chúng ta sẽ suy ra là y
+0:27:29 - 0:27:36, là bằng cái gì?
+0:27:31 - 0:27:36, y sẽ là bằng à
+0:27:36 - 0:27:43, trừ param
+0:27:40 - 0:27:47, 1 à
+0:27:43 - 0:27:47, chia cho param 2
+0:27:49 - 0:27:55, nhân với x
+0:27:51 - 0:27:55, rồi sau đó là trừ cho
+0:27:56 - 0:28:00, chia cho par
+0:28:00 - 0:28:05, đó. Rồi thì ở đây chúng ta sẽ viết lại
+0:28:03 - 0:28:07, ha cho nó rõ.
+0:28:05 - 0:28:11, Thì từ cái công thức ở trên, từ công
+0:28:07 - 0:28:13, thức ở trên thì chúng ta sẽ có là y là
+0:28:11 - 0:28:17, bằng
+0:28:13 - 0:28:22, trừ param
+0:28:17 - 0:28:22, 1 nhân x
+0:28:22 - 0:28:28, trừ cho bias
+0:28:25 - 0:28:30, tất cả chia cho param 2 thì param 1 tức
+0:28:28 - 0:28:34, là cái trọng số này và param 2 chính là
+0:28:30 - 0:28:35, này thì đây tương ứng giống như là à cái
+0:28:34 - 0:28:38, công công thức mà hồi xưa chúng ta đã
+0:28:35 - 0:28:41, học. Từ cái công thức hồi xưa chúng ta
+0:28:38 - 0:28:44, đã học, chúng ta đưa về cái giá trị mà
+0:28:41 - 0:28:47, chúng ta lấy từ mô hình ra. Trong đó,
+0:28:44 - 0:28:49, bias chính là cái giá trị này và param
+0:28:47 - 0:28:53, là hai cái giá trị mà tương ứng hai cái
+0:28:49 - 0:28:53, đầu bào ở đây.
+0:28:54 - 0:29:02, Param 2. Rồi thì với cái công thức này
+0:28:57 - 0:29:07, chúng ta sẽ thế vào à thế vào x là bằng
+0:29:02 - 0:29:09, -1. Thế vào x là bằng trừ à x = 1 thì
+0:29:07 - 0:29:12, tương ứng y của mình sẽ là bằng bao
+0:29:09 - 0:29:15, nhiêu? Đó, dùng công thức này thế vào ở
+0:29:12 - 0:29:17, đây y thì sẽ bằng bao nhiêu? Chúng ta sẽ
+0:29:15 - 0:29:21, dựa trên cái công thức này. Như vậy thì
+0:29:17 - 0:29:24, đây là cái cách thức để mà chúng ta
+0:29:21 - 0:29:27, à có thể vẽ được cái phương trình đường
+0:29:24 - 0:29:39, thẳng của mình.
+0:29:27 - 0:29:39, [âm nhạc]

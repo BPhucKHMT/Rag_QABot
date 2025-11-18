@@ -1,0 +1,161 @@
+0:00:00 - 0:00:04, Chúng ta sẽ qua phiên bản cài đặt.
+0:00:04 - 0:00:11, Tiếp theo, quan trọng nhất và nó sẽ được xử dụng xuyên suốt cho môn học này của mình.
+0:00:11 - 0:00:15, Đó là chúng ta sẽ xử dụng thư viện TensorFlow và Keras.
+0:00:15 - 0:00:22, Với cách cài đặt mà xử dụng Keras, nó sẽ giúp chúng ta đỡ phải đi tính đạo hàng.
+0:00:22 - 0:00:25, Tại vì nó đã hỗ trợ cho mình việc tính đạo hàng.
+0:00:25 - 0:00:29, và các thư viện liên quan đến tối ưu hóa Optimizer để hữu luyện
+0:00:31 - 0:00:34, Ở đây chúng ta sẽ có một bộ khung cài đặt
+0:00:36 - 0:00:42, Chúng ta sẽ phải tuân thủ để từ nay về sau việc cài đặt sẽ đi theo đúng frame như thế này
+0:00:43 - 0:00:48, Đối tượng của mình sẽ được cài đặt bằng một dạng Class
+0:00:48 - 0:00:54, Và My Model sau này chúng ta có thể đổi nó thành tên của keyboard của mình
+0:00:55 - 0:01:00, Init chính là cái constructor nếu như chúng ta muốn có những cái khởi tạo bò bào bằng đầu
+0:01:00 - 0:01:02, hoặc không thì chúng ta sẽ return quần đơn
+0:01:02 - 0:01:07, phương thức tiếp theo rất là quan trọng và bắt phù phải có đó chính là phương thức build
+0:01:07 - 0:01:12, phương thức build này để cho chúng ta biết kiến trúc của mô hình nó như thế nào
+0:01:12 - 0:01:18, phương thức tiếp theo cũng rất là quan trọng đó chính là phương thức train
+0:01:18 - 0:01:21, dùng để hướng luyện mô hình với các data train của mình
+0:01:21 - 0:01:25, Phương thức thứ 2 là lưu mô hình này xuống dưới file
+0:01:25 - 0:01:32, Nếu quá trình train mô hình tốn rất nhiều thời gian, có thể lên đến vài tiếng hoặc vài ngày
+0:01:32 - 0:01:37, thì việc lưu mô hình này sẽ giúp chúng ta tái sử dụng được mô hình này sau
+0:01:37 - 0:01:42, Và đi kèm với phương thức cell thì chắc chắn nó sẽ có phương thức gọi là phương thức load
+0:01:42 - 0:01:44, để load mô hình này lên từ file
+0:01:44 - 0:01:56, Rồi, chúng ta sẽ tóm tác mô hình thông qua phương thức summary để cho biết kiến thúc mô hình này bao gồm các lớp nào và số thêm số của từng lớp ra sao.
+0:01:56 - 0:02:04, Và cuối cùng, đó chính là phương thức Redict. Chúng ta sẽ đưa ra dự đoán dựa trên input đầu vào.
+0:02:04 - 0:02:13, Rồi, bây giờ chúng ta sẽ copy toàn mộ nội dung ở đây và chúng ta sẽ hiện thực hóa nó cho mô hình Linear Regression.
+0:02:13 - 0:02:18, Đầu tiên là MyModel, chúng ta sẽ để là LinearRegression
+0:02:19 - 0:02:23, Để mà có thể hiện thực khóa được cho phương thức build
+0:02:23 - 0:02:33, thì chúng ta sẽ phải farm keras.tile
+0:02:33 - 0:02:47, Lớp input là lớp đầu tiên
+0:02:47 - 0:02:55, Tiếp theo là để tính ra đồ đồ đen
+0:02:55 - 0:03:09, Lớp dance là kết nối đầy đủ với đồ đen
+0:03:09 - 0:03:12, Đó là lý do tại sao nó đặt tên là dance
+0:03:12 - 0:03:14, Rồi
+0:03:19 - 0:03:23, Rồi bây giờ chúng ta sẽ tiến hành kể đặt phương thích build
+0:03:23 - 0:03:31, Và để cho tổng quát thì cái build này chúng ta sẽ phải cho biết số input dimension của mình là bao nhiêu
+0:03:31 - 0:03:36, trong trường hợp này, input dimension của mình là 1
+0:03:36 - 0:03:48, nhưng một cách tổng quát, chúng ta nên để tham số máy cho m này là input dimension
+0:03:48 - 0:03:58, Chúng ta sẽ đi lần lực từ trái qua phải
+0:03:58 - 0:04:01, Đầu tiên sẽ là tạo nớp input
+0:04:01 - 0:04:12, Nó sẽ cho biết là cái shape, tức là cái kích thước của nó là bao nhiêu
+0:04:12 - 0:04:16, shape là quy định input
+0:04:16 - 0:04:17, tên là
+0:04:18 - 0:04:20, phải, tức là nó chỉ là 1 cái vector thôi
+0:04:21 - 0:04:24, rồi, chúng ta sẽ trả về
+0:04:24 - 0:04:25, đây sẽ là input
+0:04:26 - 0:04:28, trả về 1 cái biến tên là input
+0:04:29 - 0:04:32, tiếp theo, chúng ta sẽ tính cái output
+0:04:32 - 0:04:35, output của mình là kết quả
+0:04:35 - 0:04:37, của phép biến đổi là dense
+0:04:37 - 0:04:39, đây chính là output
+0:04:40 - 0:04:42, đây chính là giá trị dự đoán
+0:04:42 - 0:04:50, Output là kết quả của vết biến đổi đen kết nối đầy đủ
+0:04:50 - 0:05:00, Trong dance này, chúng ta phải chỉ cho phương thức này biết output sẽ có bao nhiêu nodes
+0:05:00 - 0:05:07, Trong trường hợp này, chúng ta chỉ có duy nhất 1 node, chúng ta sẽ để là 1
+0:05:07 - 0:05:15, Activation là tính tán tính tính mà không có Activation nào
+0:05:15 - 0:05:20, Giờ thì sẽ để Activation là bài lên
+0:05:20 - 0:05:29, Và trong hàm logistic thì tham số Activation sẽ là hàm segue
+0:05:29 - 0:05:32, Chúng ta có sử dụng BIAS hay không?
+0:05:32 - 0:05:37, Chúng ta sẽ có sử dụng, chúng ta sẽ để là trục
+0:05:37 - 0:05:46, Đây là lớp biến đổi, lớp biến đổi này phải cho biết những truyện layer đầu vào là gì
+0:05:46 - 0:05:50, Vì vậy, cái cú pháp của mình sẽ ra để mở vào input
+0:05:50 - 0:05:53, Lưu ý đây là biến input này
+0:05:54 - 0:05:56, Biến input này là cái lớp biến input này
+0:05:56 - 0:06:01, Chứ nó không phải là module và class tên là input phí hoa
+0:06:01 - 0:06:05, Chứ ý ở đây, nó phải là ký niến đã tạo ra ở bữa trưa đó
+0:06:05 - 0:06:13, Rồi, cuối cùng chúng ta sẽ đóng gói toàn bộ input và output này
+0:06:13 - 0:06:29, để đóng gói, chúng ta sẽ sử dụng một cái đối tượng tên là model.import from Keras.import model
+0:06:29 - 0:06:33, Một cái thụ tính là cell.module
+0:06:33 - 0:06:37, Rồi
+0:06:37 - 0:06:43, Và ở đây thì chúng ta cũng không có nhu cầu phải trả về cái model này mà mọi thứ nó sẽ được đóng gói hết vô bên trong
+0:06:43 - 0:06:47, Rồi ở đây return, thì ta sẽ không return gì hết
+0:06:47 - 0:06:51, Đối với phương thức trend, chúng ta sẽ phải trả về mô đồ này
+0:06:51 - 0:06:55, Một cái thụ tính là cell.module
+0:06:55 - 0:07:08, đối với phương thức Trend, chúng ta phải cung cấp cho mô đồ biết dự kiện đau vào là X, Xtrend
+0:07:08 - 0:07:14, và output mình mong muốn nó sắp xỉ là Etrend
+0:07:14 - 0:07:21, Vì vậy mình sẽ phải cung cấp một bộ là X, Y, Xtrain và Ytrain
+0:07:23 - 0:07:25, Vì vậy thì ở đây
+0:07:27 - 0:07:29, phải có thêm item số nữa là Xtrain
+0:07:29 - 0:07:31, Tại vì train nó phải đi theo một cặp Xe
+0:07:33 - 0:07:39, Và trong tương lai thì chúng ta hoàn toàn có thể đưa thêm các cặp biến nữa đó là validation
+0:07:39 - 0:07:41, để kiểm tra xem cái model của mình
+0:07:41 - 0:07:47, khi mình train thì loss cho validation có giảm theo hay không
+0:07:47 - 0:07:52, cell .
+0:07:52 - 0:07:55, để thực hiện được ham train này
+0:07:55 - 0:08:02, chúng ta phải cho model biết optimizer sẽ sử dụng là gì
+0:08:02 - 0:08:14, ở đây mình sẽ để là tensorflow.keras.optimizer.
+0:08:14 - 0:08:25, ở đây nó sẽ không biết tensorflow là gì, ở đây nó sẽ phải là import tensorflow.htf
+0:08:25 - 0:08:33, Chúng ta sẽ sử dụng Stochastic Gradient Descent
+0:08:33 - 0:08:42, Tuy nhiên ở đây nó sẽ có một số optimizer khác
+0:08:42 - 0:08:43, Ví dụ như là Adam
+0:08:43 - 0:08:46, Mặc định nếu chúng ta không biết gì hết về môn hình
+0:08:46 - 0:08:47, Chúng ta có thể sử dụng Adam
+0:08:47 - 0:08:50, Tuy nhiên môn Linear Reaction là một môn rất đơn giản
+0:08:50 - 0:08:54, sau đó chúng ta sẽ sử dụng không cụ vừa phải, đó là sgd
+0:08:55 - 0:08:59, và khi khai báo kế kế Stochastic Gradient Descent
+0:08:59 - 0:09:04, thì chúng ta phải cho nó biết là learning rate của mình là bằng bao nhiêu
+0:09:04 - 0:09:07, thì by default chúng ta có thể sử dụng là 0.01
+0:09:08 - 0:09:13, Rồi, đồng thời là chúng ta sẽ phải cho cái model của mình
+0:09:14 - 0:09:18, nhận biết cho cái model của mình, nhận biết cái optimizer này
+0:09:20 - 0:09:31, Chúng ta sẽ truyền vào optimizer và phải cho nó biết hàm loss
+0:09:31 - 0:09:38, Ở đây trong RAS nó cũng hỗ trợ cho mình luôn các hàm loss phổ biến, ở đây chúng ta sẽ xử lý mse
+0:09:38 - 0:09:49, Sau khi model của mình đã được đóng gói, đã được compile với phương thức xử lời với tham số optimizer và hàm loss
+0:09:49 - 0:09:55, loss thì chúng ta sẽ sell.module.fit
+0:09:55 - 0:10:00, chúng ta sẽ fit isTrend và isTrend
+0:10:00 - 0:10:06, rồi thì chúng ta sẽ trả cái tham số
+0:10:06 - 0:10:10, các cái quá trình hướng luyện nó có những cái tham số nào
+0:10:10 - 0:10:15, ví dụ giá trị loss nó trả như thế nào nó gọi là history thì nó sẽ trả ra đây
+0:10:15 - 0:10:21, sau khi train xong, chúng ta sẽ lưu mô đồ này xuống
+0:10:21 - 0:10:26, chúng ta sẽ phải có thêm một tham số đó là mô đồ thách
+0:10:26 - 0:10:28, là đường dẫn đến phai môn của mình
+0:10:28 - 0:10:33, và hạm này thì chúng ta cũng không có nhu cầu phải trả về gì hết
+0:10:33 - 0:10:38, chúng ta sẽ để cell.mô đồ.cell
+0:10:38 - 0:10:44, và chúng ta sẽ để mô đồ thách, đường dẫn đến nơi mình ngủ luôn
+0:10:44 - 0:10:52, Lát mode lên thì chúng ta cũng sẽ phải có đường dẫn đến nơi mình đã lưu
+0:10:52 - 0:10:57, Và đây sẽ là Sale.mode
+0:10:57 - 0:11:02, Ở đây chúng ta sẽ có thêm một cái phương thức nữa của Keras
+0:11:02 - 0:11:06, Đó là Keras.mode
+0:11:06 - 0:11:11, Chúng ta sẽ import phương thức là Load mode
+0:11:11 - 0:11:13, Lót model
+0:11:15 - 0:11:20, Rồi ở đây sẽ là lót model và chúng ta sẽ truyền cái đường dẫn vào bộ đồ bản
+0:11:20 - 0:11:25, Sau khi lóa xong, nó sẽ trả vào cái biến self.model này
+0:11:25 - 0:11:31, Rồi summary thì self.model.summary
+0:11:33 - 0:11:39, Rồi để dự đoán thì chúng ta sẽ phải có một cái biến đồ vào đó là isted
+0:11:39 - 0:11:49, Chúng ta sẽ không có edit, tại vì khi dự đoán mà chúng ta đâu có cái nhãn của kế hoạch trả về đâu, chúng ta chỉ có cái input đầu vào thôi để edit
+0:11:49 - 0:11:55, Và ở đây sẽ là cell.model.predit.exit
+0:11:55 - 0:11:58, Rồi, bây giờ chúng ta sẽ kệ thử
+0:11:58 - 0:12:00, Maywax không có lỗi
+0:12:00 - 0:12:06, Bước tiếp theo chúng ta sẽ khởi tạo mô hình và phấn luyện với cái dự liệu mẫu
+0:12:06 - 0:12:10, Mô hình sẽ là linear impression
+0:12:10 - 0:12:15, và chúng ta sẽ đưa vào một cái biến đó là link-pressed
+0:12:15 - 0:12:21, Tiếp theo, chúng ta sẽ gọi trà hàm build
+0:12:21 - 0:12:25, và phải có một tham số đó là input-dimension
+0:12:25 - 0:12:31, linh freh.build
+0:12:31 - 0:12:35, tham số ở đây là 1
+0:12:35 - 0:12:37, tại vì sao?
+0:12:37 - 0:12:39, tại vì ở trong dữ liệu này
+0:12:39 - 0:12:42, chúng ta chỉ có duy nhất 1 biến đồ vào
+0:12:42 - 0:12:45, ở đây chúng ta sẽ không tính thành phần Bay As
+0:12:45 - 0:12:48, tại vì trong lớp dense ở trên đây
+0:12:48 - 0:12:52, nó đã có tham số cho biết có sử dụng Bay As hay không
+0:12:52 - 0:13:00, input điện vào đây chỉ là cái nhĩa liệt thô bàn đầu, không tính thành phần bài x, là phải chú ý cho đó ha
+0:13:00 - 0:13:04, Rồi ở đây build sẽ là bầu 1 và chúng ta sẽ tiến hành là trend
+0:13:04 - 0:13:08, và chúng ta sẽ truyền vào
+0:13:08 - 0:13:14, x và y, x và y chính là cái cặp, các cái cặp dữ liệu
+0:13:14 - 0:13:16, rồi
+0:13:16 - 0:13:24, Invalid argument compile optimizer
+0:13:24 - 0:13:32, Keras.optimizer
+0:14:02 - 0:14:05, giá trị loss của mình trả ra là đến 1000
+0:14:05 - 0:14:08, Rõ ràng đây là một giá trị rất lớn
+0:14:08 - 0:14:12, Thế thì chúng ta sẽ phải tham số hóa số lượng
+0:14:12 - 0:14:16, nâng ipop
+0:14:16 - 0:14:20, ipop nghĩa là dạ sử dụ liệu chúng ta có 100 mổ
+0:14:20 - 0:14:25, thì 1 ipop nghĩa là chúng ta train hết 100 mổ dụ liệu này
+0:14:25 - 0:14:30, và nếu chúng ta muốn train, train lại nhiều lần
+0:14:30 - 0:14:35, Chúng ta sẽ phải khai báo cho nó biết là số lần chúng ta muốn trainy train lại dự hiệu
+0:14:35 - 0:14:40, Ví dụ như chúng ta muốn trainy train lại là 500 lần
+0:14:41 - 0:14:43, Chúng ta sẽ để là epoch bằng 500
+0:14:43 - 0:14:46, Và ở đây chúng ta mô đồ chân fit thì chúng ta sẽ phải có
+0:14:47 - 0:14:49, Là epoch
+0:14:50 - 0:14:53, Là bài num epoch
+0:15:23 - 0:15:35, và khi kết thúc thuật toán chạy hết 500 epoch thì nó giảm xuống còn là khoảng 10 thôi
+0:15:35 - 0:15:37, từ 300 xuống còn 10

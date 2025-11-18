@@ -1,0 +1,217 @@
+0:00:19 - 0:00:24, Bạn có từng tự hỏi tại sao việc xây dựng
+0:00:22 - 0:00:27, một mô hình học máy tốt lại mất nhiều
+0:00:24 - 0:00:30, thời gian và công sức từ việc chọn lựa
+0:00:27 - 0:00:33, thực toán, tin chỉnh siêu tham số xử lý
+0:00:30 - 0:00:34, dữ liệu đến đánh giá mô hình. Tất cả đều
+0:00:33 - 0:00:39, đòi hỏi kiến thức chuyên sâu và nhiều
+0:00:34 - 0:00:42, thử nghiệp. Đây chính là lý do Auto ML
+0:00:39 - 0:00:45, Automatic Machine Learning ra đời giúp
+0:00:42 - 0:00:47, tự động hóa quá trình này, giảm bớt công
+0:00:45 - 0:00:50, sức và mở rộng khả năng áp dụng học máy
+0:00:47 - 0:00:54, đến nhiều lĩnh vực hơn.
+0:00:50 - 0:00:57, AutoL là công nghệ giúp tự động hóa quá
+0:00:54 - 0:01:00, trình xây dựng mô hình học máy từ tiền
+0:00:57 - 0:01:02, xử lý dữ liệu, lựa chọn mô hình, tối ưu
+0:01:00 - 0:01:05, hóa siêu tham số đến đánh giá và triển
+0:01:02 - 0:01:09, khai mô hình. Mục tiêu chính của Auto ML
+0:01:05 - 0:01:11, là giảm thiểu yêu cầu chuyên môn về ML,
+0:01:09 - 0:01:14, giúp các nhà khoa học dữ liệu, lập trình
+0:01:11 - 0:01:18, viên và cả những người không chuyên có
+0:01:14 - 0:01:21, thể dễ dàng áp dụng học máy vào các bài
+0:01:18 - 0:01:21, toán thực tế.
+0:01:21 - 0:01:27, AutoL quan trọng bởi vì nó giúp giải
+0:01:24 - 0:01:29, quyết hiệu quả các thách thức trong học
+0:01:27 - 0:01:30, máy truyền thống.
+0:01:29 - 0:01:33, Quá trình xây dựng một mô hình học máy
+0:01:30 - 0:01:35, trước đây yêu cầu nhiều bước phức tạp.
+0:01:33 - 0:01:37, Thứ nhất là lựa chọn thuật toán học máy
+0:01:35 - 0:01:41, cần hiểu rõ và chọn giữa các thuật toán
+0:01:37 - 0:01:42, như SVM, Random Forest, Neuron Network
+0:01:41 - 0:01:45, vân vân.
+0:01:42 - 0:01:47, Bước thứ hai là xử lý và tiền xử lý dữ
+0:01:45 - 0:01:50, liệu bao gồm việc chuẩn hóa, chọn đặc
+0:01:47 - 0:01:52, trưng quan trọng và làm sạch dữ liệu.
+0:01:50 - 0:01:55, Bước thứ ba là điều chỉnh siêu tham số,
+0:01:52 - 0:01:57, tìm ra giá trị tối ưu cho các tham số,
+0:01:55 - 0:02:01, ví dụ như là learning rate, số lượng
+0:01:57 - 0:02:03, layer trong các mạng neuro.
+0:02:01 - 0:02:06, Bước tiếp theo là đánh giá và triển khai
+0:02:03 - 0:02:09, mô hình, kiểm tra hiệu suất của mô hình
+0:02:06 - 0:02:11, và triển khai vào hệ thống thực tế. Tất
+0:02:09 - 0:02:14, cả những công việc này đòi hỏi chuyên
+0:02:11 - 0:02:16, môn cao, tốn nhiều thời gian và dễ xảy
+0:02:14 - 0:02:18, ra sai sót. Điều này khiến cho học máy
+0:02:16 - 0:02:22, trở nên khó tiếp cận, đặc biệt đối với
+0:02:18 - 0:02:22, người không chuyên.
+0:02:22 - 0:02:28, Auto giúp tự động hóa các bước trên và
+0:02:25 - 0:02:31, mang lại nhiều cái lợi ích quan trọng.
+0:02:28 - 0:02:33, Thứ nhất là tiết kiệm thời gian, giảm
+0:02:31 - 0:02:36, công sức thủ công trong việc thử nghiệm
+0:02:33 - 0:02:39, và tối ưu mô hình. Thứ hai là giảm thiểu
+0:02:36 - 0:02:42, sai sót, hạn chế lỗi do con người khi xử
+0:02:39 - 0:02:45, lý dữ liệu và điều chỉnh tham số. Thứ ba
+0:02:42 - 0:02:46, là tối ưu hóa hiệu suất của mô hình, tự
+0:02:45 - 0:02:49, động tìm kiếm các mô hình và siêu tham
+0:02:46 - 0:02:52, số tốt nhất và cuối cùng là tiếp cận dễ
+0:02:49 - 0:02:57, dàng hơn cho người không chuyên giúp
+0:02:52 - 0:02:59, những người không biết nhiều về machine
+0:02:57 - 0:03:02, learning mà vẫn có thể triển khai được
+0:02:59 - 0:03:02, các cái ứng dụng.
+0:03:04 - 0:03:08, Ờ auto không chỉ giúp các chuyên gia học
+0:03:06 - 0:03:10, máy mà còn hỗ trợ cho doanh nghiệp và
+0:03:08 - 0:03:12, người không chuyên tiếp cận AI dễ dàng
+0:03:10 - 0:03:18, hơn.
+0:03:12 - 0:03:20, Ờ cụ thể đó là AutoL giúp giảm rào cản
+0:03:18 - 0:03:21, kỹ thuật. Các doanh nghiệp không cần
+0:03:20 - 0:03:23, phải chuyên gia học máy vẫn có thể sử
+0:03:21 - 0:03:27, dụng AI để giải quyết các bài toán thực
+0:03:23 - 0:03:30, tế. Thứ hai là tăng hiệu suất. Auto ML
+0:03:27 - 0:03:32, giúp thử nghiệm nhiều mô hình nhanh
+0:03:30 - 0:03:35, chóng và tìm ra mô hình tối ưu trong một
+0:03:32 - 0:03:37, thời gian ngắn. Và cuối cùng đó là tích
+0:03:35 - 0:03:40, hợp rất là nhanh chóng các nền tảng OML
+0:03:37 - 0:03:43, như Google AutoL,
+0:03:40 - 0:03:45, H2O.AaiI cho phép triển khai mô hình dễ
+0:03:43 - 0:03:47, dàng vào hệ thống thực tế.
+0:03:45 - 0:03:49, Thế thì các thành phần chính của AutoL
+0:03:47 - 0:03:53, bao gồm các bước quan trọng trong quy
+0:03:49 - 0:03:55, trình tự động hóa học máy.
+0:03:53 - 0:03:57, Chúng ta hãy nhìn vào à bảng sau để thấy
+0:03:55 - 0:04:00, các cái thành phần. Thành phần thứ nhất
+0:03:57 - 0:04:03, là tiền xử lý dữ liệu, data processing,
+0:04:00 - 0:04:05, preprocessing. Làm sạch dữ liệu bao gồm
+0:04:03 - 0:04:07, loại bỏ dữ liệu nhiễu, dữ liệu bị thiếu
+0:04:05 - 0:04:10, gồm chuẩn hóa dữ liệu, biến đổi dữ liệu
+0:04:07 - 0:04:11, về hệ ạ phù hợp để mô hình có thể học
+0:04:10 - 0:04:14, hiệu quả.
+0:04:11 - 0:04:15, Chọn đặc trưng feature selection. Tự
+0:04:14 - 0:04:17, động xác định và chọn ra các cái đặc
+0:04:15 - 0:04:20, trưng quan trọng tốt nhất trong tập dữ
+0:04:17 - 0:04:23, liệu và giúp cải thiện hiệu suất mô hình
+0:04:20 - 0:04:26, và giảm độ phức tạp.
+0:04:23 - 0:04:28, Thứ ba là chọn mô hình model selection
+0:04:26 - 0:04:32, thì thử thử nghiệm nhiều thuật toán học
+0:04:28 - 0:04:35, máy khác nhau để tìm ra mô hình phù hợp
+0:04:32 - 0:04:39, nhất với dữ liệu.
+0:04:35 - 0:04:41, Tối ưu hóa siêu tham số hyper parameter
+0:04:39 - 0:04:42, tuning.
+0:04:41 - 0:04:44, À bước này thì tự động tìm kiếm và tin
+0:04:42 - 0:04:47, chỉnh các cái siêu tham số nhằm tối ưu
+0:04:44 - 0:04:50, hóa hiệu suất của mô hình. Đánh giá mô
+0:04:47 - 0:04:52, hình model evaluation thì tính toán các
+0:04:50 - 0:04:55, chỉ số đánh giá như accuracy, precision,
+0:04:52 - 0:04:57, recol để xác định chất lượng của cái mô
+0:04:55 - 0:04:59, hình.
+0:04:57 - 0:05:01, Tuyển khai mô hình model deployment xác
+0:04:59 - 0:05:04, định mô hình xuất cái mô hình giữa dạng
+0:05:01 - 0:05:06, API hoặc tích hợp vào hệ thống thực tế
+0:05:04 - 0:05:09, để sử dụng trong các ứng dụng. Như vậy
+0:05:06 - 0:05:11, Auto ML giúp tự động hóa toàn bộ quy
+0:05:09 - 0:05:14, trình xây dựng mô hình học máy từ xử lý
+0:05:11 - 0:05:16, dữ liệu, lựa chọn thuật toán, tối ưu hóa
+0:05:14 - 0:05:19, đến đánh giá và triển khai mô hình. Điều
+0:05:16 - 0:05:21, này giúp giảm thời gian, công sức và yêu
+0:05:19 - 0:05:24, cầu về chuyên môn trong lĩnh vực học
+0:05:21 - 0:05:27, máy.
+0:05:24 - 0:05:30, Các nền tảng AutoL phổ biến bao gồm
+0:05:27 - 0:05:33, Google Cloud AutoL. Đây là bộ công cụ
+0:05:30 - 0:05:36, giúp đào tạo mô hình à học máy chất
+0:05:33 - 0:05:40, lượng cao mà không cần chuyên môn sau.
+0:05:36 - 0:05:42, Microsoft Azure Automatic ML giúp tự
+0:05:40 - 0:05:45, động hóa việc phát triển, triển khai và
+0:05:42 - 0:05:49, mở rộng mô hình học máy dễ dàng.
+0:05:45 - 0:05:51, IBM Watson Studio thì hỗ trợ tự động hóa
+0:05:49 - 0:05:54, quy trình học máy giúp phát triển và
+0:05:51 - 0:05:58, triển khai mô hình một cách nhanh chóng.
+0:05:54 - 0:06:01, Amazon Sha Maker dịch vụ học máy được
+0:05:58 - 0:06:03, quản lý hoàn toàn giúp đào tạo, tạo,
+0:06:01 - 0:06:07, huấn luyện và triển khai mô hình dễ
+0:06:03 - 0:06:10, dàng. Và à H2O.I là nền tảng mã nguồn mở
+0:06:07 - 0:06:14, hỗ trợ auto tự động thử nghiệm thực toán
+0:06:10 - 0:06:16, và tối ưu siêu tham số.
+0:06:14 - 0:06:18, Các ứng dụng của AutoML bao gồm phân
+0:06:16 - 0:06:20, tích hình ảnh gồm có nhận diện đối
+0:06:18 - 0:06:24, tượng, kiểm tra chất lượng sản phẩm và
+0:06:20 - 0:06:27, chẩn đoán y tế, à xử lý văn bản, phân
+0:06:24 - 0:06:30, loại tài liệu, phân tích cảm xúc,
+0:06:27 - 0:06:34, chatbot và dịch thuật,
+0:06:30 - 0:06:37, dự báo chuỗi thời gian, dự báo doanh số,
+0:06:34 - 0:06:40, nhu cầu sản phẩm, giá trị tài chính,
+0:06:37 - 0:06:44, tiếp thị và khách hàng à
+0:06:40 - 0:06:47, phân khúc à khách hàng dự đoán rời bỏ cá
+0:06:44 - 0:06:49, nhân hóa chiến lược. Phát hiện gian lận
+0:06:47 - 0:06:52, bao gồm ngăn chặn gian lận tài chính,
+0:06:49 - 0:06:54, giám sát bất thường bảo mật mạng.
+0:06:52 - 0:06:56, Tối ưu logistic bao gồm dự báo tồn kho,
+0:06:54 - 0:06:59, tối ưu giao hàng, dự đoán bảo trì thiết
+0:06:56 - 0:07:01, bị. Và trong lĩnh vực y tế giáo dục
+0:06:59 - 0:07:04, gồm có chẩn đoán bệnh, cá nhân hóa điều
+0:07:01 - 0:07:06, trị và hỗ trợ học tập. Chúng ta có thể
+0:07:04 - 0:07:08, thấy là các ứng dụng của ô tô rất là đa
+0:07:06 - 0:07:11, dạng.
+0:07:08 - 0:07:14, Mặc dù auto mang lại nhiều lợi ích tuy
+0:07:11 - 0:07:16, nhiên nó vẫn có một số hạn chế. Thứ nhất
+0:07:14 - 0:07:18, đó là thiếu linh hoạt. À không thể tùy
+0:07:16 - 0:07:20, chỉnh mô hình như là cách truyền thống.
+0:07:18 - 0:07:23, Cái thứ hai là yêu cầu cái tài nguyên
+0:07:20 - 0:07:27, lớn. Một số công cụ như AutoL cần GPU
+0:07:23 - 0:07:29, hoặc cloud computing rất mạnh và không
+0:07:27 - 0:07:31, thể thay thế hoàn toàn chuyên gia học
+0:07:29 - 0:07:33, máy. Auto giúp tự động hóa nhưng vẫn cần
+0:07:31 - 0:07:35, con người để phân tích kết quả và đưa ra
+0:07:33 - 0:07:38, quyết định cuối cùng.
+0:07:35 - 0:07:42, Ờ đang trở thành xu hướng quan trọng
+0:07:38 - 0:07:45, trong AI và học máy. Một số hướng phát
+0:07:42 - 0:07:49, triển chính thì bao gồm
+0:07:45 - 0:07:52, kết hợp với explain AI để giải thích kết
+0:07:49 - 0:07:55, quả mô hình cách tự động tích hợp nhiều
+0:07:52 - 0:07:58, hơn với ML Offs để triển khai và giám
+0:07:55 - 0:08:00, sát các mô hình học máy liên tục và tối
+0:07:58 - 0:08:03, ưu hóa trên các cái thiết bị IoT và
+0:08:00 - 0:08:07, excomputing tính toán biên giúp chạy mô
+0:08:03 - 0:08:11, hình AI trên các thiết bị nhỏ gọn.
+0:08:07 - 0:08:15, khi nào thì nên sử dụng AutoML
+0:08:11 - 0:08:18, thì các trường hợp này ờ giúp cho người
+0:08:15 - 0:08:19, dùng phải xác định à liệu AutoML có là
+0:08:18 - 0:08:21, giải pháp phù hợp với nhu cầu của họ hay
+0:08:19 - 0:08:23, không. Chúng ta hãy quan sát trên cái
+0:08:21 - 0:08:25, bảng.
+0:08:23 - 0:08:27, Thì ở đây ờ
+0:08:25 - 0:08:28, chi tiết các trường hợp sẽ được giải
+0:08:27 - 0:08:32, thích như sau. Thứ nhất là nếu mà không
+0:08:28 - 0:08:33, có nhiều kinh nghiệm về học máy thì à nó
+0:08:32 - 0:08:37, rất là phù hợp.
+0:08:33 - 0:08:39, Auto ML giúp những người không chuyên về
+0:08:37 - 0:08:41, học máy dễ dàng xây dựng mô hình mà
+0:08:39 - 0:08:44, không cần hiểu sâu về thuật toán hoặc
+0:08:41 - 0:08:49, tối ưu hóa mô hình. Cái thứ hai là trong
+0:08:44 - 0:08:51, trường hợp dữ liệu nhỏ hoặc vừa thì có
+0:08:49 - 0:08:54, thể dùng bởi vì auto có thể hoạt động
+0:08:51 - 0:08:55, tốt với các tập dữ liệu nhỏ và vừa giúp
+0:08:54 - 0:08:57, nhanh chóng tạo ra mô hình mà không cần
+0:08:55 - 0:08:59, nhiều công sức.
+0:08:57 - 0:09:01, Trong trường hợp mà cần tối ưu hóa mô
+0:08:59 - 0:09:03, hình nhanh chóng thì đây là rất là hữu
+0:09:01 - 0:09:06, ích. Nếu dự án yêu cầu có mô hình nhanh
+0:09:03 - 0:09:08, mà không cần nghiên cứu sau thì ô tô ml
+0:09:06 - 0:09:11, có thể giúp tự động hóa và tăng tốc quá
+0:09:08 - 0:09:14, trình thử nghiệp mô hình.
+0:09:11 - 0:09:17, Trong trường hợp dự án yêu cầu tùy chỉnh
+0:09:14 - 0:09:19, cao thì à không phù hợp.
+0:09:17 - 0:09:21, Bởi vì Auto ML thường không cho phép
+0:09:19 - 0:09:23, kiểm soát chi tiết từng khía cạnh của mô
+0:09:21 - 0:09:25, hình nên không phù hợp với các dự án cần
+0:09:23 - 0:09:26, tùy chỉnh thuật toán hoặc kiến trúc mô
+0:09:25 - 0:09:29, hình đặc biệt.
+0:09:26 - 0:09:31, Trong trường hợp cần kiểm soát từng bước
+0:09:29 - 0:09:33, của mô hình học máy thì cũng lời khuyên
+0:09:31 - 0:09:36, là nên dùng cách truyền thống. Nếu mà
+0:09:33 - 0:09:38, cần kiểm soát toàn bộ quy trình từ tiền
+0:09:36 - 0:09:41, xử lý dữ liệu, lựa chọn đặc trưng, tối
+0:09:38 - 0:09:43, ưu tham số đến đánh giá mô hình thì
+0:09:41 - 0:09:46, phương pháp truyền thống sẽ tốt hơn auto
+0:09:43 - 0:09:49, ML. Auto ML thì phù hợp với những người
+0:09:46 - 0:09:53, mới tiếp cận ML dự án có quy mô nhỏ đến
+0:09:49 - 0:09:56, vừa hoặc khi cần nhanh chóng có mô hình
+0:09:53 - 0:09:56, hoạt động tốt.
+0:10:01 - 0:10:04, Ok. nghĩ tí

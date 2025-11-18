@@ -1,0 +1,197 @@
+0:00:00 - 0:00:06, Môn logistic regression cũng được phát triển từ môn học tông quát.
+0:00:06 - 0:00:13, Chúng ta nhắc lại, đầu vào là chúng ta sẽ có dữ liệu x và đầu ra chúng ta sẽ có dữ liệu y.
+0:00:13 - 0:00:26, Tùy vào tính chất của cặp dữ liệu xy này, mình sẽ thiết kế các hàm môn dự đoán s theta x và hàm độ lỗi dự đoán l theta xi.
+0:00:26 - 0:00:35, Còn công việc số 3 là tìm theta so cho hàm đổ lộ nhỏ nhất này, thì chúng ta cũng đã có công cụ đó là thuộc toán gradient descent.
+0:00:35 - 0:00:47, Đối với môi logistic regression, chúng ta sẽ phải đi giải quyết một bài toán, trong đó chúng ta phải phân ra làm 2 lớp, xanh và cam ở đây.
+0:00:47 - 0:00:55, 2 x1 của x2 chính là đặc trưng đầu vào, trong trường hợp này chúng ta sẽ lấy mặt phẳng 2 chiều
+0:00:55 - 0:01:02, và chúng ta sẽ phải phân tách 2 tập điểm xanh và một cái em này ra làm 2 phần
+0:01:02 - 0:01:09, và trong trường hợp này thì dữ liệu của mình nó gọi là phân tách được một cách tiến tính hay còn gọi là linear separable
+0:01:09 - 0:01:13, thì ở đây chúng ta sẽ có được một cái đường thẳng tách ra làm 2
+0:01:13 - 0:01:17, thì theo như kiến thức toán tấp 2, tấp 3 mà chúng ta đã học
+0:01:17 - 0:01:20, thì với phương trình đường thẳng này chúng ta có thể biết nó như dạng là
+0:01:20 - 0:01:28, ax1 cộng cho bx2 cộng cho c bằng 0
+0:01:28 - 0:01:31, và tất cả những điểm nào mà nằm trên đường thẳng này
+0:01:31 - 0:01:35, thì khi thế vào các điểm x1, x2 nằm trên đường thẳng này
+0:01:35 - 0:01:38, thế vào thì chúng ta sẽ có giá trị bằng 0
+0:01:38 - 0:01:52, Bây giờ chúng ta sẽ làm quen với bộ tham số Theta 1 x 1 cộng Theta 2 x 2 cộng Theta 0.
+0:01:52 - 0:01:58, Thì nếu những điểm nào nằm trên đường thẳng này thì nó sẽ ra bằng không.
+0:01:58 - 0:02:04, Còn những điểm nào nằm về phía bên trên, ví dụ như ở đây,
+0:02:04 - 0:02:08, Thế vô thì sẽ ra giá trị lớn hay không.
+0:02:08 - 0:02:14, Còn những điểm nằm dưới như vậy thì sẽ là nằm đỉnh nằm hay không.
+0:02:14 - 0:02:21, Như vậy dựa trên quan sát, kiến thức tóm tóm cấp 3, cấp 2, cấp 3 mà chúng ta đã học được
+0:02:21 - 0:02:27, thì chúng ta sẽ thiết kế hàm dự đoán bằng dạng như trên.
+0:02:27 - 0:02:33, Đó là fθx1 x2, x là dự kiện vô vào, hai đặc trưng vô vào.
+0:02:33 - 0:02:39, Nó sẽ làm bằng 1, tức là cái nhãn y này là bằng 1.
+0:02:39 - 0:02:50, Nếu theta0 cộng ra theta1 x1 cộng ra theta2 x2 theta0 x1 cộng ra theta1 x1 cộng ra theta x2
+0:02:50 - 0:02:57, lứa 1 bằng 0, tức là nó thuộc về một nửa cái mặt phẳng này, thì nó sẽ đợt gán giá trị là 1.
+0:02:57 - 0:03:02, và nó sẽ bán bằng 0, cái nhãn dự đoán của mình sẽ bán bằng 0
+0:03:02 - 0:03:06, nếu như theta 0 cộng cho theta 1 x 1 cộng theta 2 x 2
+0:03:06 - 0:03:11, nó bẫy hơn 0, tức là nó nằm về một lửa phía bên này
+0:03:11 - 0:03:16, thì nếu như chúng ta thiết kế cái hàm dự đoán như thế này thì điều gì sẽ xảy ra?
+0:03:16 - 0:03:20, điều gì sẽ xảy ra?
+0:03:20 - 0:03:26, đó là hàm này là hàm không liên tục
+0:03:26 - 0:03:28, Hàm này là hàm không liên tục.
+0:03:28 - 0:03:31, Hàm không liên tục thì sau này khi chúng ta đến cái bút số 3,
+0:03:31 - 0:03:35, chúng ta tính đạo hàm sẽ rất là khó.
+0:03:35 - 0:03:39, Do đó chúng ta phải cố gắng tế kế hàm fθx
+0:03:39 - 0:03:41, sao cho nó phải là một cái hàm liên tục.
+0:03:41 - 0:03:43, Chúng ta sẽ tìm cách thi kế
+0:03:43 - 0:03:46, bằng cách dựa trên quan sát
+0:03:46 - 0:03:51, đó là miền giá trị của theta 0,
+0:03:51 - 0:03:54, tức là miền giá trị của giá trị này,
+0:03:54 - 0:03:56, của ký phép tính này nè
+0:03:56 - 0:03:58, nó sẽ thuộc cái đoạn là từ
+0:03:58 - 0:04:00, trừ vô cụm cho đến cọng vô cụm
+0:04:00 - 0:04:02, trong khi đó
+0:04:02 - 0:04:04, trong khi đó cái giá trị
+0:04:04 - 0:04:06, mà mình mong muốn
+0:04:06 - 0:04:08, dự đoán nó sẽ nhận hai giá trị là
+0:04:08 - 0:04:10, 0 và 1
+0:04:10 - 0:04:12, trong khi đó cái miền giá trị của
+0:04:12 - 0:04:14, theta 0 cộng cho theta 1 x1
+0:04:14 - 0:04:16, cộng cho theta 2 x2 đó là trừ vô cụm
+0:04:16 - 0:04:18, cho đến cọng vô cụm
+0:04:18 - 0:04:20, thì để x, để x cho các
+0:04:20 - 0:04:22, cái giá trị này
+0:04:22 - 0:04:30, Tổng này về giá trị từ 0 cho đến 1, chúng ta sẽ sử dụng hàm sigmoid.
+0:04:31 - 0:04:34, Hàm sigmoid sẽ có công thức như sau.
+0:04:35 - 0:04:41, Sigmoid của x, chúng ta sẽ biết x thường là bằng 1 phần 1 cộng cho e mũ trừ x.
+0:04:41 - 0:04:46, Và dạng đồ thị hàm số của hàm sigmoid sẽ có dạng như sau.
+0:04:52 - 0:04:57, Từ trừ vô cùng cho đến cọng vô cùng
+0:04:57 - 0:05:02, Với giá trị đầu vào của mình là từ trừ vô cùng cho đến cọng vô cùng thì qua hàm sigmoid
+0:05:02 - 0:05:10, Nó sẽ ép về miền giá trị là từ 0 cho đến 1
+0:05:10 - 0:05:15, Đây là sơ đồ, đồ thị của hàm sigmoid
+0:05:15 - 0:05:24, Vì vậy, giá trị đầu vào theta 0, theta 1, theta x1, theta 2, theta x2 từ trừ vô cùng cho đến cọng vô cùng
+0:05:24 - 0:05:29, qua hàm sigmoid, thì nó đã đưa về miền giá trị từ 0 cho đến 1.
+0:05:32 - 0:05:33, Ta sẽ thuộc đoạn từ 0 đến 1.
+0:05:33 - 0:05:38, Đây chính là cách để chúng ta thiết kế hàm dự đoán.
+0:05:38 - 0:05:42, Với hàm sigmoid này, đây là một hàm liên tục.
+0:05:45 - 0:05:50, Hàm sigmoid là một hàm liên tục và giá trị bên trong này cũng là một hàm liên tục
+0:05:50 - 0:05:53, Do đó thì f của mình sẽ là một hàm liên tục
+0:05:54 - 0:05:57, Và như vậy đó thì thỏa mãn được kiến tố đó là
+0:05:57 - 0:06:01, Hàm của mình liên tục để sau này đến chức bước số 3 chúng ta tính đạo hàm, quá dễ
+0:06:02 - 0:06:06, Rồi, ở cái dạng vector hóa
+0:06:06 - 0:06:09, Tức là nếu như dữ liệu của chúng ta là một mẫu
+0:06:09 - 0:06:12, Trong trường hợp này chúng ta sẽ có x1 và x2
+0:06:12 - 0:06:17, Nhưng một cách tổng quát, x của mình sẽ bao gồm m thành phần,
+0:06:17 - 0:06:23, x bao gồm m thành phần chứ không chỉ có hai thành phần, còn một chính là thành phần bias.
+0:06:24 - 0:06:33, Tham số của mình là theta, theta sẽ bao gồm theta 0, theta 1, theta 2, theta m tương ứng với x tàu bào.
+0:06:33 - 0:06:40, Vì vậy, hàm dị bán của mình sẽ là, viết gọn lại, s theta x sẽ là bằng sigmoid của theta,
+0:06:40 - 0:07:03, Đối với việc vector hóa cho dữ liệu toàn mẫu tập hợp tất cả mẫu dữ liệu của tập dữ liệu của bản liệu của mình, đây là 1 mẫu, đây là 1 mẫu thứ 1, mẫu thứ 2 và đây là mẫu thứ n.
+0:07:03 - 0:07:08, Mỗi cái mổ này sẽ dự diện như vậy là một cái cột
+0:07:08 - 0:07:12, và tập hợp tất cả cái cột này sẽ tạo thành một cái ma trận
+0:07:15 - 0:07:23, Và Theta sẽ là một cái vector Theta 0, Theta 1 cho đến Theta m
+0:07:23 - 0:07:28, Vì vậy cái hàm dự đoán của mình sẽ được viết gọn lại cũng cùng một cái công thức như trên
+0:07:28 - 0:07:36, Nếu như công thức ở trên đây, đó là theta chuyển vị nhân vụ x này là một mẫu
+0:07:39 - 0:07:47, Thì qua cái công thức bên đây, x này đó là n mẫu, tức là toàn bộ, toàn bộ các mẫu dữ liệu của mình
+0:07:47 - 0:07:54, Và theta chuyển vị nhân vụ x trong trường hợp này nó chính là một vector dạng nằm ngang
+0:07:54 - 0:08:04, Các vẻ tươi sẽ là giá trị y ngã dự đoán.
+0:08:04 - 0:08:13, Hàm sigmoid không phải là tính cho một giá trị scalar, mà là tính cho một vẻ tươi.
+0:08:13 - 0:08:22, Và kết quả của phép sigmoid này, kết quả của phép biến đổi sigmoid, hàm sigmoid này trên cái vector này sẽ ra một cái vector.
+0:08:23 - 0:08:30, Nó sẽ ra một cái vector. Và tình phần tử trong đây tương ứng chính là sigmoid của phần tử ở phía trên.
+0:08:31 - 0:08:34, Phần tử này qua hàm sigmoid nó sẽ tính ra cái giá trị ở đây.
+0:08:34 - 0:08:44, Vì vậy ở đây nó sẽ là tính 11 y, tức là tính trên từng phần tử và sigmoid của 1 vector nằm ngang, nó sẽ ra 1 vector nằm ngang.
+0:08:44 - 0:08:49, Và chúng ta sẽ qua cái bước thứ 2, đó là chúng ta sẽ thiết kế hàm lỗi.
+0:08:49 - 0:08:59, Và trong trường hợp này thì cái y, giá trị thực tế là nó sẽ nhận 2 giá trị là 1, y bằng 1 hoặc là y bằng 0, tương ứng là 2 cái phần lớp của mình.
+0:08:59 - 0:09:07, Đối với hàm nổi cho trường học một ngổ dí liệu và không có vector hóa,
+0:09:07 - 0:09:11, không vector hóa nghĩa là chúng ta sẽ tính trên từng phần tử riêng việc,
+0:09:11 - 0:09:12, thay vì tính hàng hoàn.
+0:09:12 - 0:09:17, Và ở đây chúng ta sẽ có công thức hàm nổi nổi như trên.
+0:09:17 - 0:09:19, Ở đây chúng ta sẽ đặt một câu hỏi là,
+0:09:19 - 0:09:23, tại sao công thức của hàm nổi này có vẻ phức tạp quá?
+0:09:23 - 0:09:26, Tại sao công thức này có vẻ phức tạp?
+0:09:26 - 0:09:32, Nếu có hàm log của 1 trừ y, nhưng cho log của 1 trừ y nghĩa thì hàm này quá phức tạp.
+0:09:32 - 0:09:43, Tại sao chúng ta không sử dụng chính hàm mean square mse của hàm chơi phần linear regression,
+0:09:43 - 0:09:55, đó là công thức L theta là bằng 1 phần 2n trung quình cọng của y nghĩa y trường cho y tất cả bình phương.
+0:09:55 - 0:10:02, Tại sao chúng ta không dùng công thức này mà lại sử dụng công thức ở trên?
+0:10:02 - 0:10:07, Rồi, thì bây giờ trước tiên chúng ta phải kiểm tra xem công thức ở trên có tính đúng đắn hay không.
+0:10:07 - 0:10:15, Thế thì, yêu cầu đặt ra của hàm lỗi đó là nếu chúng ta đáng đúng thì lỗi của mình phải bằng 0.
+0:10:15 - 0:10:18, Nếu mà đúng thì lỗi của mình phải bằng 0.
+0:10:18 - 0:10:22, Và nếu chúng ta đáng sai thì lỗi của mình phải lớn hơn 0.
+0:10:22 - 0:10:29, Bây giờ chúng ta sẽ xét thử 1 trường hợp nếu y của mình là bằng 1
+0:10:29 - 0:10:35, Đây là giá trị thực tế, nhưng giá trị giữ đoán của mình là y bằng 0
+0:10:35 - 0:10:41, Bây giờ chúng ta sẽ xét trường hợp y của mình là đoán đúng rồi đi
+0:10:41 - 0:10:45, Y cũng bằng 1 đi, khi chúng ta thế vào công thức này
+0:10:45 - 0:10:49, Loss của mình trong trường hợp này sẽ là giá trị bằng bao nhiêu?
+0:10:49 - 0:10:57, Bằng trường, y bằng 1, dưỡng nguyên, kéo 1 xuống
+0:10:57 - 0:11:10, Lock y là lock y ngã, y ngã là bằng 1, 1 trừ y trong trường hợp này, 1 trừ cho 1 là 0
+0:11:10 - 0:11:13, Vì vậy, phần còn lại là không cần tính nữa.
+0:11:13 - 0:11:16, Vì vậy, nó sẽ là bằng trừ lóc của 1.
+0:11:16 - 0:11:27, Trừ lóc của 1, trong đồ thị của hàm lóc, đây là hàm lóc x.
+0:11:27 - 0:11:30, Giá trị tại đây là bằng 1.
+0:11:30 - 0:11:34, Lóc của 1 tại vị trí này tương ứng là bằng 0.
+0:11:34 - 0:11:37, Vì vậy, trong trường hợp đáng đúng,
+0:11:37 - 0:11:46, trong trường hợp đáng đúng, thì log của mình sẽ là bằng 0
+0:11:46 - 0:11:51, và tương tự như vậy nếu cho trường hợp y bằng 0 và y ngã bằng 0
+0:11:51 - 0:11:54, tức là đây cũng đáng đúng nhưng trong trường hợp y bằng 0
+0:11:54 - 0:11:58, thì các bạn thấy chúng ta cũng sẽ ra được giá trị sai số là bằng 0
+0:11:58 - 0:12:01, Bây giờ chúng ta sẽ xem trong cái trường hợp
+0:12:02 - 0:12:04, chúng ta sẽ xem trong cái trường hợp đó là
+0:12:05 - 0:12:07, nếu chúng ta đoán sai
+0:12:08 - 0:12:09, nếu chúng ta đoán sai
+0:12:10 - 0:12:14, y bằng một và y ngã dĩa đoán là bằng không
+0:12:14 - 0:12:16, thì thế vô cái công thức
+0:12:16 - 0:12:18, chúng ta sẽ thế vô cái công thức ở trên đây
+0:12:18 - 0:12:20, thì nó sẽ ra như thế nào
+0:12:21 - 0:12:22, y bằng một
+0:12:22 - 0:12:33, Loss của mình sẽ là bằng trừ 1 dự quyên nhân cho lốc y ngã trong trường hợp này là bằng 0
+0:12:33 - 0:12:38, 1 trừ y sẽ là bằng 1 trừ 1, dễ nói là phần sau chúng ta bỏ qua
+0:12:38 - 0:12:41, Vậy nó sẽ là bằng trừ lốc 0
+0:12:41 - 0:12:47, Chúng ta thấy là với cái độ thể hàm số này thì khi x của mình mà tiến về 0
+0:12:47 - 0:12:54, Vì vậy, lốc giá trị của lốc sẽ tiến về trừ vô cồn
+0:12:54 - 0:12:59, Và đó sẽ là bằng trừ của trừ vô cồn, tức là bào cọng vô cồn
+0:12:59 - 0:13:08, Hay nói cách khác, nếu bán sai thì mất mát của chúng ta là chúng ta sẽ mất nguyên 1 căn nhà
+0:13:08 - 0:13:11, Tức là chính là 1 giá trị rất là lớn
+0:13:11 - 0:13:19, Bây giờ chúng ta sẽ thử nghiệm trên giá trị msi, trên công thức mean square
+0:13:19 - 0:13:24, Nếu như dự đáng sai, nếu như dự đáng đúng thì lỗi cũng sẽ bằng 0
+0:13:24 - 0:13:26, Thế bộ chúng ta cũng sẽ không bằng 0
+0:13:26 - 0:13:33, Nếu chúng ta đáng sai, tức là chúng ta sẽ có y trừ cho y ngã tất cả mình
+0:13:33 - 0:13:40, Y mà trừ y ngã mình tức là bằng 1, trừ không tất cả mình sẽ là bằng 1
+0:13:40 - 0:13:45, Nếu dùng công thức MSE này thì sự trừng phạt này nó quá bé
+0:13:45 - 0:13:50, so với lại công thức của hàm Loss ở đây
+0:13:50 - 0:13:53, Cái này quá bé, còn cái này là rất vừa lấu
+0:13:53 - 0:13:56, Thì việc lớn bé này nó sẽ ảnh hưởng như thế nào
+0:13:56 - 0:13:59, Khi chúng ta có hàm Mất Mát mà lớn
+0:13:59 - 0:14:06, thì việc cập nhật đạo hàm, việc tính đạo hàm
+0:14:06 - 0:14:19, Thế ta, nếu như đạo hàm này đơn biến hoặc Napala của L theo Thế ta, thì khi giá trị này có độ giốc lớn,
+0:14:19 - 0:14:25, tức là độ giốc của hàm L này lớn, thì khi đó đạo hàm của mình sẽ lớn.
+0:14:25 - 0:14:31, Ngược lại, nếu như min square row này giá trị của mình nhỏ,
+0:14:31 - 0:14:36, Khi đó tính đạo hàm, độ giốc của đạo hàm sẽ nhỏ
+0:14:37 - 0:14:40, Dẫn đến bước cập nhật sẽ chậm
+0:14:40 - 0:14:49, Chúng ta có công thức theta là theta trừng cho alpha nhân cho đạo hàm của loss theo theta
+0:14:49 - 0:14:55, Nếu như độ giốc của hàm L này, ví dụ có hai cái hàm
+0:14:55 - 0:15:04, Đây là hàm thứ nhất, hàm L1 và hàm thứ 2.
+0:15:04 - 0:15:14, Cả hai hàm này, trong đó hàm L1 chúng ta thấy có độ giốc rất là lớn, đúng không?
+0:15:14 - 0:15:17, Khi đó, cái đạo hàm, giá trị đạo hàm của mình sẽ lớn.
+0:15:17 - 0:15:22, Còn hàm L2, độ giốc của mình nó tì thoái thoải, do đó đạo hàm của nó bé.
+0:15:22 - 0:15:31, Nếu như độ giốc lớn, bước nhảy của mình sẽ lớn, dẫn đến việc cập nhật thay ta sẽ nhanh.
+0:15:31 - 0:15:43, Do đó, chúng ta sử dụng công thức trừ của lốc Y ngã cộng cho một trừ Y ngã,
+0:15:43 - 0:15:48, thì nó sẽ giúp cho việc huấn luyện sẽ thực hiện rất là nhanh,
+0:15:50 - 0:15:54, nhanh hơn sau với việc dùng công thức mean square ở đây.
+0:15:54 - 0:15:58, Đó là lý do tại sao mình lại sử dụng công thức mean square.
+0:16:01 - 0:16:06, Bây giờ chúng ta sẽ qua công thức cho trường hợp nhiều mẫu và có vector hóa.
+0:16:07 - 0:16:11, Với từng mẫu dữ liệu, chúng ta gáp lại,
+0:16:11 - 0:16:13, thì chúng ta sẽ có một cái ma trận x
+0:16:13 - 0:16:17, và cái nhãn y của dữ liệu sẽ là một cái vector dạng làm ngô
+0:16:17 - 0:16:22, tham số của mình là theta 0, theta 1 và theta m
+0:16:23 - 0:16:32, thì khi đó, cái hàm lỗi của mình sẽ có cái công thức đó là 1 phần 2, 1 phần n
+0:16:32 - 0:16:41, Binary, cái chữ b-c-e này là viết tác của chữ binary cross entropy
+0:16:41 - 0:17:01, Thì đây chính là cái công thức mà hồi nãy mình đã luy kê, mình đã trình bày đó là bằng y trừ của y nhân cha lóc của y ngã cộng cho 1 trừ y nhân cha lóc của 1 trừ y y ngã
+0:17:01 - 0:17:05, Đây là công thức binary cross entropy và lưu ý là chúng ta sẽ tính trên từng phần tử.
+0:17:05 - 0:17:06, Gì là sao?
+0:17:06 - 0:17:19, Khi chúng ta tính sigmoid của theta x, chúng ta sẽ có chuỗi các phần tử dạng vector dạng nằm ngang.
+0:17:20 - 0:17:28, Y là y ngã, còn y của mình cũng sẽ có chuỗi các phần tử tạo thành một vector nằm ngang.
+0:17:28 - 0:17:34, và chúng ta sẽ tính toán đổ lỗi trên hai giá trị y,y ngã này
+0:17:34 - 0:17:37, bằng cách nó sẽ lấy từng phần tử ở đây ra
+0:17:37 - 0:17:40, từng phần tử của y ngã với từng phần tử của y
+0:17:40 - 0:17:42, thế vào cổng tích này để tính
+0:17:42 - 0:17:43, rồi sau đó nó lại cộng trung bình lại
+0:17:43 - 0:17:45, nó sẽ cộng hết, cộng trung bình
+0:17:45 - 0:17:50, nó sẽ thực hiện trên từng phần tử của y ngã và y này
+0:17:52 - 0:17:54, để mà tính ra hàm lỗi
+0:17:54 - 0:18:05, Và dạng đồ thị của hàm logistic regression của mình thì nó sẽ xong cũng tương tự như hàm linear regression.
+0:18:05 - 0:18:13, Nếu như linear regression, chúng ta đến bức tổng này là xong, chúng ta sẽ qua tiếp một phép tiến độ nữa là hàm sigmoid.
+0:18:13 - 0:18:23, sau khi thực hiện phép tổng này, chúng ta sẽ có công thức y ngã là bằng Fθx là bằng sigmoid của theta chuyển vị những x.
+0:18:23 - 0:18:30, Theta chuyển vị những x chính là cái kết quả sau khi thực hiện cái này. Qua hàm sigmoid thì nó sẽ ra cái y ngã.
+0:18:30 - 0:18:36, Trong đó, công thức của sigmoid sẽ là bằng 1 phần 1 cộng cho E1,1 x.
+0:18:36 - 0:18:44, Đây là dạng đồ thị của mô gần Logistic Regression.

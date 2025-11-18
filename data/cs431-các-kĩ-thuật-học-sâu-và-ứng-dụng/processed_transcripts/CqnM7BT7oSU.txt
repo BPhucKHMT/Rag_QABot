@@ -1,0 +1,97 @@
+0:00:00 - 0:00:06, Tiếp theo, chúng ta sẽ xem tham số theta của mình.
+0:00:06 - 0:00:11, Thế thì muốn xem tham số theta thì mình sẽ phải cung cấp thêm cho nó một hàm nữa.
+0:00:11 - 0:00:17, Một cái phương thức nữa đó là self.get_weights().
+0:00:17 - 0:00:29, Rồi, chúng ta sẽ return self.model.layers
+0:00:29 - 0:00:38, Thì layer số 0 là input, mình sẽ không xem layer đó, mà mình sẽ xem layer số 1, chính là lớp Dense
+0:00:38 - 0:00:45, input, thì mình sẽ không xem cái này, mà mình sẽ xem từ số 1 đến đây, chính là lớp Dense
+0:00:45 - 0:00:50, và get_weights()
+0:00:55 - 0:00:58, Chúng ta phải chạy lại và train lại mô hình này
+0:00:58 - 0:01:02, Cũng may là chương trình của mình chạy khá là nhanh
+0:01:02 - 0:01:09, Cảm ơn quý vị đã theo dõi, hãy đăng ký để ủng hộ kênh nhé!
+0:01:32 - 0:01:39, Ở đây nó có 2, nó sẽ có một Array, trong đó chúng ta có thể quan sát được nhanh, có 2 mảng con
+0:01:39 - 0:01:50, Vì kiến trúc của Keras tổng quát hơn, nó sẽ tách thành phần bias
+0:01:50 - 0:01:56, và thành phần trọng số của lớp Fully Connected, đó là lớp kết nối đầy đủ
+0:01:56 - 0:02:08, 3,13 là tham số cho phần kết nối đầy đủ này, không bao gồm bias
+0:02:08 - 0:02:13, và bias được lưu trong một mảng riêng
+0:02:13 - 0:02:18, 6.6 là tham số cho bias
+0:02:18 - 0:02:25, 3,13 là tham số cho phần trọng số
+0:02:25 - 0:02:31, Do ở đây là chúng ta chỉ có duy nhất một cái feature thôi
+0:02:31 - 0:02:35, Nên cái mảng này của chúng ta cũng sẽ có duy nhất một cái tham số thôi
+0:02:36 - 0:02:38, Bây giờ chúng ta sẽ lấy thành phần theta
+0:02:40 - 0:02:40, Không
+0:02:41 - 0:02:42, Nó sẽ là bằng W
+0:02:43 - 0:02:46, W[1], đó chính là cái thành phần bias
+0:02:46 - 0:02:47, Rồi
+0:02:48 - 0:02:48, Không
+0:02:50 - 0:02:51, Và theta 1
+0:02:52 - 0:02:54, Nó sẽ là W[0]
+0:02:54 - 0:03:02, và nó sẽ phải thêm truy xuất cho hai cái phần tử
+0:03:02 - 0:03:06, hai cái phần tử là (0,0)
+0:03:06 - 0:03:09, Rồi, bây giờ chúng ta sẽ in ra
+0:03:09 - 0:03:19, theta 0, và theta 1
+0:03:19 - 0:03:28, Giá trị đương nhiên sẽ giống như những gì chúng ta nhìn và bây giờ chúng ta sẽ trực quan hóa
+0:03:28 - 0:03:31, chúng ta sẽ cùng trực quan hóa
+0:03:31 - 0:03:44, Các bạn có thể thấy giá trị 3 và 6 đã khớp với 3 và 8
+0:03:44 - 0:03:49, Sở dĩ không đạt được giá trị 3 và 8 là vì có một ít nhiễu (noise)
+0:03:49 - 0:03:55, theta 0 và theta 1
+0:03:55 - 0:04:13, Mặc dù tham số có khác đôi chút, nhưng mô hình vẫn học được về đúng dạng đường thẳng.
+0:04:13 - 0:04:18, Tiếp theo thì chúng ta sẽ thử sử dụng các phương thức, ví dụ như là phương thức predict
+0:04:20 - 0:04:25, Trước khi sử dụng phương thức predict thì chúng ta sẽ lưu model này xuống
+0:04:31 - 0:04:35, Rồi, chúng ta sẽ truyền vô một đường dẫn, ví dụ như là
+0:04:35 - 0:04:47, MyModel.h5
+0:04:47 - 0:04:51, Đặt tên gì cũng được
+0:04:51 - 0:04:55, Chúng ta sẽ quan sát cái thư mục ở đây
+0:04:55 - 0:04:59, Nó tạo ra là MyModel
+0:04:59 - 0:05:04, trong model này sẽ có các file đi kèm
+0:05:04 - 0:05:07, sẽ có các file bổ trợ đi kèm
+0:05:07 - 0:05:11, Bây giờ chúng ta sẽ load model này lên
+0:05:11 - 0:05:15, để minh chứng cho việc load hoàn toàn từ file
+0:05:15 - 0:05:21, chúng ta sẽ tạo ra một cái biến mới
+0:05:21 - 0:05:26, ở đây sẽ là new_model
+0:05:26 - 0:05:33, sau đó, new_model.load
+0:05:33 - 0:05:38, từ model đã được lưu trước đó là MyModel
+0:05:38 - 0:05:41, sau đó, chúng ta sẽ cùng predict
+0:05:45 - 0:05:52, ví dụ như chúng ta tính giá trị là tại 7
+0:05:52 - 0:06:01, khi chúng ta dóng lên, thì chiếu bên đây đâu đó phải ra là 27 hay 28 gì đấy
+0:06:01 - 0:06:05, thì nó mới đúng, bây giờ chúng ta sẽ truyền vô giá trị là 7
+0:06:08 - 0:06:11, Rồi, nó báo sai ở cái dòng này
+0:06:11 - 0:06:17, ở đây nó sẽ không thể truyền vào giá trị Scalar mà chúng ta phải truyền vào giá trị dạng Numpy Array
+0:06:17 - 0:06:33, np.array
+0:06:33 - 0:06:41, x.reshape(-1, 1)
+0:06:41 - 0:06:45, x là 7
+0:06:45 - 0:06:49, rồi chúng ta sẽ để chạy thử
+0:06:55 - 0:06:58, Vậy thì nó sẽ là 28
+0:06:58 - 0:07:01, đúng như hồi nãy chúng ta dự đoán nếu giá trị 7
+0:07:01 - 0:07:03, chiếu lên trên đường thẳng này
+0:07:03 - 0:07:05, sau đó chiếu qua đây
+0:07:05 - 0:07:07, thì nó sẽ phải ra giá trị 27-28
+0:07:07 - 0:07:10, với mô hình của mình là 28.6
+0:07:10 - 0:07:19, Vì vậy, qua cái demo này, chúng ta đã tiến hành cài đặt mô hình Linear Regression với 3 phiên bản.
+0:07:19 - 0:07:24, Phiên bản đầu tiên, đó chính là phiên bản tham số rời rạc.
+0:07:24 - 0:07:33, Thì cái phiên bản này có một cái điểm yếu, đó chính là chúng ta sẽ phải đi triển khai cho từng tham số.
+0:07:33 - 0:07:37, Thì điều gì xảy ra nếu như mô hình của mình lên đến hàng triệu tham số
+0:07:37 - 0:07:41, Tức là chúng ta sẽ phải cập nhật cái này hàng triệu lần
+0:07:41 - 0:07:45, Tức là 1 triệu tham số thì chúng ta sẽ phải có 1 triệu dòng cập nhật như thế này
+0:07:45 - 0:07:50, Rất là bất tiện. Vì vậy chúng ta phải chuyển sang dạng thứ 2, đó là dạng vector hóa
+0:07:50 - 0:07:55, Vector hóa này thì mỗi tham số sẽ được đóng gói trong một biến theta
+0:07:55 - 0:08:01, Tuy nhiên thì cách làm này nó lại có một điểm yếu đó là chúng ta phải đi tính cái công thức
+0:08:01 - 0:08:05, chúng ta sẽ phải đi tính công thức đạo hàm một cách tường minh.
+0:08:05 - 0:08:08, Trong khi đó, với cái phiên bản mà dùng Keras,
+0:08:08 - 0:08:11, chúng ta có thể quan sát thấy ở trong cái mã nguồn của mình
+0:08:11 - 0:08:16, không hề có một bước nào đi tính đạo hàm hết,
+0:08:16 - 0:08:18, mà mình chỉ quy định cho nó
+0:08:18 - 0:08:21, kiến trúc là đầu vào, kích thước bao nhiêu,
+0:08:21 - 0:08:24, thực hiện phép biến đổi gì, activation là gì,
+0:08:24 - 0:08:27, rồi có sử dụng bias hay không, kết thúc.
+0:08:27 - 0:08:30, Rồi mình quy ước cho nó là sử dụng hàm lỗi (loss function) là gì.
+0:08:30 - 0:08:33, và thậm chí chúng ta cũng không cần phải cài đặt hàm lỗi
+0:08:33 - 0:08:36, Nó cũng đã có một số hàm lỗi phổ biến rồi
+0:08:36 - 0:08:38, như MSE, Cross-Entropy
+0:08:38 - 0:08:42, Rồi chúng ta cũng sẽ chỉ cho nó biết optimizer là gì
+0:08:42 - 0:08:44, và chuyện còn lại là Deep Learning framework
+0:08:44 - 0:08:49, nó sẽ tự tính toán đạo hàm, sẽ tự cập nhật cho mình
+0:08:49 - 0:08:53, Đây chính là điểm lợi của việc dùng Keras
+0:08:53 - 0:08:56, Và từ nay trở về sau, từ bài logistic trở đi
+0:08:56 - 0:08:59, chúng ta sẽ sử dụng cách cài đặt này cho nó đơn giản
+0:08:59 - 0:09:07, và việc tính đạo hàm đã được Deep Learning Framework ngầm thực hiện cho chúng ta rồi.
+0:09:07 - 0:09:12, Chúng ta chỉ tập trung vào việc xây dựng mô hình mà thôi.

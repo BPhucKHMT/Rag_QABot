@@ -1,0 +1,198 @@
+0:00:00 - 0:00:07, Trong vòng tiếp theo, chúng ta sẽ cùng tìm hiểu về ứng dụng của Transformer cũng như các thành tựu của nó.
+0:00:07 - 0:00:17, Đầu tiên, đó là các mô hình nền tảng BERT và GPT. Đây là hai mô hình ngôn ngữ được huấn luyện trên tập dữ liệu lớn.
+0:00:17 - 0:00:28, Ở hai bước của Transformer BERT là cho giai đoạn encoder và GPT là cho giai đoạn decoder.
+0:00:28 - 0:00:34, BERT là viết tắt của chữ Bidirectional Encoder Representation from Transformer.
+0:00:34 - 0:00:36, Chúng ta thấy đều có cái từ là Transformer.
+0:00:36 - 0:00:40, GPT là Generative. Generative này chính là decoder.
+0:00:40 - 0:00:48, Pre-trained Transformer. Chúng ta cũng thấy cả hai mô hình này đều base, đều dựa trên kiến trúc của Transformer.
+0:00:48 - 0:00:55, Và điểm chung đó là đều thuộc cái nhóm tự học self-supervised learning.
+0:00:55 - 0:00:59, Tức là học khi không có dữ liệu gắn nhãn
+0:00:59 - 0:01:02, Học khi không có dữ liệu gắn nhãn
+0:01:02 - 0:01:05, Đều sử dụng dữ liệu không gắn nhãn
+0:01:05 - 0:01:08, Rồi đều dùng để biểu diễn
+0:01:08 - 0:01:10, Thì ở đây có thể biểu diễn gì?
+0:01:10 - 0:01:12, Chúng ta có thể sử dụng để biểu diễn từ
+0:01:12 - 0:01:14, Biểu diễn từ
+0:01:14 - 0:01:17, Tức là khi chúng ta đưa vào một câu
+0:01:17 - 0:01:20, Nó sẽ dựa trên ngữ cảnh của những từ xung quanh
+0:01:20 - 0:01:23, Để đưa ra biểu diễn của từ đó
+0:01:23 - 0:01:27, Nó gọi là contextual embedding
+0:01:35 - 0:01:37, Tại sao nó lại có khái niệm này?
+0:01:37 - 0:01:40, Và tại sao phải có yếu tố về mặt ngữ cảnh?
+0:01:40 - 0:01:43, Đó là vì, ví dụ cái từ Apple
+0:01:43 - 0:01:47, Nếu như chúng ta không có ngữ cảnh của những từ xung quanh
+0:01:47 - 0:01:49, chúng ta sẽ không biết Apple ở đây là trái táo
+0:01:49 - 0:01:51, hay Apple ở đây là tên của một công ty
+0:01:51 - 0:01:53, của một công ty, chúng ta phải có những cái từ xung quanh chúng ta mới biết được.
+0:01:53 - 0:01:58, Thế thì đó chính là công dụng của contextual embedding,
+0:01:58 - 0:02:01, đó là biểu diễn từ khi có yếu tố bề mặt ngữ cảnh.
+0:02:01 - 0:02:06, Rồi, cả hai BERT và GPT đều sử dụng transformer như đã đề cập.
+0:02:06 - 0:02:12, Và nó đều có sử dụng, có thể sử dụng để làm cho các cái downstream task.
+0:02:12 - 0:02:14, Downstream task có nghĩa là gì?
+0:02:14 - 0:02:18, Đó là những cái task mà không phải là task chính của BERT và GPT.
+0:02:18 - 0:02:21, Đó là những task phụ không được...
+0:02:21 - 0:02:28, Tức là trong quá trình huấn luyện BERT và GPT, nó không được huấn luyện để giải quyết các nhiệm vụ này.
+0:02:29 - 0:02:38, BERT và GPT được sử dụng để huấn luyện cho bài toán khác, đó là bài toán dự đoán từ.
+0:02:38 - 0:02:42, BERT thì dự đoán từ ở giữa, từ bị che.
+0:02:42 - 0:02:45, Còn GPT thì để dự đoán từ tiếp theo.
+0:02:45 - 0:02:52, Nó không được huấn luyện để giải quyết các task, ví dụ task phân loại văn bản (sentiment analysis),
+0:02:52 - 0:02:59, sentiment analysis,
+0:02:59 - 0:03:06, hoặc là cho task như là QA, question answering,
+0:03:06 - 0:03:13, trả lời cái câu hỏi, hoặc là dịch máy, translation.
+0:03:13 - 0:03:19, Rõ ràng là các mô hình như BERT và GPT không được huấn luyện để giải quyết các task này
+0:03:19 - 0:03:29, nhưng khi chúng ta sử dụng mô hình đã được pre-trained, chúng ta có thể sử dụng và khai thác nó để giải quyết task này
+0:03:29 - 0:03:35, BERT không sinh ra để giải quyết task này, nó huấn luyện để giải quyết bài toán đoán từ
+0:03:35 - 0:03:39, nhưng chúng ta có thể sử dụng mô hình này để cho downstream task khác
+0:03:39 - 0:03:42, Đó là ý nghĩa của ý cuối này.
+0:03:42 - 0:03:49, Đối với mô hình BERT, đó là một mô hình ngôn ngữ masked language model,
+0:03:49 - 0:03:51, masked language model.
+0:03:51 - 0:03:55, Còn GPT là mô hình ngôn ngữ tự hồi quy, auto-regressive,
+0:03:55 - 0:03:58, tức là chúng ta sẽ đoán ra cái từ tiếp theo.
+0:03:58 - 0:04:01, Còn masked language model, tức là chúng ta sẽ che đi một từ ở giữa,
+0:04:01 - 0:04:03, một từ bất kỳ, một từ ngẫu nhiên.
+0:04:03 - 0:04:06, Ta sẽ phải đoán cái từ đó bị che là từ gì.
+0:04:06 - 0:04:07, Đó là hai cái mô hình.
+0:04:07 - 0:04:13, Cấu tạo thì BERT là bao gồm encoder trong transformer
+0:04:13 - 0:04:17, và GPT thì là cấu tạo bởi decoder trong transformer.
+0:04:17 - 0:04:24, Nhiệm vụ BERT là đoán cái từ bị che là mask word
+0:04:24 - 0:04:29, còn GPT sẽ là đoán cái từ tiếp theo là next word.
+0:04:29 - 0:04:35, Và các downstream task, những task mà có thể sử dụng
+0:04:35 - 0:04:41, để giải quyết với mô hình BERT, đó là phân loại văn bản, trả lời câu hỏi, tóm tắt văn bản
+0:04:41 - 0:04:44, hoặc là nhận diện thực thể Named Entity Recognition.
+0:04:44 - 0:04:51, Còn các downstream task cho GPT mà nó khá phù hợp đó chính là dịch máy và tạo sinh nội dung tự động.
+0:04:53 - 0:04:58, Rồi, để sử dụng hai mô hình nền tảng này,
+0:04:58 - 0:05:02, để sử dụng được các mô hình nền tảng thì chúng ta sẽ có hai cách.
+0:05:02 - 0:05:09, Cách đầu tiên đó là fine-tuning. Fine-tuning hiểu một cách nôm na đó chính là chúng ta sẽ huấn luyện lại
+0:05:12 - 0:05:18, hoặc là chúng ta sẽ thay đổi các tham số của mô hình.
+0:05:18 - 0:05:38, Còn prompting là chúng ta sẽ gần như tạo ra các chỉ thị, chỉ dẫn cho mô hình, chỉ dẫn cho mô hình có thể thực thi, cho mô hình đưa ra các phán đoán.
+0:05:38 - 0:05:48, và quan trọng đó là không làm thay đổi tham số của mô hình.
+0:05:48 - 0:06:03, Với phương pháp fine-tuning thì chúng ta phải sử dụng một thuật toán gradient descent để tối ưu lại trọng số cho một task nào đó.
+0:06:03 - 0:06:06, và chúng ta sẽ có những cách để fine-tune.
+0:06:06 - 0:06:09, Chúng ta sẽ fine-tune lại toàn bộ mô hình.
+0:06:09 - 0:06:13, Chúng ta sẽ tạo một đầu ra của mô hình.
+0:06:13 - 0:06:19, Với fine-tune toàn bộ này, chúng ta sẽ có cách gọi là Readout Head.
+0:06:19 - 0:06:25, Chúng ta sẽ tạo ra cái module tại đầu ra,
+0:06:25 - 0:06:28, sau đó chúng ta sẽ fine-tune trên toàn bộ mô hình.
+0:06:28 - 0:06:31, Sau đó chúng ta cũng có thể sử dụng một kỹ thuật
+0:06:31 - 0:06:40, Cái kỹ thuật đó gọi là một kỹ thuật khác thay cho Readout Head, đó chính là adapter.
+0:06:40 - 0:06:49, Với tất cả các phương pháp fine-tune ở đây, chúng ta đều phải thay đổi tham số của mô hình, dù ít dù nhiều.
+0:06:49 - 0:06:52, Ở đây là thay đổi toàn bộ, hai cái này là thay đổi toàn bộ.
+0:06:52 - 0:06:58, Còn adapter thì có thể là chúng ta chỉ thay đổi cho một phần của mô hình mà thôi.
+0:06:58 - 0:07:07, Còn prompting thì chúng ta sẽ phải thiết kế những prompt đặc biệt để gợi ý và ràng buộc mô hình để giải quyết một task nào đó.
+0:07:07 - 0:07:14, Và ở đây là chúng ta sẽ không cần cập nhật tham số mô hình.
+0:07:14 - 0:07:18, Và ở đây chúng ta sẽ thay đổi cách thức sử dụng mô hình.
+0:07:18 - 0:07:21, Bên đây là chúng ta sẽ thay đổi tham số mô hình,
+0:07:21 - 0:07:26, còn bên đây là chúng ta sẽ thay đổi cách sử dụng mô hình thông qua prompt.
+0:07:26 - 0:07:33, Đối với phương pháp Fine-tuning với đầu ra của mô hình tức là Readout Head,
+0:07:33 - 0:07:39, chúng ta sẽ thêm đầu ra và hàm kích hoạt phù hợp để giải quyết một bài toán.
+0:07:39 - 0:07:48, Ví dụ, tại đầu ra của mô hình BERT, chúng ta sẽ đưa thêm qua một linear
+0:07:48 - 0:08:04, Kết hợp với lại một softmax để tính toán được class của nhãn đầu vào.
+0:08:04 - 0:08:07, Ví dụ ở đây là nhãn chẳng hạn.
+0:08:07 - 0:08:16, Còn cho bài toán phân loại văn bản, ở đây chúng ta sẽ có một linear module
+0:08:16 - 0:08:21, và cộng với lại, thay vì ở đây là phân loại đa lớp thì ở đây chúng ta chỉ cần là softmax.
+0:08:21 - 0:08:26, Nếu như ở đây chúng ta phân lớp ra là positive và negative thôi,
+0:08:26 - 0:08:28, thì ở đây chúng ta sẽ là hàm sigmoid thôi.
+0:08:28 - 0:08:34, Còn nếu như ở đây là phân loại văn bản nhưng mà cho nhiều lớp thì chúng ta có thể là softmax.
+0:08:34 - 0:08:47, Vì vậy, tùy vào đầu ra của task của mình là gì thì mình sẽ có activation tương ứng cho nó phù hợp và module linear cho nó phù hợp.
+0:08:47 - 0:08:54, Còn cho bài toán trả lời câu hỏi thì ở đây mình sẽ phải làm bài toán regression.
+0:08:54 - 0:09:09, Tức là chúng ta sẽ có cái start và cái end, và cái span, tức là start end, tức là cái đoạn thông tin ở bên trong đoạn văn đầu vào của mình.
+0:09:09 - 0:09:15, Span là cái mở rộng ra để đưa ra câu trả lời tương ứng với cái câu hỏi của mình.
+0:09:15 - 0:09:25, Vì vậy, chúng ta sẽ phải thích ứng theo từng task của mình để từ đó chúng ta thiết kế đầu ra tại Readout Head cho phù hợp.
+0:09:25 - 0:09:32, Và ở đây chúng ta lưu ý là chúng ta sẽ fine-tune toàn bộ mô hình.
+0:09:32 - 0:09:37, Vì vậy, phương pháp này có khả năng chi phí tính toán của mình sẽ rất là lớn.
+0:09:37 - 0:09:43, Và fine-tune với adapter là chúng ta sẽ thêm một module nhỏ vào mô hình ngôn ngữ.
+0:09:43 - 0:09:47, và chúng ta chỉ fine-tune cho một module vừa được thêm.
+0:09:47 - 0:09:52, Vì vậy thì phương pháp này sẽ rất tiết kiệm chi phí tính toán
+0:09:52 - 0:09:55, cũng như là có thể dễ dàng lưu được mô hình của mình.
+0:09:55 - 0:10:02, Ví dụ trong phương pháp prefix tuning, bình thường chúng ta sẽ có các ma trận W_Q, W_K, W_V.
+0:10:02 - 0:10:09, Ở đây chúng ta vẫn sẽ cố định W_Q, W_K, W_V, nhưng chúng ta sẽ gắn thêm một phần nữa vào đầu.
+0:10:09 - 0:10:16, Đầu prefix, chúng ta sẽ gắn thêm một cái ma trận vào đầu, hoặc là concatenate vào đầu cái ma trận K,
+0:10:16 - 0:10:20, concatenate một cái ma trận khác vào đầu ma trận V.
+0:10:20 - 0:10:27, Sau đó chúng ta chỉ đi fine-tune trên cái bộ tham số của cái phần ma trận màu hồng này và màu tím này thôi.
+0:10:27 - 0:10:33, Chúng ta không có fine-tune cho Q, K, V cũ, chúng ta chỉ fine-tune cho những cái phần mới thêm vào này.
+0:10:33 - 0:10:37, Low-rank adaptation là một cái phương pháp rất là nổi tiếng.
+0:10:37 - 0:10:46, Tại mỗi ma trận W, chúng ta sẽ có tách ra. Đây là cái đã được pre-train.
+0:10:48 - 0:10:56, Đây là cái ma trận đã được pre-train. Chúng ta sẽ kết hợp với hai cái ma trận là A và B là hai cái ma trận.
+0:10:56 - 0:11:01, Trong đó, mục tiêu của A là để giảm chiều và mục tiêu của B là để khôi phục lại chiều ban đầu.
+0:11:01 - 0:11:03, Và đây là phương pháp low rank.
+0:11:03 - 0:11:17, sau khi chúng ta huấn luyện A và B này xong, chúng ta sẽ cộng lại để ra được một cái ma trận tổng của ma trận pre-trained và A nhân B
+0:11:17 - 0:11:26, và cái A nhân B này sẽ giúp chúng ta giải quyết cái bài toán mới
+0:11:26 - 0:11:32, Tương tự như vậy, hai cái ma trận màu tím và màu hồng ở đây
+0:11:32 - 0:11:35, thì cũng là giúp chúng ta đi giải quyết bài toán mới.
+0:11:35 - 0:11:40, Đây là hai phương pháp điển hình của Fine-tune với Adapter.
+0:11:40 - 0:11:44, Và đối với phương pháp về prompting,
+0:11:44 - 0:11:47, chúng ta sẽ cho mô hình nó học từ ngữ cảnh.
+0:11:47 - 0:11:48, Nghĩa là sao?
+0:11:48 - 0:11:52, Ở đây chúng ta sẽ cho một số ví dụ về task chúng ta cần giải
+0:11:52 - 0:11:57, Và mô hình sẽ tự tìm ra cách giải quyết
+0:11:57 - 0:12:01, Lấy ví dụ, ở đây chúng ta sẽ cho trước một số cặp input và output
+0:12:01 - 0:12:04, Ví dụ như ở đây chúng ta sẽ có cái input là một câu
+0:12:04 - 0:12:11, Circulation revenue has increased by 5% in Finland
+0:12:11 - 0:12:15, Thì ở đây chúng ta sẽ có cái output của mình là positive
+0:12:15 - 0:12:23, Paying off the national debt will be extremely painful.
+0:12:23 - 0:12:28, Thì ở đây chúng ta sẽ có cái output của mình là negative. Ở đây chúng ta sẽ có neutral.
+0:12:28 - 0:12:36, Và ở đây chúng ta sẽ để thêm là the company anticipated its operating profit to improve.
+0:12:36 - 0:12:40, Thì chúng ta sẽ để dấu gạch chéo để trống.
+0:12:40 - 0:12:49, Mô hình sẽ tự biết là ở trên đây là positive, ở đây là neutral, ở đây là negative thì tự điền vô chỗ trống này là positive hay negative hay neutral
+0:02:49 - 0:12:53, và nó sẽ tự biết mối quan hệ giữa cặp input output này
+0:12:53 - 0:12:55, Mô hình sẽ tự học theo ngữ cảnh
+0:12:55 - 0:13:02, Đây là 3 cái context để giúp cho mình đưa ra cái phán đoán tại vị trí output cho cái sample mới này
+0:13:02 - 0:13:06, Tương tự như vậy cho cái bài toán là phân loại văn bản
+0:13:06 - 0:13:10, Chúng ta sẽ cho trước, đây là chủ đề về Finance, chủ đề về Sport, chủ đề về Tech
+0:13:10 - 0:13:17, thì bên đây nó sẽ từ input này nó sẽ đưa ra phán đoán cái output của mình
+0:13:17 - 0:13:19, thì đây là phương pháp Prompting
+0:13:19 - 0:13:28, và chúng ta sẽ có một số thuật ngữ trong phương pháp này, đó là Zero-shot Prompting
+0:13:30 - 0:13:33, tức là chúng ta sẽ không cần cho mẫu này luôn
+0:13:33 - 0:13:41, Chúng ta sẽ không cần cho mẫu, chúng ta sẽ hỏi nó là The committee anticipated its operating profit to improve
+0:13:41 - 0:13:45, Thì nó là positive, negative hay neutral
+0:13:45 - 0:13:47, Cái sentiment của nó là positive, negative hay neutral
+0:13:47 - 0:13:49, Chúng ta sẽ hỏi nó luôn
+0:13:49 - 0:13:50, One-shot
+0:13:52 - 0:13:57, Tức là chúng ta sẽ cho nó một mẫu và few-shot là chúng ta sẽ cho nó nhiều mẫu
+0:13:58 - 0:13:59, Few-shot.
+0:13:59 - 0:14:09, Và chúng ta sẽ có phương pháp kết hợp giữa fine-tune với lại prompting, nó gọi là instruction tuning
+0:14:09 - 0:14:17, Chúng ta sẽ vừa có sự tinh chỉnh mô hình, nhưng ở đây chúng ta sẽ tinh chỉnh mô hình để trả lời cho các câu hỏi
+0:14:17 - 0:14:25, Và mô hình sẽ tự tổng quát hóa để giải cho các task khác, chưa từng thấy.
+0:14:25 - 0:14:28, Chúng ta sẽ có pre-trained language model
+0:14:28 - 0:14:34, Chúng ta sẽ instruction tune trên các task BCD
+0:14:34 - 0:14:37, Đây là task cũ
+0:14:37 - 0:14:40, Chúng ta sẽ thay đổi, chúng ta sẽ tinh chỉnh
+0:14:42 - 0:14:46, cái tham số của mô hình
+0:14:48 - 0:14:50, Và sang giai đoạn suy luận
+0:14:50 - 0:14:53, chúng ta có thể thực hiện trên task mới hoàn toàn, đó là task A
+0:14:53 - 0:15:08, Và cái template cho mình đó sẽ bao gồm là premise, tức là cái nội dung ngữ cảnh mình đưa vào, hypothesis và các cái option output của mình là gì?
+0:15:08 - 0:15:11, thì đây chúng ta sẽ có 4 cái template,
+0:15:11 - 0:15:16, ví dụ cho các task để mà chúng ta fine-tune mô hình.
+0:15:16 - 0:15:19, Chúng ta đưa vô, chúng ta fine-tune xong,
+0:15:19 - 0:15:23, thì cái mô hình đã được chỉnh sửa, đã được tinh chỉnh tham số,
+0:15:23 - 0:15:28, thì nó sẽ có thể, khả năng là giải quyết được cho cái task mới, task A.
+0:15:28 - 0:15:34, Và Transformer nó không chỉ làm cho dữ liệu văn bản,
+0:15:34 - 0:15:40, không chỉ làm cho dữ liệu văn bản mà Transformer còn có thể mở rộng cho các dữ liệu dạng chuỗi khác
+0:15:40 - 0:15:44, chúng ta có thể kể đến ví dụ như là Transformer thực hiện được trên dữ liệu âm thanh
+0:15:44 - 0:15:50, và điển hình cho dữ liệu âm thanh đó là chúng ta có mô hình Whisper của OpenAI
+0:15:50 - 0:15:56, thì đây là một trong những mô hình state-of-the-art cho bài toán là Speech-to-Text
+0:15:56 - 0:16:00, bài toán nhận diện giọng nói, từ giọng nói, biến thành văn bản
+0:16:00 - 0:16:10, Rồi, ở đây thì mình ghi nhầm đó là chúng ta sẽ có mô hình Vision Transformer
+0:16:10 - 0:16:19, Mô hình Vision Transformer, và dữ liệu chuỗi ở đây chúng ta cũng có thể hiểu đó là dữ liệu ảnh
+0:16:19 - 0:16:24, đó là chuỗi các cái pixel hoặc là chuỗi các cái patch, patch này đến trước, patch này đến sau
+0:16:24 - 0:16:27, Và ở đây chúng ta sẽ lưu ý yếu tố đó là 2 chiều.
+0:16:28 - 0:16:30, Chuỗi này của chúng ta là đi theo 2 chiều.
+0:16:31 - 0:16:38, Rồi, và cuối cùng đó chính là chúng ta có một ví dụ đó là trên multimodal.
+0:16:43 - 0:16:46, Tức là vừa có sự kết hợp của cả ảnh và text.
+0:16:46 - 0:16:53, Thì trong cái model là Stable Diffusion, chúng ta thấy là có sự tham gia của text
+0:16:53 - 0:17:00, là đóng vai trò là conditioning để can thiệp vào không gian latent để cho chúng ta có thể chỉnh sửa nội dung của tấm ảnh
+0:17:00 - 0:17:03, theo mong muốn của text, nội dung text này.
+0:17:03 - 0:17:09, Đó chính là một số thành tựu của Transformer
+0:17:09 - 0:17:17, không chỉ trên lĩnh vực về văn bản mà nó còn có thể làm trên các loại dữ liệu như là âm thanh, hình ảnh
+0:17:17 - 0:17:21, hoặc là multimodal, ví dụ như hình ảnh, kết hợp với văn bản.
+0:17:21 - 0:17:32, Vì vậy, trong bài ngày hôm nay, chúng ta đã tìm hiểu qua về motivation của kiến trúc Transformer.
+0:17:37 - 0:17:46, Rồi, chúng ta đồng thời cũng đã tìm hiểu về kiến trúc kinh điển của Transformer.
+0:17:46 - 0:17:58, Chúng ta đã tìm hiểu qua về các khuyết điểm, một số cái vấn đề cần tồn tại
+0:17:58 - 0:18:09, và một số giải pháp ban đầu của Transformer. Và cuối cùng đó là những ứng dụng của Transformer
+0:18:09 - 0:18:17, Vì vậy, chúng ta có thể fine-tune để giải quyết các task, giải quyết downstream task.
+0:18:17 - 0:18:26, Chúng ta có thể prompting để chỉ dẫn cho mô hình hiểu cái context, hiểu cái ngữ cảnh.
+0:18:26 - 0:18:33, và chúng ta có kiểu là Zero-shot, One-shot, Few-shot
+0:18:35 - 0:18:40, đồng thời chúng ta có thể áp dụng trong lĩnh vực không chỉ là văn bản
+0:18:40 - 0:18:46, mà nó có thể áp dụng trong loại dữ liệu là âm thanh, hình ảnh
+0:18:46 - 0:18:52, và kết hợp cả ảnh cộng với lại văn bản
+0:18:52 - 0:18:56, Đó chính là nội dung của bài học ngày hôm nay.

@@ -1,0 +1,185 @@
+0:00:16 - 0:00:21, Học máy có thể được xem như là cách máy
+0:00:19 - 0:00:24, tính học hỏi từ dữ liệu. Tương tự như
+0:00:21 - 0:00:26, cách con người học từ kinh nghiệm. Nhưng
+0:00:24 - 0:00:29, cũng như cách con người có nhiều phương
+0:00:26 - 0:00:30, pháp học khác nhau, học qua quan sát,
+0:00:29 - 0:00:33, học qua thử nghiệm, học từ người hướng
+0:00:30 - 0:00:35, dẫn thì các thuật toán học máy cũng được
+0:00:33 - 0:00:38, chia thành nhiều nhóm khác nhau. Hãy
+0:00:35 - 0:00:40, cùng tìm hiểu về các loại thuật toán
+0:00:38 - 0:00:42, này.
+0:00:40 - 0:00:43, Xét theo phương thức học thì các thuật
+0:00:42 - 0:00:46, toán học máy có thể được chia thành ba
+0:00:43 - 0:00:49, loại chính: học có giám sát, học không
+0:00:46 - 0:00:52, giám sát và học tăng cường. mỗi loại có
+0:00:49 - 0:00:53, một cách tiếp cận và ứng dụng riêng. Cụ
+0:00:52 - 0:00:56, thể,
+0:00:53 - 0:00:59, đối với học có giám sát thì thuật toán
+0:00:56 - 0:01:01, học dữ liệu đã được gán nhãn, tức là
+0:00:59 - 0:01:05, chúng ta có các cặp đầu vào và đầu ra để
+0:01:01 - 0:01:07, dự đoán kết quả cho dữ liệu mới.
+0:01:05 - 0:01:09, Bao gồm bài toán phân loại
+0:01:07 - 0:01:12, classification là dự đoán các giá trị
+0:01:09 - 0:01:15, rời rạt. Ví dụ phân loại email là spam
+0:01:12 - 0:01:18, hoặc không spam. Ừ.
+0:01:15 - 0:01:21, Hồi quy, regression là dự đoán các giá
+0:01:18 - 0:01:24, trị liên tục, ví dụ như dự đoán giá nhà
+0:01:21 - 0:01:26, dựa trên diện tích và vị trí.
+0:01:24 - 0:01:28, Đối với học không giám sát thì thuật
+0:01:26 - 0:01:31, toán sẽ khám phá dữ liệu không có nhãn
+0:01:28 - 0:01:35, để phát hiện các mẫu và cấu trúc ẩn. Thì
+0:01:31 - 0:01:37, bao gồm phân cục clustering là nhóm các
+0:01:35 - 0:01:39, cái điểm dữ liệu có đặc điểm tương tự
+0:01:37 - 0:01:42, vào cùng một cục. Ví dụ như phân nhóm
+0:01:39 - 0:01:45, khách hàng dựa trên hành vi mua sắm hay
+0:01:42 - 0:01:46, là giảm chiều dữ liệu. Dimensionality
+0:01:45 - 0:01:49, reduction
+0:01:46 - 0:01:50, giảm số lượng biến trong dữ liệu. Trong
+0:01:49 - 0:01:52, khi giữ lại thông tin quan trọng thì
+0:01:50 - 0:01:54, chúng ta có thể quan sát cái hình minh
+0:01:52 - 0:01:59, họa giữa clustering và dimensionality
+0:01:54 - 0:01:59, reduction trên cái hình ở bên phải.
+0:02:01 - 0:02:06, Đây là hình ảnh minh họa sự khác biệt
+0:02:03 - 0:02:07, giữa học có giám sát và học không giám
+0:02:06 - 0:02:11, sát.
+0:02:07 - 0:02:14, Thông qua ví dụ à phân loại về loài vật
+0:02:11 - 0:02:16, thì học có giám sát sẽ phân phân loại.
+0:02:14 - 0:02:18, Chúng ta xem cái hình bên trái. Thì
+0:02:16 - 0:02:20, trong học có giám sát thì mô hình được
+0:02:18 - 0:02:22, huấn luyện trên cái dữ liệu có nhãn. Ví
+0:02:20 - 0:02:24, dụ như trong hình, một tập dữ liệu bao
+0:02:22 - 0:02:28, gồm hình ảnh các con vật trong đó mỗi
+0:02:24 - 0:02:31, hình được gán nhãn là đất con vịt hoặc
+0:02:28 - 0:02:34, là not đất không phải là con vịt. Mô
+0:02:31 - 0:02:37, hình sẽ học từ dữ liệu này và tạo ra một
+0:02:34 - 0:02:40, cái hệ thống dự đoán. Khi có một hình
+0:02:37 - 0:02:42, ảnh mới thì mô hình có thể phân loại nó
+0:02:40 - 0:02:45, thành duck hoặc là not duck dựa trên
+0:02:42 - 0:02:49, những gì đã học được.
+0:02:45 - 0:02:51, Ở hình bên phải học không giám sát à bài
+0:02:49 - 0:02:55, toán phân cùm thì trong học không giám
+0:02:51 - 0:02:57, sát thì mô hình không có nhãn về dữ liệu
+0:02:55 - 0:02:59, trước. Ví dụ như trong hình thì tập dữ
+0:02:57 - 0:03:02, liệu nó gồm nhiều cái động vật khác nhau
+0:02:59 - 0:03:04, và không có cái nhãn nào.
+0:03:02 - 0:03:06, Thế mô hình sẽ tự động tìm kiếm các đặc
+0:03:04 - 0:03:09, điểm chung và nhóm các hình ảnh có đặc
+0:03:06 - 0:03:11, điểm tương tự vào cùng một cụm. Kết quả
+0:03:09 - 0:03:14, là các con vịt sẽ được nhóm vào một cụm,
+0:03:11 - 0:03:17, thở vào một cụm khác và nhím vào một cụm
+0:03:14 - 0:03:19, riêng biệt mà không cần biết trước chúng
+0:03:17 - 0:03:21, sẽ thuộc nhóm nào.
+0:03:19 - 0:03:23, Nói tóm lại thì học có giám sát sẽ yêu
+0:03:21 - 0:03:26, cầu dữ liệu có nhãn để huấn luyện mô
+0:03:23 - 0:03:28, hình. Nó có thể dự đoán chính xác. trên
+0:03:26 - 0:03:31, dữ liệu mới. Còn học không giám sát sẽ
+0:03:28 - 0:03:35, tự khám phá cấu trúc trong dữ liệu mà
+0:03:31 - 0:03:39, không cần nhãn, giúp mô hình tìm ra các
+0:03:35 - 0:03:41, nhóm hoặc mẫu ẩn trong dữ liệu.
+0:03:39 - 0:03:44, Đối với học tăng cường thì thuật toán
+0:03:41 - 0:03:46, học thông qua thử nghiệm và sai sót,
+0:03:44 - 0:03:48, tương tác với môi trường và nhận phần
+0:03:46 - 0:03:49, thưởng hoặc là hình phạt. Kỹ thuật này
+0:03:48 - 0:03:52, được sử dụng trong các lĩnh vực như
+0:03:49 - 0:03:54, robot, học, trò chơi và giao dịch tài
+0:03:52 - 0:03:56, chính.
+0:03:54 - 0:03:59, Sau đây là các bài quiz. Bài quiz thứ
+0:03:56 - 0:04:00, nhất, hãy cho biết mục tiêu chính của
+0:03:59 - 0:04:03, thuậc toán hồi quy tuyến tính trong học
+0:04:00 - 0:04:05, có giám sát là gì? Phân loại dữ liệu
+0:04:03 - 0:04:08, thành các nhóm, dự đoán giá trị số liên
+0:04:05 - 0:04:12, tục, giảm số chiều của dữ liệu, phát
+0:04:08 - 0:04:12, hiện bất thường trong dữ liệu.
+0:04:14 - 0:04:20, Học tăng cường khác với học có giám sát
+0:04:16 - 0:04:23, ở điểm nào? Sử dụng nhãn dữ liệu để huấn
+0:04:20 - 0:04:25, luyện. Học từ thử nghiệm và sai lầm.
+0:04:23 - 0:04:28, thông qua phần thưởng và hình phạt không
+0:04:25 - 0:04:31, cần dữ liệu huấn luyện, sử dụng dữ liệu
+0:04:28 - 0:04:31, không được gắn nhãn.
+0:04:32 - 0:04:37, Loại thuật toán nào thường được sử dụng
+0:04:35 - 0:04:41, để dự đoán một giá trị liên tục? Phân
+0:04:37 - 0:04:44, loại, hồi quyến tính, phân cụm, giảm
+0:04:41 - 0:04:44, chiều.
+0:04:45 - 0:04:51, Mục tiêu của thuậc toán phân cụm là gì?
+0:04:48 - 0:04:53, Dự đoán một giá trị liên tục, phân loại
+0:04:51 - 0:04:55, dữ liệu thành các nhóm riêng biệt.
+0:04:53 - 0:04:58, Tìm ra cấu trúc ẩn trong dữ liệu không
+0:04:55 - 0:05:01, được gán nhãn. Học một chính sách để tối
+0:04:58 - 0:05:01, đa hóa phần thưởng.
+0:05:03 - 0:05:06, Bạn cần xây dựng một mô hình để dự đoán
+0:05:05 - 0:05:08, điểm số của học sinh dựa trên thời gian
+0:05:06 - 0:05:11, học tập. Loại thuật toán nào là phù hợp
+0:05:08 - 0:05:16, nhất? Phân loại, hội quy tuyến tính,
+0:05:11 - 0:05:16, phân cục, giảm chiều.
+0:05:16 - 0:05:19, Bạn cần xây dựng một mô hình để dự đoán
+0:05:18 - 0:05:22, một bệnh nhân có mắc bệnh hay không dựa
+0:05:19 - 0:05:25, trên dữ liệu y tế của họ. Loại thức toán
+0:05:22 - 0:05:30, nào là phù hợp nhất? Phân loại, hội quy
+0:05:25 - 0:05:30, tuyến tính, phân cục hoặc tăng cường.
+0:05:30 - 0:05:34, Một công ty bảo hiểm muốn dự đoán mức
+0:05:32 - 0:05:37, bồi thường tối đa cho một khách hàng dựa
+0:05:34 - 0:05:38, trên lịch sử tai nạn, tuổi tác và loại
+0:05:37 - 0:05:41, xe.
+0:05:38 - 0:05:44, Loại thuật tán nào phù hợp nhất? Phân
+0:05:41 - 0:05:47, loại, hội quy tiến tính, phân công, giảm
+0:05:44 - 0:05:47, chiều.
+0:05:49 - 0:05:52, Một công ty thương mại điện tử muốn xác
+0:05:50 - 0:05:54, định các nhóm khách hàng có hành vi mua
+0:05:52 - 0:05:57, sắm tương tự nhau để tối ưu hóa chiến
+0:05:54 - 0:05:58, dịch quảng cáo. Loại thuật tán nào phù
+0:05:57 - 0:06:02, hợp nhất?
+0:05:58 - 0:06:05, Phân loại, hồi quyến tính, phân cục hoặc
+0:06:02 - 0:06:05, tăng cường.
+0:06:06 - 0:06:10, Một công ty xe tự hành đang phát triển
+0:06:08 - 0:06:12, hệ thống AI giúp xe học cách tự lái an
+0:06:10 - 0:06:14, toàn qua giao lộ đung đúc, dựa trên thử
+0:06:12 - 0:06:16, nghiệm của nhiều lần và phản hồi từ môi
+0:06:14 - 0:06:18, trường.
+0:06:16 - 0:06:25, Loại thuục tán nào phù hợp nhất? Phân
+0:06:18 - 0:06:25, loại, hồi quy, học tăng cường, phân cục.
+0:06:27 - 0:06:31, Một ngân hàng muốn dự đoán khách hàng có
+0:06:29 - 0:06:34, khả năng vỡ nợ cao dựa trên lịch sử tín
+0:06:31 - 0:06:36, dụng, thu nhập và số dư tài khoản. Loại
+0:06:34 - 0:06:38, thuật toán nào phù hợp nhất?
+0:06:36 - 0:06:42, phân loại hội quy tuyến tính phân cục
+0:06:38 - 0:06:42, giảm chịu.
+0:06:43 - 0:06:47, Một nền tảng phát nhạc trực tuyến muốn
+0:06:45 - 0:06:49, đề xuất danh sách cá nhân hóa cho từng
+0:06:47 - 0:06:52, người dùng dựa trên sở thích nghe nhạc
+0:06:49 - 0:06:54, trước đó. Loại thuật toán nào là phù hợp
+0:06:52 - 0:06:58, nhất?
+0:06:54 - 0:07:01, Phân loại: Hồi quy tuyến tính, phân cục
+0:06:58 - 0:07:01, hoặc tăng cường.
+0:07:05 - 0:07:10, Bạn đã từng tự hỏi tại sao việc xây dựng
+0:07:07 - 0:07:12, một mô hình học máy tốt lại mất nhiều
+0:07:10 - 0:07:14, thời gian và công sức
+0:07:12 - 0:07:16, từ viện chọt lựa thuật toán, tin chỉnh
+0:07:14 - 0:07:19, siêu tham số, xử lý dữ liệu đến đánh giá
+0:07:16 - 0:07:22, mô hình, tất cả đều đòi hỏi kiến thức
+0:07:19 - 0:07:26, chuyên sâu và nhiều thử nghiệm. Đó chính
+0:07:22 - 0:07:29, là lý do auto ml ra đời giúp tự động hóa
+0:07:26 - 0:07:30, quá trình này, giảm bớt công sức và mở
+0:07:29 - 0:07:33, rộng khả năng áp dụng học máy đến nhiều
+0:07:30 - 0:07:33, lĩnh vực hơn.
+0:07:35 - 0:07:41, Auto ML Automatic Machine Learning là
+0:07:38 - 0:07:43, một công nghệ giúp tự động hóa quá trình
+0:07:41 - 0:07:46, xây dựng mô hình machine learning từ
+0:07:43 - 0:07:48, tiền xử lý dữ liệu, lựa chọn mô hình,
+0:07:46 - 0:07:51, tối ưu hóa siêu tham số đến đánh giá và
+0:07:48 - 0:07:55, triển khai mô hình. Mục tiêu chính của
+0:07:51 - 0:07:56, AutoML là giảm thiểu như thầy đắ bắt đầu
+0:07:55 - 0:07:57, slide mới đúng không?
+0:07:56 - 0:08:01, >> Ừ,
+0:07:57 - 0:08:01, >> lại đi cũng được. Kem ra
+0:08:39 - 0:08:42, Cái gì?
+0:08:45 - 0:08:49, Ok. Còn tới 126 slide.
+0:08:59 - 0:09:02, K chưa?
+0:09:13 - 0:09:22, Thôi hôm nay vậy thôi. Mai tiếp baby
+0:09:16 - 0:09:22, step sửa tiếp đi. Giờ đi nhậu đã xong.
+0:09:24 - 0:09:29, Không nên ok
+0:09:26 - 0:09:30, >> mỗi buổi chiều nửa tiếng để
+0:09:29 - 0:09:33, >> 3 tiếng rồi
+0:09:30 - 0:09:35, >> để em giờ cái phòng xuống dưới chỗ á
+0:09:33 - 0:09:38, dưới chỗ A13
+0:09:35 - 0:09:42, gần thầy luôn không không cần không cần
+0:09:38 - 0:09:42, lên đây tôi thấy hết Dạ.

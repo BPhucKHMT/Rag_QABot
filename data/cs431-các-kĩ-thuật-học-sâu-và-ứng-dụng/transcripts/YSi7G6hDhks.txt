@@ -1,0 +1,101 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:34, hay cái loại cách khác, các mô hình Deep Learning
+0:00:34 - 0:00:38, nó chính là một cái hàm hợp của rất nhiều những cái hàm thành phần
+0:00:38 - 0:00:44, và muốn tìm được mô hình tối ưu thì chúng ta sẽ phải đi tính đạo hàm của hàm hợp này
+0:00:44 - 0:00:50, thì ở đây chúng ta sẽ nhắc lại cái bảng tra đạo hàm của hàm hợp
+0:00:50 - 0:00:55, ví dụ như nếu đối với cái hàm bín đầu vào, đầu vào của mình là một bín x
+0:00:55 - 0:00:58, thì chúng ta sẽ có cái công thức như bên này
+0:00:58 - 0:00:59, x là đĩa số
+0:00:59 - 0:01:03, thì nếu như bên đây thì u của mình sẽ là một cái hàm số
+0:01:04 - 0:01:07, thì lúc đó chúng ta sẽ có công thức để tra
+0:01:07 - 0:01:11, để tính đạo hàm theo từng dạng, ví dụ như dạng đa thức
+0:01:11 - 0:01:13, dạng hàm mũ
+0:01:13 - 0:01:16, rồi dựa hàm scene code, thàm lượng giá
+0:01:16 - 0:01:19, rồi hàm logarith
+0:01:19 - 0:01:21, thì đây là những cái dạng cản tra
+0:01:21 - 0:01:25, để giúp chúng ta có thể tính nhanh các đạo hàm của hàm hợp
+0:01:28 - 0:01:34, Đây sẽ là một số ví dụ để thực hành tính đạo hàm của hàm hợp.
+0:01:34 - 0:01:45, Với ví dụ của bài số 1 này, chúng ta sẽ vận dụng tính chất đạo hàm hàm hợp với hàm đa thức.
+0:01:45 - 0:01:54, Với bài số 1 này, chúng ta có thể nhõm ra được đạo hàm của hàm hợp này.
+0:01:54 - 0:02:02, Đạo hềm của cái hàm này đó chính là bằng 10 của 5x cộng 2 mùa 9
+0:02:02 - 0:02:07, Rồi sau đó chúng ta sẽ nhân với lại cái đạo hềm của cái 5x cộng 2 này chính là bằng 5
+0:02:07 - 0:02:09, Vậy 5 nhân 10 là 50
+0:02:09 - 0:02:14, Nếu như cái bài này chúng ta làm chi tiết thì nó sẽ là như sau
+0:02:18 - 0:02:22, Thì chúng ta sẽ tính cái đạo hềm y phải
+0:02:22 - 0:02:33, Nếu chúng ta xem đoàn này là u, thì nó sẽ là bằng u mũ 10
+0:02:33 - 0:02:41, Với u là bằng 5x cộng 2
+0:02:41 - 0:02:46, Và chúng ta sẽ dùng công thức ở đây để tra
+0:02:46 - 0:02:52, Đạo hẻm của y sẽ là 10u mũ 9
+0:02:52 - 0:02:58, 10u mũ 9 nhân với đạo hẻm của u
+0:02:58 - 0:03:03, 10 nhân với u mũ 9, trong trường hợp này n của mình là 10
+0:03:03 - 0:03:07, nhân với đạo hẻm của u phải
+0:03:07 - 0:03:13, U là 5x cầu 2, đạo hẻm của nó theo x chính là 5
+0:03:13 - 0:03:15, Vậy thì nó sẽ là bằng 10
+0:03:15 - 0:03:18, U ở đây chúng ta thế vô chính là 5x
+0:03:18 - 0:03:20, cộng 2 tất cả bộ 9
+0:03:20 - 0:03:22, nhân với u phải ở đây là 5
+0:03:22 - 0:03:24, Vậy nó sẽ là bằng
+0:03:24 - 0:03:26, cái công thức như ở đây
+0:03:26 - 0:03:28, Thì chúng ta sẽ vận dụng
+0:03:28 - 0:03:30, đạo hẻm của hẻm hợp để tính
+0:03:32 - 0:03:35, Và ở đây chúng ta sẽ có thêm một cái khái niệm nữa
+0:03:35 - 0:03:36, đó là trong trường hợp
+0:03:36 - 0:03:41, cái hẻm của mình nó phụ thuộc vào nhiều biến
+0:03:41 - 0:03:43, hay còn gọi là hàm đa biến
+0:03:43 - 0:03:44, hàm F
+0:03:44 - 0:03:47, sẽ phụ thuộc vào các biến x, y và z
+0:03:47 - 0:03:51, thì nếu như đạo hàm riêng theo biến x
+0:03:51 - 0:03:53, ở đây chúng ta lưu ý là hàm này
+0:03:53 - 0:03:56, phụ thuộc bởi nhiều biến số
+0:03:56 - 0:03:57, nhưng khi tính đạo hàm riêng
+0:03:57 - 0:03:59, theo từng biến
+0:03:59 - 0:04:01, thì chúng ta sẽ xem các biến còn lại
+0:04:01 - 0:04:04, như là tham số hay là các cái khác là hàng số
+0:04:04 - 0:04:06, vậy thì ở đây chúng ta sẽ có một cái ví dụ
+0:04:06 - 0:04:09, F x y, tức là F
+0:04:09 - 0:04:13, là một cái hàm vụ thuộc bởi 2 cái biến số x và y
+0:04:13 - 0:04:18, thì khi đó đạo hàm riêng của f
+0:04:18 - 0:04:22, theo cái biến x thì chúng ta sẽ xem y như là hàng số
+0:04:22 - 0:04:25, như vậy là nguyên cái vế này nó là hàng số
+0:04:25 - 0:04:27, mà đạo hàm của hàng số thì nó bằng 0
+0:04:27 - 0:04:34, đúng không? và 2x đạo hàm của 2x bình phương thì nó chính là bằng 4x
+0:04:34 - 0:04:39, như vậy thì cái kết quả của cái đạo hàm riêng này chính là 4x
+0:04:39 - 0:04:47, Tương tự như vậy thì chúng ta sẽ có đạo hàm của f theo a, thì chúng ta sẽ xem cái 2x bên này là hàng số và trừ 4 này là hàng số
+0:04:47 - 0:04:51, Như vậy thì đạo hàm của thằng này theo a chính là bằng trừ 3
+0:04:56 - 0:05:02, Và đây là sẽ một số cái bài tập để cho chúng ta có thể thực hành tính toán
+0:05:02 - 0:05:07, Và ở đây chúng ta lưu ý là nó sẽ có một cái đạo hàm riêng bật 1 và đạo hàm riêng bật 2
+0:05:07 - 0:05:11, thì bản chất đạo hàm riêng bật 2, chứ là chúng ta tính đạo hàm bật 1 2 lần thôi
+0:05:11 - 0:05:14, thì trong phạm vi bài tập này thì chúng ta không cần thiết phải làm bài này
+0:05:14 - 0:05:18, và chúng ta ôm lại trên đạo hàm riêng bật 1 là được rồi
+0:05:19 - 0:05:25, Tiếp theo, và cuối cùng trong khái niệm liên quan đến đạo hàm
+0:05:25 - 0:05:27, đó chính là radian
+0:05:27 - 0:05:30, khái niệm radian đối với 1 cái hàm số
+0:05:30 - 0:05:44, ở đây chúng ta lưu ý, đây là r n, tức là từ hàm này sẽ là ảnh xạ của vector r n
+0:05:44 - 0:05:51, về một giá trị số scalar là số thật, tức là ảnh xạ từ một vector n vần tử
+0:05:51 - 0:05:57, về một giá trị số thật, thì khi đó radian của f
+0:05:57 - 0:06:01, Radiant của F chính là một vector n-phần tử
+0:06:01 - 0:06:06, Nếu đầu vào có n-phần tử thì Radiant của nó sẽ là n-phần tử
+0:06:06 - 0:06:10, Về mặt ký hiệu là NapLA
+0:06:10 - 0:06:14, Nó là ký hiệu NapLA
+0:06:14 - 0:06:21, NapLA của F theo x chính là bằng các đào hàm ri
+0:06:21 - 0:06:23, Là vector của các đào hàm ri
+0:06:23 - 0:06:28, Vì vậy chúng ta có thể gọi là nabla của f theo cái biến x, theo cái vector x thì đúng hơn.
+0:06:29 - 0:06:39, Học tì sẽ là bằng một vector trong nó từng vần tẩu sẽ là đạo hàm riêng của f theo x thành phần x1,
+0:06:39 - 0:06:50, đạo hàm riêng của f theo cái thành phần x2, cho đến đạo hàm riêng của f theo thành phần x thứ n.
+0:06:50 - 0:06:58, Như vậy thì đây sẽ là một vector. Như vậy đảng chất Raiden chỉ là một vector các cái đạo hàm riêng
+0:06:58 - 0:07:06, Rồi, thì ở đây chúng ta sẽ có một cái bài tập
+0:07:06 - 0:07:22, Nếu như Fxy có công thức đạo hàm như sau, thì khi đó nabla của Fx sẽ là vector,
+0:07:22 - 0:07:27, tại vì nó sẽ có phụ thuộc của 2 biến đồng vào, do đó vector này sẽ là vector 2 chiều.
+0:07:27 - 0:07:34, và ở đây nó sẽ là đạo hàm riêng của F theo biến x
+0:07:34 - 0:07:39, và đạo hàm riêng của biến F theo biến y
+0:07:39 - 0:07:41, thì lúc đó nó sẽ là bằng gì?
+0:07:41 - 0:07:45, nếu như ở đây chúng ta tính đạo hàm riêng của F theo x
+0:07:45 - 0:07:47, thì lúc này nó sẽ là bằng 5y
+0:07:47 - 0:07:58, Trừ 14x, cộng 3, đó là thành phần thứ nhất
+0:07:58 - 0:08:03, Đạ hàm của f theo y sẽ là bằng 5x
+0:08:03 - 0:08:08, Đây là hàng số, xem như hàng số đối với y
+0:08:08 - 0:08:13, Rồi, trừ 2y và trừ 6
+0:08:13 - 0:08:19, Đây chính là radian của F
+0:08:19 - 0:08:32, Dưới đây sẽ làm bài tập để chúng ta có thể thực hành tính toán và ôm tập lại khái niệm radian
+0:08:32 - 0:08:40, Kết thúc nội dung ôm tập của ngày hôm nay, chúng ta sẽ tiến hành làm bài WIS
+0:08:40 - 0:08:44, và đặt những câu hỏi để cùng thảo luận

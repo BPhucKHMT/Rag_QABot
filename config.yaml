@@ -1,0 +1,23 @@
+# config.yaml - Cấu hình cho YouTube Data Coordinator
+# Danh sách playlist cần xử lý
+playlists:
+    # CS114
+  - url: "https://www.youtube.com/playlist?list=PLb62OySGqC9wDaL2dnF_5J8f49e_YNi2f"
+    enabled: true
+    # CS315
+  - url: "https://www.youtube.com/playlist?list=PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP"
+    enabled: false
+    # CS431
+  - url: "https://www.youtube.com/playlist?list=PLb62OySGqC9xl1_deMF_UXP5tA2Tvt17_"
+    enabled: true  # Tạm thời không xử lý
+  
+  - url: https://www.youtube.com/playlist?list=PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n
+    enabled: false
+
+# Cài đặt chung
+settings:
+  # Thời gian nghỉ giữa 2 video (giây) để tránh YouTube block
+  sleep_between_videos: 8.0
+  
+  # Giới hạn số video xử lý mỗi playlist (null = xử lý hết)
+  limit_per_playlist: null

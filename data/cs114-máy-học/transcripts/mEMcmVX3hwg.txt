@@ -1,0 +1,204 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:38, và một số cái phương pháp, một số cái giải pháp là H-Margin, S-Margin và bài toán đối ngẫu
+0:00:38 - 0:00:41, thì đây là cái bài toán tối ưu trong SVM
+0:00:41 - 0:00:47, cụ thể là ở trong cái sô đồ bên tay trái chúng ta thấy rằng là
+0:00:47 - 0:00:51, có cái đường phân lớp và có cái margin của mình
+0:00:51 - 0:00:58, thì ở đây chúng ta sẽ có cái công thức là W nhân VX cộng B là bằng 0
+0:00:58 - 0:01:07, thì đây chính là cái phương trình đường thẳng của hyperplane, cái siêu phẳng của mình
+0:01:07 - 0:01:12, khi đó nới ra một chút, tức là wx cộng b mà trừ 1
+0:01:12 - 0:01:15, thì nó sẽ ra phương trình của lề bên tay trái này
+0:01:15 - 0:01:20, và wx cộng b cộng 1, tức là chúng ta tỉnh tiến lên 1 đơn vị
+0:01:20 - 0:01:25, thì nó chính là phương trình của siêu phẳng của lề bên tay trái
+0:01:25 - 0:01:30, thì tất cả những cái điểm nào mà nằm về một phía bên đây
+0:01:30 - 0:01:32, nằm về một phía bên đây
+0:01:32 - 0:01:37, thì khi thế vào, cú ý ở đây x của mình
+0:01:37 - 0:01:42, x của mình chính là cái đặc trưng của cái điểm này
+0:01:42 - 0:01:46, thì khi thế vào cái wx cộng b thì nó sẽ lớn hơn cộng 1
+0:01:46 - 0:01:48, là vì nó nằm về một phía
+0:01:48 - 0:01:50, còn những cái điểm màu trắng
+0:01:50 - 0:01:53, những cái điểm x màu trắng
+0:01:53 - 0:02:00, khi chúng ta thế vào WX cộng B thì nó sẽ cho cái giá trị là bé hơn trường 1, tức là nó nằm về một phía
+0:02:00 - 0:02:04, thì cái bin này nó gọi là H-Margin
+0:02:11 - 0:02:15, tức là nó sẽ không cho phép những cái điểm màu đen nằm về phía bên đây
+0:02:15 - 0:02:18, và nó không cho phép cái điểm màu trắng nằm về phía bên đây
+0:02:18 - 0:02:23, Còn ở giữa này, khoảng không ở giữa này là không có điểm dữ liệu nào
+0:02:23 - 0:02:27, Thì đó, tính chất này rất là cứng
+0:02:27 - 0:02:29, Nó không cho phép có một điểm nào nằm ở giữa
+0:02:29 - 0:02:32, Hoặc là không cho phép một điểm màu đen nào nằm phía bên đây
+0:02:32 - 0:02:35, Hoặc là điểm màu trắng nào nằm phía bên đây
+0:02:35 - 0:02:42, Thì công thức cho margin này, mô hình SVM cho tình huống H margin này
+0:02:42 - 0:02:46, nó sẽ tương đương với cái bài toán đó là chúng ta đi tìm cái W và B
+0:02:46 - 0:02:48, tìm cái W và B
+0:02:48 - 0:02:55, sao cho 1 phần 2 W bình là nhỏ nhất
+0:02:55 - 0:03:03, thì ở đây người ta bằng các công thức biến đổi toán
+0:03:03 - 0:03:07, là từ biên trái sang biên phải
+0:03:07 - 0:03:10, thì nó sẽ có cái giá trị là 2
+0:03:10 - 0:03:13, tại vì wx cộng b là bằng 0
+0:03:13 - 0:03:14, wx
+0:03:16 - 0:03:17, trừ 1 là biên trái
+0:03:17 - 0:03:19, wx cộng 1 là biên phải
+0:03:19 - 0:03:20, thì khi trừ ra
+0:03:20 - 0:03:23, cái khoảng cách của mình từ biên trái sang biên phải nó chính là 2
+0:03:23 - 0:03:27, nhưng mà nó sẽ phải chia cho w
+0:03:28 - 0:03:30, thì đây chính là cái margin
+0:03:33 - 0:03:35, và khi chúng ta muốn
+0:03:36 - 0:03:38, nó liên bình phương
+0:03:38 - 0:03:41, và khi chúng ta muốn là cái bin này là lớn nhất
+0:03:44 - 0:03:46, chúng ta đang muốn maximize cái margin mà lớn nhất
+0:03:57 - 0:03:59, thì có phải tương đương chúng ta đang
+0:04:00 - 0:04:04, nghịch đạo lên, tức là chúng ta đi tìm giá trị nhỏ nhất của 1 phần 2 WB
+0:04:04 - 0:04:08, thì margin của mình trong tình hu này
+0:04:08 - 0:04:11, công thức của nó sẽ là 2 trên W
+0:04:11 - 0:04:16, và tìm max tương đương với tìm min của công thức này
+0:04:16 - 0:04:22, và ngoài ra bên cạnh tìm bin lớn nhất này
+0:04:22 - 0:04:25, thì đồng thời nó phải thoải mạn các tính chất đó là
+0:04:25 - 0:04:29, tất cả những điểm mà mà màu đen
+0:04:29 - 0:04:32, tức là có những nhãn 1 phải nằm phía bên đây
+0:04:32 - 0:04:34, và nhãn trừ 1 nó phải nằm về phía bên đây
+0:04:34 - 0:04:36, thì tự lại
+0:04:36 - 0:04:38, y,y chính là cái nhãn
+0:04:38 - 0:04:41, và nhân với lại wx y cộng b
+0:04:41 - 0:04:44, thì rõ ràng là 2 cái này nó phải là cùng dấu
+0:04:44 - 0:04:49, y mà y,y mà dương thì thằng này nó cũng phải là lớn hơn 1 bằng 1
+0:04:49 - 0:04:55, y,y mà âm bé hơn trừ 1 thì wx y cộng b cũng phải bé hơn trừ 1
+0:04:55 - 0:04:58, thì khi nhân lại với nhau nó sẽ ra cái tính chất rất là đẹp
+0:04:58 - 0:05:04, cho dù điểm của mình là bên trái hay bên phải thì nó đều phải thoải mạng tính chất này
+0:05:04 - 0:05:08, đó là EI nhân W của XI cộng b lớn hơn hoặc bằng 1
+0:05:08 - 0:05:16, thì đây là một cái công thức mà tìm giá trị nhỏ nhất
+0:05:16 - 0:05:18, thoải mạng một số cái ràng buộc
+0:05:18 - 0:05:24, Bình thường, trường đồng bình thường, bình thường, và bình thường đối tống với bình thường
+0:05:24 - 0:05:36, Cái ràng buộc đầu tiên, xin lỗi, cái biểu thức đầu tiên này là thể hiện là biên của mình là lớn nhất
+0:05:36 - 0:05:40, Và đồng thời là các điểm dữ liệu mình phải được đặt đúng nơi
+0:05:40 - 0:05:45, Màu đen là phải nằm ở phía bên đây, màu trắng là phải nằm ở phía bên đây
+0:05:45 - 0:05:48, W và B chính là vétter pháp tuyến của siêu phẳng
+0:05:48 - 0:05:50, chính là vétter này
+0:05:50 - 0:05:51, W là vétter pháp tuyến
+0:05:51 - 0:05:54, còn B là cái độ dịch
+0:05:57 - 0:06:03, rồi thì mục tiêu hoa là tối đa hóa margin thì nó sẽ tương đương với lại cực tiểu hóa cái thằng WB
+0:06:04 - 0:06:06, trong trường hợp mà soft margin
+0:06:06 - 0:06:10, tức là chúng ta sẽ chấp nhận cái dữ liệu của mình nó bị nhiễu
+0:06:10 - 0:06:14, thì nó ra đời là để giải quyết cái nhật điểm của H margin
+0:06:14 - 0:06:20, HMGN không cho phép có những điểm nào nằm trong khu vực này
+0:06:20 - 0:06:22, không cho phép những điểm nào nằm trong khu vực này
+0:06:22 - 0:06:27, đồng thời không cho phép điểm màu đen và trắng bên đây
+0:06:27 - 0:06:33, thì SHORTMGN sẽ thả lỏng điều kiện nó ra
+0:06:33 - 0:06:37, bằng cách nó sẽ giới thiệu thêm một Slug Variable
+0:06:37 - 0:06:45, Đây là một cái biến ZetaI lớn hơn 0 để cho phép một số cái vi phạm nhất định
+0:06:45 - 0:06:48, Chứ không phải vi phạm hết là chết
+0:06:48 - 0:06:52, Rồi, ở đây là một số cái vi phạm nhất định thôi
+0:06:52 - 0:06:55, Thì đây là cái phương pháp chuẩn thường dùng trong thực tế
+0:06:55 - 0:06:58, Khi nói về SVM thì chúng ta sẽ nói về SoftMargin SVM
+0:06:58 - 0:07:03, Tại vì bản chất của cái dữ liệu của mình lúc nào nó cũng sẽ có nhiễu
+0:07:03 - 0:07:06, và khi đó thì công thức của mình sẽ chuyển về là
+0:07:06 - 0:07:12, trong công thức lần trước là chúng ta chỉ đi tìm mean giá trị này thôi
+0:07:12 - 0:07:16, W-bin thôi, tức là cược đại hóa, cố đa hóa cái bin thôi
+0:07:16 - 0:07:23, nhưng chúng ta sẽ phải chấp nhận để có một số điểm dư liệu nhiễu
+0:07:23 - 0:07:26, thông qua cái thành phần này, thì đây nó gọi là
+0:07:26 - 0:07:29, ở đây là cái chấp nhận
+0:07:33 - 0:07:38, cho phép là vi phạm
+0:07:38 - 0:07:45, thì bình thường là y nhân chất Wxy cộng b lớn hơn 1
+0:07:45 - 0:07:48, thì ở đây chúng ta sẽ giảm bớt giá trị 1 này xuống
+0:07:48 - 0:07:51, chúng ta sẽ giảm bớt giá trị 1 đại lượng là zeta
+0:07:51 - 0:07:57, là giảm bớt, nếu mà lớn hơn 1 thì đây là biên cứng
+0:07:57 - 0:08:02, khi chúng ta trừ đi đại lượng zeta này thì nó sẽ mềm hơn
+0:08:02 - 0:08:05, nó sẽ mềm hơn
+0:08:05 - 0:08:10, rồi, và zeta chính là mức độ vi phạm
+0:08:10 - 0:08:12, mức độ vi phạm cái margin của mình
+0:08:12 - 0:08:14, và c là một cái hàng số lớn hơn không
+0:08:14 - 0:08:18, node là một cái tham số cân bằng giữa cái việc đó là
+0:08:18 - 0:08:23, tìm cái siêu phẳng sao cho có cái biên là rộng nhất
+0:08:23 - 0:08:27, nhưng đồng thời là cái lỗi giảm được cái lỗi phân loại của mình
+0:08:27 - 0:08:34, Mô hình SVM trong ngự cảnh là bài toán đối ngẩu hay đuo form
+0:08:34 - 0:08:37, là xuất phát từ HatchMachine hoặc SopMachine
+0:08:37 - 0:08:44, chúng ta sẽ viết lại nó thành bài toán đối ngẩu bằng phương pháp nhân tử lạc run
+0:08:44 - 0:08:50, Trong phần trước, chúng ta tìm giá trị nhỏ nhất của một hàm
+0:08:50 - 0:08:54, Nhưng mà kỹ thuật làm sao để có thể tìm được giá trị nhỏ nhất này
+0:08:54 - 0:08:59, thì chúng ta sẽ dùng phương pháp nhân tử Lagrange
+0:08:59 - 0:09:05, đã được học trong các tán giải tích cao cấp
+0:09:05 - 0:09:09, Thì cái lợi ích đó là nó sẽ bắt đầu xuất hiện các kernel tricks
+0:09:09 - 0:09:12, để cho chúng ta có thể thực hiện được trên dữ liệu phi tuyến
+0:09:12 - 0:09:15, Và khi này nó chỉ còn mô hình của mình
+0:09:15 - 0:09:18, Mô hình của mình chỉ còn phụ thuộc vào những vector support
+0:09:18 - 0:09:25, khi dùng phương pháp nhân tử Lagrang, chúng ta sẽ giới thiệu thêm các cái giá trị đó là alpha i
+0:09:25 - 0:09:29, và alpha i này tương ứng với lại các mẫu dữ liệu thứ i
+0:09:29 - 0:09:33, ví dụ mẫu dữ liệu x i ở đây
+0:09:33 - 0:09:40, thì tương ứng với nó, nó sẽ có 1 cái alpha i tương ứng
+0:09:40 - 0:09:46, Và alpha y này nói một cách nona đó là cho biết cái điểm này nó có phải là
+0:09:46 - 0:09:50, có phải là một cái support vector tham gia vào cái việc
+0:09:50 - 0:09:54, xác định cái phương trình của cái siêu phản hệ không
+0:09:54 - 0:09:57, thì cái công thức của mình nó được đưa về cái dạng dual form
+0:09:57 - 0:10:02, đó là maximize của cái dạng như sau
+0:10:02 - 0:10:06, là tổng của các cái alpha y trừ cho 1 phần 2
+0:10:06 - 0:10:11, tổng của alphaE, alphaZ, eeZ và kernel
+0:10:11 - 0:10:14, thì ở đây nó sẽ xuất hiện cái khái niệm là kernel
+0:10:14 - 0:10:19, và kernel này nó sẽ là những cái công thức đã được trình bày ở trong những cái slide trước
+0:10:19 - 0:10:25, bao gồm là linear kernel, polynomial kernel, rbf kernel, sigmoid kernel
+0:10:28 - 0:10:33, và cái điều kiện đó là alphaE nhân với lại ee thì nó phải là bằng 0
+0:10:33 - 0:10:35, cái tổng này nó phải bằng 0
+0:10:35 - 0:10:42, và alpha phải là những cái giá trị lớn hơn hoặc bằng 0 và bé hơn hoặc bằng c
+0:10:42 - 0:10:48, thì kxi, xi chính là kernel
+0:10:48 - 0:10:55, và ở đây những cái điểm alpha y nào mà không phải là support factor
+0:10:55 - 0:10:58, ví dụ như đây
+0:10:58 - 0:11:01, thì lúc đó alpha của mình nó sẽ là bằng 0
+0:11:01 - 0:11:10, Tức là nó không tham gia vào việc cực đại hóa này
+0:11:10 - 0:11:15, Những alpha nào lớn hơn không thì nó mới tham gia vào công thức này
+0:11:15 - 0:11:21, Những alpha lớn hơn không thì nó tương ứng chính là những điểm Support Vector
+0:11:26 - 0:11:30, Tức là những Vector hỗ trợ cho việc xác định phương trình đường thẳng của mình
+0:11:31 - 0:11:41, Vì vậy, đến đây chúng ta đã được tìm hiểu qua về thuật toán SVM trong việc phân loại dữ liệu của mình ra làm 2 phần
+0:11:41 - 0:11:44, Và lưu ý ở đây là chúng ta phân loại 2 phân
+0:11:44 - 0:11:50, Và như đã đề cập ở trong những phần trước thì SVM có thể phục vụ cho bài toán là phân loại đa lớp
+0:11:50 - 0:11:55, Multi Class SVM, tức là số lớp của mình nhiều hơn 2
+0:11:55 - 0:12:00, 1 vs Res
+0:12:00 - 0:12:03, 1 và tất cả
+0:12:03 - 0:12:07, lấy ví dụ như ở đây chúng ta có 3 tập dữ liệu
+0:12:07 - 0:12:10, 3 loại phân loại
+0:12:10 - 0:12:14, tròn, tan giác và vuông
+0:12:14 - 0:12:19, 1 vs Res
+0:12:19 - 0:12:24, là nó sẽ đi phân lớp, tức là chúng ta sẽ dùng SVM
+0:12:24 - 0:12:28, như cái bản chất ban đầu của nó, đó là một cái máy phân lớp dị phân
+0:12:28 - 0:12:31, nhưng vậy chúng ta sẽ có 3 cái mô hình
+0:12:31 - 0:12:34, 3 cái mô hình SVM
+0:12:34 - 0:12:38, mô hình đầu tiên
+0:12:38 - 0:12:42, nó sẽ giúp cho chúng ta phân loại là tròn và không phải tròn
+0:12:42 - 0:12:45, vương và tan giác chính là không phải tròn
+0:12:45 - 0:12:48, mô hình thứ 2 đó là phân... ờ xin lỗi
+0:12:48 - 0:13:09, Mô hình thứ 2, đó là tròn và không phải tròn
+0:13:09 - 0:13:13, Mô hình thứ 2, đó là tam giác và không phải tam giác
+0:13:13 - 0:13:16, Mô hình thứ 3, đó là vuông và không phải vuông
+0:13:16 - 0:13:21, Với mô hình 1 vs Red, nó sẽ chia không gian ra như vậy
+0:13:21 - 0:13:25, Tuy nhiên, giải pháp 1 vs Red sẽ có vấn đề
+0:13:25 - 0:13:28, Nó sẽ có những khoảng như thế này
+0:13:28 - 0:13:32, Ví dụ tại đây, chúng ta sẽ không biết đó là thuộc về tròn hay tam giác
+0:13:32 - 0:13:37, Tại đây, nó nói rằng không phải là tròn, không phải tam giác, cũng không phải là vuông
+0:13:37 - 0:13:39, Vậy thì rút cuộc nó là cái gì?
+0:13:39 - 0:13:44, Và đó chính là điểm yếu của mô hình 1 vs Red
+0:13:44 - 0:13:49, để giải quyết vấn đề này thì chúng ta sẽ có mô hình 1vs1
+0:13:56 - 0:14:02, 1vs1 là tổ hợp 2 của k phân lớp
+0:14:03 - 0:14:07, ví dụ như đây chúng ta sẽ có phân lớp là tròn và tam giác
+0:14:07 - 0:14:08, chúng ta sẽ học
+0:14:08 - 0:14:11, rồi tròn và vuông
+0:14:11 - 0:14:21, Trong trường hợp ca bằng 3, chúng ta thấy 2 mô hình đều có số lượng phân lớp giống nhau, đó là 3
+0:14:21 - 0:14:32, Tuy nhiên khi mà k lớn hơn 3, k bằng 4 bằng 5 thì rõ ràng cái phương pháp này nó sẽ bùng nổ số mô hình
+0:14:36 - 0:14:38, Nó sẽ bùng nổ số mô hình
+0:14:39 - 0:14:41, Điểm yếu của phương pháp này là như vậy
+0:14:41 - 0:14:46, Nhưng mà bù lại thì nó sẽ không có cái khoảng 0 như thế này
+0:14:46 - 0:14:51, Ví dụ, chúng ta có một cái điểm ở đây, thì nó nói rằng là điểm của chúng ta là hình vuông
+0:14:51 - 0:15:02, Rồi tổng kết lại, đó là SVM là một cái thực toán rất là phổ biến khi mà đặc trưng của mình là đủ tốt
+0:15:02 - 0:15:09, Nó là một cái thực toán rất là phổ biến và nó sẽ thể hiện được ưu điểm của mình trong số
+0:15:09 - 0:15:14, Trong số đó là có cái việc là tính toán rất là hiệu quả trên các tập dữ liệu lớn
+0:15:14 - 0:15:20, Nó là phổ biến và nó hiệu quả trên tập dữ liệu lớn
+0:15:20 - 0:15:25, Và một số ưu điểm đó là có thể xử lý được trong không gian có số chiều cao
+0:15:25 - 0:15:30, Tức là đặc trưng X của mình, XI của mình thuộc RRD
+0:15:30 - 0:15:32, thì cái D này có thể là con số lớn
+0:15:32 - 0:15:36, và nó tiết kiệm bộ nhớ và tính linh hoạt của nó là cao
+0:15:36 - 0:15:41, là vì nó có thể phân lớp, thường là có thể phi tuyến thì chúng ta sẽ sử dụng một kênh nó mới
+0:15:41 - 0:15:45, Còn nếu trường hợp tuyến tính thì chúng ta có thể sử dụng linear kernel
+0:15:45 - 0:15:48, Như vậy là tuyến tính hay phi tuyến cũng đều có thể giải quyết được
+0:15:48 - 0:15:50, Cái thứ 2 đó là
+0:15:52 - 0:15:59, Cái nhuận điểm của nó là trong trường hợp số thuộc tính của tập dữ liệu lớn hơn số lượng dữ liệu
+0:15:59 - 0:16:05, Tức là xy thì y sẽ chạy từ 1 cho đến n
+0:16:05 - 0:16:14, Nếu như tập dữ liệu này số thuộc tính đa đa lớn hơn n, tức là số mẫu dữ liệu
+0:16:14 - 0:16:22, thì SVM sẽ có kết quả kém và chậm khi dữ liệu lớn
+0:16:22 - 0:16:27, và khó chọn kernel phù hợp trong những tình huống như thế này
+0:16:27 - 0:16:31, Đó là một số điểm yếu của mô hình SVM
+0:16:35 - 0:16:45, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

@@ -1,0 +1,462 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:18 - 0:00:23, Một số vấn đề khi huấn luyện với hồi
+0:00:20 - 0:00:25, quyến tính.
+0:00:23 - 0:00:28, Trước khi sang các phần tiếp theo, chúng
+0:00:25 - 0:00:31, ta hãy cùng nhắc lại khái niệm rất quan
+0:00:28 - 0:00:34, trọng trong học máy đó là Loss function
+0:00:31 - 0:00:37, hay còn gọi là hàm mất mát.
+0:00:34 - 0:00:40, Lost function là hàm dùng để đo lường
+0:00:37 - 0:00:43, mức độ sai lầm, sai lệch hay là chi phí
+0:00:40 - 0:00:45, của mô hình khi dự đoán sai so với giá
+0:00:43 - 0:00:47, trị thực tế.
+0:00:45 - 0:00:50, Nói cách khác, nó cho chúng ta biết mô
+0:00:47 - 0:00:51, hình đang dự toán đốt tốt tới đâu. Càng
+0:00:50 - 0:00:56, gần với giá trị thực tế thì loss càng
+0:00:51 - 0:00:58, nhỏ. và càng xa thì loss càng lớn.
+0:00:56 - 0:01:02, Trong quá trình huấn luyện, giá trị hàm
+0:00:58 - 0:01:05, loss không chỉ là một con số đánh giá mà
+0:01:02 - 0:01:08, nó còn đóng vai trò như mục tiêu để tối
+0:01:05 - 0:01:11, ưu hóa. Tất cả các thuật toán học có
+0:01:08 - 0:01:15, giám sát đều cố gắng tìm ra bộ tham số
+0:01:11 - 0:01:18, sao cho lost function nhỏ nhất có thể.
+0:01:15 - 0:01:20, Ngoài ra, Lost function còn rất quan
+0:01:18 - 0:01:24, trọng đối với các thuật toán tối ưu như
+0:01:20 - 0:01:26, gradient, descent.
+0:01:24 - 0:01:28, Giá trị loss và đặc biệt là đạo hàm của
+0:01:26 - 0:01:31, loss sẽ chỉ dẫn cho mô hình biết nên
+0:01:28 - 0:01:34, điều chỉnh các tham số theo hướng nào và
+0:01:31 - 0:01:37, điều chỉnh bao nhiêu để giảm sai số. Tóm
+0:01:34 - 0:01:39, lại, lot function không chỉ là thước đo
+0:01:37 - 0:01:44, cho chất lượng mô hình mà còn là kim chỉ
+0:01:39 - 0:01:44, nam giúp mô hình học hỏi từ dữ liệu.
+0:01:47 - 0:01:52, Tiêu chí chọn L function. Khi xây dựng
+0:01:50 - 0:01:54, một mô hình học máy, việc lựa chọn lot
+0:01:52 - 0:01:57, function
+0:01:54 - 0:01:59, phù hợp là điều rất quan trọng bởi vì
+0:01:57 - 0:02:02, lot function sẽ ảnh hưởng trực tiếp đến
+0:01:59 - 0:02:05, cách mô hình học từ dữ liệu. Tiêu chí
+0:02:02 - 0:02:08, đầu tiên là phải phù hợp với bài toán và
+0:02:05 - 0:02:10, đầu ra. Nếu bài toán là hồi Q thì chúng
+0:02:08 - 0:02:14, ta ưu tiên các log function cho dự đoán
+0:02:10 - 0:02:16, số liên tục như là MSA, MI
+0:02:14 - 0:02:18, hoặc là Uber. Nếu là phân loại
+0:02:16 - 0:02:21, classification thì chúng ta sẽ dùng các
+0:02:18 - 0:02:23, hàm như cross entropy
+0:02:21 - 0:02:26, phù hợp cho phân loại, nhị phân hoặc là
+0:02:23 - 0:02:29, đa lớp. Kế tiếp thì chúng ta cũng cần
+0:02:26 - 0:02:32, cân nhắc đặc điểm của dữ liệu.
+0:02:29 - 0:02:35, Nếu dữ liệu có nhiều điểm ngoại lai
+0:02:32 - 0:02:38, outliers, các lot function như ma hoặc
+0:02:35 - 0:02:41, là hubber sẽ giúp mô hình bớt nhạy cảm
+0:02:38 - 0:02:42, hơn với outliers, tránh bị ảnh hưởng quá
+0:02:41 - 0:02:44, nhiều bởi các cái giá trị bất thường
+0:02:42 - 0:02:46, này.
+0:02:44 - 0:02:48, Và cuối cùng là tính chất toán học của
+0:02:46 - 0:02:51, Los Function cũng rất là quan trọng. Một
+0:02:48 - 0:02:53, hàm khả vi và có đạo hàm mược mà như là
+0:02:51 - 0:02:58, MSI sẽ dễ dàng cho quá trình tối ưu hóa
+0:02:53 - 0:03:00, bằng các thuật toán dựa trên gradient.
+0:02:58 - 0:03:02, Ngoài ra nếu l function là hàm lồi thì
+0:03:00 - 0:03:04, chúng ta có thể đảm bảo thuật toán tìm
+0:03:02 - 0:03:09, được nghiệm tối ưu toàn cục và không bị
+0:03:04 - 0:03:09, kẹt ở điểm cực tiểu cục bộ.
+0:03:10 - 0:03:15, Bên cạnh các ý nghĩa, yếu tố thực tiễn
+0:03:13 - 0:03:18, và toán học, Lord Fon còn có thể được
+0:03:15 - 0:03:20, lựa chọn dựa trên ý nghĩa xác suất.
+0:03:18 - 0:03:22, Trong nhiều trường hợp, việc chọn hàm
+0:03:20 - 0:03:24, mất mát phù hợp cũng đồng nghĩa với việc
+0:03:22 - 0:03:26, chúng ta đang giả định một mô hình xác
+0:03:24 - 0:03:28, suất ngầm cho bài toán.
+0:03:26 - 0:03:31, Ví dụ như khi sử dụng MSE làm los fon
+0:03:28 - 0:03:33, chung hồi khuy tiếng tính. Điều này
+0:03:31 - 0:03:36, tương đương với việc giả định rằng phần
+0:03:33 - 0:03:37, sai số của dữ liệu tuân theo phân phối
+0:03:36 - 0:03:40, chuẩn Gumm.
+0:03:37 - 0:03:42, Khi đó tối thiểu hóa MSI cũng chính là
+0:03:40 - 0:03:46, thực hiện ước lượng hợp lý cực đại
+0:03:42 - 0:03:48, maximum light estimation
+0:03:46 - 0:03:50, cho phân phối này.
+0:03:48 - 0:03:53, Tương tự thì với bài toán phân loại sử
+0:03:50 - 0:03:55, dụng cross entropy loss tương ứng với
+0:03:53 - 0:03:56, giả định xác suất đầu ra phân phối theo
+0:03:55 - 0:03:58, back nully hoặc phân phối đa thức phù
+0:03:56 - 0:04:01, hợp với bản chất của các bài toán phân
+0:03:58 - 0:04:03, loại phân hoặc là đa lớp. Như vậy việc
+0:04:01 - 0:04:05, hiểu rõ ý nghĩa xác suất của từng lotion
+0:04:03 - 0:04:08, sẽ giúp chúng ta chọn lựa và xây dựng mô
+0:04:05 - 0:04:12, hình tốt hơn phù hợp với đặc thù và giả
+0:04:08 - 0:04:12, thiết của dữ liệu thực tế.
+0:04:14 - 0:04:18, Các tiêu chí đánh giá Evaluation Matrix.
+0:04:16 - 0:04:20, Sau khi đã huấn luyện mô hình thì chúng
+0:04:18 - 0:04:23, ta cần có những tiêu chí cụ thể để đánh
+0:04:20 - 0:04:26, giá hiệu quả dự đoán của mô hình trên dữ
+0:04:23 - 0:04:28, liệu thực tế.
+0:04:26 - 0:04:31, Với các bài toán hồi quy, một số thước
+0:04:28 - 0:04:33, đo phổ biến nhất bao gồm đầu tiên là sai
+0:04:31 - 0:04:36, số tuyệt đối trung bình hay còn gọi là
+0:04:33 - 0:04:38, MAI, viết tắc của min absolute error.
+0:04:36 - 0:04:41, Đây là giá trị trung bình của khoảng
+0:04:38 - 0:04:43, cách tuyệt đối giữa giá trị dự đoán và
+0:04:41 - 0:04:45, giá trị thực tế.
+0:04:43 - 0:04:47, Mai giúp chúng ta hình dung được trung
+0:04:45 - 0:04:49, bình mỗi dự đoán của mô hình là bao
+0:04:47 - 0:04:52, nhiêu so với thực tế.
+0:04:49 - 0:04:57, Tiếp theo là sai số bình phương trung
+0:04:52 - 0:04:59, bình hay còn gọi là msi mean square r.
+0:04:57 - 0:05:02, MSI tính trung bình bình phương của sai
+0:04:59 - 0:05:05, số giữ dự đoán và thực tế.
+0:05:02 - 0:05:08, Sử dụng do sử dụng bình phương MSI sẽ
+0:05:05 - 0:05:09, phạt nặng hơn các trường hợp dự đoán sai
+0:05:08 - 0:05:12, lệch lớn.
+0:05:09 - 0:05:15, Và cuối cùng thì chúng ta có sai số căn
+0:05:12 - 0:05:20, bình phương trung bình AMSI root min
+0:05:15 - 0:05:23, square error là căn bậc hai của MSI. R
+0:05:20 - 0:05:26, MSI giúp diễn giải sai số dự đoán về
+0:05:23 - 0:05:30, cùng đơn vị với giá trị đầu ra nên rất
+0:05:26 - 0:05:30, là trực quan khi đánh giá.
+0:05:30 - 0:05:34, Ngoài các thước đo sai số thì chúng ta
+0:05:32 - 0:05:37, có thể đánh giá mô hình bằng hệ số xác
+0:05:34 - 0:05:40, định ký hiệu là A square
+0:05:37 - 0:05:42, theo công thức giống như trong hình vẽ.
+0:05:40 - 0:05:45, A square là một chỉ số đánh giá mức độ
+0:05:42 - 0:05:49, mô hình giải thích được phương sai của
+0:05:45 - 0:05:52, biến mục tiêu dựa trên các biến đầu vào.
+0:05:49 - 0:05:55, Giá trị của a square dao động từ 0 đến
+0:05:52 - 0:05:57, 1. Nếu a squ càng gần 1 thì điều này có
+0:05:55 - 0:06:00, nghĩa
+0:05:57 - 0:06:02, mô hình giải thích được phần lớn sự biến
+0:06:00 - 0:06:05, động của dữ liệu thực tế, tức là mô hình
+0:06:02 - 0:06:06, càng tốt. Ngược lại, nếu a square gần 0
+0:06:05 - 0:06:08, thì mô hình gần như không giải thích
+0:06:06 - 0:06:11, được gì về dữ liệu. Và chúng ta cần cân
+0:06:08 - 0:06:13, nhắc lại mô hình hoặc dữ liệu sử dụng.
+0:06:11 - 0:06:15, Việc kết hợp nhiều tiêu chí đánh giá sẽ
+0:06:13 - 0:06:18, giúp chúng ta có cái nhìn toàn diện hơn
+0:06:15 - 0:06:21, về hiệu quả dự đoán của mô hình và từ đó
+0:06:18 - 0:06:24, đưa ra quyết định điều chỉnh hoặc cải
+0:06:21 - 0:06:24, tiến phù hợp.
+0:06:25 - 0:06:30, Khởi tạo giá trị ban đầu W và B. Trước
+0:06:28 - 0:06:32, khi bắt đầu quá trình tối ưu hóa để tìm
+0:06:30 - 0:06:34, ra đường hồi quy tốt nhất, chúng ta cần
+0:06:32 - 0:06:37, khởi tạo giá trị ban đầu cho hai tham số
+0:06:34 - 0:06:40, của mô hình là W và Bi. Đối với hồi quy
+0:06:37 - 0:06:43, tuyến tính thì hàm mất mát của chúng ta
+0:06:40 - 0:06:45, là một hàm lồi, nghĩa là chỉ có một điểm
+0:06:43 - 0:06:47, cực tiểu toàn cục duy nhất.
+0:06:45 - 0:06:52, Vì vậy, việc chọn giá trị khởi tạo ban
+0:06:47 - 0:06:54, đầu cho W và B sẽ không ảnh hưởng đến
+0:06:52 - 0:06:56, kết quả cuối cùng nếu thuật toán tối ưu
+0:06:54 - 0:06:59, như gradient design được cấu hình với
+0:06:56 - 0:07:00, learning ray phù hợp.
+0:06:59 - 0:07:03, Tuy nhiên, khởi tạo giá trị ban đầu lý
+0:07:00 - 0:07:05, sẽ giúp tăng tốc độ hội tụ của mô hình.
+0:07:03 - 0:07:08, Nếu chúng ta khởi tạo W và B gần với giá
+0:07:05 - 0:07:10, trị tối ưu, thuật toán sẽ tìm ra nhiệm
+0:07:08 - 0:07:12, nhanh hơn. Trong thực tế, việc khởi tạo
+0:07:10 - 0:07:16, tất cả trọng số bằng 0 là một lựa chọn
+0:07:12 - 0:07:19, phổ biến và đối với
+0:07:16 - 0:07:21, và hiệu quả đối với hồi quy tuyến tính.
+0:07:19 - 0:07:23, Tuy nhiên, đối với mô hình phức tạp hơn
+0:07:21 - 0:07:26, như mạng neuron, hàm mất mát không còn
+0:07:23 - 0:07:28, là hàm lồi và việc khởi tạo ban đầu sẽ
+0:07:26 - 0:07:30, ảnh hưởng lến lớn đến kết quả lẫn hiệu
+0:07:28 - 0:07:32, suất của mô hình. Nhưng với hồi quyến
+0:07:30 - 0:07:37, tính, chúng ta có thể yên tâm lựa chọn
+0:07:32 - 0:07:40, bằng khách khởi tạo đơn giản này.
+0:07:37 - 0:07:41, Hyper parameter si tham số. Tiếp theo
+0:07:40 - 0:07:44, chúng ta sẽ tìm hiểu về siêu tham số hay
+0:07:41 - 0:07:47, còn gọi là hyperparameter trong học máy.
+0:07:44 - 0:07:49, Thì khác với các tham số như W và B mà
+0:07:47 - 0:07:52, mô hình sẽ học được trong quá trình huấn
+0:07:49 - 0:07:54, luyện. Siêu tham số là các giá trị được
+0:07:52 - 0:07:55, thiết lập trước khi quá trình huấn luyện
+0:07:54 - 0:07:56, bắt đầu.
+0:07:55 - 0:07:59, Nói cách khác, chúng ta phải chọn giá
+0:07:56 - 0:08:02, trị cho các siêu tham số này trước chứ
+0:07:59 - 0:08:04, mô hình không tự động học ra được. Vai
+0:08:02 - 0:08:06, trò của các siêu tham số là điều chỉnh
+0:08:04 - 0:08:08, cách thức hoạt động của quá trình huấn
+0:08:06 - 0:08:10, luyện. Chúng ảnh hưởng trực tiếp đến tốc
+0:08:08 - 0:08:13, độ hội tụ,
+0:08:10 - 0:08:16, chất lượng tối ưu và khả năng tổng quát
+0:08:13 - 0:08:16, hóa của mô hình.
+0:08:17 - 0:08:21, Vậy tại sao chúng ta cần các siêu tham
+0:08:20 - 0:08:23, số?
+0:08:21 - 0:08:25, Thực tế là với mỗi bài toán và bộ dữ
+0:08:23 - 0:08:29, liệu sẽ có những đặc điểm riêng biệt.
+0:08:25 - 0:08:31, Nếu không có một bộ siêu tham số nào nên
+0:08:29 - 0:08:34, nên không có một bộ siêu tham số nào là
+0:08:31 - 0:08:36, tối ưu cho mọi trường hợp. Vì vậy việc
+0:08:34 - 0:08:38, tin chỉnh siêu tham số là rất quan trọng
+0:08:36 - 0:08:41, để tìm ra cấu hình huấn luyện hiệu quả
+0:08:38 - 0:08:43, nhất cho bài toán cụ thể của mình.
+0:08:41 - 0:08:45, Siêu tham số xuất hiện trong hầu hết các
+0:08:43 - 0:08:47, thuậc toán học máy, đặc biệt là với các
+0:08:45 - 0:08:48, thuật toán tối ưu hóa như gradient,
+0:08:47 - 0:08:50, design.
+0:08:48 - 0:08:52, Đối với hồi quy tiến tính thì hai siêu
+0:08:50 - 0:08:56, tham số quan trọng nhất chính là
+0:08:52 - 0:08:59, learning rate tốc độ học và
+0:08:56 - 0:09:01, số lần lập
+0:08:59 - 0:09:03, qua tập dữ liệu. Việc lựa chọn hợp lý
+0:09:01 - 0:09:06, các siêu tham số này sẽ giúp mô hình học
+0:09:03 - 0:09:09, hiệu quả, tránh hội tụ chậm hoặc là
+0:09:06 - 0:09:09, không hội tụ.
+0:09:10 - 0:09:16, Learning ray. Learning ray ký hiệu alpha
+0:09:15 - 0:09:19, là một trong những siêu tham số quan
+0:09:16 - 0:09:25, trọng nhất. Trong quá trình huấn luyện
+0:09:19 - 0:09:28, bằng gradient des learning ray còn còn
+0:09:25 - 0:09:30, gọi là tốc độ học và ký hiệu là alpha.
+0:09:28 - 0:09:32, Learning ray quyết định kích thước bước
+0:09:30 - 0:09:35, nhảy khi mô hình cập nhật các tham số
+0:09:32 - 0:09:37, trong mỗi vòng lập. Nói cách khác, nó
+0:09:35 - 0:09:40, kiểm soát mức độ thay đổi của W và B sau
+0:09:37 - 0:09:42, mỗi lần tính toán gradient.
+0:09:40 - 0:09:45, Nếu chọn lên rray quá lớn, mô hình có
+0:09:42 - 0:09:47, thể nhảy qua điểm tối ưu khiến hàm chi
+0:09:45 - 0:09:50, phí dao động mạnh, thậm chí là không hội
+0:09:47 - 0:09:53, tục. Ngược lại, nếu lên ray quá nhỏ, mô
+0:09:50 - 0:09:55, hình sẽ cập nhật rất chậm, quá trình
+0:09:53 - 0:09:58, huấn luyện sẽ tốn nhiều thời gian và có
+0:09:55 - 0:10:00, thể kẹt ở các điểm chưa tối ưu. Vì vậy,
+0:09:58 - 0:10:02, việc lựa chọn learning ray phù hợp là
+0:10:00 - 0:10:06, cực kỳ quan trọng để đảm bảo mô hình học
+0:10:02 - 0:10:06, hiệu quả và ổn định.
+0:10:07 - 0:10:10, Ở slide này thì chúng ta có thể quan sát
+0:10:08 - 0:10:12, trực quan ảnh hưởng của learning ray đến
+0:10:10 - 0:10:14, quá trình huấn luyện. Hình phía bên trên
+0:10:12 - 0:10:17, thể hiện trường hợp learning ray quá
+0:10:14 - 0:10:19, nhỏ, các bước nhảy ngắn, mô hình tiến
+0:10:17 - 0:10:22, chậm về điểm tối ưu, mất nhiều thời gian
+0:10:19 - 0:10:24, để hội tụ. Ngược lại ở hình bên dưới
+0:10:22 - 0:10:27, minh họa cho trường hợp learning ray quá
+0:10:24 - 0:10:29, lớn, các bước nhảy rất dài khiến hàm chi
+0:10:27 - 0:10:32, phí dao động mạnh và mô hình không thể
+0:10:29 - 0:10:33, hội tụ về điểm tối ưu. Qua hai trường
+0:10:32 - 0:10:35, hợp này, chúng ta càng thấy rõ tầm quan
+0:10:33 - 0:10:37, trọng của việc lựa chọn learning ray hợp
+0:10:35 - 0:10:39, lý để quá trình tối ưu hóa diễn ra nhanh
+0:10:37 - 0:10:42, chóng mà vẫn đảm bảo độ chính xác của mô
+0:10:39 - 0:10:42, hình.
+0:10:42 - 0:10:46, Vậy làm thế nào để lựa chọn một giá trị
+0:10:44 - 0:10:48, learning ray phù hợp? Thông thường thì
+0:10:46 - 0:10:50, chúng ta sẽ thử nghiệm nhiều giá trị
+0:10:48 - 0:10:53, khác nhau để quan sát tốc độ hội tụ của
+0:10:50 - 0:10:56, mô hình. Một phương pháp cổ phổ biến là
+0:10:53 - 0:11:02, thử các giá trị theo thang logris.
+0:10:56 - 0:11:02, Ví dụ như 0.1, 0.01, 0.001 hay là 0.001.
+0:11:02 - 0:11:07, Sau đó thì chúng ta sẽ theo dõi sự thay
+0:11:05 - 0:11:09, đổi của hàm chi phí qua các vòng lập.
+0:11:07 - 0:11:12, Nếu lên ray quá lớn, hàm chi phí sẽ dao
+0:11:09 - 0:11:14, động hoặc thậm chí tăng lên. Và nếu lên
+0:11:12 - 0:11:15, ray quá nhỏ, hàm chi phí sẽ giảm rất
+0:11:14 - 0:11:17, chậm.
+0:11:15 - 0:11:19, Ngoài ra trong thực tế có thể áp dụng
+0:11:17 - 0:11:21, các chiến lược nâng cao như giảm dần lên
+0:11:19 - 0:11:23, ray theo thời gian hoặc sử dụng các
+0:11:21 - 0:11:26, thuật toán tự động điều chỉnh lên ray
+0:11:23 - 0:11:28, như adam hay
+0:11:26 - 0:11:31, ams prop. Những kỹ thuật này sẽ giúp mô
+0:11:28 - 0:11:33, hình hội tụ nhanh và ổn định hơn đặc
+0:11:31 - 0:11:35, biệt là khi làm việc với các mô hình
+0:11:33 - 0:11:37, phức tạp. Tuy nhiên đối với các với hồi
+0:11:35 - 0:11:39, quy tiến tính cơ bản thì việc thử nghiệm
+0:11:37 - 0:11:43, các lựa chọn lên ray vẫn là cách tiếp
+0:11:39 - 0:11:43, cận hiệu quả nhất.
+0:11:43 - 0:11:47, Ebox. Bên cạnh lên rray, một siêu tham
+0:11:45 - 0:11:50, số quan trọng khác của quá trình huấn
+0:11:47 - 0:11:53, luyện, mô hình là Ebox. Ebox được hiểu
+0:11:50 - 0:11:54, là số lần toàn bộ dữ liệu huấn luyện
+0:11:53 - 0:11:57, được đưa qua mô hình trong quá trình
+0:11:54 - 0:12:00, huấn luyện. Nói cách khác, một ebox
+0:11:57 - 0:12:02, tương ứng với một lần mà mô hình được
+0:12:00 - 0:12:03, học từ đầu đến cuối trên toàn bộ dữ
+0:12:02 - 0:12:06, liệu.
+0:12:03 - 0:12:08, Nếu số ebook quá nhỏ, mô hình có thể
+0:12:06 - 0:12:10, chưa học đủ các mẫu hình trong dữ liệu
+0:12:08 - 0:12:11, dẫn đến tình trạng underfitting. Nghĩa
+0:12:10 - 0:12:13, là mô hình quá đơn giản và hoạt động kém
+0:12:11 - 0:12:16, trên cả dữ liệu huấn luyện lần dữ liệu
+0:12:13 - 0:12:18, mới. Ngược lại, nếu số ebox quá lớn, quá
+0:12:16 - 0:12:20, trình huấn luyện sẽ tốn thời gian, đặc
+0:12:18 - 0:12:22, biệt là vứt các mô hình phức tạp hơn.
+0:12:20 - 0:12:23, Điều này còn có thể dẫn đến overfitting,
+0:12:22 - 0:12:25, tức là mô hình học thuộc lòng dữ liệu
+0:12:23 - 0:12:28, huấn luyện và hoạt động không tốt trên
+0:12:25 - 0:12:28, dữ liệu mới.
+0:12:28 - 0:12:34, Chúng ta cần lưu ý rằng Learning Ray và
+0:12:32 - 0:12:36, Epox là hai siêu tham số bổ sung cho
+0:12:34 - 0:12:39, nhau trong quá trình hấn luyện. Larin
+0:12:36 - 0:12:41, ray kiểm soát độ lớn của từng bước cập
+0:12:39 - 0:12:43, nhật tham số. Còn Ebox thì quyết định
+0:12:41 - 0:12:46, tổng số lần lặp lại quá trình học trên
+0:12:43 - 0:12:49, toàn bộ dữ liệu. Nếu chọn learning ray
+0:12:46 - 0:12:50, nhỏ thì thường cần ebox nhiều hơn để mô
+0:12:49 - 0:12:51, hình hội thụ.
+0:12:50 - 0:12:53, Ngược lại, nếu lên ray lớn, quá trình
+0:12:51 - 0:12:55, hội thụ có thể nhanh hơn nhưng chúng ta
+0:12:53 - 0:12:58, cũng phải cẩn thận để tránh mô hình bỏ
+0:12:55 - 0:13:00, qua điểm tối ưu. Vì vậy, việc dừng huấn
+0:12:58 - 0:13:02, luyện ở một số ebox hợp lý sẽ giúp tiết
+0:13:00 - 0:13:04, kiệm thời gian và tránh nguy cơ
+0:13:02 - 0:13:06, overfitting, đồng thời đảm bảo mô hình
+0:13:04 - 0:13:09, học đủ các đặc trưng quan trọng từ dữ
+0:13:06 - 0:13:10, liệu.
+0:13:09 - 0:13:12, Bit,
+0:13:10 - 0:13:14, một số siêu tham số nữa mà chúng ta cần
+0:13:12 - 0:13:16, quan tâm khi huấn luyện là mô hình B
+0:13:14 - 0:13:17, size hay còn gọi là kích thước lô dữ
+0:13:16 - 0:13:19, liệu.
+0:13:17 - 0:13:21, BSI chính là số lượng mẫu dữ liệu được
+0:13:19 - 0:13:23, sử dụng để tính toán và cập nhật tham số
+0:13:21 - 0:13:25, mô hình trong mỗi lần lập còn gọi là
+0:13:23 - 0:13:27, iteration.
+0:13:25 - 0:13:29, Thay vì phải đợi xử lý toàn bộ tập dữ
+0:13:27 - 0:13:31, liệu rồi mới cập nhật tham số, mô hình
+0:13:29 - 0:13:33, sẽ chia dữ liệu thành nhiều batch nhỏ
+0:13:31 - 0:13:36, hơn. Và mỗi lần xử lý xong một batch, mô
+0:13:33 - 0:13:39, hình sẽ cập nhật các tham số một lần.
+0:13:36 - 0:13:41, Ví dụ như chúng ta đặt backside bằng 32,
+0:13:39 - 0:13:43, nghĩa là sau khi nhìn thấy và xử lý 32
+0:13:41 - 0:13:45, mẫu dữ liệu, mô hình sẽ thực hiện một
+0:13:43 - 0:13:47, lần cập nhật tham số.
+0:13:45 - 0:13:49, Việc lựa chọn backside phù hợp không chỉ
+0:13:47 - 0:13:51, giúp tiết kiệm tài nguyên phần cứng mà
+0:13:49 - 0:13:54, còn ảnh hưởng đến tốc độ và hiệu quả của
+0:13:51 - 0:13:56, quá trình huấn luyện mô hình.
+0:13:54 - 0:13:58, Khi làm việc với các tập dữ liệu lớn,
+0:13:56 - 0:14:00, việc sử dụng toàn bộ dữ liệu cho mỗi lần
+0:13:58 - 0:14:02, cập nhật tham số là điều không khả thi.
+0:14:00 - 0:14:04, Nhiều bộ dữ liệu hiện đại có thể chứa
+0:14:02 - 0:14:06, đến hàng triệu mẫu nếu chúng ta cố gắng
+0:14:04 - 0:14:09, tải toàn bộ dữ liệu này vô bộ nhớ RAM
+0:14:06 - 0:14:11, hoặc VRAM của GPU để tính toán gradient,
+0:14:09 - 0:14:12, máy tính sẽ không đủ tài nguyên để xử
+0:14:11 - 0:14:14, lý.
+0:14:12 - 0:14:16, Chính vì vậy mà back size ra đời để giải
+0:14:14 - 0:14:18, quyết vấn đề về giới hạn bộ nhớ. Việc
+0:14:16 - 0:14:20, chia nhỏ dữ liệu thành các BCH nhỏ giúp
+0:14:18 - 0:14:23, quá trình huấn luyện trở nên khả thi hơn
+0:14:20 - 0:14:26, ngay cả trên những máy tính có phần cứng
+0:14:23 - 0:14:26, hạn chế.
+0:14:27 - 0:14:31, Ngoài việc giải quyết vấn đề bộ nhớ
+0:14:29 - 0:14:33, backsite còn mang lại hai lợi ích quan
+0:14:31 - 0:14:35, trọng khác. Thứ nhất là hiệu quả tính
+0:14:33 - 0:14:37, toán.
+0:14:35 - 0:14:39, Khi cập nhật tham số sau mỗi BCH nhỏ, mô
+0:14:37 - 0:14:41, hình được sửa lỗi liên tục, từ đó học
+0:14:39 - 0:14:43, nhanh hơn. Chúng ta không cần phải đợi
+0:14:41 - 0:14:44, xử lý hết toàn bộ dữ liệu mới cập nhật
+0:14:43 - 0:14:48, mà có thể cải thiện mô hình sau từng
+0:14:44 - 0:14:50, BCH. Thứ hai là khả năng tổng quát hóa.
+0:14:48 - 0:14:53, Việc ước lượng gradient trên một bách
+0:14:50 - 0:14:55, nhỏ sẽ tạo ra một chút nhiễu giúp mô
+0:14:53 - 0:14:57, hình không bị kẹt ở các điểm cực tiểu
+0:14:55 - 0:14:59, cục bộ và có khả năng tìm ra nghiệp tốt
+0:14:57 - 0:15:01, hơn. Điều này giúp mô hình hoạt động
+0:14:59 - 0:15:05, hiệu quả hơn trên dữ liệu mới chưa từng
+0:15:01 - 0:15:05, thấy trong quá trình huấn luyện.
+0:15:06 - 0:15:10, Siz vào. Khi sử dụng backside, chúng ta
+0:15:08 - 0:15:12, sẽ thường xuyên gặp cái niệm itteration
+0:15:10 - 0:15:14, trong quá trình huấn luyện. Iteration là
+0:15:12 - 0:15:16, một lần cập nhật tham số của mô hình
+0:15:14 - 0:15:19, tương ứng với việc xử lý một batch dữ
+0:15:16 - 0:15:21, liệu. Số iteration trong một ibox sẽ
+0:15:19 - 0:15:23, được tính bằng tổng số mẫu dữ liệu chia
+0:15:21 - 0:15:26, cho backside. Ví dụ chúng ta có 1000 mẫu
+0:15:23 - 0:15:28, và backside là 100 thì mỗi sẽ có 10
+0:15:26 - 0:15:29, iteration.
+0:15:28 - 0:15:31, Back size càng nhỏ thì số iteration
+0:15:29 - 0:15:33, trong một ibox càng lớn. đồng nghĩa với
+0:15:31 - 0:15:35, việc mô hình sẽ được cập nhật nhiều lần
+0:15:33 - 0:15:38, hơn trong mỗi lần lập qua dực liệu dữ
+0:15:35 - 0:15:40, liệu. Ngược lại, nếu b size lớn số
+0:15:38 - 0:15:42, iteration trong mỗi sẽ xd, tức là mô
+0:15:40 - 0:15:46, hình được cập nhật ít lần hơn trên mỗi
+0:15:42 - 0:15:48, lường duyệt qua tập dữ liệu.
+0:15:46 - 0:15:52, Vậy khi nào nên chọn backsiz nhỏ? Ví dụ
+0:15:48 - 0:15:54, như 16, 32 hoặc là 64. Đầu tiên, nếu máy
+0:15:52 - 0:15:56, tính có tài nguyên bộ nhớ hạn chế, back
+0:15:54 - 0:15:58, size nhỏ sẽ phù hợp hơn. Ngoài ra, với
+0:15:56 - 0:16:00, các tập dữ liệu nhỏ, back size nhỏ sẽ
+0:15:58 - 0:16:03, giúp mô hình có nhiều lần cập nhật hơn.
+0:16:00 - 0:16:06, từ đó học hiệu quả hơn. Đặc biệt khi cần
+0:16:03 - 0:16:07, khả năng tổng quát hóa tốt, website nhỏ
+0:16:06 - 0:16:10, sẽ tạo ra nhiều nhiễu trong quá trình
+0:16:07 - 0:16:14, cập nhật giúp mô hình tránh overfitting
+0:16:10 - 0:16:14, và hợp lệch tốt hơn trên dữ liệu mới.
+0:16:15 - 0:16:22, Ngược lại, back size lớn như 128, 256
+0:16:18 - 0:16:24, hoặc 512 nên được dùng khi nào? Nếu bạn
+0:16:22 - 0:16:26, có GPU mạnh, nhiều bộ nhớ thì backsiz
+0:16:24 - 0:16:28, lớn sẽ tận dụng tối đa khả năng xử lý
+0:16:26 - 0:16:30, song song giúp quá trình huấn luyện
+0:16:28 - 0:16:33, nhanh hơn. Ngoài ra, B size lớn cũng
+0:16:30 - 0:16:35, giúp tính toán gradient chính xác hơn,
+0:16:33 - 0:16:38, quá trình hỗi tụ sẽ ổn định và mượt mà
+0:16:35 - 0:16:40, hơn. Điều này
+0:16:38 - 0:16:42, đặc biệt hữu ích khi làm việc với tập dữ
+0:16:40 - 0:16:44, liệu lớn và cần tốc độ huấn luyện nhanh.
+0:16:42 - 0:16:47, Chọn back size ảnh hưởng sẽ đến khả năng
+0:16:44 - 0:16:49, tổng quát khóa của mô hình. Bả nhỏ thì
+0:16:47 - 0:16:50, thường giúp mô hình tổng quát hóa tốt
+0:16:49 - 0:16:52, hơn nhờ vào tính chất nhiễu trong
+0:16:50 - 0:16:54, gradient làm cho mô hình linh hoạt hơn
+0:16:52 - 0:16:56, với dữ liệu mới. Tuy nhiên việc lựa chọn
+0:16:54 - 0:16:58, website cần vẫn cần dựa vào bài toán cụ
+0:16:56 - 0:17:00, thể tài nguyên phần cứng và đặc điểm của
+0:16:58 - 0:17:02, dữ liệu. Thông thường thì chúng ta sẽ
+0:17:00 - 0:17:04, thử nghiệm với nhiều giá trị bass khác
+0:17:02 - 0:17:07, nhau để tìm ra cấu hình tối ưu nhất cho
+0:17:04 - 0:17:07, quá trình huấn luyện.
+0:17:08 - 0:17:12, Underfitting, overfitting và good fit.
+0:17:10 - 0:17:14, Trên slide này thì chúng ta có thể thấy
+0:17:12 - 0:17:16, ba biểu đồ minh họa rõ nét ba trạng thái
+0:17:14 - 0:17:19, trong huấn luyện học máy. Đó là
+0:17:16 - 0:17:21, underfitting, good fit và overfitting. Ở
+0:17:19 - 0:17:24, hình bên trái, đây là trường hợp
+0:17:21 - 0:17:26, underfitting. Đường màu đỏ là đường dự
+0:17:24 - 0:17:28, đoán của mô hình. Bậc một tức là hồi
+0:17:26 - 0:17:30, quyến tính đơn giản. Ta thấy mô hình
+0:17:28 - 0:17:33, không thể bám sát xu hướng của dữ liệu
+0:17:30 - 0:17:36, khiến cả sai số trên tập huấn luyện.
+0:17:33 - 0:17:38, Trend MSI và test MSI đều cao. Điều này
+0:17:36 - 0:17:40, cho thấy mô hình quá đơn giản, không đủ
+0:17:38 - 0:17:42, khả năng học được mối quan hệ thực sự
+0:17:40 - 0:17:45, trong dữ liệu. Còn mô hình ở giữa là
+0:17:42 - 0:17:49, Goodfit. Lúc này mô hình là đa thức bậc
+0:17:45 - 0:17:51, B và vừa đủ linh hoạt để bám sát xu
+0:17:49 - 0:17:53, hướng của cả dữ liệu huấn luyện và kiểm
+0:17:51 - 0:17:55, tra. Đường dự đoán màu đỏ đi gần với các
+0:17:53 - 0:17:57, điểm dữ liệu và đặc biệt sai số trên cả
+0:17:55 - 0:18:00, tập huấn luyện và kiểm tra đều thấp và
+0:17:57 - 0:18:02, khá là cân bằng. Đây là địa trạng thái
+0:18:00 - 0:18:04, mà chúng ta mong muốn đạt được. Mô hình
+0:18:02 - 0:18:06, học tốt trên từ tập dữ liệu nhưng không
+0:18:04 - 0:18:08, bị phức tạp quá mức.
+0:18:06 - 0:18:11, Cuối cùng ở hình bên phải là ví dụ về
+0:18:08 - 0:18:13, overfitting với mô hình đa thức bậc 15.
+0:18:11 - 0:18:15, Đường màu đỏ uống lượng theo từng điểm
+0:18:13 - 0:18:18, dữ liệu huấn luyện kể cả các cái điểm
+0:18:15 - 0:18:20, nhiễu. Sai số trên tập huấn luyện rất
+0:18:18 - 0:18:22, thấp nhưng trên tập kiểm tra lại tăng
+0:18:20 - 0:18:24, đáng kể. Điều này cho thấy mô hình đã
+0:18:22 - 0:18:27, ghi nhớ quá kỹ dữ liệu huấn luyện và mất
+0:18:24 - 0:18:28, khả năng tổng quát hóa với dữ liệu mới.
+0:18:27 - 0:18:29, Qua ba hình này, chúng ta thấy rõ tầm
+0:18:28 - 0:18:31, quan trọng của việc chọn mô hình có độ
+0:18:29 - 0:18:34, phức tạp phù hợp để tránh cả
+0:18:31 - 0:18:38, underfitting lẫn overfitting và hướng
+0:18:34 - 0:18:38, đến trạng thái good fit.
+0:18:38 - 0:18:45, Chúng ta sẽ có một số câu hỏi thảo luận.
+0:18:42 - 0:18:48, Ví dụ à vai trò của tham số B là gì
+0:18:45 - 0:18:50, trong mô hình?
+0:18:48 - 0:18:53, Ví dụ tại sao không sử dụng hàm đơn giản
+0:18:50 - 0:18:57, hơn như bậc 1 hoặc mi mà ta lại thường
+0:18:53 - 0:18:59, sử dụng min square error.
+0:18:57 - 0:19:01, Có những biến thể nào xoay quanh việc đo
+0:18:59 - 0:19:04, lường sai số giữa giá trị dự đoán và giá
+0:19:01 - 0:19:06, trị thực tế.
+0:19:04 - 0:19:10, Trong thực tế dữ liệu có mối quan hệ phi
+0:19:06 - 0:19:14, tuyến tính, chúng ta có thể dùng mô hình
+0:19:10 - 0:19:14, hồi quyến tính được không?
+0:19:21 - 0:19:33, [âm nhạc]

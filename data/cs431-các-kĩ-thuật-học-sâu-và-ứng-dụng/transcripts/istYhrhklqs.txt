@@ -1,0 +1,98 @@
+0:00:00 - 0:00:06, Trước tiên chúng ta sẽ visualize hàm loss như thế nào.
+0:00:06 - 0:00:09, Ở đây sẽ là plt.plot.
+0:00:09 - 0:00:16, Và để truy xuất vô hàm loss thì chúng ta sẽ để là his.history.
+0:00:16 - 0:00:21, Rồi, để đây sẽ là hàm loss.
+0:00:21 - 0:00:30, và tương tự như vậy chúng ta sẽ có
+0:00:30 - 0:00:32, và vẽ
+0:00:42 - 0:00:52, rồi, legend thì chúng ta sẽ phải vẽ plt.legend
+0:00:54 - 0:00:56, rồi
+0:00:56 - 0:01:04, Về Validation
+0:01:04 - 0:01:08, Về Validation
+0:01:08 - 0:01:12, Về Validation
+0:01:12 - 0:01:22, Màu xanh là tương ứng cho loss của tập train.
+0:01:22 - 0:01:35, Validation sẽ được vẽ cho màu cam. Màu cam, Validation nằm ở phía trên so với tập train.
+0:01:35 - 0:01:43, Tiến hành trực quan hóa mô hình.
+0:01:43 - 0:01:53, Chúng ta sẽ copy đoạn code để vẽ các data point.
+0:01:53 - 0:01:56, Chúng ta clear đi để nó gọn.
+0:01:56 - 0:02:03, Rồi, vẽ lại các dữ liệu bắt đầu.
+0:02:03 - 0:02:11, Bây giờ chúng ta phải vẽ mô hình này.
+0:02:11 - 0:02:20, Về cách chúng ta có thể vẽ được mô hình này, chúng ta phải quay qua bên đây để xem phương trình đường thẳng này là gì.
+0:02:20 - 0:02:37, Thì nếu mà thông thường thì phương trình cho model này sẽ ở dạng là theta0 cộng theta1 x1 cộng theta2 x2.
+0:02:37 - 0:02:40, và phương trình đường thẳng này sẽ là bằng 0.
+0:02:40 - 0:02:42, Tất cả những điểm màu xanh,
+0:02:42 - 0:02:46, dù ở đây trong trường hợp này tương ứng y là bằng 1
+0:02:46 - 0:02:49, và ở đây tương ứng y là bằng 0,
+0:02:49 - 0:02:51, thì tất cả những điểm nằm về cùng phía với màu xanh
+0:02:51 - 0:02:55, sẽ khiến cho bộ giá trị này lớn bằng 0.
+0:02:55 - 0:02:58, Còn nếu như với những điểm màu cam,
+0:02:58 - 0:03:00, tức là cho nhãn y bằng 0,
+0:03:00 - 0:03:04, thì nó sẽ làm cho theta 0 cộng cho theta1 x1
+0:03:04 - 0:03:06, cộng cho theta2 x2 sẽ bằng 0.
+0:03:06 - 0:03:13, Còn những cái điểm nào, x1, x2 nào mà nằm trên đường thẳng này, thì khi thế vô nó sẽ có giá trị bằng 0.
+0:03:13 - 0:03:19, Và để trực quan hóa cái mô hình của mình, thì chúng ta sẽ phải đi vẽ phương trình đường thẳng này.
+0:03:19 - 0:03:25, Tuy nhiên, để vẽ được phương trình đường thẳng này, thì chúng ta sẽ phải dùng một cái trick,
+0:03:25 - 0:03:30, đó là chúng ta sẽ đưa về cái dạng phương trình giống như thời xưa là y bằng ax cộng b.
+0:03:30 - 0:03:41, Chúng ta không có khái niệm y và x, giống như hồi cấp 2 mà chúng ta phải đưa về khái niệm y của mình chẳng hạn x2 của mình.
+0:03:41 - 0:04:00, Vì vậy, chúng ta sẽ chuyển vế theta2 x2 bằng trừ theta0 trừ cho theta1 x1.
+0:04:00 - 0:04:09, Chia cho Theta2, chúng ta sẽ có công thức đó là
+0:04:09 - 0:04:17, x2 là bằng trừ Theta1 phần Theta2 x1
+0:04:17 - 0:04:22, Trừ cho Theta0 chia cho Theta2.
+0:04:22 - 0:04:30, Và dựa trên công thức này, khi chúng ta vẽ lên trên đồ thị, chúng ta sẽ pick ra các giá trị x1.
+0:04:30 - 0:04:34, Ví dụ như pick ra một giá trị x1 ở đây, pick ra giá trị x1 ở đây.
+0:04:36 - 0:04:40, Thế vào chúng ta sẽ có x2 và từ đó chúng ta sẽ vẽ được 2 cái điểm này.
+0:04:40 - 0:04:45, Và khi có 2 điểm này rồi, nối lại thì chúng ta sẽ có đường thẳng.
+0:04:45 - 0:04:58, Rồi, như vậy thì ở đây chúng ta sẽ phải tìm coi cái theta 0, theta 1, theta 2 nó là cái gì.
+0:04:58 - 0:05:01, Thì muốn vậy thì chúng ta sẽ gọi cái hàm get_weights.
+0:05:15 - 0:05:26, Chúng ta sẽ xem W này giá trị gì.
+0:05:26 - 0:05:39, Thì W thành phần đầu tiên là array bao gồm 2 con số trừ 0.9 và 0.79.
+0:05:39 - 0:05:48, thì nó tương ứng là tham số cho 2 thành phần x1 và x2.
+0:05:48 - 0:06:05, Thì bias sẽ nằm trong array cuối, như vậy thì mình sẽ có theta 0 là thành phần cuối, nó sẽ là W1.
+0:06:05 - 0:06:24, Theta 1 là bằng W[0], lấy phần tử đầu tiên.
+0:06:24 - 0:06:46, Tương tự như vậy cho Theta2, chúng ta sẽ lấy W[0] và lấy phần tử ở vị trí thứ 2, chúng ta sẽ có Theta0, Theta1, Theta2.
+0:06:46 - 0:06:49, Bây giờ chúng ta sẽ lần lượt vẽ.
+0:06:49 - 0:06:57, Thì chúng ta sẽ thế các giá trị là tại trừ 1.
+0:06:57 - 0:07:00, Thế giá trị x1 tại trừ 1.
+0:07:00 - 0:07:04, Và thế giá trị x1 tại giá trị là 6.
+0:07:04 - 0:07:09, Thì chúng ta sẽ có 2 giá trị là trừ 1 và 6.
+0:07:09 - 0:07:14, Đây chính là x1.
+0:07:14 - 0:07:20, Tương ứng tọa độ trục x2 tương ứng của nó thì chúng ta sẽ dựa trên công thức này.
+0:07:20 - 0:07:25, Chúng ta sẽ dựa trên công thức là x2 là bằng trừ theta 1 chia cho theta 2 nhân x1.
+0:07:25 - 0:07:27, Trừ cho theta 0 chia cho theta 2.
+0:07:27 - 0:07:30, Vì vậy thì ở đây mình sẽ có một cái mảng.
+0:07:30 - 0:07:42, Trừ theta 1 chia cho theta 2 nhân cho x1.
+0:07:42 - 0:07:45, x1 là trường hợp này là trừ 1.
+0:07:49 - 0:07:51, rồi chúng ta copy.
+0:07:51 - 0:07:55, à quên chúng ta còn một thành phần nữa là trừ theta.
+0:07:55 - 0:07:58, 0 chia cho theta2.
+0:08:02 - 0:08:04, sau đó chúng ta sẽ copy.
+0:08:04 - 0:08:05, cái công thức này.
+0:08:07 - 0:08:11, khi chúng ta thế với cái điểm.
+0:08:11 - 0:08:13, Thứ 2 là điểm 6.
+0:08:13 - 0:08:17, Rồi ở đây sẽ là điểm 6.
+0:08:17 - 0:08:21, Rồi ở đây là plt.plot.
+0:08:31 - 0:08:33, Khi chúng ta vẽ lên trên.
+0:08:33 - 0:08:35, Khi chúng ta vẽ lên trên thì.
+0:08:35 - 0:08:37, Chúng ta sẽ thấy là.
+0:08:37 - 0:08:39, Nó tạo ra một cái đường thẳng.
+0:08:39 - 0:08:41, Đường thẳng này tách ra làm 2.
+0:08:42 - 0:09:00, Đây là vẽ đường thẳng phân chia từ tham số của mô hình.
+0:09:00 - 0:09:08, Vì vậy, trong bài cài đặt này, chúng ta đã tiến hành sử dụng Keras
+0:09:08 - 0:09:16, cài đặt cho mô hình Logistic Regression và kế thừa được những phương thức
+0:09:16 - 0:09:19, như save, load, summary, predict.
+0:09:19 - 0:09:24, Cách gọi những hàm này cũng hoàn toàn tương tự như bài Linear Regression.
+0:09:24 - 0:09:27, Save thì chúng ta chỉ cần truyền đường dẫn vào file.
+0:09:27 - 0:09:30, Load thì chúng ta cũng phải đưa đường dẫn của file mà nó đã lưu.
+0:09:30 - 0:09:35, Và đồng thời trong cái bài này thì chúng ta có thêm một phần là trực quan hóa
+0:09:35 - 0:09:43, cái kết quả của các giá trị loss trong quá trình train và validation.
+0:09:43 - 0:09:50, Thì đối với phần loss của tập train, lúc nào nó cũng có giá trị loss thấp hơn
+0:09:50 - 0:09:52, do đó có khi hiện tượng là overfitting.
+0:09:52 - 0:09:57, Và Validation thì thường là loss nó sẽ cao hơn so với tập train.
+0:09:57 - 0:10:05, Và để trực quan hóa cho mô hình thì chúng ta sẽ phải xác lập phương trình của đường thẳng
+0:10:05 - 0:10:10, là theta0 cộng theta1 x1 cộng theta2 x2 bằng 0.
+0:10:10 - 0:10:23, và chúng ta sẽ chuyển đổi nó về dạng x2 là bằng trừ theta1 chia cho theta2 nhân x1 trừ cho theta0 chia cho theta2.
+0:10:23 - 0:10:26, để đưa về cái dạng quen thuộc giống thời xưa, y bằng ax cộng b.
+0:10:26 - 0:10:32, thì một thành phần x1 là chúng ta sẽ pick ra giá trị là 1.
+0:10:32 - 0:10:35, chúng ta sẽ pick ra giá trị là trừ 1.
+0:10:35 - 0:10:37, rồi sau đó chúng ta sẽ pick ra giá trị là 6.
+0:10:37 - 0:10:41, và thế nó vào thì chúng ta sẽ có tọa độ tương ứng của x2.
+0:10:41 - 0:10:46, Đây là cách thức để trực quan cho bài Logistic Regression.

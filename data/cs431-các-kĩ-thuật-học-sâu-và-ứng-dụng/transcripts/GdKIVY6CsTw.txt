@@ -1,0 +1,202 @@
+0:00:00 - 0:00:17, Chào các bạn, hôm nay chúng ta sẽ đến với bài số 2,
+0:00:17 - 0:00:21, tên là Máy học tổng quát và một số mô hình cơ bản.
+0:00:21 - 0:00:25, Nội dung của buổi hôm nay sẽ bao gồm các phần như sau.
+0:00:25 - 0:00:28, Mô hình máy học tổng quát, đây là một trong những nội dung quan trọng
+0:00:28 - 0:00:32, và đi xuyên suốt trong toàn bộ môn học này.
+0:00:32 - 0:00:37, Chúng ta sẽ học về kiến trúc chung của các mô hình máy học có giám sát.
+0:00:37 - 0:00:40, Từ đó, chúng ta sẽ phát triển lên các mô hình như
+0:00:40 - 0:00:44, Linear Regression, Logistic Regression, Softmax Regression.
+0:00:44 - 0:00:48, Cuối cùng, chúng ta sẽ đến mô hình học sâu đầu tiên
+0:00:48 - 0:00:50, mà chúng ta sẽ học trong môn học này, chính là mạng Neural Network.
+0:00:51 - 0:00:56, Đối với mô hình máy học tổng quát, chúng ta sẽ nhận dữ kiện đầu vào.
+0:00:56 - 0:00:59, Đây sẽ là cái thông tin để giúp cho chúng ta đưa ra quyết định
+0:00:59 - 0:01:05, Và quyết định của mình thì nó ở dạng là dự đoán và là một cái giá trị y ngã
+0:01:05 - 0:01:09, Và y ngã này là kết quả của một cái hàm số fθx
+0:01:09 - 0:01:12, Thì đây là một cái mô hình máy học
+0:01:12 - 0:01:16, Và fθx thì θ (theta) chính là cái tham số của mô hình
+0:01:18 - 0:01:21, Còn x chính là cái dữ kiện đầu vào chúng ta đã nhận được
+0:01:21 - 0:01:27, Và cái giá trị dự đoán này chúng ta luôn mong muốn nó xấp xỉ với lại cái giá trị thực tế
+0:01:27 - 0:01:31, Ví dụ như khi chúng ta đoán cái giá của một cái cổ phiếu
+0:01:31 - 0:01:35, Thì chúng ta mong muốn đoán giá chính xác với lại cái giá trong tương lai
+0:01:35 - 0:01:36, Hoặc chúng ta dự đoán giá nhà
+0:01:36 - 0:01:41, Chúng ta mong muốn đoán với cái giá trị thật của cái căn nhà một cách chính xác nhất
+0:01:41 - 0:01:45, Thì để đảm bảo cho cái điều kiện là cái y ngã xấp xỉ với lại cái Y
+0:01:45 - 0:01:49, Thì chúng ta sẽ phải có một cái hàm, nó gọi là hàm loss
+0:01:49 - 0:01:57, Hàm này gọi là tên tiếng Việt, có thể là hàm mất mát hoặc là hàm độ lỗi
+0:02:00 - 0:02:03, Chúng ta có thể có hai cách gọi khác nhau
+0:02:04 - 0:02:07, L này là viết tắt của chữ LOSS
+0:02:09 - 0:02:13, Chúng ta có một lưu ý đó là nếu như trong hàm mô hình máy học
+0:02:13 - 0:02:16, thì biến số của mình chính là dữ kiện đầu vào
+0:02:16 - 0:02:20, thì đối với hàm mất mát, biến số của mình chính là θ (theta).
+0:02:20 - 0:02:24, θ (theta) sẽ là biến số, chứ nó không phải là tham số.
+0:02:24 - 0:02:30, Còn các giá trị x và y ở đây, thì bình thường theo cách ký hiệu trong chương trình phổ thông,
+0:02:30 - 0:02:35, chúng ta hay dùng x cho biến số, nhưng trong trường hợp này, x, y chính là tham số.
+0:02:35 - 0:02:44, Tại sao nó gọi là tham số? Bởi vì x và y trong trường hợp này chính là những cặp dữ liệu mà mình được sử dụng để huấn luyện.
+0:02:44 - 0:02:49, chúng ta sẽ đưa vào các cặp dữ liệu (x, y) mà mình thu thập được trong thực tế
+0:02:49 - 0:02:54, và mình hy vọng là chúng ta sẽ học và tìm ra được một hàm mô hình máy học
+0:02:54 - 0:02:57, và khi mà cái hàm mô hình máy học này đã học
+0:02:57 - 0:03:02, đảm bảo được giá trị mất mát và giá trị độ lỗi này là thấp nhất
+0:03:02 - 0:03:07, thì sau đây chúng ta sẽ sử dụng mô hình máy học để đi dự đoán cho những mẫu thực tế
+0:03:07 - 0:03:12, Thế thì ba công việc chính cần phải làm khi thiết kế một mô hình
+0:03:12 - 0:03:17, đó chính là đầu tiên chúng ta sẽ thiết kế một cái mô hình dự đoán,
+0:03:17 - 0:03:20, tức là thiết kế một cái hàm fθx.
+0:03:21 - 0:03:24, Công việc thứ hai, đó là chúng ta sẽ thiết kế cái hàm lỗi.
+0:03:24 - 0:03:28, Hàm lỗi của cái việc dự đoán đó chính là hàm Lθxi.
+0:03:29 - 0:03:33, Và công việc cuối cùng đó là chúng ta sẽ tìm ra cái tham số θ (theta)
+0:03:33 - 0:03:36, để cho cái hàm độ lỗi này là nhỏ nhất.
+0:03:36 - 0:03:40, Tại vì chúng ta mong muốn tìm một cái hàm mô hình fθx
+0:03:40 - 0:03:45, sao cho giá trị dự đoán y ngã xấp xỉ y thì việc này tương đương với việc
+0:03:45 - 0:03:51, là chúng ta sẽ có hàm độ lỗi là thấp nhất hoặc là sai số mất mát là nhỏ nhất.
+0:03:52 - 0:03:58, Vì vậy trong 3 công việc này chúng ta sẽ tìm hiểu công việc thứ 3 trước tiên.
+0:03:58 - 0:04:04, Tại sao là như vậy? Tại vì các mô hình về các thư viện hiện nay
+0:04:04 - 0:04:09, đều đã hỗ trợ cho chúng ta tìm θ (theta) sao cho hàm độ lỗi này nhỏ nhất rồi.
+0:04:09 - 0:04:11, và chúng ta sẽ sử dụng một thuật toán
+0:04:11 - 0:04:14, và sau đây chúng ta sẽ tìm hiểu đó là thuật toán Gradient Descent.
+0:04:14 - 0:04:20, Đây là một trong những thuật toán mà rất là hiệu quả
+0:04:20 - 0:04:23, trong cái việc là tìm một cái tham số θ (theta)
+0:04:23 - 0:04:27, sao cho cái độ lỗi này là nhỏ nhất.
+0:04:27 - 0:04:29, Và khi cái công việc này mà đã giải quyết rồi
+0:04:29 - 0:04:33, thì từ nay trở về sau chúng ta chỉ quan tâm đến hai cái công việc đầu tiên
+0:04:33 - 0:04:36, đó là thiết kế cái hàm mô hình và thiết kế cái hàm lỗi.
+0:04:36 - 0:04:48, Đầu tiên, chúng ta sẽ vẽ một biểu đồ để minh họa cho hàm lỗi Lθ
+0:04:48 - 0:04:59, Trong trường hợp này X_i, chúng ta sẽ không xem xét nữa, tại vì X_i là các dữ kiện đầu vào đóng góp trong việc hình thành hàm lỗi Lθ
+0:04:59 - 0:05:07, Chúng ta sẽ chọn một hàm lỗi tương đối đơn giản
+0:05:07 - 0:05:10, Trong trường hợp hàm lỗi phức tạp, chúng ta sẽ bàn thêm sau
+0:05:10 - 0:05:19, Hàm này sẽ có một nhận định là tại một vị trí bất kỳ
+0:05:19 - 0:05:27, Chúng ta nhận thấy, dấu của đạo hàm sẽ ngược hướng với điểm cực tiểu.
+0:05:27 - 0:05:31, Điểm cực tiểu của chúng ta trong trường hợp này chính là cái điểm này.
+0:05:33 - 0:05:39, Nếu tại vị trí θ (theta) này, điểm cực tiểu nằm ở bên tay phải.
+0:05:39 - 0:05:44, Tức là lẽ ra chúng ta phải đi về phía tay phải để tìm được điểm cực tiểu.
+0:05:44 - 0:05:47, thì trong trường hợp này đạo hàm sẽ hướng như thế nào?
+0:05:47 - 0:05:49, chúng ta thấy tại vị trí θ (theta) này
+0:05:49 - 0:05:53, thì đồ thị của hàm số đang dốc xuống
+0:05:53 - 0:05:57, nó đang có độ dốc, tức là đạo hàm của mình là âm
+0:05:57 - 0:05:59, và đạo hàm âm tức là
+0:05:59 - 0:06:03, hướng của nó sẽ hướng về phía bên tay trái
+0:06:03 - 0:06:06, trong khi đó điểm cực tiểu thì nó lại nằm bên phía tay phải
+0:06:06 - 0:06:11, như vậy ở đây nó đang ngược hướng với lại hướng của điểm cực tiểu
+0:06:11 - 0:06:16, Bây giờ chúng ta sẽ xét cái tình huống θ (theta) nó nằm ở phía bên trái, bên đây
+0:06:16 - 0:06:20, Thì cái điểm cực tiểu nó nằm ở bên phía tay trái của θ (theta)
+0:06:20 - 0:06:24, Vì vậy thì lẽ ra chúng ta sẽ phải đi về hướng này để hướng đến cái điểm cực tiểu
+0:06:24 - 0:06:29, Thì trong trường hợp này chúng ta thấy cái hàm của mình nó đang đồng biến, nó đang đi lên
+0:06:29 - 0:06:31, Như vậy đạo hàm của mình sẽ là dương
+0:06:31 - 0:06:36, Mà đạo hàm dương, tức là cái hướng của đạo hàm nó sẽ hướng về hướng này
+0:06:36 - 0:06:44, Hướng về tay phải, như vậy ở trong trường hợp này thì đạo hàm cũng ngược hướng với lại hướng của điểm cực tiểu
+0:06:44 - 0:06:49, Do đó chúng ta sẽ có một cái bước để cập nhật cái θ (theta) này
+0:06:49 - 0:06:56, Đó là chúng ta sẽ di chuyển ngược hướng với lại hướng của đạo hàm và nó thể hiện ở cái dấu trừ
+0:06:56 - 0:07:00, Còn đây là ký hiệu của đạo hàm
+0:07:00 - 0:07:07, Và chúng ta sẽ đi ngược phương, thì đây là phiên bản đầu tiên
+0:07:07 - 0:07:16, Thế thì bây giờ nó sẽ có một cái vấn đề nảy sinh, đó là nếu như cái giá trị của đạo hàm nó lớn, nó quá lớn thì sao?
+0:07:16 - 0:07:19, Ví dụ như chúng ta có cái điểm θ (theta) nằm ở đây
+0:07:19 - 0:07:26, Và tại cái vị trí này, cái độ dốc của nó nó rất là lớn, do đó cái giá trị của đạo hàm
+0:07:26 - 0:07:37, khiến bước nhảy quá lớn, và nếu chúng ta cập nhật, chúng ta sẽ lấy θ (theta) trừ cho giá trị đạo hàm này.
+0:07:37 - 0:07:46, θ (theta) sẽ nhảy qua bên này, θ (theta) sẽ nhảy qua bên này.
+0:07:46 - 0:07:51, Và như vậy thì nó đã vượt qua cái giá trị điểm cực tiểu
+0:07:51 - 0:07:56, Như vậy thì ở đây chúng ta gọi là θ (theta) đã được cập nhật và đi quá đà
+0:07:56 - 0:07:59, Đi quá cái điểm cực tiểu của mình nằm ở đây
+0:07:59 - 0:08:04, Thế thì để đảm bảo cho cái việc cập nhật nó không có bị đi quá đà
+0:08:04 - 0:08:08, Thì chúng ta sẽ nhân với một cái hệ số learning rate alpha
+0:08:08 - 0:08:13, Thì cái này hiểu nôm na, đó là chậm mà chắc
+0:08:13 - 0:08:22, Lúc này, chúng ta sẽ có công thức cập nhật, đó là θ (theta), thì sẽ là bằng θ (theta) trừ cho alpha nhân với đạo hàm.
+0:08:22 - 0:08:30, Đây là công thức cho việc cập nhật các tham số. Thay vì nó nhảy quá đà qua đây, thì nó sẽ nhảy với một đại lượng đủ nhỏ,
+0:08:30 - 0:08:35, rồi sau đó lại nhảy một đại lượng đủ nhỏ, hướng về điểm cực tiểu.
+0:08:35 - 0:08:40, Bây giờ, chúng ta sẽ nảy sinh ra thêm một cái vấn đề tiếp theo
+0:08:40 - 0:08:43, đó là cập nhật cho đến khi nào thì dừng
+0:08:43 - 0:08:45, cập nhật θ (theta) cho đến khi nào thì dừng
+0:08:45 - 0:08:47, θ (theta) ban đầu nó nằm ở đây
+0:08:49 - 0:08:51, và chúng ta sẽ cập nhật
+0:08:51 - 0:08:52, cập nhật
+0:08:52 - 0:08:54, nhưng mà cập nhật cho đến khi nào
+0:08:54 - 0:08:58, thì chúng ta quan sát là khi θ (theta) mà càng tiến gần đến cái điểm cực tiểu
+0:08:58 - 0:09:01, thì cái độ dốc của hàm này
+0:09:01 - 0:09:13, Độ dốc sẽ càng thấp và đỉnh điểm là khi đạt đến được điểm cực tiểu thì độ dốc của mình trong trường hợp này chính là bằng 0.
+0:09:13 - 0:09:15, Độ dốc của mình sẽ bằng 0.
+0:09:15 - 0:09:21, Nhưng mà khi tiến được đến 0 này thì bước nhảy của nó gần như rất thấp, gần như không di chuyển.
+0:09:21 - 0:09:26, Vì vậy chúng ta sẽ có một cái điểm dừng.
+0:09:26 - 0:09:36, Giải pháp số 1 là chúng ta sẽ dừng khi độ dốc gần như bằng 0 hoặc là khi đạo hàm đủ nhỏ, tức là chúng ta sẽ dừng tại vị trí như thế này.
+0:09:36 - 0:09:41, Độ dốc này nó bé hơn một ngưỡng epsilon, thì chúng ta sẽ dừng.
+0:09:41 - 0:09:48, Một giải pháp thứ 2 là chúng ta sẽ dừng khi đạt được một số vòng lặp nhất định.
+0:09:48 - 0:09:59, Khi chúng ta thấy việc lặp đi lặp lại tốn quá nhiều thời gian, chúng ta sẽ xét cố định một số lần lặp cố định đủ lớn.
+0:09:59 - 0:10:02, Khi chúng ta đạt được số lần lặp, chúng ta sẽ dừng.
+0:10:02 - 0:10:08, Vì vậy, chúng ta sẽ có hai giải pháp để kết thúc quá trình cập nhật tham số θ (theta).
+0:10:08 - 0:10:20, Rồi, và như vậy thì các bước lặp đi lặp lại, lặp đi lặp lại θ (theta) thì càng về sau θ (theta) sẽ càng tiến về điểm cực tiểu.
+0:10:20 - 0:10:27, Thì đây chính là thuật toán và chúng ta sẽ có một số điểm khởi tạo. Đầu tiên là điểm θ0.
+0:10:27 - 0:10:41, Thứ hai, chúng ta sẽ có một cái ngưỡng để cho biết là khi đạt được đến độ dốc như thế nào đó thì chúng ta sẽ kết thúc quá trình lặp.
+0:10:41 - 0:10:51, Thông thường 2 cái tham số này sẽ là các cái siêu tham số. Ngoài ra thì chúng ta sẽ còn có thêm một cái tham số nữa, đó là learning rate, tức là cái hệ số mà hồi nãy mình nói nó là chậm mà chắc.
+0:10:51 - 0:11:00, Hệ số Learning Rate này khi chúng ta không biết là nó là khoảng bao nhiêu thì thông thường tham số mặc định chúng ta có thể sử dụng đó là 0.0001
+0:11:00 - 0:11:10, Tức là khoảng 0.0001 khi chúng ta không biết mô hình của mình nó nên sử dụng tham số Learning Rate alpha là bao nhiêu thì chúng ta sử dụng tham số này
+0:11:10 - 0:11:18, Tuy nhiên trong bài toán này thì chúng ta có một chút kinh nghiệm thì chúng ta có thể chọn tham số Learning Rate đủ nhỏ thôi
+0:11:18 - 0:11:20, Ví dụ như là khoảng 0.01 là được rồi
+0:11:20 - 0:11:26, Chứ còn nếu mà cho tham số Learning Rate Alpha này quá nhỏ thì thuật toán của mình sẽ chạy chậm
+0:11:26 - 0:11:28, Cái này là quá chậm
+0:11:28 - 0:11:36, Rồi, như vậy thì chúng ta sẽ xong cái bước khởi tạo đó là một giá trị θ0
+0:11:36 - 0:11:41, Đó là cái điểm bắt đầu của θ (theta), learning rate và ngưỡng dừng
+0:11:41 - 0:11:45, Ngưỡng dừng epsilon thì chúng ta thường cũng chọn một cái ngưỡng đủ nhỏ
+0:11:45 - 0:11:48, Ví dụ như là 10 mũ trừ 5, ví dụ vậy
+0:11:48 - 0:11:50, Và chúng ta sẽ đến cái quá trình lặp
+0:11:50 - 0:11:54, Thì cái quá trình lặp chúng ta sẽ thực hiện 2 cái công việc thôi
+0:11:54 - 0:11:56, Đó là cập nhật θ (theta)
+0:11:56 - 0:12:01, θ (theta) sẽ là bằng θ (theta) trừ cho alpha nhân cho đạo hàm của hàm loss
+0:12:01 - 0:12:04, Và chúng ta sẽ dừng khi mà cái đạo hàm này đủ nhỏ
+0:12:04 - 0:12:06, Thì đây là cho cái giải pháp số 1
+0:12:06 - 0:12:08, Đây chính là cái giải pháp số 1
+0:12:08 - 0:12:11, Còn cho cái giải pháp số 2 thì chúng ta có thể viết một cái vòng lặp for
+0:12:11 - 0:12:14, for i từ 1 đến K
+0:12:14 - 0:12:26, Ví dụ như chúng ta cho nó lặp 100 lần, rồi thì chúng ta chỉ việc cập nhật θ (theta) sẽ là bằng θ (theta) trừ cho alpha nhân cho đạo hàm.
+0:12:26 - 0:12:37, Là xong, thì đây là cái giải pháp thứ 2. Đây chính là cái giải pháp thứ 2. Và đây là thuật toán Gradient Descent.
+0:12:37 - 0:12:46, Trong trường hợp nếu như hàm phức tạp hơn thì có nhiều điểm cực tiểu.
+0:12:46 - 0:12:49, Chúng ta sẽ lấy một trường hợp, đó là chúng ta có hai điểm cực tiểu.
+0:12:49 - 0:12:54, Điều gì sẽ xảy ra nếu chúng ta khởi tạo ngay tại vị trí này?
+0:12:54 - 0:12:59, Nếu chúng ta khởi tạo giá trị θ0 ở đây,
+0:12:59 - 0:13:05, thì khi giả sử chúng ta nhìn cái này dưới góc độ là một cái góc nhìn vật lý
+0:13:05 - 0:13:07, chúng ta sẽ có một cái viên bi đặt ở đây
+0:13:07 - 0:13:10, và khi chúng ta thả cái viên bi này ra nó sẽ từ từ nó rớt xuống
+0:13:11 - 0:13:14, khi nó chạm được đến cái điểm cực tiểu của vùng này nó sẽ dừng
+0:13:14 - 0:13:16, tại sao nó dừng?
+0:13:16 - 0:13:18, tại vì khi chạm được đến cái điểm cực tiểu này
+0:13:18 - 0:13:22, thì cái đạo hàm của mình nó sẽ xấp xỉ bằng 0
+0:13:22 - 0:13:24, mà khi đạo hàm xấp xỉ bằng 0
+0:13:25 - 0:13:27, thì cái bước nhảy của mình lúc này
+0:13:27 - 0:13:42, Bước nhảy sẽ là bằng 0, tức là θ (theta) sẽ là bằng θ (theta) trừ 0, tức là θ (theta) không cập nhật gì nữa, tức là nó sẽ đến đây nó sẽ dừng.
+0:13:42 - 0:13:50, Dưới góc nhìn vật lý, nếu như chúng ta có nhiều điểm cực tiểu và dùng phiên bản này thì rõ ràng là không ổn.
+0:13:50 - 0:13:57, Vậy thì giải pháp đầu tiên là chúng ta sẽ chạy nhiều lần và chúng ta sẽ lấy giá trị nhỏ nhất.
+0:13:57 - 0:14:06, Ví dụ,
+0:14:06 - 0:14:10, thì chúng ta sẽ cập nhật và nó sẽ dừng tại đây.
+0:14:10 - 0:14:16, Như vậy thì chúng ta sẽ có hai lần chạy và chúng ta sẽ lấy giá trị nào mà nhỏ nhất.
+0:14:16 - 0:14:24, Thì điểm yếu của phương pháp này là nó tốn tài nguyên do chúng ta phải lặp đi lặp lại quá trình khởi tạo ngẫu nhiên này nhiều lần.
+0:14:24 - 0:14:30, Giải pháp thứ hai được sử dụng rất là nhiều trong các framework hiện nay,
+0:14:30 - 0:14:36, Trong các Deep Learning Framework hiện nay, chúng ta sẽ sử dụng momentum hay còn gọi là quán tính.
+0:14:36 - 0:14:43, Khi giả sử chúng ta khởi tạo tại cái vị trí này, tức là tại điểm cực tiểu, gần điểm cực tiểu,
+0:14:43 - 0:14:52, mà không phải là điểm cực tiểu nhỏ nhất, thì khi chúng ta cập nhật và đến cái vị trí này,
+0:14:52 - 0:14:55, thì nó vẫn còn một cái độ quán tính.
+0:14:55 - 0:14:59, nó sẽ giúp cho chúng ta thoát ra khỏi cái vị trí này
+0:14:59 - 0:15:03, và để rớt xuống cái vị trí điểm cực tiểu nhỏ hơn.
+0:15:03 - 0:15:07, Thì đây chính là cái giải pháp dùng momentum.
+0:15:07 - 0:15:12, Và một trong những thuật toán mà có khai thác yếu tố về momentum này
+0:15:12 - 0:15:13, chính là thuật toán ADAM.
+0:15:13 - 0:15:19, Và thuật toán ADAM thì đã được cài đặt trong các thư viện như là TensorFlow và PyTorch.
+0:15:19 - 0:15:23, Cài đặt rất là đầy đủ và sử dụng rất là dễ dàng.
+0:15:23 - 0:15:34, Vì vậy, nếu chúng ta tìm tham số θ (theta) sao cho hàm loss Lθ nhỏ nhất,
+0:15:36 - 0:15:40, chúng ta sẽ nghĩ ngay đến giải pháp sử dụng thuật toán ADAM.
+0:15:42 - 0:15:45, Đây giống như là một trick, một mẹo để chúng ta,
+0:15:46 - 0:15:49, khi chúng ta tìm giá trị nhỏ nhất của một hàm,
+0:15:49 - 0:15:52, thì chúng ta nghĩ ngay đến thuật toán ADAM.
+0:15:52 - 0:15:55, Chi tiết cách sử dụng thuật toán ADAM như thế nào
+0:15:55 - 0:15:58, thì chúng ta sẽ trình bày trong phần thực hành sau.
+0:16:00 - 0:16:02, Với mô hình máy học tổng quát này,
+0:16:02 - 0:16:06, chúng ta nhắc lại 3 công việc cần phải thực hiện.
+0:16:06 - 0:16:10, Đó là thiết kế hàm dự đoán,
+0:16:10 - 0:16:12, hàm mô hình máy học fθx.
+0:16:12 - 0:16:17, Chúng ta sẽ phải thiết kế lại hàm lỗi Lθxi.
+0:16:17 - 0:16:21, và chúng ta phải tìm θ (theta) sao cho hàm lỗi này là nhỏ nhất
+0:16:21 - 0:16:29, và chúng ta có một lưu ý đó là các thư viện Deep Learning hiện tại đều đã giải quyết rất tốt công việc số 3 này rồi
+0:16:29 - 0:16:32, như vậy công việc số 3 này chúng ta sẽ không còn quan tâm nữa
+0:16:32 - 0:16:39, và khi dùng thì chúng ta sẽ nghĩ ngay đến giải thuật từ thư viện
+0:16:39 - 0:16:43, đó chính là ADAM, hay còn gọi là Adam Optimizer
+0:16:43 - 0:16:52, Nhớ đến cái keyword này. Và như vậy thì từ nay về sau chúng ta chỉ còn giải quyết hai cái công việc thôi.
+0:16:52 - 0:16:58, Đó là thiết kế cái hàm dự đoán fθx và thiết kế cái hàm lỗi Lθxi.
+0:16:58 - 0:17:08, Và chúng ta sẽ thiết kế thì tùy theo cái tính chất của y nó phụ thuộc như thế nào với x.
+0:17:08 - 0:17:14, thì chúng ta sẽ có những cách thiết kế khác nhau, ví dụ đối với bài toán Tuyến tính, đối với bài toán Hồi quy,
+0:17:14 - 0:17:21, chúng ta sẽ thiết kế theo một cách, đối với bài toán Phân loại, chúng ta sẽ thiết kế theo một cách khác
+0:17:21 - 0:17:25, và đối với bài toán Phi tuyến, chúng ta sẽ thiết kế theo một cách khác nữa.
+0:17:25 - 0:17:31, Tùy vào tính chất của dữ liệu (x, y) này để chúng ta sẽ thiết kế hai cái hàm này.

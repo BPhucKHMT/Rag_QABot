@@ -1,0 +1,100 @@
+0:00:00 - 0:00:21, Một nền tảng toán học tiếp theo cũng rất quan trọng trong phạm vi của môn học này, đó chính là giải tích.
+0:00:21 - 0:00:24, Tại sao chúng ta cần phải học giải tích?
+0:00:24 - 0:00:32, Thì đầu tiên, đó là giải tích sẽ cung cấp cho chúng ta một cái công cụ để giúp chúng ta biểu diễn các cái biến đổi
+0:00:32 - 0:00:41, Ví dụ như chúng ta sẽ biến đổi từ dữ liệu gốc như là hình ảnh, văn bản, âm thanh sang các vector đặc trưng
+0:00:41 - 0:00:47, Và mỗi một cái phép biến đổi trong các mô hình máy học của chúng ta nó tương ứng sẽ là một hàm
+0:00:47 - 0:00:56, Như vậy thì các mô hình máy học sẽ là một chuỗi các biến đổi của các hàm số.
+0:00:56 - 0:01:01, Như vậy thì công dụng đầu tiên dùng để biểu diễn chuỗi các biến đổi.
+0:01:01 - 0:01:10, Công dụng thứ hai của giải tích trong phạm vi môn học này, có lẽ đây cũng là một trong những công dụng quan trọng nhất.
+0:01:10 - 0:01:15, Đó chính là giúp tìm được mô hình tối ưu trong quá trình huấn luyện,
+0:01:15 - 0:01:17, sử dụng những công cụ của giải tích
+0:01:17 - 0:01:19, cụ thể là như hồi xưa chúng ta đã được học
+0:01:19 - 0:01:21, là một cái hàm số
+0:01:21 - 0:01:22, fx
+0:01:22 - 0:01:25, thì những cái điểm cực trị địa phương
+0:01:25 - 0:01:27, những cái điểm cực tiểu
+0:01:27 - 0:01:30, hoặc cực đại địa phương thì tại những cái vị trí này
+0:01:30 - 0:01:32, đó chính là đạo hàm của mình
+0:01:32 - 0:01:34, đạo hàm bằng 0
+0:01:34 - 0:01:37, và đây chính là ý then chốt
+0:01:37 - 0:01:39, mà để giúp cho mình
+0:01:39 - 0:01:41, tìm ra được cái mô hình tối ưu
+0:01:41 - 0:01:43, tại vì mô hình tối ưu
+0:01:43 - 0:01:50, chính là cái mô hình mà tại đó chúng ta đạt được những cái tiêu chí nào đó là nhỏ nhất hoặc là cao nhất hoặc là lớn nhất.
+0:01:50 - 0:01:59, Ví dụ như trong quá trình huấn luyện một cái mô hình chúng ta luôn mong muốn cái lỗi của cái việc mà nhận diện đối tượng là thấp nhất
+0:01:59 - 0:02:03, thì lúc đó là cái hàm mô hình của mình sẽ phải tìm giá trị nhỏ nhất.
+0:02:03 - 0:02:11, Và như vậy thì một trong những cái công cụ mà chúng ta cần phải tìm hiểu kỹ trong cái phần giải tích này chính là đạo hàm.
+0:02:11 - 0:02:17, Và như đã đề cập ở trước thì mô hình của mình sẽ là một chuỗi các hàm số
+0:02:17 - 0:02:19, Chuỗi các biến đổi hay là chuỗi các hàm số
+0:02:19 - 0:02:22, Do đó thì một công cụ khác cũng rất quan trọng
+0:02:22 - 0:02:25, Đó chính là đạo hàm của hàm hợp
+0:02:25 - 0:02:32, Tiếp theo thì chúng ta sẽ tìm hiểu về các dạng hàm toán học
+0:02:32 - 0:02:41, Nếu như biểu diễn một cách đơn giản thì chúng ta có thể ghi là y là một hàm số bằng fx
+0:02:41 - 0:02:47, Với x là cái biến số đầu vào và y chính là cái giá trị của cái hàm số này
+0:02:47 - 0:02:51, Một cách biểu diễn khác, đó là chúng ta biểu diễn dưới dạng là sơ đồ
+0:02:51 - 0:02:58, Chúng ta sẽ có một input x và qua cái hàm f thì chúng ta sẽ tính ra được cái giá trị output là fx
+0:02:58 - 0:03:03, Đây là kết quả của một phép biến đổi của hàm F
+0:03:03 - 0:03:06, với thông tin đầu vào là x
+0:03:06 - 0:03:08, Thì đây chúng ta chỉ ôn lại khái niệm
+0:03:08 - 0:03:13, Khái niệm này thì chúng ta đã được học từ trong các chương trình phổ thông
+0:03:13 - 0:03:20, và chúng ta sẽ có rất nhiều những dạng hàm khác nhau
+0:03:20 - 0:03:24, Ví dụ như chúng ta sẽ có hàm đơn biến, hàm đa biến
+0:03:24 - 0:03:27, và hàm đơn biến là gì?
+0:03:27 - 0:03:30, là cái hàm số này nó chỉ bị phụ thuộc bởi duy nhất
+0:03:30 - 0:03:35, cái hàm này nó chỉ có phụ thuộc bởi duy nhất một biến số đầu vào
+0:03:35 - 0:03:42, còn trong cái ví dụ này thì cái hàm y sẽ bị phụ thuộc bởi 2 biến số đầu vào đó là x và z
+0:03:42 - 0:03:48, y thì sẽ được tính bởi 2 cái giá trị biến đầu vào là x và z
+0:03:48 - 0:03:50, do đó thì hàm số sẽ được gọi là hàm đa biến
+0:03:50 - 0:03:55, Khái niệm tiếp theo đó chính là hàm hợp
+0:03:55 - 0:03:59, Hàm hợp sẽ là một chuỗi các hàm liên tiếp
+0:03:59 - 0:04:01, Thì ở trong ví dụ này chúng ta thấy
+0:04:01 - 0:04:03, y là một cái hàm hợp
+0:04:03 - 0:04:06, là một phép biến đổi
+0:04:06 - 0:04:09, là một cái hàm được tạo bởi hai cái hàm thành phần
+0:04:09 - 0:04:10, là f và g
+0:04:10 - 0:04:13, trong đó f thì sẽ được thực hiện trước
+0:04:13 - 0:04:15, và g sẽ được thực hiện sau
+0:04:15 - 0:04:17, thì nếu xét về mặt ký hiệu
+0:04:17 - 0:04:19, thì lúc này ta sẽ ký hiệu là y
+0:04:19 - 0:04:21, và bằng g của fx
+0:04:21 - 0:04:23, trong đó f chúng ta sẽ thực hiện trước
+0:04:23 - 0:04:25, và tính ra cái giá trị chúng ta sẽ thế vào
+0:04:25 - 0:04:27, để đưa vào hàm g
+0:04:27 - 0:04:33, kết quả của hàm f sẽ được đưa vào như là cái input đầu vào của hàm g
+0:04:33 - 0:04:37, còn về mặt ký hiệu khác đó là ký hiệu hình tròn ở đây
+0:04:37 - 0:04:40, thì nó sẽ ghi là g tròn f
+0:04:40 - 0:04:44, hay là y sẽ là một cái hàm hợp của g và f
+0:04:44 - 0:04:46, với f sẽ là cái thao tác thực hiện đầu tiên
+0:04:46 - 0:04:52, sau đó mới tính ra được cái kết quả và đưa vào cái đầu vào cho hàm g.
+0:04:52 - 0:04:57, Thì đây là một cái ví dụ. Ở đây chúng ta sẽ có
+0:04:57 - 0:05:03, f của mình sẽ là, fx sẽ là bằng x bình phương, cộng 1.
+0:05:03 - 0:05:08, Và gx sẽ là sin x. Thì khi đó cái hàm hợp của 2 cái hàm trên sẽ ký hiệu là
+0:05:08 - 0:05:13, y bằng g của fx sẽ bằng. Chúng ta sẽ thực hiện cái thao tác f trước.
+0:05:13 - 0:05:20, F trước, tức là chúng ta sẽ tính cái x bình cộng 1 trước, sau đó sẽ đưa vào cho hàm sin thực hiện sau.
+0:05:20 - 0:05:27, Thì ở đây chúng ta sẽ có một số bài tập các bạn có thể tự làm một cách dễ dàng.
+0:05:27 - 0:05:39, Tiếp theo thì chúng ta sẽ tìm hiểu về đạo hàm, như đã đề cập trước đây. Đây là một trong những công cụ quan trọng để giúp chúng ta tìm được mô hình tối ưu.
+0:05:39 - 0:05:41, Và để tìm được mô hình tối ưu thì nó cũng tương ứng
+0:05:41 - 0:05:47, trong lĩnh vực giải tích, đó chính là tìm cái giá trị nhỏ nhất và lớn nhất của hàm số.
+0:05:48 - 0:05:52, Thì khái niệm đạo hàm trong giải tích toán học
+0:05:52 - 0:05:58, thì đạo hàm của một hàm số là một cái đại lượng mô tả sự biến thiên của hàm số
+0:05:58 - 0:05:59, tại một cái điểm nào đó.
+0:05:59 - 0:06:03, Thì chúng ta lấy ví dụ ở đây, chúng ta sẽ có một cái hàm y bằng fx
+0:06:03 - 0:06:19, và tại vị trí này thì chúng ta thấy là hệ số góc của điểm tiếp xúc tại vị trí x0 này
+0:06:19 - 0:06:25, thì hệ số góc của tiếp tuyến này sẽ thể hiện sự biến thiên
+0:06:25 - 0:06:28, và giá trị của hệ số góc này chính là đạo hàm
+0:06:28 - 0:06:32, thì đây là mình ôn lại kiến thức đạo hàm hồi xưa
+0:06:32 - 0:06:37, và cái đạo hàm này nó sẽ có các điểm
+0:06:37 - 0:06:42, thì đây chính là cái điểm cực tiểu và đây sẽ là cái điểm cực đại
+0:06:42 - 0:06:47, và chúng ta sẽ sử dụng đạo hàm như là cái công cụ để giúp cho mình khảo sát
+0:06:47 - 0:06:52, cũng như là tìm các điểm cực tiểu cực đại này
+0:06:52 - 0:06:56, thì nhắc lại thôi, thì chúng ta thấy là ở đây
+0:06:56 - 0:07:05, tại đạo hàm f'x bằng 0 thì nó tương ứng sẽ là vị trí điểm cực tiểu trong cái hàm này
+0:07:05 - 0:07:10, ví dụ chúng ta có một cái hàm parabol
+0:07:10 - 0:07:20, thì điểm cực tiểu x sao ở đây nó sẽ thỏa mãn tính chất đó là f' của x sao sẽ là bằng 0
+0:07:20 - 0:07:33, Và khi đó thì việc tìm điểm cực tiểu này, chúng ta sẽ đưa về việc giải phương trình của đạo hàm
+0:07:33 - 0:07:38, Đó là f'x, trong trường hợp này f'x chính là bằng x trừ 1
+0:07:38 - 0:07:44, Thì chúng ta sẽ nhớ lại kiến thức hồi cấp 3 là đạo hàm của hàm này
+0:07:44 - 0:07:52, là bằng x trừ 1 dựa trên một số hàm cơ bản cũng như tính chất đạo hàm của các hàm
+0:07:52 - 0:07:57, Giải phương trình này xong thì chúng ta cho hàm này bằng 0
+0:07:57 - 0:08:01, lúc đó x sao của mình chính là x sao bằng 1
+0:08:01 - 0:08:07, tức là vị trí của x để cho hàm này đạt cực tiểu là x = 1

@@ -1,0 +1,266 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:18, Trong phần thực hành đầu tiên, các bạn
+0:00:15 - 0:00:22, sẽ được giới thiệu, làm quen và sử dụng
+0:00:18 - 0:00:25, một công cụ gọi là Google Collabs. Thì
+0:00:22 - 0:00:27, Google Collab là một công cụ có thể nói
+0:00:25 - 0:00:31, là cực kỳ phổ biến đối với những người
+0:00:27 - 0:00:35, vừa mới bắt đầu học. Ừ. Máy học học
+0:00:31 - 0:00:37, Machine Learning. Google Collab có địa
+0:00:35 - 0:00:40, chỉ ở trang web
+0:00:37 - 0:00:40, collab.research.google.com.
+0:00:41 - 0:00:46, À tuy nhiên những người
+0:00:44 - 0:00:49, làm research chuyên nghiệp hoặc là những
+0:00:46 - 0:00:51, người dùng chuyên nghiệp ừ có thể sử
+0:00:49 - 0:00:55, dụng machine learning để tạo ra sản phẩm
+0:00:51 - 0:00:57, á thì thường là họ không sử dụng Google
+0:00:55 - 0:00:59, Collab nhiều mà họ có sẽ có những công
+0:00:57 - 0:01:04, cụ riêng biệt. Còn đối với người bắt đầu
+0:00:59 - 0:01:07, học thì Google Collab là một công cụ rất
+0:01:04 - 0:01:09, là hữu ích đối với các bạn ha. Thì
+0:01:07 - 0:01:11, collab là một cái nền tảng
+0:01:09 - 0:01:14, cho phép các bạn có thể lập trình Python
+0:01:11 - 0:01:17, trên đám mây. Trên đám mây có nghĩa là
+0:01:14 - 0:01:20, code Python của các bạn lập trình ra sẽ
+0:01:17 - 0:01:23, được chạy trên máy tính của người khác
+0:01:20 - 0:01:25, mà cụ thể ở đây là của tập đoàn Google
+0:01:23 - 0:01:28, cung cấp.
+0:01:25 - 0:01:31, Google Collab thì họ phát triển dựa trên
+0:01:28 - 0:01:33, Jupiter Notebook nhưng cũng đã có nhiều
+0:01:31 - 0:01:37, cả customize tùy chỉnh cho nó phù hợp
+0:01:33 - 0:01:41, với nền tảng của Google. Và họ sẽ cung
+0:01:37 - 0:01:45, cấp cho các bạn một cái quan trọng nhất
+0:01:41 - 0:01:48, mà họ cung cấp cho các bạn ở đây. Ngoài
+0:01:45 - 0:01:51, việc có một cái giao diện để các bạn có
+0:01:48 - 0:01:54, thể gõ code Python và chạy trực tiếp
+0:01:51 - 0:01:56, trên nền web ha. Các bạn làm việc với
+0:01:54 - 0:01:58, Jupiter Notebook thì sẽ thông qua giao
+0:01:56 - 0:02:00, diện web. Có nghĩa là các bạn không cần
+0:01:58 - 0:02:02, phải cài thêm những phần mềm đặc biệt
+0:02:00 - 0:02:06, trên máy tính của mình mới có thể lập
+0:02:02 - 0:02:08, trình. Các bạn thậm chí là có thể lập
+0:02:06 - 0:02:12, trình Python trên các thiết bị di động,
+0:02:08 - 0:02:14, chỉ cần vào được web là có thể bắt đầu
+0:02:12 - 0:02:17, lập trình và học tập được ha. Đó là một
+0:02:14 - 0:02:22, công cụ rất là mạnh mẽ.
+0:02:17 - 0:02:24, Tại vì việc tự mình cài đặt những cái
+0:02:22 - 0:02:27, phần mềm cần thiết cho
+0:02:24 - 0:02:29, các cái câu thư viện machine learning
+0:02:27 - 0:02:31, hiện đại ngày nay cũng không phải là đơn
+0:02:29 - 0:02:35, giản ha. Nên việc có người khác làm sẵn
+0:02:31 - 0:02:37, cho mình cái khâu cài đặt này để mình
+0:02:35 - 0:02:40, chỉ có thể mở browser lên và mình lập
+0:02:37 - 0:02:42, trình. Nó cũng rất là tiện cho các bạn
+0:02:40 - 0:02:46, trong nhiều tình huống.
+0:02:42 - 0:02:52, Và ưu điểm thứ hai là họ hỗ trợ các bạn
+0:02:46 - 0:02:54, các cái thiết bị GPU à các a cái bộ xử
+0:02:52 - 0:02:59, lý đồ họa ha. Việt Nam mình hay gọi dân
+0:02:54 - 0:03:01, giả là các cái card đồ họa miễn phí ha.
+0:02:59 - 0:03:02, Cho sử dụng theo giờ ha. Thời gian có
+0:03:01 - 0:03:06, giới hạn thôi nhưng mà hoàn toàn miễn
+0:03:02 - 0:03:09, phí. Và họ có thể tích hợp do thùng lên
+0:03:06 - 0:03:13, nền tảng Google mà họ tích hợp với lưu
+0:03:09 - 0:03:16, trữ Google Drive đó nên các bạn dù không
+0:03:13 - 0:03:17, có phần cứng đủ mạnh các bạn vẫn có thể
+0:03:16 - 0:03:19, học
+0:03:17 - 0:03:21, lập trình Python các bạn vẫn có thể học
+0:03:19 - 0:03:24, machine learning học máy thông qua sự hỗ
+0:03:21 - 0:03:27, trợ của nền tảng Google Collab
+0:03:24 - 0:03:29, dĩ nhiên miễn phí thì sẽ bị giới hạn về
+0:03:27 - 0:03:31, mặt thời gian
+0:03:29 - 0:03:34, đó
+0:03:31 - 0:03:38, và nếu mà các bạn chiếm dụng tài nguyên
+0:03:34 - 0:03:42, quá nhiều thì sẽ bị thu hồi bất cứ lúc
+0:03:38 - 0:03:44, nào và dữ liệu trong bộ nhớ tạm ha khi
+0:03:42 - 0:03:47, khi bị thu hồi thì nó có thể mất.
+0:03:44 - 0:03:51, Đó
+0:03:47 - 0:03:56, thì bây giờ chúng ta sẽ cùng ừ đến làm
+0:03:51 - 0:03:58, quen với giao diện của Google Class thì
+0:03:56 - 0:04:01, đây
+0:03:58 - 0:04:03, là
+0:04:01 - 0:04:07, các bạn vào Google đầu tiên khi các bạn
+0:04:03 - 0:04:07, vào địa chỉ collab.research.google.com
+0:04:08 - 0:04:13, các bạn sẽ đến một cái giao diện như thế
+0:04:10 - 0:04:17, này ha. Họ yêu cầu các bạn open các cái
+0:04:13 - 0:04:22, notebook. Notebook ở đây tức là những
+0:04:17 - 0:04:27, cái file tích hợp vừa cả mã nguồn vừa cả
+0:04:22 - 0:04:29, ừ các cái ghi chú ừ các cái mô tả vào
+0:04:27 - 0:04:32, trong cô một giao diện duy nhất ha. Nếu
+0:04:29 - 0:04:34, như các bạn là người lập trình trước đây
+0:04:32 - 0:04:35, các trong các môn lập trình cơ bản các
+0:04:34 - 0:04:37, bạn đã học thì các bạn sẽ biết là cái
+0:04:35 - 0:04:41, file mã nguồn thì thường nó sẽ nằm một
+0:04:37 - 0:04:43, cái đuôi riêng đó và nó chỉ chứa toàn là
+0:04:41 - 0:04:47, văn bản thôi. Nó không chứa hình ảnh
+0:04:43 - 0:04:49, được. Thậm chí là các bạn còn không thể
+0:04:47 - 0:04:51, highlight, các bạn không thể tô đậm chữ,
+0:04:49 - 0:04:54, các bạn không thể in đậm in nghiêng,
+0:04:51 - 0:04:58, không thể format các cái chữ bên trong
+0:04:54 - 0:05:01, cái mã nguồn được. Thì Notebook cung cấp
+0:04:58 - 0:05:06, cho các bạn một cái công cụ có sẵn vừa
+0:05:01 - 0:05:09, là mã nguồn và vừa là
+0:05:06 - 0:05:13, các cái ghi chú ha. Và ghi chú này là
+0:05:09 - 0:05:16, ghi chú dạng RX, dạng text có định dạng
+0:05:13 - 0:05:18, format và có thể chứa cả âm thanh hình
+0:05:16 - 0:05:21, ảnh vào bên trong. đó trong cùng một cái
+0:05:18 - 0:05:24, giao diện như thế này để các bạn dễ tiện
+0:05:21 - 0:05:26, trong việc mình vừa viết code, mình vừa
+0:05:24 - 0:05:30, take note à trong quá trình mình học.
+0:05:26 - 0:05:33, Đó, đây là giao diện của Google Collab.
+0:05:30 - 0:05:35, Thì ngoài cái giao diệnbook này ha, đó
+0:05:33 - 0:05:41, việc cài cái notebook này vào trong máy
+0:05:35 - 0:05:42, tính của các bạn cũng sẽ phải tốn một số
+0:05:41 - 0:05:45, công suất nhất định ha. Tại vì các
+0:05:42 - 0:05:47, notebook này
+0:05:45 - 0:05:51, các notebook này
+0:05:47 - 0:05:53, phải a được cài đặt thông qua một cái
+0:05:51 - 0:05:57, công cụ đặc biệt là Jupiter Notebook và
+0:05:53 - 0:06:00, các bạn nó giao tiếp thông qua nền web.
+0:05:57 - 0:06:01, Nếu các bạn vừa cài một cái web server
+0:06:00 - 0:06:06, lên máy tính của mình và các bạn lại
+0:06:01 - 0:06:10, giao tiếp cái web server đó bằng ừ cùng
+0:06:06 - 0:06:11, một cái máy ha thì nó
+0:06:10 - 0:06:13, hơi bất cập nên các bạn sẽ không tìm
+0:06:11 - 0:06:17, thấy hướng dẫn cài đặt một cái giao diện
+0:06:13 - 0:06:20, tương tự như Google collab trên cái
+0:06:17 - 0:06:21, trang chủ của Python. Mà khi chúng ta
+0:06:20 - 0:06:24, code Python trên máy mình thì thường
+0:06:21 - 0:06:27, giao diện nó sẽ khác. Còn Python mà trên
+0:06:24 - 0:06:30, Google Collab thì nó sẽ có giao diện
+0:06:27 - 0:06:34, notebook thuận tiện cho việc học hơn.
+0:06:30 - 0:06:38, Và cái quan trọng nhất mà Google Collab
+0:06:34 - 0:06:42, cung cấp cho các bạn đó là máy
+0:06:38 - 0:06:47, ha. Đây là một cái run time theo khái
+0:06:42 - 0:06:50, niệm của Google Collab gọi thì họ gọi
+0:06:47 - 0:06:53, một cái run time là một cái máy ảo ha.
+0:06:50 - 0:06:56, Đây là một máy ảo tức là họ Google họ có
+0:06:53 - 0:06:58, những cái cụm server rất là lớn. Họ chia
+0:06:56 - 0:07:01, server đó ra thành nhiều cái máy ảo có
+0:06:58 - 0:07:04, cấu hình nhỏ hơn và họ cho phép các bạn
+0:07:01 - 0:07:07, có thể sử dụng các cái máy ảo này miễn
+0:07:04 - 0:07:10, phí trong một khoảng thời gian giới hạn
+0:07:07 - 0:07:13, ha. Hồi nãy các bạn có thấy thông báo là
+0:07:10 - 0:07:14, à Google vừa thu hồi lại máy của thầy và
+0:07:13 - 0:07:17, thầy phải
+0:07:14 - 0:07:19, xin cấp một cái máy khác. Thì khi các
+0:07:17 - 0:07:23, bạn connect tới một cái run time là các
+0:07:19 - 0:07:26, bạn sẽ được cấp một cái máy. À
+0:07:23 - 0:07:28, máy này
+0:07:26 - 0:07:31, không tính phí nhưng mà bù lại chỉ được
+0:07:28 - 0:07:33, sử dụng trong khoảng 3:50 thôi. Và nếu
+0:07:31 - 0:07:36, sử dụng nhiều thì con số này sẽ còn giảm
+0:07:33 - 0:07:38, xuống nữa. Đó. Ừ. Máy này họ cho thuê
+0:07:36 - 0:07:40, tạm ha. Được sử dụng trong vài tiếng
+0:07:38 - 0:07:44, đồng hồ hết thì họ lấy máy lại dữ liệu
+0:07:40 - 0:07:46, bị mất đó. Nhưng mà cái giao diện những
+0:07:44 - 0:07:48, gì trên giao diện thì vẫn sẽ còn mã
+0:07:46 - 0:07:51, nguồn chúng ta gõ các cái techne chúng
+0:07:48 - 0:07:54, ta ghi nó sẽ vẫn còn nhưng mà dữ liệu
+0:07:51 - 0:07:57, lưu trữ thì mất chúng ta phải à tiến
+0:07:54 - 0:08:00, hành backup trên Google Drive hoặc là
+0:07:57 - 0:08:06, tải từ trên Internet về thì máy này có
+0:08:00 - 0:08:10, cấu hình như sau. À RAM là 12,7 GB, đĩa
+0:08:06 - 0:08:13, cứng là 112 GB, trong đó hệ điều hành đã
+0:08:10 - 0:08:18, chiếm khoảng 39,1 rồi, à còn không có
+0:08:13 - 0:08:23, nhiều. Và ở level miễn phí này thì chúng
+0:08:18 - 0:08:27, ta có thể xin cấp một cái GPU à T4 ha. À
+0:08:23 - 0:08:31, đây là một cái GPU do Nvidia sản xuất.
+0:08:27 - 0:08:34, GPU này là loại GPU chuyên dùng cho các
+0:08:31 - 0:08:37, cái hệ thống server, hệ thống máy chủ.
+0:08:34 - 0:08:40, Nó có 16 GB
+0:08:37 - 0:08:42, VRAM hay là video random access memory.
+0:08:40 - 0:08:44, Đó
+0:08:42 - 0:08:47, thì trên cái server ảo này các bạn có
+0:08:44 - 0:08:50, thể chạy những cái lệnh
+0:08:47 - 0:08:52, ừ trong Google
+0:08:50 - 0:08:54, Colab và các bạn có thể chạy những cái
+0:08:52 - 0:08:57, lệnh repeater notebook mà nó bắt đầu
+0:08:54 - 0:08:59, bằng dấu chấm than như thế này là những
+0:08:57 - 0:09:02, lệnh dùng để trực tiếp điều khiển server
+0:08:59 - 0:09:06, ha. Đây không phải là
+0:09:02 - 0:09:11, lệnh của Python đó. À apt là lệnh để cài
+0:09:06 - 0:09:13, đặt phần mềm trong hệ điều hành Ubuntu.
+0:09:11 - 0:09:15, Các cái máy ảo mà Google Collab cung cấp
+0:09:13 - 0:09:18, cho các bạn đều sẽ có hệ điều hành
+0:09:15 - 0:09:19, Ubuntu. Và các bạn có thể tương tác với
+0:09:18 - 0:09:23, cái hệ điều hành này. Dù máy của các bạn
+0:09:19 - 0:09:26, dùng hệ điều hành gì đi nữa ha. Đó tôi
+0:09:23 - 0:09:27, chúng ta có thể chạy lệnh trực tiếp.
+0:09:26 - 0:09:30, Nếu lệnh bắt đầu bằng dấu chấm than như
+0:09:27 - 0:09:32, thế này, đó sẽ là lệnh của UIN và máy sẽ
+0:09:30 - 0:09:35, được thực thi. Kết quả chạy của lệnh sẽ
+0:09:32 - 0:09:40, được hiển thị ra ngay bên dưới cho các
+0:09:35 - 0:09:43, bạn xem. Đó, đây là output, đây là lệnh.
+0:09:40 - 0:09:45, Rồi ở đây đầu tiên là chúng ta chạy lệnh
+0:09:43 - 0:09:48, update máy đó mà các bạn có thể xem
+0:09:45 - 0:09:48, output ở đây.
+0:09:52 - 0:09:57, Rồi sau đó chúng ta có thể yêu cầu thậm
+0:09:54 - 0:09:59, chí là cài thêm phần mềm nếu như cái máy
+0:09:57 - 0:10:02, chủ ảo của Google Collab họ chưa có cung
+0:09:59 - 0:10:05, cấp sẵn. Mặc dù họ cũng cài cho các bạn
+0:10:02 - 0:10:08, sẵn rất là nhiều phần mềm rồi ha. gần 40
+0:10:05 - 0:10:11, GB tức là có khá nhiều phần mềm và thư
+0:10:08 - 0:10:13, viện cần thiết đối với machine learning
+0:10:11 - 0:10:16, đã được cài sẵn ở đây. Những thư viện
+0:10:13 - 0:10:18, này nếu các bạn tự cài sẽ c phải tốn
+0:10:16 - 0:10:20, cũng khá là nhiều công sức nhưng ở đây
+0:10:18 - 0:10:22, Google Collab họ đã cung cấp sẵn cũng
+0:10:20 - 0:10:25, khá là nhiều đó. Như các bạn thấy khi đã
+0:10:22 - 0:10:28, update máy và cài thì đĩa cứng được sử
+0:10:25 - 0:10:30, dụng hồi nãy là 39,1 GB, bây giờ tăng
+0:10:28 - 0:10:33, lên là 39,2.
+0:10:30 - 0:10:37, Đó, ở đây thầy cài thử lệnh xem cấu hình
+0:10:33 - 0:10:39, máy. Rồi chúng ta có thể thấy đây Google
+0:10:37 - 0:10:43, cung cấp cho các bạn một máy ảo ha trong
+0:10:39 - 0:10:46, hệ thống Google Compute. Đó, đây là tên
+0:10:43 - 0:10:50, gọi máy chủ ảo do Google cung cấp. Máy
+0:10:46 - 0:10:52, này chuyên dùng để tính toán thôi nhưng
+0:10:50 - 0:10:55, đây là tính toán tr machine learning nên
+0:10:52 - 0:10:59, chủ yếu chúng ta sẽ sử dụng cái GPU
+0:10:55 - 0:11:03, Nvidia Tesla T4 này. CPU thì chúng ta
+0:10:59 - 0:11:06, được cấp ở đây hai CPU core ha. Intel
+0:11:03 - 0:11:09, Seon là dòng CPU cho máy chủ ha. Hầu hết
+0:11:06 - 0:11:11, các CPU này có khá là nhiều core nhưng
+0:11:09 - 0:11:13, máy chúng ta dùng miễn phí thì chúng ta
+0:11:11 - 0:11:16, được mượn hai core để sử dụng thôi. Cấu
+0:11:13 - 0:11:19, hình này thì không phải là cao. Với chỉ
+0:11:16 - 0:11:21, hai core CPU thì nó còn yếu hơn cái điện
+0:11:19 - 0:11:24, thoại di động mà các bạn dùng. Nhưng cái
+0:11:21 - 0:11:30, quan trọng nhất chúng ta được xài kẻ đó
+0:11:24 - 0:11:34, là cái GPU Nvidia Tesla C4 này.
+0:11:30 - 0:11:36, Đó các bạn có thể Google thêm về dòng
+0:11:34 - 0:11:42, này ha.
+0:11:36 - 0:11:45, GPU Tesla T4 có
+0:11:42 - 0:11:47, giá bán à chúng ta Google ngẫu nhiên một
+0:11:45 - 0:11:51, trang thôi đây cũng không rõ là trang
+0:11:47 - 0:11:55, nào đó thì à giá bán khoảng 20 cho đến
+0:11:51 - 0:11:57, 25 triệu và đây là hàng xách tay nha các
+0:11:55 - 0:12:01, bạn không có bảo hành gì đâu. Đó các bạn
+0:11:57 - 0:12:03, thấy cái trang a nếu các bạn thấy cái
+0:12:01 - 0:12:05, chỗ bán hàng này nó hơi lạ thì nó cũng
+0:12:03 - 0:12:08, khá là bình thường thôi. Đây là hàng
+0:12:05 - 0:12:11, xách tay tại vì Nvidia họ không bán cái
+0:12:08 - 0:12:13, sản phẩm này trực tiếp cho người tiêu
+0:12:11 - 0:12:16, dùng có thể mua được. Họ chỉ bán cho
+0:12:13 - 0:12:18, doanh nghiệp hoặc là những cái
+0:12:16 - 0:12:21, công ty, những tập đoàn lớn mà họ sẽ mua
+0:12:18 - 0:12:24, hàng chục thậm chí là hàng trăm cái GPU
+0:12:21 - 0:12:28, này cùng lúc đó. Và họ sẽ gắn vào máy
+0:12:24 - 0:12:31, chủ của mình. Sau đó họ sẽ có thể tạo ra
+0:12:28 - 0:12:34, các máy ảo ha. Cấp cho mỗi máy ảo một
+0:12:31 - 0:12:36, cái GPU như thế này. Đó và cho phép các
+0:12:34 - 0:12:40, bạn điều khiển.
+0:12:36 - 0:12:43, Rồi đó giá khoảng 20 đến 25 triệu. Có
+0:12:40 - 0:12:45, nghĩa là mặc dù máy ảo này cấu hình thì
+0:12:43 - 0:12:47, không cao, yếu hơn cái điện thoại di
+0:12:45 - 0:12:50, động nhưng riêng con
+0:12:47 - 0:12:52, GPU này không thì giá xách tay và thật
+0:12:50 - 0:12:57, có khi là hàng second hand nữa là đã cao
+0:12:52 - 0:12:57, hơn laptop của một số bạn rồi.
+0:12:57 - 0:13:05, Thì đây là lợi ích chính mà chúng ta sẽ
+0:13:01 - 0:13:06, có thể được tận dụng của Google Collab
+0:13:05 - 0:13:09, ha.
+0:13:06 - 0:13:11, Đó là các thư viện họ hỗ trợ sẵn, chúng
+0:13:09 - 0:13:14, ta không phải mất công cài và tài nguyên
+0:13:11 - 0:13:19, tính toán mà chúng ta người bình thường
+0:13:14 - 0:13:19, rất khó có thể tiếp cận được.
+0:13:21 - 0:13:33, [âm nhạc]

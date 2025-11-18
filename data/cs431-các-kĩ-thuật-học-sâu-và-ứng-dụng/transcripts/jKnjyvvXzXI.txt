@@ -1,0 +1,157 @@
+0:00:00 - 0:00:06, Về lý thuyết thì decoder cũng sẽ tương tự như là encoder.
+0:00:09 - 0:00:15, Tuy nhiên, output của decoder sẽ có một vấn đề như thế này.
+0:00:15 - 0:00:20, Đó là decode là một quá trình mà chúng ta giải mã tuần tự.
+0:00:20 - 0:00:22, Giải mã tuần tự.
+0:00:22 - 0:00:24, Chúng ta không thể nào thực hiện song song được.
+0:00:24 - 0:00:30, Tại vì việc song song tương đương với việc chúng ta có thể nhìn thấy đáp án ở phía sau.
+0:00:30 - 0:00:38, Tức là tại một quá trình decode, chúng ta đưa ra cái output tại đây.
+0:00:38 - 0:00:42, Rồi sau đó chúng ta mới đưa ra cái output tại đây.
+0:00:42 - 0:00:46, Đây là lần thứ 1, đây là lần thứ 2.
+0:00:46 - 0:00:52, Và chúng ta không được phép thấy từ thứ 3, thứ 4.
+0:00:52 - 0:01:02, Nếu chúng ta sử dụng self-attention trên decode, tương tự như self-attention của encode,
+0:01:02 - 0:01:08, thì những đường màu đỏ sẽ vi phạm, đó là chúng ta đã nhìn thấy đáp án phía sau.
+0:01:08 - 0:01:18, Tại vì cái thông tin tại vị trí số 1, nó nhận được cái thông tin tại cái layer, tại cái vị trí này.
+0:01:18 - 0:01:24, Tức là từ thứ 2, rồi từ thứ 3 này.
+0:01:24 - 0:01:30, Như vậy là đã thấy trước đáp án, như vậy là không có được phép như vậy.
+0:01:30 - 0:01:36, Vậy thì, chúng ta phải bỏ đi các cái cạnh nối màu đỏ này đi.
+0:01:36 - 0:01:43, Chúng ta phải đảm bảo như vậy, thì khi đó quá trình decode nó mới thực sự là đúng như quy tắc của mình.
+0:01:43 - 0:01:48, Đó là chúng ta lần lượt đưa ra các dự đoán cho từng từ của mình,
+0:01:48 - 0:01:53, chứ không được phép tổng hợp thông tin của những từ trong tương lai,
+0:01:53 - 0:01:56, tức là chúng ta thấy trước những từ trong tương lai.
+0:01:58 - 0:02:00, Vậy thì giải pháp đó là gì?
+0:02:00 - 0:02:11, Tại mỗi bước của decoder, chúng ta sẽ dần dần mở rộng tập key và value của mình.
+0:02:11 - 0:02:16, Cứ trong quá trình mà chúng ta decode là chúng ta có query rồi.
+0:02:16 - 0:02:22, Ví dụ tại đây, chúng ta sẽ có query của mình.
+0:02:22 - 0:02:27, thì chúng ta sẽ phải dần dần mở rộng ra tập key và value,
+0:02:27 - 0:02:33, tại vì chúng ta xử lý đến đâu, decode đến đâu thì chúng ta sẽ thấy đến đó,
+0:02:33 - 0:02:35, chứ chúng ta không được phép thấy những từ tiếp theo.
+0:02:35 - 0:02:42, Ví dụ, tại đây, ở vị trí gốc thì chúng ta chỉ được thấy những từ hiện tại
+0:02:42 - 0:02:49, và quá khứ là cái quá trình, cái từ chúng ta đã suy đoán trước đó.
+0:02:49 - 0:02:54, Chứ không được phép những từ của tương lai là chúng ta không được phép.
+0:02:56 - 0:03:07, Và ở đây thì chúng ta cần phải che các trạng thái sau, tại vị trí thứ hai, chúng ta sẽ phải che các trạng thái sau, chúng ta không được phép thấy.
+0:03:07 - 0:03:14, Tại vị trí số hai, chúng ta có thể truyền thông tin ra sau nhưng không nhận được thông tin từ phía sau về, thì đó là nguyên tắc.
+0:03:14 - 0:03:21, Và đây, chúng ta sẽ có một cái hiệu ứng để minh họa cho cái việc này.
+0:03:21 - 0:03:31, Đầu tiên, đó là kết thúc cái quá trình encode, chúng ta sẽ bắt đầu đưa ra cái dự đoán cho cái từ tiếp theo.
+0:03:31 - 0:03:42, Rồi sau đó chúng ta mở rộng ra và chúng ta sẽ lan truyền cái thông tin đến cái... sau khi chúng ta đã dự đoán xong, chúng ta sẽ lan truyền thông tin đến cái query tiếp theo.
+0:03:42 - 0:03:56, Cứ như vậy, là lan truyền và mở rộng dần ra. Với việc dần dần mở rộng ra thì nó sẽ bị cái gì? Đó chính là tính tuần tự.
+0:03:56 - 0:04:08, Tính tuần tự thì nó vi phạm cái nguyên lý hoặc mong muốn của transformer là chúng ta đang muốn song song hóa càng nhiều càng tốt.
+0:04:08 - 0:04:12, Cái tính tuần tự này dẫn đến là không có song song được.
+0:04:14 - 0:04:16, Không thể song song hóa được.
+0:04:16 - 0:04:18, Không thể tính toán song song được.
+0:04:18 - 0:04:20, Vậy thì giải pháp là như thế nào?
+0:04:20 - 0:04:24, Chúng ta biết rằng là self-attention
+0:04:24 - 0:04:26, Sở dĩ có thể song song hóa được
+0:04:26 - 0:04:30, Đó là vì cái từ tại thời điểm hiện tại
+0:04:30 - 0:04:33, Có thể nhìn được những cái từ của tương lai
+0:04:33 - 0:04:35, Những cái từ ở đằng sau đó
+0:04:35 - 0:04:40, Vậy thì nó mới có thể tính toán song song được.
+0:04:40 - 0:04:50, Vậy thì bây giờ làm sao để việc tính toán của các layer, các trạng thái ẩn của các tầng của mình,
+0:04:50 - 0:04:52, nó vẫn thực hiện được một cách song song.
+0:04:52 - 0:04:54, Nó vẫn thực hiện được một cách song song.
+0:04:54 - 0:05:00, Đó chính là chúng ta sẽ sử dụng cơ chế Masked Multi-head Self-attention.
+0:05:00 - 0:05:09, Chúng ta sẽ che các attention từ phía sau bằng cách gán attention score của nó bằng trừ vô cùng.
+0:05:09 - 0:05:11, Vậy thì chúng ta sẽ có công thức ở đây.
+0:05:11 - 0:05:13, Chúng ta sẽ có ví dụ ở đây.
+0:05:13 - 0:05:17, Start, tức là bắt đầu quá trình decode.
+0:05:17 - 0:05:19, Do you understand?
+0:05:19 - 0:05:25, Thế thì tại vị trí Start, đây là quá trình decode.
+0:05:25 - 0:05:34, thì tại vị trí Start, chúng ta sẽ không được phép thấy từ Do, từ You, từ Understand.
+0:05:34 - 0:05:43, tại vì chúng ta đang cần phải predict, chúng ta cần predict, cần đoán ra, cần predict, cần dự đoán cái từ này.
+0:05:43 - 0:05:46, thì chúng ta không được thấy cái từ đáp án của nó.
+0:05:46 - 0:05:56, Rồi, đến cái quá trình mà decode cho cái từ do, thì chúng ta sẽ... ở đây chỗ này là màu trắng.
+0:05:56 - 0:06:02, Chỗ này là màu trắng, tức là chúng ta được phép thấy cái từ Start, chúng ta được phép thấy từ Start,
+0:06:02 - 0:06:06, nhưng không được phép thấy cái từ do và không được thấy từ you, understand.
+0:06:06 - 0:06:15, Trong quá trình mà decode cái từ do, chúng ta sẽ được thấy cái từ Start, được thấy cái từ do nhưng không được thấy từ you, understand.
+0:06:15 - 0:06:23, và trong quá trình mà decode từ understand chúng ta sẽ được thấy hết các từ Start, do, you nhưng không được thấy từ understand.
+0:06:23 - 0:06:28, thì đây chính là cái masked multi-head self-attention.
+0:06:28 - 0:06:32, và về công thức tính toán thì cũng rất là đơn giản.
+0:06:32 - 0:06:39, nếu như cái key, nếu như cái k_j của mình, j của mình mà bé hơn i,
+0:06:39 - 0:06:43, Tức là cái key của mình là những từ đã thấy,
+0:06:43 - 0:06:47, Đã thấy,
+0:06:47 - 0:06:52, Thì chúng ta sẽ giữ nguyên công thức attention score là q_i nhân k_j.
+0:06:52 - 0:06:55, Nhưng nếu j mà lớn hơn hoặc bằng i,
+0:06:55 - 0:06:57, Tức là tại vị trí thứ i trở đi,
+0:06:57 - 0:06:59, Thì chúng ta không được phép thấy,
+0:06:59 - 0:07:02, Chúng ta sẽ gán là trừ vô cùng.
+0:07:02 - 0:07:06, Và tại sao chúng ta lại gán với trừ vô cùng mà không phải cộng vô cùng?
+0:07:06 - 0:07:19, Đó là vì sau khi chúng ta chuẩn hóa nó, thì ở đây trừ vô cùng sẽ biến thành số 0 sau khi thực hiện hàm softmax.
+0:07:19 - 0:07:28, Trừ vô cùng của mình sẽ biến thành số 0. Tức là chúng ta sẽ không tổng hợp thông tin của từ thứ gì với gì nữa.
+0:07:28 - 0:07:32, Những từ nào mà từ nó trở về sau là không được tổng hợp thông tin.
+0:07:32 - 0:07:38, Vậy, giải pháp đó là sử dụng Multihead Self-Attention sẽ giúp chúng ta có thể song song hóa được quá trình tính toán
+0:07:38 - 0:07:46, một cách dễ dàng với GPU mà vẫn không vi phạm nguyên tắc là không được phép nhìn những cái từ của tương lai.
+0:07:46 - 0:07:58, Và tương tự như vậy, chúng ta cũng sẽ thực hiện cái decoder hoàn toàn giống với lại encoder.
+0:07:58 - 0:08:00, Đây chính là cái khác lớn nhất của mình.
+0:08:00 - 0:08:03, Nó còn một cái khác nữa trong slide tiếp theo.
+0:08:03 - 0:08:09, Sau khi chúng ta thực hiện cái masked multi-head attention,
+0:08:09 - 0:08:11, thì chúng ta sẽ thực hiện cái add và norm.
+0:08:11 - 0:08:12, Nó cũng giống như bên đây.
+0:08:12 - 0:08:14, Bên đây là multi-head attention.
+0:08:14 - 0:08:16, Ngay sau đó là add và norm.
+0:08:16 - 0:08:17, Ở đây cũng vậy.
+0:08:17 - 0:08:18, Add và norm.
+0:08:19 - 0:08:22, Bây giờ chúng ta sẽ có một cái khác nữa
+0:08:22 - 0:08:25, cũng khá là lớn trong cái bước gọi là decoder,
+0:08:25 - 0:08:27, đó chính là encoder-decoder attention.
+0:08:28 - 0:08:32, Và tên gọi tắt của nó là Cross-Attention.
+0:08:32 - 0:08:39, Cross là sự chuyển đổi giữa encoder và decoder.
+0:08:39 - 0:08:41, Ánh xạ giữa encode với decode.
+0:08:41 - 0:08:43, Thì nó gọi là Cross-Attention.
+0:08:43 - 0:08:48, Trong cơ chế attention, Query sẽ đến từ decoder.
+0:08:48 - 0:08:50, Query của mình sẽ đến từ decoder.
+0:08:50 - 0:08:53, Còn Key và Value, đây chính là Key và Value của mình.
+0:08:56 - 0:09:06, Và Key và Value của mình thì nó đến từ encoder, tức là S_i.
+0:09:06 - 0:09:19, Transformer cũng vậy, giả sử như chúng ta có S1, S2,..., S_T thuộc R^D, tức là cái output của encoder.
+0:09:19 - 0:09:21, Đây là output của encoder.
+0:09:21 - 0:09:23, Đây là encoder.
+0:09:23 - 0:09:27, Và h1, h2,..., h_T là input decoder.
+0:09:27 - 0:09:30, Tức là chúng ta sẽ có cái h_i ở đây.
+0:09:30 - 0:09:36, Đây là input cho quá trình decoder.
+0:09:36 - 0:09:39, input cho quá trình decoder.
+0:09:39 - 0:09:45, Khi đó thì các bộ Key, Value và Query của mình
+0:09:45 - 0:09:48, thì nó sẽ có công thức như sau.
+0:09:48 - 0:09:50, Query thì nó sẽ lấy từ h_i.
+0:09:50 - 0:09:52, đây là Query.
+0:09:56 - 0:09:58, xin lỗi, ở đây là chúng ta nhầm,
+0:09:58 - 0:10:00, đây là Query.
+0:10:00 - 0:10:02, Query của mình chứ không phải là
+0:10:04 - 0:10:06, Key.
+0:10:08 - 0:10:10, rồi, ở đây chính là
+0:10:10 - 0:10:12, Query.
+0:10:14 - 0:10:16, đây chính là Query, còn đây chính là Key và Value.
+0:10:16 - 0:10:26, Query này chúng ta sẽ đi truy vấn trong tập Key ở đây để từ đó chúng ta sẽ tổng hợp thông tin.
+0:10:26 - 0:10:28, Công thức ở đây là đúng rồi.
+0:10:28 - 0:10:34, Key của mình sẽ lấy từ S_e, S_e là đến từ encoder.
+0:10:34 - 0:10:38, Query là từ input decoder.
+0:10:38 - 0:10:46, Key và Value là từ encoder.
+0:10:46 - 0:10:52, Query là từ decoder.
+0:10:52 - 0:11:00, Bộ ba là Q, K, V.
+0:11:00 - 0:11:06, công thức cũng y chang là self-attention nhưng ở đây là cross-attention tức là
+0:11:06 - 0:11:14, key và value lấy từ phần output của encoder,
+0:11:14 - 0:11:20, query thì lấy từ input đầu vào của decoder.
+0:11:20 - 0:11:23, Tương tự như vậy, chúng ta cũng sẽ thực hiện add norm.
+0:11:23 - 0:11:29, Đây là một trick để giúp cho huấn luyện không có hiện tượng overfitting,
+0:11:29 - 0:11:33, cũng như là tránh được hiện tượng Vanishing Gradients.
+0:11:35 - 0:11:41, Cho đến bây giờ, chúng ta đã gần như hoàn thành decoder rồi.
+0:11:41 - 0:11:46, Hai sự khác biệt lớn nhất của decoder đó chính là
+0:11:46 - 0:11:52, Masked Multi-head attention và Cross-attention.
+0:11:52 - 0:11:53, Đó là hai cái lớn nhất.
+0:11:53 - 0:11:57, Ngoài ra trong output của decoder
+0:11:57 - 0:11:59, Chúng ta vẫn sử dụng embedding như bình thường,
+0:11:59 - 0:12:01, Và đây là position
+0:12:01 - 0:12:05, Positional embedding
+0:12:05 - 0:12:08, Như bình thường.
+0:12:08 - 0:12:15, Đó là chúng ta sẽ thêm Feedforward và add norm.
+0:12:15 - 0:12:24, Tất cả các bước self-attention ở đây bản chất chỉ là sự tổng hợp thông tin, một cách có trọng số thôi.
+0:12:24 - 0:12:32, Chưa thật sự biến đổi sang một thông tin mới, do đó chúng ta sẽ thêm feedforward và add norm ở đây.
+0:12:32 - 0:12:37, Do đó chúng ta sẽ thêm linear để chiếu từ không gian đặc trưng.
+0:12:37 - 0:12:41, Toàn bộ encoder và decoder này là không gian đặc trưng.
+0:12:41 - 0:12:46, Nó chưa phải là cái không gian Output của mình.
+0:12:46 - 0:12:51, Sang cái không gian Output của mình thì trong trường hợp này nó có thể là không gian từ điển.
+0:12:51 - 0:12:53, Nó có thể là không gian từ điển.
+0:12:53 - 0:12:56, Hoặc là cái keyword mà chúng ta cần trả về.
+0:12:56 - 0:13:02, Tại vì trong một số bài toán đó không phải là trả về một từ điển mà nó có thể là trả về cái nhãn từ loại.
+0:13:02 - 0:13:08, Tóm lại đó là nó chuyển từ không gian đặc trưng sang cái không gian Output.
+0:13:08 - 0:13:12, Cái không gian mà chúng ta cần phải trả kết quả về.
+0:13:12 - 0:13:20, Và cuối cùng, đó là chúng ta sẽ qua hàm Softmax để tính xác suất của từ tiếp theo mà mình dự đoán là gì.
+0:13:20 - 0:13:24, Chúng ta sẽ tính ra xác suất của từ tiếp theo.
+0:13:24 - 0:13:30, Rồi, thì đây chính là những bước cuối cùng của Decoder.

@@ -1,0 +1,156 @@
+0:00:00 - 0:00:08, Chúng ta sẽ cài đặt thuật toán Linear Regression.
+0:00:08 - 0:00:11, Chúng ta sẽ cài đặt bằng 3 phiên bản.
+0:00:11 - 0:00:18, Đó là chúng ta sẽ dùng tham số theta như là những biến rời rạc.
+0:00:18 - 0:00:20, Theta0, theta1 ở đây.
+0:00:20 - 0:00:36, Trong các phiên bản dạng vector hóa, chúng ta sẽ gom tất cả tham số theta 0, theta 1 vào chung một cái biến, đó là theta.
+0:00:36 - 0:00:42, Vì việc này sẽ giúp cho chương trình của mình nhìn gọn hơn.
+0:00:42 - 0:00:46, Và phiên bản số 3, đó là chúng ta sẽ sử dụng thư viện Keras.
+0:00:46 - 0:00:50, Thì cái phiên bản cài đặt sử dụng thư viện Keras
+0:00:50 - 0:00:56, sẽ giúp cho chúng ta tiết kiệm được rất nhiều công sức trong việc tính đạo hàm.
+0:00:56 - 0:01:02, Chúng ta sẽ không cần phải ngồi tính toán các giá trị đạo hàm một cách tường minh
+0:01:02 - 0:01:07, mà Keras sẽ tự tính toán và tự tính đạo hàm này cho chúng ta luôn.
+0:01:07 - 0:01:13, Đối với phiên bản tham số rời rạc, chúng ta sẽ cài đặt với phiên bản tham số rời rạc.
+0:01:13 - 0:01:26, Đối với phiên bản tham số rời rạc, chúng ta sẽ khởi tạo một đoạn code để tạo sinh ra dữ liệu mẫu.
+0:01:26 - 0:01:29, Chúng ta sẽ chạy thử đoạn code ở đây.
+0:01:29 - 0:01:39, Và như chúng ta thấy, thì ở đây là phương trình đường thẳng mà mình cho trước, đó là trừ 6x cộng 10
+0:01:39 - 0:01:49, Và để tăng thêm tính thật, tức là mình thêm một cái đại lượng nhiễu để cho các cái điểm của mình nó đừng có đi thẳng tắp,
+0:01:49 - 0:01:53, mà nó sẽ dao động xung quanh một cái đường thẳng của mình thôi
+0:01:53 - 0:01:58, thì ở đây chúng ta sẽ có thêm là cái noise là bằng random
+0:01:58 - 0:02:03, theo cái phân bố là normal với tâm, với cái mean là 0
+0:02:03 - 0:02:06, và độ lệch chuẩn của mình là 2
+0:02:06 - 0:02:12, x của mình là cái giá trị từ 1 cho đến 10
+0:02:12 - 0:02:14, với cái mức nhảy là 0.5
+0:02:14 - 0:02:22, Vì vậy, để tạo ra các dữ liệu gần với mô hình ở đây,
+0:02:22 - 0:02:33, chúng ta sẽ tạo ra một phương trình đường thẳng, ví dụ như y là 3x cộng cho 8,
+0:02:33 - 0:02:35, tức là một dạng hàm tuyến tính.
+0:02:35 - 0:02:38, Và điểm ở đây chúng ta sẽ mô phỏng bằng các điểm màu xanh,
+0:02:38 - 0:02:47, Chúng ta sẽ sửa lại chương trình này một chút xíu để các điểm mình generate ra ở đây nhìn giống 1 chút
+0:02:47 - 0:02:51, Đây sẽ là 3x cộng cho 8
+0:02:56 - 0:03:00, Các điểm ở đây là các điểm màu xanh rồi
+0:03:00 - 0:03:09, Chúng ta muốn cho dao động này nhìn có vẻ lớn hơn, thì chúng ta có thể để ở đây là Standard deviation bằng 5.
+0:03:10 - 0:03:18, Chúng ta thấy là cái độ rộng của nó và dao động của điểm x này nó lớn hơn so với Standard deviation bằng 5.
+0:03:18 - 0:03:38, Tiếp tục cài đặt huấn luyện, tham số rời rạc, tham số theta 0 và theta 1 là ngẫu nhiên
+0:03:38 - 0:03:51, Chúng ta sẽ hiện thực hóa chương trình theta 0 và ngẫu nhiên cho giá trị -123
+0:03:51 - 0:03:55, Theta 1 là 456
+0:03:55 - 0:04:02, Chúng ta có thể sử dụng hàm random, nhưng ở đây chúng ta sẽ gắn trực tiếp giá trị luôn để cho nó đơn giản
+0:04:02 - 0:04:09, Tiếp theo, chúng ta sẽ khởi tạo các giá trị alpha và epsilon.
+0:04:11 - 0:04:16, Thì giá trị alpha, thông thường là những giá trị bé.
+0:04:16 - 0:04:23, Chúng ta sẽ để alpha bằng 0.01 và epsilon là 0.001.
+0:04:23 - 0:04:36, Tiếp theo, chúng ta sẽ cài đặt vòng lặp và cập nhật tham số theta 0 dựa trên cái input này.
+0:04:36 - 0:04:43, Theta 0 là bằng theta 0 trừ alpha nhân cho đạo hàm của hàm loss theo theta 0.
+0:04:43 - 0:04:47, Đạo hàm của hàm loss theo Theta 0 được tính bởi cái công thức ở đây.
+0:04:47 - 0:04:55, Còn đạo hàm của hàm loss theo Theta 1 thì chúng ta sẽ có cái công thức ở đây.
+0:04:55 - 0:05:01, Ừ, rồi, ý nghĩa của cái công thức này đó là gì?
+0:05:01 - 0:05:15, Đạo hàm của hàm loss theo Theta 0 nó sẽ là bằng trung bình cộng của (giá trị dự đoán trừ giá trị thực tế).
+0:05:15 - 0:05:20, Trung bình cộng của giá trị dự đoán
+0:05:20 - 0:05:28, Trừ cho giá trị thực tế, đối với Theta 1 chúng ta sẽ có thêm 1 thành phần nhân với x ở đây nữa
+0:05:28 - 0:05:32, Khác công thức ở bên đây 1 chút xíu, đó là có cái thành phần này
+0:05:32 - 0:05:53, Chúng ta sẽ tiến hành cài đặt, tức là theta 0 bằng theta 0 trừ cho alpha nhân với lại trung bình cộng
+0:05:53 - 0:05:59, Bên này chúng ta thấy là trung bình cộng, thì nó sẽ là np.mean
+0:06:06 - 0:06:12, Và giá trị dự đoán, tức là x nhân với lại theta 1
+0:06:12 - 0:06:15, Cộng cho theta 0
+0:06:16 - 0:06:18, Trừ cho y
+0:06:19 - 0:06:21, Rồi, tương tự như vậy
+0:06:21 - 0:06:27, Theta 1 là bằng Theta 1 trừ cho alpha
+0:06:27 - 0:06:38, và ở đây khi chúng ta thực hiện bên trong hàm np.mean thì chúng ta phải có chú ý là chúng ta phải nhân thêm cái thành phần nữa là x ở đây
+0:06:38 - 0:06:57, sau đó, điều kiện dừng là nếu trị tuyệt đối của đạo hàm hàm loss theo theta 0 và trị tuyệt đối của đạo hàm hàm loss theo theta 1 mà bé hơn một ngưỡng, thì chúng ta sẽ dùng np.abs
+0:06:57 - 0:07:05, Trị tuyệt đối của đạo hàm thì chúng ta sẽ copy các giá trị mà chúng ta đã tính ở trên.
+0:07:05 - 0:07:17, Bé hơn epsilon, trị tuyệt đối, chúng ta sẽ copy tương tự tại đây.
+0:07:17 - 0:07:25, Bé hơn epsilon thì chúng ta sẽ break.
+0:07:25 - 0:07:31, Bây giờ mình sẽ tiến hành chạy thử chương trình này
+0:07:32 - 0:07:33, May quá không có lỗi
+0:07:34 - 0:07:39, Thế thì ở đây chúng ta sẽ xem coi theta không là bao nhiêu
+0:07:39 - 0:07:48, Chúng ta sẽ in ra là print theta không
+0:07:55 - 0:08:00, Theta 1
+0:08:00 - 0:08:07, Theta 0 là 7,7
+0:08:07 - 0:08:14, Nếu chúng ta so vào công thức gốc ở đây, chúng ta thấy là 7,7 gần với con số 8
+0:08:14 - 0:08:20, Theta 1 sẽ ra là 2,97
+0:08:20 - 0:08:23, Nó sẽ gần với con số 3
+0:08:23 - 0:08:28, Rõ ràng chúng ta thấy là trong thuật toán này, mình không thể sử dụng công thức tường minh
+0:08:28 - 0:08:33, của model y bằng 3x cộng 8
+0:08:33 - 0:08:37, Mọi thứ chỉ được tính toán dựa trên các điểm lấy mẫu
+0:08:37 - 0:08:39, Chúng ta không hề biết trước công thức này
+0:08:39 - 0:08:41, Nhưng sau khi huấn luyện xong
+0:08:41 - 0:08:43, thì các giá trị theta 0 và theta 1
+0:08:43 - 0:08:46, đều xấp xỉ với lại công thức
+0:08:46 - 0:08:48, mà chúng ta đã chọn ban đầu
+0:08:48 - 0:08:50, Bây giờ chúng ta sẽ đến bước thứ 3
+0:08:50 - 0:08:52, đó là chúng ta sẽ trực quan hóa mô hình này
+0:08:52 - 0:08:54, Để trực quan hóa mô hình này
+0:08:54 - 0:08:56, chúng ta chỉ việc copy
+0:08:56 - 0:08:58, đoạn code trên đây
+0:08:58 - 0:09:01, đồng thời chúng ta sẽ
+0:09:01 - 0:09:08, và vẽ thêm hàm mô hình dự đoán cho từng giá trị x
+0:09:08 - 0:09:13, đầu vào của mình sẽ là x
+0:09:13 - 0:09:23, giá trị dự đoán của mình sẽ là x nhân với theta 1 cộng cho theta 0
+0:09:23 - 0:09:33, Chúng ta sẽ không có tham số là 'o', tại vì ở dòng trên chúng ta đang vẽ dưới dạng điểm,
+0:09:33 - 0:09:39, còn ở bên dưới chúng ta đang muốn vẽ mô hình dưới dạng đường, chúng ta sẽ không có tham số này.
+0:09:39 - 0:09:50, Sau khi vẽ xong, chúng ta thấy là đường thẳng mô hình của mình đi xuyên qua đám mây điểm của dữ liệu mẫu.
+0:09:50 - 0:09:55, Điều đó cho thấy là cái mô hình của mình rất là khớp
+0:09:55 - 0:10:05, Rồi, bây giờ chúng ta sẽ tiến hành qua cái bước cài đặt tiếp theo, cái phiên bản cài đặt tiếp theo, đó chính là phiên bản vector hóa
+0:10:05 - 0:10:11, Thì trong cái phiên bản vector hóa này thì cái tham số theta của mình nó sẽ được khởi tạo ngẫu nhiên
+0:10:11 - 0:10:18, Và theta này bản chất nó chính là một cái bộ các cái giá trị theta 0 và theta 1
+0:10:18 - 0:10:28, Chúng ta sẽ có công thức trực tiếp cho tính đạo hàm của hàm loss theo theta ở đây.
+0:10:28 - 0:10:35, Chúng ta sẽ bình luận chương trình ở phía trên lại.
+0:10:35 - 0:10:50, Thay vì chúng ta tính, chúng ta để hai giá trị theta 0 và theta 1 là hai giá trị rời rạc, thì chúng ta sẽ gom nó lại thành một biến theta.
+0:10:50 - 0:10:59, Chúng ta lưu ý là, trong trường hợp này, theta của mình sẽ là một ma trận kích thước là 2x1.
+0:10:59 - 0:11:07, Khi khởi tạo ở đây, chúng ta sẽ để là np.array và chúng ta phải để nó là ma trận 2x1.
+0:11:07 - 0:11:12, Trong đó giá trị đầu tiên là 123 và giá trị tiếp theo sẽ là 456.
+0:11:12 - 0:11:16, Rồi, chúng ta sẽ bỏ 2 giá trị theta 0, theta 1 ở đây.
+0:11:16 - 0:11:27, Trong công thức cập nhật này, chúng ta cũng sẽ sửa lại theta bằng theta trừ cho alpha nhân
+0:11:27 - 0:11:33, Ở đây chúng ta sẽ là nhân với X chuyển vị, nhân cho (X nhân theta trừ y)
+0:11:33 - 0:11:41, Để thực hiện được cái này, chúng ta sẽ phải có thêm cái biến X, cái ma trận X
+0:11:41 - 0:11:52, X của mình sẽ là hàng đầu tiên sẽ là các giá trị 1 (cho bias)
+0:11:55 - 0:11:58, hàng ở dưới chính là các giá trị x
+0:12:04 - 0:12:10, và khi có X này rồi thì chúng ta mới có thể thực hiện được công thức tính đạo hàm ở đây
+0:12:10 - 0:12:16, Chúng ta sẽ dùng đạo hàm ở trong biến gradient, tương ứng là gradient
+0:12:16 - 0:12:21, Tại vì ở đây chúng ta tính đạo hàm theo một vector, chúng ta phải dùng từ là gradient
+0:12:21 - 0:12:26, Đạo hàm theo từng biến thì nó sẽ là derivative
+0:12:26 - 0:12:30, Còn đạo hàm theo vector thì chúng ta phải dùng là gradient
+0:12:30 - 0:12:35, Rồi, ở đây sẽ là nhân cái gradient và trong đó gradient thì sẽ được tính...
+0:12:35 - 0:12:39, Chúng ta sẽ có 1 cái ma trận X
+0:12:39 - 0:12:45, X sẽ là hàng đầu tiên, con số 1 là np.ones
+0:12:45 - 0:12:49, và số chiều của nó
+0:12:49 - 0:12:56, và số hàng sẽ là 1 và số cột sẽ tương ứng là số phần tử của mình
+0:12:56 - 0:13:01, thì mình có thể để là len của x
+0:13:01 - 0:13:09, thì mình có thể để là len của y, tức là số phần tử
+0:13:09 - 0:13:12, Rồi đây là cái hàng đầu tiên
+0:13:12 - 0:13:15, sang cái hàng thứ 2 đó chính là X
+0:13:15 - 0:13:20, nhưng mà lưu ý, X ở đây á, ban đầu á, nó là một vector
+0:13:20 - 0:13:25, chúng ta phải convert cái X này về cái dạng là ma trận
+0:13:25 - 0:13:29, có số hàng là 1 và số cột sẽ là số phần tử
+0:13:29 - 0:13:35, reshape số hàng là 1
+0:13:35 - 0:13:40, Số dòng, nếu muốn khai báo tường minh, để là len(y) cũng được
+0:13:40 - 0:13:45, Nếu mà nó hơi dài, thì ở đây mình có thêm một cái mẹo, đó là chúng ta sẽ để là -1
+0:13:45 - 0:13:53, Tức là chương trình sẽ tự tính số cột mình là bao nhiêu dựa trên số cột X ban đầu
+0:13:53 - 0:14:00, Chúng ta sẽ phải nối hai cái hàng này lại với nhau
+0:14:00 - 0:14:04, và chúng ta sẽ sử dụng thư viện np.concatenate
+0:14:08 - 0:14:13, Rồi, ở đây chúng ta sẽ hiện thực hóa công thức cho đạo hàm
+0:14:13 - 0:14:19, đó là 1 phần n, chúng ta sẽ là 1 chia cho len của y
+0:14:19 - 0:14:28, Rồi nhân với lại X, chúng ta sẽ nhân với lại thành phần đầu tiên đó chính là X chuyển vị
+0:14:28 - 0:14:37, Rồi thành phần thứ 2 sẽ là một cái kết quả (X nhân theta trừ y).
+0:14:37 - 0:14:42, Thì bên trong này đó sẽ là, là nó ý là X ở đây chúng ta sẽ dùng .dot
+0:15:18 - 0:15:22, Rồi, và chúng ta sẽ tính ở đây
+0:15:22 - 0:15:27, Sau khi tính xong thì chúng ta sẽ phải tính lại đạo hàm này thêm một lần nữa
+0:15:27 - 0:15:30, Sẽ tính lại đạo hàm này thêm một lần nữa
+0:15:30 - 0:15:35, Và để lấy phần tử đầu tiên thì sẽ là gradient[0]
+0:15:35 - 0:15:38, 0
+0:15:38 - 0:15:43, Thành phần thứ 2 sẽ là gradient[1]
+0:15:58 - 0:16:01, Ở đây thì có cái lỗi, ở đây chúng ta sẽ có cái lỗi
+0:16:01 - 0:16:06, đó là chỉ có lỗi Only integer scalar can be converted to scalar index
+0:16:06 - 0:16:16, Khi có lỗi xảy ra, mình sẽ thử in ra các giá trị để xem có đúng ý đồ của mình hay không
+0:16:16 - 0:16:22, Đầu tiên, đoạn code này sẽ phải gói lại
+0:16:22 - 0:16:47, Chúng ta sẽ gói hàng số 1 với X và gói lại trong một cái bộ tuple.
+0:16:47 - 0:16:50, sau đó chúng ta mới truyền vào bên trong của np.concatenate
+0:16:52 - 0:16:54, Ok, đã chạy được rồi
+0:16:54 - 0:16:56, Bây giờ chúng ta sẽ cùng kiểm tra xem
+0:16:57 - 0:16:59, cái giá trị theta của mình
+0:16:59 - 0:17:01, sau khi chạy xong, nó có giá trị là bao nhiêu?
+0:17:03 - 0:17:08, Nếu chúng ta so với lại giá trị đạt được ở trên trước đây
+0:17:08 - 0:17:10, thì chúng ta thấy giá trị nó giống nhau
+0:17:10 - 0:17:12, theta 0 là 7,7
+0:17:12 - 0:17:14, và theta 1 là bằng 2,9
+0:17:14 - 0:17:16, 7,7, 2,9
+0:17:16 - 0:17:22, Vì vậy là nó rất khớp với cách cài đặt sử dụng tham số rời rạc
+0:17:22 - 0:17:25, Và tương tự như vậy thì chúng ta cũng sẽ trực quan hóa
+0:17:25 - 0:17:31, và không khác biệt nếu như kết quả nó ra giống như là cái mô hình ở đây

@@ -1,0 +1,153 @@
+0:00:00 - 0:00:05, Tiếp theo, chúng ta sẽ tiến hành cài đặt mô hình Softmax Regression.
+0:00:05 - 0:00:13, Đối với mô hình Softmax Regression, chúng ta phải phân lớp với số phân lớp lớn hơn 2.
+0:00:13 - 0:00:18, Trong trường hợp này, số phân lớp của mình chọn đó chính là bằng 4.
+0:00:18 - 0:00:26, Và ở đây thì chúng ta sẽ có một cái mô hình dưới dạng là đồ thị của Softmax Regression
+0:00:26 - 0:00:30, thì cũng tương tự như hai mô hình Linear Regression và Logistic Regression
+0:00:30 - 0:00:32, chúng ta sẽ có cái lớp Input
+0:00:32 - 0:00:34, trong đó thì cái lớp Input
+0:00:34 - 0:00:39, nó sẽ bao gồm hai cái feature là X1, X2
+0:00:39 - 0:00:42, và kèm theo một cái thành phần là Bias
+0:00:42 - 0:00:46, và cái lớp Output của mình thì nhìn có vẻ lớn
+0:00:46 - 0:00:53, Nhìn có vẻ lớn nhưng thực ra ở đây chúng ta chỉ có duy nhất một lớp, gọi là lớp Fully Connected
+0:00:53 - 0:00:57, Và cái Softmax này nó chính là cái activation của mình
+0:00:57 - 0:01:00, Đó chính là cái hàm activation
+0:01:00 - 0:01:07, Và Dense ở đây thì nó sẽ khác so với Linear Regression và Logistic Regression
+0:01:07 - 0:01:11, là output của nó là nó đầu ra có đến K cái output
+0:01:11 - 0:01:15, Nó sẽ K output, trong trường hợp này K của mình chính là bằng 4
+0:01:15 - 0:01:23, Tiếp theo, chúng ta sẽ tiến hành cài đặt mô hình Softmax Activation.
+0:01:23 - 0:01:29, Đầu tiên, chúng ta sẽ tiến hành tạo dữ liệu.
+0:01:29 - 0:01:35, Chúng ta sẽ có trước đoạn code để tạo dữ liệu.
+0:01:35 - 0:01:43, Ý tưởng tạo dữ liệu, chúng ta sẽ dựa trên một số điểm tâm S1
+0:01:43 - 0:01:46, có tọa độ là 10-2
+0:01:46 - 0:01:49, S2 có tọa độ là 2-8
+0:01:49 - 0:01:53, S3 có tọa độ là 12-8
+0:01:53 - 0:01:56, S4 có tọa độ là 2-0
+0:01:56 - 0:02:00, Và với mỗi tâm này, nó sẽ tương ứng với lại một phần lớp
+0:02:00 - 0:02:07, Và với mỗi tâm, ví dụ S1, chúng ta sẽ xây dựng các điểm xoay xung quanh tâm này
+0:02:07 - 0:02:12, Với noise của mình đó là mean của mình là 0
+0:02:12 - 0:02:14, Độ lệch chuẩn sẽ là 1,5
+0:02:14 - 0:02:17, và số mẫu của mình sẽ là 50 cho mỗi class.
+0:02:18 - 0:02:25, Rồi, sau đó thì chúng ta gom toàn bộ các cái điểm PT1, PT2, PT3 và PT4
+0:02:25 - 0:02:31, để tạo thành cái feature đầu vào X, và nhãn Y.
+0:02:31 - 0:02:36, Thì nó tương ứng chính là các cái nhãn 0, 1, 2, 3.
+0:02:36 - 0:02:41, Và với mỗi cái giá trị 0 này thì chúng ta sẽ nhân với Nsample,
+0:02:41 - 0:02:52, 50 giá trị 0 cho class số 1, 50 giá trị 1 cho class số 2, 50 giá trị 2, 50 giá trị 3 cho class số 3-4.
+0:02:52 - 0:03:00, Để sử dụng được độ đo về hàm loss như cross-entropy,
+0:03:00 - 0:03:06, thì Y của mình ban đầu ở dạng nhãn sẽ được chuyển về dạng one-hot encoding.
+0:03:06 - 0:03:11, chúng ta sẽ sử dụng cái hàm sau để đưa nó về cái dạng One-Hot Encoding.
+0:03:11 - 0:03:13, One-Hot Encoding có nghĩa là sao?
+0:03:13 - 0:03:20, Tức là, ví dụ như cái nhãn của mình là 0, thì khi đưa về One-Hot Encoding,
+0:03:20 - 0:03:27, nó sẽ có cái dạng như sau, đó là 1000, nữa.
+0:03:27 - 0:03:36, Điều như cái nhãn của mình đó là 2, thì nó sẽ đưa về cái dạng One-Hot Encoding đó là 0010.
+0:03:38 - 0:03:40, Thì đây là One-Hot Encoding.
+0:03:43 - 0:03:45, Rồi, và chúng ta sẽ chạy lại cái đoạn code trên.
+0:03:46 - 0:03:51, Rồi, tương tự như vậy thì mỗi một cái điểm nó sẽ có một cái màu.
+0:03:51 - 0:04:04, Vì ứng với nguồn, có vài điểm hơi giao thoa, nhưng không ảnh hưởng nhiều đến việc huấn luyện.
+0:04:04 - 0:04:16, Ở phần cài đặt cho thuật toán thì chúng ta sẽ sử dụng bộ phương thức tương tự như
+0:04:16 - 0:04:23, Linear Regression và Logistic Regression. Chúng ta sẽ chủ yếu cài đặt cho hai phương thức
+0:04:23 - 0:04:31, đó là Build và Train. Đối với Build, đầu vào của mình sẽ có input dimension, input dimension
+0:04:31 - 0:04:41, Và cho Softmax Regression, chúng ta sẽ phải có thêm một tham số nữa, đó là tham số Output Dimension.
+0:04:41 - 0:04:46, Hay nói cách khác đó chính là tham số K của mình.
+0:04:46 - 0:04:53, Vậy thì ở đây, chúng ta sẽ tiến hành bổ sung thêm một tham số nữa đó là Output Dimension.
+0:04:53 - 0:05:19, và tương tự, chúng ta sẽ có input là bằng input, shape là bằng input, tên của mình sẽ là input name, đó là một character
+0:05:19 - 0:05:30, Về phần output, nó chỉ là kết quả của một phép biến đổi kết nối đầy đủ là Dense
+0:05:30 - 0:05:36, và đầu ra của mình bình thường mình để nó 1, thì bây giờ đầu ra của mình chính là Output
+0:05:36 - 0:05:38, Output dimension
+0:05:38 - 0:05:47, Activation, thì mình sẽ phải để hàm đó là Softmax
+0:05:47 - 0:05:55, Use Bias thì chúng ta sẽ để là bằng True
+0:05:55 - 0:06:06, Và ở đây là chúng ta mới chỉ khởi tạo cho cái lớp biến đổi, chúng ta sẽ phải truyền đầu vào cho nó chính là đối tượng tên là Input
+0:06:06 - 0:06:20, Bây giờ chúng ta sẽ đóng gói Input và Output lại vào một đối tượng tên Model và chúng ta sẽ trả về self.model.
+0:06:20 - 0:06:24, Và hàm này thì chúng ta sẽ không trả về kết quả gì hết.
+0:06:24 - 0:06:30, Rồi đối với phương thức train thì chúng ta cũng sẽ có số epoch.
+0:06:30 - 0:06:42, Bởi vì mô hình phức tạp hơn, số epoch có thể cho số lớn hơn như 1000 epoch.
+0:06:42 - 0:06:55, Tương tự như vậy, optimizer sẽ là bằng tf.keras.optimizers.
+0:06:55 - 0:07:00, Chúng ta sẽ sử dụng Stochastic Gradient Descent.
+0:07:00 - 0:07:04, Tuy nhiên, nếu chúng ta muốn thì chúng ta cũng có thể sử dụng Adam, nó sẽ nhanh hơn.
+0:07:04 - 0:07:10, Rồi, Learning Rate là bằng 0.01.
+0:07:14 - 0:07:24, Bây giờ chúng ta sẽ self.model.compile để tích hợp cái optimizer này vào.
+0:07:25 - 0:07:34, Chúng ta sẽ cần phải khai báo hàm loss
+0:07:34 - 0:07:54, Trước trước, chúng ta sử dụng mse, chúng ta sẽ sử dụng Categorical Cross-Entropy
+0:07:54 - 0:08:06, Và để train thì chúng ta sẽ để là self.model.fit(X_train, Y_train)
+0:08:06 - 0:08:13, Rồi số epoch thì chúng ta sẽ để là epochs và num_epochs
+0:08:18 - 0:08:21, Rồi, như vậy là chúng ta đã cài đặt xong
+0:08:21 - 0:08:24, lớp đối tượng là Softmax Regression
+0:08:24 - 0:08:29, Tương tự như vậy thì chúng ta sẽ tiến hành khởi tạo, build và train mô hình
+0:08:29 - 0:08:36, Khởi tạo thì chúng ta sẽ có Softmax Regression
+0:08:36 - 0:08:39, Rồi, không có tham số
+0:08:42 - 0:08:47, Rồi, chúng ta sẽ gọi hàm build.build
+0:08:47 - 0:08:52, Lưu ý là ở đây chúng ta sẽ có hai tham số đầu vào là input_dimension và output_dimension
+0:08:52 - 0:08:58, Do đó thì input_dimension thì chúng ta sẽ có hai là do cái điểm trong không gian 2 chiều
+0:08:58 - 0:09:04, Output của mình thì ở trên đây số dữ liệu của mình đó là 4, K là 4, đúng không?
+0:09:04 - 0:09:10, Như vậy thì chúng ta sẽ truyền vào, đây chính là K, K trong trường hợp này là 4
+0:09:10 - 0:09:14, Rồi, và chúng ta sẽ xem thử cái model này
+0:09:14 - 0:09:20, nó sẽ có cấu hình như mình mong muốn chưa
+0:09:20 - 0:09:25, input dimension là input của mình là một vector 2 chiều
+0:09:25 - 0:09:28, và số tham số bằng 0
+0:09:28 - 0:09:31, và output của mình sẽ là lớp Dense
+0:09:31 - 0:09:34, với output neurons của mình chính là 4
+0:09:34 - 0:09:37, và số tham số của mình sẽ là 12
+0:09:37 - 0:09:39, thì tại sao lại là 12?
+0:09:39 - 0:09:44, 12 là bằng 2 cộng 1, tức là thêm phần bias.
+0:09:45 - 0:09:52, Đầu vào của mình sẽ có input của mình là 1 là bias và X1 X2.
+0:09:52 - 0:09:56, Như vậy tổng tổng của mình là có 3 cái đầu vào.
+0:09:56 - 0:09:59, Đầu ra của mình thì K trong trường hợp này K là bằng 4.
+0:09:59 - 0:10:03, Như vậy là 3 nhân 4 chính là 12 tham số.
+0:10:05 - 0:10:07, Rồi, tổng số tham số là 12.
+0:10:07 - 0:10:11, Bây giờ mình sẽ tiến hành train mô hình này
+0:01:11 - 0:10:17, Soft.train với X
+0:10:17 - 0:10:19, Lưu ý ở đây là Y_train
+0:10:19 - 0:10:23, Nhưng mà Y thì chúng ta sẽ phải lấy là Y_OneHot
+0:10:27 - 0:10:29, Ở đây dữ liệu là X
+0:10:29 - 0:10:32, Chúng ta sẽ lấy X và Y_OneHot
+0:10:32 - 0:10:38, Rồi, X về Y_one_hot.
+0:10:41 - 0:10:46, Rồi, chúng ta cũng quan sát loss và thấy là loss ban đầu là khá là lớn.
+0:10:46 - 0:10:51, Sau đó thì, loss bắt đầu sẽ là A, sau đó thì có xu hướng giảm dần.
+0:10:51 - 0:10:55, Là còn 2, rồi 1, 0.1.
+0:10:55 - 0:11:06, Và do số lượng dữ liệu cũng nhiều và mô hình có nhiều tham số hơn một chút,
+0:11:06 - 0:11:12, nên chúng ta sẽ thấy mô hình của mình train sẽ lâu hơn.
+0:11:25 - 0:11:35, Để trực quan hóa mô hình này của mình, chúng ta sẽ thấy là cái Loss của mình đã giảm xuống 0.05.
+0:11:35 - 0:11:45, Và để trực quan hóa thì cái cách thức để trực quan hóa cái mô hình này của mình,
+0:11:45 - 0:11:58, và để trực quan hóa, cách thức để trực quan hóa mô hình này là lấy một cái lưới,
+0:11:58 - 0:12:00, Lấy một cái lưới
+0:12:02 - 0:12:11, Ví dụ chúng ta sẽ có giá trị X1 là từ X1 min cho đến X1 max
+0:12:13 - 0:12:19, Rồi X2 thì sẽ có là X2 min cho đến X2 max
+0:12:21 - 0:12:25, Và chúng ta sẽ lấy lưới, tức là chúng ta sẽ lấy chi lưới
+0:12:25 - 0:12:40, Cứ mỗi điểm trên cái lưới này, chúng ta sẽ gọi hàm mô hình của mình để xem nó sẽ được xếp vào điểm màu xanh lá, xanh dương, màu vàng, hay là màu đỏ.
+0:12:40 - 0:12:52, Để có thể trực quan hóa được thì ở đây chúng ta sẽ để Softmax Regression
+0:12:52 - 0:13:00, Và chúng ta sẽ gọi cái hàm predict để đưa ra cái Y
+0:13:00 - 0:13:05, Trong đó cái X_test của mình là lấy các giá trị từ X và Y
+0:01:05 - 0:13:11, trong đó XX và YY sẽ lấy trên một cái lưới
+0:13:11 - 0:13:15, với X sẽ lấy từ 8 cho đến 17
+0:13:15 - 0:13:18, thực ra cái này phải đúng là X1
+0:13:18 - 0:13:21, rồi, cái này sẽ là X2
+0:13:21 - 0:13:23, rồi
+0:13:23 - 0:13:27, X1, X2
+0:13:27 - 0:13:29, rồi thì chúng ta sẽ có
+0:13:29 - 0:13:34, XX1 và XX2
+0:13:34 - 0:13:38, X_grid và Y_grid
+0:13:42 - 0:13:48, Chúng ta sẽ truyền các giá trị X1, X2, X3
+0:13:52 - 0:13:56, Len của X, X1, X, X1
+0:13:56 - 0:14:18, Rồi, chúng ta thấy là một cái lưới khá lớn, ở đây nó sẽ chạy từ trừ 8 cho đến 17, và X2 sẽ cũng chạy từ trừ 8 cho đến 17, và chúng ta sẽ có một lưới các cái điểm.
+0:14:18 - 0:14:24, Với mỗi điểm này, chúng ta sẽ chạy hàm Softmax Regression.predict.
+0:14:24 - 0:14:26, Sau đó sẽ ra được cái Y.
+0:14:27 - 0:14:33, Từ cái Y này, chúng ta sẽ biết được cái nhãn tương ứng của nó là gì.
+0:14:33 - 0:14:36, Chúng ta sẽ gọi qua hàm np.argmax.
+0:14:36 - 0:14:39, Tại vì cái Output của mình sẽ ra là một vector.
+0:14:40 - 0:14:42, Output sẽ ra một vector 4 chiều.
+0:14:42 - 0:14:44, Mình sẽ lấy thành phần Max.
+0:14:44 - 0:14:49, Tương ứng với thành phần Maximum, sẽ có được chỉ số để gọi vô hàm color.
+0:14:49 - 0:14:57, Color ở đây thì chúng ta đã thiết lập sẵn các cái giá trị, các cái hiệu về màu sắc và cái gì.
+0:14:57 - 0:15:09, Rồi, thì chúng ta thấy là cái Softmax Regression cũng đã phân ra các tập màu xanh dương, xanh lá, màu vàng và màu đỏ thành các cái vùng khá là phù hợp.
+0:15:09 - 0:15:21, Vì vậy, trong bài Softmax Regression này, chúng ta đã tiến hành cài đặt mô hình sử dụng thư viện Keras.
+0:15:21 - 0:15:31, Thư viện của Softmax Regression cũng tương tự như thư viện của Linear Regression và Logistic Regression.
+0:15:31 - 0:15:37, Nó cũng chỉ có một input đầu vào và một output đầu ra là kết quả phép biến đổi fully connected.
+0:15:37 - 0:15:41, Điểm khác là phải sử dụng hàm Activation là Softmax.
+0:15:41 - 0:15:44, Output dimension bình thường là 1,
+0:15:44 - 0:15:46, số lớp lớn hơn 2,
+0:15:46 - 0:15:49, giờ ta sẽ phải có Output dimension ở đây.
+0:15:49 - 0:15:56, Loss sẽ sử dụng Categorical Cross-Entropy.
+0:15:58 - 0:16:02, Điểm thú vị khác là trong trực quan hóa,
+0:16:02 - 0:16:07, chúng ta sẽ phải lấy grid và ứng với từng cái điểm trong cái grid, trong cái lưới này
+0:16:07 - 0:16:10, thì chúng ta sẽ gọi cái hàm predict
+0:16:10 - 0:16:15, rồi từ cái giá trị output Y này thì chúng ta sẽ suy ra được cái nhãn
+0:16:15 - 0:16:18, cái màu sắc và cái ký hiệu tương ứng để vẽ lên.

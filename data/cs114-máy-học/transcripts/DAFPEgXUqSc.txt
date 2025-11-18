@@ -1,0 +1,181 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:33, User-User Collaborative Filtering
+0:00:33 - 0:00:35, Ví dụ như chúng ta muốn gợi ý
+0:00:35 - 0:00:37, danh sách mua sắm cho người A
+0:00:37 - 0:00:39, của người A
+0:00:39 - 0:00:41, cho người B
+0:00:41 - 0:00:43, thì chúng ta thấy rằng là người A và người B
+0:00:43 - 0:00:46, có sở thích giống nhau
+0:00:46 - 0:00:48, thì nếu A thích
+0:00:48 - 0:00:50, thì B có lẽ cũng thích
+0:00:50 - 0:00:52, thì ý tưởng của nó là như vậy
+0:00:52 - 0:00:55, tức là nếu chúng ta tìm thấy được A và B
+0:00:55 - 0:00:57, là đều cùng mua
+0:00:57 - 0:01:00, đều cùng mua các sản phẩm này
+0:01:00 - 0:01:02, đều cùng mua các sản phẩm này
+0:01:02 - 0:01:05, tức là chúng ta đang giả định rằng là A và B có sở thức giống nhau
+0:01:05 - 0:01:07, A và B giống nhau
+0:01:07 - 0:01:11, thế thì nếu user A
+0:01:11 - 0:01:14, mà họ mua thêm 1 sản phẩm mới
+0:01:14 - 0:01:16, là sản phẩm này
+0:01:16 - 0:01:20, thì người ta sẽ khuyến nghị cho user B
+0:01:20 - 0:01:22, cũng sẽ mua sản phẩm này
+0:01:22 - 0:01:24, thì ở đây là By
+0:01:24 - 0:01:25, bai
+0:01:27 - 0:01:28, còn ở đây là recommend
+0:01:33 - 0:01:36, ta sẽ lấy cái sản phẩm này để đi recommend cho người bên
+0:01:38 - 0:01:40, thì quy trình tổng quát đó là
+0:01:40 - 0:01:43, với cái người dùng x
+0:01:43 - 0:01:46, thì chúng ta sẽ có một tập các sở thích
+0:01:46 - 0:01:49, tập sở thích này nó sẽ dựa trên
+0:01:49 - 0:01:53, những lịch sử mua hàng hoặc là rating của người dùng
+0:01:53 - 0:02:01, và chúng ta sẽ đem tập sở thích này để đi so sánh với những sở thích của người khác
+0:02:01 - 0:02:06, thì chúng ta tìm ra được nhóm n người có sở thích tương tự
+0:02:06 - 0:02:07, ví dụ như nhóm n
+0:02:12 - 0:02:16, nhóm n này là chúng ta có các sản phẩm này
+0:02:16 - 0:02:20, và sản phẩm này tương tự với sở thích của người dùng x
+0:02:20 - 0:02:29, Thế thì nếu như chúng ta sẽ từ sở thích của nhóm n này
+0:02:29 - 0:02:31, hệ thống sẽ gợi ý cho người dùng x
+0:02:31 - 0:02:34, tức là từ database chúng ta biết được rằng là nhóm n này
+0:02:34 - 0:02:38, có những sở thích riêng là 2 cái sản phẩm này
+0:02:38 - 0:02:42, thì chúng ta sẽ đem 2 cái sản phẩm này để đi gợi ý
+0:02:42 - 0:02:45, để đi gợi ý cho người dùng x
+0:02:45 - 0:02:48, thì đó chính là quy trình tổng quát
+0:02:48 - 0:02:56, và ý tưởng của thuộc toán đầu tiên là neighborhood based collaborative filtering
+0:02:56 - 0:03:01, chúng ta sẽ dựa trên các độ đo, ví dụ như là độ đo Jacka Similarity
+0:03:01 - 0:03:04, để so sánh tập item được đem ra để đánh giá
+0:03:04 - 0:03:11, thì vấn đề là với Jacka Similarity thì nó lại đi bỏ qua các giá trị rating
+0:03:11 - 0:03:23, Cosine Similarity là độ đo tính góc giữa vector đánh giá của 2 người RX và RY
+0:03:23 - 0:03:29, Vấn đề đó là coi cho chỗ thiếu của dư liệu như là giá trị là bằng 0
+0:03:29 - 0:03:34, những cái vùng, ví dụ như là cái item user và item
+0:03:38 - 0:03:42, những cái user và item mà không có được đánh giá
+0:03:42 - 0:03:43, tức là chưa có trong cái lịch sử
+0:03:44 - 0:03:47, chưa được đánh giá thì nó sẽ cho cái giá trị là bằng 0
+0:03:48 - 0:03:50, thì cái chỗ này có thể là một cái bến đề của
+0:03:50 - 0:03:54, của cái phương pháp tính cosine similarity
+0:03:54 - 0:03:56, thì similarity của a và
+0:03:56 - 0:04:00, của x và y thì nó sẽ được tính là bằng rx nhân ri
+0:04:00 - 0:04:03, chia cho norm của rx và norm của ri
+0:04:03 - 0:04:07, và cái độ đau cuối cùng đó là Pearson correlation
+0:04:07 - 0:04:09, thì chúng ta chỉ tính trên
+0:04:09 - 0:04:12, các cái item mà cả hai cùng đánh giá
+0:04:12 - 0:04:16, chỉ tính trên các cái item mà cả hai cùng đánh giá
+0:04:20 - 0:04:24, như vậy thì đối với những cái item mà chưa có được đánh giá
+0:04:24 - 0:04:27, thì nó sẽ bỏ qua và nó sẽ không xem xét
+0:04:27 - 0:04:31, thì đây là cái cách tính mà có vẻ là hợp lý nhất
+0:04:31 - 0:04:35, thế thì bây giờ chúng ta sẽ cùng lấy một cái ví dụ
+0:04:35 - 0:04:39, đó là cái ma trận tương đồng giữa user và item
+0:04:39 - 0:04:43, thì ví dụ như ở hàng, trên cái cọc hàng này
+0:04:43 - 0:04:46, thì đây tính là cái danh sách các user
+0:04:46 - 0:04:51, còn ở cái cọc này thì nó sẽ là các cái item
+0:04:51 - 0:04:58, Rồi, thì ở đây những cái chỗ đề trống đó là những cái mà chúng ta chưa có dữ liệu tương tác
+0:04:58 - 0:05:03, Vì nó chưa có dữ liệu nên nếu mình sử dụng các độ đo như là Jackar
+0:05:03 - 0:05:08, mình xem nó như là con số 0 thì rõ ràng là cái phương pháp này nó không có ổn
+0:05:08 - 0:05:12, tại vì nó không có dữ liệu thì không có nghĩa là nó bằng 0
+0:05:12 - 0:05:23, với độ đo trắc ca thì user similarity giữa A và B là bằng 1 phần 5
+0:05:23 - 0:05:26, và similarity giữa A và C là bằng 2 phần 4
+0:05:26 - 0:05:30, thì chi tiết cách tính của nó như thế nào chúng ta sẽ xem trong slide tiếp theo
+0:05:30 - 0:05:32, thì cách này có vẻ là không hợp lý
+0:05:32 - 0:05:55, Các tính về cosign similarity cũng tương tự như vậy, nó gần đúng hơn ở chỗ đó là nếu mà về mặt trực giác thì chúng ta thấy user A đánh giá item số x1 là 4
+0:05:55 - 0:05:59, user B đánh giá item x1 là 5
+0:05:59 - 0:06:04, thì trong khi đó đối với sản phẩm x4
+0:06:04 - 0:06:08, thì A và C có cái quan điểm trái nhau
+0:06:08 - 0:06:11, A thì đánh giá rất là cao, C đánh giá thấp
+0:06:11 - 0:06:14, rồi sản phẩm x5 thì A đánh giá thấp
+0:06:14 - 0:06:16, C là cao
+0:06:16 - 0:06:18, thì rõ ràng chúng ta thấy là A và C
+0:06:18 - 0:06:21, nó sẽ không có tương đồng bằng A và B
+0:06:21 - 0:06:23, tại vì A và B có cái điểm giống nhau đó là
+0:06:23 - 0:06:26, Cả hai đều cùng đánh giá cao cái X1
+0:06:26 - 0:06:29, Còn các sản phẩm kia là nó không có thông tin nên nó phải bỏ qua
+0:06:29 - 0:06:33, Thì không có thông tin thì chúng ta không nên xem xét
+0:06:33 - 0:06:35, Không có thông tin chúng ta không nên xem xét
+0:06:35 - 0:06:37, Như vậy nếu mà xét về mặt trực giác
+0:06:37 - 0:06:40, Thì user A có vẻ sẽ giống user B hơn
+0:06:40 - 0:06:43, User A sẽ giống user B hơn
+0:06:43 - 0:06:47, Mặc dù với cái cách tính cosine similarity là 0.38
+0:06:47 - 0:06:50, lớn hơn 0.32 tức là kết luận rằng A với B
+0:06:50 - 0:06:55, A gần B hơn, A giống B hơn so với giống C thì cũng đúng
+0:06:55 - 0:06:57, nhưng mà nó chỉ là gần đúng hơn thôi
+0:06:57 - 0:06:59, Còn cái cách tính Pearson
+0:06:59 - 0:07:02, thì chúng ta sẽ thấy là nó sẽ hợp lý nhất
+0:07:02 - 0:07:06, tại vì cái giá trị của nó là khác biệt nhiều nhất
+0:07:06 - 0:07:10, do đó thì giải pháp Pearson correlation sẽ là
+0:07:10 - 0:07:14, sự lý tốt hơn cái bấn đề về dữ liệu bị thiếu hoặc là thiên lạc để trung bình
+0:07:14 - 0:07:18, dữ liệu bị thiếu có nghĩa là những tình huống này
+0:07:18 - 0:07:20, hoặc là tính hút này
+0:07:20 - 0:07:22, thì là dữ liệu bị thiếu
+0:07:22 - 0:07:24, như vậy thì
+0:07:24 - 0:07:26, chúng ta sẽ xem chi tiết cách tính cho
+0:07:26 - 0:07:28, từng cây độ đo
+0:07:28 - 0:07:30, đối với cây độ đo Chaka
+0:07:30 - 0:07:32, thì nó sẽ
+0:07:32 - 0:07:34, lấy tập Ray của A
+0:07:34 - 0:07:36, là bao gồm là
+0:07:36 - 0:07:38, 1,4 và 5
+0:07:38 - 0:07:40, Ray của B sẽ là
+0:07:44 - 0:07:46, Ray của B đó là
+0:07:46 - 0:07:57, 1,4 và 5 là chỉ số của item
+0:07:57 - 0:08:01, Rate của b đó là chỉ số 1,2 và 3
+0:08:01 - 0:08:04, Rate của c đó là 4,5 và 6
+0:08:04 - 0:08:06, tức là tương ứng là các sản phẩm này
+0:08:06 - 0:08:19, similarity giữa A và B đó là 1,4,5 và 1,2,3
+0:08:19 - 0:08:24, thì nó sẽ là bằng phần giao của hai cái này
+0:08:24 - 0:08:28, giao của hai thằng này sẽ là bằng 1,1 phần tử
+0:08:28 - 0:08:32, và phần hợp của nó sẽ là 1,2,3,4,5 tức là 5 phần tử
+0:08:32 - 0:08:40, Với cách tính của Chaka, nó sẽ không xem xét đến giá trị rating
+0:08:40 - 0:08:47, nó không xem xét giá trị rating
+0:08:47 - 0:08:53, mà nó chỉ xem xét là có rate hay không thôi
+0:08:53 - 0:08:57, ví dụ chúng ta thấy là rõ ràng ở đây cái x5
+0:08:57 - 0:09:00, cái item số 5 này
+0:09:00 - 0:09:02, thì nó được ray là bằng
+0:09:03 - 0:09:05, bằng 1, tức là đánh giá rất là thấp
+0:09:05 - 0:09:09, nhưng mà nó vẫn xem xét vô đây là ray qua
+0:09:09 - 0:09:12, chứ còn nó không xem xét là 1 và 4 là cao
+0:09:12 - 0:09:15, và 5 là thấp, nó chỉ có xem xét là có
+0:09:15 - 0:09:17, đánh giá hay không thôi, thì cái cách
+0:09:17 - 0:09:22, cái phương pháp chakka này thì nó sẽ không có ổn ở chỗ đó
+0:09:22 - 0:09:32, Còn đối với similarity, co-size similarity thì nó xem những cái item mà chưa được đánh giá là 0
+0:09:32 - 0:09:44, Do đó thì cái Ray của A sẽ là bằng 4005100 thì rõ ràng là các cái con số 0 này nó không phản ánh đúng
+0:09:44 - 0:09:54, tức là người ta không đánh giá thì không có nghĩa là nó là điểm thấp
+0:09:54 - 0:10:04, thì ray a là nhiều đây ray b là nhiều đây và chúng ta tính cosign similarity thì lấy ray a nhân ray b là nhân vô hướng với nhau
+0:10:04 - 0:10:07, thì những chỗ nào bằng 0 thì chúng ta sẽ lại bỏ qua
+0:10:07 - 0:10:13, chia cho norm của rayA và norm của rayB thì ra là 0.38
+0:10:13 - 0:10:17, và similarity giữa A và C sẽ là 0.32
+0:10:17 - 0:10:19, similarity giữa A và B là 0.38
+0:10:19 - 0:10:25, thì cái kết quả nó nói lên là A nó sẽ tương đồng với B hơn so với lại với C
+0:10:25 - 0:10:30, nhưng mà 2 cái con số 0.38 và 0.32 nó không phản ánh đúng là
+0:10:30 - 0:10:35, Các quan điểm của người dùng A gần người dùng B nhiều hơn
+0:10:35 - 0:10:38, và khác biệt hoàn toàn so với người dùng C
+0:10:38 - 0:10:41, Tại vì chúng ta để ý vô giá trị của nó
+0:10:41 - 0:10:44, thì chúng ta thấy đối với sản phẩm số 5
+0:10:44 - 0:10:47, A không thích nhưng mà C thì lại thích
+0:10:47 - 0:10:52, Đối với sản phẩm số 4 thì A thích và C thì lại không thích
+0:10:52 - 0:10:55, nó chưa có thể phản hảnh rõ cho chuyện đấy
+0:10:55 - 0:11:01, Chúng ta sẽ đến với phương pháp Pearson correlation
+0:11:01 - 0:11:03, Chúng ta sẽ tính trung bình của a
+0:11:03 - 0:11:06, Chúng ta thấy là 4, 5 và 1
+0:11:06 - 0:11:09, Chia 3 ra thì nó sẽ ra là 10 phần 3
+0:11:09 - 0:11:11, Từ giá trị trung bình này
+0:11:11 - 0:11:14, Chúng ta sẽ đi tính tầng giá trị
+0:11:14 - 0:11:19, Ví dụ như là cái phần tử a x1
+0:11:19 - 0:11:23, Giá trị góc là 4, mình sẽ chuẩn hóa nó
+0:11:23 - 0:11:25, Đây là chuẩn hóa
+0:11:25 - 0:11:31, Rồi thì nó sẽ là bằng 4 trừ cho cái giá trị trung bình này
+0:11:31 - 0:11:36, 4 trừ cho giá trị trung bình này thì nó sẽ ra là 2 phần 3 và biến thành cái con số này
+0:11:36 - 0:11:39, Đây là giá trị trung bình của 4 trên cái 1 cái hàng này
+0:11:39 - 0:11:44, Đó thì tương tự như vậy chúng ta sẽ ra được là x4 là bằng 5 phần 3
+0:11:44 - 0:11:48, x5 là trừ 7 phần 3 tương tự như các cái giá trị ở đây
+0:11:48 - 0:11:53, Và đối với cái hàng cuối thì chúng ta thấy là trung bình của nó là 3 thì 3 trừ 3 là bằng 0
+0:11:53 - 0:12:06, thì similarity của A và B sẽ là bằng cosine của các giá trị mà chúng ta đã chuẩn hóa
+0:12:06 - 0:12:13, Với cái cách làm này thì nó sẽ xem xét đến cái yếu tố là nếu mà giá trị dương thì nó sẽ là thích
+0:12:13 - 0:12:18, và giá trị mà âm thì nó có xu hướng là không thích thì nó sẽ xem xét đến cái yếu tố là thích và không thích đó
+0:12:18 - 0:12:25, tốt hơn thì chúng ta thấy là chúng ta lấy cái hàng này chúng ta lấy cái hàng này chúng ta nhân với cái
+0:12:25 - 0:12:32, hàng này sau đó chia cho chuẩn hóa thì nó sẽ ra là 0.09 tức là có xu hướng là a và b là
+0:12:32 - 0:12:36, tương đồng với nhau cao tương đồng hơn
+0:12:36 - 0:12:56, Còn A và C nó ra là âm 0.559 tức là xu hướng đó là A và C không có cái sở thích giống nhau
+0:12:56 - 0:12:57, Tức là nó trái ngược nhau
+0:12:57 - 0:13:01, Như vậy thì cái cách này nó cũng sẽ giống cái cách là
+0:13:01 - 0:13:07, Cosine similarity nhưng mà nó tài hiện được su hướng là A và B tương đồng với nhau
+0:13:07 - 0:13:11, Và A với C là ngược hướng với nhau
+0:13:26 - 0:13:28, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

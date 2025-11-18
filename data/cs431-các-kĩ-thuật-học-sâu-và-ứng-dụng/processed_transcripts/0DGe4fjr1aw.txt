@@ -1,0 +1,139 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, ImageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, ImageNet.
+0:00:30 - 0:00:36, Đó là thư viện Keras với các cái module như là Layer
+0:00:36 - 0:00:42, Trong Layer thì nó sẽ có các cái module như là
+0:00:42 - 0:00:48, Embedding Layer, Dense, các cái lớp Fully Connected
+0:00:48 - 0:00:53, hoặc là RNN, SimpleRNN, tức là cái module RNN
+0:00:53 - 0:00:58, với lại cell của mình là gồm các cái thao tác tính toán trên hidden state
+0:00:58 - 0:01:02, và input state, và output state
+0:01:02 - 0:01:07, và trong layer này thì cũng có LSTM cell
+0:01:07 - 0:01:15, Trong lớp layer này thì nó sẽ có một cái module, có một cái lớp đối tượng đặc biệt
+0:01:15 - 0:01:20, đó chính là input, input sẽ quy định cho chúng ta biết là dữ liệu đầu vào của mình
+0:01:20 - 0:01:22, nó sẽ có kích thước là bao nhiêu
+0:01:22 - 0:01:27, Ngoài ra thì có các cái hàm module hỗ trợ khác như là load_model
+0:01:27 - 0:01:29, Load mô hình đã được huấn luyện trước đó.
+0:01:29 - 0:01:35, Model giúp chúng ta đóng gói input và output vào đối tượng tên là Model.
+0:01:35 - 0:01:41, Rồi Sequence, Sequence giúp chúng ta có thể chuyển đổi từ
+0:01:41 - 0:01:46, có thể làm một số thao tác trên các chuỗi, ví dụ như là padding,
+0:01:46 - 0:01:52, tức là cho một chuỗi ngắn dài khác nhau, chúng ta sẽ đưa về cùng chuỗi có cùng cái kích thước.
+0:01:52 - 0:01:56, Trong nội dung phần ví dụ, chúng ta sẽ được quan sát rõ hơn.
+0:01:56 - 0:02:04, Và Keras Dataset IMDB thì trong 2.2.0 này, chúng ta sẽ sử dụng một bộ Dataset IMDB.
+0:02:04 - 0:02:10, Đây là một bộ Dataset chứa các review, các bình luận về các bộ phim.
+0:02:10 - 0:02:14, Và ở đây thì các trạng thái bình luận của mình thì có 2 trạng thái.
+0:02:14 - 0:02:18, Một đó là positive tích cực và hai đó là negative tiêu cực.
+0:02:18 - 0:02:22, Thì ở bước đầu tiên, chúng ta sẽ load bộ dữ liệu IMDB này lên.
+0:02:22 - 0:02:28, thì ở đây chúng ta có thể cho biết vocabulary size,
+0:02:28 - 0:02:30, tức là cho biết kích thước của từ điển này của mình.
+0:02:30 - 0:02:35, Nếu bình thường thì số từ của mình sẽ rất là lớn,
+0:02:35 - 0:02:38, nó có thể lên đến hàng trăm nghìn, thậm chí là hàng triệu từ.
+0:02:38 - 0:02:40, Tuy nhiên để cho cái thí nghiệm này của chúng ta
+0:02:40 - 0:02:42, có thể thực hiện được trong thời gian ngắn,
+0:02:42 - 0:02:46, thì chúng ta sẽ giới hạn từ điển của mình là 5 nghìn từ thôi.
+0:02:46 - 0:02:48, Và chúng ta hoàn toàn có thể thay,
+0:02:48 - 0:02:53, tức là các bạn hoàn toàn có thể thay con số 5.000 này bằng một con số khác
+0:02:55 - 0:02:58, Thế thì nếu như chúng ta có nhiều hơn 5.000 từ
+0:02:58 - 0:03:00, nhưng mà chúng ta lại chỉ lấy có 5.000 từ
+0:03:00 - 0:03:02, thì các từ còn lại nó bỏ đâu
+0:03:02 - 0:03:06, nó sẽ lưu trong một số đặc biệt, ví dụ như là số 0
+0:03:07 - 0:03:10, Và 5.000 từ này là 5.000 từ nào
+0:03:10 - 0:03:15, thì nó sẽ lấy top những từ xuất hiện thường xuyên nhất trong từ điển của mình
+0:03:15 - 0:03:17, Rồi, thì như vậy thao tác đầu tiên của mình
+0:03:17 - 0:03:21, Đó là chúng ta sẽ tiến hành load cái bộ dữ liệu này.
+0:03:21 - 0:03:23, Chúng ta sẽ tiến hành load cái bộ dữ liệu.
+0:03:23 - 0:03:30, Và khi kết quả trả về, chúng ta sẽ trả về hai biến là Xtrain,
+0:03:30 - 0:03:34, Ytrain, Xtest và Ytest.
+0:03:34 - 0:03:38, Trong đó, Xtrain sẽ chứa chuỗi các giá trị.
+0:03:38 - 0:03:44, Nó sẽ chứa chuỗi các giá trị tương ứng với các từ trong câu review.
+0:03:44 - 0:03:54, và Ytrain sẽ chứa cái nhãn kết quả này mình sẽ trả về trạng thái của mình là positive, tích cực hay negative, tiêu cực
+0:03:54 - 0:03:59, tương tự như vậy cho Xtest và Ytest
+0:03:59 - 0:04:10, Rồi, thì ở đây chúng ta sẽ có một cái chuỗi, đó là câu bình luận của mình nó có thể dài và ngắn khác nhau
+0:04:10 - 0:04:13, Thường thì bình luận của mình là ngắn, đúng không?
+0:04:13 - 0:04:17, Tuy nhiên nó cũng không loại trừ có những câu bình luận của mình là dài
+0:04:17 - 0:04:21, Có thể là trên 500 chữ
+0:04:21 - 0:04:26, Thế thì đối với những câu quá dài thì chúng ta sẽ cắt ngắn
+0:04:26 - 0:04:31, Chúng ta sẽ lấy những từ cuối cùng để làm sao cho nó đủ, cho nó đủ
+0:04:31 - 0:04:34, 500 từ, 500 chữ
+0:04:34 - 0:04:45, Nếu như câu comment của mình ít hơn 500 chữ, thì khi đó chúng ta có thể làm thao tác padding, chúng ta sẽ chèn thêm vào
+0:04:45 - 0:04:56, Ví dụ, giả sử như cái X đầu vào của mình, đó là bao gồm các cái chuỗi ký tự
+0:04:56 - 0:05:03, Ví dụ như là 10, 20, rồi 23, 90
+0:05:03 - 0:05:16, Lưu ý là cái số 10, 20, 23, 90 này đó chính là thứ tự của từ đó trong từ điển
+0:05:16 - 0:05:27, Tức là nó sẽ không lưu cái dạng thô, ví dụ như là This movie is exciting
+0:05:33 - 0:05:34, Nó không nói như vậy.
+0:05:35 - 0:05:37, Mà cái từ This này nó sẽ được mã hóa bằng
+0:05:37 - 0:05:41, có số 10, tức là cái vị trí của từ This trong từ điển
+0:05:41 - 0:05:42, là vị trí thứ 10.
+0:05:42 - 0:05:47, Movie thì tương ứng vị trí của nó trong từ điển là 20.
+0:05:47 - 0:05:51, is, vị trí trong từ điển của nó là 23.
+0:05:51 - 0:05:56, Và Exciting, tương ứng trong từ điển của mình là vị trí thứ 90.
+0:05:56 - 0:05:58, Thì nó sẽ không lưu dữ liệu thô như thế này,
+0:05:58 - 0:06:04, và nó sẽ lưu dưới dạng chỉ số vị trí trong tập từ điển của mình.
+0:06:04 - 0:06:05, Đó là ý thứ nhất.
+0:06:05 - 0:06:11, Ý thứ hai là phần về Sequence padding.
+0:06:11 - 0:06:15, Chúng ta sẽ có kích thước tối đa của mình,
+0:06:15 - 0:06:17, chính là max review length.
+0:06:17 - 0:06:19, Max review length trong trường hợp này là 500
+0:06:19 - 0:06:24, và chúng ta hoàn toàn có thể thay thế con số 500 này bằng một cái con số khác.
+0:06:24 - 0:06:48, Nếu thực hiện thao tác padding này thì Xpad sẽ là 0,0,0,0
+0:06:48 - 0:06:56, và phần cuối của mình đó chính là 10, 20, 23 và 90
+0:06:56 - 0:07:13, Thế thì câu hỏi đặt ra là tại sao chúng ta không để padding ở cuối, mà chúng ta lại để padding ở phần đầu như thế này?
+0:07:13 - 0:07:21, Rõ ràng khi chúng ta lần lượt thực hiện việc đưa các giá trị vào để xử lý trong mạng RNN,
+0:07:21 - 0:07:30, thì nó sẽ xử lý số 10 trước, xử lý số 20, 23 và 90, tức là tương ứng là các từ This movie is exciting,
+0:07:30 - 0:07:33, sau đó nó sẽ đưa vào hàng loạt các con số 0.
+0:07:33 - 0:07:42, Rõ ràng là những con số 0 vào sau sẽ được xử lý cuối cùng và nó sẽ làm loãng đi thông tin của những từ đầu.
+0:07:42 - 0:07:45, những cái từ mà quan trọng nhất của mình
+0:07:45 - 0:07:47, do đó thì cái padding của mình
+0:07:47 - 0:07:50, mình sẽ để nó là padding ở phần đầu
+0:07:50 - 0:07:53, tại vì khi chúng ta tính toán trên những con số 0
+0:07:53 - 0:07:55, nó sẽ không ra những cái thông tin gì hết
+0:07:55 - 0:07:58, và chúng ta sẽ thực sự
+0:07:58 - 0:08:01, tính toán trên các cái dữ liệu của mình
+0:08:01 - 0:08:03, ở những con số cuối cùng này thôi
+0:08:03 - 0:08:06, thì đó là tại sao chúng ta phải padding ở đằng trước.
+0:08:06 - 0:08:08, rồi, bây giờ chúng ta sẽ cùng
+0:08:08 - 0:08:10, load cái thư viện của mình
+0:08:12 - 0:08:25, Rồi, thì ở đây mình có thực hiện trước thao tác đó là download dữ liệu
+0:08:25 - 0:08:31, Rồi, thì ở đây chúng ta sẽ cancel, rồi chạy nè
+0:08:31 - 0:08:43, Chúng ta sẽ xem Xtrain của mình là gì
+0:08:43 - 0:08:52, Đầu tiên chúng ta sẽ xem kích thước của Xtrain là 25.000
+0:08:52 - 0:08:59, Tương tự như vậy, kích thước của Ytrain cũng là 25.000, như vậy ý nghĩa đó là gì?
+0:08:59 - 0:09:04, Đây chính là số mẫu dữ liệu Train, còn số mẫu dữ liệu Test của mình
+0:09:04 - 0:09:11, đó là cũng 25.000 luôn, như vậy tỉ lệ Train và Test là 50-50
+0:09:11 - 0:09:16, Bây giờ chúng ta sẽ quan sát thử cái X đầu vào là cái gì
+0:09:20 - 0:09:22, Thì chúng ta sẽ lấy mẫu dữ liệu đầu tiên
+0:09:23 - 0:09:30, Như vậy, đây là các con số tương ứng như là chỉ số của từ trong từ điển của mình
+0:09:30 - 0:09:32, như đã đề cập ở bên dưới
+0:09:32 - 0:09:34, Như chúng ta đã nêu cái ví dụ ở đây
+0:09:34 - 0:09:38, thì các con số của mình chính là thứ tự từ trong từ điển của bạn
+0:09:38 - 0:09:43, Rồi, chúng ta sẽ lấy thử mẫu thứ 100.
+0:09:43 - 0:09:56, Rồi, bây giờ chúng ta sẽ cùng quan sát Y, Y thứ 100, đó là số 0, Y là số 1.
+0:09:56 - 0:09:59, Rồi, chúng ta sẽ cùng quan sát 10 mẫu dữ liệu đầu tiên.
+0:09:59 - 0:10:06, Rồi, thì 0 và 1, tức là 0 có thể là negative và 1 tức là positive.
+0:10:06 - 0:10:10, Đây là ý nghĩa của Xtrain và Ytrain
+0:10:10 - 0:10:16, Bây giờ chúng ta sẽ qua thao tác là padding như đã đề cập
+0:10:16 - 0:10:19, chúng ta sẽ chèn số 0 vào phía trước
+0:10:22 - 0:10:26, Sau khi chèn xong chúng ta sẽ quan sát thử Xtrain của mình
+0:10:26 - 0:10:29, Với mẫu dữ liệu đầu tiên nó sẽ là gì?
+0:10:29 - 0:10:32, Nó sẽ có chứa một loạt số 0
+0:10:32 - 0:10:45, Nó không chèn vào cuối, tại vì nếu chèn vào cuối thì những thông tin chính của mình sẽ được tính toán trước.
+0:10:45 - 0:10:58, Và khi chúng ta lan truyền đến những con số 0 ở phía sau thì thông tin của những comment, review của mình đã bị mai một đi rồi.
+0:10:58 - 0:11:06, Bây giờ chúng ta sẽ vào phần chính của mình, đó chính là cài đặt mạng RNN.
+0:11:06 - 0:11:10, Ở đây chúng ta sẽ có lớp Embedding Layer.
+0:11:10 - 0:11:14, Embedding Layer này chính là mô hình Word2Vec.
+0:11:14 - 0:11:21, Một cách tổng quát thì Embedding Layer này chúng ta cũng có thể là một phép biến đổi tuyến tính.
+0:11:21 - 0:11:23, Nó có thể là một phép biến đổi tuyến tính.
+0:11:23 - 0:11:29, và sau đó chúng ta sẽ huấn luyện cái Embedding Layer này.
+0:11:29 - 0:11:34, Tức là chúng ta hoàn toàn có thể can thiệp để cho cái Embedding Layer này có thể huấn luyện được
+0:11:34 - 0:11:37, thay vì nó là một cái Layer tĩnh.
+0:11:37 - 0:11:42, Thì trong cái ví dụ này chúng ta đang xem xét là chúng ta sử dụng Layer tĩnh
+0:11:42 - 0:11:46, với cái mô hình Word2Vec đã được huấn luyện trước đó.
+0:11:46 - 0:11:51, Ở đây thì Vocab, tức là cái từ điển của mình sẽ có là 5 nghìn từ
+0:11:51 - 0:11:56, và chuỗi review tối đa là 500 chữ như đã đề cập trước đó
+0:11:56 - 0:12:05, Giờ chúng ta sẽ tải về mô hình Word2Vec của FastText
+0:12:05 - 0:12:10, sau đó chúng ta sẽ giải nén
+0:12:10 - 0:12:34, Lại khi chúng ta khởi tạo (initialize) ngôn ngữ, việc thiết lập các dự án và kết nối thường mất thời gian.
+0:12:34 - 0:12:43, Tương tự như trong bài Word2Vec, tổng cộng có thể tốn khoảng 3-4 phút.
+0:12:43 - 0:12:55, Trong khi mô hình Word2Vec và Embedding Layer được tải lên, chúng ta sẽ cùng bàn về lớp RNN.
+0:12:55 - 0:13:02, Lớp RNN này thì các phương thức như là load_model, save_model, Summary và Predict
+0:13:02 - 0:13:07, cũng tương tự như lớp CNN mà chúng ta đã học trong những bài trước.
+0:13:07 - 0:13:14, Đây là những phương thức để hiển thị những mô tả kiến trúc của mô hình
+0:13:14 - 0:13:18, và dự đoán trên mẫu dữ liệu Xtest mới.

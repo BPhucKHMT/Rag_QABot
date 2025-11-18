@@ -1,0 +1,253 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:15 - 0:00:20, Chúng ta tiếp tục nói về ứng dụng đơn
+0:00:18 - 0:00:24, giản minh họa cho bài toán image
+0:00:20 - 0:00:28, classification trong machine learning.
+0:00:24 - 0:00:32, Thì các bạn đã biết ha, nếu như các bạn
+0:00:28 - 0:00:35, sử dụng Google Collab mà xài CPU để chạy
+0:00:32 - 0:00:38, cái ấy mà ăn nguồn này thì nó sẽ chạy
+0:00:35 - 0:00:41, khá là chậm ha. Tại vì Google Collab
+0:00:38 - 0:00:44, cung cấp cho các bạn chỉ có hai core CPU
+0:00:41 - 0:00:45, ừ với một cấu hình không phải là mạnh
+0:00:44 - 0:00:48, lắm.
+0:00:45 - 0:00:50, Thì để cho cái thời gian training à
+0:00:48 - 0:00:52, trong machine learning cái khâu lâu nhất
+0:00:50 - 0:00:54, thì thường luôn sẽ là khâu training. Đó
+0:00:52 - 0:00:56, để chúng ta muốn kéo cái thời gian
+0:00:54 - 0:00:59, training với cái ví dụ đơn giản này từ 2
+0:00:56 - 0:01:03, tiếng đồng hồ xuống càng nhanh càng tốt
+0:00:59 - 0:01:06, thì các bạn có thể sử dụng
+0:01:03 - 0:01:08, GPU mà Google Collab cung cấp sẵn.
+0:01:06 - 0:01:11, Hoặc
+0:01:08 - 0:01:16, ừ ở đây chúng ta sẽ thử minh họa nếu như
+0:01:11 - 0:01:18, các bạn có một cái CPU hiện đại hơn ha.
+0:01:16 - 0:01:21, Ví dụ như CPU trên máy tính của các bạn
+0:01:18 - 0:01:24, đ cũng có thể xem là mạnh hơn đáng kể so
+0:01:21 - 0:01:25, với CPU ảo mà Google Collab cung cấp
+0:01:24 - 0:01:28, rồi.
+0:01:25 - 0:01:31, Thì để cho các bạn có một sự liên hệ ở
+0:01:28 - 0:01:35, đây, chúng ta sẽ thử chạy cái code này
+0:01:31 - 0:01:38, trên một con CPU tương đối là tốt hơn.
+0:01:35 - 0:01:41, Thì phần này các bạn có thể chọn
+0:01:38 - 0:01:43, download cái collab Notebook về máy của
+0:01:41 - 0:01:46, mình ha. Và nếu như thường để chạy
+0:01:43 - 0:01:49, collab notebook trực tiếp trên thiết bị
+0:01:46 - 0:01:52, cá nhân thì chúng ta sẽ chạy bằng file.
+0:01:49 - 0:01:54, Chb.
+0:01:52 - 0:01:57, Đó. Ở đây các bạn có thể download cái
+0:01:54 - 0:02:01, file này về máy của mình để chạy.
+0:01:57 - 0:02:03, À và tiếp theo để chạy được cái
+0:02:01 - 0:02:07, code này các bạn sẽ phải cài đặt thư
+0:02:03 - 0:02:09, viện Tenser Flow vào máy.
+0:02:07 - 0:02:11, Rồi có nhiều cách để cài tensor flow ha.
+0:02:09 - 0:02:14, À nếu các bạn muốn thử đó, nếu các bạn
+0:02:11 - 0:02:15, muốn thử sức thì các bạn có thể chọn
+0:02:14 - 0:02:19, cách phù hợp với máy của mình, có thể
+0:02:15 - 0:02:21, tải về cài đặt. Còn ở đây thì th bài
+0:02:19 - 0:02:24, giảng này sẽ minh họa cho các bạn chạy
+0:02:21 - 0:02:27, bằng sử dụng một cái công nghệ gọi là
+0:02:24 - 0:02:30, container. Chúng ta sẽ sử dụng như hướng
+0:02:27 - 0:02:33, dẫn ở đây ha. một cái tens flow docker
+0:02:30 - 0:02:33, image.
+0:02:35 - 0:02:40, Rồi à hầu hết các code machine learning
+0:02:38 - 0:02:43, nếu như chạy trong thực tế chạy trên
+0:02:40 - 0:02:44, thiết bị thật à không phải là code minh
+0:02:43 - 0:02:48, họa cho việc học thì người ta sẽ chạy
+0:02:44 - 0:02:48, trên terminal.
+0:02:49 - 0:02:55, Rồi chúng ta di chuyển vào folder chữa
+0:02:52 - 0:02:58, cái file mã nguồn mà chúng ta đã
+0:02:55 - 0:02:58, download.
+0:03:00 - 0:03:07, À rồi thì ở đây a
+0:03:04 - 0:03:11, chúng ta đã có cái file Python của mình
+0:03:07 - 0:03:13, đó tải từ trên collab về. Tiếp theo các
+0:03:11 - 0:03:16, bạn có thể làm theo hướng dẫn. Nếu như
+0:03:13 - 0:03:19, các bạn chọn
+0:03:16 - 0:03:21, cài đặt
+0:03:19 - 0:03:23, tensor flow sử dụng docker một công nghệ
+0:03:21 - 0:03:28, container thì phổ biến nhất hiện nay các
+0:03:23 - 0:03:31, bạn có thể sử dụng là docker thì
+0:03:28 - 0:03:33, chúng ta đầu tiên là sẽ phải khởi tạo
+0:03:31 - 0:03:37, một cái máy có tạm có thể xem như là máy
+0:03:33 - 0:03:37, ảo ha
+0:03:37 - 0:03:42, bằng cái lệnh cứ pháp là Docker run như
+0:03:40 - 0:03:42, thế này.
+0:03:43 - 0:03:48, Chúng ta có thể mượn tạp à cái lệnh mà
+0:03:46 - 0:03:52, trang tensor flow cho hướng dẫn chúng ta
+0:03:48 - 0:03:55, ở đây. Nhưng ở đây thay vì
+0:03:52 - 0:03:57, chạy cái Jupiter Notebook ở đây chúng ta
+0:03:55 - 0:03:59, sẽ không cần phải sử dụng Jupiter
+0:03:57 - 0:04:01, Notebook trên máy tính cá nhân của mình
+0:03:59 - 0:04:03, ha. Khi chạy trên máy tính cá nhân
+0:04:01 - 0:04:06, thường người ta sẽ làm việc thông qua
+0:04:03 - 0:04:11, giao diện console. Và cái terminal phổ
+0:04:06 - 0:04:11, biến nhất hiện nay là B.
+0:04:13 - 0:04:19, Đó khi các bạn chạy lần đọc nếu như cái
+0:04:16 - 0:04:24, container này chưa có trong máy thì
+0:04:19 - 0:04:24, Docker sẽ tự động tải về cho các bạn.
+0:04:24 - 0:04:31, Rồi và chắc là chúng ta sẽ tua nhanh cái
+0:04:27 - 0:04:32, phần này.
+0:04:31 - 0:04:38, Thì trong lúc chờ quá trình download
+0:04:32 - 0:04:44, này, chúng ta sẽ xem à trên máy tính của
+0:04:38 - 0:04:44, thầy thì CPU được sử dụng
+0:04:47 - 0:04:55, à CPU được sử dụng là
+0:04:51 - 0:04:58, con AMD Ryzen 9 5900X ha. Đây cũng là
+0:04:55 - 0:05:02, CPU hiện giờ vẫn tương đối là mới. Sau
+0:04:58 - 0:05:05, này thì chắc nó sẽ lạc hậu đi nhiều.
+0:05:02 - 0:05:09, Đó. Còn hiện giờ chúng ta có thể tham
+0:05:05 - 0:05:12, khảo giá bán của con này.
+0:05:09 - 0:05:16, Như nó cũng đã ra vài đời CPU mới hơn
+0:05:12 - 0:05:21, rồi. Thì CPU này có 16
+0:05:16 - 0:05:24, COE ha và CPU nó hỗ trợ công nghệ đa
+0:05:21 - 0:05:29, luồng nên
+0:05:24 - 0:05:32, nó sẽ nh có máy nhận diện là 32 Core đó
+0:05:29 - 0:05:37, nhanh hơn đáng kể so với CPU mà Google
+0:05:32 - 0:05:37, Collab sẽ cung cấp miễn phí cho các bạn
+0:05:38 - 0:05:46, và đây là container cài đặt sạ Tensor
+0:05:43 - 0:05:49, flow ha. Đó, khi các bạn chạy cái
+0:05:46 - 0:05:51, container này các bạn sẽ có thể có một
+0:05:49 - 0:05:55, cái version
+0:05:51 - 0:05:57, ừ cài đặt sẵn của Python và thư viện
+0:05:55 - 0:05:59, Tensor Flow trên máy của các bạn mà các
+0:05:57 - 0:06:02, bạn không cần phải quá quan tâm đến việc
+0:05:59 - 0:06:07, tải và install các cái package này. Đó,
+0:06:02 - 0:06:10, ở đây chúng ta có thể thử lệnh import
+0:06:07 - 0:06:10, tow.
+0:06:20 - 0:06:26, Ok. Và quá trình import thành công đó.
+0:06:23 - 0:06:28, Và chúng ta có thể thử ha à cái lệnh để
+0:06:26 - 0:06:31, kiểm tra version tenser flow được cài
+0:06:28 - 0:06:31, đặt.
+0:06:33 - 0:06:38, Chúng ta sẽ in phiên bản tensor flow ra
+0:06:35 - 0:06:38, màn hình.
+0:06:39 - 0:06:46, Rồi ở đây là phiên bản Tensor Flow 20
+0:06:42 - 0:06:48, 2.0 ha mới hơn là phiên bản Tensor Flow
+0:06:46 - 0:06:50, mà Google Collab cung cấp sẵn cho các
+0:06:48 - 0:06:54, bạn. Đó cũng là một ưu điểm nếu như các
+0:06:50 - 0:06:56, bạn chọn à chạy các cái code machine
+0:06:54 - 0:06:58, learning trên máy tính cá nhân của mình
+0:06:56 - 0:07:01, ha. Nếu các bạn biết cách cài đặt các
+0:06:58 - 0:07:04, công cụ thì các bạn có thể có một cái
+0:07:01 - 0:07:07, tool nó cập nhật hơn. Bây giờ để chạy
+0:07:04 - 0:07:10, được cái mã nguồn mà chúng ta đã
+0:07:07 - 0:07:13, download từ trên Google Collab về thì
+0:07:10 - 0:07:16, đầu tiên chúng ta phải cho cái máy ảo nó
+0:07:13 - 0:07:20, có quyền truy cập đến cái file mã nguồn
+0:07:16 - 0:07:24, này. Đó trong Docker thì chúng ta sẽ sử
+0:07:20 - 0:07:27, dụng một số các cái tùy chọn sau đây để
+0:07:24 - 0:07:30, chạy
+0:07:27 - 0:07:33, ứng dụng. À đầu tiên chúng ta phải a
+0:07:30 - 0:07:37, share cái folder hiện tại
+0:07:33 - 0:07:41, working directory với lại à
+0:07:37 - 0:07:44, cái máy ảo container đang cài đặt tensor
+0:07:41 - 0:07:44, flow của chúng ta.
+0:07:45 - 0:07:52, Rồi à thầy sẽ thêm một số các option cần
+0:07:49 - 0:07:52, thiết
+0:07:54 - 0:08:01, đó. Và đây có vẻ là các option cần thiết
+0:07:58 - 0:08:06, để chúng ta chạy.
+0:08:01 - 0:08:09, Rồi thì à trong cái container à đó trong
+0:08:06 - 0:08:12, cái máy ảo ha tạm gọi container là máy
+0:08:09 - 0:08:14, ảo à có cài đặt tensor flow. Chúng ta có
+0:08:12 - 0:08:16, thể chạy
+0:08:14 - 0:08:19, cái file
+0:08:16 - 0:08:22, mà chúng ta đã download
+0:08:19 - 0:08:26, từ trên Google Collab về bằng lệnh
+0:08:22 - 0:08:26, Python và tên file.
+0:08:29 - 0:08:36, À và khi cài thì chắc các bạn sẽ thấy
+0:08:33 - 0:08:38, báo lỗi thiếu thư viện ha. À đó do máy
+0:08:36 - 0:08:41, ảo này mặc định cung cấp sẵn tensor flow
+0:08:38 - 0:08:45, nhưng có một số thư viện à một số cái
+0:08:41 - 0:08:47, lệnh import trong cái mã nguồn của chúng
+0:08:45 - 0:08:49, ta mà
+0:08:47 - 0:08:51, cái máy ảo này chưa có sẵn thì chúng ta
+0:08:49 - 0:08:53, sẽ phải install vào. Và việc install này
+0:08:51 - 0:08:55, nó chỉ có thay đổi trong máy ảo, nó sẽ
+0:08:53 - 0:08:57, không làm ảnh hưởng đến cái bảng cài đặt
+0:08:55 - 0:09:00, Python trên máy tính của các bạn nếu như
+0:08:57 - 0:09:03, các bạn chọn chạy trên máy của mình. Rồi
+0:09:00 - 0:09:06, chúng ta sẽ cần thư viện M blư viện
+0:09:03 - 0:09:10, Tenser
+0:09:06 - 0:09:10, Flow digit set ha.
+0:09:13 - 0:09:18, Rồi bếp install
+0:09:26 - 0:09:30, rồi. Quá trình cài đặt successfully
+0:09:28 - 0:09:33, install ha. Quá trình cài đặt đã thành
+0:09:30 - 0:09:35, công. Chúng ta có thể chạy lại
+0:09:33 - 0:09:37, file
+0:09:35 - 0:09:41, thơ của mình. Và bây giờ quá trình
+0:09:37 - 0:09:43, training đã bắt đầu.
+0:09:41 - 0:09:47, Các bạn có thể thấy
+0:09:43 - 0:09:48, thời gian training cho mỗi mỗi lần lập
+0:09:47 - 0:09:50, của
+0:09:48 - 0:09:53, mỗi
+0:09:50 - 0:09:55, B 32 tấm ảnh ha. Trong quá trình
+0:09:53 - 0:09:58, training. Nếu như chúng ta sử dụng CPU
+0:09:55 - 0:10:03, của Google Collab cung cấp thì nó sẽ là
+0:09:58 - 0:10:06, gần 2 giây cho mỗi cái P 32 tấm ản. Còn
+0:10:03 - 0:10:11, trên CPU của chúng ta trên máy tính này
+0:10:06 - 0:10:14, thì thời gian là 200 m.
+0:10:11 - 0:10:17, nhanh hơn tốc độ khoảng gần như là gấp
+0:10:14 - 0:10:21, 10 lần. Và
+0:10:17 - 0:10:24, các bạn có thể xem ha, ở đây
+0:10:21 - 0:10:29, có ừ
+0:10:24 - 0:10:32, CPU 5950X này đã được huy động đến a
+0:10:29 - 0:10:35, gần đạt ngưỡng max. ở đây chưa đạt
+0:10:32 - 0:10:37, ngưỡng 100% của CPU này. Đó do bài toán
+0:10:35 - 0:10:40, của chúng ta cũng khá đơn giản và chúng
+0:10:37 - 0:10:42, ta chạy một batch cũng nhẹ chỉ có khoảng
+0:10:40 - 0:10:44, a
+0:10:42 - 0:10:47, 32 tấm ảnh thôi. Thì CPU này đang được
+0:10:44 - 0:10:50, huy động khoảng a
+0:10:47 - 0:10:52, 70% là dành cho Python. Đó đây là cái
+0:10:50 - 0:10:56, tiến trình chiếm nhiều tài nguyên CPU
+0:10:52 - 0:10:59, nhất hiện tại là 70% và đang dùng hết 6
+0:10:56 - 0:11:02, GB RAM ha.
+0:10:59 - 0:11:05, Và thời gian chúng ta
+0:11:02 - 0:11:09, chạy là nhanh hơn gấp 10 lần so với CPU
+0:11:05 - 0:11:11, của Google Collab. Đó, đây cũng là một
+0:11:09 - 0:11:13, con số hoàn toàn thuần túy là cơ học
+0:11:11 - 0:11:18, thôi các bạn ha. Colab cung cấp cho các
+0:11:13 - 0:11:21, bạn hai CPU core, còn máy tính này có 16
+0:11:18 - 0:11:24, CPU core thì thời gian chạy là nhanh hơn
+0:11:21 - 0:11:26, gần gấp 10 lần.
+0:11:24 - 0:11:31, Và
+0:11:26 - 0:11:37, với mỗi step tức là mỗi một B 32 ảnh
+0:11:31 - 0:11:40, chúng ta khoảng 200 mây như vậy 582 B
+0:11:37 - 0:11:44, thì chúng ta sẽ hoàn thành một phòng lập
+0:11:40 - 0:11:46, của quá trình training này. Đó các bạn à
+0:11:44 - 0:11:48, cứ nhân lên ha.
+0:11:46 - 0:11:52, Khoảng như vậy khoảng 100 giây là chúng
+0:11:48 - 0:11:55, ta sẽ xong một vòng lập và năm vòng lập
+0:11:52 - 0:11:58, thì có vẻ trên chúng ta sẽ dùng chưa tới
+0:11:55 - 0:12:02, 5 phút so với thời gian chạy trên Google
+0:11:58 - 0:12:07, collab là 2 giờ đồng hồ. Đó là các bạn
+0:12:02 - 0:12:10, sử dụng tuần túy là CPU để chạy một cái
+0:12:07 - 0:12:12, model machine learning và đặc biệt là sử
+0:12:10 - 0:12:15, dụng cả cái thư viện deep learning. Thì
+0:12:12 - 0:12:20, thời gian cho một cái bài toán đơn giản
+0:12:15 - 0:12:23, như thế này sẽ khoảng gần ừ 10 phút cho
+0:12:20 - 0:12:23, một lần training.
+0:12:25 - 0:12:29, Đó, chúng ta có thể kiểm tra nhanh không
+0:12:27 - 0:12:32, biết là
+0:12:29 - 0:12:32, CPU
+0:12:34 - 0:12:39, 5950X hiện giờ có giá bao nhiêu nhỉ?
+0:12:46 - 0:12:52, Rồi đó chúng ta kiểm tra nhanh thôi. Thì
+0:12:49 - 0:12:57, CPU này có giá khoảng 7 triệu nếu các
+0:12:52 - 0:13:00, bạn mua kèm máy à mua rời thì là 8 triệu
+0:12:57 - 0:13:03, chỉ riêng CPU nha các bạn. Đó là cái giá
+0:13:00 - 0:13:05, các bạn sẽ phải a
+0:13:03 - 0:13:08, đầu tư nếu như chúng ta muốn sử dụng CPU
+0:13:05 - 0:13:11, cho machine learning.
+0:13:08 - 0:13:16, Còn nếu các bạn cần nhanh hơn nữa, chúng
+0:13:11 - 0:13:20, ta có thể xem xét đến option sử dụng
+0:13:16 - 0:13:25, GPU ha. Và cách đơn giản nhất để có thể
+0:13:20 - 0:13:29, sử dụng GPU đó là các bạn dùng cái GPU
+0:13:25 - 0:13:31, Tesla T4 mà Google Collab cung cấp sẵn.
+0:13:29 - 0:13:33, À chắc là chúng ta sẽ dừng cái quá trình
+0:13:31 - 0:13:38, training ở đây.
+0:13:33 - 0:13:41, Rồi đó CPU này còn có thể vẫn chỉ mới sử
+0:13:38 - 0:13:43, dụng khoảng 70 đến 80% thôi. Chúng ta
+0:13:41 - 0:13:46, còn có thể sử dụng thêm nếu như các bạn
+0:13:43 - 0:13:48, tối ưu hóa cái mã nguồn các bạn tối ưu
+0:13:46 - 0:13:51, hóa lại size cho mỗi lần training ha.
+0:13:48 - 0:13:53, Rồi tuy nhiên chắc là chúng ta sẽ tạm
+0:13:51 - 0:13:56, dừng ở đây minh họa thế này các bạn cũng
+0:13:53 - 0:14:00, có thể hình dung được các phần nào tốc
+0:13:56 - 0:14:00, độ cho một cái CPU hiện đại ha.
+0:14:03 - 0:14:15, [âm nhạc]

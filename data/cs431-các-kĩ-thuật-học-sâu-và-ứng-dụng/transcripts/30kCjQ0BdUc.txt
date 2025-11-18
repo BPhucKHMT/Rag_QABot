@@ -1,0 +1,182 @@
+0:00:00 - 0:00:19, Chào các bạn, hôm nay chúng ta sẽ đến với bài về xử lý ngôn ngữ tự nhiên.
+0:00:19 - 0:00:24, Trong các bài trước thì chúng ta đã làm việc trên loại dữ liệu, đó là dữ liệu ảnh.
+0:00:24 - 0:00:29, Từ nay trở về sau thì chúng ta sẽ đến với loại dữ liệu đặc biệt, đó chính là loại dữ liệu văn bản.
+0:00:29 - 0:00:33, và làm sao để có thể biểu diễn được các từ trong văn bản
+0:00:33 - 0:00:37, thì chúng ta có thể sử dụng một công cụ rất là hiệu quả, đó chính là Word2Vec.
+0:00:37 - 0:00:44, Word2Vec là một cái phương pháp để giúp chúng ta biểu diễn một cái từ dưới dạng một cái vector.
+0:00:44 - 0:00:47, Và nội dung chính của chúng ta sẽ bao gồm các thành phần như sau.
+0:00:47 - 0:00:53, Đầu tiên, đó là chúng ta sẽ cùng tìm hiểu về một số định nghĩa, khái niệm
+0:00:53 - 0:00:57, cũng như là một số tiềm năng ứng dụng của lĩnh vực xử lý ngôn ngữ tự nhiên.
+0:00:57 - 0:01:03, Thứ hai, đó là chúng ta sẽ tìm hiểu về hướng tiếp cận học sâu trong xử lý ngôn ngữ tự nhiên.
+0:01:03 - 0:01:14, Và thứ ba, đó là chúng ta tìm hiểu về tầm quan trọng của việc biểu diễn một cái từ dưới dạng một cái vector.
+0:01:14 - 0:01:21, Cuối cùng, đó là chúng ta sẽ tìm hiểu về mô hình Word2Vec. Đây là một trong những cái mô hình rất là phổ biến.
+0:01:21 - 0:01:25, Và để biểu diễn một cái từ dưới dạng một cái vector hiện nay.
+0:01:25 - 0:01:31, Đó là chúng ta sẽ tìm hiểu về một số cái khái niệm.
+0:01:31 - 0:01:36, Thì xử lý ngôn ngữ tự nhiên thì tên tiếng Anh là Natural Language Processing.
+0:01:46 - 0:01:51, Rồi, thì đây là một cái lĩnh vực nghiên cứu mà thuộc lĩnh vực về khoa học máy tính,
+0:01:51 - 0:01:53, trí tuệ nhân tạo và ngôn ngữ học.
+0:01:53 - 0:01:55, Vì vậy thì chúng ta có thể thấy là
+0:01:55 - 0:01:57, nó có một phần giao thoa
+0:01:57 - 0:01:59, với lại một lĩnh vực thuộc về
+0:01:59 - 0:02:01, khoa học xã hội, đó chính là
+0:02:01 - 0:02:03, ngôn ngữ học, bên cạnh
+0:02:03 - 0:02:05, những lĩnh vực nghiên cứu về
+0:02:05 - 0:02:07, trí tuệ nhân tạo và khoa học máy tính.
+0:02:07 - 0:02:09, Thì mục tiêu của
+0:02:09 - 0:02:11, lĩnh vực này đó là làm sao
+0:02:11 - 0:02:13, cho máy tính có khả năng
+0:02:13 - 0:02:15, ngôn ngữ giống như con người.
+0:02:15 - 0:02:17, Thế thì khả năng ngôn ngữ như con người
+0:02:17 - 0:02:19, sẽ bao gồm khả năng gì? Đầu tiên, đó chính là
+0:02:19 - 0:02:21, đó chính là khả năng hiểu.
+0:02:21 - 0:02:27, Con người chúng ta thì sẽ nhận cái thông tin đầu vào là một cái ngôn ngữ
+0:02:27 - 0:02:31, và ngôn ngữ sẽ thông qua hai cái phương tiện chính
+0:02:31 - 0:02:35, phương tiện đầu tiên đó chính là văn bản
+0:02:35 - 0:02:39, cái công cụ thứ hai, cái phương tiện thứ hai đó chính là qua âm thanh
+0:02:39 - 0:02:43, khi chúng ta nghe một người nào đó đứng trước mặt nói chuyện
+0:02:43 - 0:02:46, thì cái ngôn ngữ đó được thể hiện qua âm thanh
+0:02:46 - 0:02:48, Thì máy tính cũng tương tự như vậy.
+0:02:48 - 0:02:52, Máy tính cũng sẽ nhận cái thông tin đầu vào là một cái ngôn ngữ.
+0:02:52 - 0:03:00, Tuy nhiên trong phạm vi của cái bài học này thì chúng ta sẽ tiếp cận ngôn ngữ ở dưới dạng là văn bản.
+0:03:02 - 0:03:08, Và sau khi máy tính có khả năng hiểu được cái ngôn ngữ đầu vào thì nó sẽ đưa ra cái phản hồi.
+0:03:08 - 0:03:11, Và cái phản hồi này thì nó sẽ nằm trong cái giai đoạn gọi là generation.
+0:03:11 - 0:03:17, Và phản hồi này sẽ tạo ra ngôn ngữ.
+0:03:17 - 0:03:25, Ngôn ngữ này có thể ở dạng âm thanh, ví dụ như máy có thể phát ra một đoạn âm thanh để thể hiện sự phản hồi của mình.
+0:03:25 - 0:03:29, Hoặc máy cũng có thể tạo ra dưới dạng là một đoạn văn bản.
+0:03:29 - 0:03:36, Trong phạm vi của môn học này, chúng ta cũng sẽ tiếp cận xử lý ngôn ngữ tự nhiên dưới dạng văn bản.
+0:03:36 - 0:03:48, và tương ứng với hai cái giai đoạn hiểu ngôn ngữ và tạo sinh ngôn ngữ thì chúng ta sẽ có các cái từ khóa đó là
+0:03:48 - 0:03:53, Natural Language Understanding và Natural Language Generation.
+0:03:53 - 0:03:59, Cái G này là bắt nguồn từ chữ Generation và chữ U này là bắt nguồn từ chữ Understanding.
+0:03:59 - 0:04:06, Lĩnh vực xử lý ngôn ngữ tự nhiên là một trong những lĩnh vực khó.
+0:04:06 - 0:04:12, Nó khó vì rất nhiều những lý do sau. Đầu tiên là tính nhập nhằng của ngôn ngữ.
+0:04:12 - 0:04:18, Nếu chúng ta không có đầy đủ thông tin về mặt ngữ cảnh mà chúng ta đọc câu này,
+0:04:18 - 0:04:23, thì chúng ta có thể hiểu bằng bao nhiêu cách? Cái câu đó là "Ông già đi nhanh quá."
+0:04:23 - 0:04:29, thì câu ông già đi nhanh quá có thể được hiểu không dưới ba cách
+0:04:29 - 0:04:36, Đầu tiên, nếu chúng ta quan sát từ ông già như là một cụm từ
+0:04:36 - 0:04:44, thì từ ông già này có thể ám chỉ là một người lớn tuổi nào đó
+0:04:44 - 0:04:48, và từ đi này cũng có thể hiểu hai nghĩa
+0:04:48 - 0:04:50, nghĩa đầu tiên đó chính là di chuyển
+0:04:50 - 0:04:53, và nghĩa thứ hai đó là có thể người này đã mất
+0:04:53 - 0:04:58, còn nhanh quá thì tương ứng đó là thể hiện cái tốc độ
+0:04:58 - 0:05:01, như vậy là ông già cũng di chuyển nhanh quá
+0:05:01 - 0:05:05, hoặc là ông già ổng mất đột ngột quá
+0:05:05 - 0:05:07, thì đây là hai cái cách hiểu đầu tiên
+0:05:07 - 0:05:14, nhưng nếu như cũng cái câu này chúng ta nhìn nó ở một cái cách chia khác
+0:05:14 - 0:05:24, Thì cái từ ông là mình đang muốn nói đến người mà mình đang nói chuyện ở trước mặt, người bạn của mình, mình hay xưng người ông
+0:05:24 - 0:05:32, Già thì ở đây sẽ hàm ý đó là tiều tụy, hoặc là người dạo này là phờ phạc quá
+0:05:32 - 0:05:38, Thì ý của câu này đó là người bạn của mình dạo này nhìn sao tiều tụy đi nhanh quá
+0:05:38 - 0:05:44, trước đây thì rất là trẻ trung, bây giờ thì lại gọi là tiều tụy đi
+0:05:44 - 0:05:48, và còn rất nhiều những cái cách nghĩa hiểu khác, ví dụ như cũng là cái từ ông già này
+0:05:48 - 0:05:55, nhưng mà ở một số nơi, một số vùng miền thì hàm ý đó là để nói về phụ thân của mình, tức là ba của mình
+0:05:55 - 0:06:01, vậy vậy thì với một cái cách hiểu ông già là ba của mình thì nó lại có rất nhiều các cách hiểu khác nữa
+0:06:01 - 0:06:04, thì như vậy đó chính là cái sự nhập nhằng của ngôn ngữ
+0:06:04 - 0:06:15, Nếu như không có đầy đủ thông tin về mặt ngữ cảnh mà chúng ta chỉ có một cái đoạn văn, một cái câu văn như vậy thì rõ ràng là sẽ tạo ra cái cách hiểu, rất nhiều cái cách hiểu khác nhau.
+0:06:15 - 0:06:20, Và một trong những cái vấn đề để gây ra sự nhập nhằng đó chính là cái vấn đề về tách từ.
+0:06:20 - 0:06:33, Ví dụ như chúng ta có cái từ là tốc độ truyền thông tin. Nếu như chúng ta nhìn cái câu này, cái cụm từ này dưới dạng là những cái từ rơi ra, được ngăn cách bởi cái dấu khoảng trắng, đúng không?
+0:06:33 - 0:06:41, Thì cái từ tốc, rồi cái từ độ, rồi từ truyền, rồi từ thông và từ tin
+0:06:41 - 0:06:49, đó là những cái từ mà không có mang nghĩa đúng của cái ngụ ý mà cái câu này muốn truyền đạt
+0:06:49 - 0:06:54, Cái nghĩa đúng của nó nó phải đi theo một cái cụm, nó sẽ phải đi một cái cụm
+0:06:54 - 0:07:04, Ví dụ ở đây là thông tin phải là một cái cụm, một cái đơn vị ngữ nghĩa, tốc độ sẽ là một cái đơn vị ngữ nghĩa
+0:07:04 - 0:07:12, Như vậy là tốc độ truyền thông tin thì nó sẽ phải là chia ra thành các đơn vị ngữ nghĩa như vậy
+0:07:12 - 0:07:15, thì lúc đó chúng ta mới hiểu đúng được cái ý của cái câu này
+0:07:15 - 0:07:21, Còn nếu chúng ta tách ra từ tốc riêng, từ độ riêng, từ truyền riêng, từ thông riêng
+0:07:21 - 0:07:24, Riêng từ "thông", chúng ta có thể hiểu rất nhiều nghĩa khác nhau.
+0:07:24 - 0:07:30, Rồi từ tốc hoặc là từ độ, nếu mà đứng riêng mình đó thì chúng ta cũng có thể hiểu rất nhiều cách hiểu khác nhau.
+0:07:31 - 0:07:37, Cái thứ 3 đó chính là ngôn ngữ teen, ngôn ngữ, mình hay nói đùa đó là trẻ trâu thời nay.
+0:07:37 - 0:07:44, Các bạn trẻ thì có thể nhắn các đoạn văn bản với rất nhiều những cách thức sáng tạo khác nhau.
+0:07:44 - 0:07:49, Ví dụ như ở đây chúng ta thấy là model ui, hôm nay con không về
+0:07:49 - 0:07:53, thì ở đây đã phối hợp rất nhiều những kỹ thuật
+0:07:53 - 0:07:57, Ví dụ nó đã có lồng ghép tiếng Anh ở trong đó là model
+0:07:57 - 0:08:02, Rồi cái thứ 2 đó là với cái từ model này thì người ta không gọi là chữ O mà người ta lại dùng số 0
+0:08:05 - 0:08:10, tức là lợi dụng cái việc là cái tượng hình của số 0 và chữ O nó giống nhau
+0:08:10 - 0:08:16, Thậm chí là nói trại, ví dụ như là hông, dìa, hoặc là nai
+0:08:16 - 0:08:25, Đây chính là sự khó khăn khi chúng ta phải làm việc với những ngôn ngữ không có chuẩn và xuất phát từ mạng xã hội
+0:08:25 - 0:08:32, Tiếp theo, đó là vấn đề về nghĩa của câu nó sẽ không liên quan trực tiếp đến mặt chữ của nó
+0:08:32 - 0:08:36, Ví dụ như ở đây chúng ta có một thành ngữ là ra ngô ra khoai
+0:08:36 - 0:08:46, Nếu như là làm "ra ngô ra khoai" thì không có nghĩa là chúng ta sẽ tạo ra trái ngô, trái khoai
+0:08:46 - 0:08:55, Ở đây ý của nó chính là làm việc đến nơi đến chốn, làm việc triệt để, làm việc cho ra thành quả
+0:08:55 - 0:09:04, Đó là ý nghĩa của câu ra ngô ra khoai chứ không hề nhắc gì đến hai cái trái cây đây là trái ngô và trái khoai
+0:09:04 - 0:09:16, Và ngoài ra thì tất cả những cái yếu tố trên nó sẽ còn đi chung với lại một cái khó khăn, thách thức nữa đó là mình phải đi kèm với cái ngữ cảnh thực tế.
+0:09:16 - 0:09:26, Ví dụ như là mình đang bàn về một cái chủ đề nào đó thì các câu của mình sẽ xoay xung quanh chủ đề mà mình đang bàn.
+0:09:26 - 0:09:31, thì nếu mình biết được ngữ cảnh đó, thì câu của mình có thể hiểu dễ dàng hơn.
+0:09:31 - 0:09:34, Ngoài ra, đó là kiến thức thực tế.
+0:09:34 - 0:09:41, Ví dụ như trong một số tình huống, chúng ta nói chuyện với nhau nhưng từng từ chúng ta đều hiểu.
+0:09:41 - 0:09:45, Nhưng mà ráp lại chúng ta không hiểu tại vì chúng ta không có kiến thức chuyên môn.
+0:09:45 - 0:09:50, Ví dụ như chúng ta nói chuyện với một cái người về công nghệ thông tin,
+0:09:50 - 0:09:56, chúng ta nói chuyện công nghệ thông tin về một cái người làm trong một lĩnh vực về tài chính doanh nghiệp,
+0:09:56 - 0:09:58, thì có khi họ sẽ không hiểu câu chuyện mình đang nói là gì.
+0:09:58 - 0:10:00, Vì vậy là cũng là các cái mặt chữ đó,
+0:10:00 - 0:10:02, nhưng mà nó sẽ còn hiểu hay không,
+0:10:02 - 0:10:04, tùy thuộc vào kiến thức thực tế nữa.
+0:10:06 - 0:10:09, Rồi, và lĩnh vực xử lý ngôn ngữ tự nhiên
+0:10:09 - 0:10:12, thì có rất nhiều những cái ứng dụng khác nhau.
+0:10:12 - 0:10:14, Ví dụ như những cái ứng dụng kinh điển,
+0:10:14 - 0:10:16, như là kiểm tra lỗi chính tả,
+0:10:16 - 0:10:19, thì đây là một trong những cái ứng dụng mà đã có từ rất là lâu đời rồi.
+0:09:16 - 0:10:19, thì đây là một trong những cái ứng dụng mà đã có từ rất là lâu đời rồi.
+0:10:19 - 0:10:23, Cái thứ hai, đó chính là phát hiện thư rác.
+0:10:23 - 0:10:29, thì bất cứ một cái email nào, một cái hệ thống email nào đều có trang bị hệ thống spam detection.
+0:10:30 - 0:10:34, ví dụ như đây là một cái đoạn tin nhắn spam.
+0:10:35 - 0:10:36, rồi gán nhãn từ loại
+0:10:36 - 0:10:41, với mỗi từ trong một câu chúng ta sẽ biết từ nào là động từ, danh từ, tính từ
+0:10:42 - 0:10:46, rồi từ nào là bổ nghĩa cho từ nào
+0:10:46 - 0:10:50, vân vân, thì đó là nhận dạng và gán nhãn từ loại.
+0:10:50 - 0:11:09, Còn nhận dạng tên riêng thì ở đây là bài toán NER, Name Entity Recognition, chúng ta cho trước một câu và chúng ta cần phải xác định xem là ứng với từng từ thì nó sẽ là cái tên riêng cho người hay là tên riêng cho một cái tổ chức hoặc là tên riêng cho một cái địa điểm.
+0:11:09 - 0:11:12, Tên riêng cho một địa điểm.
+0:11:14 - 0:11:17, Và đây là một bài toán có rất nhiều những ứng dụng.
+0:11:17 - 0:11:19, Có rất nhiều những ứng dụng.
+0:11:19 - 0:11:24, Rồi tìm kiếm từ khóa thì chúng ta thấy là các hệ thống search engine hiện nay
+0:11:24 - 0:11:30, đã làm minh họa cho ứng dụng tìm kiếm theo từ khóa, tìm từ đồng nghĩa, vân vân.
+0:11:30 - 0:11:36, Rồi gần đây hơn thì chúng ta sẽ có các ứng dụng ví dụ như là phân tích cảm xúc.
+0:11:36 - 0:11:46, Thì cái này là ứng dụng trong mạng xã hội, ví dụ như là Social Listening.
+0:09:36 - 0:11:46, Thì cái này là ứng dụng trong mạng xã hội, ví dụ như là Social Listening.
+0:11:48 - 0:11:54, Social Listening, tức là gì? Chúng ta sẽ có các con bot có thể crawl các dữ liệu trên mạng xã hội
+0:11:54 - 0:12:02, và nó sẽ biết rằng là các nội dung mà mình đang trao đổi, rồi các đoạn tin nhắn, các comment, v.v.
+0:12:02 - 0:12:06, thì nó có trạng thái tích cực, tiêu cực hay trung tính.
+0:12:06 - 0:12:10, Đó là một ngữ cảnh ứng dụng của bài toán Sentiment Analysis.
+0:12:10 - 0:12:16, Vậy thì Sentiment Analysis hoặc là một từ khác là Opinion Mining.
+0:12:16 - 0:12:24, Tức là chúng ta đang phân loại xem một đoạn văn hoặc một cụm từ
+0:12:24 - 0:12:27, là nó mang tính chất tích cực, tiêu cực hay trung tính.
+0:12:27 - 0:12:29, Xác định đại từ tham chiếu
+0:12:29 - 0:12:32, Thì cái bài toán này, đó là
+0:12:32 - 0:12:34, chúng ta sẽ xem coi
+0:12:34 - 0:12:36, các cái từ trong một cái câu
+0:12:36 - 0:12:39, nó sẽ được tham chiếu đến cái từ nào
+0:12:39 - 0:12:41, Ví dụ như là
+0:12:41 - 0:12:43, Cato phone Mubarak
+0:12:43 - 0:12:45, He shouldn't run again
+0:12:45 - 0:12:47, Thì cái từ he này
+0:12:47 - 0:12:51, nó có thể là tham chiếu đến cái từ
+0:12:51 - 0:12:54, Cato hoặc cũng có thể là tham chiếu đến từ Mubarak
+0:12:54 - 0:13:03, Nhưng trong ngữ cảnh của câu này, nó sẽ không tham chiếu đến Cato, mà tham chiếu đến Mubarak.
+0:13:03 - 0:13:14, Rồi, và đây thì chúng ta có các ứng dụng khác, ví dụ như là phân tích cú pháp, dịch máy, rút trích thông tin.
+01:03:03 - 01:13:14, Rồi, và đây thì chúng ta có các ứng dụng khác, ví dụ như là phân tích cú pháp, dịch máy, rút trích thông tin.
+0:13:14 - 0:13:17, Trong những năm gần đây thì các hệ thống dịch thuật
+0:13:17 - 0:13:23, là cho những kết quả rất ấn tượng và đã được thương mại hóa
+0:13:23 - 0:13:25, bởi rất nhiều những công ty.
+0:13:25 - 0:13:29, Rút trích thông tin thì chúng ta thấy trong các email bây giờ
+0:13:29 - 0:13:34, là nó đã có thể tự động, rút trích được nội dung của một email,
+0:13:34 - 0:13:38, có thể rút trích được thông tin về mặt thời gian, nơi chốn
+0:13:38 - 0:13:42, và từ đó để có thể giúp cho chúng ta đặt hẹn một cách dễ dàng.
+0:13:42 - 0:13:52, Rồi các cái ứng dụng khác mà hiện đại hơn nữa và gần đây có những cái ứng dụng rất là nổi tiếng chính là ChatGPT.
+0:13:52 - 0:13:58, Cái ứng dụng ChatGPT này là điển hình cho những cái ứng dụng sau.
+0:13:58 - 0:14:04, Tức là ChatGPT là một cái hệ thống mà nó tích hợp rất nhiều những cái khả năng về mặt ngôn ngữ.
+0:14:04 - 0:14:08, Ví dụ nó có khả năng Question Answering, tức là trả lời câu hỏi.
+0:14:08 - 0:14:11, Mình có thể hỏi ChatGPT các câu hỏi
+0:14:11 - 0:14:14, và nó sẽ đi lùng tìm những kiến thức trong quá khứ
+0:14:14 - 0:14:16, để từ đó nó có thể trả lời cho mình.
+0:14:17 - 0:14:19, Thứ hai, đó là
+0:14:20 - 0:14:22, Paraphrase, tức là viết lại một văn bản
+0:14:23 - 0:14:25, mình đưa cho ChatGPT một đoạn văn
+0:14:25 - 0:14:28, và mình yêu cầu nó viết lại theo một cách viết khác.
+0:14:29 - 0:14:32, Và đồng thời là nó cũng có thể thực hiện
+0:14:32 - 0:14:34, các thao tác sửa lỗi chính tả cho mình luôn.
+0:14:35 - 0:14:37, Paraphrase kết hợp với sửa lỗi chính tả.
+0:14:37 - 0:14:46, Vì vậy chúng ta thấy là ChatGPT nó rất là mạnh và hiệu quả trong việc ứng dụng các thành tựu mới của xử lý ngôn ngữ tự nhiên.
+0:14:47 - 0:14:54, Tóm tắt nội dung, tức là chúng ta sẽ cung cấp một cái đoạn văn rất là dài hoặc là cung cấp rất nhiều thông tin.
+0:14:54 - 0:14:57, Nó sẽ tự tóm tắt lại thành cái nội dung chính.
+0:14:57 - 0:15:02, Rồi hội thoại chatbot, tức là chúng ta có thể tám gẫu và hỏi thăm.
+0:15:02 - 0:15:07, Tức là chúng ta sẽ hỏi chatbot về bất cứ thứ gì mà nó có thể trả lời trong phạm vi mà nó cho phép.
+0:15:08 - 0:15:16, Như vậy thì, trong phần vừa rồi thì chúng ta đã tìm hiểu qua cái tiềm năng ứng dụng của xử lý ngôn ngữ tự nhiên.
+0:15:16 - 0:15:22, Và chúng ta thấy là xử lý ngôn ngữ tự nhiên đang ngày càng trở nên phổ biến trong cuộc sống của chúng ta.
+0:15:22 - 0:15:28, Và nó đang có những cái đóng góp to lớn cho sự phát triển của xã hội hiện nay.

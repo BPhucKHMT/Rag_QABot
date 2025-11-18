@@ -1,0 +1,126 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:19, Câu hỏi tiếp theo đó chính là tại sao
+0:00:16 - 0:00:22, hàm mất mát của cái mô hình của mình
+0:00:19 - 0:00:24, chúng ta lại à sử dụng cái hàm min
+0:00:22 - 0:00:30, square raw mà chúng ta không sử dụng
+0:00:24 - 0:00:32, những cái hàm bậc một hoặc là mae là min
+0:00:30 - 0:00:36, absolute error. Cụ thể hơn đối với cái
+0:00:32 - 0:00:38, hàm bậc một
+0:00:36 - 0:00:43, thì chúng ta có thể thay cái công thức ở
+0:00:38 - 0:00:46, trên bằng cái công thức đó là J của W B
+0:00:43 - 0:00:49, là bằng 1/N
+0:00:46 - 0:00:53, của tổng
+0:00:49 - 0:00:56, của y trừ cho
+0:00:53 - 0:00:59, WXY
+0:00:56 - 0:00:59, cộng B.
+0:01:00 - 0:01:07, Tức là đây là cái sai số giữa cái giá
+0:01:02 - 0:01:09, trị dự đoán và cái giá trị à thực tế.
+0:01:07 - 0:01:11, Thì đây chính là dự đoán nè, còn đây là
+0:01:09 - 0:01:15, thực tế nè. Thì rõ ràng chúng ta dùng
+0:01:11 - 0:01:17, công thức này nó sẽ đơn giản hơn. Thì để
+0:01:15 - 0:01:20, giải thích cho việc này á thì chúng ta
+0:01:17 - 0:01:25, có hai cách. Cách thứ nhất đó là chúng
+0:01:20 - 0:01:25, ta cũng sử dụng lý thuyết về toán.
+0:01:28 - 0:01:34, Rồi thì nếu như chúng ta nhìn cái hàm
+0:01:31 - 0:01:38, này á ở một góc độ nào đó thì cái hàm
+0:01:34 - 0:01:40, JWB này đó là một cái hàm bậc nhất theo
+0:01:38 - 0:01:43, W và B.
+0:01:40 - 0:01:45, Là một cái hàm bậc nhất theo W và B. Mà
+0:01:43 - 0:01:47, trong lý thuyết về toán tối ưu chúng ta
+0:01:45 - 0:01:49, biết rồi. Một cái hàm bậc một đó là một
+0:01:47 - 0:01:52, hàm tuyến tính thì nó sẽ không có giá
+0:01:49 - 0:01:55, trị nhỏ nhất. à nó sẽ không có giá trị
+0:01:52 - 0:01:57, nhỏ nhất dẫn đến là chúng ta không thể
+0:01:55 - 0:01:59, huấn luyện cái mô hình này để tìm ra cái
+0:01:57 - 0:02:02, W và B sao cho cái giá trị này nhỏ nhất
+0:01:59 - 0:02:05, được tại vì nó vốn không có đó nếu chúng
+0:02:02 - 0:02:07, ta vẽ nó trên cái không gian giả sử như
+0:02:05 - 0:02:12, ở đây chúng ta xét một cái hàm tuyến
+0:02:07 - 0:02:15, tính mà một biến thôi ha thì W ở đây thì
+0:02:12 - 0:02:17, rõ ràng đây là một cái hàm nó tiến về
+0:02:15 - 0:02:20, trừ vô cùng và mình sẽ không có cái giá
+0:02:17 - 0:02:22, trị nhỏ nhất ở đây.
+0:02:20 - 0:02:25, Mặt khác nếu mà cái hàm của mình nó như
+0:02:22 - 0:02:27, thế này thì chúng ta thấy là chúng ta
+0:02:25 - 0:02:29, cũng sẽ không có được cái giá trị nhỏ
+0:02:27 - 0:02:31, nhất. À chúng ta không có được cái giá
+0:02:29 - 0:02:33, trị nhỏ nhất. Vậy thì với cái cách lý
+0:02:31 - 0:02:37, giải đầu tiên đó là sử dụng lý thuyết
+0:02:33 - 0:02:39, toán thì sử dụng hàm bậc một không thể
+0:02:37 - 0:02:41, giúp cho chúng ta tìm được cái giá trị
+0:02:39 - 0:02:43, nhỏ nhất đúng hơn đó là nó không có để
+0:02:41 - 0:02:45, mà tìm.
+0:02:43 - 0:02:48, Cái cách giải thích thứ hai đó là chúng
+0:02:45 - 0:02:51, ta có thể dựa trên cái lý thuyết về mặt
+0:02:48 - 0:02:51, thông tin.
+0:02:53 - 0:02:58, Thì nếu như chúng ta tính tổng các cái
+0:02:55 - 0:03:01, sai số này thì nó sẽ có khả năng đó là
+0:02:58 - 0:03:05, những cái tình huống y dự đoán lớn hơn
+0:03:01 - 0:03:07, thực à y là là thực tế lớn hơn dự đoán
+0:03:05 - 0:03:11, thì lúc đó cái sai số của mình là dương.
+0:03:07 - 0:03:14, Lấy ví dụ như là dương 2 đi. Rồi nó cũng
+0:03:11 - 0:03:18, sẽ có cái tình huống đó là y nó nhỏ hơn
+0:03:14 - 0:03:22, wxy cộng cho b thì khi đó cái hiệu này
+0:03:18 - 0:03:24, nó sẽ là một con số âm giả sử như là -1.
+0:03:22 - 0:03:27, Thì ở đây chúng ta thấy là nó có một cái
+0:03:24 - 0:03:30, bất cập là hàm loss là cái hàm mà thể
+0:03:27 - 0:03:33, hiện cái sự sai số. Nhưng nếu đúng ra
+0:03:30 - 0:03:36, thì cái sai số ở đây nó nên là 3 hoặc
+0:03:33 - 0:03:39, hơn thế nữa. Còn ở đây chúng ta lại thấy
+0:03:36 - 0:03:43, 2 mà trừ đi cho 1 thì như vậy là còn còn
+0:03:39 - 0:03:45, 1. Tức là nó đã giảm bớt cái sai số của
+0:03:43 - 0:03:47, cái mẫu dữ liệu trước. Hay nó khác đó là
+0:03:45 - 0:03:49, các cái mẫu dữ liệu nó triệt tiêu lẫn
+0:03:47 - 0:03:52, nhau. Và đương nhiên cái tình huống hy
+0:03:49 - 0:03:55, hữu đó là ví dụ như mẫu dữ liệu đầu tiên
+0:03:52 - 0:03:58, thì là lớn hơn hai đơn vị, mẫu dữ liệu
+0:03:55 - 0:04:01, tiếp theo thì nhỏ hơn một đơn vị. Về mẫu
+0:03:58 - 0:04:04, tiếp theo là nhỏ hơn -1 đơn vị. Vậy thì
+0:04:01 - 0:04:06, tổng sai số của mình này là bằng 0. Thì
+0:04:04 - 0:04:09, đó là một cái điều rất là vô lý vì à rõ
+0:04:06 - 0:04:12, ràng là cái sai số cái dự đoán không
+0:04:09 - 0:04:15, khớp với lại giá trị sai số nhưng mà sai
+0:04:12 - 0:04:17, tổng hợp lại thì nó lại là ra con số 0.
+0:04:15 - 0:04:20, Đó thì đó chính là cái bất cập.
+0:04:17 - 0:04:23, Và chúng ta sẽ xét đến cái một cái ví dụ
+0:04:20 - 0:04:26, à một cái tình huống thứ hai đó là tại
+0:04:23 - 0:04:29, sao chúng ta không sử dụng hàm min
+0:04:26 - 0:04:31, absolute error.
+0:04:29 - 0:04:36, Thì nếu chúng ta sử dụng hàm min
+0:04:31 - 0:04:39, absolute zero à error thì cái chi của WB
+0:04:36 - 0:04:45, nó sẽ được viết lại là bằng 1/n
+0:04:39 - 0:04:48, cộng cho tổng của y chạy từ 1 cho đến n.
+0:04:45 - 0:04:56, thì ở đây nó sẽ là yy
+0:04:48 - 0:04:56, trừ cho w xy cộng b.
+0:04:57 - 0:05:02, Đó thì với cái công thức này à x ở đây
+0:05:00 - 0:05:06, chúng ta sẽ có một cái dấu trị tuyệt đối
+0:05:02 - 0:05:06, ha. Dấu trị tuyệt đối.
+0:05:06 - 0:05:11, Đây mình sẽ đổi màu để cho các bạn hình
+0:05:08 - 0:05:11, dung.
+0:05:12 - 0:05:18, Rồi thì đối với cái hàm này nó đã khắc
+0:05:15 - 0:05:21, phục được cái vấn đề của hàm bậc một gây
+0:05:18 - 0:05:24, ra đó là nó bị triệt tiêu. Thì khi chúng
+0:05:21 - 0:05:29, ta đưa cái dấu trị tuyệt đối vào thì à
+0:05:24 - 0:05:33, ví dụ như là 2 rồi -1 -1 thì khi chúng
+0:05:29 - 0:05:35, ta cộng lại thì nó sẽ có trị tuyệt đối
+0:05:33 - 0:05:38, và tổng sai số lúc này của mình là 4. Và
+0:05:35 - 0:05:40, nếu chia bình quân nữa thì ở đây là
+0:05:38 - 0:05:42, chúng ta sẽ chia cho hai mẫu tức là bằng
+0:05:40 - 0:05:46, 2. Như vậy thì với cái size số này chúng
+0:05:42 - 0:05:48, ta sẽ thấy đó là một cái size số lớn và
+0:05:46 - 0:05:51, nó có một cái lý do để khiến cho chúng
+0:05:48 - 0:05:56, ta không sử dụng min absolute error một
+0:05:51 - 0:05:58, cách phổ biến. Đó chính là cái đạo hàm
+0:05:56 - 0:06:02, thì nó sẽ khó tính,
+0:05:58 - 0:06:02, tức là khó tính toán.
+0:06:04 - 0:06:11, Cụ thể đó là đạo hàm của hàm x' thì nó
+0:06:08 - 0:06:15, sẽ là một cái dấu như thế này và nó sẽ
+0:06:11 - 0:06:19, bằng 1 nếu x dương
+0:06:15 - 0:06:22, và nó sẽ là bằng -1 nếu x của mình là
+0:06:19 - 0:06:25, con số âm. Thì đây là cái điều kiện à
+0:06:22 - 0:06:29, cho cái hàm à mất mát của mình đối với
+0:06:25 - 0:06:30, mô hình hồi quy tiến tính. Và trong
+0:06:29 - 0:06:33, những phần tiếp theo thì chúng ta sẽ
+0:06:30 - 0:06:39, cùng tìm hiểu về những cái chủ đề nâng
+0:06:33 - 0:06:39, cao hơn của mô hình hồi quy tiến tính.
+0:06:39 - 0:06:51, [âm nhạc]

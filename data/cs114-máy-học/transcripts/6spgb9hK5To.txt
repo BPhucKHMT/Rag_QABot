@@ -1,0 +1,255 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:32, một kiến trúc Deep Learning
+0:00:32 - 0:00:34, và Deep Learning ngày nay
+0:00:34 - 0:00:38, được dựa trên tư tưởng của mạng Neuron nhân tạo
+0:00:38 - 0:00:40, đó là kiến trúc gồm nhiều lớp
+0:00:40 - 0:00:43, và việc huấn luyện sẽ dựa trên một thuật toán
+0:00:43 - 0:00:46, Lăng truyền ngược Backpropagation
+0:00:46 - 0:00:47, do đó bài học ngày hôm nay
+0:00:47 - 0:00:49, có vai trò vô cùng quan trọng
+0:00:49 - 0:00:52, và nền tảng cho lý thuyết về học sâu
+0:00:52 - 0:00:54, lý thuyết về máy học hiện đại hiện nay
+0:00:55 - 0:00:57, Mục tiêu của bài học này
+0:00:57 - 0:01:02, Đó là chúng ta sẽ hiểu được những khái niệm và nguồn cảm hứng của mạng Neuron nhân tạo
+0:01:02 - 0:01:05, Có những khái niệm ví dụ như Neuron là gì
+0:01:05 - 0:01:07, Lớp hay layer là gì
+0:01:07 - 0:01:10, Trọng số của mạng Neuron Network là gì
+0:01:10 - 0:01:12, Độ lịch hay bias là gì
+0:01:12 - 0:01:17, Và chúng ta sẽ hiểu được cách thức mà mạng Neuron nhân tạo hoạt động như thế nào
+0:01:17 - 0:01:21, Gọi là thực toán Feedforward, tức là thực toán Lan Truyền thuận
+0:01:21 - 0:01:26, rồi biết được quá trình huấn luyện của một cái mạng Neural như thế nào
+0:01:26 - 0:01:29, đó là thuật toán Back Propagation, Lan Truyền Ngịch
+0:01:29 - 0:01:33, và một vài cái ứng dụng trong thực tế của mạng Neuron nhân tạo
+0:01:33 - 0:01:37, thì đầu tiên chúng ta sẽ nói về cái nguồn cảm hứng
+0:01:37 - 0:01:40, là tại sao chúng ta lại cần có một cái mạng Neuron nhân tạo
+0:01:40 - 0:01:43, thế thì đầu tiên chúng ta sẽ phải nói đến là
+0:01:43 - 0:01:45, trước cái mạng Neuron nhân tạo thì các thuật toán
+0:01:45 - 0:01:50, mà truyền thống nó hiệu quả với dữ liệu mà phân tách, triến tính được
+0:01:50 - 0:01:57, Tức là những mô hình truyền thống trước đây chỉ hiệu quả được với những dữ liệu có thể phân tách một cách tuyến tính
+0:01:57 - 0:02:02, Tức là chúng ta chỉ có thể vẽ được một đường thẳng để chia nó ra làm hai phần
+0:02:02 - 0:02:11, Thì đây là một đường tuyến tính để tách ra hai điểm màu vàng, màu cam và màu xanh
+0:02:11 - 0:02:18, Tuy nhiên trong thực tế thì dữ liệu của mình thường có một mối quan hệ rất phức tạp và thường sẽ là phi tuyến tính
+0:02:18 - 0:02:26, Ví dụ như các loại dữ liệu hình ảnh và dữ liệu văn bản để mà chúng ta có thể nhận diện được hình ảnh hoặc là phân loại văn bản văn văn
+0:02:26 - 0:02:31, thì đó là những bài toán mà không phải là có một mối quan hệ tiến tính
+0:02:31 - 0:02:38, thì ở trong hình bên tay trái ở đây chúng ta sẽ thấy là 2 tập là màu xanh và màu cam
+0:02:38 - 0:02:44, thì nó sẽ không thể nào có thể chia tách ra được bằng một đường thẳng
+0:02:44 - 0:02:47, Ví dụ như chúng ta kẽ một cái đường như thế này
+0:02:47 - 0:02:49, hoặc là chúng ta kẽ một cái đường như thế này
+0:02:49 - 0:02:53, thì không có cách nào mà có thể chia nó ra làm hai phần
+0:02:53 - 0:02:56, không có cách nào để chia nó ra làm hai phần được
+0:02:56 - 0:03:02, với một đường thẳng mà chúng ta chỉ có thể là có một cái đường rất là phức tạp như thế này
+0:03:02 - 0:03:07, nó sẽ đi len lõi để mà chia tách nó ra làm hai phần
+0:03:07 - 0:03:12, thì đây nó gọi là một cái ví dụ về phân loại dữ liệu
+0:03:12 - 0:03:14, nhưng mà nó là phi tuyến
+0:03:14 - 0:03:23, Còn ở phía trên đây là một đường thẳng, thì đây chính là tiến tính
+0:03:23 - 0:03:34, Và một đường thẳng thì không thể nào chi tách tập này ra được làm 2
+0:03:34 - 0:03:38, Đó là cái động cơ tại sao chúng ta cần phải có một cái mạng Neural
+0:03:38 - 0:03:44, Mạng Neural này nó có khả năng tự học các cái mối quan hệ rất là phức tạp của dữ liệu
+0:03:44 - 0:03:49, Và dữ liệu này thì nó có cái mối quan hệ đó là phi tuyến
+0:03:49 - 0:03:52, Là một cái mối quan hệ phi tuyến
+0:03:52 - 0:03:59, Thì xuất phát điểm của cái mạng Neural Network này là nó lấy cái nguồn cảm hứng từ cái não của con người
+0:03:59 - 0:04:00, Từ não của con người
+0:04:00 - 0:04:07, thì ở trong hình bên đây đó là một cái kiến trúc và một cái tế bào
+0:04:10 - 0:04:12, của một cái bào não người
+0:04:16 - 0:04:22, Tại biết tắt đây, thì cái tế bào não này sẽ nhận dữ kiện đầu vào, cái input này
+0:04:22 - 0:04:27, Thông qua các cái nhánh, thông qua các cái Dendritic
+0:04:27 - 0:04:31, Và nhánh này nó sẽ tiếp nhận các cái tín hiệu đầu vào
+0:04:31 - 0:04:34, Và bên trong thì nó sẽ có cái phần thân tế bào
+0:04:34 - 0:04:38, Rồi cái phần lỗi đó là cái phần nhân
+0:04:38 - 0:04:42, Thì cái phần lỗi này nó sẽ nhận cái tín hiệu đầu vào và nó sẽ xử lý
+0:04:42 - 0:04:45, Sau đó nó sẽ lan truyền và nó kích hoạt
+0:04:45 - 0:04:50, Nó kích hoạt qua cái Ason này để mà truyền cái tín hiệu đầu ra
+0:04:50 - 0:04:55, truyền tín hiệu đầu ra đến các tế bào nào khác
+0:04:56 - 0:04:58, các tế bào nào khác sẽ xử lý
+0:04:58 - 0:05:01, đây là một kiến trúc về mặt sinh học
+0:05:03 - 0:05:05, của nảo người
+0:05:05 - 0:05:10, và tương ứng bên tay phải là chúng ta sẽ có một cái kiến trúc về một cái tế bào
+0:05:10 - 0:05:12, tế bào trong nháy kép
+0:05:14 - 0:05:17, của một cái mạng neuron nhân tạo
+0:05:20 - 0:05:34, đây là 1 cái tái bào, nó cũng sẽ nhận vào input các cái node và mỗi cái node này nó sẽ nhận tín hiệu kích hoạt từ các lớp trước
+0:05:34 - 0:05:40, ở đây sẽ có cạnh để thực hiện phép nhân, phép trọng số
+0:05:40 - 0:05:41, đây chính là quay
+0:05:41 - 0:05:45, toàn bộ cạnh này
+0:05:45 - 0:05:53, nó sẽ có trọng số là b, w1, w2, vn
+0:05:53 - 0:06:00, đó là trọng số của tế bào mạng nơn nhân tạng
+0:06:00 - 0:06:04, sau đó sẽ có 1 hàm kích hoạt phi tuyến tính
+0:06:04 - 0:06:06, là 1 hàm kích hoạt
+0:06:06 - 0:06:08, hàm kích hoạt này là 1 hàm phi tuyến
+0:06:08 - 0:06:11, sau đó tính toán tạo ra giá trị output
+0:06:11 - 0:06:16, và output này sẽ truyền đến cho tất cả tế bào
+0:06:16 - 0:06:18, ở lớp phía sau
+0:06:18 - 0:06:22, và ý tưởng cốt lõi cũng lấy từ cấu trúc
+0:06:22 - 0:06:24, và cách thức hoạt động của nảo người
+0:06:24 - 0:06:27, đầu bào là input, đầu ra là output
+0:06:27 - 0:06:30, và có các nhân xử lý thì bên đây cũng sẽ có những nhân xử lý
+0:06:30 - 0:06:32, nhân xử lý này thì bao gồm là
+0:06:32 - 0:06:35, Tiến tính và một cái là Phi tuyến
+0:06:35 - 0:06:37, nó sẽ xử lý tiến hiệu đầu vào
+0:06:37 - 0:06:39, nhận tiến hiệu đầu vào
+0:06:39 - 0:06:42, xử lý tiến hiệu và truyền tiến hiệu đến các neuron khác
+0:06:42 - 0:06:45, nó sẽ truyền đi ra qua các neuron khác
+0:06:45 - 0:06:49, và nó sẽ kết nối hàng triệu neuron
+0:06:49 - 0:06:53, thành một mạng nữ phức tạp để hy vọng là có thể giải quyết được
+0:06:53 - 0:06:55, cùng một cái vấn đề của mình
+0:06:55 - 0:06:59, đó chính là ý tưởng của mạng neuro nhân tạo
+0:06:59 - 0:07:01, mạng neuro là gì?
+0:07:01 - 0:07:06, mạng neuro nhân tạo là một mô hình tóán
+0:07:06 - 0:07:11, dẫu sao chúng ta thấy là chúng ta đưa nó về các vạn đồ thị
+0:07:11 - 0:07:14, nhưng cuối cùng nó cũng đều là những công thức tính tóán
+0:07:14 - 0:07:17, nên nó được gọi là một mô hình tóán
+0:07:17 - 0:07:20, bao gồm các neuron được tổ chức thành các lớp
+0:07:20 - 0:07:26, Mỗi một cái node này được gọi là 1 cái Neural
+0:07:26 - 0:07:30, Và nó được sắp xét theo lớp
+0:07:30 - 0:07:33, Ví dụ nguyên một cái dọc này là 1 node, là 1 layer
+0:07:33 - 0:07:36, Nguyên cái dọc này là 1 layer, nguyên cái dọc này là 1 layer
+0:07:36 - 0:07:42, Cái cấu trúc của nó sẽ bao gồm 3 cái loại lớp chính
+0:07:42 - 0:07:48, Cái lớp đầu vào hay là lớp input layer thì đây là cái lớp input
+0:07:48 - 0:07:53, sau đó là lớp ẩn hít đần layer
+0:07:53 - 0:07:59, hít đần layer có thể có 1 hoặc nhiều hít đần layer
+0:07:59 - 0:08:02, lớp đầu ra là output layer
+0:08:02 - 0:08:05, chúng ta sẽ có 1 lớp như thế này
+0:08:05 - 0:08:09, để đưa ra được kết quả dự đoán
+0:08:09 - 0:08:16, lớp hít đần layer sẽ học trích xuất các đặc trưng từ dự kiện đầu vào
+0:08:16 - 0:08:25, Lường xử lý của mình là chúng ta sẽ đi từ lớp input trước, nó sẽ truyền tiến hiệu từ bên ngoài vào
+0:08:25 - 0:08:38, Sau đó lớp input này sẽ lang truyền đến hít đần layer, cái lớp ẩn thứ nhất
+0:08:38 - 0:08:46, Lớp x ẩn thứ nhất sau đó lại được tiếp tục lang truyền đến lớp hidden layer thứ 2
+0:08:46 - 0:08:49, Lớp hidden layer thứ 2 v.v.v. như vậy
+0:08:49 - 0:08:52, sẽ truyền cho đến lớp output layer cuối cùng
+0:08:52 - 0:08:55, Đó là luồng xử lý dữ liệu
+0:08:55 - 0:09:00, Sau đây thì chúng ta sẽ có một ví dụ để minh họa
+0:09:00 - 0:09:07, Đầu tiên, đó là chúng ta sẽ có cái ví dụ là rất là kinh điển trong các cái bài toán mà nhận diện
+0:09:07 - 0:09:13, đó chính là nhận diện chữ số biết tay là các cái con số từ 0 cho đến 9 bằng hình ảnh
+0:09:13 - 0:09:17, thì ở trong cái tập dữ liệu mnits nó có kích thước là 28 x 28
+0:09:17 - 0:09:21, tức là một cái ma trận có kích thước là 28 x 28 như thế này
+0:09:21 - 0:09:23, và trong đây nó sẽ có cái con số
+0:09:23 - 0:09:26, ví dụ vậy, đây là một cái con số
+0:09:26 - 0:09:29, sau đó chúng ta sẽ flatten
+0:09:29 - 0:09:36, tức là chúng ta biến từ dữ liệu dạng ma trận về dạng vector
+0:09:36 - 0:09:41, Vector này là một vector có 784 chiều
+0:09:41 - 0:09:47, sau đó qua mạng neural network
+0:09:47 - 0:09:51, Mạng neural nhân tạo thì chúng ta sẽ truyền đến các lớp ẩn tiếp theo
+0:09:51 - 0:09:57, Lớp ẩn này có kết nối dày đặt
+0:09:57 - 0:10:02, Mỗi cái neuron này sẽ nối đến tất cả những cái neuron
+0:10:02 - 0:10:05, ở layer tiếp theo
+0:10:05 - 0:10:07, Nên nó được gọi là dày đặt
+0:10:07 - 0:10:13, Thì để đảm bảo cho tính thoáng của hình ảnh
+0:10:13 - 0:10:15, thì chúng ta sẽ không có vẻ dày đặt như thế này
+0:10:15 - 0:10:18, Chúng ta chỉ cần vẻ dấu mũi tên thôi
+0:10:18 - 0:10:27, nhưng khi chúng ta ký hiệu là dense, hàm ý mỗi nô rôn ở lớp trước sẽ được kết nối đến tất cả các nô rôn ở lớp tiếp theo
+0:10:27 - 0:10:34, và con số 128 cho biết là output tức là tại layer này có bao nhiêu nodes
+0:10:34 - 0:10:38, 128 hàm ý là ở đây có 128 nodes
+0:10:38 - 0:10:46, 784 là cái nô trang ở đây
+0:10:46 - 0:10:48, và mỗi cái nô trang này sẽ nhận 1 cái giá trị
+0:10:48 - 0:10:54, Rồi, thì do là chúng ta làm trên cái bài toán nhận diện chữ BigTie
+0:10:54 - 0:10:59, chữ số BigTie từ 0 đến 9, tức là chúng ta có 10 lớp đối tượng
+0:10:59 - 0:11:03, chúng ta có 10 lớp đối tượng cần phải phân biệt
+0:11:03 - 0:11:14, 10 lớp đối tượng này tương ứng ở lớp kế cuối, chúng ta sẽ có 10 cái Neural
+0:11:14 - 0:11:21, tương ứng là mỗi 1 cái Neural này để cho biết nó có thuộc về cái chữ cái ở vị trí đó hay không
+0:11:21 - 0:11:28, ví dụ như cái Neural này cho biết nó có thuộc về chữ số 0 hay không
+0:11:28 - 0:11:31, Neural này tương ứng là có thuộc về chữ số 1 hay không
+0:11:31 - 0:11:37, Neural cuối này cho biết nó có thuộc về chữ số 9 hay không
+0:11:39 - 0:11:49, Và để việc dự đoán được chuẩn hóa về không gian sát xuất
+0:11:49 - 0:12:00, Chúng ta sẽ sử dụng một hàm kết hoạt, đó là softmax
+0:12:00 - 0:12:08, Hàm kết hoạt softmax sẽ đưa các giá trị 10 cho giá trị này về một vector có 10 chiều
+0:12:08 - 0:12:16, Y ngã là giá trị dự đoán, là một vector 10 chiều
+0:12:16 - 0:12:22, Và vector 10 chiều này thì nó thỏa mãn điều kiện đó là tổng của cái x, y ngã này
+0:12:22 - 0:12:24, đó là bằng một
+0:12:24 - 0:12:28, tức là tổng các cái sát xuất thuộc về từng cái chữ cái này nè
+0:12:28 - 0:12:30, từng cái chữ số này nè sẽ là bằng một
+0:12:30 - 0:12:33, và trong đó từng cái thành phần là x, y ngã này nè
+0:12:33 - 0:12:35, thì đều là lớn hơn 0 và bé hơn 1
+0:12:35 - 0:12:39, thì đưa về cái không gian sát xuất này để giúp cho chúng ta chuẩn hóa
+0:12:39 - 0:12:42, và biết được rằng là một cái dữ kiện đầu vào
+0:12:42 - 0:12:44, là một cái ma trận điểm ảnh như thế này
+0:12:44 - 0:12:47, nó sẽ thuộc về lớp chữ số nào
+0:12:50 - 0:12:55, một đơn vị cơ bản trong mạng Neuro nhân tạo là Perceptron
+0:12:55 - 0:12:58, đây là khái niệm Perceptron
+0:13:00 - 0:13:04, mô hình đơn giản nhất trong mạng Neuro nhân tạo là Perceptron
+0:13:04 - 0:13:08, nó sẽ có duy nhất dữ liệu đầu vào
+0:13:08 - 0:13:13, như vậy chúng ta sẽ có duy nhất một input
+0:13:14 - 0:13:18, 1 input layer
+0:13:18 - 0:13:26, và đầu ra là 1 output layer
+0:13:26 - 0:13:32, 1 output layer
+0:13:32 - 0:13:36, output layer chỉ có 1 neuron
+0:13:36 - 0:13:41, nó chỉ có duy nhất một neural
+0:13:41 - 0:13:46, thì đây là một đơn vị cơ bản, là một mạng neural nhân tạo đơn giản nhất
+0:13:46 - 0:13:55, trong neural nhân tạo perceptron này
+0:13:55 - 0:14:00, nó sẽ có một hàm tiến tính và một hàm kích hoạt phi tiến tính
+0:14:00 - 0:14:05, Đầu vào là dữ liệu từ lớp dữ kiện đầu vào
+0:14:05 - 0:14:12, Trọng số của mình sẽ là bao gồm W1, W2, Wn
+0:14:12 - 0:14:17, Tương ứng với trọng số của các dữ kiện đầu vào của mình
+0:14:17 - 0:14:23, B là khái niệm gọi là bias
+0:14:23 - 0:14:29, Tạm dịch là độ lệch
+0:14:29 - 0:14:36, nó tương ứng với dữ kiện đầu vào của mình là x0 và x0 trong trường hợp này là bằng 1
+0:14:38 - 0:14:44, bias này giống như trong phương trình đường thẳng của mình
+0:14:44 - 0:14:48, giống như trong phương trình AX cộng BI
+0:14:48 - 0:14:52, cộng thêm một thành phần nữa, nó không phụ thuộc với X và Y, nó chính là C
+0:14:52 - 0:14:54, C này chính là bias
+0:14:54 - 0:14:59, Đây là một dạng phương trình
+0:14:59 - 0:15:03, A là hệ số đi kèm với biến x
+0:15:03 - 0:15:06, B là trọng số đi kèm với biến y
+0:15:06 - 0:15:10, C là trọng số tự do, không phụ thuộc vào x và y
+0:15:10 - 0:15:16, W1 là trọng số đi kèm với tín hiệu đầu vào là x1
+0:15:16 - 0:15:19, W2 là trọng số đi kèm với dữ liệu x2
+0:15:19 - 0:15:23, Wn là tương ứng trọng số đi kèm với đầu vào là xn
+0:15:23 - 0:15:28, Tuy nhiên, chúng ta sẽ có một trọng số nữa là b
+0:15:28 - 0:15:32, b này sẽ đi kèm với thành phần x0 tức là bằng 1
+0:15:32 - 0:15:48, là không phụ thuộc vào x1, x2, xn, n
+0:15:48 - 0:15:54, Thì thành phần không phụ thuộc vào các biến đồ vào, đó gọi là đồ lạch, bias
+0:15:54 - 0:15:59, Thì nó giúp cho mô hình của mình có tính tổng bác hơn
+0:15:59 - 0:16:03, Và quá trình tính toán sẽ bao gồm 2 bước
+0:16:03 - 0:16:08, Bước đầu tiên là tính tổng, tổng trọng số z
+0:16:08 - 0:16:15, Z này sẽ được tính là bằng 1, x0 b, tức là 1 nhưng b, tức là b
+0:16:15 - 0:16:21, là b cộng cho w1, x1, w2, x2, wn, xn
+0:16:21 - 0:16:23, thì đây là một phép biến đổi tiến tính
+0:16:23 - 0:16:25, c này là một phép biến đổi tiến tính
+0:16:25 - 0:16:27, sau đó chúng ta sẽ tiến hành
+0:16:27 - 0:16:30, tính cái output i này thông qua cái hàm kết hoạt
+0:16:30 - 0:16:32, thì đây là hàm kết hoạt f
+0:16:32 - 0:16:36, và hàm này nó bắt buộc phải là một cái hàm phi tuyến
+0:16:40 - 0:16:42, nó bắt buộc phải là một cái hàm phi tuyến
+0:16:42 - 0:16:47, Chúng ta sẽ giải thích lý do tại sao nó phải là một hàm phi tuyến
+0:16:47 - 0:16:55, Tuy nhiên ở đây chúng ta thấy là nếu chúng ta nhìn kỹ lại thì keeper sếp trong này sẽ giống với một mô hình trước đây
+0:16:55 - 0:17:03, Để mà phân loại dị phân, đó chính là mô hình Logistic Regression
+0:17:03 - 0:17:19, Về mặt bản chất thì Perceptron là một cái cấu phần, đơn vị cơ bản nhất trong mạng neuro nhân tạo là một mô hình Logistic Correction
+0:17:19 - 0:17:29, sau đây chúng ta sẽ lấy một ví dụ tính toán bằng số học
+0:17:29 - 0:17:33, đầu vào là x0, trong trường hợp này là bằng 0
+0:17:33 - 0:17:36, nhưng mà nếu nói về bias thì ký thằng này phải là bằng 1
+0:17:36 - 0:17:43, nhưng mà giả định ở đây là x0 là bằng 0
+0:17:43 - 0:17:48, thực tế nó phải là bằng 1, bias luôn luôn là bằng 1
+0:17:48 - 0:17:52, Rồi, thì khi đó, ờ...
+0:17:52 - 0:17:57, ờ, thật tế là ở đây là số 1
+0:17:57 - 0:18:00, Rồi, cái slide này nó có một chút nhầm lẫn
+0:18:00 - 0:18:05, Ở đây là 1, thì khi đó là cái phép biến đổi đầu tiên là z
+0:18:05 - 0:18:08, thì z sẽ là bằng 1 nhân 1
+0:18:08 - 0:18:09, là bằng 1
+0:18:09 - 0:18:12, rồi 2 nhân cho 0.5
+0:18:12 - 0:18:14, 2 nhân cho 0.5
+0:18:14 - 0:18:16, và 3 nhân với trừ 1
+0:18:16 - 0:18:17, 3 nhân với trừ 1
+0:18:17 - 0:18:22, khi đó chúng ta cộng lại, thì 2 nhân với 0.5 là bằng 1
+0:18:22 - 0:18:24, 3 nhân với trừ 1 là trừ 3
+0:18:24 - 0:18:30, 1 trừ 3 cộng 1 là trừ 1
+0:18:30 - 0:18:33, vậy z trong trường hợp này sẽ là bằng trừ 1
+0:18:33 - 0:18:38, sau đó chúng ta gọi 1 hàm kích hoạt
+0:18:38 - 0:18:40, giả sử như hàm kích hoạt này
+0:18:40 - 0:18:43, đó là hàm có công thức sau
+0:18:43 - 0:18:45, f của z là bằng 1 nếu z lớn hơn 0
+0:18:45 - 0:18:47, và f của z bằng 0
+0:18:47 - 0:18:49, nếu trường hợp ngược lại
+0:18:49 - 0:18:51, thì đây bảng chấp chính là hàm Reload
+0:18:51 - 0:18:53, rectify linear unit
+0:18:55 - 0:18:58, khi z bằng trừ 1
+0:18:58 - 0:19:00, tức là nó kích hoạt chỗ này
+0:19:00 - 0:19:02, là đáp số của mình
+0:19:02 - 0:19:04, f cũng trừ 1 chính là bằng 0
+0:19:04 - 0:19:07, như vậy output của mình lúc này sẽ là bằng 0
+0:19:07 - 0:19:09, thì đây là một ví dụ
+0:19:09 - 0:19:11, chúng ta lan truyền
+0:19:11 - 0:19:13, chúng ta lan truyền giá trị của mình
+0:19:13 - 0:19:14, từ đầu cho đến cuối
+0:19:14 - 0:19:18, nhắc lại 1 lần nữa đó là x0 của mình là phải bằng 1
+0:19:18 - 0:19:21, khi nói về bias thì x0 chắc chắn là bằng 1 chứ không thể nào bằng 0
+0:19:21 - 0:19:26, là cho cái này là có cái lỗi xong cái việc soạn slide nên cái này nó là bằng 0 thôi
+0:19:26 - 0:19:29, còn thực tế nó phải là luôn luôn là bằng 1

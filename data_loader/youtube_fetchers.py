@@ -297,6 +297,7 @@ class TranscriptWhisperFetcher:
             "outtmpl": raw_outtmpl,
             "quiet": True,
             "no_warnings": True,
+            "proxy": "",
         }
 
         print(f"📥 Tải audio từ YouTube: {url}")
@@ -340,7 +341,9 @@ class TranscriptWhisperFetcher:
             str(final_audio_path),
         ]
         print("🎬 Chạy lệnh ffmpeg:", " ".join(cmd))
-        proc = subprocess.run(cmd, capture_output=True, text=True)
+        proc = subprocess.run(
+            cmd, capture_output=True, text=True, encoding="utf-8", errors="ignore"
+        )
 
         if proc.returncode != 0:
             print("❌ ffmpeg error:")

@@ -1,0 +1,146 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, CNN, ImageNet.
+0:00:30 - 0:00:39, Bỏ lỡ đi một cơ hội để cây quyết định có thể có một số nút sâu hơn sẽ giảm giá trị lỗi nhiều hơn.
+0:00:41 - 0:00:48, Như vậy, chúng ta có thể kết luận là chỉ mẫu tư chữ dừng có thể không tạo ra các cây có hơi số cao.
+0:00:49 - 0:00:58, Một tình huống cụ thể đó là việc chúng ta dừng phân chia các vùng khi giá trị residual sum square, hay còn gọi là giá trị lỗi,
+0:00:58 - 0:01:01, nó không giảm nhiều trong một bước
+0:01:01 - 0:01:07, tuy nhiên, các bước tiếp theo có thể giảm nhiều một cách đầu ngục
+0:01:07 - 0:01:12, và việc chúng ta dừng sớm đôi khi sẽ bỏ lỡ
+0:01:12 - 0:01:17, việc chúng ta sẽ cải thiện hiệu suất thân loại hoặc là hồi huy
+0:01:17 - 0:01:20, thì như vậy chúng ta có thể có một ý tưởng đó là
+0:01:20 - 0:01:26, chúng ta cứ phát triển một cây T không nào đó rất là lớn đi
+0:01:26 - 0:01:32, Và sau đó chúng ta sẽ tiến hành cắt tiễn nó để thu được 1 cây con
+0:01:35 - 0:01:43, Thì ở đây chúng ta có thể hiểu đơn giản là cái việc phân chi các vùng chúng ta chỉ đơn giản là đi tìm các cây thôi
+0:01:44 - 0:01:48, Và khi chúng ta xây dựng cây thì chúng ta có thể có nhiều cách mà
+0:01:49 - 0:01:51, Đầu tiên thì chúng ta có thể xây dựng và chúng ta dựng
+0:01:51 - 0:01:52, và chúng ta dừng
+0:01:52 - 0:01:55, hoặc là chúng ta cứ xây dựng cho nó sau đây
+0:01:55 - 0:01:56, và chúng ta sẽ cắt sau
+0:01:58 - 0:02:02, Tiếp theo, chúng ta sẽ tích hợp
+0:02:02 - 0:02:04, cái ý tưởng của việc cắt bỉa cây
+0:02:05 - 0:02:09, vào cái mục tiêu ngốc của chúng ta
+0:02:09 - 0:02:11, đã địa cập ở các slide trước
+0:02:13 - 0:02:16, Ở đây, chúng ta sẽ có số nút lá trong một cây
+0:02:16 - 0:02:20, hay còn gọi là cắt vùng nguyễn định trong một cây
+0:02:21 - 0:02:27, ứng với từng điện dữ liệu trong một nút lá hay cái vùng đó thì chúng ta sẽ tính toán đòa lỗi
+0:02:29 - 0:02:37, để mà chúng ta trừng phạt số lượng nút lá trong một cây càng nhiều thì đòa lỗi càng cao
+0:02:37 - 0:02:42, thì chúng ta sẽ có một cái siêu thêm số ảnh phạm ở đây hơn
+0:02:43 - 0:02:50, ảnh phạm bằng 0 của chúng ta có nghĩa là nó sẽ giống như là cái đòa lỗi của bài toán bằng đầu
+0:02:51 - 0:03:07, Trường hợp ngược lại, alpha là một con số rất là lớn, thì con nghĩa là cái cây của chúng ta khả năng sẽ có rất ít nút lá, nó sẽ tạo ra một cái cây đơn giản
+0:03:07 - 0:03:16, Nếu như vậy, ý tưởng tìm ra cây con ở đây thì chúng ta có thể có nhiều cây con
+0:03:16 - 0:03:33, Mỗi cây con như vậy thì chúng ta sẽ đi đánh giá hiệu xuất hồi huy của nó bằng phương pháp chuyển định chéo cross-prediction
+0:03:33 - 0:03:43, Chúng ta sẽ có một mênh họa về việc chọn kích thước của cây
+0:03:43 - 0:03:53, Chúng ta sẽ có tree size là số lượng ngút lá trong một cây
+0:03:53 - 0:03:59, Chúng ta sẽ có giá trị tree size bằng 3
+0:03:59 - 0:04:08, Vì vậy thì chúng ta thực sự không biết là bao nhiêu nút lá là tốt ha
+0:04:08 - 0:04:12, Cho nên là chúng ta sẽ tiến hành thử nghiệm
+0:04:12 - 0:04:17, Ở đây thì chúng ta sẽ có cái cây quyết định khá là phức tạp
+0:04:17 - 0:04:21, Ở bên trái có rất là nhiều nút lá
+0:04:21 - 0:04:27, Và ứng tới mỗi cây con như vậy á
+0:04:27 - 0:04:35, Chẳng hạn chúng ta sẽ có 1 cái cây có kích thước là 2 đây, đây là 3 này, đây là 4 này
+0:04:35 - 0:04:42, Thì chúng ta có thể quan sát hiệu xuất của kiểm định chéo như sau
+0:04:42 - 0:04:54, Thì chúng ta sẽ thấy kiểm định chéo ở đây có hiệu xuất mean square error, dặm dần, đáng điện
+0:04:54 - 0:05:02, mà số nút lái bằng 3 thì hiệu suất kiểm định chéo không còn được cải thiện nữa
+0:05:02 - 0:05:05, cho nên chúng ta có thể coi
+0:05:05 - 0:05:11, cái cây mà có số nút lái là 3 ở đây là một cái cây tốt
+0:05:11 - 0:05:14, nó đơn giản để có hiệu suất tốt
+0:05:14 - 0:05:22, như vậy là sau khi quá trình thực nghiệm thì chúng ta có được một cái cây hồi huy
+0:05:22 - 0:05:27, đơn giản nhưng mà lại có hiệu xuất kiểm định chéo cao
+0:05:32 - 0:05:39, Trong khoảng trước, chúng ta đã tìm hiểu về cách xây dựng cây quyết định cho bài toán hồi huy
+0:05:39 - 0:05:46, Tiếp theo, chúng ta sẽ tìm hiểu cách xây dựng cây quyết định cho bài toán phan loại
+0:05:46 - 0:05:59, Tương tự với cây hầu huy, thì đầu tiên chúng ta sẽ chia không gian đặc trưng băng đầu thành các vùng riêng biệt, cụ thể là thành z vùng riêng biệt
+0:05:59 - 0:06:06, hay nói cái khác là chúng ta tìm ra một cây quyết định có z nút lá
+0:06:06 - 0:06:30, Sau khi chúng ta tìm ra được cái quyết định, thì đối với mỗi mẫu dữ liệu có thể thuộc tập huấn luyện hay không, một cái bùng NUG nào đó, thì chúng ta sẽ đưa ra quyết định bằng cách là chúng ta sẽ đi tìm ra cái lớp mà số khiển nhiều nhất trong cái bùng đó.
+0:06:30 - 0:06:39, thì cẩu thể hơn chúng ta có thể tính xác số xuất hiện của 1 lớp thuộc về vòng đó.
+0:06:43 - 0:06:51, Cẩu thể hơn thì cái việc phân tần không nhà đặc trưng của chúng ta ứng với bài toán hậu quý,
+0:06:51 - 0:06:59, thì chúng ta dựa trên độ lỗi là residuals and square cho bài toán hậu quý tiến tính.
+0:06:59 - 0:07:07, Đó là một tiêu chí để chúng ta phân chia thành các vùng tốt hơn
+0:07:07 - 0:07:14, Tuy nhiên, đối với lại bài toán phân loại thì chúng ta sẽ có 2 chỉ số khác
+0:07:14 - 0:07:19, đó là chỉ số Gini và chỉ số entropy
+0:07:19 - 0:07:26, 2 chỉ số này có thể đánh giá được 1 cây có phân loại tốt hay là không
+0:07:26 - 0:07:33, Cụ tệ hơn, chỉ số ghi này được định nghĩa bằng công thức sau
+0:07:33 - 0:07:39, Giả sử chúng ta sẽ có một mục mục dữ liệu cố định
+0:07:39 - 0:07:47, Thì ở đây chúng ta có thể hành dung là mục dữ liệu đó bao gồm 3 định dữ liệu
+0:07:47 - 0:07:53, ứng với lại bài toán phân loại x và o
+0:07:53 - 0:08:00, Các cơ hội này là bằng 2 trạng hạn, chúng ta sẽ có 2 lớp
+0:08:00 - 0:08:10, Khi thế vào công thức Kini, chúng ta sẽ có lớp thứ nhất là lớp O
+0:08:10 - 0:08:17, Sát suất xuất hiện của nó là 1 trạng hạn, thành phần thứ nhất là 0
+0:08:17 - 0:08:24, Lập thứ 2 là lấp x, chúng ta sẽ thay thế xác suất huyền của nó vào
+0:08:24 - 0:08:33, Tương tự như vậy, chúng ta sẽ có giá trị nguyên cái thành phần này sẽ là 0
+0:08:33 - 0:08:39, Và gini của chúng ta sẽ có giá trị là 0
+0:08:39 - 0:08:49, Không ở đây, nó sẽ phản ánh vùng dữ liệu này là thuần khiết lớp O
+0:08:49 - 0:08:57, thuần khiết ở đây thì chúng ta cũng có thể coi như là độ tinh khiết của 1 nút
+0:08:57 - 0:09:01, 1 nút ở đây thì phản ánh 1 vùng dữ liệu
+0:09:01 - 0:09:13, Tương tự như với dụng khác, chúng ta sẽ có chỉ số Gini để đo lường sự bắt bình đẳng về thu nhập của các quốc gia trên thế giới
+0:09:13 - 0:09:23, Trong trường hợp lý tượng nhất, mọi người trên thế giới này sẽ có mức thu nhập như nhau, có nghĩa là mọi người đều giống nhau
+0:09:23 - 0:09:29, Cho nên chỉ số bắt bình đẳng ở đây là 0
+0:09:29 - 0:09:46, Ngoài ghi này, chúng ta sẽ có một chỉ số phổ biến khác để đo lường độ hỗn loạn của thông tin trong một tập dữ liệu
+0:09:46 - 0:09:54, Chúng ta sẽ có sát suất xuất hiện của một giá trị
+0:09:54 - 0:09:58, Nó sẽ thuộc về lớp 1 hay lớp 0
+0:09:58 - 0:10:02, Vậy xử ứng với lại lớp 1 đi
+0:10:02 - 0:10:06, Nếu như sát suất xảy ra của nó là 1
+0:10:06 - 0:10:10, thì entropy của chúng ta sẽ là 0
+0:10:10 - 0:10:13, và tương tự như vậy cũng là 0 luôn
+0:10:13 - 0:10:22, và trong trường hợp sát xuất xảy ra của lớp ít bằng một hết, nó bằng 0.5 mắc
+0:10:22 - 0:10:27, có nghĩa là tập dữ liệu của chúng ta đang bị hỗn loạn
+0:10:27 - 0:10:35, ví dụ chúng ta sẽ có trường hợp hỗn loạn
+0:10:35 - 0:10:39, thì trong tập dữ liệu đó chúng ta sẽ có hai lớp
+0:10:39 - 0:10:46, Nhưng mà mỗi lớp như vậy sẽ có giá trị sát xuất xuất hiện là như nhau
+0:10:46 - 0:10:52, Có nghĩa là khả năng xây ra của các lớp trong này bằng nhau
+0:10:52 - 0:10:56, Cứ như vậy thì chúng ta sẽ thế và công thức
+0:10:56 - 0:11:00, Chúng ta sẽ có giá trị entropy như hình
+0:11:00 - 0:11:20, Trong thực tế thì, việc chúng ta sử dụng Gini hay entropy thì hiệu suất bài toán, phân loại đều có giá trình như nhau, đều có hiệu suất tốt như nhau
+0:11:20 - 0:11:33, Thông thường thì trong thư viện Scikit-learn, người ta sẽ sử dụng ghi này là tiêu chí mặc định cho việc phân chi cây
+0:11:35 - 0:11:40, Ở đây, chúng ta sẽ có một ví dụ về một cây phân loại
+0:11:41 - 0:11:46, Mục tiêu của cây này sẽ đi dự đoán sự hiện diện của bàn tim
+0:11:46 - 0:11:52, là có xảy ra bệnh tiên hay là không xảy ra bệnh tiên
+0:11:54 - 0:12:00, Trong cái quyết định này, chúng ta có thể để ý một số điểm đặc biệt như sau
+0:12:01 - 0:12:10, đó là tài môn uống lá, cả nhánh trái và nhánh phải của một vùng văn loại
+0:12:10 - 0:12:15, thì đều có giá trị quyết định là NO
+0:12:16 - 0:12:22, thì ở đây chúng ta sẽ giải thích tình trạng này là như thế nào
+0:12:22 - 0:12:24, thực ra thì
+0:12:24 - 0:12:31, nó không phải là tại vì trong vùng dữ liệu này toàn no đâu
+0:12:31 - 0:12:34, nhưng mà phần lớn giá trị sẽ là
+0:12:34 - 0:12:36, no
+0:12:36 - 0:12:41, chỉ có một cái yes chẳng hạn, còn lại là no-head
+0:12:41 - 0:12:43, và tương tự như vậy
+0:12:43 - 0:12:48, Vùng dữ liệu bánh phải này của chúng ta thì lại là chứa yes nhiều.
+0:12:51 - 0:12:53, Có thể là chứa toàn bộ yes luôn.
+0:12:55 - 0:13:10, Như vậy, ở đây chúng ta có thể nghĩ lại tình trạng mà tất cả các giá trị quyết định đều như nhau trong phần tiêu chí dừng.
+0:13:10 - 0:13:17, Vì vậy, ở đây chúng ta có thể dừng việc phân chia dữ liệu thành các vùng
+0:13:17 - 0:13:22, Chúng ta có thể thay thế nguyên cái vùng này bằng một quyết định là NO thôi
+0:13:23 - 0:13:27, Đây là một ví dụ của cắt vỉa cây gặp
+0:13:27 - 0:13:32, Chúng ta coi nguyên cái vùng này hoặc là nguyên cái vùng lớn luôn là YES thôi
+0:13:32 - 0:13:44, Như vậy, chúng ta đã cùng nhau tìm hiểu về các thành phần trong một cây quyết định,
+0:13:44 - 0:13:49, cách mà chúng ta xây dựng cây quyết định cho bài toán hầu uy hoặc là bài toán văn loại.
+0:13:49 - 0:13:55, Trong phần này, chúng ta sẽ coi lại một số ưu điểm của cây quyết định.
+0:13:55 - 0:14:04, Về ố điểm thì nó có thể giải thích được, giải thích tốt hơn các thuật toán khác chẳng hạn như Neural Network
+0:14:04 - 0:14:09, Và nó có thể nắm bắt được sự tương tác giữa các đặc trưng
+0:14:09 - 0:14:21, Đối với biến đình tính đó thì dạ sự chúng ta sẽ có các giá trị là cao, thấp, đĩa
+0:14:21 - 0:14:36, Trong một cột dữ liệu đồ vào, chúng ta không cần phải chuyển thành biểu định lượng như cách sử dụng cho Loicid Racing hoặc Neural Network.
+0:14:36 - 0:14:42, Về nhiêu đỉnh, cái quyết định có thể không ổn định.
+0:14:42 - 0:14:53, Trong trường hợp phương xây cao, đối với một tập dữ liệu, chẳng hạn như chúng ta sẽ có một tập dữ liệu như thế này, về bài toán hồi huy
+0:14:53 - 0:15:04, đó, nó tồn tại một vài cái điểm như thế này, thì mấy cái điểm này có thể gây khổng ổn định cho cái quyết định
+0:15:04 - 0:15:10, Tiếp theo thì nó sẽ có cái nhược điểm đó là thiếu tính mực mà
+0:15:10 - 0:15:17, Tại vì đơn thuần cái việc chúng ta phân chia các vùng nó chỉ dựa trên đường thẳng mà thôi
+0:15:17 - 0:15:23, Và cái nhược điểm cuối cùng đó là nó khó nắm bắt tính cộng
+0:15:23 - 0:15:26, Đây là một cái điểm quan trọng
+0:15:26 - 0:15:32, Thực toán kế quyết định nó khác nhiều so với thực toán Linear Rotation
+0:15:32 - 0:15:38, Trong thực toán Linear Racing, chúng ta sẽ có hai đặc trưng đồ vào, trả hạn như x1 và x2 đi hông?
+0:15:38 - 0:15:51, Và nó sẽ có các hề số hầu uy, trả hạn như là beta 1 và beta 2 đi, là các tham số của mô hình.
+0:15:51 - 0:15:57, Thì bản thân của mô hình Linear Racing nó có sự cộng giữa hai đặc trưng.
+0:15:57 - 0:16:02, Còn đối với thực toán cây quyết định thụy không
+0:16:02 - 0:16:06, Như vậy, đây là một điểm đáng lưu ý
+0:16:06 - 0:16:10, Để sau này các bạn sẽ gặp một tình huống đất
+0:16:10 - 0:16:20, Cây quyết định sẽ cho hiệu suất hầu uy thấp hơn so với thực toán Linear Reaction
+0:16:20 - 0:16:38, Mặc dù là quyết định có thể giải quyết trường hợp phi tuyến khá là tốt, tuy nhiên đối với một số trường hợp thuần tiến tính thì nó có thể tệ hơn so với thuật toán Linear Reaction
+0:16:38 - 0:16:56, Tiếp theo, chúng ta sẽ có một minh họa về tình huống mà quyết định đưa ra kết quả không ổn định khi chúng ta chỉ cần thay đổi một chút xíu trong tập dữ liệu thôi.
+0:16:56 - 0:17:03, Nó khác với cách chúng ta đã làm trong môn học nhập môn lịch trình.
+0:17:03 - 0:17:16, Giả sử trong môn học đó các bạn có sự thay đổi về dữ liệu hoặc dữ kiện thì thông thường chúng ta chỉ cần thay đổi một vài nhánh nhỏ thôi.
+0:17:16 - 0:17:21, Chúng ta kiểm soát rất là dễ nhưng đối với kế biết định thì không.
+0:17:21 - 0:17:24, Trong trường hợp này thì chúng ta có thể thấy hai đuốc góc
+0:17:24 - 0:17:30, nó đã được biến đổi đi khá là khác nhau mặc dù là dữ liệu chỉ thay đổi một chút xíu mà thôi
+0:17:34 - 0:17:42, Như vậy, chúng ta đã vừa tiền hiểu xong về cây biết định cho bài toán hồi huy và thân loại
+0:17:42 - 0:17:53, Đây là nền tảng để các bạn tiếp tục tìm hiểu các thuật toán nâng cao khác dựa trên cây chẳng hạn như Random Forest
+0:17:53 - 0:18:00, Nâng cao hơn nữa có thể là XZBoot, LiveZVM và CatBoot
+0:18:00 - 0:18:08, Nội dung bài giảng này được xây dựng dựa trên tài liệu đến từ đại học Stanford, Hoa Kỳ
+0:18:12 - 0:18:14, Chúc mừng mọi người.

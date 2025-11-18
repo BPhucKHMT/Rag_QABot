@@ -1,0 +1,155 @@
+0:00:00 - 0:00:11, Một trong những mô hình rất nổi tiếng, phổ biến hiện nay là mô hình Wortuvac.
+0:00:11 - 0:00:23, Mô hình Wortuvac được Thomas Picolop và các cộng sự giới thiệu vào năm 2013, tính đến thời điểm hiện nay đã được hơn 11 năm.
+0:00:23 - 0:00:36, Và mô hình này thì nó sẽ bao gồm hai cái mô hình con, tức là hai cái phương pháp hay hướng tiếp cận con, đó chính là Skip RAM và Continuous Battle Work.
+0:00:36 - 0:00:42, Thì chúng ta sẽ nói chi tiết hơn về hai cái mô hình này trong những cái phần tiếp theo.
+0:00:42 - 0:00:58, Đầu tiên đó là môn SkipRam. Ý tưởng của SkipRam đó chính là chúng ta sẽ dự đoán các từ xung quanh khi có một từ ở giữa.
+0:00:58 - 0:01:03, Tô vàng ở đây là từ Wt
+0:01:03 - 0:01:09, Và từ ở giữa này, chúng ta sẽ phải đoán xem từ thứ t trừ 2 là gì
+0:01:09 - 0:01:11, Đoán từ thứ t trừ 1 là gì
+0:01:11 - 0:01:13, Đoán từ thứ t cộng 1 là gì
+0:01:13 - 0:01:16, Và đoán từ thứ t cộng 2 là gì
+0:01:16 - 0:01:21, Vì vậy, từ trái sang phải, chúng ta phải chỉ số của mình là chạy từ t trừ 2, t trừ 1
+0:01:21 - 0:01:24, Và t cộng 1, t cộng 2
+0:01:24 - 0:01:32, Vì vậy, chúng ta sẽ phải đoán từ thứ T khi chúng ta sẽ có cho trước từ thứ WT
+0:01:32 - 0:01:39, và chúng ta sẽ phải đoán từ thứ T-1, T-2, T-1, T-2
+0:01:39 - 0:01:46, Đó là ý tưởng của SkipRamp khi học mối quan hệ về mặt ngửi cảnh của từ
+0:01:46 - 0:01:55, Rồi, và ở đây chúng ta sẽ mô hình hóa cái việc dự đoán này dưới dạng là một cái công thức sát xuất
+0:01:55 - 0:02:06, Để dự đoán cái từ thứ T-2 thì chúng ta sẽ đưa về cái biểu diễn là cái công thức sát xuất là P của WT-2
+0:02:06 - 0:02:08, Chúng ta đoán từ thứ T trừ 2
+0:02:08 - 0:02:12, Cho trước, hay là khi biết trước từ thứ T
+0:02:12 - 0:02:15, Vậy là đây là công thức sát xuất có điều kiện
+0:02:15 - 0:02:18, Công thức sát xuất có điều kiện
+0:02:18 - 0:02:25, Và điều kiện ở đây là chúng ta phải biết trước từ WT
+0:02:25 - 0:02:28, Tương tự như vậy, thì cho từ thứ T trừ 1
+0:02:28 - 0:02:32, Chúng ta sẽ có lập, phải tính được sát xuất của từ thứ T trừ 1
+0:02:32 - 0:02:35, khi cho trước cái thường thư tê
+0:02:35 - 0:02:38, rồi, t của Wt cộng bồ
+0:02:38 - 0:02:40, khi biết trước từ thư tê
+0:02:40 - 0:02:43, và hai cái từ
+0:02:43 - 0:02:46, hai cái từ này
+0:02:46 - 0:02:50, thì tương ứng, nó chính là cái ngữ cảnh bên ngoài
+0:02:50 - 0:02:53, với cái cửa sổ
+0:02:53 - 0:02:56, cái cửa sổ là bằng 2, cái kích thước của cửa sổ bằng 2
+0:02:56 - 0:02:57, nghĩa là sao?
+0:02:57 - 0:03:00, một từ, nếu mà chúng ta đoán ra càng xa
+0:03:00 - 0:03:04, Từ xa thì rất là khó. Từ thứ 10, 15, 20 rất là khó.
+0:03:04 - 0:03:13, Thông thường khi có một từ ở giữa, chúng ta có thể đoán được những từ phía trước trong một bán kính tương đối nhỏ thôi.
+0:03:13 - 0:03:19, Trong trường hợp này, cái bán kính của mình được thể hiện là Windowsize là bằng 2.
+0:03:19 - 0:03:25, Cứ tự nhiên ngoại cho ngửi cảnh bên ngoài bên tay phải là Windowsize bằng 2.
+0:03:25 - 0:03:30, Và tờ mà mình ở giữa thì nó sẽ là tại thời điểm thứ T
+0:03:32 - 0:03:38, Rồi, và tương tự như vậy chúng ta sẽ dịch chuyển sang tờ tiếp theo
+0:03:39 - 0:03:43, Như vậy là T của mình sẽ được dịch chuyển sang tờ từ banking
+0:03:43 - 0:03:47, Và chúng ta sẽ phải dự đoán xem cái từ kết đó hai bước
+0:03:47 - 0:03:50, Đó là sát suất là bao nhiêu phần trăm?
+0:03:50 - 0:03:52, Đó là từ turning
+0:03:52 - 0:03:53, Sát suất bao nhiêu phần trăm?
+0:03:53 - 0:03:55, Cái từ thứ T triều một đó là into
+0:03:55 - 0:04:01, Rồi, xác xúc của cái từ tiếp theo, ngay tiếp theo là WT cộng 1 là Crisis
+0:04:02 - 0:04:06, Rồi xác xúc của cái từ thứ T cộng 2 là S là bao nhiêu khuôn trăm?
+0:04:06 - 0:04:10, Vì vậy là nhiệm vụ của chúng ta là phải đi xây dựng một cái mô hình
+0:04:11 - 0:04:14, để làm sao ước lượng được các cái xác xúc này
+0:04:15 - 0:04:22, Và với mỗi cái thời điểm thứ T, với tê chạy từ 1 cho đến tê lớn
+0:04:22 - 0:04:28, 1 là từ đầu tiên của câu và T lớn là từ cuối cùng của câu
+0:04:28 - 0:04:35, chúng ta cho biết trước từ ở giữa là WT
+0:04:35 - 0:04:41, và chúng ta sẽ dự đoán từ ngữ cảnh xung quanh với một cửa sổ cố định là M
+0:04:41 - 0:04:45, trong trường hợp, ví dụ ở trên M là bằng 2
+0:04:45 - 0:04:55, như vậy thì ta sẽ có công thức cho likelihood là l theta là bằng tích với t chạy từ 1 cho đến t.
+0:04:55 - 0:04:57, với t chạy từ 1 cho đến t hoa
+0:04:57 - 0:05:10, và ở đây chúng ta sẽ phải làm sao đó để nhâm xét xuất của những từ ngữ cảnh bên ngoài với g là chạy từ trường m cho đến m với g là phải khác không
+0:05:10 - 0:05:21, Vì trong trường hợp g bằng 0, t cũng g chính là bằng t, tức là cái từ tức là t của wt khi trả chứt t.
+0:05:21 - 0:05:29, Thì đoàn là mình đoán cái từ ở giữa, khi biết từ ở giữa thì đây là một cái điều rất là vô lấy.
+0:05:29 - 0:05:31, Sát số này thì nó luôn luôn là bằng 1 rồi.
+0:05:31 - 0:05:35, Vì vậy đó chúng ta cũng không có cần thiết phải đưa vào đây nữa.
+0:05:35 - 0:05:37, Vì vậy đó thì g sẽ phải khác không.
+0:05:37 - 0:05:42, Và cái likelihood này, công thức likelihood này, L theta này,
+0:05:42 - 0:05:47, thì mình sẽ phải làm sao để cực đại hóa, mình sẽ đi tính tính max.
+0:05:47 - 0:05:54, Và cái hàm mục tiêu của mình thông thường nó sẽ là hàm loss và mình phải đi minimize.
+0:05:54 - 0:06:00, Và cộng với việc là cái việc mà tính tích này, thì các giá trị sát suất này
+0:06:00 - 0:06:04, thông thường là những con số rất là bé, nó bé hơn một.
+0:06:04 - 0:06:09, Và tích của các xác xúc này, YOLGO thì nó sẽ có sự hướng là tiến đến 0.
+0:06:09 - 0:06:13, Dẫn đến là cái khả năng biểu diễn của máy tính của mình
+0:06:13 - 0:06:19, khi làm việc với tích của các con số dỏ không không, rất là thấp.
+0:06:19 - 0:06:22, Tức là nó sẽ dần làm tròn thành số 0.
+0:06:22 - 0:06:33, Do đó thì chúng ta sẽ thiết kế lại là hàm mục tiêu Loss theta là âm của trung bình Locked likelihood của L.
+0:06:33 - 0:06:38, Tức là chúng ta sẽ đi tính lóc của hằng này, chúng ta sẽ đi tính lóc của L
+0:06:38 - 0:06:42, đi tính lóc của L, và khuyến biệt là tính lóc của hàm tích
+0:06:42 - 0:06:47, nó sẽ đi về tổng của các hàm lóc, dự ám của trung bình
+0:06:47 - 0:06:52, đây là dự ám, còn trung bình, đây chính là trung bình
+0:06:52 - 0:06:57, rồi, và lóc của tích sẽ là bằng tổng của các cái lóc
+0:06:57 - 0:07:00, do đó thì công thức ở trên nó sẽ được chuyển về như vậy này
+0:07:00 - 0:07:10, Thay vì chúng ta sẽ đi tìm giá trị lớn nhất, thì chúng ta sẽ phải đi tìm giá trị nhỏ nhất của nốc sát xuất này.
+0:07:12 - 0:07:24, Và như vậy chúng ta đặt ra một câu hỏi đó là làm sao chúng ta tính được sát xuất P của P cộng G cho WT
+0:07:24 - 0:07:29, với WT là tham số của môn của mình.
+0:07:30 - 0:07:33, là tham số mồ hình
+0:07:35 - 0:07:39, thì ý tưởng đó là chúng ta sẽ sử dụng một cái mạng NeuroNetwork
+0:07:39 - 0:07:41, với một lỡ bẩn duy nhất thôi
+0:07:41 - 0:07:44, và cái đầu ra của mình sẽ là một cái hàm sóc mắt
+0:07:44 - 0:07:49, thì ở bên đây chúng ta sẽ có cái kiến trúc của cái mạng NeuroNetwork
+0:07:49 - 0:07:51, rõ ràng là cái mạng NeuroNetwork này
+0:07:51 - 0:07:55, nó cũng là một cái mạng học sâu nhưng mà nó rất là ngắn
+0:07:55 - 0:07:57, nó chỉ có duy nhất một lỡ bẩn thôi
+0:07:57 - 0:07:59, duy nhất một lỡ bẩn
+0:07:59 - 0:08:04, và toàn bộ h1, h2, hn này thì người ta sẽ ký nhiệm là h
+0:08:06 - 0:08:14, Và để từ input layer chuyển tính ra được xn layer thì chúng ta sẽ có một ma trận là ma trận w
+0:08:15 - 0:08:29, ma trận w này thì sẽ có kích thước là v nhưng n trong đó v chỉ số b là số từ trong tự điện
+0:08:29 - 0:08:31, số tư trong tự điện
+0:08:33 - 0:08:35, còn n
+0:08:35 - 0:08:38, n là số chiều
+0:08:38 - 0:08:41, của cái output của mình
+0:08:41 - 0:08:43, hay nói cách khác
+0:08:43 - 0:08:45, đây chính là số chiều của
+0:08:45 - 0:08:48, cái vector biểu diễn
+0:08:53 - 0:08:55, của cái tư
+0:08:55 - 0:08:59, của tự đầu vào.
+0:08:59 - 0:09:05, Vì vậy, chúng ta sẽ có công thức cho mạng Neural Network này.
+0:09:05 - 0:09:09, Layer biến đổi đầu tiên, đó là tính hit the layer,
+0:09:09 - 0:09:14, chúng ta sẽ có công thức là h, là bằng W, nhân WX.
+0:09:14 - 0:09:19, Vì vậy, chúng ta thấy là công thức này rất đơn giản
+0:09:19 - 0:09:23, và không có hàm sigmoid, hoặc không có hàm kích hoạt,
+0:09:23 - 0:09:27, và nó chỉ đơn giản là một cái phép biến đổi thuyến tính
+0:09:27 - 0:09:29, sẽ là bằng W nhân của x
+0:09:29 - 0:09:39, và với x là một cái one-hop encode của cái từ Wt
+0:09:39 - 0:09:43, như vậy thì đầu vào của mình sẽ có cái dạng như sau
+0:09:43 - 0:09:47, là 000010
+0:09:47 - 0:10:01, Trong đó, đây chính là vị trí của từ WT trong từ điện.
+0:10:06 - 0:10:09, Vị trí của từ thứ WT trên từ điện.
+0:10:09 - 0:10:14, Vì vậy, cái vector này sẽ là vector 1 hot và có chi số chiều rất là lớn.
+0:10:14 - 0:10:20, Thì thông thường W, cái V này có khả năng là lên đến 1 triệu.
+0:10:20 - 0:10:24, Rồi, cái lớp tiếp theo là lớp Output.
+0:10:24 - 0:10:29, Thì nó sẽ có cái công thức đó là giá trị dự đoán.
+0:10:29 - 0:10:32, Đây là giá trị dự đoán, tài mộ cái này sẽ là giá trị dự đoán.
+0:10:32 - 0:10:36, Rồi, sẽ là bằng SOAPMAX của W phải.
+0:10:36 - 0:10:40, W phải thì sẽ là ngược lại của W.
+0:10:40 - 0:10:45, W thì nó sẽ có kích thước là n nhân v-v.
+0:10:46 - 0:10:50, Và chúng ta cũng lần nữa chúng ta sẽ nhân tích vô hướng với nhạc h
+0:10:51 - 0:10:54, và đưa vào hàm sop bắt.
+0:10:54 - 0:10:56, Thì mục tiêu của việc đưa vào hàm sop bắt
+0:10:56 - 0:10:59, đó chính là nó sẽ đưa về cái không gian sát xuất.
+0:11:00 - 0:11:04, Nó sẽ đưa về cái không gian sát xuất trong đó tình phần tử trong cái A này.
+0:11:05 - 0:11:08, Nó sẽ có cái giá trị từ 0 cho đến 1.
+0:11:08 - 0:11:13, và tổng tất cả các phần tử ở đây thì nó sẽ là bằng một
+0:11:13 - 0:11:22, Và nhiệm vụ của chúng ta là chúng ta sẽ phải đi tối ưu khoáng hét cái hàm loss theta là bằng
+0:11:22 - 0:11:27, công thức là trung bình, âm của trung bình, log-line input hồi nãy đúng không?
+0:11:27 - 0:11:43, Vì khi biết trước WT, thì x này của mình chính là WT, nó chính là cái đầu vào.
+0:11:43 - 0:11:52, Và đưa ra cái sát xuất dự đoán trong từ thứ T cộng Z thì nó sẽ được thể hiện ở trong phân bố sát xuất của cái thần y nhã này.
+0:11:52 - 0:12:00, Và các giá trị này, giá trị nhiều mà càng cao thì nó sẽ càng thể hiện sát xuất của việc dự đoán đó
+0:12:00 - 0:12:10, Rồi, ở đây chúng ta lưu ý là nó sẽ có một cái hiệu, đó là ind, tức là ind là ví tác của chữ index
+0:12:10 - 0:12:20, Cho thấy index của từ thứ t cộng z, tức là cho biết vị trí của từ thứ t cộng z trong tự điện của mình
+0:12:20 - 0:12:31, Ví dụ như là từ thứ T cộng G của mình, đó là ở vị trí số 3, vị trí thứ 100, rồi vị trí thứ 120, vị trí thứ 130.
+0:12:31 - 0:12:39, Đó là các cái giá trị chỉ số của các cái từ thứ T-1, T-2, rồi T-1, T-2.
+0:12:39 - 0:12:47, Thì chúng ta sẽ chỉ tính tổng của các cái lốc của các cái giá trị output này.
+0:12:47 - 0:12:55, Vì vậy, từ công thức này, chúng ta sẽ đi tối ưu qua tìm theta sau khi tổng này là nhỏ nhất.
+0:12:56 - 0:12:58, Hay là tìm min.
+0:13:00 - 0:13:06, Sau khi tối ưu xong, chúng ta sẽ có các trạm số, là các gia trình W.
+0:13:06 - 0:13:11, Chúng ta luôn hít là ở đây, hệ thống ký hiệu nó hơi khác một chút xíu.
+0:13:11 - 0:13:13, Các bạn sẽ hỏi là W với theta là gì?
+0:13:13 - 0:13:16, thì mình cũng xin lỗi đó là trong trường hợp này, hệ thống ký hiệu của mình
+0:13:16 - 0:13:19, trước đây mình hay sử dụng cho các môn đó là theta
+0:13:19 - 0:13:22, thì trong hình này mình lấy từ cái bài bao góc của tác giả
+0:13:22 - 0:13:26, thì thật ra theta của mình chính là cái w này
+0:13:26 - 0:13:28, theta 1 của mình chính là cái w này
+0:13:28 - 0:13:31, và theta 2 của mình chính là cái w phải
+0:13:31 - 0:13:35, gột cái theta 1 và theta 2 thì mình chính là cái mộ tham số theta
+0:13:37 - 0:13:42, Rồi, ở đây thì nếu mà theo cái ký hiệu ở đây thì lẽ ra nó phải là loss của
+0:13:42 - 0:13:44, Rất nhiều nha
+0:13:44 - 0:13:46, Rồi

@@ -1,0 +1,145 @@
+0:00:00 - 0:00:08, Mô hình tiếp theo là mô hình hồi quy tuyến tính, linear regression.
+0:00:08 - 0:00:14, Chúng ta sẽ nhắc lại mô hình máy học tổng quát. Với dữ liệu đầu vào x, giá trị dự đoán y,
+0:00:14 - 0:00:21, và mong muốn xấp xỉ gần với giá trị thực, chúng ta có 3 công việc cần phải làm khi thiết kế 1 mô hình.
+0:00:21 - 0:00:29, Đầu tiên là thiết kế hàm dự đoán, 2 là thiết kế hàm lỗi, 3 là đi tìm tham số theta sao cho hàm lỗi nhỏ nhất.
+0:00:29 - 0:00:33, và công việc này được giải quyết bằng thuật toán Gradient Descent
+0:00:33 - 0:00:35, Thế thì ở đây chúng ta có một cái nhấn mạnh
+0:00:35 - 0:00:40, đó là tùy vào cái tính chất của cái cặp dữ liệu x, y để chúng ta thiết kế hai cái hàm này
+0:00:40 - 0:00:43, Thế thì chúng ta sẽ xem xét đến cái tình huống đầu tiên
+0:00:43 - 0:00:50, đó là giá trị đầu ra y có một cái mối quan hệ tuyến tính
+0:00:50 - 0:00:55, có một cái mối quan hệ tuyến tính với cái giá trị đầu vào x thì thế nào gọi là tuyến tính
+0:00:55 - 0:01:05, Tuyến tính có nghĩa là khi x tăng hoặc là khi x thay đổi x tăng thì y nó sẽ tăng hoặc là y sẽ giảm
+0:01:05 - 0:01:10, Ví dụ như đây là cái quan hệ đồng biến, chúng ta sẽ có cái mối quan hệ gọi là nghịch biến
+0:01:10 - 0:01:20, Khi x tăng và y nó lại có xu hướng là đi giảm xuống thì trong trường hợp này nó gọi là mối quan hệ tuyến tính
+0:01:20 - 0:01:25, Bước 1, chúng ta sẽ thiết kế hàm dự đoán
+0:01:25 - 0:01:29, Trong trường hợp y có mối quan hệ tuyến tính với x
+0:01:29 - 0:01:33, chúng ta có một đường thẳng qua như thế này
+0:01:33 - 0:01:39, Phương trình đường thẳng mà chúng ta đã học hồi xưa là y bằng ax cộng b
+0:01:39 - 0:01:42, Đó là phương trình hồi xưa hồi cấp 2 chúng ta học
+0:01:42 - 0:01:47, Trong trường hợp này chúng ta sẽ sử dụng cách ký hiệu theta
+0:01:47 - 0:01:53, Thay vì chúng ta để là a thì chúng ta sẽ để là theta 1 và b thì chúng ta sẽ để là theta 0
+0:01:53 - 0:01:57, Vì vậy chúng ta sẽ có công thức cho hàm dự đoán f_theta(x)
+0:01:57 - 0:02:01, Với mẫu dữ liệu thứ i, ở đây chúng ta sẽ có nhiều mẫu dữ liệu
+0:02:01 - 0:02:04, Ở đây chúng ta sẽ có x_i và y_i
+0:02:04 - 0:02:08, Rồi, thì chúng ta sẽ có công thức như thế này
+0:02:08 - 0:02:12, Ở đây đó chính là thành phần bias
+0:02:12 - 0:02:21, Thành phần BIAS này có tác dụng đó là để cho giá trị dự đoán không phải lúc nào nó cũng chỉ phụ thuộc vào biến x
+0:02:21 - 0:02:27, Nó sẽ có những trường hợp mà nó sẽ độc lập với biến x thì nó sẽ biểu diễn bởi BIAS này
+0:02:27 - 0:02:32, BIAS sẽ thể hiện cho những thành phần không phụ thuộc vào biến đầu vào
+0:02:32 - 0:02:41, Và với cách biểu diễn này, đường thẳng của chúng ta cũng sẽ rất là linh động, không nhất thiết nó phải đi qua góc tọa độ.
+0:02:41 - 0:02:48, Nó có thể đi qua những đường thẳng bất kỳ, nó sẽ đi qua bất kỳ những vị trí nào không nhất thiết phải đi qua góc tọa độ.
+0:02:48 - 0:02:52, Tạo ra sự tự do cho đường thẳng của mình.
+0:02:52 - 0:02:57, Bước thứ 2, đó là chúng ta sẽ thiết kế hàm lỗi.
+0:02:57 - 0:03:09, Thì công thức cho hàm lỗi trong trường hợp này chúng ta sẽ sử dụng công thức đó là 1 phần 2n nhân cho tổng của y chạy từ 1 đến n của giá trị dự đoán
+0:03:09 - 0:03:14, Trừ cho cái giá trị thực tế
+0:03:14 - 0:03:16, Rồi tất cả bình phương
+0:03:16 - 0:03:22, Thế thì ở đây chúng ta sẽ đặt ra một câu hỏi đó là tại sao nó có một cái công thức có vẻ phức tạp như thế này
+0:03:22 - 0:03:26, công thức này là trung bình sai số bình phương
+0:03:26 - 0:03:28, thì tại sao nó lại có công thức phức tạp như thế này
+0:03:28 - 0:03:35, thì đầu tiên chúng ta sẽ xét đến những phiên bản ngây thơ nhất khi chúng ta thiết kế hàm lỗi này
+0:03:35 - 0:03:43, đó là nếu như chúng ta sử dụng y ngã_i trừ cho y_i thì sao
+0:03:43 - 0:03:47, tức là chúng ta sẽ không lấy bình phương mà chúng ta sẽ để là dấu trừ thôi
+0:03:47 - 0:03:58, Nếu chúng ta chọn giải pháp này, thì nó sẽ nảy sinh vấn đề đó là các sai số này khi chúng ta tính tổng lại có khả năng nó sẽ triệt tiêu lẫn nhau.
+0:03:58 - 0:04:06, Lấy ví dụ, với mẫu dữ liệu đầu tiên, sai số y ngã_i trừ y_i này là bằng 3.
+0:04:06 - 0:04:13, Với mẫu dữ liệu thứ 2, sai số đó là trừ 2. Với mẫu dữ liệu thứ 3, sai số là bằng 5.
+0:04:13 - 0:04:26, Và với mẫu dữ liệu thứ 4, sai số đó là, ví dụ như là trừ 6, thì khi chúng ta tính tổng các sai số này lại, chúng ta sẽ thấy như thế nào?
+0:04:26 - 0:04:32, 3 trừ 2 cộng 5 trừ 6 thì tổng sai số ra bằng 0.
+0:04:32 - 0:04:45, Với việc dùng công thức tổng, không có bình phương, thì các con số âm và dương sẽ triệt tiêu lẫn nhau
+0:04:45 - 0:04:52, Dẫn đến là, mặc dù hệ thống đang sai, nhưng mà cuối cùng tổng sai số là bằng không, đó là một điều vô lý
+0:04:52 - 0:04:56, Đây là một điều vô lý. Đây là cho phiên bản đầu tiên.
+0:04:56 - 0:05:08, Phiên bản thứ 2 là tại sao chúng ta không sử dụng công thức là tổng của trị tuyệt đối y ngã_i trừ cho y_i mà lại sử dụng hàm bình phương này.
+0:05:08 - 0:05:12, Trong trường hợp này thì nó vẫn thỏa mãn là nếu như chúng ta dùng trị tuyệt đối,
+0:05:12 - 0:05:24, Thì khi chúng ta tính tổng, tổng sai số của mình lúc này sẽ ra một con số rất lớn, như vậy là rất phù hợp về mặt ý nghĩa.
+0:05:24 - 0:05:31, Vì ở trong trường hợp này là 16, thì đây là một con số rất lớn, thì đây là một con số rất phù hợp.
+0:05:31 - 0:05:38, Tuy nhiên nó sẽ bị một vấn đề là sang bước số 3, việc chúng ta tính đạo hàm cho một hàm trị tuyệt đối.
+0:05:38 - 0:05:40, đạo hàm cho 1 hàm trị tuyệt đối, đó là
+0:05:40 - 0:05:45, nhận 2 giá trị hoặc là 1 hoặc là trừ 1
+0:05:45 - 0:05:49, tức là nó sẽ là bằng 1 nếu x dương
+0:05:49 - 0:05:53, và trừ 1 nếu x âm
+0:05:53 - 0:05:56, như vậy thì cái này sẽ tạo cho cái việc là cái hàm của chúng ta
+0:05:56 - 0:05:58, cái đạo hàm của chúng ta nó không liên tục
+0:05:58 - 0:06:02, và không liên tục thì dẫn đến là cái quá trình tính toán nó sẽ
+0:06:02 - 0:06:04, phức tạp hơn do đó thì cái cách
+0:06:04 - 0:06:06, thiết kế này nó cũng không phù hợp
+0:06:06 - 0:06:15, Và như vậy thì từ 2 cái này thì chúng ta sẽ nảy ra, đó là chúng ta sẽ dùng công thức tính tổng của các sai số bình phương.
+0:06:17 - 0:06:22, Rồi, tuy nhiên khi tính tổng các sai số bình phương thì tại sao chúng ta lại phải chia trung bình?
+0:06:22 - 0:06:28, Thì nó sẽ nảy sinh 1 cái vấn đề như thế này. Nếu như chúng ta không chia trung bình và chúng ta có 1 cái giá trị lỗi,
+0:06:28 - 0:06:36, Ví dụ như chúng ta dự đoán giá nhà với tổng các sai số của mình đó chính là bằng 1.000 tỷ.
+0:06:36 - 0:06:38, Lấy ví dụ vậy.
+0:06:38 - 0:06:45, Thì hỏi đặt ra đó là cái sai số 1.000 tỷ này, liệu các bạn có dám mua một cái căn nhà
+0:06:45 - 0:06:49, mà được dự đoán bởi một cái hệ thống mà có sai số là 1.000 tỷ hay không?
+0:06:49 - 0:06:52, Thì câu trả lời đó chính là không chắc.
+0:06:52 - 0:07:00, Tại vì nếu như 1000 tỷ này mà chúng ta dự đoán trên 1 triệu căn nhà
+0:07:00 - 0:07:08, Trên 1 triệu căn nhà thì như vậy trung bình sai số trong 1 căn nhà đó là 0.001 tỷ
+0:07:08 - 0:07:12, Tức là đây là 1 con số rất là bé
+0:07:12 - 0:07:15, Đây là 1 con số rất là bé, nó chỉ khoảng là 1 triệu đồng thôi
+0:07:15 - 0:07:21, Như vậy thì chúng ta hoàn toàn có thể mua cái căn nhà này đúng không? Do cái sai số rất là bé
+0:07:21 - 0:07:26, Tuy nhiên nếu tổng số căn nhà trong trường hợp này
+0:07:26 - 0:07:31, mà dự đoán là sai trên 10 căn nhà thôi
+0:07:31 - 0:07:34, thì như vậy là sai số trung bình trong 1 căn nhà
+0:07:34 - 0:07:36, trong trường hợp này đó là 100 tỷ
+0:07:36 - 0:07:38, thì nếu đoán 1 căn nhà mà sai số 100 tỷ
+0:07:38 - 0:07:40, thì rõ ràng đây là 1 con số quá lớn
+0:07:40 - 0:07:43, như vậy thì đó là lý do tại sao chúng ta lại phải có
+0:07:43 - 0:07:45, chia trung bình
+0:07:45 - 0:07:48, để khi chúng ta ra được cái giá trị
+0:07:48 - 0:07:50, chia ra được cái giá trị lỗi
+0:07:50 - 0:07:56, Lỗi chúng ta biết được cái lỗi này đó là phù hợp hay không, có hợp lý hay không để sử dụng
+0:07:56 - 0:08:02, Ngoài ra ở đây chúng ta sẽ thấy nó có một cái con số 2, tại sao chúng ta lại có cái số 2 ở đây
+0:08:02 - 0:08:09, Để sau này khi chúng ta tiến hành tính đạo hàm cho cái hàm Loss này, thì nó sẽ có cái hàm mũ ở đây đúng không
+0:08:09 - 0:08:15, Thì chúng ta tính đạo hàm thì con số 2 này nó sẽ đem xuống và 2 chia 2 nó sẽ triệt tiêu đi
+0:08:15 - 0:08:18, Vì vậy, công thức của mình sau này sẽ đẹp hơn.
+0:08:18 - 0:08:25, Đó là lý do tại sao chúng ta có công thức hàm lỗi như trên.
+0:08:25 - 0:08:34, Hi vọng là qua các phiên bản này chúng ta sẽ hiểu hơn lý do động lực tại sao người ta chọn hàm lỗi này.
+0:08:34 - 0:08:44, Rồi, sang bước số 3, chúng ta sẽ đi tìm theta sao cho giá trị L, giá trị hàm loss là nhỏ nhất.
+0:08:44 - 0:08:48, Và khi này thì chúng ta có công thức là L(theta_0, theta_1),
+0:08:48 - 0:08:51, theta_0, theta_1 chính là hai tham số của theta.
+0:08:52 - 0:08:54, Với theta là một vector bao gồm hai thành phần.
+0:08:54 - 0:09:02, Thì nó sẽ có công thức là bằng 1 phần 2n nhân cho tổng của cái công thức như sau.
+0:09:02 - 0:09:05, Và cái này chính là cái giá trị y ngã_i,
+0:09:05 - 0:09:09, y ngã_i là giá trị dự đoán.
+0:09:09 - 0:09:14, Còn y_i ở đây chính là giá trị thực tế
+0:09:14 - 0:09:19, Rồi, chúng ta sẽ tiến hành đi tính đạo hàm này
+0:09:19 - 0:09:26, Tính đạo hàm của L theo theta 0 thì chúng ta sẽ thấy là đạo hàm của cái này:
+0:09:26 - 0:09:38, 1 phần 2 N tổng của (theta 1 x_i cộng theta 0 trừ cho y_i) tất cả bình.
+0:09:38 - 0:09:41, Với i chạy từ 1 cho đến n.
+0:09:41 - 0:09:44, Thành phần này là hằng số.
+0:09:44 - 0:09:49, Chúng ta sẽ tính đạo hàm của L theo theta 0.
+0:09:49 - 0:09:54, Đối với theta 0, đây là hằng số, do đó chúng ta sẽ giữ nguyên 1 phần 2n.
+0:09:54 - 0:09:57, Đạo hàm của tổng bằng tổng các đạo hàm.
+0:09:57 - 0:10:00, Và đây sẽ là một hàm hợp.
+0:10:00 - 0:10:05, Đạo hàm của này thì chúng ta sẽ có là 2 đưa cái này xuống, đó là theta 1 x_i
+0:10:05 - 0:10:08, Cộng cho theta 0 trừ cho y_i
+0:10:08 - 0:10:12, Sau đó chúng ta sẽ nhân đạo hàm của phần ruột bên trong
+0:10:12 - 0:10:15, Đạo hàm của phần ruột bên trong theo theta 0
+0:10:15 - 0:10:17, Thì đây chính là hằng số đối với theta 0
+0:10:17 - 0:10:19, Do đó chúng ta sẽ bỏ qua
+0:10:19 - 0:10:22, Và đạo hàm của theta 0 theo theta 0 chính là bằng 1
+0:10:22 - 0:10:26, Vì vậy đem số 2 này ra ngoài triệt tiêu
+0:10:26 - 0:10:28, Vì vậy chúng ta sẽ có công thức như trên
+0:10:28 - 0:10:36, Và tương tự như vậy chúng ta hoàn toàn có thể tính đạo hàm của L theo theta 1
+0:10:36 - 0:10:45, Bằng trung bình cộng của tổng của (theta 1 x_i cộng cho theta 0 trừ cho y_i) tất cả nhân với x_i
+0:10:45 - 0:10:48, Thì đây là cái công thức đạo hàm theo theta 1
+0:10:48 - 0:10:54, Thì chúng ta yên tâm là với cái bài Linear Regression này thì chúng ta sẽ còn ngồi tính toán đạo hàm
+0:10:54 - 0:11:02, Nhưng mà như chúng ta có đề cập trước đây, các Deep Learning Framework đã có công cụ để giúp chúng ta tự động tính các đạo hàm này
+0:11:02 - 0:11:08, và tự động tìm theta để cho hàm L là nhỏ nhất rồi
+0:11:08 - 0:11:15, Ở đây thì chúng ta tập luyện tính đạo hàm thôi để sau này chúng ta có thể tiến hành cài đặt và thử nghiệm
+0:11:15 - 0:11:23, Còn bước số 3 từ đây trở về sau chúng ta hoàn toàn có thể sử dụng thuật toán Adam để đi tìm giá trị nhỏ nhất
+0:11:23 - 0:11:27, Rồi, thì ở đây chúng ta sẽ sử dụng thuật toán Gradient Descent
+0:11:31 - 0:11:36, đã được học ở trong phần về mô hình tổng quát
+0:11:36 - 0:11:40, chúng ta sẽ có bước khởi tạo theta 0 và theta 1 là ngẫu nhiên
+0:11:40 - 0:11:44, đồng thời là 2 siêu tham số learning rate (alpha)
+0:11:44 - 0:11:47, và tham số dừng epsilon là 2 con số nhỏ
+0:11:47 - 0:11:50, thì alpha ở đây chúng ta có thể cho là 0.01
+0:11:50 - 0:11:56, Còn epsilon ở đây thì chúng ta có thể cho đó là 0.001
+0:11:56 - 0:11:58, Đó là những con số rất là bé
+0:11:58 - 0:12:00, Và chúng ta sẽ tiến hành lặp
+0:12:00 - 0:12:04, Và lưu ý đó là ở đây chúng ta có 2 tham số theta 0 và theta 1
+0:12:04 - 0:12:10, Do đó thì cái bước cập nhật chúng ta sẽ cập nhật trên cả 2 tham số này
+0:12:10 - 0:12:16, Theta 0 sẽ bằng theta 0 trừ cho alpha nhân cho đạo hàm của L theo theta 0
+0:12:16 - 0:12:22, Còn đối với theta 1, chúng ta sẽ phải tính đạo hàm của hàm loss theo theta 1
+0:12:22 - 0:12:25, Và điều kiện dừng, chúng ta sẽ xét 2 điều kiện dừng
+0:12:25 - 0:12:30, Đó là khi đạo hàm của hàm loss theo theta 0
+0:12:30 - 0:12:33, Và đạo hàm của hàm loss theo theta 1 đủ nhỏ
+0:12:33 - 0:12:35, Thì chúng ta sẽ kết thúc vòng lặp
+0:12:35 - 0:12:41, Thì đây chính là 3 bước cho thuật toán linear regression

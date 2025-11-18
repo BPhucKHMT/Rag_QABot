@@ -1,0 +1,48 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:37, Thì theo định nghĩa của được chích dẫn trong các tài liệu về lịch sử học máy
+0:00:37 - 0:00:42, của Arthur Samuel năm 1959, thì học máy là một lĩnh vực nghiên cứu
+0:00:42 - 0:00:47, mà trong đó máy tính có thể học mà không cần lập trình chi tiết từng bước.
+0:00:49 - 0:00:53, Ở một định nghĩa khác của Tom Mitchell năm 1997 thì
+0:00:53 - 0:01:00, Học máy là một chương trình máy tính được cho là học để thực hiện tác vụ T từ kinh nghiệm E
+0:01:00 - 0:01:05, nếu hiệu xuất thực hiện của tác vụ T được đo bằng chỉ số P cải thiện nhờ vào kinh nghiệm E.
+0:01:09 - 0:01:14, Kevin Murphy năm 2012 cũng đưa ra một định nghĩa học máy.
+0:01:14 - 0:01:21, Học máy là một tập hợp các phương pháp có thể tự động phát hiện mẫu hình trong dữ liệu,
+0:01:21 - 0:01:28, sau đó sử dụng các mẫu hình đã khám phá để diệu đoán dữ điệp tương lai hoặc thực hiện các loại ra quyết định khác trong điều kiện không chắc chắn,
+0:01:28 - 0:01:31, chẳng hạn như là kế hoạch hoặc là làm thêm dữ liệu.
+0:01:31 - 0:01:39, Thì đối với các cái định nghĩa trên thì nó đều tập trung vào các khí cạnh quan trọng của học máy như là khả năng học hỏi từ dữ liệu,
+0:01:39 - 0:01:44, bức độ cải thiện hiệu xuất qua kinh nghiệm và không yêu cầu lục trình chi tiết từng bước cho từng tác vụ.
+0:01:44 - 0:01:51, Định nghĩa của Samuel và Mitchell thì thiên về cái khái niệm học hỏi liên tục
+0:01:51 - 0:01:55, và nhấn mặt vào khía cạnh tự động hóa, khả năng cải thiện hiệu xuất
+0:01:55 - 0:02:02, nhờ tương tác với dữ liệu mà không tục trung chi tiết vào cái dữ liệu được xử lý hay là tác vụ cụ thể.
+0:02:02 - 0:02:07, Trong khi đó thì định nghĩa của Kevin Murphy giải thích rõ hơn về tác vụ các thuộc tán học máy
+0:02:07 - 0:02:11, bao gồm thứ nhất là khám phá mẫu hình từ dữ liệu,
+0:02:11 - 0:02:15, Thứ hai là sử dụng các mẫu hình đó để dự đoán hoặc hỗ trợ ra quyết định
+0:02:15 - 0:02:21, Thì so với các định nghĩa thứ nhất thì cách này đi sâu vào chi tiết của quá trình xử lý và ứng dụng dự liệu
+0:02:21 - 0:02:29, Chúng ta có thể có một cái định nghĩa tổng hợp dựa trên các định nghĩa từ trước đây và các định nghĩa hiện đại
+0:02:29 - 0:02:33, Thì chúng ta có thể đưa ra một cái định nghĩa tổng hợp như sau
+0:02:33 - 0:02:38, Học máy là một cái lĩnh vực nghiên cứu và phát triển các thuật toán và hệ thống
+0:02:38 - 0:02:43, có khả năng tự động khám phá các mẫu hình từ dữ liệu
+0:02:43 - 0:02:46, mà không cần được lập trình chi tiết từng bước
+0:02:46 - 0:02:50, Cải thiện hiệu sức qua thời gian nhờ kinh nghiệm tích lưỡi
+0:02:50 - 0:02:53, và sử dụng các mẫu hình này để dự đoán dữ liệu chưa thấy
+0:02:53 - 0:02:56, hoặc thực hiện các tác vụ cho quyết định trong việc việc không chắc chắn
+0:02:56 - 0:02:59, Tình định nghĩa này là sự kết hợp giữa việc nhấn mạnh
+0:02:59 - 0:03:01, khả năng tự động hóa, cải thiện hiệu sức qua thời gian
+0:03:01 - 0:03:06, và việc khám phá mẫu hình từ dữ liệu để thực hiện các tác vụ chuyên biệt
+0:03:06 - 0:03:12, Việc đưa hệ thống vào định nghĩa chỉ mở rộng phạm vi để phù hợp với thực tế hiện đại của học máy
+0:03:12 - 0:03:16, trong khi các định nghĩa kinh điển tập trung vào thuật toán và kế cận học thuật.
+0:03:16 - 0:03:22, Định nghĩa tổng hợp này bao gọi cả quá trình phát triển, tích hợp và ứng dụng học máy trong thế giới thực
+0:03:22 - 0:03:25, nơi các hệ thống đóng vai trọng quan trọng cũng kém các thuật toán.
+0:03:25 - 0:03:30, Ví dụ như hệ thống gợi ý, nội dung như Netflix bao gồm cả thuật toán học máy
+0:03:30 - 0:03:35, hoặc từ thói quen xem của người dùng nhưng hệ thống cũng cần xử lý dự luyện từ người dùng.
+0:03:35 - 0:03:39, tối ưu hóa, hiển thị nội dung và phản hồi theo thời gian thuật.
+0:03:41 - 0:03:46, Trong hình này, mình họa một quy trình học máy cơ bản gồm có hai bước chính, bước huấn luyện.
+0:03:46 - 0:03:52, Đây là bước mà mô hình tự động khám phá và kích xuất các mẫu hình từ dữ liệu đầu vào
+0:03:52 - 0:03:56, và giúp mô hình học cách biểu diễn với quan hệ trong dữ liệu.
+0:03:56 - 0:04:00, Bước thứ hai ở bên tay phải là bước đánh giá sau khi huấn luyện
+0:04:00 - 0:04:04, thì mô hình sẽ được sử dụng các mẫu hình đã học để diễn đoán kết quả trên dữ liệu mới
+0:04:04 - 0:04:06, hoặc thực hiện các tác vụ cụ thể.
+0:04:06 - 0:04:09, Mô hình không chỉ là kết quả của quá trình hướng luyện,
+0:04:09 - 0:04:14, mà còn là thành phần chính được sử dụng trong giai đoạn đánh giá và triển thai thực tế.
+0:04:16 - 0:04:18, Ok, đây là các bài quiz.

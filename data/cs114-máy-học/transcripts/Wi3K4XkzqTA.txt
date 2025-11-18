@@ -1,0 +1,122 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:36, đang nổi lên như một hiện tượng, thì chúng ta quan sát hình ảnh AI landscape ở bên tay phải
+0:00:36 - 0:00:42, với các vòng tròn đồng tâm thể hiện mối quan hệ giữa AI, Machine Learning, Deep Learning và GenAI.
+0:00:42 - 0:00:44, Chúng ta hãy cùng tìm hiểu sự khác biệt cốt lõi
+0:00:44 - 0:00:51, giữa AI, Machine Learning, Deep Learning và GenAI để có cái nhìn tổng quan về bức tranh toàn cảnh của trí tài nhân tạo.
+0:00:51 - 0:01:01, AI là lĩnh vực rộng nhất bao gồm tất cả các hệ thống có khả năng mô phỏng trí tuệ của con người.
+0:01:01 - 0:01:09, Mục tiêu của AI là tạo ra các hệ thống có thể thực hiện các tác vụ như nhận thức, suy luật, học tập và ra quyết định.
+0:01:09 - 0:01:20, Machine Learning là một nhánh con của AI và tập trung vào việc xây dựng các thuộc toán có khả năng học từ dữ liệu và tự động cải thiện hiệu xuất mà không cần phải lập trình chi tiết.
+0:01:20 - 0:01:31, chi tiết từng bước. Machine Learning chủ yếu sử dụng các mô hình toán học và thống kê để dự đoán hoặc phân loại dữ liệu dựa trên các mẫu đã học từ quá khứ.
+0:01:31 - 0:01:41, Deep Learning là một nhánh con của Machine Learning. Sử dụng các mạng neuron nhân tạo với nhiều lớp nên gọi là show để phân tích dữ liệu.
+0:01:41 - 0:01:47, Các mạng neuron này có thể học các đặc trưng phức tạp từ dữ liệu thô mà không cần phải được thiết kế thủ công.
+0:01:47 - 0:01:52, Deep learning đặc biệt hiệu quả trong việc xử lý dữ liệu phi cấu trúc như hình ảnh, âm thanh và văn bản.
+0:01:53 - 0:01:59, Gần đây chúng ta có Generative AI AI tạo sinh, là một nhánh con của AI,
+0:01:59 - 0:02:03, tập trung vào việc sử dụng các mô hình học sau để tạo ra mô hình mới,
+0:02:04 - 0:02:08, tạo ra nội dung mới bao gồm văn bản, hình ảnh, âm thanh và mã nguồn.
+0:02:08 - 0:02:21, GenAI hoạt động dựa trên các mô hình như mạng neuron tạo sinh đối kháng GAN, mô hình biến đổi Transformer, và trong đó phổ biến nhất là GBT, Generative Pre-trained Transformer.
+0:02:24 - 0:02:29, Saddle dưới đây thể hiện mối quan hệ bao hàm giữa AI, Machine Learning và Deep Learning.
+0:02:29 - 0:02:36, Lấp ngoài cùng Chí tội Nhân tạo là lĩnh vực lớn nhất bao gồm nhiều phương pháp giúp máy móc thực hiện các tác vụ thông minh.
+0:02:36 - 0:02:54, Chúng ta thấy một số lĩnh vực trong AI xuất hiện trong hình bao gồm các hệ thống chơi game, biểu diễn chi thức và si luận, tính toán nguyện đề, các thuật toán tìm kiếm, lập kế hoạch và mô hình nhận thức.
+0:02:54 - 0:03:02, Ở lớp giữa thì chúng ta có học máy, là một nhánh của AI, và tập trung vào việc phát triển các thuật toán có khả năng học từ dữ liệu.
+0:03:02 - 0:03:20, Thế một số thuật toán machine learning được liệt kê trong hình, ví dụ như hội quy Tiến tính Linear Regression, hội quy Logistic Regression, Super Vector Machine, K-Mean Clustering, Random Forest, v.v.
+0:03:20 - 0:03:22, Lấp trong quần thì chúng ta có học sau,
+0:03:22 - 0:03:24, tìa là một nhánh con của Machine Learning,
+0:03:24 - 0:03:27, sử dụng mạng neuron nhân tạo để học từ dữ liệu.
+0:03:27 - 0:03:29, Một số mô hình học sau ví dụ như
+0:03:29 - 0:03:33, MLP, Multi-layer Perceptron,
+0:03:33 - 0:03:35, CNN, Convolutional Neural Network,
+0:03:35 - 0:03:39, ANN, Recurrent Neural Network,
+0:03:39 - 0:03:41, LSTM, Long Short Term Memory,
+0:03:41 - 0:03:45, GAN, Generative Adversarial Networks,
+0:03:45 - 0:03:47, Autoencoder, v.v.
+0:03:47 - 0:03:51, Thì ý nghĩa của hình ảnh này đó là AI là một lĩnh vực rất rộng,
+0:03:51 - 0:03:55, bao gồm machine learning, deep learning và nhiều phương pháp khác.
+0:03:55 - 0:03:58, Machine learning nhắc lại là một phần của AI
+0:03:58 - 0:04:01, và sử dụng các thuộc toán học từ dữ liệu để đưa ra dự đoán.
+0:04:01 - 0:04:06, Deep learning là một phần của machine learning sử dụng mạng neuron
+0:04:06 - 0:04:09, sâu để xử lý các dữ liệu phức tạp.
+0:04:09 - 0:04:13, Các thuộc toán machine learning truyền thống và deep learning đều được liệt kê
+0:04:13 - 0:04:17, để giúp phân biệt các phương pháp trong các tử lĩnh vực.
+0:04:17 - 0:04:22, Chúng ta thấy là dữ liệu lớn đang thay đổi cách chúng ta tiếp cận về học máy.
+0:04:22 - 0:04:28, Hình ảnh sau sẽ minh họa sự khác biệt giữa học máy truyền thống và học sau trong xử lý dữ liệu lớn.
+0:04:28 - 0:04:31, Các mô hình học máy truyền thống sẽ thường bị giới hạn về hiệu sức
+0:04:31 - 0:04:36, khi lượt dữ liệu tăng lên do chúng không thể tận dụng được hiệu quả của dữ liệu lớn.
+0:04:36 - 0:04:40, Nếu chúng ta nhìn cái hình, chúng ta sẽ thấy tới mức nào đó là hiệu sức sẽ đi ngang.
+0:04:40 - 0:04:45, Ngược lại thì Deep Learning có khả năng tiếp tục cải thiện hiệu sức khi dữ liệu tăng
+0:04:45 - 0:04:50, và giúp nó trở thành lựa chọn ưu việc trong các bài toán yêu cầu xử lý ngôn ngữ
+0:04:50 - 0:04:55, ờ yêu cầu xử lý dừng lực liệu lớn như thị giác máy tính, xử lý ngôn ngữ tự nhiên và nhiều lĩnh vực khác
+0:04:55 - 0:05:02, thì chúng ta sẽ thấy cái hiệu sức của performance của các tập tán Deep Learning thì nó càng ngày càng gia tăng
+0:05:02 - 0:05:07, khi mà cái dữ liệu càng ngày càng lớn, càng gia tăng
+0:05:07 - 0:05:23, Học máy không còn là khoa học viễn tưởng nữa và nó đang hiện diện trong cuộc sống hàng ngày của chúng ta, từ những gợi ý phim ảnh đến chẳng đoán y tế.
+0:05:23 - 0:05:27, Chúng ta hãy cùng tìm hiểu tại sao học máy lại quan trọng như vậy.
+0:05:27 - 0:05:33, Thứ nhất đó là khả năng sử liệu lớn, dữ liệu lớn để giúp đưa ra quyết định.
+0:05:33 - 0:05:38, thì chúng ta đang sống trong một thời đại bùng nổ thông tin với lượng dữ liệu khổng lồ được tạo ra mỗi ngày.
+0:05:38 - 0:05:45, Thế học máy đã cung cấp các công cụ và kỹ thuật để phân tích, xử lý và trích xuất thông tin hữu ích từ khối lượng dữ liệu này.
+0:05:45 - 0:05:48, Điều mà con người khó có thể làm được một cách hiệu quả.
+0:05:48 - 0:05:52, Thứ hai là tự động hóa và tối ưu hóa quy trình.
+0:05:52 - 0:05:59, Học máy giúp tự động hóa các quy trình phức tạp, được lập đi lập lại, giảm thiểu nhu cầu về sự can thiệp của con người.
+0:05:59 - 0:06:01, Thứ 3 là thúc đẩy nghiên cứu khoa học.
+0:06:01 - 0:06:05, Học máy đã trở thành một công cụ quan trọng đang được ứng dụng rộng rãi trong nghiên cứu khoa học
+0:06:05 - 0:06:08, từ phân tích dữ liệu gen đến khám phá vũ trụ.
+0:06:08 - 0:06:14, Học máy giúp các nhà khoa học xử lý dữ liệu phức tạp và tìm ra các khám phá mới.
+0:06:14 - 0:06:20, Chúng ta thấy là các giải thưởng Nobel năm 2024 cũng vinh danh các nhà khoa học
+0:06:20 - 0:06:26, các công trình liên quan tới các vụ tài liệu, các vụ tài liệu, các vụ tài liệu, các vụ tài liệu.
+0:06:26 - 0:06:31, hoặc các công trình liên quan tới học máy.
+0:06:31 - 0:06:35, Phát triển trí tuệ nhân tạo, học máy là nền tảng quan trọng để xây dựng các hệ thống trí tuệ nhân tạo
+0:06:35 - 0:06:40, đóng vai trò lớn trong các lĩnh vực như robot tự hành, chatbot và trợ lý ảo.
+0:06:40 - 0:06:46, Điều này mở ra một kỷ nguyên mới cho tương tác giữa con người và máy móc.
+0:06:46 - 0:06:52, Cá nhân hóa, học máy được sử dụng để cá nhân hóa trải nghiệm người dùng trong nhiều lĩnh vực
+0:06:52 - 0:06:57, từ quảng cáo trực tuyến, đề xuất sản phẩm đến giáo dục và chăm sóc sức khỏe.
+0:06:57 - 0:07:01, Việc này giúp đáp ứng tốt hơn nhu cầu và sở thích của thần cá nhân.
+0:07:01 - 0:07:07, Tạo lợi thế cạnh tranh trong kinh doanh, các công ty sử dụng học máy để tối ưu hóa chuỗi cung ứng,
+0:07:07 - 0:07:10, dự báo nhu cầu thị trường và cải thiện chiến lược chiếp thị.
+0:07:10 - 0:07:15, Điều này giúp họ xây dựng lợi thế cạnh tranh so với các đối thủ không sử dụng công nghệ này.
+0:07:15 - 0:07:22, Các ứng dụng của học máy thì rất là nhiều và ở đây chỉ liệt kê một số ứng dụng điển hình.
+0:07:22 - 0:07:26, Thứ nhất là nhận dạng hình ảnh thì học máy được sử dụng để nhận dạng và phân loại hình ảnh.
+0:07:26 - 0:07:30, Ví dụ như nhận dạng khuôn mặt, nhận dạng biển số xe, xử lý ngôn ngữ tự nhiên.
+0:07:30 - 0:07:37, Học máy được sử dụng để xử lý và phân tích về ngôn ngữ tự nhiên, chẳng hạn như dịch thực tự động, phân tích cảm xúc.
+0:07:37 - 0:07:43, Dự đoán và phân tích dữ liệu thì học máy được sử dụng để dự đoán và phân tích dữ liệu.
+0:07:43 - 0:07:47, Chẳng hạn như dự đoán giá cổ phiếu, phân tích hành vi của khách hàng.
+0:07:47 - 0:07:52, Một ứng dụng khác là trợ lý ảo, học máy được sử dụng để tạo ra các trợ lý ảo,
+0:07:52 - 0:07:55, chẳng hạn như là Siri hay Google Assistant.
+0:07:55 - 0:08:01, Lái xe tự động, học máy được sử dụng để tạo ra các hệ thống lái xe tự động, phát hiện gian lật,
+0:08:01 - 0:08:06, học máy được sử dụng để phát hiện gian lật, chẳng hạn như phát hiện gian lật thái tiến dục.
+0:08:06 - 0:08:10, Trong khuyến nghị sản phẩm thì học máy được sử dụng để khuyến nghị sản phẩm,
+0:08:10 - 0:08:22, Vì vậy, tổng tắc văn bản có thể tự động viết bài báo, tóm tắc văn bản, tạo nội dung blog và hỗ trợ lập trình bằng cách gợi ý mả hoặc kiểm tra lỗi trong code của chúng ta.
+0:08:22 - 0:08:35, Trong hình ảnh, tổng tắc văn bản có thể tự động viết bài báo, tóm tắc văn bản, tạo nội dung blog và hỗ trợ lập trình bằng cách gợi ý mả hoặc kiểm tra lỗi trong code của chúng ta.
+0:08:35 - 0:08:39, để gửi ý mả hoặc kiểm tra lỗi trong code của chúng ta.
+0:08:39 - 0:08:45, Trong hình ảnh, lĩnh vực hình ảnh và video, AI có thể tạo hình ảnh từ mô tả văn bản,
+0:08:45 - 0:08:53, hỗ trợ, hỗ trợ chỉnh sửa ảnh chuyên sâu, hoặc thậm chí dựng video tự động dựa trên kịch bản cho trước.
+0:08:53 - 0:08:57, Về âm thanh và âm nhạc, AI có thể sáng tác nhạc theo phong cách mong muốn,
+0:08:57 - 0:09:02, tạo giọng nói nhân tạo với độ chân thực cao và hỗ trợ lòng tiếng tự động,
+0:09:02 - 0:09:06, giúp tiết kiệp thời gian và chi phí sản xuất nội dung đa phương tiện.
+0:09:07 - 0:09:13, Trong giao tiếp thì AI tạo ra các chatbot thông minh có khả năng đối thoại tự nhiên hơn,
+0:09:13 - 0:09:18, hỗ trợ khách hàng, làm trợ lý ảo hoặc đón vai nhân vật trong các game tương tác.
+0:09:18 - 0:09:23, Trong doanh nghiệp thì AI giúp tối ưu hóa quy trình làm việc bằng cách tự động hóa việc tạo các báo cáo,
+0:09:23 - 0:09:28, phân tích dữ lệ kinh doanh và hỗ trợ viết email hay tài liệu một cách rất là nhanh chóng.
+0:09:28 - 0:09:34, Học máy đang định hình tương lai, nhưng tương lai của học máy sẽ là sao?
+0:09:34 - 0:09:37, Chúng ta sẽ thấy rằng nó sẽ có các ý như sau.
+0:09:37 - 0:09:40, Thứ nhất là phát triển trí tệ nhân tạo tổng quốc AGI.
+0:09:40 - 0:09:46, Các nhà nghiên cứu đang hướng đến việc phát triển AI có khả năng học và hiểu nhiều lĩnh vực khác nhau, giống như con ngựa.
+0:09:46 - 0:09:53, Nếu đạt được AGI thì AI sẽ có thể thực hiện nhiều nhiệm vụ phức tạp mà hiện tại chỉ có con người làm được.
+0:09:53 - 0:10:06, Học máy cũng sẽ được ứng dụng rộng rãi trong nhiều lĩnh vực, như trong y tế, trận đoán bệ, cá nhân hóa điều trị, tài chính, phát hiện gian lật, dự đoán thị trường và nhiều ngành công nghiệp khác.
+0:10:06 - 0:10:13, Các găng nghiệp đang tận dụng AI để tối ưu hóa quy trình, giảm chi phí và nâng cao hiệu suất.
+0:10:13 - 0:10:18, Một vấn đề khác đó là AI có đạo đức và AI có thể giải thích.
+0:10:18 - 0:10:22, Xua hướng phát triển AI minh bạch có thể giải thích và tránh thiên vị đang được chủ trọng.
+0:10:22 - 0:10:26, Các tiêu chuẩn và quy định về đạo đức AI ngay càng chặt chẽ
+0:10:26 - 0:10:29, nhằm đảm bảo AI được sử dụng một cách có chất nhiệt.
+0:10:29 - 0:10:34, Học sâu và AI lượng tử, học sâu tiếp tục phát triển và giúp tăng cường
+0:10:34 - 0:10:37, khả năng xử lý dị liệu hình ảnh, âm thanh và ngôn ngữ tự nhiên.
+0:10:37 - 0:10:41, Và AI lượng tử Quantum AI có thể đẩy nhanh việc giải quyết các bài tán phức tạp
+0:10:41 - 0:10:44, mà máy tính truyền thống không thể xử lý hiệu quả.
+0:10:44 - 0:10:49, Đối với cơ hội nghệ nghiệp thì nhu cầu nhân lực tăng cao.
+0:10:49 - 0:10:55, Nhu cầu về chuyên gia AI và học máy đang tăng mạnh trong nhiều ngành nghệ tạo ra nhiều cơ hội việc làm hấp dẫn.
+0:10:55 - 0:11:01, Đa dạng vị trí công việc sinh viên có thể lựa chọn nhiều vị trí khác nhau từ kỹ sư học máy, nhà khoa học dữ liệu
+0:11:01 - 0:11:05, đến chuyên gia AI trong các lịch vực cụ thể, ví dụ như y tế, tài chính.
+0:11:05 - 0:11:13, Đối với khởi nghiệp và đội mới thì học máy đã tạo điều kiện cho việc khởi nghiệp và phát triển các ứng dụng AI mới và mang lại giá trị cho xã hội.
+0:11:13 - 0:11:22, Học máy cũng là một lĩnh vực nghiên cứu hấp dẫn, với nhiều cơ hội tham gia các dự án AI tiên tiến tại các trường đại học và viện nghiên cứu.
+0:11:22 - 0:11:30, Kỹ năng quan trọng cho sinh viên thì cần phải trang bị kiến thức về lập trình, tán học, thống kê, cũng như kỹ năng mềm như giao tiếp và làm việc nhóm.
+0:11:30 - 0:11:41, Bên cạnh đó là học tập suốt đời, lĩnh vực AI liên tục phát triển và đòi hỏi người làm việc phải liên tục cập nhật các kiến thức và kỹ năng để theo kiếp xu hướng.
+0:11:41 - 0:11:49, Hứu... Thôi xong, nghỉ đã, mai làm tiếp.
+0:11:49 - 0:11:53, 70 sờ lai 40 phút.
+0:12:00 - 0:12:06, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

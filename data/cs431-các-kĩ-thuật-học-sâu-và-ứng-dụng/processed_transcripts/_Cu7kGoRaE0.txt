@@ -1,0 +1,135 @@
+0:00:00 - 0:00:13, Trong phần tiếp theo thì chúng ta sẽ cùng tìm hiểu về một trong những biến thể rất mạnh và hiệu quả đó chính là Bi-Directional RNN hay còn gọi là RNN 2 chiều.
+0:00:13 - 0:00:20, Chúng ta sẽ xem xét bài toán đơn giản trước, đó là bài toán Sentiment Analysis.
+0:00:20 - 0:00:32, Và ở trong mô hình RNN mà chúng ta đã được tìm hiểu trước đây, chúng ta sẽ ký hiệu bằng hệ thống các cái node như thế này. Mỗi cái node này sẽ có các cái thao tác xử lý.
+0:00:32 - 0:00:44, Và chúng ta lấy ví dụ như chúng ta đưa vào một câu comment, câu bình luận về một cái bộ phim là The movie was terribly exciting.
+0:00:44 - 0:00:49, Cứ khi đưa vào một từ, chúng ta sẽ tính toán các giá trị ẩn
+0:00:49 - 0:00:57, Giả sử ở đây là S1, S2, S3, cho đến S5
+0:00:57 - 0:01:01, Và các giá trị ẩn này sẽ được tổng hợp thông tin lại
+0:01:01 - 0:01:05, Tổng hợp thông tin lại để tính ra cái node ở trên cổng
+0:01:05 - 0:01:07, Và đây là cái node output
+0:01:07 - 0:01:11, Và cái việc tổng hợp thông tin này sẽ được thực hiện là Element-Wise, Min hoặc là Max
+0:01:11 - 0:01:19, chúng ta sẽ tính toán trên cấp độ đó là từng phần tử giữa các giá trị S1, S2, S3
+0:01:19 - 0:01:22, đó sẽ tính trên từng phần tử của cái vector này
+0:01:22 - 0:01:30, và sau khi tổng hợp xong thì chúng ta sẽ đưa ra dự đoán đó là positive hay là negative
+0:01:32 - 0:01:34, hay là neutral
+0:01:34 - 0:01:46, Chúng ta sẽ biểu diễn nó dưới dạng một dạng thứ hai, đó là dạng vector.
+0:01:46 - 0:01:56, Khi đưa về dạng biểu diễn vector của RNN, nó sẽ giúp chúng ta hình dung được giá trị trạng thái ẩn.
+0:01:56 - 0:01:59, nó sẽ là một cái vector, thì nó sẽ mang tính chất đại diện nhiều hơn
+0:01:59 - 0:02:03, và dựa trên màu sắc của các cái vector này
+0:02:03 - 0:02:06, trong những slide sau, nó sẽ giúp cho chúng ta thuận tiện
+0:02:06 - 0:02:09, trong việc hiểu cách thức hoạt động của mô hình hơn
+0:02:09 - 0:02:11, thay vì là chúng ta dùng cái node như thế này
+0:02:11 - 0:02:15, như vậy thì ở đây là ở dạng biểu diễn vector
+0:02:15 - 0:02:19, và tất cả các cái vector mà ở trạng thái ẩn
+0:02:19 - 0:02:22, S1 cho đến S5 ở đây, chúng ta sẽ được thực hiện thao tác
+0:02:22 - 0:02:25, trung bình hoặc là thao tác max
+0:02:25 - 0:02:30, trên từng phần tử để ra một vector tổng hợp
+0:02:30 - 0:02:32, và vector này chúng ta sẽ thấy là nó có một tóm tắt
+0:02:32 - 0:02:36, và do nó đã tổng hợp thông tin của các trạng thái ở trước đó
+0:02:36 - 0:02:39, Bây giờ chúng ta sẽ qua
+0:02:39 - 0:02:45, động cơ tại sao lại có kiến trúc mạng Bidirectional RNN
+0:02:45 - 0:02:48, chúng ta sẽ để ý rằng là
+0:02:48 - 0:02:51, từ terribly ở đây
+0:02:51 - 0:02:54, từ terribly này khi kết hợp
+0:02:54 - 0:02:58, Với những thông tin ngữ cảnh tại thời điểm trước đó
+0:02:58 - 0:02:58, Đúng không?
+0:02:58 - 0:03:03, Là từ was, từ movie và từ the
+0:03:03 - 0:03:09, Các từ này không mang tính chất thể hiện trạng thái cảm xúc
+0:03:09 - 0:03:14, Các từ the movie, was đều là những từ trung tính
+0:03:14 - 0:03:17, Nhưng khi chúng ta bắt gặp tới từ terribly
+0:03:17 - 0:03:21, Thì nếu mà nguyên bản của từ terrible
+0:03:21 - 0:03:25, Thì đây chính là một cái từ thể hiện tính chất tiêu cực
+0:03:27 - 0:03:29, Đó, nó thể hiện tính chất tiêu cực
+0:03:31 - 0:03:36, Và nhưng rõ ràng là cái từ ngay phía sau đó là cái từ Exciting
+0:03:36 - 0:03:39, Cái từ Exciting này mang tính chất là tích cực
+0:03:41 - 0:03:48, Thì khi đó cái từ terribly này chỉ mang tính chất là thể hiện cái mức độ của việc Exciting thôi
+0:03:48 - 0:03:53, là cực kỳ là thú vị, cực kỳ là tích cực
+0:03:53 - 0:03:57, Như vậy thì khi chúng ta xử lý đến cái từ thứ S4
+0:03:57 - 0:04:01, chúng ta chỉ nhận được các thông tin của quá khứ
+0:04:01 - 0:04:06, tức là những cái từ S1, S2, S3 truyền đến cho S4
+0:04:06 - 0:04:11, mà chúng ta không được thấy cái từ ở phía sau đó chính là cái từ Exciting
+0:04:11 - 0:04:15, và phải nhờ có cái từ Exciting này
+0:04:15 - 0:04:19, thì nó mới giúp cho chúng ta hoàn thiện ý nghĩa của từ terribly này hơn
+0:04:19 - 0:04:25, do đó chúng ta cần phải có ngữ cảnh của các từ bên tay phải nữa
+0:04:25 - 0:04:27, chứ không phải chỉ có những từ bên tay trái
+0:04:27 - 0:04:32, thì đó chính là động cơ của bidirectional RNN
+0:04:32 - 0:04:36, như vậy chúng ta sẽ phải có kiến trúc như thế nào đó
+0:04:36 - 0:04:42, để có thể duyệt được các câu của mình theo chiều ngược lại nữa
+0:04:42 - 0:04:44, thì như vậy nó mới hoàn thiện
+0:04:44 - 0:04:49, Và đó chính là ý tưởng của biến thể Bidirectional RNN.
+0:04:49 - 0:04:56, Ý tưởng của đó nó có thể tóm tắt lại đó chính là tổng hợp thông tin ngữ cảnh từ cả hai phía.
+0:04:56 - 0:05:01, Và ở đây thì chúng ta sẽ thấy là cái màu sắc của chúng ta là màu xanh, đúng không?
+0:05:01 - 0:05:09, Là tương ứng với lại các cái vector trạng thái ẩn ở theo cái chiều là từ trái sang phải.
+0:05:09 - 0:05:16, sau đó khi đến được từ cuối cùng, chúng ta có thể thực hiện thao tác ngược lại
+0:05:16 - 0:05:20, và biểu diễn bằng vector màu cam
+0:05:20 - 0:05:24, và từ Exciting này sẽ được duyệt ở đây
+0:05:24 - 0:05:29, sau đó sẽ lan truyền tổng hợp thông tin với từ Terribly
+0:05:29 - 0:05:36, thì tại đây, khi từ Exciting này mang nghĩa tích cực kết hợp với từ Terribly
+0:05:36 - 0:05:38, thì nó sẽ tạo ra cho chúng ta cái nghĩa tích cực.
+0:05:38 - 0:05:44, Rồi, và cứ như vậy chúng ta lan truyền đến đầu
+0:05:44 - 0:05:50, và tại cái vị trí số 1, tại cái time step t là bằng 1 này,
+0:05:50 - 0:05:55, thì chúng ta thấy cái vector màu xanh, nó đã được kết nối, nó được kết hợp,
+0:05:55 - 0:06:04, kết hợp như thế này, và nối lại, với lại cái vector ẩn mà đã tổng hợp theo chiều từ phải sang trái.
+0:06:04 - 0:06:09, Và như vậy thì cái vector tại đây đã có đầy đủ thông tin hơn
+0:06:09 - 0:06:15, Đủ thông tin ngữ cảnh từ bên tay phải và bên tay trái truyền về
+0:06:15 - 0:06:25, Và cứ như vậy chúng ta sẽ thực hiện cho tất cả những vector cho những time steps còn lại
+0:06:25 - 0:06:31, Và nếu xét về công thức biểu diễn cho kiến trúc mạng bidirectional này
+0:06:31 - 0:06:35, thì chúng ta sẽ có công thức sau
+0:06:35 - 0:06:37, ở đây chúng ta có một lưu ý đó là
+0:06:37 - 0:06:40, với cái vector này là tại vị trí của terribly
+0:06:40 - 0:06:43, thì thông tin ngữ cảnh của từ terribly
+0:06:43 - 0:06:45, đã được tổng hợp toàn diện hơn từ cả hai phía
+0:06:45 - 0:06:50, thì đầu tiên, đó là tại một time step t
+0:06:50 - 0:06:54, chúng ta sẽ có cái S mà với mỗi cái mũi tên từ trái sang phải
+0:06:54 - 0:06:57, thì chúng ta sẽ có cái công thức là RNN feedforward
+0:06:57 - 0:07:02, RNN Feedforward của thông tin của quá khứ
+0:07:04 - 0:07:09, Và lưu ý là thông tin của quá khứ này cũng lấy theo chiều từ trái sang phải
+0:07:09 - 0:07:13, Sau đó chúng ta kết hợp với thông tin của hiện tại
+0:07:15 - 0:07:22, Thì nó sẽ ra được trạng thái ẩn của S_t, nó sẽ ra được trạng thái ẩn S_t
+0:07:22 - 0:07:31, Tương tự như vậy, chúng ta sẽ có vector trạng thái ẩn theo chiều từ phải sang trái, là S_t này
+0:07:31 - 0:07:38, Thì công thức cho nó sẽ là RNN Backward, backward tức là đi theo chiều ngược
+0:07:38 - 0:07:48, Thì chúng ta sẽ tổng hợp thông tin của S_{t-1} và S_{t-1} này là dấu mũi tên từ phải sang trái
+0:07:48 - 0:07:50, và tương tự như đây cũng là quá khứ
+0:07:50 - 0:07:52, nhưng mà lưu ý là quá khứ
+0:07:52 - 0:07:53, cho cái đường Backward
+0:07:53 - 0:07:54, kết hợp với thông tin hiện tại
+0:07:54 - 0:07:57, thì chúng ta sẽ có được cái S_t
+0:07:57 - 0:07:58, theo chiều Backward
+0:07:58 - 0:08:00, và cuối cùng
+0:08:00 - 0:08:02, đó là chúng ta sẽ tổng hợp thông tin
+0:08:02 - 0:08:03, S_t
+0:08:03 - 0:08:07, bằng cách chúng ta thực hiện cái phép nối (concatenation)
+0:08:07 - 0:08:09, thì cái dấu chấm phẩy này ở đây
+0:08:09 - 0:08:11, đó chính là phép nối
+0:08:12 - 0:08:14, nối hai cái vector
+0:08:14 - 0:08:16, S_t theo chiều Forward
+0:08:16 - 0:08:22, và S_t theo chiều Backward để tạo thành một vector trạng thái ẩn.
+0:08:22 - 0:08:24, Và dựa trên thông tin của trạng thái ẩn này,
+0:08:24 - 0:08:28, S_t sẽ giúp chúng ta đưa ra giá trị dự đoán
+0:08:28 - 0:08:32, một cách đầy đủ và toàn diện hơn từ hai phía.
+0:08:35 - 0:08:40, Và như vậy, chúng ta sẽ có một số nhận xét sau.
+0:08:40 - 0:08:43, Thứ nhất là bidirectional
+0:08:43 - 0:08:46, thì nó sẽ phù hợp đối với những bài toán
+0:08:46 - 0:08:48, mà chúng ta có khả năng tiếp cận được thông tin,
+0:08:48 - 0:08:53, tiếp cận được toàn bộ nội dung của dữ liệu đầu vào.
+0:08:53 - 0:08:56, Tức là sao? Nếu như chúng ta có được input
+0:08:56 - 0:08:59, và chúng ta có thể đọc được hết nội dung của toàn bộ,
+0:08:59 - 0:09:05, chúng ta đọc được hết nội dung toàn bộ của cái X1, X2 cho đến Xt,
+0:09:05 - 0:09:09, chúng ta đọc được hết này và mới đưa ra được dự đoán.
+0:09:09 - 0:09:16, Đó là những bài toán cho phép có khả năng sử dụng được Bidirectional
+0:09:16 - 0:09:20, Và nếu như vậy thì rõ ràng language model là không phù hợp
+0:09:20 - 0:09:28, Tại vì language model chỉ cho phép nhìn từ trái sang phải và dự đoán từ tiếp theo thôi
+0:09:28 - 0:09:38, Do đó thì chúng ta không phù hợp sử dụng Bidirectional cho language model
+0:09:38 - 0:09:47, Mô hình BERT là Bidirectional Encoder Representation for Transformers
+0:09:47 - 0:09:54, Đây là một trong những mô hình, một biến thể của Bidirectional, đã thể hiện ở trong cái chữ này
+0:09:54 - 0:09:59, Vô cùng hiệu quả, được sử dụng rất phổ biến hiện nay
+0:09:59 - 0:10:04, thì hiện nay ở Việt Nam chúng ta có một mô hình đó là PhoBERT
+0:10:04 - 0:10:11, và cũng dựa trên mô hình của Bidirectional này
+0:10:11 - 0:10:16, và từ nay về sau thì chúng ta sẽ có mẹo
+0:01:16 - 0:10:19, đó là bất cứ bài toán nào mà chúng ta được phép
+0:10:19 - 0:10:22, khả năng tiếp cận toàn bộ nội dung của dữ liệu đầu vào
+0:10:22 - 0:10:24, được phép tiếp cận toàn bộ nội dung của dữ liệu đầu vào
+0:10:24 - 0:10:28, ví dụ bài toán dịch máy, bài toán tóm tắt văn bản
+0:10:28 - 0:10:33, Chúng ta được phép đọc hết nội dung của đầu vào này trước khi dịch, trước khi tóm tắt
+0:10:33 - 0:10:37, Đó là những bài toán chúng ta có thể sử dụng bidirectional
+0:10:37 - 0:10:46, Bidirectional thì thông thường luôn chỉ có thể làm cho kết quả của mô hình tốt hơn mà thôi

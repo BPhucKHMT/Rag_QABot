@@ -1,0 +1,180 @@
+0:00:00 - 0:00:08, Biến thể DeepStack RNN
+0:00:30 - 0:00:38, khi cái văn bản của mình rất là dài, có thể lên đến hàng chục, hàng trăm, thậm chí là hàng ngàn chữ
+0:00:38 - 0:00:43, thì rõ ràng là cái số thao tác xử lý này sẽ được lập đi lập lại, lập đi lập lại
+0:00:43 - 0:00:46, và nó sẽ tiến tới sâu theo chiều ngang
+0:00:46 - 0:00:53, nhưng với mỗi một cái đặc trưng, với mỗi một cái đặc trưng tại một cái thời điểm tính toán
+0:00:53 - 0:00:56, thì nó đã thực sự sâu hay chưa?
+0:00:56 - 0:01:02, thì câu trả lời là chưa và nó đang thiếu một độ sâu theo chiều dọc.
+0:01:02 - 0:01:06, Nó mới chỉ sâu theo chiều ngang thôi, còn sâu theo chiều dọc là chưa có.
+0:01:06 - 0:01:11, Do đó, ta có thể làm cho mô hình sâu hơn theo chiều dọc
+0:01:11 - 0:01:15, và chiều này được hiểu theo chiều của từng đặc trưng.
+0:01:15 - 0:01:19, Với mỗi đặc trưng S_t, đây là một đặc trưng cấp thấp.
+0:01:19 - 0:01:25, Chúng ta sẽ làm cho nó nâng lên thành một đặc trưng cấp trung, mid-level.
+0:01:25 - 0:01:28, sau đó chúng ta lại nâng lên thành một đặc trưng cấp cao hơn
+0:01:29 - 0:01:31, thì đó là sâu theo chiều dọc
+0:01:31 - 0:01:32, và
+0:01:34 - 0:01:36, nó sẽ cho phép mô hình của mình
+0:01:36 - 0:01:39, nó có biểu diễn được các đặc trưng ở nhiều cấp độ
+0:01:39 - 0:01:42, nó sẽ biểu diễn được đặc trưng ở nhiều cấp độ
+0:01:42 - 0:01:45, và giống như trong mạng CNN chúng ta thấy
+0:01:45 - 0:01:48, ở trong mạng CNN thì ở những cái layer đầu tiên
+0:01:48 - 0:01:51, những cái layer đầu tiên thì cái feature map của mình
+0:01:51 - 0:01:53, là những cái đặc trưng cấp thấp
+0:01:53 - 0:01:57, sau đó chúng ta biến đổi thành các feature map
+0:02:00 - 0:02:03, càng về lớp cuối thì chúng ta thấy là feature map của mình
+0:02:03 - 0:02:07, tính đặc trưng, tính ngữ nghĩa của nó càng lúc càng cao
+0:02:07 - 0:02:10, thì ở đây sẽ là 2 level feature
+0:02:16 - 0:02:20, trong khi đó đối với mạng ANN thì truyền thống
+0:02:20 - 0:02:29, Với đặc trưng đầu vào X_t, chúng ta chỉ mới thực hiện biến đổi trên 1 tầng,
+0:02:29 - 0:02:33, thì đặc trưng này vẫn còn mang tính chất là cấp thấp.
+0:02:35 - 0:02:42, Nó sẽ không thể nào giúp chúng ta giải quyết được các bài toán phức tạp, khó hơn.
+0:02:43 - 0:02:49, Và như vậy thì chúng ta sẽ có một phiên bản đó chính là DeepStack RNN.
+0:02:49 - 0:02:51, Từ stack có nghĩa là chồng
+0:02:51 - 0:02:53, Thì chữ stack này có nghĩa là chồng
+0:02:53 - 0:02:55, Và một cái tên gọi khác
+0:02:55 - 0:02:57, Đó là multi-layer ANN
+0:02:57 - 0:02:59, Tức là layer có
+0:02:59 - 0:03:01, Mạng ANN có nhiều tầng
+0:03:03 - 0:03:05, Rồi, thì đây là
+0:03:05 - 0:03:07, sơ đồ
+0:03:07 - 0:03:09, cho mạng ANN mà
+0:03:09 - 0:03:11, với một layer
+0:03:11 - 0:03:13, Chúng ta sử dụng lại
+0:03:13 - 0:03:15, ví dụ là cũ
+0:03:15 - 0:03:17, là The Movie was terribly exciting
+0:03:17 - 0:03:23, và lưu ý là đây là chúng ta đang làm gọn chứ hàm ý từ đầu vào ở đây
+0:03:23 - 0:03:25, nó phải là embedding của từ Movie
+0:03:25 - 0:03:34, và nếu như chỉ có 1 layer thì cái S_t tại đây là chỉ chứa được đặc trưng cấp thấp của từ này
+0:03:34 - 0:03:40, do đó chúng ta cần phải tổng hợp thêm các thông tin của mid-level và high-level feature
+0:03:40 - 0:03:45, muốn vậy thì chúng ta cần phải chồng các layer biến đổi
+0:03:45 - 0:03:52, Mỗi đường màu cam là một layer biến đổi
+0:03:54 - 0:04:01, Chúng ta sẽ chồng lên layer thứ 2, rồi chồng lên layer số 3
+0:04:02 - 0:04:09, Đường đi di chuyển của thông tin sẽ được biểu diễn bởi các vector bằng mũi tên
+0:04:10 - 0:04:12, Thể hiện hướng đi của dữ liệu của mình
+0:04:12 - 0:04:26, sau đó trạng thái ẩn ở layer thứ y là S_t^y là đầu vào layer thứ y+1
+0:04:26 - 0:04:32, như vậy là kết quả của trạng thái ẩn layer thứ y sẽ là đầu vào layer thứ y+1
+0:04:32 - 0:04:35, S_t^{y+1}
+0:04:35 - 0:04:43, Và cách chúng ta luân chuyển thông tin giữa các layer đó là chúng ta sẽ tính toán trên layer số 1 trước
+0:04:43 - 0:04:47, Rồi sau đó chúng ta truyền thông tin lên cho layer số 2
+0:04:47 - 0:04:50, Rồi sau đó chúng ta truyền thông tin lên cho layer số 3
+0:04:50 - 0:04:58, Thì đây là animation để minh họa cho cách thức chúng ta chuyển dữ liệu giữa các tầng với nhau
+0:04:58 - 0:05:08, Để dùng dạng công thức, chúng ta sẽ có các công thức như sau
+0:05:08 - 0:05:20, Đầu tiên là S_t^1, tức là layer số 1, đây sẽ là layer số 2, đây là layer số 3 và đây là layer số 1
+0:05:20 - 0:05:34, Tại thời điểm thứ t là layer số 1, nó sẽ được tính thông tin, nó sẽ được tổng hợp thông tin từ cái x_t, tức là cái này
+0:05:34 - 0:05:39, x_t cộng với lại thông tin của quá khứ nhưng ở cùng tầng
+0:05:39 - 0:05:42, Đây là layer số 1, đây là cùng tầng
+0:05:42 - 0:05:52, Thông tin của quá khứ ở cùng tầng tức là S^1_{t-1}
+0:05:52 - 0:06:00, Rồi, sau đó lên cái tầng thứ 2 thì S_t^2
+0:06:00 - 0:06:04, Nó sẽ được tổng hợp thông tin từ cái tầng trước đó
+0:06:04 - 0:06:08, Nếu như trước đây cái S_t^1 nó tổng hợp thông tin từ x_t
+0:06:08 - 0:06:17, thì ở đây S_t^2 sẽ được tổng hợp thông tin từ S_t^1, tức là từ tầng thấp hơn chuyển lên
+0:06:17 - 0:06:21, thì đây chính là thông tin của tầng thấp hơn chuyển lên
+0:06:21 - 0:06:35, đây chính là thông tin của tầng hoặc layer trước đó
+0:06:35 - 0:06:48, và nó sẽ không quên là tổng hợp thông tin với cái quá khứ của cái tầng hiện tại
+0:06:48 - 0:06:53, tức là cái thông tin quá khứ ở trên cái tầng hiện tại chính là S^2_{t-1}
+0:06:53 - 0:06:59, S^2_{t-1} thì đây chính là cái thông tin quá khứ
+0:06:59 - 0:07:04, Thông tin quá khứ như ở cùng tầng
+0:07:09 - 0:07:20, Và tương tự như vậy cho S_t^3, chúng ta cũng sẽ tổng hợp thông tin từ S_t^2 kết hợp với thông tin quá khứ cùng tầng
+0:07:20 - 0:07:23, đó là S^3_{t-1}.
+0:07:23 - 0:07:29, Thì đây chính là dạng công thức biến đổi của DeepStack RNN.
+0:07:29 - 0:07:36, Và cũng không thể nào quên, không nhắc đến biến thể
+0:07:36 - 0:07:40, có sự kết hợp của DeepStack và Bidirectional.
+0:07:40 - 0:07:45, Bidirectional nhắc lại, đó chính là một biến thể giúp cho chúng ta
+0:07:45 - 0:07:54, chúng ta tổng hợp được thông tin ngữ cảnh theo chiều từ trái sang phải và từ phải sang trái
+0:07:54 - 0:07:58, đó sẽ giúp cho chúng ta hoàn thiện hơn cái thông tin về mặt ngữ cảnh
+0:07:58 - 0:08:04, Còn DeepStack là nó sẽ giúp cho mình cho các đặc trưng tại từng tầng
+0:08:04 - 0:08:10, nó sẽ học được các cấp của đặc trưng từ cấp thấp cho đến cấp giữa đến cấp cao
+0:08:10 - 0:08:15, như vậy hai cái DeepStack và Bidirectional nó thực hiện hai cái nhiệm vụ độc lập nhau
+0:08:15 - 0:08:24, Nếu chúng ta bổ trợ cho nhau thì kiến trúc sẽ càng hoàn thiện hơn và hiệu quả hơn.
+0:08:24 - 0:08:30, DeepStack Bidirectional nếu mà vẽ gọn lại thì chúng ta sẽ dùng sơ đồ này.
+0:08:30 - 0:08:37, Ở đây chúng ta sẽ thấy có những cái nét liền chính là cho chiều thuận Forward.
+0:08:37 - 0:08:51, Còn nét đứt là để thể hiện cho các đường theo chiều Backward
+0:08:51 - 0:09:02, Và ở đây chúng ta sẽ tổng hợp thông tin cho một tầng và với cái tầng này thì chúng ta lại đẩy lên tiếp
+0:09:02 - 0:09:09, chúng ta sẽ chồng thêm, chúng ta sẽ chồng thêm một cái tầng mới rồi chúng ta lại chồng lên một cái tầng mới
+00:09:09 - 0:09:19, Ví dụ này là chúng ta đang minh họa cho DeepStack Bidirectional là vừa có sự kết hợp của sự đi theo 2 chiều
+00:09:19 - 0:09:21, xử lý thông tin ngữ cảnh 2 chiều
+00:09:21 - 0:09:25, mà vừa có sự chồng tầng giữa tầng này với tầng nọ
+00:09:25 - 0:09:27, tầng thấp lên tầng cao
+00:09:29 - 0:09:36, Rồi, cuối cùng là mẹo thực hành cho bài học ngày hôm nay
+00:09:36 - 0:09:42, Đầu tiên là mẹo số 1, M1 là nên sử dụng Bidirectional khi có thể
+00:09:42 - 0:10:04, Tại sao chúng ta không dùng từ là luôn luôn mà dùng từ là có thể Tại vì có một số bài toán, ví dụ như Language Model, chúng ta không được phép thấy những thông tin của những từ phía sau Do đó Language Model là không có sử dụng Bidirectional được Nên ở đây chúng ta chỉ nói là nên sử dụng Bidirectional RNN khi có thể thôi
+00:10:06 - 0:10:16, Và thứ hai, đó là mẹo thứ 2 M2 là DeepStack RNN cho kết quả tốt hơn
+00:10:16 - 0:10:19, Đó cũng tương tự như mạng CNN
+00:10:19 - 0:10:24, Nó sẽ giúp kiến trúc của mình có thể học được các đặc trưng theo nhiều lớp khác nhau
+00:10:24 - 0:10:27, Theo nhiều mức độ khác nhau từ cấp thấp lên cấp cao
+00:10:27 - 0:10:32, Và ở đây chúng ta sẽ có thêm một số kinh nghiệm khác
+00:10:32 - 0:10:36, Đối với quá trình encoder trong mạng RNN
+00:10:36 - 0:10:40, Chúng ta biết rồi nó sẽ có một số biến thể là encoder
+00:10:40 - 0:10:42, Và decoder
+00:10:42 - 0:10:46, Encoder và Decoder
+00:10:46 - 0:10:51, Encoder là giúp chúng ta đọc hết toàn bộ nội dung đầu vào, đọc hết input
+00:10:51 - 0:10:58, Và Decoder là giúp chúng ta tạo sinh ra kết quả
+00:10:58 - 0:11:07, Ví dụ như biến thể Many-to-Many dạng 2
+00:11:07 - 0:11:09, Đó là một cái ví dụ như vậy
+0:11:09 - 0:11:15, Many-to-Many dạng 2 chính là một cái kiểu là encoder-decoder
+0:11:15 - 0:11:20, Thì encoder mà từ 2 cho đến 4 lớp
+0:11:20 - 0:11:24, Thì cái lớp thứ 2, cái lớp thứ 2 hay cái tầng thứ 2
+0:11:24 - 0:11:26, Nó giúp cho chúng ta cải thiện nhiều
+00:11:26 - 0:11:30, Nhưng mà theo kinh nghiệm của những cái người đi trước
+00011:30 - 0:11:34, Thì đến cái lớp thứ 3, thứ 4 thì sự hiệu quả của nó ít hơn
+00:11:34 - 0:11:38, Tức là nó có hiệu quả hơn nhưng mà nó hiệu quả ít.
+00:11:38 - 0:11:42, Như vậy thì ở đây chúng ta cần phải có sự đánh đổi.
+00:11:42 - 0:11:48, Nếu như chúng ta thêm tầng thứ 3, thứ 4 thì điều gì xảy ra?
+00:11:48 - 0:11:50, Nó sẽ phát sinh thêm điều gì?
+00:11:50 - 0:11:54, Nó sẽ phát sinh thêm chi phí tính toán.
+00:11:56 - 0:11:58, Đó là điều chắc chắn.
+00:11:58 - 0:12:02, Và đồng thời nó sẽ làm cho mô hình của mình phức tạp hơn.
+00:12:02 - 0:12:12, Nếu chúng ta không quan tâm lắm về yếu tố chi phí tính toán, hoặc thời gian tính toán, thì chúng ta có thể thêm lớp số 3, số 4.
+00:12:12 - 0:12:22, Nhưng mà do là cái tình hình hiện tại của tính toán, chúng ta không quan tâm lắm về yếu tố chi phí tính toán, hoặc thời gian tính toán, thì chúng ta có thể thêm lớp số 3, số 4.
+00:12:22 - 0:12:28, Chi phí tính toán hoặc thời gian tính toán thì chúng ta có thể thêm lớp 3, 4.
+00:12:28 - 0:12:35, Nhưng mà do là tầng thứ 3 và thứ 4 này được thực hiện tuần tự,
+00:12:35 - 0:12:38, nó cũng không thể giúp chúng ta thực hiện song song được,
+00:12:38 - 0:12:41, nên chi phí tính toán và thời gian nó sẽ lâu.
+00:12:41 - 0:12:48, Đối với decoder thì theo kinh nghiệm đó là 4 lớp là cho kết quả tốt nhất.
+00:12:48 - 0:12:55, Nhưng mà lưu ý, đây là những kinh nghiệm cá nhân của những bài báo khoa học họ tổng hợp
+00:12:55 - 0:13:00, Còn thực tế nó cũng rất phụ thuộc vào khối lượng dữ liệu, nó phụ thuộc vào bài toán của mình
+00:13:00 - 0:13:04, Nếu dữ liệu của mình ít thì có khi càng thêm lớp, nó lại càng tệ hơn
+00:13:04 - 0:13:09, Tại vì nó phát sinh thêm trọng số hoặc là phát sinh thêm chi phí tính toán
+00:13:09 - 0:13:14, Làm cho phức tạp mô hình hơn, dẫn đến hiện tượng vanishing gradient hoặc là overfitting
+00:13:14 - 0:13:16, Do đó thì thêm không chắc là tốt
+00:13:16 - 0:13:21, Nhưng mà đối với trường hợp dữ liệu của mình đủ nhiều và bài toán đủ đơn giản
+00:13:21 - 0:13:27, thì chúng ta hoàn toàn có thể áp dụng là đối với decoder thì chúng ta sẽ có 4 lớp
+00:13:29 - 0:13:34, Rồi, và một trong những cái mẹo cuối nhưng mà nó không có được nhắc đến trong cái phần này
+00:13:34 - 0:13:38, trong cái bài này, đó chính là skip connection
+00:13:38 - 0:13:51, Các bạn quay lại bài về CNN và cụ thể đó là biến thể ResNet
+0:013:51 - 0:14:00, chúng ta thấy là skip connection giúp chúng ta giải quyết được hiện tượng vanishing gradient
+00:14:08 - 0:14:13, nó sẽ giúp chúng ta giải quyết được hiện tượng vanishing gradient
+00:14:13 - 0:14:21, và điều đó đã giúp chúng ta có thể tăng độ sâu của mạng của mình lên
+00:14:21 - 0:14:23, có thể lên đến 8 lớp
+00:14:23 - 0:14:27, thì như hồi nãy chúng ta nói nếu như bình thường
+00:14:27 - 0:14:33, chúng ta không phải chịu sự ảnh hưởng của vấn đề về chi phí tính toán
+00:14:33 - 0:14:36, thì chúng ta có thể thêm 3 đến 4 lớp
+00:14:36 - 0:14:38, nhưng khi thêm vô mà không có cơ chế nào khác
+00:14:38 - 0:14:42, thì nó sẽ rất dễ xảy ra hiện tượng vanishing gradient
+00:14:42 - 0:14:44, và để khắc chế được chuyện này
+00:14:44 - 0:14:46, khắc chế được vấn đề vanishing gradient
+00:14:46 - 0:14:49, thì chúng ta sẽ sử dụng skip connection
+00:14:49 - 0:14:54, đó sẽ giúp chúng ta giải quyết vấn đề vanishing gradient
+00:14:54 - 0:14:57, công thức của biến thể ResNet chính là
+00:14:57 - 0:15:00, F(x) là bằng
+00:15:00 - 0:15:05, Hàm biến đổi của mình, ví dụ như là RNN, đây là RNN
+00:15:05 - 0:15:08, Cộng cho x
+00:15:08 - 0:15:16, Đây chính là mẹo để giúp chúng ta giải quyết vấn đề về vanishing gradient
+00:15:16 - 0:15:24, Như vậy, trong bài học ngày hôm nay, chúng ta đã lần lượt đi qua các module
+00:15:24 - 0:15:26, các biến thể của RNN
+00:15:26 - 0:15:30, Và các biến thể này là những biến thể kinh điển, đó là LSTM
+00:15:31 - 0:15:36, Cơ chế của LSTM đó là nhớ cái cần nhớ và quên cái cần quên
+00:15:36 - 0:15:43, Thông qua các cổng là Forget, cổng Input, cổng Output
+00:15:45 - 0:15:50, Và đồng thời nó sẽ kết hợp với một cái Cell, một cái Cell State
+00:15:50 - 0:15:54, Để lưu truyền cái thông tin từ quá khứ cho đến hiện tại
+00:15:54 - 0:16:05, Đây chính là ý tưởng của LSTM. LSTM sẽ giúp cho mình giải quyết được vấn đề vanishing gradient do sự điều phối thông tin dẫn đến cho gradient của mình tính toán một cách hiệu quả.
+00:16:06 - 0:16:13, Biến thể thứ 2 là Bidirectional RNN.
+00:16:13 - 0:16:21, Bidirectional RNN sẽ giúp chúng ta tổng hợp thông tin từ 2 chiều, theo chiều từ Forward từ trái sang phải và theo chiều từ phải qua trái.
+00:16:21 - 0:16:25, thì sẽ giúp chúng ta có được thông tin đầy đủ và toàn diện hơn.
+00:16:25 - 0:16:29, Và cuối cùng đó chính là biến thể DeepStack
+00:16:29 - 0:16:34, DeepStack RNN
+00:16:34 - 0:16:40, DeepStack RNN giúp chúng ta tăng độ sâu của mô hình
+00:16:40 - 0:16:43, thay vì chúng ta đi theo chiều ngang
+00:16:43 - 0:16:46, thì sẽ giúp chúng ta tăng theo chiều sâu
+00:16:46 - 0:16:52, và giúp cho các đặc trưng có thể học được từ cấp thấp, cấp giữa và cấp cao.
+00:16:52 - 0:17:00, Và đương nhiên là kết hợp Bidirectional DeepStack thì chúng ta sẽ có là DeepStack Bidirectional RNN. Đây là một biến thể phổ biến.

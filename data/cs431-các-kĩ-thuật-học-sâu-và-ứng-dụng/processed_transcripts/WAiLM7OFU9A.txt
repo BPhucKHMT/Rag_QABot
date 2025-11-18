@@ -1,0 +1,158 @@
+0:00:00 - 0:00:07, Trong bản hướng dẫn này, chúng ta sẽ cùng tìm hiểu về phương phát biểu diễn từ với mô hình Word2Vacc.
+0:00:07 - 0:00:15, Ở đây thì chúng ta sẽ có hai phần. Phần đầu tiên đó là biểu diễn từ và tính toán sự tương đồng giữa hai từ với nhau.
+0:00:15 - 0:00:24, Tiếp theo đó là chúng ta sẽ cùng khai thác một số quan hệ về mặt ngữ nghĩa mà mô hình biểu diễn từ như Word2Vacc có khả năng thực hiện được.
+0:00:24 - 0:00:29, Đối với phần về biểu diễn từ và sự tính toán tương đồng giữa các từ với nhau,
+0:00:29 - 0:00:31, chúng ta sẽ sử dụng thư viện GenSim.
+0:00:31 - 0:00:34, Nếu chúng ta sử dụng Google Collab,
+0:00:34 - 0:00:41, thì mặc nhiên là chúng ta đã cài trước thư viện GenSim rồi.
+0:00:41 - 0:00:43, Đó là chúng ta không cần phải cài đặt lại.
+0:00:43 - 0:00:46, Nếu chúng ta sử dụng trên máy tính cá nhân của mình,
+0:00:46 - 0:00:49, thì mình sẽ phải cài bằng một trong hai cách sau.
+0:00:49 - 0:00:52, Một, đó là chúng ta có thể sử dụng lệnh PIP Install GenSim.
+0:00:52 - 0:01:03, 2. Chúng ta sử dụng konda mini-konda thì chúng ta sẽ dùng lệnh konda Install trừ C, anaconda, genshin
+0:01:03 - 0:01:13, Để sử dụng tư viện Genshin này, chúng ta sẽ khai báo Import Genshin.
+0:01:13 - 0:01:22, Thời gian để chúng ta khởi động và Import Genshin có thể tốn khoảng vài giây.
+0:01:22 - 0:01:31, Thế thì, cái thương mịn GenSim này thì nó sẽ không có chứa sẵn mô hình đã được huấn luyện sẵn.
+0:01:31 - 0:01:39, Do đó thì chúng ta sẽ phải download từ các cái trang web mà đã được cung cấp bởi các cái nhóm nghiên cứu trên thế giới.
+0:01:39 - 0:01:47, Ví dụ như là ở đây có một cái nơi rất là nổi tiếng để chứa các cái mô hình huấn luyện sẵn
+0:01:47 - 0:01:52, cho việc biểu diễn từ của Colbag là fasttech.cc
+0:01:52 - 0:01:56, Đây là trang web của Facebook,
+0:01:56 - 0:02:01, của nhóm nghiên cứu trong Facebook. Họ đã huấn luyện sẵn các mô hình
+0:02:01 - 0:02:05, cho các ngôn ngữ tiếng Anh, tiếng Việt, và tiếng Trung.
+0:02:05 - 0:02:09, Rất nhiều thứ tiếng ở trên thế giới, nổi tiếng, phổ biến.
+0:02:09 - 0:02:13, Ở đây chúng ta chỉ việc lên đây để tải mô hình về.
+0:02:13 - 0:02:22, Tại cái mô hình về, thì ở trong cái codeblog này, chúng ta đã có sản một cái đường link để có thể tải được mô hình Word2Vacc cho tiếng Anh.
+0:02:22 - 0:02:33, Thì tên của cái mô hình này là Vector English, tức là biểu diễn từ cho các cái từ của ngôn ngữ tiếng Anh.
+0:02:33 - 0:02:44, Và tập dữ liệu này được huấn luyện từ Wikinews và tổng số từ của mình đã là 1 triệu từ
+0:02:44 - 0:02:52, Sau khi chúng ta đã biến lại cái vector biểu diễn thì vector biểu diễn sẽ là 300 triệu
+0:02:52 - 0:02:58, 300D có nghĩa là mỗi một token mỗi một từ sẽ biểu diễn như vạng một vector 300 triệu
+0:02:58 - 0:03:10, Sau khi tải và dạy nén, thì nó sẽ có được một file WikiNews 300D1V.b.
+0:03:10 - 0:03:16, Và cái file này sẽ được import ở trong đoạn code ở dưới đây.
+0:03:16 - 0:03:23, Thì thời gian để tải và dạy nén có thể tốn của mình là khoảng một phút.
+0:03:23 - 0:03:37, Thì cũng nói luôn đó là mô hình Word2MAC này được train trên hàng tỷ, hàng trăm triệu tài liệu.
+0:03:37 - 0:03:44, Ở đây thì chúng ta sẽ tranh tổ thời gian, chúng ta sẽ chạy cái lệnh này, lệnh này thì có thể tốn từ 3 đến 4 phút.
+0:03:44 - 0:03:52, 4 phút, đã là lóát mô hình lên, thì tập dữ liệu wiki, News này 300D 1 triệu,
+0:03:52 - 0:04:01, 1 triệu, tốt cầm này được trend trên hàng tỷ văn bản và nó cần sử dụng đến
+0:04:01 - 0:04:08, rất nhiều những cái GPU và trend trong khoảng thời gian là vài tuần. Với tài nguyên
+0:04:08 - 0:04:14, tính toán của chúng ta, con những người dùng cá nhân thì rất khó để mà chúng ta có thể
+0:04:14 - 0:04:16, để tập hợp với mô hình vô tô bách này.
+0:04:16 - 0:04:21, Do đó thì việc sử dụng một cái Pre-Train Mode
+0:04:21 - 0:04:24, cho một cái mô hình đã hữu luyện sẵn trước đó
+0:04:24 - 0:04:26, đó là khả thi hơn.
+0:04:26 - 0:04:29, Và chúng ta sẽ khai thác cái vô tô bách này
+0:04:29 - 0:04:32, để giải quyết một số cái bài toán về sau.
+0:04:32 - 0:04:35, Có thể nói ví dụ như là bài toán phân loại,
+0:04:35 - 0:04:38, văn bản, bài toán dịch máy,
+0:04:38 - 0:04:40, bài toán tâm tác phân bản, vâng vâng.
+0:04:40 - 0:04:42, Thì tất cả những cái bài toán đó,
+0:04:42 - 0:04:50, thì mô hình Deep Learning sử dụng cho các bài toán đó đều phải có một bước gọi là Emitting,
+0:04:50 - 0:04:52, là Work Emitting.
+0:04:52 - 0:04:56, Tức là các từ của mình thay vì chúng ta xử lý dạng chuỗi,
+0:04:56 - 0:04:59, chúng ta sẽ đưa nó về Vector biểu diễn.
+0:04:59 - 0:05:04, Work To Back là một trong phương pháp biểu diễn phổ biến
+0:05:04 - 0:05:09, và được sử dụng rất nhiều trong các môn học sau.
+0:05:12 - 0:05:20, Chúng ta sẽ chờ 2 phút nữa để mô hình có thể đoát được
+0:05:27 - 0:05:31, Bản chất của mô hình này chính là 1 cái ma trận
+0:05:31 - 0:05:37, Nếu như ở đây chúng ta thấy có 2 thông số là 300D 1 triệu
+0:05:37 - 0:05:43, Đây là một cái ma trận có kích thước là 1 triệu nhưng 300.
+0:05:43 - 0:05:46, 1 triệu nhưng 300, tức là khoảng 300 triệu.
+0:05:46 - 0:05:53, Đây là một cái mồ hình tham số, là một cái ma trận có kích thước là 1 triệu nhưng 300 triệu.
+0:05:53 - 0:05:57, Thì chúng ta thấy là một cái file này nó rất là nợ.
+0:05:57 - 0:06:05, Trong đây chúng ta thấy là cái file của mình khi đã nén, khi đã nén thì nó là khoảng 600 mê.
+0:06:05 - 0:06:17, Thnga mô hình Ph override , trong 2 الشIANH quelque dование nữa
+0:06:17 - 0:06:30, ta có thể sử dụng cho th Debatte
+0:06:30 - 0:06:37, thì chúng ta sử dụng cái tái tử đó là chỉ một, mở hoặc vô, đóng hoặc vô
+0:06:37 - 0:06:41, và ở đây chúng ta sẽ truyền vào cái từ mà chúng ta muốn biểu diễn
+0:06:41 - 0:06:46, thì ví dụ như trong đây chúng ta muốn biểu diễn cái từ kinh, vô
+0:06:46 - 0:06:49, thì chúng ta sẽ truyền vào cái chuỗi là kinh
+0:06:49 - 0:06:53, sau đây ví dụ nếu chúng ta muốn truyền cái chuỗi khác, vật nguyên
+0:06:53 - 0:07:00, Chúng ta chỉ việc thay cái chuỗi King và chuỗi Queen, rất là đơn giản.
+0:07:00 - 0:07:10, Và cái kết quả trả về của cái model King này là chính là cái vector biểu diễn của thừa King.
+0:07:10 - 0:07:15, Và vector này, cái King vector này, nó sẽ là một cái vector 300 triều.
+0:07:15 - 0:07:24, Và việc so sánh tất cả các cái từ với nhau thì nó sẽ tương đương với việc chúng ta sẽ đi so sánh các cái vector biểu diễn của các cái từ này.
+0:07:25 - 0:07:32, Ví dụ nếu chúng ta có cái từ win, ở dưới đây chúng ta thấy là có từ win, chúng ta có cái win vector, chúng ta có cái từ char,
+0:07:33 - 0:07:34, thì chúng ta sẽ có char vector.
+0:07:34 - 0:07:42, Và muốn so sánh hai cái từ win với char với nhau thì chúng ta sẽ sử dụng là winvec.dot charvec.
+0:07:42 - 0:07:46, thì ở đây đó chính là theo tác tích vô hướng.
+0:07:46 - 0:07:49, Tích vô hướng tức là chúng ta sẽ tính sự tương đồng giữa hai character.
+0:07:49 - 0:07:53, Nếu độ tương đồng này càng cao,
+0:07:53 - 0:07:59, thì giá trị tích vô hướng này sẽ càng cao.
+0:07:59 - 0:08:01, Nếu độ tương đồng thấp,
+0:08:01 - 0:08:05, thì tích vô hướng này sẽ thấp,
+0:08:05 - 0:08:07, tức là hai từ này không có tương đồng nhau.
+0:08:07 - 0:08:11, Bên cạnh đó, chúng ta cũng hoàn toàn có thể sử dụng
+0:08:11 - 0:08:17, những độ đo khác, độ đo về độ tương đồng, ví dụ như chúng ta có thể sử dụng độ đo coxin
+0:08:17 - 0:08:26, hoặc là sử dụng những độ đo không thuộc dòng Similarity, như là độ đo phạm cắt
+0:08:26 - 0:08:30, Rồi, thì ở đây chúng ta thấy là đã tốn hết 4 phút để loát cái mô mình này lên
+0:08:30 - 0:08:33, và bây giờ chúng ta sẽ tín hình chạy thử
+0:08:33 - 0:08:37, Rồi, chúng ta sẽ in ra cái kinh quét này là gì
+0:08:37 - 0:08:41, và chúng ta thấy là nó sẽ ra một cái vector.
+0:08:41 - 0:08:47, Thì nếu như bằng mắt thường chúng ta nhìn vô đây, chúng ta sẽ không thể hiểu được cái ý nghĩa của cái vector này.
+0:08:47 - 0:08:54, Vậy thì ở đây chúng ta sẽ thử quan sát xem là cái kích thước của king vector này là gì.
+0:08:54 - 0:08:57, Thì đó là một cái vector 300 triều.
+0:08:57 - 0:09:03, Rồi, và như vậy thì thật lẽ chúng ta có đề cập đến cái việc đó là để so sánh giữa hai cái từ với nhau.
+0:09:03 - 0:09:09, Chúng ta sẽ tính cái factor biểu diễn của đó và sau đó chúng ta sẽ tính tích phối hướng
+0:09:09 - 0:09:15, Ở đây chúng ta đã có sản là Win và Kai, chúng ta sẽ xem Win và Kai nó như thế nào
+0:09:15 - 0:09:23, Thế thì nó sẽ ra là sự tương đồng giữa từ Win và từ Kai là 1.5, 1.51
+0:09:23 - 0:09:31, Thế thì nếu như chúng ta nhìn vô 1.51 chúng ta không thể biết được rằng đây là hai cái từ có sự tương đồng cao hay không
+0:09:31 - 0:09:36, Như vậy thì muốn so sánh được thì chúng ta sẽ phải có thêm một cái từ khác
+0:09:36 - 0:09:39, Thì ở đây chúng ta sẽ có thêm một từ nữa là từ King
+0:09:39 - 0:09:42, Thì từ King thì chúng ta đã khai báo ở đây rồi
+0:09:42 - 0:09:48, Do đó thì chúng ta sẽ tính thêm là Win và King, Pacto
+0:09:48 - 0:09:54, Thì để xem coi Win và Car, tức là nữ hoàng và xe hơi
+0:09:54 - 0:10:01, với lại nữ hoàng và vua thì từ nào sẽ có sự tương đồng hơn
+0:10:01 - 0:10:12, ở đây thì chúng ta sẽ in ra là similarity của win và k là bằng
+0:10:12 - 0:10:29, Rồi, ở đây thì chúng ta sẽ có là Similarity của Win và King để xem coi giá trị này sẽ là bằng bao nhiêu.
+0:10:29 - 0:10:34, Và ở đây thì chúng ta sẽ kiểm tra sự tương đối.
+0:10:34 - 0:10:44, Với đây chúng ta thấy giữa win và king, chúng ta thấy độ tương đồng là 3,2 cao gấp đôi hơn gấp đôi so với lại win và ca
+0:10:44 - 0:10:54, Thì điều này nó cũng thể hiện là 2 từ vua và nữ hoàng nó có tương đồng cao hơn so với lại nữ hoàng và xe
+0:10:54 - 0:11:02, Thì cái này cũng khá là dễ hiểu tại vì win và king nếu mà chúng ta xét trong phạm vi về đời sống của mình đúng không?
+0:11:02 - 0:11:05, thì đây là hai từ thường được sử dụng đi chung với nhau.
+0:11:06 - 0:11:09, Trong khi đó Win và Ca, thì hai cái từ này ít đi chung với nhau
+0:11:09 - 0:11:11, nên độ tương đồng của nó thấp hơn.
+0:11:12 - 0:11:15, Nhắc lại, sự tương đồng giữa hai từ
+0:11:15 - 0:11:17, sẽ thể hiện bởi chức năng ngữ phát.
+0:11:18 - 0:11:20, Ví dụ như Win, những câu nào
+0:11:20 - 0:11:22, mà chúng ta dùng từ Win
+0:11:22 - 0:11:25, thì đều có thể thay thế, không phải đều có thể thay thế
+0:11:25 - 0:11:27, mà chúng ta có thể thay thế với từ King
+0:11:27 - 0:11:30, mà nó vẫn đảm bảo được yếu tố về mặt ngữ phát
+0:11:31 - 0:11:32, và ý nghĩa của cái câu.
+0:11:32 - 0:11:40, Bây giờ chúng ta sẽ thử xét trên 3 từ đặc biệt, đó là từ love, like và từ hate
+0:11:40 - 0:11:43, để minh họa vây trò về mặt bộ pháp
+0:11:43 - 0:12:03, 3 character là Love, Like, Hate
+0:12:13 - 0:12:24, Nếu như về mặt cảm quan thì các bạn sẽ cảm nhận là love và like đều là thích, yêu thích
+0:12:24 - 0:12:33, thì hai cái từ này sẽ có mối quan tương đồng, cao hơn sau với love và hate
+0:12:33 - 0:12:40, Yêu, yêu, ghét thì hai cái từ này các bạn cảm nhận được là đối nhật nhau về mặt ngữ nghĩa
+0:12:40 - 0:12:44, Bây giờ chúng ta sẽ xem điều đó có đúng hay không
+0:12:44 - 0:12:50, Giữa Love và Like
+0:12:50 - 0:12:53, Ở đây sẽ là lớp
+0:13:02 - 0:13:05, Giữa Love và Hate
+0:13:05 - 0:13:17, Nếu chúng ta sử dụng ngữ nghĩa thì chúng ta sẽ xem lớp và hay rõ ràng là độ tương đồng sẽ không cao bằng lớp và head, đúng không?
+0:13:17 - 0:13:19, Vì vậy chúng ta sẽ chạy ra thử nè.
+0:13:19 - 0:13:23, Lớp và head, mình chia chạy cái lại này.
+0:13:23 - 0:13:31, Rồi, thì giữa lớp và line chúng ta thấy là độ tương đồng thấp,
+0:13:31 - 0:13:35, Trong khi đó, love và hate thì lại độ tương đồng cao hơn.
+0:13:35 - 0:13:42, Nó mâu thuẫn về mặt ý nghĩa tại vì hồi nãy chúng ta cảm nhận, chúng ta đoán rằng là love và hate
+0:13:42 - 0:13:45, nó đối nhệt nhau về mặt ngữ nghĩa thì lẽ ra độ tương đồng phải thấp hơn.
+0:13:45 - 0:13:48, Thế thì điều này sẽ giải thích như thế nào?
+0:13:48 - 0:13:53, Ở đây thì chúng ta sẽ thấy love và hate trong cái moment work emitting
+0:13:53 - 0:13:56, thì nó sẽ không quan tâm về mặt ngữ nghĩa
+0:13:56 - 0:13:59, và nó quan tâm về mặt vai trò ngữ pháp
+0:13:59 - 0:14:05, trong câu nào mà cái từ A có thể thay được cho từ B một cách dễ dàng
+0:14:05 - 0:14:07, và không thay đổi về mặt khấu trúc ngữ pháp
+0:14:07 - 0:14:09, cũng như là về ý nghĩa
+0:14:09 - 0:14:11, không phải thay đổi về mặt ý nghĩa mà là
+0:14:11 - 0:14:15, có thể thay đổi và không có vi phạm những nguyên trách về mặt ngữ pháp
+0:14:15 - 0:14:18, thì hai cái từ đó có độ tương đồng cao
+0:14:18 - 0:14:21, thế thì cái từ love và cái từ la, từ hate
+0:14:21 - 0:14:24, thì nó có cái vai trò ngữ pháp giống nhau
+0:14:24 - 0:14:26, Đó là điều đồng từ
+0:14:26 - 0:14:31, Nhưng mà riêng cái từ line, nếu như các bạn trả trên từ điện á
+0:14:31 - 0:14:33, Thì cái từ line này có rất nhiều vai trò
+0:14:33 - 0:14:44, Line này có thể vừa là adverb, vừa có thể là verb, vừa có thể là các loại rất nhiều những loại từ khác
+0:14:44 - 0:14:46, Đó
+0:14:46 - 0:14:50, Thì adjective nữa, hoặc tính từ
+0:14:50 - 0:14:58, Nếu mà nói về mặt ngừng phát thì từ love không có tương đồng với từ like nhiều như từ love với từ hate
+0:14:58 - 0:15:10, Đây là một bí dụ cho các bạn cảm nhận được hai từ love, hate và like có mối quan hệ về mặt ngừng phát như thế nào
+0:15:10 - 0:15:18, Love và hate có mối quan hệ ngừng phát giống nhau nhiều hơn so với love và like nên sự tương đồng sẽ càng hơn

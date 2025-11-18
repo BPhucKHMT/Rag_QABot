@@ -1,0 +1,440 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:18, Trong phần tiếp theo thì chúng ta sẽ
+0:00:15 - 0:00:20, cùng à tìm hiểu về à cây quyết định
+0:00:18 - 0:00:22, chúng ta sẽ cùng thực hành. Thì cây
+0:00:20 - 0:00:24, quyết định đó là một trong những cái mô
+0:00:22 - 0:00:26, hình à có tính chất rất là thú vị. Đó là
+0:00:24 - 0:00:29, cái tính dễ giải thích.
+0:00:26 - 0:00:31, Tại vì sao? Tại vì
+0:00:29 - 0:00:34, cái cây quyết định nó sẽ mô phỏng theo
+0:00:31 - 0:00:36, cái cách mà con người chúng ta suy nghĩ.
+0:00:34 - 0:00:38, Tức là thông thường khi chúng ta đưa ra
+0:00:36 - 0:00:40, một cái quyết định gì đó thì chúng ta sẽ
+0:00:38 - 0:00:42, chia ra làm nhiều các cái trường hợp,
+0:00:40 - 0:00:44, nhiều các cái tình huống khác nhau. Với
+0:00:42 - 0:00:45, trường hợp này thì chúng ta sẽ làm gì?
+0:00:44 - 0:00:48, Với trường hợp kia thì chúng ta sẽ làm
+0:00:45 - 0:00:50, cái gì? Thì nó gần gũi với cái cách con
+0:00:48 - 0:00:52, người chúng ta à suy nghĩ. Do đó thì cây
+0:00:50 - 0:00:55, quyết định là một trong những cái mô
+0:00:52 - 0:00:57, hình à thường được sử dụng trong cái
+0:00:55 - 0:01:00, tình huống đó là nó đòi hỏi cái tính dễ
+0:00:57 - 0:01:03, giải thích. Tức là nó sẽ không quá quan
+0:01:00 - 0:01:05, trọng cái việc là độ chính xác cao mà nó
+0:01:03 - 0:01:07, sẽ quan trọng cái tính dễ giải thích cho
+0:01:05 - 0:01:09, một cái người mà không có chuyên môn
+0:01:07 - 0:01:11, nhiều về các cái mô hình máy học cũng
+0:01:09 - 0:01:14, như là các cái mô hình toán có thể hiểu
+0:01:11 - 0:01:18, được. Thì để thực hành với cái cây quyết
+0:01:14 - 0:01:22, định thì chúng ta sẽ à sử dụng thư viện
+0:01:18 - 0:01:24, là cit lên và chúng ta sẽ xây dựng cái
+0:01:22 - 0:01:26, cây quyết định. Sau đó thì chúng ta sẽ
+0:01:24 - 0:01:28, trực quan hóa cái cây quyết định này
+0:01:26 - 0:01:31, bằng hai cách. Một đó là chúng ta sẽ vẽ
+0:01:28 - 0:01:34, cái cấu trúc cây
+0:01:31 - 0:01:36, và hai đó là chúng ta sẽ vẽ cái đường
+0:01:34 - 0:01:39, bao tức là cái đường phân loại đường
+0:01:36 - 0:01:39, phân loại
+0:01:41 - 0:01:47, đường phân lớp
+0:01:43 - 0:01:47, hay còn gọi là cái đường boundary
+0:01:47 - 0:01:52, thì chúng ta sẽ trực quan hóa bằng hai
+0:01:49 - 0:01:54, cách này. Và chúng ta sẽ sử dụng một cái
+0:01:52 - 0:01:58, phương pháp là pruning cắt tỉa cây quyết
+0:01:54 - 0:02:00, định để cho cái cây của mình nó có cái
+0:01:58 - 0:02:02, độ mược nhưng mà đồng thời nó không quá
+0:02:00 - 0:02:05, phức tạp để giải quyết cái vấn đề về
+0:02:02 - 0:02:05, overfitting.
+0:02:07 - 0:02:11, Rồi và để thực hiện thực hành được cái
+0:02:09 - 0:02:14, bài tập này thì chúng ta sẽ sử dụng một
+0:02:11 - 0:02:16, cái tập dữ liệu Moon. Thì đây là một cái
+0:02:14 - 0:02:19, dữ liệu mô phỏng. Trong đó chúng ta thấy
+0:02:16 - 0:02:22, là nó bao gồm hai cái phân lớp là đỏ và
+0:02:19 - 0:02:24, xám. thì nó được sắp theo cái hình là
+0:02:22 - 0:02:27, hai cái bán nguyệt nó lồng với nhau. Thế
+0:02:24 - 0:02:29, thì chúng ta thấy với cái à tập dữ liệu
+0:02:27 - 0:02:31, này chúng ta không có thể phân tách nó
+0:02:29 - 0:02:33, ra làm hai phần bằng một cái đường thẳng
+0:02:31 - 0:02:35, được đúng không? Ví dụ như chúng ta chia
+0:02:33 - 0:02:37, như thế này hoặc chia như thế này thì
+0:02:35 - 0:02:40, không thể nào mà tách nó ra làm hai
+0:02:37 - 0:02:44, được. Thì đây là một cái à dữ liệu mà nó
+0:02:40 - 0:02:47, có cái tính chất đó là phi tuyến.
+0:02:44 - 0:02:51, Thế thì chúng ta sẽ cùng tìm hiểu xem là
+0:02:47 - 0:02:52, làm sao cái cây quyết định có thể à giải
+0:02:51 - 0:02:55, quyết được các cái bài toán phi tuyến
+0:02:52 - 0:02:56, tính nó đã giải quyết như thế nào. Và
+0:02:55 - 0:02:59, cái cấu trúc cây mà khi chúng ta trực
+0:02:56 - 0:03:02, quan hóa thì nó sẽ có cái dạng hình thù
+0:02:59 - 0:03:02, như thế này.
+0:03:04 - 0:03:10, Rồi thì chúng ta sẽ sử dụng Google
+0:03:07 - 0:03:12, Colab. Thì đối với Google Lab thì chúng
+0:03:10 - 0:03:15, ta sẽ khai thác cái thư viện là si kone
+0:03:12 - 0:03:19, để xây dựng cây quyết định. À ở đây
+0:03:15 - 0:03:22, chúng ta sẽ dùng là escalan.try
+0:03:19 - 0:03:25, và import cái decision tree classifier.
+0:03:22 - 0:03:27, Ngoài ra thì chúng ta sẽ sử dụng cái
+0:03:25 - 0:03:31, block tree để vẽ cái cấu trúc cây của
+0:03:27 - 0:03:34, mình. Đối với cái tập dữ liệu thì chúng
+0:03:31 - 0:03:37, ta dùng side ken dataset và dùng cái
+0:03:34 - 0:03:40, phương thức đó là MON. Thì đầu tiên
+0:03:37 - 0:03:45, chúng ta sẽ tạo cái dataset với một cái
+0:03:40 - 0:03:47, noise à là 0.1. Thì cái noise này á là
+0:03:45 - 0:03:49, để cho biết là cái điểm của mình nó dao
+0:03:47 - 0:03:53, động có nhiều hay không. Lấy ví dụ như
+0:03:49 - 0:03:55, noise ở đây đang là 0.1
+0:03:53 - 0:03:58, thì chúng ta thấy đó là nó vẫn còn tương
+0:03:55 - 0:04:01, đối là có thể tách nhau ra được. nó
+0:03:58 - 0:04:04, không có giao thoa với nhau. Còn ví dụ
+0:04:01 - 0:04:06, như chúng ta cho noise là bằng 0
+0:04:04 - 0:04:08, thì chúng ta thấy là cái tập điểm này nó
+0:04:06 - 0:04:10, rất là
+0:04:08 - 0:04:13, hoàn hảo đúng không? Và nó đi theo các
+0:04:10 - 0:04:14, cái đường cong.
+0:04:13 - 0:04:18, Còn nếu như chúng ta cho cái noise này
+0:04:14 - 0:04:20, lớn hơn ví dụ như là 0.25 25
+0:04:18 - 0:04:23, thì chúng ta thấy là hai cái tập này nó
+0:04:20 - 0:04:27, có cái sự giao thoa với nhau. Đó thì ở
+0:04:23 - 0:04:30, đây để đơn giản thì chúng ta sẽ sử dụng
+0:04:27 - 0:04:33, đó là khoảng 0.1 ngưỡng là khoảng 0.1 1
+0:04:30 - 0:04:36, và với 300 điểm đó thì nó còn tương đối
+0:04:33 - 0:04:41, có thể tách ra được như thế này.
+0:04:36 - 0:04:43, Rồi à sau đó thì chúng ta sẽ gọi cái tạo
+0:04:41 - 0:04:45, cái cây và với cái tham số mặc định
+0:04:43 - 0:04:47, decisionary chúng ta sẽ không truyền cái
+0:04:45 - 0:04:51, gì vào và chúng ta sẽ gọi hàm fit với
+0:04:47 - 0:04:54, cái dữ liệu xy mà chúng ta đã khởi tạo ở
+0:04:51 - 0:04:54, trên.
+0:04:56 - 0:05:02, Rồi thì sau khi chúng ta tạo và trend
+0:04:59 - 0:05:05, cái mô hình decision tre xong thì ở đây
+0:05:02 - 0:05:06, chúng ta sẽ gọi cái hàm trực quan hóa.
+0:05:05 - 0:05:09, Thì cái cách trực quan hóa đầu tiên đó
+0:05:06 - 0:05:12, là chúng ta sẽ vẽ cái đường quyết định
+0:05:09 - 0:05:15, cái decision boundary bằng cách đó là
+0:05:12 - 0:05:18, chúng ta sẽ thử nghiệm trên một cái lưới
+0:05:15 - 0:05:21, các cái điểm từ trong cái không gian của
+0:05:18 - 0:05:26, mình. Và với mỗi cái điểm đó chúng ta sẽ
+0:05:21 - 0:05:28, gọi cái hàm à CLF tức là cái hàm
+0:05:26 - 0:05:29, ở đây chúng ta sẽ gọi cái hàm tre đúng
+0:05:28 - 0:05:32, không? Chúng ta sẽ truyền cái tre này
+0:05:29 - 0:05:34, vào. Và với cái classifier này á thì
+0:05:32 - 0:05:37, chúng ta sẽ gọi trên toàn bộ cái lưới
+0:05:34 - 0:05:39, điểm và sau đó chúng ta vẽ lên. Thì
+0:05:37 - 0:05:41, những cái điểm nào mà nằm trong cái lớp
+0:05:39 - 0:05:42, đầu tiên thì vẽ bằng một màu, nằm trong
+0:05:41 - 0:05:47, cái lớp thứ hai vẽ bằng một cái màu
+0:05:42 - 0:05:47, khác. Thì ở đây chúng ta sẽ xem.
+0:05:48 - 0:05:52, Rồi thì với cái
+0:05:52 - 0:05:58, ở đây chúng ta sẽ vẽ là cái decisionary
+0:05:54 - 0:06:01, ha. Rồi thì ở đây chúng ta thấy là chúng
+0:05:58 - 0:06:05, ta đã chia ra thành một cái lưới từ -1
+0:06:01 - 0:06:08, cho đến 2,5 và ở trục tung thì là khoảng
+0:06:05 - 0:06:10, -1 cho đến 1,5. Thì chúng ta với mỗi cái
+0:06:08 - 0:06:15, điểm trong cái lưới này chúng ta sẽ gọi
+0:06:10 - 0:06:17, cái classifier. để dự đoán. Và từ cái
+0:06:15 - 0:06:20, giá trị dự đoán này thì với cái giá trị
+0:06:17 - 0:06:22, màu đó chúng ta sẽ tô màu lên. Đó thì
+0:06:20 - 0:06:24, màu đỏ chúng ta sẽ tô màu đỏ và màu xám
+0:06:22 - 0:06:27, chúng ta sẽ tô màu xám. Thì đây là cái
+0:06:24 - 0:06:30, cách mà để vẽ đường bao.
+0:06:27 - 0:06:33, Rồi sau đó thì chúng ta sẽ tiến hành là
+0:06:30 - 0:06:36, trực quan hóa cái cây của mình bằng cái
+0:06:33 - 0:06:38, phương thức đó là tre.
+0:06:36 - 0:06:40, Thì trong cái thư viện size kit lên nó
+0:06:38 - 0:06:42, sẽ có cái phương thức là plot tre. Chúng
+0:06:40 - 0:06:44, ta sẽ truyền vào cái cây và các cái đặc
+0:06:42 - 0:06:46, trưng của mình. Thì vì mỗi một cái điểm
+0:06:44 - 0:06:48, trong cái không gian của mình nó sẽ bao
+0:06:46 - 0:06:50, gồm là trục x1 và trục x2 tức là trục
+0:06:48 - 0:06:53, hoành và trục tung. Nên chúng ta để cái
+0:06:50 - 0:06:55, feature name ở đây là x1 và x2.
+0:06:53 - 0:06:59, Và cái cái class của mình sẽ đặt tên đó
+0:06:55 - 0:07:04, là class 0 và class 1. Rồi thì ở đây
+0:06:59 - 0:07:09, chúng ta sẽ gọi à vẽ cái cây này ra. Thì
+0:07:04 - 0:07:12, ở cái nốt gốc chúng ta sẽ có cái ờ quyết
+0:07:09 - 0:07:16, định đó là x2 tức là cái trục tung của
+0:07:12 - 0:07:20, mình có bé hơn 0.495
+0:07:16 - 0:07:23, à 0.495 hay không. Thì ý đó là gì? Chúng
+0:07:20 - 0:07:26, ta sẽ có một cái
+0:07:23 - 0:07:28, đường để chia ra tại cái trục ở giữa
+0:07:26 - 0:07:30, này. Chúng ta thấy có một cái đường ở
+0:07:28 - 0:07:32, đây.
+0:07:30 - 0:07:39, Có một cái đường ở đây thì nó chia ra
+0:07:32 - 0:07:43, làm đôi. Nếu như x2 mà bé hơn à 0 chấ
+0:07:39 - 0:07:46, 495 tức là nó nằm ở nửa dưới thì chúng
+0:07:43 - 0:07:49, ta sẽ đi về phía bên tay trái.
+0:07:46 - 0:07:53, Còn nếu như sai tức là nó nằm ở phần nửa
+0:07:49 - 0:07:55, trên. nằm ở nửa trên thì chúng ta sẽ đi
+0:07:53 - 0:07:58, về bên tay phải.
+0:07:55 - 0:07:59, Thì nếu mà đi về tay phải thì chúng ta
+0:07:58 - 0:08:01, sẽ phải tiếp tục kiểm tra thêm một số
+0:07:59 - 0:08:03, cái điều kiện ràn buộc. Còn nếu đi về
+0:08:01 - 0:08:06, bên tay trái thì chúng ta lại kiểm tra
+0:08:03 - 0:08:08, xem là cái x1 của mình nó có bé hơn
+0:08:06 - 0:08:10, -0.513
+0:08:08 - 0:08:14, hay không. Đó thì ở đây chúng ta sẽ xem
+0:08:10 - 0:08:17, là x1 của mình là đây. Tức là cái đường
+0:08:14 - 0:08:20, của mình nó chính là cái đường này nè
+0:08:17 - 0:08:24, là 0.513 5 13 là đường này
+0:08:20 - 0:08:28, nó chia ra làm đôi. Thì nếu như bé hơn
+0:08:24 - 0:08:31, 0.513 tức là nó nằm về nửa phía bên đây.
+0:08:28 - 0:08:33, Tức là vừa dưới cái đường này.
+0:08:31 - 0:08:37, Vừa dưới cái đường này và về tay phía
+0:08:33 - 0:08:40, bên tay trái của cái đường này.
+0:08:37 - 0:08:47, Rồi thì nó lại tiếp tục kiểm tra xem
+0:08:40 - 0:08:50, là x2 có bé hơn -0.03 hay không.
+0:08:47 - 0:08:53, Tức là x2 của mình có bé hơn -0.03
+0:08:50 - 0:08:57, không? Tức là cái ngưỡng này,
+0:08:53 - 0:09:00, ngưỡng này nếu mà nó bé hơn, nếu nó bé
+0:08:57 - 0:09:03, hơn thì nó lại tiếp tục kiểm tra xem x1
+0:09:00 - 0:09:05, có bé hơn 0.53 hay không. Thế thì chúng
+0:09:03 - 0:09:08, ta thấy là với mỗi cái lần kiểm tra x1,
+0:09:05 - 0:09:10, x2 này á thì nó sẽ tạo ra một cái lá cắt
+0:09:08 - 0:09:12, và tổ hợp của các cái lá cắt thì nó sẽ
+0:09:10 - 0:09:15, chia cái không gian đặc trưng của mình
+0:09:12 - 0:09:17, ra thành cái mặt phẳng như thế, thành
+0:09:15 - 0:09:19, các cái không gian như thế này, thành
+0:09:17 - 0:09:21, các cái vùng như thế này. Thì ở đây
+0:09:19 - 0:09:23, chúng ta thấy là cái cây của mình nó rất
+0:09:21 - 0:09:26, là phức tạp.
+0:09:23 - 0:09:27, Mặc dù số vùng ở đây thì rất là ít nhưng
+0:09:26 - 0:09:30, mà cái cây của mình nó lại rất là phức
+0:09:27 - 0:09:34, tạp. Do đó thì chúng ta sẽ có cái kỹ
+0:09:30 - 0:09:36, thuật là để
+0:09:34 - 0:09:38, gọi là
+0:09:36 - 0:09:41, cắt tỉa cái cây sao cho nó đơn giản nhất
+0:09:38 - 0:09:44, có thể. Nhưng mà trước khi đi qua cái kỹ
+0:09:41 - 0:09:47, thuật cắt tỉa cây thì chúng ta sẽ à sử
+0:09:44 - 0:09:51, dụng một cái kỹ thuật đó là chúng ta sẽ
+0:09:47 - 0:09:53, thử với rất nhiều những cái à thay đổi
+0:09:51 - 0:09:55, rất nhiều những cái mắt de tức là cái
+0:09:53 - 0:09:58, một trong những cái siêu tham số quan
+0:09:55 - 0:10:00, trọng trong cái thuật toán decision ha.
+0:09:58 - 0:10:02, Đép của mình á là được tính từ cái nốt
+0:10:00 - 0:10:07, này nè là ví dụ như cái cây này nó sẽ có
+0:10:02 - 0:10:09, cái đép là 1 2 3 4 5 6 đó nó sẽ có cái
+0:10:07 - 0:10:13, đép là bằng 6. Thế thì bây giờ chúng ta
+0:10:09 - 0:10:15, sẽ thử với các cái đp là 2 4 8 và nâ n
+0:10:13 - 0:10:18, nên có nghĩa đó là nó sẽ không có cái
+0:10:15 - 0:10:22, ràn buộc max là bằng bao nhiêu ha. Thì
+0:10:18 - 0:10:24, chúng ta thử là vẽ cái decision boundary
+0:10:22 - 0:10:26, à tương ứng với từng cái dep nhau thì nó
+0:10:24 - 0:10:28, sẽ nhìn như thế nào.
+0:10:26 - 0:10:31, Thì với
+0:10:28 - 0:10:34, de mà bằng 2 đúng không? thì chúng ta sẽ
+0:10:31 - 0:10:36, thấy là cái cây của mình nó đơn giản dẫn
+0:10:34 - 0:10:39, đến là cái phân vùng của mình nó tách ra
+0:10:36 - 0:10:42, làm cái vùng như thế này. Thì cái cách
+0:10:39 - 0:10:44, với cái dep thì rõ ràng là nó đã loại bỏ
+0:10:42 - 0:10:48, nó đã bỏ sót những cái điểm màu đỏ này
+0:10:44 - 0:10:51, nó đã phân vùng sai. Tức là dep nếu mà
+0:10:48 - 0:10:54, chọn ít quá thì nó sẽ không thể phân
+0:10:51 - 0:10:57, loại được đủ tốt. Đó, chúng ta tăng cái
+0:10:54 - 0:10:59, đp lên bằng bốn thì chúng ta thấy đó là
+0:10:57 - 0:11:01, nó đã cái vùng của mình nó đã có cái
+0:10:59 - 0:11:04, tính chất nó phức tạp hơn. À nó đã có
+0:11:01 - 0:11:07, cái tính chất phức tạp hơn tuy nhiên nó
+0:11:04 - 0:11:09, lại bị sai ở chỗ khu vực này. Đó là cái
+0:11:07 - 0:11:12, điểm màu xám này nó lại được xếp vào cái
+0:11:09 - 0:11:16, vùng màu đỏ. Đó là sai. Chỗ này khi tăng
+0:11:12 - 0:11:18, lên def bằng 8 thì chúng ta thấy là nó
+0:11:16 - 0:11:20, đã phức tạp hơn và nó đã phân tách ra
+0:11:18 - 0:11:22, làm hai phần như thế này. Thì ở đây
+0:11:20 - 0:11:26, chúng ta có thể thử nghiệm thêm một số
+0:11:22 - 0:11:31, cái tình huống nữa ví dụ như là 5 6 để
+0:11:26 - 0:11:31, xem xem là nó thay đổi như thế nào ha.
+0:11:32 - 0:11:38, Rồi thì với def = 4 hả với de bằng 5 thì
+0:11:36 - 0:11:41, chúng ta thấy là nó đã phân tách khá là
+0:11:38 - 0:11:44, tốt. Nó đã phân tách khá là tốt. Chia ra
+0:11:41 - 0:11:46, làm hai phần là màu đỏ và màu xám. Tuy
+0:11:44 - 0:11:49, nhiên thì nó vẫn còn một vài cái điểm
+0:11:46 - 0:11:53, màu xám ở đây. À nó vẫn còn một vài điểm
+0:11:49 - 0:11:54, màu xám ở đây nó đã bị lọt sổ và cho cái
+0:11:53 - 0:11:56, à nằm trong cái vùng màu đỏ phân vùng
+0:11:54 - 0:11:59, màu đỏ.
+0:11:56 - 0:12:00, Rồi với def = 6 thì chúng ta thấy đó là
+0:11:59 - 0:12:04, nó đã giải quyết được hai cái vấn đề
+0:12:00 - 0:12:06, này. Tuy nhiên nó đã tạo ra hai cái
+0:12:04 - 0:12:09, đường phân lớp à nó tạo ra hai cái đường
+0:12:06 - 0:12:13, phân lớp đặc biệt này chỉ để xử lý hai
+0:12:09 - 0:12:15, cái điểm màu xám ở đây thôi. Thế thì
+0:12:13 - 0:12:17, cái việc này là nó không đáng. Cái việc
+0:12:15 - 0:12:20, này là nó không đáng. Rồi như vậy thì
+0:12:17 - 0:12:23, làm sao chúng ta có thể cắt tỉa được cái
+0:12:20 - 0:12:26, cây? Thì ý tưởng chúng ta sẽ sử dụng
+0:12:23 - 0:12:30, thuật toán đó là complex. là cost
+0:12:26 - 0:12:33, complexity pruning CCP thì một cái cây
+0:12:30 - 0:12:36, quyết định á thì nó sẽ rất là phức tạp
+0:12:33 - 0:12:38, nếu mà nó có càng nhiều nhánh và càng
+0:12:36 - 0:12:40, nhiều nhánh á thì nó sẽ càng dễ bị
+0:12:38 - 0:12:43, overfit tại vì cái mô hình của mình nó
+0:12:40 - 0:12:45, cứ chăm chăm học những cái tình huống
+0:12:43 - 0:12:46, ngoại lệ. À ví dụ như trong cái sơ đồ
+0:12:45 - 0:12:49, đây chúng ta thấy có hai cái điểm này là
+0:12:46 - 0:12:52, hai cái điểm ngoại lệ nè. đó thì nó chăm
+0:12:49 - 0:12:54, chăm nó tăng thêm cái cây chỉ để học
+0:12:52 - 0:12:56, thêm hai cái điểm này là chuyện đó là nó
+0:12:54 - 0:12:58, không đáng tại vì nó giảm đi cái tính
+0:12:56 - 0:13:00, tổng quát của mô hình. Như vậy để cân
+0:12:58 - 0:13:03, bằng thì ta định nghĩa một cái hàm chi
+0:13:00 - 0:13:06, phí đó là có dính đến cái tham số là
+0:13:03 - 0:13:10, alpha là một cái siêu tham số. Trong đó
+0:13:06 - 0:13:13, RT chính là cái lỗi à
+0:13:10 - 0:13:16, của cái cây T của mình và trị tuyệt đối
+0:13:13 - 0:13:19, T chính là cái số lá của cái cây. Thế
+0:13:16 - 0:13:22, thì bình thường á nếu như alpha mà bằng
+0:13:19 - 0:13:25, 0 á tức là nó là cái tham số mặc định
+0:13:22 - 0:13:28, của mình. Đó chính là cái việc mà chúng
+0:13:25 - 0:13:33, ta khởi tạo một cái cây với cái tham số
+0:13:28 - 0:13:35, mặc định của mình. Đó là như thế này
+0:13:33 - 0:13:40, rồi. Nhưng nếu alpha tăng lên, alpha
+0:13:35 - 0:13:44, tăng lên thì nó sẽ đưa cái số nốt lá này
+0:13:40 - 0:13:47, vào như là một cái hàm độ lỗi. Như vậy
+0:13:44 - 0:13:50, thì ngoài cái việc là nó giảm cái độ lỗi
+0:13:47 - 0:13:52, của cái việc mà phân loại à giảm cái độ
+0:13:50 - 0:13:54, lỗi của cái việc phân loại của cái cây
+0:13:52 - 0:13:56, thì nó đồng thời nó sẽ phải đưa thêm cái
+0:13:54 - 0:13:59, tính phức tạp của cái cây vào. Nếu như
+0:13:56 - 0:14:02, cái cây này mà quá phức tạp thì nó sẽ
+0:13:59 - 0:14:05, không tốt. Nó sẽ làm sao hài hòa được cả
+0:14:02 - 0:14:08, hai yếu tố này. Tức là độ lỗi phân loại
+0:14:05 - 0:14:09, cũng phải thấp nhưng mà cái độ phức tạp
+0:14:08 - 0:14:13, của cái cây cũng phải thấp. Tức là cái T
+0:14:09 - 0:14:15, này cũng phải thấp. Đó thì cái tham số
+0:14:13 - 0:14:18, alpha này là cái tham số mà nó gọi là
+0:14:15 - 0:14:20, parenty. Tức là cái phạt hình phạt cho
+0:14:18 - 0:14:23, cái độ phức tạp.
+0:14:20 - 0:14:28, Rồi. Thế thì ở đây chúng ta sẽ lấy ra
+0:14:23 - 0:14:31, các cái tham số alpha và cái impurity
+0:14:28 - 0:14:35, tức là cho biết cái độ lỗi của mình
+0:14:31 - 0:14:36, tương ứng với cái K alpha đó. Đó thì khi
+0:14:35 - 0:14:39, chúng ta chạy cái thuật toán này thì
+0:14:36 - 0:14:41, chúng ta thấy đó là có bảy cái alpha
+0:14:39 - 0:14:43, khác nhau. Tức là chúng ta sẽ cho bảy
+0:14:41 - 0:14:46, cái hệ số alpha khác nhau từ chạy từ 0
+0:14:43 - 0:14:48, ha. Thì ban đầu nó sẽ là bằng 0 rồi
+0:14:46 - 0:14:54, 0.03.003
+0:14:48 - 0:14:57, 3 đó tăng lên 0.001, 0.004 và 0.00
+0:14:54 - 0:14:59, 9 rồi 0.23 23 thì tương ứng với từng cái
+0:14:57 - 0:15:03, alpha này chúng ta tăng lên thì chúng ta
+0:14:59 - 0:15:05, sẽ thấy cái độ lỗi của mình đó là sẽ như
+0:15:03 - 0:15:09, thế nào.
+0:15:05 - 0:15:12, Rồi thì bây giờ nó cũng sẽ tăng lên
+0:15:09 - 0:15:15, theo. Thế thì bây giờ chúng ta sẽ
+0:15:12 - 0:15:17, thử với từng cái alpha ha với từng cái
+0:15:15 - 0:15:20, alpha mà chúng ta đã tìm ra được ở đây.
+0:15:17 - 0:15:22, Và chúng ta sẽ gọi cái decision tree.
+0:15:20 - 0:15:24, Gọi cái decision tree. Rồi sau đó chúng
+0:15:22 - 0:15:27, ta fit dữ liệu vào.
+0:15:24 - 0:15:31, Và chúng ta sẽ tìm cách đó là chúng ta
+0:15:27 - 0:15:31, trực quan hóa.
+0:15:32 - 0:15:40, Rồi thì với cái alpha mà bằng 0, alpha
+0:15:36 - 0:15:42, bằng 0 tức là cái mô hình của mình à
+0:15:40 - 0:15:43, không có cái không có cái t ở đây. Tức
+0:15:42 - 0:15:45, là mô hình của mình chính là cái
+0:15:43 - 0:15:47, decisionary mặc định ha. Không có cắt
+0:15:45 - 0:15:50, tỉa gì hết. Thì chúng ta thấy cái độ
+0:15:47 - 0:15:53, chính xác rất là cao. Độ chính xác rất
+0:15:50 - 0:15:56, là cao. Gần như xắp xỉ là bằng 1 là vì
+0:15:53 - 0:15:58, cái mô hình của mình nó overfitting. Nó
+0:15:56 - 0:16:02, overfitting với lại cái những cái điểm
+0:15:58 - 0:16:05, ngoại lệ. Đó. Khi cái alpha này tăng
+0:16:02 - 0:16:06, lên, khi alpha này bắt đầu tăng lên thì
+0:16:05 - 0:16:09, chúng ta thấy là cái độ chính xác nó bắt
+0:16:06 - 0:16:12, đầu rớt xuống nhưng nó sẽ không có rớt
+0:16:09 - 0:16:15, nhiều. Đó. Thì chúng ta thấy là ở ba cái
+0:16:12 - 0:16:17, ngưỡng này là đến khoảng trước cái con
+0:16:15 - 0:16:20, số là 0.05
+0:16:17 - 0:16:22, thì cái ngưỡng của mình, cái ngưỡng độ
+0:16:20 - 0:16:25, chính xác của mình là chấp nhận được nó
+0:16:22 - 0:16:27, giảm một chút. À nhưng bù lại khi nó
+0:16:25 - 0:16:30, giảm
+0:16:27 - 0:16:32, thì cái độ chính xác giảm thì cái tính
+0:16:30 - 0:16:34, tổng quát hóa của nó sẽ cao hơn. Đó
+0:16:32 - 0:16:37, nhưng mà nếu mà alpha tăng lên cao quá
+0:16:34 - 0:16:39, ví dụ như là bằng 0.1 1 ở đây thì nó sẽ
+0:16:37 - 0:16:42, giảm xuống cái độ chính xác của mình là
+0:16:39 - 0:16:45, còn khoảng 0.8 mươ mấy. Đó thì cái này
+0:16:42 - 0:16:48, lại đánh đổi nhiều quá. Do đó đẹp nhất
+0:16:45 - 0:16:55, là alpha của mình là khoảng ở mức số 3 ở
+0:16:48 - 0:16:57, đây. 0 1 2 3 tức là tương ứng 0 nè 1 2 3
+0:16:55 - 0:17:01, tức là khoảng 0.012
+0:16:57 - 0:17:04, là vừa đẹp.
+0:17:01 - 0:17:07, Rồi thì bây giờ chúng ta sẽ thử các cái
+0:17:04 - 0:17:10, alpha khác nhau. Chúng ta sẽ thử các
+0:17:07 - 0:17:12, alpha khác nhau. Ví dụ như ở đây chúng
+0:17:10 - 0:17:13, ta sẽ lấy ra các cái giá trị
+0:17:12 - 0:17:16, [âm nhạc]
+0:17:13 - 0:17:16, đầu tiên
+0:17:29 - 0:17:36, rồi sau đó thì chúng ta sẽ vẽ cái cây.
+0:17:34 - 0:17:41, Thì với
+0:17:36 - 0:17:43, alpha bằng 0 tức là cái cây của mình là
+0:17:41 - 0:17:45, giống như là cái cây mặc định của mình
+0:17:43 - 0:17:47, nó sẽ chúng ta sẽ thấy có rất nhiều cái
+0:17:45 - 0:17:49, đường zízắc ở đây và nó rất là phức tạp
+0:17:47 - 0:17:53, đúng không? Nó chỉ có thêm những cái
+0:17:49 - 0:17:55, đường này chủ yếu là để bắt được hai cái
+0:17:53 - 0:17:58, điểm ngoại lệ ở đây. Nhưng mà khi alpha
+0:17:55 - 0:18:01, bằng 0.003 thì chúng ta thấy là cái
+0:17:58 - 0:18:06, đường của mình nó đã mượt mà hơn à nó đã
+0:18:01 - 0:18:10, trơn hơn. Đó. Và khi tăng lên đó thì
+0:18:06 - 0:18:12, chúng ta thấy là alpha bằng 0.01 đó thì
+0:18:10 - 0:18:15, nó sẽ tạo ra và nó vẫn chia tách ra làm
+0:18:12 - 0:18:18, hai phần như thế này và cái đường đi của
+0:18:15 - 0:18:20, mình nó sẽ à đơn giản hơn. Đó thì khi
+0:18:18 - 0:18:22, alpha càng tăng, khi alpha tàng càng
+0:18:20 - 0:18:23, tăng thì cái mô hình của mình càng đơn
+0:18:22 - 0:18:26, giản.
+0:18:23 - 0:18:29, Chúng ta thấy là nó chỉ có các cái đường
+0:18:26 - 0:18:34, lên nè, qua phải xuống qua phải lên qua
+0:18:29 - 0:18:36, phải. Còn khi alpha mà nhỏ thì nó sẽ
+0:18:34 - 0:18:38, càng phức tạp. Nó đi qua đây xuống rồi
+0:18:36 - 0:18:41, lên đây rồi qua đây. Đó một cái đường
+0:18:38 - 0:18:42, nhỏ như thế này thôi. Nó zí ra nó đi ra
+0:18:41 - 0:18:46, một cái đường nhỏ như thế này thôi cũng
+0:18:42 - 0:18:48, là rất nhiều cái nhánh rồi.
+0:18:46 - 0:18:51, Rồi thì ở đây chúng ta thấy là với alpha
+0:18:48 - 0:18:55, khoảng 0.003
+0:18:51 - 0:18:58, 3 là nó sẽ ra một cái đường bao có vẻ là
+0:18:55 - 0:19:01, hợp lý. Đó, nó ra một cái đường bao có
+0:18:58 - 0:19:04, vẻ là hợp lý là vì nó sẽ giải quyết được
+0:19:01 - 0:19:08, các cái điểm ở đây. Còn với alpha bằng
+0:19:04 - 0:19:11, 0.12 0.012 012 thì nó sẽ bỏ sót các cái
+0:19:08 - 0:19:14, điểm ở đây. Đó thì đây là à ý nghĩa của
+0:19:11 - 0:19:19, cái việc là cắt tỉa nó sẽ tạo ra các cái
+0:19:14 - 0:19:22, đường bao đơn giản mà hiệu quả và tăng
+0:19:19 - 0:19:24, cái tính tổng quát của cái mô hình. Như
+0:19:22 - 0:19:28, vậy thì trong cái bài thực hành này thì
+0:19:24 - 0:19:32, chúng ta đã cùng à thử nghiệm về cái
+0:19:28 - 0:19:34, decisionary rồi ý nghĩa của cái maxd.
+0:19:32 - 0:19:37, Thì cái tham số maxd đó là cái độ sâu
+0:19:34 - 0:19:40, của mình. Nếu mà độ sâu của mình càng
+0:19:37 - 0:19:42, càng lớn, tức là nó càng nhiều nhánh thì
+0:19:40 - 0:19:45, cái mô hình của mình nó sẽ càng phức tạp
+0:19:42 - 0:19:47, và gây ra cái hiện tượng là overfitting.
+0:19:45 - 0:19:49, Do đó, để giảm cái hiện tượng
+0:19:47 - 0:19:52, overfitting này thì hoặc là chúng ta chủ
+0:19:49 - 0:19:54, động giảm cái mắt de này xuống hoặc là
+0:19:52 - 0:19:58, chúng ta sẽ sử dụng một cái phương pháp
+0:19:54 - 0:19:58, regularization chính quying.
+0:20:02 - 0:20:07, Chúng ta thêm một cái hệ số alpha, siêu
+0:20:03 - 0:20:10, tham số alpha ở đây để mà đưa cái số
+0:20:07 - 0:20:14, nhánh vào trong cái hàm loss của mình.
+0:20:10 - 0:20:17, Đó thì khi alpha của mình mà khoảng một
+0:20:14 - 0:20:22, cái giá trị ví dụ như là khoảng 0 chấ à
+0:20:17 - 0:20:25, 03 hoặc là 0.12 thì nó sẽ cho cái mô
+0:20:22 - 0:20:27, hình của mình vừa đủ đơn giản. nó sẽ cho
+0:20:25 - 0:20:31, một cái mô hình vừa đủ đơn giản nhưng mà
+0:20:27 - 0:20:35, nó đủ tổng quát và đủ độ chính xác cao
+0:20:31 - 0:20:38, trên cái tập điểm ờ phi tuyến tính của
+0:20:35 - 0:20:40, mình. Đó thì đây là một cái sự cân bằng
+0:20:38 - 0:20:43, giữa độ chính xác khi trend. Nhưng mà
+0:20:40 - 0:20:45, lưu ý là khi chúng ta trend mà độ chính
+0:20:43 - 0:20:48, xác cao thì không chắc là khi test chúng
+0:20:45 - 0:20:50, ta sẽ có cái độ chính xác cao ha. Tại vì
+0:20:48 - 0:20:52, nếu như chúng ta chăm chăm vào học những
+0:20:50 - 0:20:55, cái điểm ngoại lệ này nè thì đâu đó khi
+0:20:52 - 0:20:58, chúng ta test có thể chúng ta sẽ đánh
+0:20:55 - 0:21:00, đổi cái độ chính xác trên cái tập test.
+0:20:58 - 0:21:03, Do đó, mô hình của mình càng đơn giản
+0:21:00 - 0:21:03, thì là càng tốt.
+0:21:06 - 0:21:18, [âm nhạc]

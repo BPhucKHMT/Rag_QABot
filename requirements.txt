@@ -54,3 +54,14 @@ plotly==6.4.0
 matplotlib==3.9.4
 
 
+
+google-api-python-client==2.187.0
+dotenv
+youtube-transcript-api==1.2.3
+pytube==15.0.0
+yt-dlp==2025.11.12
+librosa==0.11.0
+hf_transfer==0.1.9
+ffmpeg==1.4
+openai-whisper==20250625
+google-generativeai==0.8.5

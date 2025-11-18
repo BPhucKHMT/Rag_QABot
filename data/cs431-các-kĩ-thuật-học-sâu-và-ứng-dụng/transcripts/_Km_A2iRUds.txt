@@ -1,0 +1,149 @@
+0:00:00 - 0:00:10, Để giải quyết bánh đai này, chúng ta sẽ đi qua các thành phần của kiến trúc LSTM.
+0:00:10 - 0:00:21, Đầu tiên, đó là cái hàm FT. Mục tích của nó chính là quyết định xem cái gì cần nhớ hay cần giữ lại,
+0:00:21 - 0:00:23, Cái gì thì cần quên
+0:00:23 - 0:00:27, Với những thông tin của quá khứ
+0:00:27 - 0:00:32, Thì ở đây chúng ta sẽ có một trục xuyên suốt toàn bộ
+0:00:32 - 0:00:35, Có một cái trục để đi xuyên suốt
+0:00:35 - 0:00:38, Cái chuỗi ký tự của mình
+0:00:38 - 0:00:40, Cái chuỗi câu của mình
+0:00:40 - 0:00:41, Đó là trục C
+0:00:41 - 0:00:44, C là viết tác của chữ là contact
+0:00:44 - 0:00:47, Contact cell
+0:00:47 - 0:01:02, ở đây có cái cổng đầu tiên, nó gọi là ForgetGay
+0:01:02 - 0:01:10, và chúng ta để ý là cái cổng forget gate này thì có cái hàm có sử dụng một cái hàm là hàm sigmoid
+0:01:10 - 0:01:15, thì trong cái hàm sigmoid thì cái miền giá trị của nó là từ 0 cho đến 1
+0:01:15 - 0:01:20, thế thì với cái hàm sigmoid này nó sẽ giúp cho chúng ta điều hướng thông tin
+0:01:20 - 0:01:27, ví dụ nếu cái kết quả trả ra cho cái fst này nè tức là cái kết quả trả ra tại đây nè
+0:01:27 - 0:01:29, kết quả trả ra tại đây mà bằng 0
+0:01:29 - 0:01:34, Nếu kết quả này mà bằng không, thì điều gì sẽ xảy ra?
+0:01:34 - 0:01:38, Cái giá trị không này nhân với lại contact cell là CT triệu một.
+0:01:38 - 0:01:45, Tức là nó đang thực hiện việc quên đi thông tin của quá khứ trong CT triệu một.
+0:01:45 - 0:01:51, Nếu giá trị này là bằng một, hoặc giá trị gần bằng một,
+0:01:51 - 0:01:56, thì nó sẽ giữ lại gần như toàn bộ thông tin của quá khứ.
+0:01:56 - 0:01:59, và nó truyền tới tiếp theo.
+0:01:59 - 0:02:03, Thì đó chính là ý đồ của forget gate.
+0:02:03 - 0:02:05, Tức là nó sẽ biết
+0:02:05 - 0:02:09, có nên nhớ hay quên thông tin của quá khứ hay không
+0:02:09 - 0:02:11, thông qua việc sử dụng hàm sích môi.
+0:02:11 - 0:02:15, Và để đưa ra quyết định là có quên hay không
+0:02:15 - 0:02:21, thì nó phải dựa vào thông tin của trạng thái ẩn trước đó là st-1
+0:02:21 - 0:02:29, và thông tin từ x hiện tại, đầu vào hiện tại là xt
+0:02:32 - 0:02:38, mô đuổi thứ 2 đó chính là cổng thông tin input gay
+0:02:38 - 0:02:40, đó gọi là input gay
+0:02:45 - 0:02:51, input gay này nó sẽ quyết định xem là thông tin xt này
+0:02:51 - 0:02:54, chúng ta có đưa nó vào bên trong
+0:02:54 - 0:02:57, đưa nó vào bên trong cái Context cell này hay không?
+0:02:57 - 0:03:00, Ở đây chúng ta thấy có một cái mũi tên
+0:03:00 - 0:03:02, tức là sau khi chúng ta tính cái này xong đúng không?
+0:03:02 - 0:03:04, chúng ta sẽ nhân với lại cái thông tin
+0:03:04 - 0:03:06, đi qua cái cổng này
+0:03:06 - 0:03:09, rồi sau đó chúng ta sẽ cộng nó vào cái Context cell
+0:03:09 - 0:03:10, thì cái giá trị ở đây
+0:03:10 - 0:03:14, ở đây chúng ta sẽ sử dụng một cái hàm sigmoid và tương tự như vậy
+0:03:14 - 0:03:16, tương tự như vậy
+0:03:16 - 0:03:19, thì cái sigmoid này nó sẽ nhận cái giá trị là từ 0 cho đến 1
+0:03:19 - 0:03:24, Nếu như hàm sigmoid trả ra giá trị gần bằng 0, tức là
+0:03:24 - 0:03:30, nó nói rằng là chúng ta sẽ không cần nạt thông tin của XT vào bên trong cổng này
+0:03:30 - 0:03:35, thì thực tế chúng ta thấy là có những từ không quá quan trọng trong một câu
+0:03:35 - 0:03:40, ví dụ như là những cái trong tiếng Anh, chúng ta sẽ có những cái mạo từ fun
+0:03:40 - 0:03:47, hoặc là những giới từ in, out, off, v.v. thì đó là những từ kém quan trọng
+0:03:47 - 0:03:52, do đó thì cái cổng này nó sẽ có xu hướng là lọc bỏ những cái thông tin không quan trọng
+0:03:52 - 0:03:54, để không đưa vào bên trong cái contact scale
+0:03:54 - 0:03:58, thì cái IT này chính là cái ký hiệu của cái chữ input
+0:04:01 - 0:04:04, Tiếp theo đó là cái cổng output
+0:04:04 - 0:04:07, cái cổng này thì chúng ta, chúc đợi chúng ta sẽ nói sau
+0:04:07 - 0:04:11, cái cổng output đây là ký hiệu bằng chữ O hơn
+0:04:11 - 0:04:24, nó sẽ quyết định xem là chúng ta có lấy thông tin từ CT này
+0:04:24 - 0:04:31, chúng ta có lấy thông tin từ... xin lỗi đến đây, đến thời điểm này thì nó đã tính ra CT rồi
+0:04:31 - 0:04:40, chúng ta có lấy thông tin của trục contact cell đi ra để thực hiện tính toán giá trị output này không?
+0:04:40 - 0:04:43, thì output này sẽ quyết định xem là có lấy hay không
+0:04:43 - 0:04:47, nếu qua hàm sigmoid này mà nó nhận giá trị là không
+0:04:47 - 0:04:48, hoặc là gồng bằng không
+0:04:48 - 0:04:51, thì khi không nhân với giá trị này, tức là nó đang khóa
+0:04:51 - 0:04:53, nó khóa cái thông tin này lại, không cho
+0:04:53 - 0:04:56, cái thông tin từ CT này đi ra
+0:04:56 - 0:04:58, cái ST
+0:04:58 - 0:05:01, còn nếu như giá trị này sắp xỉ lợ, nó tiến về 1
+0:05:01 - 0:05:04, tức là nó sẽ cho phép lấy cái thông tin của CT đi ra
+0:05:04 - 0:05:08, để tính toán cho cái giá trị output
+0:05:10 - 0:05:18, và C-NHT, tức là cái thông tin sau khi chúng ta đã xào nấu,
+0:05:18 - 0:05:24, ổng học sâu thông tin sau khi chúng ta đã xào nấu giữa cái quá khứ là ST
+0:05:24 - 0:05:32, và cái ST trường 1, và cái thông tin đầu vào của mình đó là cái hiện tại.
+0:05:32 - 0:05:38, Chúng ta trộn 2 cái thông tin này lại với nhau để tạo ra một cái thông tin tổng hợp.
+0:05:38 - 0:05:41, Và cái thông tin tổng hợp này thì nó cứ tính thoái
+0:05:41 - 0:05:45, nhưng mà cái việc cái C ngã T này có đưa vào bên trong cái trục
+0:05:46 - 0:05:49, nó có đưa vào bên trong cái trục cần text cell hay không
+0:05:49 - 0:05:52, đó là phụ thuộc vào cái input gay này
+0:05:52 - 0:05:55, Cái việc là có đưa nó vào hay không đó là do hàng đoạt
+0:05:55 - 0:05:59, Còn cái hàm tăng này là nó sẽ tổng hợp thông tin của quá khứ và hiện tại
+0:05:59 - 0:06:02, Thì cái module này nó cũng tương tự như cái A
+0:06:02 - 0:06:05, nó cũng tương tự như cái ANN cell
+0:06:05 - 0:06:10, nó cũng tương tự như ANN cell phiên bản, tạo ra phiên bản đầu tiên của mình
+0:06:11 - 0:06:14, nhiệm vụ đó là để rút chích thông tin cần thiết
+0:06:14 - 0:06:18, của cell hiện tại để đưa vào Contacts Vector
+0:06:18 - 0:06:21, nhưng mà lưu ý là rút chích thông tin cần thiết thôi
+0:06:21 - 0:06:24, còn có đưa vào hay không, nó sẽ phụ thuộc vào input gate này
+0:06:26 - 0:06:29, Rồi, và cuối cùng là ở công thức này
+0:06:29 - 0:06:33, công thức tính CT này, tức là nó sẽ được cập nhật tại đây
+0:06:33 - 0:06:36, nó sẽ cập dạng, ct mặc dù nó vi là ở đây
+0:06:36 - 0:06:38, nhưng mà chúng ta phải hiểu là cái nguồn thông tin
+0:06:38 - 0:06:41, đó là nó đã được thay đổi tại cái vị trí này
+0:06:41 - 0:06:44, thì ở đây là chúng ta dùng cái tán tử cộng
+0:06:44 - 0:06:45, tán tử cộng
+0:06:45 - 0:06:46, nghĩa là gì?
+0:06:46 - 0:06:48, đây là cái thông tin tổng hợp
+0:06:48 - 0:06:49, đây là cái thông tin tổng hợp
+0:06:49 - 0:06:51, tại thời điểm hiện tại
+0:06:53 - 0:06:56, còn đây là cái thông tin
+0:06:56 - 0:06:58, của quá khứ
+0:06:58 - 0:07:00, nhưng mà lưu ý
+0:07:00 - 0:07:01, đó là cái quá khứ này á
+0:07:01 - 0:07:03, nó có chứa thông tin nhiều hay không
+0:07:03 - 0:07:08, thì nó nằm ở cái phần quyết định là do cái forget gate
+0:07:08 - 0:07:12, ví dụ đến đây forget gate là bằng sắp xửng bằng 0 là số rất là bé
+0:07:12 - 0:07:13, tức là nó đã quên sạch thông tin rồi
+0:07:13 - 0:07:16, như vậy đến đây thì cái lượng thông tin đi tiếp
+0:07:16 - 0:07:19, nó gần như là không còn
+0:07:19 - 0:07:21, còn hiện tại cũng thương tượng như vậy do cái cổng input
+0:07:21 - 0:07:26, nó sẽ quyết định xem là cái hàm lượng thông tin của cái xt
+0:07:26 - 0:07:29, khi đưa vào cái contact cell này này
+0:07:29 - 0:07:32, khi đưa vào cái contact cell này là nhiều hay ít
+0:07:32 - 0:07:33, đó là do cái cổng này
+0:07:33 - 0:07:37, Còn ở đây là sự tổng hợp thông tin của qua phương và hiện tại
+0:07:38 - 0:07:42, Cuối cùng, đó là ST
+0:07:43 - 0:07:48, ST thì ở đây chúng ta sẽ là hềm tanh của CT
+0:07:49 - 0:07:51, Ở đây đằng trước
+0:07:51 - 0:07:54, Sau đó thì chúng ta sẽ tính cái ST thôi
+0:07:54 - 0:07:56, Thì công thức này nó cũng rất là đơn giản
+0:07:56 - 0:08:00, Nó sẽ là bằng OT nhưng hềm tanh của CT
+0:08:03 - 0:08:12, Rồi, thì ở đây chúng ta sẽ có một cái nhầm lẫn trong công thức một chút xíu
+0:08:12 - 0:08:16, Ở đây là hàm tang này, là hàm tang của xe ngã T
+0:08:16 - 0:08:18, Hàm tang này là của xe ngã T
+0:08:18 - 0:08:24, À xin lỗi, đây là hàm tang của CT, đúng rồi
+0:08:24 - 0:08:31, Rồi, như vậy thì ở đây là cái thông tin CT nè
+0:08:31 - 0:08:36, Chuyển qua hàm tăng và đến đây
+0:08:36 - 0:08:40, Ct ở đây là thông tin contact cell
+0:08:40 - 0:08:44, Và việc quyết định xem có lấy thông tin của Ct này ra hay không
+0:08:44 - 0:08:46, Có lấy thông tin của Ct không
+0:08:46 - 0:08:52, Thì nó sẽ phụ thuộc vào giá trị OT là đến từ cổng output gate
+0:08:52 - 0:08:55, Output gate này sẽ quyết định xem có lấy hay không
+0:08:55 - 0:09:05, Sau khi đã có được ST này rồi, chúng ta sẽ thực hiện việc dự đoán
+0:09:05 - 0:09:09, và việc dự đoán này cũng tương tự, chúng ta sẽ thực hiện tương tự
+0:09:09 - 0:09:15, như cái ANN bình thường, tương tự như phiên bản ANN bình thường
+0:09:15 - 0:09:20, đó là có trạng thái ẩn, chúng ta sẽ nhân với vector V
+0:09:20 - 0:09:26, để qua hàm softmax để tính giá trị output
+0:09:26 - 0:09:38, Và như vậy thì chúng ta thấy với phiên bản của ANN và LSTM ANN thì chúng ta chỉ có duy nhất một cái cổng là tăng
+0:09:38 - 0:09:46, là để tổng hợp thông tin của XT và đưa vào bên trong tính toán giá trị ST tiếp theo
+0:09:46 - 0:09:54, Và nó tương ứng chính là cái module này, về mặt ý nghĩa đó là nó tương ứng với module này, nó tổng hợp thông tin
+0:09:54 - 0:10:00, của trạng thái hiện tại và phoá khứ.
+0:10:00 - 0:10:05, Tuy nhiên, trong phiên bản LSTM, nó có thêm 3 cổng khác
+0:10:05 - 0:10:08, và cộng thêm 1 mô đu nữa đó là contacts.
+0:10:08 - 0:10:11, Cái cổng này sẽ giúp cho chúng ta
+0:10:11 - 0:10:13, có nên quên thông tin của quá khứ hay không.
+0:10:13 - 0:10:18, Cổng này sẽ giúp cho chúng ta xác định xem có nên đưa thông tin của trạng thái hiện tại
+0:10:18 - 0:10:21, vào cái cổng CT, vào cái contact cell hay không.
+0:10:21 - 0:10:32, Và cái cổng này sẽ giúp chúng ta xác định xem là lượng thông tin chúng ta lấy ra từ CP, tức là compact cell này là nhiều hx
+0:10:32 - 0:10:39, Thì nó có thêm 3 cái cổng này, và nhờ 3 cái cổng này sẽ giúp chúng ta điều hướng được thông tin
+0:10:39 - 0:10:45, để từ đó giúp cho radian của mình trong quá trình tính toán nó sẽ được trở nên hiệu quả hơn
+0:10:45 - 0:10:53, Và đó chính là việc mà LSTM có thể giúp chúng ta phần nào giải quyết được hiện tượng Phanixing Radiant,
+0:10:53 - 0:10:55, là hiện tượng tiêu biến Radiant.

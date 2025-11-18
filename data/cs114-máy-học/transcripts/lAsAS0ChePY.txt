@@ -1,0 +1,156 @@
+0:00:00 - 0:00:19, Chào mừng các bạn đến với khóa học học máy machine learning của trường Đại học Công nghệ Thông tin.
+0:00:19 - 0:00:23, Tôi tên là Lê Đình Duy, giảng viên khoa khoa học máy tính.
+0:00:23 - 0:00:29, Các bạn hẳn đã được nghe nhiều về học máy,
+0:00:29 - 0:00:33, một lĩnh vực đang có rất nhiều ứng dụng thực tiện trong cuộc sống ngày nay của chúng ta.
+0:00:33 - 0:00:37, Quang sát hình ảnh sau, chúng ta sẽ thấy xu hướng quan tâm đến học máy
+0:00:37 - 0:00:40, đã gia tăng vượt bật từ năm 2015 trở đi.
+0:00:40 - 0:00:46, Điều này không phải là ngẫu nhiên, bởi đây chính là thời kỳ mà các công nghệ liên quan tới học máy
+0:00:46 - 0:00:51, như là xe tự lái, trợ lý ảo như Siri và Google Assistant
+0:00:51 - 0:00:59, Và các hệ thống gợi ý như Netflix, Amazon đã bắt đầu trở nên phổ biến và có tác động mạnh mẽ đến đời sống.
+0:00:59 - 0:01:08, Đặc biệt, trong những năm gần đây, những bước tiến vượt bật của học máy đã trao ra đời các ứng dụng, ấn tượng như ChartGBT,
+0:01:08 - 0:01:17, một hệ thống có khả năng giao tiếp tự nhiên với con người, hay các mô hình AI hỗ trợ sáng tạo nội dung giúp nâng cao hiệu quả và trải nghiệm trong nhiều lĩnh vực.
+0:01:17 - 0:01:23, Những thành tựu này không chỉ làm nối bật tìm năng to lớn của học máy,
+0:01:23 - 0:01:28, mà còn khẳng định vai trò quan trọng của học máy trong việc định hình tương lai công nghệ.
+0:01:28 - 0:01:35, Vậy, điều gì khiến học máy trở thành một chủ đề nóng và thu hút nhiều sự quan tâm đến vậy?
+0:01:35 - 0:01:41, Chính sự ảnh hưởng sâu rộng và tìm năng to lớn của học máy trong việc giải quyết các vấn đề phức tạp
+0:01:41 - 0:01:45, đã biến nó thành một trong những lĩnh vực trọng tâm của nguyên số.
+0:01:45 - 0:01:58, Để hiểu rõ hơn về sự phát triển mạnh mẽ này, chúng ta cần khám phá cách học máy hoạt động, những yếu tố cốt loại làm nên sức mạnh của nó và những ứng dụng thực tiện đang thay đổi cuộc sống trong ta.
+0:01:58 - 0:02:08, Môn học này sẽ giới thiệu các khái niệm cơ bản, các thuật toán và các kỹ thuật cốt lõi của học máy.
+0:02:08 - 0:02:14, Xin viên sẽ được học cách áp dụng các phương pháp học máy để giải quyết các vấn đề thực tế
+0:02:14 - 0:02:17, thông qua việc phát triển các ứng dụng đơn giản.
+0:02:17 - 0:02:24, Môn học này cũng trang bị cho sin viên nền tảng kiến thức và kỹ năng cần thiết để nâng cao khả năng tư duy
+0:02:24 - 0:02:26, và giải quyết vấn đề bằng các công cụ học máy.
+0:02:26 - 0:02:30, Mục tiêu của môn học thì bao gồm phần kiến thức lý thuyết,
+0:02:30 - 0:02:33, sẽ cung cấp các khái niệm và nguyên lý cơ bản của học máy,
+0:02:33 - 0:02:38, giúp sinh viên hiểu rõ nền tảng lý thuyết và cách thức hoạt động của các thuật toán học máy.
+0:02:38 - 0:02:46, Trang bị kiến thức về các thuật toán học máy phổ biến như hồi quy tuyến tính, hồi quy logistic và toán phân loại,
+0:02:46 - 0:02:51, cây quyết định, phân cụm, hệ thống gợi ý, học tăng cường.
+0:02:51 - 0:02:55, Đối với kỹ năng thực hành thì sẽ trang bị cho sinh viên kỹ năng lập trình với Python
+0:02:55 - 0:03:03, và sử dụng các thư viện học máy như Scikit-learn, TensorFlow và Keras để xây dựng và triển khai mô hình.
+0:03:03 - 0:03:08, Phát triển khả năng tư duy phân tích và đánh giá mô hình giúp sinh viên hiểu cách phân tích dữ liệu,
+0:03:08 - 0:03:12, đánh giá các mô hình học máy và tối ưu hóa hiểu xúc của mô hình.
+0:03:12 - 0:03:18, Về ứng dụng thực tế thì khuyến khách ứng dụng các kiến thức qua các bài tập và dự án thực hành
+0:03:18 - 0:03:23, giúp sinh viên áp dụng các thuật toán học máy vào các bài toán thực tế.
+0:03:23 - 0:03:33, Kết quả mong đợi, sinh viên có thể giải thích được các khái niệm và nguyên lý cơ bản của học máy, bao gồm học có giám sát, học không giám sát và học tăng cường.
+0:03:33 - 0:03:41, Áp dụng các thuật toán học máy phổ biến như hội quy tiến tính, hội quy logistic, funcung và hệ thống người ý vào các bài toán thực tế.
+0:03:41 - 0:03:52, Sử dụng thành thạo các thư viện Python như Scikit-learn, TensorFlow và Keras để xây dựng, huấn luyện và triển khai các mô hình học máy đơn giản.
+0:03:52 - 0:03:58, Phân tích đánh giá hiệu suất các mô hình học máy và lựa chọn mô hình phù hợp cho từng bài toán.
+0:03:58 - 0:04:06, Tối ưu hóa mô hình học máy thông qua việc điều chỉnh các siêu tham số và cải thiện hiệu suất mô hình cho từng bài toán cụ thể.
+0:04:06 - 0:04:15, Thiết kế và triển khai các ứng dụng học máy đơn giản từ bước tiền xử lý dữ liệu đến huấn luyện và triển khai mô hình trên các dữ liệu thực tế.
+0:04:15 - 0:04:27, Đối tượng học của môn học là các sinh viên thuộc các ngành liên quan đến các khoa học máy tính, kỹ thuật, kinh doanh và các ngành khác có nhu cầu ứng dụng học máy và công việc.
+0:04:27 - 0:04:35, Sinh viên có kiến thức cơ bản về lập trình, về cấu trúc dữ liệu, thuộc toán và toán học, ví dụ như đại số tiến tính, sát sát thống kê.
+0:04:35 - 0:04:43, Các bạn sinh viên có mong muốn tìm hiểu về các khái niệm thuộc toán và ứng dụng của học máy trong các lĩnh vực như phân tích dữ liệu,
+0:04:43 - 0:04:47, phát triển hệ thống trí tệ nhân tạo hoặc tối ưu hóa quy trình quân doanh.
+0:04:47 - 0:04:56, Học là các bạn sinh viên muốn phát triển kỹ năng lập trình bằng Python và sử dụng các thư viện học máy phổ biến như Scikit-learn, TensorFlow và Keras.
+0:04:56 - 0:05:03, Trạp điểm của khóa học là chú chọn kỹ năng thực hành, áp dụng các kiến thức đã học vào giải quyết các vấn đề bài toán thực tế,
+0:05:03 - 0:05:10, phát triển các kỹ năng lập trình Python và cách sử dụng công cụ thư viện học máy để giải quyết các vấn đề cụ thể,
+0:05:10 - 0:05:12, phát triển kỹ năng giải quyết vấn đề
+0:05:12 - 0:05:15, và khuyến khích tìm tòa hình khám phá các phương pháp mới
+0:05:15 - 0:05:18, để tối ưu hóa mô hình và giải quyết các bài toán phức tạp
+0:05:18 - 0:05:20, thông qua nghiên cứu và thực hành.
+0:05:23 - 0:05:25, Để thực hành các kỹ thuật học máy thì chúng ta có thể sử dụng
+0:05:25 - 0:05:29, hai nền tảng phổ biến, đó là Google Collab và Cargo.
+0:05:29 - 0:05:34, Google Collab là một nền tảng trực tuyến hoàn toàn miễn phí
+0:05:34 - 0:05:37, và được thiết kế để hỗ trợ các bạn trong việc thực hành
+0:05:37 - 0:05:39, và phát triển các dự án Python,
+0:05:39 - 0:05:41, đặc biệt là trong lĩnh vực Machine Learning và Deep Learning.
+0:05:42 - 0:05:46, Với Google Collab thì bạn không cần phải cài đặt bất kỳ phần mềm nào,
+0:05:46 - 0:05:49, mà chỉ cần một chình dụy web để bắt đầu làm việc.
+0:05:50 - 0:05:54, Đền tảng này cung cấp khả năng sử dụng GPU và TPU miễn phí,
+0:05:54 - 0:05:59, giúp tăng tốc quá trình huấn luyện mô hình máy học và xử lý dữ liệu lớn.
+0:05:59 - 0:06:03, Ngoài ra thì Collab còn tích hợp sẵn với các thư viện phổ biến như NumPy,
+0:06:03 - 0:06:07, Pandas, TensorFlow, PyTorch và nhiều công cụ khác giúp việc làm trình
+0:06:07 - 0:06:09, trở nên dễ dàng và hiệu quả hơn.
+0:06:10 - 0:06:12, Google Collab thì rất là đặc biệt và phù hợp cho sinh viên
+0:06:12 - 0:06:14, và các nhà nghiên cứu và các lập trình viên
+0:06:15 - 0:06:17, muốn thử nghiệm các ý tưởng hoặc học tập
+0:06:17 - 0:06:19, mà không cần đầu tư nhiều và phần cứng.
+0:06:20 - 0:06:22, Nền tảng thứ hai là Cargo.
+0:06:22 - 0:06:26, Cargo là một nền tảng nổi tiếng trong cộng đồng khoa học dữ liệu và học máy
+0:06:27 - 0:06:29, nơi tập trung hành triệu người dùng trên toàn thế giới.
+0:06:29 - 0:06:34, Cargo không chỉ cung cấp các bộ dữ liệu phong phú và miễn phí,
+0:06:34 - 0:06:37, mà còn là nơi lý tưởng để thực hành học hỏi
+0:06:37 - 0:06:41, và thử thách bản thân thông qua các cuộc thi AI và khoa học dữ liệu.
+0:06:41 - 0:06:46, Người dùng Cargo có thể truy cập vào các công cụ phân tích dữ liệu trực tuyến,
+0:06:46 - 0:06:50, chia sẻ mã nguồn học hỏi từ cộng đồng thông qua các notebook được xây dựng sản.
+0:06:50 - 0:06:54, Đặc biệt là Cargo cũng là một môi trường lý tưởng để nâng cao kỹ năng xử lý dữ liệu,
+0:06:54 - 0:06:58, xây dựng mô hình, học máy và thử nghiệm với các bài toán dữ liệu thực tế.
+0:06:58 - 0:07:06, Đây cũng là nơi mà các công ty lớn tổ chức các cuộc thi để tìm kiếm giải pháp sáng tạp cho vấn đề của họ.
+0:07:06 - 0:07:13, Để tìm hiểu về học máy thì có rất nhiều tài liệu tham khả vụ ích.
+0:07:13 - 0:07:25, Dưới đây là giới thiệu về hai cuốn sách nổi bật cung cấp kiến thức từ cơ bản đến nâng cao, lý thuyết, đi kèm thực hành, giúp bạn bắt đầu và phát triển trong lĩnh vực này.
+0:07:25 - 0:07:28, đó là Introduction to Machine Learning with Python
+0:07:28 - 0:07:33, và Hang On Machine Learning with Scikit-learn Keras and TensorFlow.
+0:07:33 - 0:07:41, Cuốn sách Introduction to Machine Learning with Python được viết bởi Andreas Müller và Sarah Gildow
+0:07:41 - 0:07:47, là một tài liệu phù hợp dành cho những người mới bắt đầu tìm hiểu về học máy.
+0:07:47 - 0:07:51, Cuốn sách này cung cấp các khái niệm cốt lõi các thuộc toán học máy quan trọng
+0:07:51 - 0:07:54, và khuyến dẫn cách triển khai chúng bằng ngôn ngữ Python
+0:07:54 - 0:07:56, thông qua thư biện Scikit Learn.
+0:07:56 - 0:07:58, Với cách trình bày rõ ràng và dễ hiểu,
+0:07:58 - 0:08:01, thì sách tập trung vào việc giải thích
+0:08:01 - 0:08:04, cách chuẩn bị dữ liệu lựa chọn mô hình phù hợp,
+0:08:04 - 0:08:05, đánh giá hiệu quả của mô hình.
+0:08:05 - 0:08:07, Đặc biệt là sách nhấn mạnh đến tính thực hành
+0:08:07 - 0:08:10, với nhiều ví dụ thực tế và mãn nguồn minh họa,
+0:08:10 - 0:08:12, giúp người học không chỉ nắm vững lý thuyết
+0:08:12 - 0:08:15, mà còn tự tin áp dụng kiến thức vào các dự án cụ thể.
+0:08:15 - 0:08:18, Đây là tờ liệu hữu ích dành cho sinh viên, nhà nghiên cứu
+0:08:18 - 0:08:22, và những ai muốn bắt đầu quá trình học tập trong lĩnh vực học máy.
+0:08:22 - 0:08:27, Cuốn sách thứ hai là Hands-on Machine Learning with Scikit-Learn Keras and TensorFlow.
+0:08:27 - 0:08:37, Cuốn sách này được viết bởi Aurelien Gieron là một trong những tài liệu hữu ích dành cho những ai muốn học và thực hành học máy một cách hệ thống và thực tiện.
+0:08:37 - 0:08:43, Nội dung sách tập trung vào việc cung cấp cả nền tảng kiến thức cơ bản, lẫn các kỹ thuật nâng cao trong lĩnh vực học máy.
+0:08:43 - 0:08:53, Đồng thời sách cũng hiến dẫn cách áp dụng các thuộc toán vào các bài toán thực tế sử dụng các thư viện phổ biến như SiteKit Learn, Keras và TensorFlow.
+0:08:53 - 0:09:01, Người học sẽ được học cách xây dựng và triển khai các mô hình từ những bước cơ bản nhất đến các kỹ thuật hiện đại trong Deep Learning.
+0:09:01 - 0:09:12, Với sự hỗ trợ của các ví dụ minh họa rõ ràng, bài tắc thực hành và lời giải thích chi tiết, đây là tài liệu phù hợp cho cả người học mới và các chuyên gia muốn nâng cao các kỹ năng.
+0:09:12 - 0:09:20, Nếu các bạn tìm kiếm các khóa học trực tuyến chất lượng để bắt đầu hoặc nâng cao kiến thức về học máy,
+0:09:20 - 0:09:30, thì hãy cùng tìm hiểu hai chương trình đào tạo trực tuyến nổi bật sau đây được thiết kế bởi các chuyên gia hàng đầu từ các trường đại học danh tiến như Đại học Stanford và Đại học Washington.
+0:09:30 - 0:09:43, Chổi các khóa học Machine Learning Specialization hợp tác giữa Đại học Stanford và Nib Learning AI được giảng dạy bởi giáo sư Andrew Inge, một trong những nhà tiên phong hàng đầu trong lĩnh vực AI.
+0:09:43 - 0:09:50, Giáo sư Andrew Inge đã dẫn dắt nhiều nghiên cứu độc phá tại Stanford, Google Brand, Baidu và Landing.ai.
+0:09:50 - 0:10:00, Chối 3 khóa học này là phiên bản cập nhập của khóa học Machine Learning nổi tiếng đã đạt hơn 4,8 triệu lật đăng ký kể từ khi ra mắc vào năm 2012.
+0:10:00 - 0:10:05, Các khóa học cung cấp kiến thức toàn diện về những nguyên lý và kỹ thuật học máy hiện đại bao gồm
+0:10:05 - 0:10:11, học có giám sát, hội quy tuyến tính, hội quy logistic, mạng, neuron và cây quyết định.
+0:10:11 - 0:10:16, Họ không giám sát gồm có phân cụm, giảm chiều dữ liệu và hệ thống gợi ý.
+0:10:16 - 0:10:20, cùng với kinh nghiệm thực chiến là các phương pháp đánh giá và tổ ưu hóa mô hình
+0:10:20 - 0:10:23, cùng với cách tiếp cận dựa trên dữ liệu để nâng cao hiệu sức.
+0:10:24 - 0:10:29, Thứ hai là chuỗi các khóa học Machine Learning Specialization của Đại học Washington
+0:10:29 - 0:10:34, được thiết kế bởi giáo sư Emily Fox và giáo sư Carlos Gretrin,
+0:10:34 - 0:10:36, những chuyên gia hàng đầu trong lĩnh vực họp máy.
+0:10:36 - 0:10:40, Chuỗi các khóa học này tập trung vào các tình huống thực tế,
+0:10:40 - 0:10:41, giúp cho bạn tích lụy kinh nghiệm,
+0:10:41 - 0:10:46, áp dụng trong các lĩnh vực chính của học máy như dự đoán, phân loại, phân cụm, truy xúc thông tin.
+0:10:46 - 0:10:54, Người học sẽ được trang bị các kỹ năng phân tích dự lược lớn và phức tạp xây dựng các hệ thống có khả năng thích nghi và tối ưu hóa theo thời gian,
+0:10:54 - 0:10:59, đồng thời phát triển các ứng dụng thông minh có khả năng đưa ra dự đoán chính xác tự dĩ liệu.
+0:11:01 - 0:11:05, Python đã trở thành một trong những ngôn ngữ lập trình phổ biến nhất cho học máy.
+0:11:05 - 0:11:08, Vậy điều gì đã khiến Python trở nên phù hợp với lĩnh vực này?
+0:11:08 - 0:11:12, Hãy cùng tìm hiểu một số ưu điểm nổi bật của Python trong học máy.
+0:11:12 - 0:11:15, Thứ nhất, đó là cú pháp đơn giản và dễ học.
+0:11:15 - 0:11:17, Thích hợp, rất thích hợp cho người mới bắt đầu
+0:11:17 - 0:11:20, và giúp tập trung vào logic thay vì các cú pháp phức tạp.
+0:11:20 - 0:11:24, Thứ hai là hệ sinh thái, thư viện rất là phong phú,
+0:11:24 - 0:11:28, hỗ trợ mạnh mẽ với các thư viện như Numpy, Pandas, Scikit-learn,
+0:11:28 - 0:11:34, TensorFlow, PyTorch và Matplot.
+0:11:34 - 0:11:36, Cộng đồng lớn và hỗ trợ rất tốt,
+0:11:36 - 0:11:45, dễ dàng tìm kiếm hỗ trợ tài liệu, học tập, kỹ dụng như thực hành và các nguồn hỗ trợ khác sẵn có để giúp cho người học khi gặp khó khăn.
+0:11:45 - 0:11:55, Tính linh hoạt và khả năng mở rộng tích hợp cao có thể được sử dụng cho nhiều mục đích khác nhau từ phát triển ghếp cho đến phân tích dự liệu và tự động hóa.
+0:11:55 - 0:12:01, Ý khác nữa đó là Python miễn phí và mãn nguồn mở rất phổ biến trong công nghiệp.
+0:12:01 - 0:12:08, Python là một ngô ngữ lập trình biển phí và mã nguồn mở cho nên giúp giảm chi phí học tập đặc biệt phù hợp với giáo dục.
+0:12:08 - 0:12:13, Ngoài ra, đây là ngô ngữ được sử dụng rộng rãi trong các công ty công nghệ lớn như Google, Facebook, Amazon.
+0:12:15 - 0:12:20, Hỗ trợ giảng dạy trực quan, Python tích hợp tốt với Google Notebook và Google Collab,
+0:12:20 - 0:12:28, cung cấp một môi trường thử nghiệm tương tác giúp trình bày rõ ràng và kết hợp mã nguồn văn bản cùng các hình ảnh bên ngoài.
+0:12:31 - 0:12:40, Trong bài giảng này, các bạn sẽ được học theo cách tiếp cận học tập ứng dụng.
+0:12:41 - 0:12:44, Cách tiếp cận này có đặc điểm là kết nối lý thuyết và thực tiện
+0:12:44 - 0:12:48, để giúp người học có thể áp dụng chiến thức vào các bài toán thực tế
+0:12:48 - 0:12:49, thay vì chỉ học kiếm thiết xuân.
+0:12:50 - 0:12:54, Chuẩn bị cho công việc thực tế rèn luyện kỹ năng xử lý giả lị,
+0:12:55 - 0:12:58, xây dựng và triển khai mô hình học máy xác với yêu cầu của ngành công nghiệp.
+0:12:58 - 0:13:00, Phát triển tư duy phản biệt,
+0:13:00 - 0:13:04, Người học được rèn luyện khả năng phân tích vấn đề và đưa ra các giải pháp sáng tạ
+0:13:04 - 0:13:07, và đồng thời tăng tính thực hành và hứng thú.
+0:13:07 - 0:13:12, Việc thực hiện các dự án thực tế sẽ giúp cho người học tham gia tích cực hơn và có động lực học tập cao hơn.
+0:13:14 - 0:13:18, Tánh giá môn học. Môn học này sẽ có điểm quá trình là 20%
+0:13:18 - 0:13:24, bao gồm tham dự và thảo luận trong lớp học, viết, note và mỗi buổi học.
+0:13:24 - 0:13:26, Điểm thực hành 30%
+0:13:26 - 0:13:31, Chủ yếu là thi lập trình Python trên hệ thống Wecode
+0:13:31 - 0:13:37, Kiểm tra quý kỳ gồm có điểm lý thuyết 20% và điểm đồ án 30%
+0:13:43 - 0:13:51, Sau đây là một số quiz để giúp các bạn ôn lại các ý đã được trình vầy trong vài học này
+0:13:51 - 0:13:58, Ví dụ, hãy cho biết lý do quan trọng nhất khiến Python trở thành ngôn ngữ phổ biến trong học máy.
+0:13:58 - 0:14:05, Yếu tố nào sau đây không phải là lý do chính khiến Python phổ biến trong học máy.

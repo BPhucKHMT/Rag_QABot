@@ -1,0 +1,62 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:14 - 0:00:19, Cuối cùng đó là chúng ta sẽ khai thác
+0:00:17 - 0:00:21, cái nhãn chúng ta đã có. Tuy nhiên cái
+0:00:19 - 0:00:25, việc khai thác này nó không phục vụ cho
+0:00:21 - 0:00:27, việc huấn luyện mà chỉ để là một cái tài
+0:00:25 - 0:00:30, liệu là một cái thông tin để chúng ta có
+0:00:27 - 0:00:34, thể tham khảo cho cái việc là gom nhóm
+0:00:30 - 0:00:39, nó hiệu quả như thế nào. Thì ở đây chúng
+0:00:34 - 0:00:43, ta sẽ prom đó là sử dụng à nhãn của nhãn
+0:00:39 - 0:00:43, i ha.
+0:00:47 - 0:00:50, [âm nhạc]
+0:00:58 - 0:01:03, để xem coi là cái nhãn đúng của nó thì
+0:01:01 - 0:01:05, nó có
+0:01:03 - 0:01:09, xấp xỉ với nhau, có gần nhau ở trong cái
+0:01:05 - 0:01:10, không gian mà đã giảm chiều hay không.
+0:01:09 - 0:01:14, Đương nhiên là chúng ta sẽ không thể kỳ
+0:01:10 - 0:01:19, vọng là tất cả các cái mẫu dữ liệu này
+0:01:14 - 0:01:20, của mình nó đều đúng được. đó
+0:01:19 - 0:01:22, tại vì chúng ta là học trên không có
+0:01:20 - 0:01:25, giám sát
+0:01:22 - 0:01:25, rồi.
+0:01:35 - 0:01:40, Rồi thì trong cái cái chương trình này
+0:01:37 - 0:01:43, thì chúng ta thấy nè cái x của tsni à x
+0:01:40 - 0:01:45, của tsni chúng ta sẽ lấy hai cái tà
+0:01:43 - 0:01:47, thành phần tọa độ là thành phần thứ 0 và
+0:01:45 - 0:01:51, thứ 1 tương ứng là trục x và trục y
+0:01:47 - 0:01:55, chúng ta vẽ lên. Rồi màu á thì chúng ta
+0:01:51 - 0:01:59, sẽ dùng cái nhãn gốc tức là cái cái rout
+0:01:55 - 0:02:01, của mình để chúng ta vẽ lên.
+0:01:59 - 0:02:04, Thì chúng ta thấy là qua cái thực toán
+0:02:01 - 0:02:08, TSNI thì những cái điểm nào mà có cùng
+0:02:04 - 0:02:11, một cái ờ cùng một cái nhãn thì nó sẽ
+0:02:08 - 0:02:15, nằm ở gần nhau. Chứng tỏ đó là thuậc
+0:02:11 - 0:02:17, toán TSNI nó đã giảm chiều rất là tốt và
+0:02:15 - 0:02:19, khi đưa lên cái không gian hai chiều này
+0:02:17 - 0:02:22, nó vẫn giữ được cái tính chất đó là
+0:02:19 - 0:02:26, những cái điểm nào mà có cùng một cái
+0:02:22 - 0:02:28, label thì sẽ có cùng màu và nó sẽ nằm
+0:02:26 - 0:02:31, trong gần một cái cụm. Đâu đó chúng ta
+0:02:28 - 0:02:33, vẫn sẽ thấy là những cái điểm trong cái
+0:02:31 - 0:02:36, cụm màu hồng nè thì có những cái điểm
+0:02:33 - 0:02:39, màu xanh, xanh dương, xanh lá, xanh màu
+0:02:36 - 0:02:43, da xanh da trời vân vân thì nó lọt vào
+0:02:39 - 0:02:46, đây. Nhưng cái số đó khá là ít. Còn đâu
+0:02:43 - 0:02:49, đó là các cái điểm của mình đại đa số
+0:02:46 - 0:02:51, vẫn sẽ là những cái điểm có
+0:02:49 - 0:02:53, cùng màu thì nó cũng phản ánh được cái
+0:02:51 - 0:02:55, việc đó là các cái thuật toán gom cụm
+0:02:53 - 0:02:58, của mình
+0:02:55 - 0:03:02, nó đã tỏ ra hiệu quả. trong cái việc là
+0:02:58 - 0:03:05, đưa những cái ảnh mẫu ảnh nào mà có cùng
+0:03:02 - 0:03:08, một cái tính chất vào cùng một cái cụm
+0:03:05 - 0:03:12, ví dụ như là cụm số 5 chúng ta thấy là
+0:03:08 - 0:03:15, khá là giống nhau đó. Rồi cụm số 6 cũng
+0:03:12 - 0:03:17, vậy. Nó có cái con số 7 này thì nó viết
+0:03:15 - 0:03:19, bị lỗi nên nhìn nó vẫn có thể là giống
+0:03:17 - 0:03:21, con số 4 hoặc cũng có thể là giống con
+0:03:19 - 0:03:24, số 9.
+0:03:21 - 0:03:25, Thì mặc dù là nó sai nhưng mà có thể là
+0:03:24 - 0:03:27, cái sai này là chấp nhận được và dễ
+0:03:25 - 0:03:27, hiểu.
+0:03:28 - 0:03:40, [âm nhạc]

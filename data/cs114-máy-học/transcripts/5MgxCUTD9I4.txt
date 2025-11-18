@@ -1,0 +1,157 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:19, Như vậy thì chúng ta sẽ cùng tìm hiểu
+0:00:15 - 0:00:21, xem cái lỗi là do gì. Thì rõ ràng cái
+0:00:19 - 0:00:23, kích thước của cái náp la ở đây là không
+0:00:21 - 0:00:26, đúng. Như vậy thì chúng ta sẽ rã cái này
+0:00:23 - 0:00:30, ra thành từng bước
+0:00:26 - 0:00:34, của chúng ta sẽ tính cái sig và xem coi
+0:00:30 - 0:00:36, cái kích thú của nó là bao nhiêu.
+0:00:34 - 0:00:39, Rồi tương tự như vậy chúng ta sẽ xem
+0:00:36 - 0:00:41, kích thước của Y chấm sát xem cái kích
+0:00:39 - 0:00:46, thước của nó là bao nhiêu. Còn cái náp
+0:00:41 - 0:00:46, la ở đây chúng ta sẽ tạm bỏ qua.
+0:00:46 - 0:00:53, Rồi thì cái sigmo này nó sẽ có kích
+0:00:49 - 0:00:58, thước là một hàng và 110 cột.
+0:00:53 - 0:01:01, I sẽ là 110 à phần tử tức là một cái
+0:00:58 - 0:01:03, vecơ. Vậy thì liệu hiệu của hai cái này
+0:01:01 - 0:01:07, nó có tính toán ra được đúng là một cái
+0:01:03 - 0:01:12, vecơ có 110 phần tử hay không? Thì chúng
+0:01:07 - 0:01:12, ta sẽ lấy cái này trừ cho y.
+0:01:12 - 0:01:19, Rồi chúng ta sẽ lấy cái này trừ cho y.
+0:01:15 - 0:01:19, Rồi tất cả là tính sh
+0:01:20 - 0:01:26, rồi để xem coi cái hiệu số này nó sẽ ra
+0:01:22 - 0:01:29, là như thế nào. Ok thì khi chúng ta trừ
+0:01:26 - 0:01:31, ra thì nó sẽ ra là một cái ma trận một
+0:01:29 - 0:01:33, hàng và 110 cột. Như vậy là nó đã đúng ý
+0:01:31 - 0:01:38, ta.
+0:01:33 - 0:01:41, 110 cái à dự đoán trừ cho 110 cái giá
+0:01:38 - 0:01:44, trị thực tế thì nó sẽ ra là 110 cái độ
+0:01:41 - 0:01:49, lỗi. Vậy thì chúng ta sẽ xem xem cái x
+0:01:44 - 0:01:49, của mình có kích thước là bao nhiêu.
+0:01:51 - 0:01:57, X của mình thì nó lại là có kích thước
+0:01:53 - 0:01:59, là 3 nhân cho 110. Thế thì ở đây chúng
+0:01:57 - 0:02:01, ta thấy là để mà chúng ta có thể tạo ra
+0:01:59 - 0:02:06, được cái nắp la một cái vecơ có số chiều
+0:02:01 - 0:02:09, bằng với theta tức là 3 nhân 1 theta của
+0:02:06 - 0:02:13, chúng ta là 3 hàng và 1 thì ở đây chúng
+0:02:09 - 0:02:16, ta sẽ phải lấy cái x là 3 x 110 sau đó
+0:02:13 - 0:02:18, chúng ta đi nhân với lại 1 110 thì nó
+0:02:16 - 0:02:21, không nhân được do đó chúng ta sẽ chuyển
+0:02:18 - 0:02:23, vị cái này chuyển vị cái hiệu này chúng
+0:02:21 - 0:02:25, ta sẽ chuyển vị cái thành phần này. Như
+0:02:23 - 0:02:29, vậy thì chúng ta sẽ sửa lại cái code này
+0:02:25 - 0:02:31, là x à nhân thì chúng ta có thể là chấm
+0:02:29 - 0:02:35, dot hoặc là dùng cái ký hiệu đơn giản
+0:02:31 - 0:02:35, thôi đó là am.
+0:02:35 - 0:02:41, Rồi và ở đây sau khi chúng ta thực hiện
+0:02:39 - 0:02:43, cái phép trừ xong thì chúng ta sẽ thực
+0:02:41 - 0:02:46, hiện cái vectơ chuyển vị. Và khi chúng
+0:02:43 - 0:02:49, ta lấy cái x mà nhân với lại cái ba trận
+0:02:46 - 0:02:53, chuyển vị này thì nó sẽ ra một cái vectơ
+0:02:49 - 0:02:55, là 3 1. Do đó chúng ta sẽ không cần phải
+0:02:53 - 0:02:57, tính min nữa tại vì ở trong đây nó đã
+0:02:55 - 0:03:00, tổng hợp cho chúng ta các cái size số
+0:02:57 - 0:03:03, luôn rồi. Có chăng thì ở đây chúng ta sẽ
+0:03:00 - 0:03:06, chia cho số phần tử của mình. Chia trung
+0:03:03 - 0:03:08, bình cho số phần tử của mình thì là ln
+0:03:06 - 0:03:10, của y là số phần tử cho cái mũ dữ liệu
+0:03:08 - 0:03:13, huấn luyện. Rồi bây giờ chúng ta sẽ cùng
+0:03:10 - 0:03:16, chạy thử xem cái code này nó thực thi
+0:03:13 - 0:03:20, như thế nào. Như vậy là về mặt cứu pháp
+0:03:16 - 0:03:20, là nó đã thực đúng
+0:03:20 - 0:03:23, rồi.
+0:03:23 - 0:03:29, Có điều là chúng ta thấy nó xoay à nó
+0:03:26 - 0:03:32, không có chia ra làm hai phần. Vậy thì
+0:03:29 - 0:03:35, chúng ta sẽ thử xem à cái lỗi nó nằm ở
+0:03:32 - 0:03:38, đâu thì khả năng cao là nó sẽ nằm ở
+0:03:35 - 0:03:41, trong cái phần mà trực qua khóa để vẽ à
+0:03:38 - 0:03:43, các cái đường thẳng của mình.
+0:03:41 - 0:03:46, Thì đây là thành phần W1,
+0:03:43 - 0:03:50, đây là thành phần bias và đây là thành
+0:03:46 - 0:03:54, phần à W2
+0:03:50 - 0:03:57, tức là W1 tức là W2 và 2 là thành vật
+0:03:54 - 0:03:59, cuối cùng à bias. Thì trong cái công
+0:03:57 - 0:04:01, thức này chúng ta sẽ thấy đây cái chỗ
+0:03:59 - 0:04:04, này là chúng ta đang cọc y và chưa sửa
+0:04:01 - 0:04:06, nè. thì chỗ này lẽ ra nó phải là 2 tức
+0:04:04 - 0:04:09, là tương ứng là cái 3
+0:04:06 - 0:04:13, còn nếu không thì chúng ta nên viết nó
+0:04:09 - 0:04:17, ra một cách tường minh để cho nó đỡ bị à
+0:04:13 - 0:04:17, bị nhầm khi mà chúng ta copy
+0:04:18 - 0:04:27, rồi thì cái thành phần W2 sẽ là bằng
+0:04:21 - 0:04:30, theta 1 và thành phần bias
+0:04:27 - 0:04:33, thì sẽ là bằng thành phần số 2 và khi đó
+0:04:30 - 0:04:36, thì cái công thức của mình nó sẽ là W1
+0:04:33 - 0:04:41, nhân với 0 cộng cho
+0:04:36 - 0:04:41, tất cả chia cho W2
+0:04:41 - 0:04:52, rồi W1 nhân với 3,5 cộng cho B
+0:04:47 - 0:04:52, chia cho W2.
+0:04:52 - 0:04:58, Rồi và bây giờ chúng ta sẽ cùng chạy lại
+0:04:55 - 0:04:58, cái đoạn code này.
+0:05:04 - 0:05:11, Rồi thì sau một lúc chúng ta sẽ thấy là
+0:05:06 - 0:05:11, cái đường thẳng của mình đã tiến vào đây
+0:05:17 - 0:05:24, và nó đã bắt đầu à có xu hướng là
+0:05:21 - 0:05:26, tách nó ra làm hai phần đó là vùng màu
+0:05:24 - 0:05:28, đỏ và màu xanh.
+0:05:26 - 0:05:31, Thì như vậy chúng ta thấy là cái code
+0:05:28 - 0:05:35, này nó sẽ có những cái điểm lợi gì so
+0:05:31 - 0:05:38, với lại những cái phiên bản à trước đây.
+0:05:35 - 0:05:40, Cái lợi thứ nhất đó là
+0:05:38 - 0:05:42, thay vì chúng ta tính đạo hàm cho từng
+0:05:40 - 0:05:45, thành phần thì bây giờ chúng ta sẽ tính
+0:05:42 - 0:05:48, hàng loạt. Chúng ta sẽ tính hàng loạt
+0:05:45 - 0:05:50, cho ờ NALA
+0:05:48 - 0:05:53, và napla thì bao gồm các cái thành phần
+0:05:50 - 0:05:56, trọng số theo X và các cái đặc trưng đầu
+0:05:53 - 0:05:57, vào cộng với lại cái thành phần bas. Nếu
+0:05:56 - 0:06:02, như không có dùng cái công thức dạng
+0:05:57 - 0:06:04, vecơ hóa này thì chúng ta sẽ thấy là
+0:06:02 - 0:06:06, cái cái việc chúng ta tính đạo hàm chúng
+0:06:04 - 0:06:08, ta có bao nhiêu tham số, chúng ta sẽ
+0:06:06 - 0:06:10, phải copy cái code này ra bấy nhiêu dầu
+0:06:08 - 0:06:11, khiến cho cái code của mình nó bị phình
+0:06:10 - 0:06:13, to ra.
+0:06:11 - 0:06:15, Rồi tương tự như vậy trong cái bức cập
+0:06:13 - 0:06:17, nhật chúng ta cũng sẽ phải có bao nhiêu
+0:06:15 - 0:06:19, tham số thì chúng ta sẽ cập nhật bấy
+0:06:17 - 0:06:23, nhiêu dòng nó sẽ khiến cho code của mình
+0:06:19 - 0:06:24, nó bị rối. Và một cách tổng quát thì cái
+0:06:23 - 0:06:27, phương pháp này, cái phương pháp code
+0:06:24 - 0:06:30, theo dạng vecơ hóa này nó chỉ gom lại
+0:06:27 - 0:06:33, thành một dòng cos để tính radian và một
+0:06:30 - 0:06:35, dòng cos thì để cập nhật cái tham số.
+0:06:33 - 0:06:37, Còn cái bước ở đây thì chúng ta vì lý do
+0:06:35 - 0:06:40, trực quan hóa nên chúng ta mới tách nó
+0:06:37 - 0:06:41, ra để cho nó dễ nhìn. Chứ còn cái code
+0:06:40 - 0:06:43, này thì thực ra cũng không cần thiết
+0:06:41 - 0:06:45, trong cái quá trình mà mô hình của chúng
+0:06:43 - 0:06:49, ta huấn luyện. Thì đó chính là những cái
+0:06:45 - 0:06:51, điểm mạnh của à cái mô hình của mình. Cố
+0:06:49 - 0:06:53, ra đây thì chúng ta có thể sửa lại một
+0:06:51 - 0:06:56, chút nữa đó là
+0:06:53 - 0:06:59, cái thành phần mà napla thì ở đây là
+0:06:56 - 0:07:00, chúng ta có thể
+0:06:59 - 0:07:02, ở đây chúng ta cũng không cần phải đặt
+0:07:00 - 0:07:04, cái biến phụ ha và dùng chính cái cái
+0:07:02 - 0:07:06, nắp la là cái radient theo từng cái
+0:07:04 - 0:07:09, thành phần để kiểm tra cái điều kiện
+0:07:06 - 0:07:11, dừng. Và sau khi chúng ta chờ một lúc
+0:07:09 - 0:07:13, sau thì chúng ta đấy đã thấy đó là cái
+0:07:11 - 0:07:15, đường phân lớp của chúng ta đã tách ra
+0:07:13 - 0:07:19, làm hai và vì cái trường hợp này là cái
+0:07:15 - 0:07:22, tình huống mà số tập màu đỏ nó nhiều hơn
+0:07:19 - 0:07:23, gấp 10 lần so với tập màu xanh nên à
+0:07:22 - 0:07:26, chúng ta thấy là cái đường thẳng của
+0:07:23 - 0:07:29, mình nó bị đẩy về phía các cái điểm màu
+0:07:26 - 0:07:30, xanh dấu cộng này nhiều hơn. Chúng ta sẽ
+0:07:29 - 0:07:34, thấy cái khoảng cách này nè từ điểm màu
+0:07:30 - 0:07:36, đỏ gần nhất nó xa. Còn cái điểm màu xanh
+0:07:34 - 0:07:40, đến cái đường thẳng này thì nó ngắn đó.
+0:07:36 - 0:07:42, thì do cái lịch đẩy từ các cái à mẫu dữ
+0:07:40 - 0:07:45, liệu mà có số đông nó sẽ khiến cho mô
+0:07:42 - 0:07:47, hình của mình nó bị mất cân bằng. Thì
+0:07:45 - 0:07:48, đây cũng có thể là chúng ta đã cập trong
+0:07:47 - 0:07:50, những phần trước. Đây là một cái điểm
+0:07:48 - 0:07:54, yếu khi mà chúng ta hướng với những cái
+0:07:50 - 0:07:54, mô hình mà có quá nhiều mẫu.
+0:07:56 - 0:08:08, [âm nhạc]

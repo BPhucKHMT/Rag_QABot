@@ -1,0 +1,173 @@
+0:00:00 - 0:00:05, Rồi, và attention có phải là tất cả những gì chúng ta cần hay không?
+0:00:05 - 0:00:08, Thì câu trả lời đó là không phải.
+0:00:08 - 0:00:13, Đầu tiên, chúng ta sẽ phải xem cái problem ở đây là gì?
+0:00:13 - 0:00:17, Attention nếu như chúng ta không có biến đổi phi tuyến tính,
+0:00:17 - 0:00:22, thì nó chỉ là sự tổng hợp trọng số của các vector value thôi.
+0:00:22 - 0:00:28, Nó chỉ là, attention của mình chỉ là sự tổng hợp trọng số của các vector value.
+0:00:28 - 0:00:33, Nó không có sự biến đổi từ dạng đặc trưng này sang dạng đặc trưng khác.
+0:00:33 - 0:00:43, Nó chỉ là tính trung bình có trọng số của các đặc trưng.
+0:00:43 - 0:00:48, Giải pháp ở đây là chúng ta sẽ biến đổi Feed Forward,
+0:00:48 - 0:00:51, tức là một cái mạng Neural Network, chúng ta sẽ biến đổi Feed Forward
+0:00:51 - 0:00:53, hay là một mạng Neural Network
+0:00:53 - 0:00:56, với đầu ra của self-attention
+0:00:56 - 0:00:59, và cùng với cái hàm kích hoạt phi tuyến
+0:00:59 - 0:01:04, thì trong Feed Forward này nó đã có phép biến đổi phi tuyến trong đó
+0:01:04 - 0:01:06, thì đây là công thức của mình
+0:01:06 - 0:01:10, giả sử như output I là giá trị đầu ra của self-attention
+0:01:10 - 0:01:14, thì chúng ta sẽ qua multilayer perceptron
+0:01:14 - 0:01:18, thì công thức của multilayer perceptron sẽ như sau
+0:01:18 - 0:01:22, output I nhân tuyến tính với lại một cái ma trận W
+0:01:22 - 0:01:29, ma trận W1 này chính là một cái bộ tham số của mô hình
+0:01:29 - 0:01:32, mà mình sẽ phải huấn luyện
+0:01:32 - 0:01:35, tương tự như vậy bias 1 cũng là một cái tham số của mô hình
+0:01:35 - 0:01:40, rồi W2 cũng là tham số của mình để mà huấn luyện
+0:01:40 - 0:01:47, Chúng ta sẽ cần phải huấn luyện các cái bộ tham số này
+0:01:47 - 0:01:52, Và chúng ta sẽ sử dụng cái hàm kích hoạt đó là ReLU
+0:01:52 - 0:01:55, Thì cái hàm kích hoạt ReLU này, như trong bài trước chúng ta nói
+0:01:55 - 0:02:00, Nó sẽ giúp cho cái việc huấn luyện nhanh hơn và hạn chế được cái hiện tượng vanishing gradient
+0:02:00 - 0:02:11, Chúng ta sẽ bắt đầu sử dụng một loạt mẹo trong thành tựu của Deep Learning trước đây
+0:02:11 - 0:02:15, Mẹo đầu tiên là trồng nhiều lớp
+0:02:15 - 0:02:18, Khi chúng ta trồng nhiều lớp với nhau,
+0:02:18 - 0:02:27, thì nó sẽ giúp chúng ta tạo ra được rất nhiều đặc trưng từ các cấp độ low level, tức là đặc trưng cấp thấp cho đến đặc trưng cấp cao,
+0:02:27 - 0:02:30, đặc trưng cấp giữa và đặc trưng cấp cao.
+0:02:30 - 0:02:46, Vì trồng nhiều lớp này, nó sẽ giúp chúng ta tổng hợp được đặc trưng nhiều cấp của học sâu,
+0:02:46 - 0:02:54, trong Deep Learning, bao gồm là Low Level, Mid Level và High Level Feature.
+0:02:54 - 0:03:04, Đây là mẹo đầu tiên, và mẹo này sẽ được thực hiện bằng cách lặp đi lặp lại module encoder hoặc là decoder này.
+0:03:04 - 0:03:11, Chúng ta sẽ nối tiếp, thực hiện đi thực hiện lại quá trình tính toán này nhiều lần.
+0:03:11 - 0:03:16, và trong trường hợp này chúng ta sẽ làm là 6 lần hay tổng số layer của mình sẽ là bằng 6
+0:03:16 - 0:03:18, thì tại sao nó lại là bằng 6?
+0:03:18 - 0:03:23, thì đây chính là cái chỗ chúng ta hoàn toàn có thể thay đổi cái số lớp này
+0:03:23 - 0:03:27, chúng ta tùy vào cái kiến trúc của cái transformer này của mình
+0:03:27 - 0:03:31, nếu như chúng ta muốn cái transformer này của mình nó nhẹ ít tham số
+0:03:31 - 0:03:34, thì layer của mình có thể là 1 layer, 2 layer
+0:03:34 - 0:03:39, nhưng nếu chúng ta muốn cái kiến trúc transformer này có thể giải quyết những cái bài toán phức tạp hơn
+0:03:39 - 0:03:45, với nhiều thông tin hơn, thì khi đó số layer này có thể lên đến vài chục, thậm chí là hàng trăm layer.
+0:03:47 - 0:03:52, Và mẹo thứ hai, đó chính là sử dụng Residual Connection.
+0:03:56 - 0:04:03, Và layer tiếp theo sẽ được tính bằng layer trước đó là layer thứ L-1,
+0:04:03 - 0:04:06, x_{l-1} cộng với lại cái phép biến đổi
+0:04:06 - 0:04:09, cộng với lại cái output của phép biến đổi
+0:04:10 - 0:04:13, thì ở đây chúng ta sẽ có các đường màu đỏ
+0:04:14 - 0:04:16, chúng ta thực hiện phép cộng
+0:04:16 - 0:04:20, tức là đầu vào sau khi thực hiện self-attention
+0:04:20 - 0:04:22, sau khi thực hiện self-attention xong
+0:04:22 - 0:04:27, thì chúng ta sẽ có cái output của x_{l-1}
+0:04:27 - 0:04:35, sau đó chúng ta lấy chính cái đầu vào, tức là x, l, trừ 1 này, chúng ta lại đi cộng lại với nhau
+0:04:35 - 0:04:38, lấy 2 cái giá trị này cộng lại để được cái fx
+0:04:38 - 0:04:46, và chúng ta lại tương tự như vậy, chúng ta lại có cái residual connection ở đây, chúng ta lại có cái phép cộng ở đây
+0:04:46 - 0:04:53, và nhờ cái residual connection này nó sẽ giúp cho chúng ta huấn luyện được với những cái mạng rất là sâu
+0:04:53 - 0:05:00, và giảm được rất nhiều thời gian huấn luyện cũng như là chống được hiện tượng overfitting
+0:05:01 - 0:05:03, Cái mẹo thứ 3 đó chính là layer norm
+0:05:03 - 0:05:06, Chúng ta sẽ chuẩn hóa theo cấp độ layer
+0:05:06 - 0:05:11, Cái problem của việc chúng ta phải sử dụng layer norm
+0:05:11 - 0:05:15, Vấn đề đó là khi nó sẽ khó huấn luyện
+0:05:15 - 0:05:16, cái tham số của mình
+0:05:16 - 0:05:22, và khi layer của mình có input biến động liên tục, nghĩa là sao?
+0:05:22 - 0:05:25, khi chúng ta thực hiện các phép biến đổi self-attention ở đây
+0:05:25 - 0:05:32, thì điều gì xảy ra nếu đầu vào của mình có dải giá trị biến động
+0:05:32 - 0:05:34, rất là cách biệt
+0:05:34 - 0:05:36, thì nó dẫn đến là mô hình khó huấn luyện
+0:05:36 - 0:05:38, và giải pháp ở đây chúng ta sẽ
+0:05:38 - 0:05:44, làm là đưa giá trị của mình về dạng chuẩn hóa
+0:05:44 - 0:05:46, đưa về cùng một không gian
+0:05:46 - 0:05:48, có phân bố chuẩn đó là 0,1
+0:05:48 - 0:05:50, chuẩn 0,1
+0:05:50 - 0:05:55, Vậy thì giải pháp của mình là giảm sự biến động đầu vào
+0:05:55 - 0:05:58, giảm sự biến động của dữ liệu đầu vào
+0:05:58 - 0:06:01, bằng cách đưa về phân bố chuẩn trên một layer của mình
+0:06:01 - 0:06:05, Và đây chính là công thức hàm biến đổi của mình
+0:06:05 - 0:06:08, x' là giá trị sau khi chúng ta đã chuẩn hóa
+0:06:08 - 0:06:13, và nó sẽ là bằng x của cùng layer
+0:06:13 - 0:06:15, ở đây là cùng layer L
+0:06:15 - 0:06:24, Tức là chúng ta sẽ chuẩn hóa trên từng layer chứ không có sự tương tác giữa các layer với nhau
+0:06:24 - 0:06:32, Tại layer số L, chúng ta sẽ trừ cho μL, tức là trung bình cộng của các x này trên layer L
+0:06:32 - 0:06:42, Rồi chia cho sigma, thì việc mà trừ cho μ sẽ giúp cho mình đạt được phân bố đó là mean bằng 0
+0:06:42 - 0:06:47, và chia cho sigma, nó sẽ giúp chúng ta đạt được phân bố, đó là Standard Deviation của mình là bằng 1
+0:06:48 - 0:06:52, thì cái x' của mình sau khi chúng ta biến đổi xong
+0:06:52 - 0:06:54, nó sẽ đạt được phân bố chuẩn
+0:06:55 - 0:06:58, và giúp cho việc huấn luyện của mình ít bị biến động hơn
+0:06:59 - 0:07:01, nó sẽ bền vững hơn, huấn luyện sẽ nhanh hơn
+0:07:04 - 0:07:08, và trong slide trước thì chúng ta thấy, việc thực hiện norm này
+0:07:08 - 0:07:16, sau khi thực hiện phép biến đổi, phép cộng của mình
+0:07:16 - 0:07:22, sau khi cộng xong, chúng ta sẽ chuẩn hóa để chuẩn bị bước qua phép biến đổi tiếp theo
+0:07:22 - 0:07:28, rồi ở đây chúng ta cộng xong, chúng ta sẽ chuẩn hóa để chuẩn bị biến đổi sang phép biến đổi tiếp theo
+0:07:28 - 0:07:32, và mẹo thứ 4 đó chính là Scaled Dot-Product
+0:07:32 - 0:07:43, sau khi chúng ta chuẩn hóa xong thì từng phần tử của mình đã được đưa về phân bố chuẩn
+0:07:43 - 0:07:50, tuy nhiên, ở đây chúng ta sẽ xét hai cái vector
+0:07:54 - 0:07:56, x_i và x_j của mình
+0:08:02 - 0:08:11, Rồi, trước khi chúng ta thực hiện phép biến đổi tích vô hướng thì hai cái x_i và x_j này đã được chuẩn hóa, tức là nó đã được đưa về cái phân bố chuẩn.
+0:08:11 - 0:08:26, Tuy nhiên, sau khi chúng ta thực hiện phép tích vô hướng, thì cái kết quả của mình nó sẽ là một cái giá trị lớn.
+0:08:26 - 0:08:30, Cái kết quả của phép tích vô hướng này sẽ ra giá trị rất là lớn
+0:08:30 - 0:08:36, Và việc giá trị này lớn nó xuất phát từ số chiều d_k này lớn
+0:08:36 - 0:08:43, Số chiều d_k tức là số phần tử trong vector của mình là nhiều
+0:08:43 - 0:08:48, Khi giá trị này nhân với nhau và d_k này dài, càng dài
+0:08:48 - 0:08:53, Cái việc mà chúng ta cộng giá trị tích này lại với nhau sẽ ra giá trị lớn
+0:08:53 - 0:09:05, sau khi thực hiện phép nhân x_i và x_j xong, chúng ta sẽ chia cho căn của d_k
+0:09:05 - 0:09:10, chia cho căn của d_k cũng giúp chúng ta đưa về phân bố chuẩn
+0:09:10 - 0:09:14, đưa output của mình về phân bố chuẩn
+0:09:14 - 0:09:17, và đây chính là chia cho căn của d_k
+0:09:17 - 0:09:21, Nhưng đây là công thức mình sau khi đã được chuẩn hóa
+0:09:21 - 0:09:24, Nó gọi là Scaled Dot-Product Attention
+0:09:27 - 0:09:34, Và một trong những vấn đề lớn khác của mạng Transformer đó là
+0:09:34 - 0:09:37, Hình như chúng ta chưa xét đến yếu tố về mặt thứ tự
+0:09:37 - 0:09:39, Chưa xét về yếu tố về mặt thứ tự
+0:09:39 - 0:09:46, Ở đây chúng ta thấy các từ của mình được đưa vào, xử lý, đưa vào, xử lý, song song với nhau
+0:09:46 - 0:09:52, Từ này, biến đổi độc lập với từ này, từ này biến đổi độc lập với từ này, nó được thực hiện một cách song song.
+0:09:52 - 0:09:54, Nó không có yếu tố thứ tự.
+0:09:54 - 0:09:59, Ở đây, chúng ta nhìn trên cái sơ đồ này, chúng ta thấy là từ này trước, từ này sau,
+0:09:59 - 0:10:03, nhưng nó không có cái gì đảm bảo được là khi chúng ta tổng hợp thông tin ở đây,
+0:10:03 - 0:10:06, thì từ nào xuất hiện trước, từ nào xuất hiện sau.
+0:10:06 - 0:10:10, Đó, thì cái tính thứ tự này nó có quan trọng hay không?
+0:10:10 - 0:10:14, Thì trong đại đa số các ngôn ngữ của mình, tính thứ tự rất là quan trọng.
+0:10:14 - 0:10:17, không phải chỉ trong tiếng Việt mà cả trong tiếng Anh
+0:10:17 - 0:10:19, Thì dưới đây chúng ta sẽ lấy một cái ví dụ
+0:10:19 - 0:10:21, đó là cũng ba từ
+0:10:21 - 0:10:22, do, you, understand
+0:10:22 - 0:10:23, nhưng mà chúng ta sắp xếp
+0:10:24 - 0:10:25, theo cái trình tự khác nhau
+0:10:25 - 0:10:28, thì nó sẽ ra hai cái ý nghĩa khác nhau ví dụ
+0:10:28 - 0:10:29, do you understand
+0:10:29 - 0:10:30, với lại
+0:10:30 - 0:10:32, you do understand
+0:10:32 - 0:10:34, thì rõ ràng đây là một cái câu hỏi
+0:10:34 - 0:10:36, trong khi ở đây là một câu khẳng định
+0:10:40 - 0:10:42, Thì đây là ý nghĩa khác nhau hoàn toàn
+0:10:42 - 0:10:47, Ở đây chỉ là một ví dụ để minh họa cho tầm quan trọng của thứ tự
+0:10:49 - 0:10:56, Vậy thì giải pháp để giải quyết vấn đề này là chúng ta sẽ có một vector biểu diễn cho yếu tố vị trí
+0:10:57 - 0:11:04, Bình thường chúng ta sẽ có x_i, y chính là chỉ số về mặt vị trí
+0:11:04 - 0:11:06, y là vị trí
+0:11:06 - 0:11:13, Bây giờ chúng ta làm sao có thể biến cái y này thành một vector biểu diễn luôn?
+0:11:13 - 0:11:20, Bản thân self-attention không quan tâm đến yếu tố về mặt vị trí như đã giải thích trong slide trước
+0:11:20 - 0:11:23, Nó không có quan tâm đến yếu tố về mặt vị trí
+0:11:23 - 0:11:26, Các từ được thực hiện một cách độc lập với nhau
+0:11:26 - 0:11:33, Do đó chúng ta cần phải mã hóa thứ tự trong Query, Key và Value của mình
+0:11:33 - 0:11:38, Query, Key, Value
+0:11:38 - 0:11:44, Chúng ta làm sao mã hóa được cái chỉ số này và đưa vào bên trong cái vector của mình
+0:00:00 - 0:00:00, Giả sử là các cái chỉ số thứ tự i sẽ được mã hóa bằng một cái vector là p_i
+0:11:44 - 0:11:55, Giả sử là các cái chỉ số thứ tự i sẽ được mã hóa bằng một cái vector là p_i
+0:11:55 - 0:11:57, Và p_i này thì có d chiều
+0:11:57 - 0:12:05, và i của mình sẽ là các chỉ số chạy từ 1 cho đến t, với t là độ dài của cái câu hoặc là đoạn văn đầu vào của mình.
+0:12:05 - 0:12:17, Thì khi đó, các vector value, key và query mới của mình thì nó sẽ được tính là bằng V'_i = V_i + p_i.
+0:12:17 - 0:12:25, Tức là, chúng ta sẽ có sự tham gia của thông tin về mặt vị trí.
+0:12:25 - 0:12:28, V'_i chứa thông tin về mặt vị trí của mình
+0:12:28 - 0:12:36, V_i, K_i, Q_i chính là value, key và query cũ
+0:12:36 - 0:12:41, chưa chứa thông tin về mặt vector vị trí
+0:12:41 - 0:12:53, V_i, K_i, Q_i chính là vector biểu diễn cho từ cũ của mình
+0:12:53 - 0:13:06, và khi chúng ta cộng thêm cái p_i thì như vậy cái thông tin V'_i, K'_i và Q'_i của mình nó sẽ có được thông tin về vị trí
+0:13:06 - 0:13:19, Chúng ta có thể sử dụng phép cộng và hoàn toàn thực hiện phép Concatenate
+0:13:19 - 0:13:30, V'_i là phép cộng với vector biểu diễn của p_i
+0:13:30 - 0:13:32, nhưng chúng ta cũng có thể là nối
+0:13:33 - 0:13:36, vậy thì nếu chúng ta nối, thì điều gì sẽ xảy ra?
+0:13:38 - 0:13:41, đây là v_i
+0:13:41 - 0:13:42, và đây là p_i
+0:13:42 - 0:13:45, khi chúng ta nối, kích thước của vector sẽ lớn lên
+0:13:45 - 0:13:48, dẫn đến khối lượng tính toán của mình sẽ lớn
+0:13:48 - 0:13:51, do đó chúng ta sử dụng cái phép cộng
+0:13:51 - 0:13:54, để giảm phát sinh chi phí tính toán về sau
+0:13:54 - 0:14:04, Rồi, như vậy thì chúng ta đã có cái solution, đó là chúng ta làm sao có được cái vector biểu diễn
+0:14:04 - 0:14:10, thì ở đây nó sẽ có cái khái niệm đó là position embedding, hoặc là positional embedding
+0:14:10 - 0:14:14, Nó sẽ giúp cho chúng ta mã hóa cái vị trí bằng cái vector biểu diễn
+0:14:14 - 0:14:19, và mỗi một cái vị trí thì nó sẽ là một cái vector không trùng nhau
+0:14:19 - 0:14:29, Nếu các vector trùng nhau, nó sẽ bị nhập nhằng thông tin từ nào, ở vị trí nào
+0:14:29 - 0:14:35, Vector vị trí đảm bảo mỗi vị trí sẽ có một vector riêng không trùng
+0:14:35 - 0:14:41, Đây chính là positional embedding
+0:14:41 - 0:14:57, và bản chất chỉ là một cái vector về mặt vị trí, sau đó nó sẽ cộng với input embedding của mình.

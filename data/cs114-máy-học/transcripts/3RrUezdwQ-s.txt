@@ -1,0 +1,96 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:15 - 0:00:21, Cuối cùng là chúng ta sẽ cùng
+0:00:18 - 0:00:23, thử nghiệm sử dụng một cái phương pháp
+0:00:21 - 0:00:26, trực quan hóa
+0:00:23 - 0:00:28, nâng cao hơn so với lại cái phương pháp
+0:00:26 - 0:00:31, mà sử dụng PCA đó là chúng ta sử dụng
+0:00:28 - 0:00:33, phương pháp TSNI.
+0:00:31 - 0:00:39, Thì ở đây chúng ta sẽ tạo ra à một vip
+0:00:33 - 0:00:44, một cái prom đó là sử dụng à tsni
+0:00:39 - 0:00:44, để trực quan hóa
+0:00:45 - 0:00:50, các cái dữ liệu
+0:00:47 - 0:00:53, đã được
+0:00:50 - 0:00:53, phân cụm.
+0:01:12 - 0:01:15, Rồi
+0:01:16 - 0:01:23, đầu tiên đó là nó sẽ giảm TSCI từ 7 84
+0:01:21 - 0:01:26, chiều xuống còn hai chiều.
+0:01:23 - 0:01:29, Đó thì đây là cái code của mình và mình
+0:01:26 - 0:01:31, sẽ lấy mẫu ha. Tức là vì cái thuật toán
+0:01:29 - 0:01:33, này nó khá là phức tạp tính cái chi phí
+0:01:31 - 0:01:35, tính toán lớn. Do đó mình chỉ lấy trên
+0:01:33 - 0:01:38, một cái tập hợp con là khoảng 5000 mẫu
+0:01:35 - 0:01:42, thôi. Đó thì cái ảnh góc của mình sẽ lấy
+0:01:38 - 0:01:47, là 5000 mẫu. Rồi cái cụm của mình thì
+0:01:42 - 0:01:49, cũng sẽ ờ lấy trong khoảng 5000 mẫu này.
+0:01:47 - 0:01:52, Thì cái cluster này chính là những cái
+0:01:49 - 0:01:56, cụm mà chúng ta đã gom trong cái lần thử
+0:01:52 - 0:01:58, trước đây trên cái tập dữ liệu mà full
+0:01:56 - 0:02:01, 784 chiều chứ không phải là thử nghiệm
+0:01:58 - 0:02:05, trên hai chiều.
+0:02:01 - 0:02:08, Rồi sau đó khai báo khởi tạo là TSN2.
+0:02:05 - 0:02:14, Đó. Rồi sau đó chúng ta sẽ fit transform
+0:02:08 - 0:02:16, cái X subset này vào TSNI thì nó sẽ ra
+0:02:14 - 0:02:19, là cái X TSNI tức là đã giảm số chiều
+0:02:16 - 0:02:24, với thuộc toán TSNI. Rồi sau đó chúng ta
+0:02:19 - 0:02:27, sẽ ờ vẽ cái biểu đồ này ra.
+0:02:24 - 0:02:28, Đó thì chúng ta thấy là
+0:02:27 - 0:02:32, những cái điểm nào mà nó cùng một cái
+0:02:28 - 0:02:36, màu là nó sẽ cùng một cái cụm thì nó sẽ
+0:02:32 - 0:02:39, có cùng một cái màu.
+0:02:36 - 0:02:41, Đó color nè là nó sẽ là cái cluster của
+0:02:39 - 0:02:44, subset đó. thì nó sẽ là cùng một cái
+0:02:41 - 0:02:47, màu. Thế thì à rõ ràng chúng ta thấy về
+0:02:44 - 0:02:50, mặt không gian những cái điểm này à
+0:02:47 - 0:02:53, những cái điểm này là những cái điểm mà
+0:02:50 - 0:02:55, nó được tô cùng một cái màu thì rõ ràng
+0:02:53 - 0:02:57, là nó nằm ở gần nhau và đồng thời đó là
+0:02:55 - 0:02:59, nó sẽ cùng một cái cụm ở trong cái không
+0:02:57 - 0:03:00, gian góc.
+0:02:59 - 0:03:02, Khi chúng ta chiếu lên trên cái không
+0:03:00 - 0:03:04, gian hai chiều thì nó vẫn còn giữ cái
+0:03:02 - 0:03:07, tính chất đó là những cái điểm mà cùng
+0:03:04 - 0:03:10, một cụm thì nó sẽ nằm gần nhau. Đâu đó
+0:03:07 - 0:03:12, thì chúng ta thấy nó vẫn sẽ có những cái
+0:03:10 - 0:03:14, điểm mà nó bị lạc. Ví dụ như cái điểm
+0:03:12 - 0:03:17, màu tím ở đây, cái điểm nhỏ nhỏ ở đây
+0:03:14 - 0:03:19, thì nó là lẫn từ các điểm ở phía trên
+0:03:17 - 0:03:22, chiếu xuống. Thì rõ ràng là cái việc mà
+0:03:19 - 0:03:25, chúng ta giảm chiều dữ liệu từ không
+0:03:22 - 0:03:26, gian rất là lớn là 784
+0:03:25 - 0:03:29, chiều xuống không gian hai chiều thì
+0:03:26 - 0:03:33, cũng không thể nào mà đảm bảo tất cả các
+0:03:29 - 0:03:35, cái điểm của mình nó đều phải ờ đi vào
+0:03:33 - 0:03:37, đúng cái cụm của mình được đúng không?
+0:03:35 - 0:03:40, Nhưng mà nhìn chung là chúng ta thấy nó
+0:03:37 - 0:03:42, đã được gom những cái điểm xắp xỉ nhau
+0:03:40 - 0:03:44, về cùng một cái khu vực. Thì đâu đó
+0:03:42 - 0:03:46, chúng ta thấy là trong cái hình này thì
+0:03:44 - 0:03:49, có những cái khu vực là cái điểm của
+0:03:46 - 0:03:51, mình nó tách ra làm hai thì có thể là
+0:03:49 - 0:03:55, hai cái giá trị ở hai cái khu vực này là
+0:03:51 - 0:03:57, hai cái giá trị khác nhau.
+0:03:55 - 0:04:00, Rồi như vậy thì trong phần này chúng ta
+0:03:57 - 0:04:05, đã tiến hành à thử nghiệm với lại thuậc
+0:04:00 - 0:04:08, toán camin à gom nhóm và trực quan hóa
+0:04:05 - 0:04:11, trên cái không gian x chiều hơn đó là à
+0:04:08 - 0:04:13, thuậc toán tsni cũng như là PCI. Thì hy
+0:04:11 - 0:04:14, vọng rằng là trong những cái phần tiếp
+0:04:13 - 0:04:17, theo thì chúng ta có thể khai thác được
+0:04:14 - 0:04:19, hai cái mô hình học không có giám sát
+0:04:17 - 0:04:22, này một cách hiệu quả trong cái việc đó
+0:04:19 - 0:04:26, là gom nhóm dữ liệu. Đặc biệt đó là
+0:04:22 - 0:04:29, trong lĩnh vực về à xử lý dữ liệu lớn.
+0:04:26 - 0:04:31, cái việc mà dữ liệu gán nhãn là rất là
+0:04:29 - 0:04:33, chi phí tốn kém, rất là cao. Do đó, cái
+0:04:31 - 0:04:35, việc gom nhóm dữ liệu này nó sẽ giúp cho
+0:04:33 - 0:04:38, chúng ta xác định được cái phân bố của
+0:04:35 - 0:04:41, dữ liệu và đưa những cái dữ liệu mà có
+0:04:38 - 0:04:43, cùng tính chất về cùng một cái cách mà
+0:04:41 - 0:04:45, chúng ta sẽ xử lý với cái dữ liệu của
+0:04:43 - 0:04:47, cùng một nhóm. Như vậy rồi cái việc trực
+0:04:45 - 0:04:49, quan hóa dữ liệu sẽ giúp cho chúng ta
+0:04:47 - 0:04:51, thấy được là dữ liệu của mình nó có
+0:04:49 - 0:04:53, những cái tính chất giống nhau như thế
+0:04:51 - 0:04:57, nào, nó gần nhau như thế nào trong cái
+0:04:53 - 0:05:09, không gian đã giảm chiều. Đ
+0:04:57 - 0:05:09, [âm nhạc]

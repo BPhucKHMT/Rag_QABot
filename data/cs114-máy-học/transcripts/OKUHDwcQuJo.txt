@@ -1,0 +1,191 @@
+0:00:00 - 0:00:29, Chào mừng các bạn đến với môn CS114 học máy. Hôm nay chúng ta sẽ cùng đến với một mô hình máy học rất là nổi tiếng, phổ biến và mạnh mẽ trong những khoảng thời gian trước đây là thuộc tán Support Vetter Machine hay SVM.
+0:00:29 - 0:00:34, hay là SVM, thì Support Fatal Machine từ 2012 trở về trước
+0:00:34 - 0:00:36, trước khi Deep Learning trở nên nổi bật
+0:00:36 - 0:00:40, thì được sử dụng rất nhiều trong các nghiên cứu là vì ký tính
+0:00:41 - 0:00:46, mô hình của nó tìm ra được cái nghiệm toàn cục
+0:00:46 - 0:00:48, nó không phải là cái nghiệm cục bộ
+0:00:48 - 0:00:52, vì nó đưa về những lý thuyết toán mà trong đó việc giải
+0:00:52 - 0:00:56, và tìm ra được mô hình của mình sẽ là mô hình tốt nhất
+0:00:56 - 0:00:57, với giả định của mình
+0:00:57 - 0:01:08, Spore Vector Machine đã tạo nên 1 trào lưu trong giai đoạn từ năm 2000 cho đến năm 2012.
+0:01:08 - 0:01:22, Từ năm 2012 trở về sau Deep Learning đã tạo ra 1 sự thay đổi trong việc mô hình có thể vừa kết hợp giữa việc rút trích đặc trưng tốt
+0:01:22 - 0:01:26, mà đồng thời là có thể phân biệt được đặc trưng đó
+0:01:26 - 0:01:31, Còn trước năm 2012 thì các đặc trưng thường là Handcrafted Feature
+0:01:31 - 0:01:38, tức là những đặc trưng mà đã được rút trích đầy đủ và có nhiều thông tin quan trọng
+0:01:38 - 0:01:42, Thì Handcrafted Feature
+0:01:46 - 0:01:50, nó sẽ chỉ cần có một bộ máy phân lớp đủ tốt
+0:01:50 - 0:01:55, Svm luôn là lựa chọn cho bộ máy đó, cho thuật toán đó
+0:01:55 - 0:02:00, Svm sẽ kết hợp với 1 handcrafted feature đủ tốt
+0:02:00 - 0:02:04, thì nó sẽ cho 1 mô hình phân máy học rất là mạnh
+0:02:04 - 0:02:10, Vậy thì điều gì đã làm nên Svm trở nên phổ biến trong 1 giai đoạn như vậy
+0:02:10 - 0:02:15, Cho đến thời điểm hiện nay Svm còn được sử dụng nhiều hay không
+0:02:15 - 0:02:19, thì chúng ta sẽ cùng trả lời trong những phần tiếp theo của bài học này
+0:02:19 - 0:02:22, Đầu tiên đó là giới thiệu về SVM
+0:02:22 - 0:02:26, SVM là một thuật toán học có giám sát
+0:02:26 - 0:02:29, và được sử dụng cho bài toán phân loại nhị phân
+0:02:29 - 0:02:33, tức là chúng ta sẽ phân chia tập dữ liệu mình ra làm 2 phần
+0:02:33 - 0:02:36, ví dụ như là 0 hoặc là 1
+0:02:36 - 0:02:39, ý tưởng chính của nó là chúng ta sẽ tìm ra 1 siêu phẳng
+0:02:39 - 0:02:44, trong trường hợp này đường màu đen này chính là 1 siêu phẳng
+0:02:44 - 0:02:52, Thì cái khái niệm siêu phẳng đó là gì thì chúng ta sẽ cùng đến trong những slide tiếp theo
+0:02:52 - 0:02:56, Và cái siêu phẳng này nó sẽ phân tách dữ liệu của mình ra thành các lớp
+0:02:56 - 0:03:08, Svm có rất nhiều ứng dụng trong thực tế trong những khoảng thời gian trước đây
+0:03:08 - 0:03:15, và thậm chí bây giờ nếu như cái đặc trưng của mình được sử dụng để phân loại mà đủ tốt thì SVM vẫn tỏ ra rất là hiệu quả
+0:03:15 - 0:03:20, một số cái tình huống sử dụng thuật toán SVM, ví dụ như là trong bài toán phân loại văn bản
+0:03:20 - 0:03:28, lọc email là spam hay không phải là spam, có hại hay không có hại
+0:03:28 - 0:03:34, phân loại xem cái chủ đề tin tức của cái tài liệu của mình là thuộc về chủ đề nào
+0:03:34 - 0:03:40, Ví dụ như thuộc chủ đề về chính trị, văn hóa, xã hội, khoa học, v.v.
+0:03:40 - 0:03:44, Rồi những diện chữ viết tay, phân loại chó mèo, v.v.
+0:03:44 - 0:03:51, Thì đây là những ứng dụng của thuật toán SVM khi mà chúng ta đã có được những đặc trưng đủ tốt.
+0:03:52 - 0:03:57, Và ở đây chúng ta sẽ đến với những khái niệm cơ bản trong thuật toán SVM.
+0:03:57 - 0:03:59, Đầu tiên đó chính là cái khái niệm siêu phẳng.
+0:03:59 - 0:04:08, thì đây là một cái không gian con có nhiều, có số chiều nhỏ hơn 1 so với lại không gian đặc trưng chứa dữ liệu
+0:04:08 - 0:04:16, ví dụ như trong không gian đặc trưng của mình là có 2D là không gian 2 chiều
+0:04:18 - 0:04:25, thì siêu phẳng của mình lúc này nó sẽ là một cái đường thẳng tại vì nó chỉ có 1 chiều là một cái đường thẳng
+0:04:25 - 0:04:34, và không gian của mình nếu là không gian 3 chiều, thì siêu phẳng của chúng ta lúc này sẽ là một cái mặt phẳng
+0:04:34 - 0:04:43, và tổng quát lên trong không gian mà n chiều thì siêu phẳng của mình sẽ có n trừ 1 chiều
+0:04:43 - 0:04:56, Mục tiêu của SVM là tìm ra một siêu phẳng tối ưu sau cho khoảng cách từ siêu phẳng đến điểm gần nhất của hai lớp dữ liệu
+0:04:56 - 0:05:07, Biên của mình là lớn nhất, tức là khoảng cách từ siêu phẳng đến điểm gần nhất là lớn nhất
+0:05:07 - 0:05:15, Chí tiết chúng ta sẽ được tìm hiểu trong những slide tiếp theo
+0:05:15 - 0:05:24, Khái niệm tiếp theo trong SVM chính là khái niệm về lề, là khoảng lề hay là margin
+0:05:24 - 0:05:32, là cái khoảng cách giữa siêu phẳng phân tách các điểm dữ liệu gần nhất thuộc 2 lớp
+0:05:32 - 0:05:37, Lấy ví dụ như ở đây chúng ta có một cái siêu phẳng tối ưu là cái đường ở đó giữa
+0:05:37 - 0:05:40, thì cái khoảng cách giữa cái điểm gần nhất
+0:05:40 - 0:05:44, đây là hai cái điểm gần nhất đối với cái siêu phẳng này
+0:05:44 - 0:05:46, đây là cái điểm gần nhất đối với cái siêu phẳng này
+0:05:46 - 0:05:49, thì khoảng cách từ cái lề bên trái sang cái lề bên phải
+0:05:49 - 0:05:51, nó chính là cái margin
+0:05:51 - 0:05:58, và mục tiêu của SVM đó là làm sao để có thể tìm được cái margin này là lớn nhất
+0:05:58 - 0:06:00, Tại sao margin lớn nhất?
+0:06:00 - 0:06:03, Chúng ta sẽ cùng tìm hiểu trong phần tiếp theo
+0:06:03 - 0:06:08, Nhưng mà cái lý do, một cách ngắn gọn đó là khi margin lớn thì mô hình của mình
+0:06:08 - 0:06:12, nó sẽ có khả năng tổng quát hóa cao hay là kính generalization
+0:06:12 - 0:06:18, Và kính tổng quát hóa cao này sẽ giúp chúng ta giảm nguy cơ bị hiện tượng
+0:06:18 - 0:06:21, đó là quá khớp dữ liệu hay gọi là overfitting
+0:06:23 - 0:06:27, Rồi, chúng ta sẽ cùng đến với cái khái niệm nữa cũng rất quan trọng
+0:06:27 - 0:06:30, đó chính là Support Vector, tức là những Vector Hỗ trợ
+0:06:30 - 0:06:32, thì đây là những điểm dữ liệu
+0:06:32 - 0:06:33, đây là những điểm dữ liệu
+0:06:33 - 0:06:34, mà nó nằm gần
+0:06:35 - 0:06:37, nó nằm gần cái siêu phẳng phân tách
+0:06:37 - 0:06:39, ví dụ như ở đây là cái siêu phẳng để phân tách
+0:06:39 - 0:06:43, thì các điểm mà nằm gần cái siêu phẳng này
+0:06:43 - 0:06:45, đó chính là những điểm này
+0:06:48 - 0:06:50, thì đây là những cái điểm Support Vector
+0:06:51 - 0:06:52, hay là những Vector Hỗ trợ
+0:06:52 - 0:06:55, tại sao được gọi nó là những Vector Hỗ trợ?
+0:06:55 - 0:07:03, tại vì những cái điểm này nó sẽ có cái vai trò rất là quan trọng trong việc là ảnh hưởng trực tiếp đến cái mô hình của mình
+0:07:04 - 0:07:12, nếu như cái điểm này mà dịch chuyển đi lên hoặc đi xuống thì nó sẽ khiến cho cái việc là cập nhật lại cái Decision Barrier tức là cái siêu phẳng này
+0:07:12 - 0:07:14, dịch chuyển theo
+0:07:14 - 0:07:18, còn những cái điểm mà không phải là Support Vector ví dụ như những cái điểm ở bên ngoài như thế này
+0:07:19 - 0:07:24, thì cho dù nó có dịch chuyển lên xuống, dịch chuyển đi đâu trong cái không gian này đi chăng nữa
+0:07:24 - 0:07:27, thì nó cũng không ảnh hưởng đến cái siêu phẳng này
+0:07:27 - 0:07:32, còn những cái điểm mà nằm ở sát với lại cái Battery này
+0:07:32 - 0:07:33, đó là 3 cái điểm này
+0:07:33 - 0:07:35, thì chỉ cần nó dịch chuyển vào trong
+0:07:35 - 0:07:37, hoặc là nó đi ra ngoài
+0:07:37 - 0:07:39, thì lập tức là cái đường bao này cũng sẽ được cập nhật theo
+0:07:39 - 0:07:43, do đó cái vai trò của những cái Support Factor, những cái điểm dữ liệu hỗ trợ
+0:07:43 - 0:07:45, những cái Factor hỗ trợ rất là quan trọng
+0:07:45 - 0:07:53, và đó chính là cái lý do tại sao chúng ta có cái tên đó là Support Factor Machine
+0:07:53 - 0:07:57, tức là cái máy mà được tạo bởi các cái vector support
+0:07:58 - 0:08:03, Thế thì chúng ta sẽ cùng minh họa cả 3 cái khái niệm mà chúng ta đã nói
+0:08:03 - 0:08:05, ở trên trong cùng một cái tấm hình
+0:08:05 - 0:08:07, thì cái siêu phẳng phân lớp
+0:08:08 - 0:08:10, siêu phẳng phân lớp chính là cái đường ở giữa ở đây
+0:08:11 - 0:08:12, và margin
+0:08:12 - 0:08:16, margin chính là cái khoảng cách từ cái biên trái sang cái biên phải
+0:08:16 - 0:08:23, trong đó biên trái sẽ là những cái biên gần nhất mà cái siêu phẳng nó chạm vào cái điểm màu đỏ
+0:08:23 - 0:08:31, Bên phải là siêu phẳng gần nhất xong xong với siêu phẳng phần lớp ở đây
+0:08:31 - 0:08:34, và nó chạm vào những điểm màu xanh
+0:08:34 - 0:08:39, thì khoảng cách từ biên trái sang biên phải sẽ gọi là margin
+0:08:39 - 0:08:47, và các điểm nằm trên các biên trái và biên phải này là support vector
+0:08:47 - 0:08:53, thì đây là hình ảnh để minh họa cho cả 3 khái niệm mà chúng ta đã nói ở trên
+0:08:54 - 0:09:00, thế thì đối với dữ liệu, chúng ta sẽ xem xét một tình huống đơn giản trước
+0:09:00 - 0:09:04, đó là dữ liệu của mình, nó có một mối quan hệ tuyến tính hay là Linear Data
+0:09:04 - 0:09:10, thì đây là dữ liệu có thể phân tách được bởi 1 siêu phẳng
+0:09:10 - 0:09:13, thì chúng ta nhìn cái hình này chúng ta thấy một cách trực quan
+0:09:13 - 0:09:18, thì chúng ta thấy là có thể phân chia được ra làm 2 phần bằng 1 đường thẳng
+0:09:18 - 0:09:24, thì phân lớp SVM trong dữ liệu tiến tính cho tập dữ liệu gồm 2 lớp
+0:09:24 - 0:09:30, ví dụ như ở đây chúng ta có 2 điểm dữ liệu là màu xanh và màu đỏ
+0:09:30 - 0:09:41, thì thuật toán phân lớp SVM trong dữ liệu tiến tính này là nó sẽ đi tìm 1 siêu phẳng để có thể tắt nó ra làm 2
+0:09:41 - 0:09:46, tức là chúng ta sẽ phải đi tối ưu để làm sao tìm ra được một cái đường phân lớp ra làm hai phần
+0:09:46 - 0:09:50, một cái mặt phẳng, một cái siêu phẳng để phân cái tập điểm này ra làm hai phần
+0:09:50 - 0:09:55, thế thì ở đây chúng ta sẽ có một số cái ý tưởng trong cái việc là
+0:09:55 - 0:09:58, chọn cái đường để có thể phân tách ra làm hai
+0:09:58 - 0:10:00, thì chúng ta sẽ có cái giải pháp A
+0:10:00 - 0:10:08, cái giải pháp A này là một cái giải pháp mà chúng ta có thể dễ dàng thấy được rằng là nó có thể tắt
+0:10:08 - 0:10:11, tập điểm màu xanh và màu đỏ ra làm 2
+0:10:11 - 0:10:12, một cách dễ dàng
+0:10:12 - 0:10:16, và với cái giải pháp này
+0:10:16 - 0:10:19, thì chúng ta thấy là nó hoàn toàn có thể chia ra
+0:10:19 - 0:10:23, rất là tốt, có thể phân loại các điểm màu đỏ và màu xanh rất là tốt
+0:10:23 - 0:10:27, tuy nhiên, cái việc kết luận một cái giải pháp là tốt hay xấu
+0:10:27 - 0:10:29, thì sự khác biệt nó sẽ nằm
+0:10:29 - 0:10:32, sự khác biệt của nó là nó nằm ở cái mẫu dư liệu mới
+0:10:32 - 0:10:35, chứ nó không phải nằm trên những mẫu dư liệu cũ
+0:10:35 - 0:10:42, Tại vì nó sẽ kiểm tra xem cái giải pháp của chúng ta nó có tính tổng bác hay không, ổn định hay không
+0:10:42 - 0:10:46, Thì bây giờ chúng ta sẽ có một cái mẫu dữ liệu mới, đây là cái điểm dữ liệu mới
+0:10:48 - 0:10:54, Vậy thì cái điểm dữ liệu mới này với cái giải pháp A thì nó sẽ phân vào cái lớp nào
+0:10:54 - 0:10:59, Thì với giải pháp A nó sẽ xếp cái dữ liệu này là màu đỏ tại vì nó nằm cùng phía
+0:10:59 - 0:11:03, Nó nằm về cùng một phía với các điểm màu dừa đỏ trong cái tập dữ liệu Trend
+0:11:03 - 0:11:09, Đây chính là các tập dữ liệu huấn luyện và đây là mẫu dữ liệu mới
+0:11:09 - 0:11:17, Bây giờ chúng ta sẽ cùng xem xét đến một giải pháp tiếp theo, đó là giải pháp B như thế này
+0:11:17 - 0:11:24, Và chúng ta cũng dễ dàng thấy là cái giải pháp B cũng giúp cho chúng ta chia hai tập màu xanh và màu đỏ ra làm 2 phần
+0:11:24 - 0:11:30, Và cũng với cái mẫu dữ liệu mới mà chúng ta đã đề cập trong những slide trước là cái điểm này
+0:11:30 - 0:11:40, trong quan điểm của dạy pháp B, dữ liệu mới này sẽ được phân ra là màu xanh
+0:11:40 - 0:11:45, tại vì nó sẽ nằm về cùng phía với tập điểm màu xanh ở bên này
+0:11:45 - 0:11:52, Vậy thì giữa 2 dạy pháp A và B, chúng ta đặt 2 dạy pháp A và B nằm chung với nhau
+0:11:52 - 0:11:56, chúng ta sẽ thấy 2 dạy pháp này dạy pháp nào là hiệu quả hơn
+0:11:56 - 0:12:00, Đó là 2 giải pháp A và B
+0:12:00 - 0:12:02, Giải pháp nào hiệu quả hơn
+0:12:02 - 0:12:08, Nó sẽ dựa trên việc phân loại điểm diễn điệu mới của mình có hiệu quả hay không
+0:12:08 - 0:12:19, Bằng một cách trực quan và trực giác, chúng ta thấy là điểm mới này nằm gần phía sau những điểm màu đỏ hơn
+0:12:19 - 0:12:22, Nằm gần phía sau những điểm màu đỏ hơn
+0:12:22 - 0:12:26, do đó thì một cách trực quan và trực giác
+0:12:26 - 0:12:30, thì cái điểm này lẽ ra nó nên là điểm màu đỏ
+0:12:30 - 0:12:33, lẽ ra nó nên là cái điểm màu đỏ
+0:12:33 - 0:12:35, thì nó sẽ phù hợp hơn
+0:12:35 - 0:12:37, tại vì nó nằm về gần với lại các điểm này
+0:12:37 - 0:12:39, thì rõ ràng giữa 2 cái giải pháp A và B
+0:12:39 - 0:12:41, chúng ta thấy giải pháp A
+0:12:41 - 0:12:44, nó giúp cho chúng ta phân loại cái điểm này thành cái điểm màu đỏ
+0:12:44 - 0:12:47, do đó một cách trực quan, một cách trực giác
+0:12:47 - 0:12:50, thì giải pháp A là một cái giải pháp tốt
+0:12:50 - 0:12:54, và b là giải pháp không tốt
+0:12:58 - 0:13:08, Vậy thì tiêu chí nào để giúp chúng ta chọn lựa được đường phân tách tốt hơn so với giải pháp còn lại
+0:13:08 - 0:13:12, thì ở đây chúng ta sẽ sử dụng khái niệm Margin là đường biên
+0:13:12 - 0:13:17, Thế thì chúng ta sẽ cùng xem xét lại khái niệm Margin trong giải pháp a này
+0:13:17 - 0:13:24, đối với giải pháp A này thì margin của chúng ta sẽ là từ binh là trái sang binh là phải
+0:13:24 - 0:13:27, giống như trên hình đây thì tại sao cái này là binh?
+0:13:27 - 0:13:32, tại vì chúng ta thấy từ giải pháp A tức là đường hyperplane A này
+0:13:32 - 0:13:39, chúng ta nới ra 2 bên và khi chúng ta chạm đến 1 điểm dữ liệu đầu tiên thì đó chính là binh
+0:13:39 - 0:13:43, và ở đây nó chạm đến điểm màu đỏ này đầu tiên
+0:13:43 - 0:13:51, đối xứng đối hình với đường đường này là bên phải và đối xứng bên tương ứng là bên trái
+0:13:51 - 0:13:56, đối xứng qua lại là margin của giải pháp A
+0:13:56 - 0:14:01, là khoảng cách màu xanh này
+0:14:01 - 0:14:05, chúng ta sẽ cùng xem xét giải pháp B
+0:14:05 - 0:14:12, chúng ta sẽ đi xong xong, tỉnh tiến xong xong siêu phản này về 2 phía
+0:14:12 - 0:14:17, khi nó chạm đến điểm du lịch đầu tiên
+0:14:17 - 0:14:24, đó chính là một cái bia của dạ pháp B
+0:14:24 - 0:14:29, lấy đối xứng qua, chúng ta sẽ tính được khoảng cách màu xanh lá này
+0:14:29 - 0:14:32, rõ ràng chúng ta thấy khoảng cách xanh lá này rất là bé
+0:14:32 - 0:14:37, tức là cái bia này rất là nhỏ, rất là hẹp
+0:14:37 - 0:14:46, Vậy thì đối chiếu giữa 2 giải pháp A và giải pháp B thì chúng ta thấy giải pháp A cho biên lớn hơn giải pháp B
+0:14:46 - 0:14:55, Như vậy, hồi nãy chúng ta đã kết luận rằng A tốt hơn B thì tương ứng biên của nó cũng sẽ lớn hơn sau với B
+0:14:55 - 0:15:03, Như vậy, một cách tổn quát là làm sao chúng ta có thể tìm được một đường phân tách để cho nó có margin lớn nhất
+0:15:03 - 0:15:12, Đây là một ví dụ cho tình huống tối ưu nhất của mình
+0:15:16 - 0:15:19, Khi đó, cái bin của mình là cực đại
+0:15:20 - 0:15:25, Và các điểm mà chúng ta vừa tiếp xúc đến hai lề trái và lề phải
+0:15:25 - 0:15:27, nó chính là các support vector
+0:15:27 - 0:15:30, mà chúng ta đã đề cập trong những slide trước
+0:15:30 - 0:15:36, thì chúng ta để 2 giải pháp A và B khi chúng ta nới ra
+0:15:36 - 0:15:43, khi nó chạm đến điểm đầu tiên thì hình như nó chỉ chạm về 1 phía là hoặc màu đỏ hoặc là màu xanh
+0:15:43 - 0:15:46, ví dụ như trong tình huống này nó đã chạm đến điểm màu đỏ trước
+0:15:46 - 0:15:52, còn lề trái nó không chạm đến điểm màu xanh
+0:15:52 - 0:15:56, Tức là nó chưa thật sự tối ưu
+0:15:56 - 0:16:03, Còn cái đường phân tách tối ưu của mình đó là khi chúng ta nới ra hai bên
+0:16:03 - 0:16:08, Thì nó vừa chạm được đến cái điểm màu đỏ thì đồng thời nó cũng sẽ chạm được đến cái điểm màu xanh
+0:16:08 - 0:16:10, Nó chạm đến cái điểm này
+0:16:10 - 0:16:13, Thì nó cũng đồng thời nó sẽ chạm được đến các cái điểm này
+0:16:13 - 0:16:23, Đây là một cái mẹo để cho chúng ta biết là đường phân tác đã tối ưu hay chưa

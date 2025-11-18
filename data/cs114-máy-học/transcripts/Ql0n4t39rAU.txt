@@ -1,0 +1,116 @@
+0:00:00 - 0:00:23, Chủ đề tập trung vào môn học CS114, học mấy, tăng cường, reinforcement learning.
+0:00:23 - 0:00:33, Chúng ta sẽ so sánh học tăng cường với một số lĩnh vực học khác trong máy học
+0:00:33 - 0:00:36, Đầu tiên đó là học có giám sát
+0:00:36 - 0:00:40, Học tăng cường sẽ khác với học có giám sát
+0:00:40 - 0:00:50, Đối với học có giám sát, dữ liệu để chúng ta hướng luyện sẽ bao gồm dữ liệu đồ vào x và nhãn tương ứng y
+0:00:50 - 0:00:55, dữ liệu đồ vào này có thể hình ảnh video, văn bảng, hoặc là âm thanh
+0:00:55 - 0:01:01, Mục tiêu của học có giám sát là chúng ta sẽ học hoặc là ước lượng
+0:01:01 - 0:01:07, để tìm ra được 1 hàm ảnh xạ F từ x đến y
+0:01:07 - 0:01:16, Sau cho việc dự đoán Fx là xóc xỉ với y, Fx chính là ra trị dự đoán
+0:01:16 - 0:01:21, Còn y chính là giá trị thực tế
+0:01:24 - 0:01:30, Mục tiêu của học có giám sát là đi tìm hoặc ướp lượng hàm F này
+0:01:30 - 0:01:40, Một số ví dụ liên quan đến học có giám sát là chúng ta phân lớp dữ liệu đồ vào hoặc bài toán dự đoán giá trị liên tục, bài toán hồi quy
+0:01:40 - 0:01:43, phát hiện đối tượng, phân loại đối tượng, nhận diện dọng nói
+0:01:43 - 0:01:49, trong hình ở trên đây là một số ví dụ về học có giám sát
+0:01:49 - 0:01:51, đầu vào là tấm ảnh
+0:01:51 - 0:01:53, và đầu ra y của chúng ta
+0:01:53 - 0:01:56, nếu như y của chúng ta là nhãn của đối tượng
+0:01:56 - 0:01:58, ví dụ đây là bear, tức là gấu
+0:01:58 - 0:02:01, thì đây là bài toán phân loại đối tượng
+0:02:01 - 0:02:09, nhưng nếu y của chúng ta là mask cho biết có những đối tượng nằm ở vị trí nào
+0:02:09 - 0:02:13, Vị trí nào thì đây là bài toán phân đoạn đối tượng
+0:02:13 - 0:02:16, Còn nếu như chúng ta chỉ cần cái Y của chúng ta
+0:02:16 - 0:02:21, mà là cái Bounding Box kèm theo cái tên của đối tượng đó là gì
+0:02:21 - 0:02:23, thì đó là bài toán phát hiện đối tượng
+0:02:23 - 0:02:26, thì tùy vào cái Y của mình nó là cái gì
+0:02:26 - 0:02:29, thì chúng ta sẽ có cái loại bài toán tương ứng
+0:02:29 - 0:02:33, trong tương quan với học không có giám sát
+0:02:33 - 0:02:37, thì đối với mô hình học không có giám sát
+0:02:37 - 0:02:44, thì dữ liệu đầu vào chỉ có dữ liệu x đầu vào thôi và chúng ta sẽ không có nhãn
+0:02:44 - 0:02:47, tức là chúng ta sẽ không có y
+0:02:47 - 0:02:52, và mục tiêu của mình đó là sẽ khám phá cấu trúc ẩn bên trong dữ liệu
+0:02:52 - 0:02:54, tìm cách biểu diễn mới
+0:02:54 - 0:03:00, hoặc là dựa trên phân bố của dữ liệu mình có thể gom cộng các dữ liệu vậy với nhau
+0:03:00 - 0:03:04, ví dụ như ở đây chúng ta có dữ kiện đầu vào
+0:03:04 - 0:03:06, là các điểm của mình không có nhãn
+0:03:06 - 0:03:10, nhưng sau khi thực hiện xong, chúng ta quan sát và gom nhóm được
+0:03:10 - 0:03:12, thì chúng ta sẽ chia ra làm 3 cầm như thế này
+0:03:12 - 0:03:14, nó sẽ dựa trên phân bố của dữ liệu
+0:03:14 - 0:03:21, và ví dụ của thập không có giám sát về các thể loại bài toán
+0:03:21 - 0:03:24, đó là bài toán phân cầm, ví dụ như đây
+0:03:24 - 0:03:26, hoặc là bài toán giảm chiều dữ liệu, ví dụ như đây
+0:03:26 - 0:03:32, dựa trên phân bố của dữ liệu này thì chúng ta có thể chia tắt nó ra
+0:03:32 - 0:03:34, chiếu nó xuống một cái không gian
+0:03:34 - 0:03:39, và khi đó thì dữ liệu của mình nó giảm từ ví dụ như là 3 chiều
+0:03:39 - 0:03:41, giảm xuống chỉ còn 1 chiều
+0:03:41 - 0:03:44, nó đã giúp cho chúng ta tiết kiệm cái không gian lưu trữ
+0:03:44 - 0:03:50, thì đây là 2 cái thể loại bài toán phổ biến nhất trong những vật về học không có giám sát
+0:03:50 - 0:03:56, và đối với cái khái niệm mà chúng ta sẽ tìm hiểu ngày hôm nay đó chính là học tăng cường
+0:03:56 - 0:04:04, thì học tăng cường là chúng ta sẽ có các cái dữ liệu có liên quan đến cái thể loại học này
+0:04:04 - 0:04:08, đó chính là bao gồm trạng thái là S hay còn gọi là viết tắc là Stay
+0:04:10 - 0:04:13, Action là hành động là viết tắc của chữ Action
+0:04:15 - 0:04:16, là A
+0:04:16 - 0:04:18, Phần thưởng là Reward
+0:04:21 - 0:04:22, là viết tắc là chữ R
+0:04:22 - 0:04:25, thế thì trạng thái là cái thông tin môi trường
+0:04:25 - 0:04:27, ở một cái thời điểm
+0:04:27 - 0:04:32, ví dụ như tại một cái thời điểm đó thì chúng ta sẽ biết được cái môi trường nó đang có cái trạng thái như thế nào
+0:04:32 - 0:04:37, Ví dụ như là trạng thái này thì nó có thể ở dạng hình ảnh, có thể là ở dạng vị trí
+0:04:37 - 0:04:44, hoặc là có thể là cái thông tin cảm biến mà chúng ta thu thập được từ các cái cảm biến đem về
+0:04:44 - 0:04:49, Còn hành động tức Action là tập hợp các cái hành động mà Agent
+0:04:49 - 0:04:54, mà một cái tác nhân của cái học tăng cường nó có thể chọn lựa để thực hiện
+0:04:54 - 0:05:00, tức là tại một cái trạng thái chúng ta có thể đưa ra cái Action như thế nào
+0:05:00 - 0:05:05, Phần thưởng là tín hiệu phản hồi từ môi trường sau khi thực hiện hành động
+0:05:05 - 0:05:08, sau khi thực hiện hành động đó thì chúng ta sẽ nhận được cái gì
+0:05:08 - 0:05:16, Mục tiêu của học tăng cường là học chính sách hay policy
+0:05:16 - 0:05:22, nó từ không gian trạng thái sang action
+0:05:22 - 0:05:28, tức là với đầu vào là một trạng thái thì cho biết action tiếp theo chúng ta làm là gì
+0:05:28 - 0:05:31, thì cái này nó gọi là policy là hàm p
+0:05:31 - 0:05:36, và sao cho cái tổng phần thưởng kỳ vọng trong dài hạn là lớn nhất
+0:05:36 - 0:05:41, lưu ý ở đây là cái kỳ vọng, cái phần thưởng kỳ vọng trong dài hạn
+0:05:41 - 0:05:45, nó không phải dựa trên cái yếu tố ngắn hạn mà nó phải dựa trên cái dài hạn
+0:05:45 - 0:05:48, và cái kỳ vọng đó là lớn nhất
+0:05:48 - 0:05:53, ví dụ như chúng ta chơi game cờ vây, cờ bua hoặc là Atari
+0:05:53 - 0:05:56, thì đây là những cái bài toán trong game
+0:05:56 - 0:06:01, điều khiển robot, xe tự hành, v.v.
+0:06:01 - 0:06:08, Đây là một số thể loại bài toán sử dụng hợp tăng cường
+0:06:08 - 0:06:11, Ví dụ ở trên sơ đồ bên đây, chúng ta thấy chơi game
+0:06:11 - 0:06:15, thì trạng thái của mình sẽ là vị trí
+0:06:15 - 0:06:18, tại các ô chúng ta đang đặt những quân cờ nào
+0:06:18 - 0:06:22, rồi action của chúng ta, chúng ta sẽ đi quân cờ nào tiếp theo
+0:06:22 - 0:06:28, và phần thưởng cho chúng ta sẽ là cái phản hồi từ cái môi trường
+0:06:28 - 0:06:29, đó là cái phần thưởng mà chúng ta đạt được
+0:06:29 - 0:06:32, nếu chúng ta đi với cái hành động đó là gì
+0:06:32 - 0:06:35, thì đây là cái game cầu vua
+0:06:35 - 0:06:43, trong điều khiển robot thì chúng ta sẽ cho biết là cái hành động của các con robot nó sẽ phải làm gì tiếp theo
+0:06:43 - 0:06:45, để mà có thể đạt được cái mục tiêu của mình
+0:06:45 - 0:06:47, ví dụ như trong cái ví dụ ở đây chúng ta thấy là
+0:06:47 - 0:06:51, chúng ta sẽ phải điều khiển các cái hoạt động của cái cánh tay robot
+0:06:51 - 0:07:00, để sao cho phần thưởng có thể nhất được quả bóng đi lên và đặt đến một vị trí khác cho trước
+0:07:01 - 0:07:04, Trong xe tự hành thì cũng như vậy
+0:07:04 - 0:07:08, tức là chúng ta sẽ có các trạng thái điều kiện xe
+0:07:08 - 0:07:13, các action là chúng ta sẽ đánh vô lăng về tay trái, tay phải với góc là bao nhiêu
+0:07:13 - 0:07:23, đạp thắng hay không, để chúng ta có thể đạt được mục tiêu, phần thưởng đếm đích đến an toàn nhất và nhanh nhất
+0:07:23 - 0:07:27, và vì sao chúng ta cần phải có hợp tâm tăng cường?
+0:07:27 - 0:07:34, là vì chúng ta sẽ lấy một ví dụ đó là con người của chúng ta trong quá trình con người học
+0:07:34 - 0:07:37, thì nó sẽ dùng cơ chế đó là thử và sai
+0:07:37 - 0:07:40, và bằng cách đó là tương tác với môi trường
+0:07:40 - 0:07:46, Ví dụ như ngay khi chúng ta còn nhỏ, chúng ta đã thử sai trong công việc liên quan đến tập đi
+0:07:46 - 0:07:50, Chúng ta thử những bước chân đầu tiên và đi chúng ta bị té
+0:07:50 - 0:07:58, Từ đó nó sẽ dạy cho bộ não chúng ta cách thức để chúng ta có thể giữ thăng bằng
+0:07:58 - 0:08:05, Cách thức để chúng ta có thể di chuyển làm sao đó không bị té hoặc đi nhanh mà đạt được đến đích đến
+0:08:05 - 0:08:11, và đó là cơ chế của con người, một cách tự nhiên của con người, đó là tương tác với môi trường
+0:08:11 - 0:08:13, thông qua cơ chế thử và sai
+0:08:13 - 0:08:21, và không chỉ ghi dữ liệu mà chúng ta còn có ra các quyết định và nhận phản hồi
+0:08:21 - 0:08:28, không chỉ là ghi nhớ dữ liệu, mà chúng ta phải đưa ra các quyết định và nhận phản hồi từ môi trường
+0:08:28 - 0:08:34, ví dụ như nếu chúng ta thực thi hành động đó, thì môi trường sẽ phản hồi lại như thế nào
+0:08:34 - 0:08:43, Ví dụ khi chúng ta bước vào một khu vực bị thấp xuống, bị trũng xuống thì có thể chúng ta sẽ bị mất thăng bằng
+0:08:43 - 0:08:47, thì phản hồi của môi trường sẽ làm cho chúng ta mất thăng bằng
+0:08:47 - 0:08:57, Đó là một vài ví dụ để minh họa cho cách thức học tăng cường đã bắt trước hoạt động học tập của con người chúng ta như thế nào
+0:08:57 - 0:09:03, Và AI cần cơ chế tương tự như vậy để có thể thích ứng với môi trường khi môi trường của mình nó thay đổi
+0:09:03 - 0:09:10, lưu ý là trong học tăng cường thì mọi thứ nó đều có tính thay đổi và môi trường của mình cũng như vậy
+0:09:10 - 0:09:13, rồi tự khám phá các chiến lược mới
+0:09:13 - 0:09:19, chúng ta sẽ có rất nhiều những lần thử và sai và ứng bắt chích những lần thử và sai chúng ta nhận được phản hồi
+0:09:19 - 0:09:24, nhận được cái reward từ môi trường thì từ đó chúng ta sẽ đúc kết được các kinh nghiệm
+0:09:24 - 0:09:29, và trong những lần tiếp theo chúng ta sẽ thay đổi chiến thuật cho nó phù hợp nhất
+0:09:33 - 0:09:41, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

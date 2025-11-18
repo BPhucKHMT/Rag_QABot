@@ -1,0 +1,86 @@
+0:00:00 - 0:00:08, Chủ đề này đưa ra thêm một số điểm yếu của kiến trúc Transformer.
+0:00:08 - 0:00:22, Chủ đề này đưa ra thêm một số điểm yếu của kiến trúc Transformer.
+0:00:22 - 0:00:26, tại vì ở đây chúng ta thấy là cái thao tác self-attention của mình
+0:00:26 - 0:00:30, nó sẽ phải đi thực hiện trên tất cả các cái cặp.
+0:00:30 - 0:00:36, Ví dụ cái chuỗi này mà càng dài, chuỗi này là có T.
+0:00:36 - 0:00:38, Đây là 1, 2, 3.
+0:00:38 - 0:00:42, Thì trong cái bước tiếp theo, chúng ta sẽ phải đi tính
+0:00:42 - 0:00:48, tất cả các cái tính attention trên tất cả các cái từ của mình.
+0:00:48 - 0:00:51, Và chúng ta sẽ phải thực hiện cái việc này
+0:00:51 - 0:00:54, trên tất cả các cái cặp.
+0:00:58 - 0:01:01, Vậy như vậy chi phí của mình sẽ là O(T bình phương).
+0:01:01 - 0:01:07, Chưa kể là chúng ta sẽ phải có thêm cái D là số chiều vector này của mình.
+0:01:08 - 0:01:13, Thì đây chính là cái điểm yếu đầu tiên là chi phí tính toán.
+0:01:13 - 0:01:18, Nó sẽ thay đổi theo cái độ dài của cái chuỗi của mình.
+0:01:18 - 0:01:23, Do phải tính trên tất cả các cặp tương tác của self-attention.
+0:01:23 - 0:01:26, Và vấn đề tiếp theo, đó là vấn đề về biểu diễn vị trí.
+0:01:26 - 0:01:31, Trong positional embedding, chúng ta đã từng nhận xét
+0:01:31 - 0:01:36, đó là vị trí tuyệt đối sẽ không quan trọng.
+0:01:36 - 0:01:38, Vị trí tuyệt đối không quan trọng.
+0:01:38 - 0:01:43, Mà đôi khi vị trí tương đối trong self-attention là quan trọng.
+0:01:43 - 0:01:44, Vị trí tương đối là gì?
+0:01:44 - 0:01:51, Là vị trí giữa một cái từ thứ T với lại những cái từ xung quanh đó
+0:01:51 - 0:02:00, đó là từ thứ T trừ 1, T trừ 2, rồi T cộng 1, T cộng 2.
+0:02:00 - 0:02:03, Thì vị trí tương đối của mình trong trường hợp này
+0:02:03 - 0:02:08, nó sẽ là trừ 1, trừ 2, cộng 1, cộng 2,
+0:02:08 - 0:02:11, là những cái vị trí tương đối so với những cái từ xung quanh.
+0:02:11 - 0:02:23, Nó mới là những cái thể hiện được ý nghĩa trong yếu tố về mặt vị trí, chứ không phải là cái con số tuyệt đối là 1, 2, 3 cho đến T ở đây.
+0:02:23 - 0:02:34, Và cái bài báo của Shaw và các cộng sự vào năm 2018 cho thấy là cái vai trò của vị trí tương đối trong attention của mình quan trọng như thế nào.
+0:02:34 - 0:02:42, Và nó đã giúp cho cải thiện độ chính xác của hệ thống lên trong một số task rất là đáng kể.
+0:02:42 - 0:02:47, Tiếp theo là vị trí của mình sẽ dựa trên cây cú pháp,
+0:02:47 - 0:02:54, tức là chúng ta sẽ có chủ ngữ, động từ, tân ngữ v.v.
+0:02:54 - 0:03:00, Tính từ v.v. thì ở đây sẽ là cây cú pháp và tùy theo vị trí trong cây cú pháp này của mình
+0:03:00 - 0:03:04, và mình sẽ có cái...
+0:03:04 - 0:03:08, Ở đây sẽ có một cái ví dụ thôi nha, chứ không chắc là cái cây này đúng nha.
+0:03:08 - 0:03:13, Thì tùy vào cái cấu trúc của cái cây này nè, thì mình sẽ có được cái thông tin về mặt vị trí
+0:03:13 - 0:03:17, khác nhau, chứ chúng ta không phải dựa trên cái chỉ số.
+0:03:17 - 0:03:23, Chúng ta sẽ dựa trên cái vai trò về mặt ngữ pháp, về mặt ngữ pháp trong câu.
+0:03:23 - 0:03:28, Rồi chúng ta sẽ có những cái phương pháp cải tiến khác, như là Rotary Embedding, Mover.
+0:03:28 - 0:03:35, Thì đây là những phương pháp biểu diễn vị trí và cho phép chúng ta có thể đạt được độ chính xác cao
+0:03:35 - 0:03:41, và cho phép mô hình của mình có thể học và tạo ra được những positional embedding.
+0:03:41 - 0:03:48, Đúng vậy chứ không phải là những cái hằng số, những cái vector ở dạng hằng số không có sự thay đổi.
+0:03:48 - 0:03:53, Thì đây chính là những cái vấn đề lớn của Transformer.
+0:03:53 - 0:04:05, Và khi nói về vấn đề giảm chi phí tính toán trên self-attention thì Linformer đây là một kiến trúc do Wang và các cộng sự năm 2020.
+0:04:05 - 0:04:12, Thay vì chúng ta tính toán trên cái không gian T chiều thì chúng ta sẽ giảm số chiều này xuống còn K chiều.
+0:04:12 - 0:04:19, Và khi đó thì độ phức tạp của mình lúc này chỉ còn là K bình D.
+0:04:19 - 0:04:23, Và K này là con số nhỏ hơn so với T rất là nhiều.
+0:04:23 - 0:04:26, Và có thể là con số cố định luôn.
+0:04:26 - 0:04:30, Tức là khi T thay đổi thì K này vẫn có thể là cố định.
+0:04:30 - 0:04:32, Khi đó thì chúng ta thấy với cái sơ đồ này,
+0:04:32 - 0:04:38, ở đây chúng ta sẽ có cái cặp số là độ dài của chuỗi và cái max size.
+0:04:38 - 0:04:42, Thì ở đây chúng ta thấy là với cái Transformer phiên bản gốc,
+0:04:42 - 0:04:44, đây là Transformer gốc nè,
+0:04:44 - 0:04:51, thì cái độ phức tạp khi chúng ta inference, cái thời gian chúng ta inference của mình tăng lên.
+0:04:51 - 0:04:58, Nhưng với Linformer, khi K cố định chúng ta thấy là gần như không thay đổi, nó đi ngang.
+0:04:58 - 0:05:03, Thì cái thời gian inference của mình là gần như không đổi.
+0:05:03 - 0:05:06, Và cái module chính của nó đó chính là cái module projection ở đây.
+0:05:06 - 0:05:13, Đó là biến từ, chiếu từ cái không gian T chiều về cái không gian nhỏ hơn.
+0:05:13 - 0:05:16, Đó là ý tưởng của Linformer.
+0:05:16 - 0:05:21, Với BigBird, thay vì chúng ta sẽ phải tính tất cả các cặp,
+0:05:21 - 0:05:29, nếu như chúng ta vẽ trong cái ma trận, tức là chúng ta sẽ phải tính trên tất cả những cặp tương tác.
+0:05:29 - 0:05:32, Chúng ta sẽ phải tính full trên toàn bộ cặp tương tác.
+0:05:32 - 0:05:35, Thế thì chúng ta sẽ sử dụng một tổ hợp các cặp tương tác,
+0:05:35 - 0:05:40, ví dụ như random, tức là chúng ta sẽ random các vị trí, các cặp của mình.
+0:05:40 - 0:05:45, Chúng ta kết hợp với lại Window, tức là những cái cặp nào mà gần nhau thôi.
+0:05:45 - 0:05:50, Ví dụ như tại vị trí này, chúng ta sẽ lấy những cái từ trước đó và từ sau đó.
+0:05:50 - 0:05:55, Đó là những cái cặp mà cục bộ, ở gần nhau.
+0:05:57 - 0:06:07, Là Window và Global, tức là chúng ta sẽ có những cái cặp tương tác mà lấy được tất cả những cái từ đầu cho đến cuối.
+0:06:07 - 0:06:11, Thì nó gọi là Global Attention.
+0:06:11 - 0:06:15, Tuy nhiên lúc chúng ta sẽ không lấy dày đặc hết.
+0:06:15 - 0:06:19, Tại vì nếu lấy dày đặc hết, thì nó không khác gì Transformer bình thường.
+0:06:19 - 0:06:23, Chúng ta sẽ lấy từ đầu đến cuối, nhưng ở phía những phần tử đầu tiên,
+0:06:23 - 0:06:27, ở hàng đầu tiên và hai cột cuối cùng thôi.
+0:06:27 - 0:06:33, BigBird chính là sự kết hợp của ba loại attention này, như hình bên đây.
+0:06:33 - 0:06:40, Với BigBird thì nó sẽ giúp cho chúng ta tăng tốc độ tính toán self-attention
+0:06:40 - 0:06:46, nhưng nó sẽ không có, tức là nó sẽ lấy ra được những cặp quan trọng
+0:06:46 - 0:06:50, nhưng nó sẽ không lấy hết, nó sẽ không lấy hết tất cả các cặp tương tác.
+0:06:50 - 0:06:56, Nó vừa có đủ yếu tố về random, vừa có yếu tố về mặt vị trí cục bộ
+0:06:56 - 0:07:01, ở trong những lân cận xung quanh, mà vừa có yếu tố là lấy được toàn cục, lấy hết.
+0:07:01 - 0:07:05, Đó là phương pháp BigBird.
+0:07:05 - 0:07:09, Cuối cùng, một cái nhận xét cuối cùng là
+0:07:09 - 0:07:17, có rất nhiều biến thể khác nhau của Transformer đã được thử nghiệm.
+0:07:17 - 0:07:23, Gần như tất cả những biến thể đó đều không cải thiện nhiều về độ chính xác.
+0:07:23 - 0:07:35, Và độ chính xác, nhưng chúng ta nhìn thấy đây là cái độ chính xác của mình dao động quanh con số là 26 phẩy, 26,8 mấy, 26,27, tức là nó sẽ không có sự dao động nhiều.
+0:07:35 - 0:07:44, 26,27, 26,27, các biến thể này không có làm thay đổi độ chính xác của mình một cách đáng kể.
+0:07:44 - 0:07:50, Điều này cho thấy là Transformer ổn định, cho thấy Transformer phổ quát.
+0:07:50 - 0:07:57, Đó chính là những nhận xét về ưu khuyết điểm cũng như là một số cải tiến của Transformer.

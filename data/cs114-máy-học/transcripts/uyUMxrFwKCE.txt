@@ -1,0 +1,180 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:19, Trong những phần trước thì chúng ta à đã
+0:00:16 - 0:00:22, tìm hiểu về cái mô hình hồi quy đơn
+0:00:19 - 0:00:25, biến. Còn ở đây chúng ta sẽ tiến hành
+0:00:22 - 0:00:28, tổng quát hóa nó lên để có cái mô hình
+0:00:25 - 0:00:30, đó là hồi quy đa biến. Thế thì ở đây cái
+0:00:28 - 0:00:34, khái niệm đơn biến và đa biến ở đây có ý
+0:00:30 - 0:00:37, nghĩa là gì? Đó là đối với cái giá trị
+0:00:34 - 0:00:40, mà dự đoán y của chúng ta thì trước đây
+0:00:37 - 0:00:42, là y này chỉ bị phụ thuộc bởi duy nhất
+0:00:40 - 0:00:46, một biến x
+0:00:42 - 0:00:46, đó là một biến số.
+0:00:48 - 0:00:53, Nhưng thực tế chúng ta thấy để đưa ra
+0:00:50 - 0:00:55, một cái dự đoán nào đó thì thường nó sẽ
+0:00:53 - 0:00:57, phải dựa trên rất nhiều những cái thông
+0:00:55 - 0:01:00, tin đầu vào chứ không thể nào mà chỉ dựa
+0:00:57 - 0:01:02, trên thông tin của một biến số là chúng
+0:01:00 - 0:01:04, ta có thể đưa ra được cái dự đoán chính
+0:01:02 - 0:01:07, xác được. Do đó thì chúng ta sẽ có cái
+0:01:04 - 0:01:10, hàm y dự đoán của mình lúc này nó sẽ là
+0:01:07 - 0:01:15, một cái hàm gồm nhiều hơn một biến. Cụ
+0:01:10 - 0:01:18, thể ở đây đó là x1 ph x2
+0:01:15 - 0:01:21, chấm chấm chấm.
+0:01:18 - 0:01:23, Và cái số biến này thì nó sẽ có thể kéo
+0:01:21 - 0:01:26, rất là dài. Như vậy thì áp dụng cái mô
+0:01:23 - 0:01:27, hình hồi quy đa biến như thế nào thì đó
+0:01:26 - 0:01:33, chính là cái nội dung chính mà chúng ta
+0:01:27 - 0:01:33, sẽ cùng tìm hiểu trong phần tiếp theo.
+0:01:33 - 0:01:38, Thì đầu tiên đó là giới thiệu về cái mô
+0:01:36 - 0:01:40, hình hồi quyến tính à nhiều biến tên
+0:01:38 - 0:01:42, tiếng Anh đó là multiple linear
+0:01:40 - 0:01:47, regression. Đây là cái phương pháp mở
+0:01:42 - 0:01:49, rộng của hồi quy tuyến tính một biến.
+0:01:47 - 0:01:52, và mô hình hóa được cái mối quan hệ tiến
+0:01:49 - 0:01:55, tính giữa nhiều biến đầu vào hay còn gọi
+0:01:52 - 0:01:57, là nhiều cái đặc trưng đầu vào à và một
+0:01:55 - 0:01:59, cái biến đầu ra liên tục. Thì như đã nói
+0:01:57 - 0:02:03, tức là cái biến đầu ra liên tục của mình
+0:01:59 - 0:02:06, nó chính là Y. Và mình mong muốn mình kỳ
+0:02:03 - 0:02:09, vọng là y này nó sẽ bị phụ thuộc một
+0:02:06 - 0:02:13, cách tuyến tính với một tập hợp các cái
+0:02:09 - 0:02:16, biến số đầu vào
+0:02:13 - 0:02:16, cho đến XM.
+0:02:16 - 0:02:22, Thì khi đó cái hàm i của mình nó sẽ là
+0:02:19 - 0:02:25, một cái hàm liên tục mà có nhiều cái
+0:02:22 - 0:02:28, biến tầ vào. Có nhiều biến đầ vào.
+0:02:25 - 0:02:30, Và mô hình của cái mối quan hệ này thì
+0:02:28 - 0:02:32, lúc này nó sẽ không còn gọi là một đường
+0:02:30 - 0:02:35, thẳng nữa mà lúc này nó sẽ chuyển sang
+0:02:32 - 0:02:37, một cái khái niệm gọi là siêu phẳn hay
+0:02:35 - 0:02:39, còn gọi là hyperplan. Trong cái không
+0:02:37 - 0:02:41, gian nhiều chiều.
+0:02:39 - 0:02:45, Trước đây thì chúng ta chỉ có một cái
+0:02:41 - 0:02:47, không gian là một trục hành. là thể hiện
+0:02:45 - 0:02:50, cái đặc trưng và trục tung là thể hiện
+0:02:47 - 0:02:53, cái
+0:02:50 - 0:02:55, giá trị liên tục mà cần dự đoán. Thế thì
+0:02:53 - 0:02:57, nếu mà cái mô hình tuyến tính mà chỉ có
+0:02:55 - 0:03:00, một cái ển biến x vào như thế này thì nó
+0:02:57 - 0:03:02, sẽ tạo ra những cái đường thẳng
+0:03:00 - 0:03:06, tạo ra những cái đường thẳng như thế này
+0:03:02 - 0:03:09, thì lúc này là mô hình của mình sẽ chỉ
+0:03:06 - 0:03:11, đơn giản là biểu diễn cho một biến nhưng
+0:03:09 - 0:03:14, thực tế thì chúng ta sẽ có rất nhiều
+0:03:11 - 0:03:14, biến.
+0:03:14 - 0:03:22, Ví dụ x1, x2 đây. Và cái chiều cao của
+0:03:18 - 0:03:25, mình chính là cái y. Thì lúc này cái mặt
+0:03:22 - 0:03:28, để mà phân loại à để mà dự đoán của
+0:03:25 - 0:03:31, chúng ta thì nó sẽ là một cái siêu
+0:03:28 - 0:03:31, phẳng.
+0:03:35 - 0:03:40, Nếu trong cái bài toán phân loại thì đó
+0:03:37 - 0:03:42, nó sẽ tách ra làm hai cái không gian.
+0:03:40 - 0:03:45, Đó. Rồi thì cái mối quan hệ siêu phẳng
+0:03:42 - 0:03:47, này á à trong không gian nhiều chiều thì
+0:03:45 - 0:03:48, thay vì nó là một đường thẳng như một
+0:03:47 - 0:03:55, biến thì đối với trường hợp mà nhiều
+0:03:48 - 0:03:55, biến thì cái à công thức của wx
+0:03:55 - 0:04:00, cộng b
+0:03:57 - 0:04:03, thì nếu như nó bằng một cái giá trị nào
+0:04:00 - 0:04:06, đó bằng một cái giá trị c nào đó thì đây
+0:04:03 - 0:04:09, là một phương trình và cái phương trình
+0:04:06 - 0:04:10, này thì nó sẽ đại diện bởi một cái mặt
+0:04:09 - 0:04:11, phẳng như thế này. nó không phải là một
+0:04:10 - 0:04:13, đường thẳng nữa mà nó sẽ là một mặt
+0:04:11 - 0:04:15, phẳng.
+0:04:13 - 0:04:18, Thì ví dụ như chúng ta làm cái bài toán
+0:04:15 - 0:04:21, là dự đoán giá nhà thì giá của một căn
+0:04:18 - 0:04:23, nhà nó sẽ phụ thuộc bởi rất nhiều cái
+0:04:21 - 0:04:25, thông tin chứ nó không phải chỉ phụ
+0:04:23 - 0:04:28, thuộc vào thông tin về mặt diện tích. Nó
+0:04:25 - 0:04:32, có thể là diện tích nè, vị trí nè, số
+0:04:28 - 0:04:35, phòng ngủ nè, rồi số năm xây dựng. Đó
+0:04:32 - 0:04:37, thì đối với những cái
+0:04:35 - 0:04:41, đặc trưng đầu vào này, chúng ta sẽ xác
+0:04:37 - 0:04:43, định xem cái tính chất phụ thuộc giữa
+0:04:41 - 0:04:46, giá nhà với lại các cái biến số đầu vào
+0:04:43 - 0:04:47, này có tỉ lệ thuận hay tỉ lệ nghịch thì
+0:04:46 - 0:04:51, chúng ta sẽ làm các cái phép phân tích
+0:04:47 - 0:04:54, đó. Đó thì chúng ta à sử dụng cái độ đo
+0:04:51 - 0:04:54, tương đồng
+0:04:57 - 0:05:03, giữa giá nhà là output và cái một cái
+0:05:00 - 0:05:06, biến x. y nào đó thì chúng ta thấy ví dụ
+0:05:03 - 0:05:08, giá nhà theo diện tích thì nó sẽ là giá
+0:05:06 - 0:05:10, nhà tỉ lệ thuận với diện tích. Nhưng
+0:05:08 - 0:05:14, ngược lại đối với vị trí thì nó sẽ tỉ lệ
+0:05:10 - 0:05:15, nghịch với lại cái à vị trí của mình.
+0:05:14 - 0:05:17, Tức là cái khoảng cách đến trung tâm
+0:05:15 - 0:05:20, chẳng hạn. Khoảng cách đến trung tâm
+0:05:17 - 0:05:23, càng cao thì cái giá trị giá căn nhà của
+0:05:20 - 0:05:26, mình sẽ càng thấp. Đó tương tự như vậy
+0:05:23 - 0:05:29, thì giá nhà nó sẽ à tỉ lệ thuận với lại
+0:05:26 - 0:05:31, cái số phòng hoặc là tỷ lệ nghịch với
+0:05:29 - 0:05:33, lại cái số năm xây dựng. năm xây dựng
+0:05:31 - 0:05:36, càng cao thì cái giá nhà của mình nó có
+0:05:33 - 0:05:38, thể sẽ giảm dần.
+0:05:36 - 0:05:42, Và tại sao chúng ta cần phải có nhiều
+0:05:38 - 0:05:44, biến? Thì trong thực tế là một số cái à
+0:05:42 - 0:05:49, kết quả hay còn gọi là output á thì
+0:05:44 - 0:05:49, thường là bị chi phối bởi
+0:05:50 - 0:05:54, nhiều cái yếu tố khác nhau. Đó. Ví dụ
+0:05:52 - 0:05:57, giá nhà thì không chỉ phụ thuộc vào diện
+0:05:54 - 0:06:00, tích mà nó còn phụ thuộc vào vị trí, vào
+0:05:57 - 0:06:03, số phòng, vào năm xây dựng vân vân. rồi
+0:06:00 - 0:06:06, lộ giới trước nhà. Nếu chúng ta chỉ dùng
+0:06:03 - 0:06:08, một biến để
+0:06:06 - 0:06:11, ô hình bỏ qua nhiều cái thông tin quan
+0:06:08 - 0:06:14, trọng dẫn tới là cái việc kém trong cái
+0:06:11 - 0:06:15, việc là dự đoán chính xác đó thì đó hay
+0:06:14 - 0:06:18, còn gọi là overfitting hoặc là
+0:06:15 - 0:06:21, underfitting. Thì nếu như cái dữ liệu
+0:06:18 - 0:06:23, của mình nó không fit được thì đó là
+0:06:21 - 0:06:28, underfit.
+0:06:23 - 0:06:30, Và trong thực tế thì tường ta sẽ à có
+0:06:28 - 0:06:32, nhiều cái đặc trưng để mô tả đối tượng
+0:06:30 - 0:06:35, và việc sử dụng nhiều cái biến thì sẽ
+0:06:32 - 0:06:38, giúp cho chúng ta khai thác tối đa cái
+0:06:35 - 0:06:41, giá trị của dữ liệu.
+0:06:38 - 0:06:42, Đó thì người ta gọi là dữ liệu trong cái
+0:06:41 - 0:06:45, thời buổi ngày nay đó là dữ liệu là
+0:06:42 - 0:06:48, vàng. Thì nếu như chúng ta biết cách và
+0:06:45 - 0:06:51, khai thác được các cái đặc trưng dữ liệu
+0:06:48 - 0:06:55, đầu vào để mà có thể tìm ra cái mối liên
+0:06:51 - 0:06:58, kết liên đới đến cái à giá trị giá của
+0:06:55 - 0:07:01, căn nhà đồ ra thì đó chính là những cái
+0:06:58 - 0:07:05, công việc mà chúng ta cần phải làm đó là
+0:07:01 - 0:07:09, tìm cách để khai thác những cái biến
+0:07:05 - 0:07:13, giúp cho mô hình dự đoán chính xác hơn.
+0:07:09 - 0:07:14, Thì sau đây là một cái dữ liệu tổng quát
+0:07:13 - 0:07:17, cho cái tình huống đó là dự đoán giá căn
+0:07:14 - 0:07:20, nhà. Thì đây chính là cái output I của
+0:07:17 - 0:07:23, mình nè là cái mình cần dự đoán. Và toàn
+0:07:20 - 0:07:26, bộ cái diện tích số phòng số 5 à xây
+0:07:23 - 0:07:32, dựng tình trạng tổng thể thì nó chính là
+0:07:26 - 0:07:35, X Y. Còn ở đây là Y E Y. Thì xy của mình
+0:07:32 - 0:07:38, á nó có thể là 3 4 5 xin lỗi nó không có
+0:07:35 - 0:07:42, tính cái cột cuối cùng chúng ta bỏ đi.
+0:07:38 - 0:07:44, Như vậy thì nó sẽ thuộc R là R4. Thì bốn
+0:07:42 - 0:07:47, cái đặc trưng này sẽ rất là đại diện cho
+0:07:44 - 0:07:49, cái
+0:07:47 - 0:07:51, cho cái dữ liệu của mình và cho cái mô
+0:07:49 - 0:07:54, hình của mình.
+0:07:51 - 0:07:57, Rồi vậy thì cái mô hình toán học của hồi
+0:07:54 - 0:08:00, quy nhiều biến đó là gì? nó cũng hoàn
+0:07:57 - 0:08:03, toàn tương tự như là hồi quyến tính mà
+0:08:00 - 0:08:04, một biến. Thì đối với trường hợp mà
+0:08:03 - 0:08:06, chúng ta chỉ bị phụ thuộc bởi duy nhất
+0:08:04 - 0:08:12, một biến
+0:08:06 - 0:08:16, đó thì chúng ta có thể à
+0:08:12 - 0:08:17, khai thác để mà phát triển thêm cái công
+0:08:16 - 0:08:22, thức của mình. Ví dụ như đối với trường
+0:08:17 - 0:08:24, hợp mà một biến thì là wx cộng b đó.
+0:08:22 - 0:08:27, Nhưng nếu chúng ta muốn nâng lên là dự
+0:08:24 - 0:08:35, biến thì chúng ta có thể rã cái này ra
+0:08:27 - 0:08:37, thành là W1 x1 cộng cho W2 X2 cộng chấm
+0:08:35 - 0:08:40, chấm chấm. Và cuối cùng thì chúng ta mới
+0:08:37 - 0:08:43, cộng cho cái bias. Thì đây chính là cái
+0:08:40 - 0:08:45, tiền đề để dẫn nhập cho việc áp dụng mô
+0:08:43 - 0:08:49, hình hồi quyến tính mà chỉ có một biến
+0:08:45 - 0:09:01, sang cái mô hình đa biến.
+0:08:49 - 0:09:01, [âm nhạc]

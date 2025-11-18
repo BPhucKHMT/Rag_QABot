@@ -1,0 +1,159 @@
+0:00:00 - 0:00:06, Từ trước đến nay, lập trình truyền thống đã đóng vai trò cốt lõi trong phát triển phần mẹn.
+0:00:06 - 0:00:13, Nhưng khi dữ liệu ngày càng trở nên phong phú, học máy đang nổi lên như một giải pháp tối ưu hơn cho nhiều bài toán phức tạp.
+0:00:13 - 0:00:17, Chúng ta hãy cùng khám phá sự chuyển đổi này.
+0:00:17 - 0:00:20, Chúng ta hãy cùng khám phá sự chuyển đổi này.
+0:00:20 - 0:00:30, Nhưng khi dữ liệu ngày càng trở nên phong phú, học máy đang nổi lên như một giải pháp tối ưu hơn cho nhiều bài toán phức tạp. Chúng ta hãy cùng khám phá sự chuyển đổi này.
+0:00:30 - 0:00:39, Lập trình truyền thống, Traditional Programming hay còn gọi là lập trình chi tiết từng bước là một phương pháp phát triển phần mềm.
+0:00:39 - 0:00:48, Trong đó, lập trình viên phải xác định rõ ràng tất cả các quy tắc, logic và thao tác cần thiết mà máy tính cần thực hiện để giải quyết một vấn đề cụ thể.
+0:00:48 - 0:00:55, Mỗi bước trong quá trình giải quyết vấn đề được lập trình một cách chi tiết và không có khả năng tự học hoặc tự điều chỉnh.
+0:00:56 - 0:01:02, Đặc điểm chính của lập trình truyền thống là xác định quy tắc thủ công và không tự học.
+0:01:02 - 0:01:06, Lập trình viên phải viết tường minh các quy tắc và logic cho từng tác vụ.
+0:01:06 - 0:01:14, Hệ thống không thể tự học từ dữ liệu mà chỉ thực hiện đúng các bước đã được lập trình.
+0:01:14 - 0:01:25, Khả năng tổng quát hóa hạn chế, chương trình chỉ hoạt động tốt trong các trường hợp đã được định nghịa trước, khó thích nghi với dữ liệu hoặc tình huống mới nếu không có sửa đổi mạng nguồn.
+0:01:25 - 0:01:36, Phù hợp với bài toán có cấu trúc cố định, hiệu quả với các bài toán rõ ràng, ít biến thể nhưng trở nên phức tạp khi xử lý các quấn đề không có cấu trúc hoặc dữ liệu lớn.
+0:01:36 - 0:01:54, Trong khi đó, với học máy thì đặc điểm chính là tự động học từ dữ liệu. Mô hình học máy được huấn luyện bằng cách sử dụng dữ liệu đầu vào Training Data để học các mẫu và mối quan hệ trong dữ liệu. Điều này giúp hệ thống không cần lập trình tường minh từng quý tắc 1.
+0:01:54 - 0:02:05, Khả năng tổng quát hóa cao, học máy có khả năng dự đoán hoặc xử lý các trường hợp mới không nằm trong dữ liệu huấn luyện, miễn là những trường hợp đó có sự tương đồng với các mẫu trong dữ liệu đa học.
+0:02:10 - 0:02:21, Thích nghi và cải thiện hiệu xuất. Mô hình học máy có thể cải thiện hiệu xuất khi được cung cấp thêm dữ liệu hoặc khi được điều chỉnh lại giúp nó thích nghi với những thay đổi trong dữ liệu nguôi trường.
+0:02:21 - 0:02:35, Hiệu quả với bài toán phức tạp, các lĩnh vực như nhận diện hình ảnh, xử lý ngôn ngữ tự nhiên và dự đoán hành vi là những bài toán không có cấu trúc rõ ràng mà học máy có thể xử lý hiệu quả trong khi lập trình truyền thống thường gặp nhiều khó khăn.
+0:02:35 - 0:02:43, Hình này minh họa sự khác biệt giữa mô hình hóa truyền thống và học máy.
+0:02:43 - 0:02:55, Đối với hình hóa truyền thống, chúng ta nhìn bên trái sẽ thấy quy trình truyền thống bao gồm hai thành phần đầu vào là dữ liệu và mô hình được thiết kế thủ công hang PracticModel.
+0:02:55 - 0:02:59, Máy tính xử lý dữ liệu dựa trên mô hình này và đưa ra kết quả.
+0:02:59 - 0:03:07, Điểm mấu chốt ở đây là mô hình được con người tạo ra dựa trên kiến thức chuyên môn và các quy tắc được xác định trước.
+0:03:07 - 0:03:12, Đối với học máy, ở bên phải quy trình học máy phức tạp hơn và gồm có hai giai đoạn học.
+0:03:12 - 0:03:16, Dữ liệu mẫu, Sample data và kết quả mong đo
+0:03:16 - 0:03:21, expected result được đưa vào máy tính, máy tính sẽ xử lý thông tin này để tạo ra
+0:03:21 - 0:03:29, một mô hình. Giai đoạn này chính là quá trình học của máy tính, nơi nó tự động tìm ra
+0:03:29 - 0:03:32, các mẫu hình từ dữ liệu và xây dựng mô hình dự đoán.
+0:03:32 - 0:03:37, Ở giai đoạn dự đoán, sau khi có mô hình từ giai đoạn học, dữ liệu mới được đưa vào
+0:03:37 - 0:03:42, máy tính cùng với mô hình đã học được, máy tính sẽ sử dụng mô hình này để xử lý
+0:03:42 - 0:03:52, và đưa ra kết quả mũi tên màu xanh lá cây nối mô hình từ giai đoạn học đến giai đoạn dự đoán thể hiện việc mô hình được học được sử dụng để dự đoán trên dữ liệu mới.
+0:03:52 - 0:04:02, Tóm lại hình ảnh này so sánh cách tiếp cận truyền thống nơi con người tạo ra mô hình và học máy, nơi máy tính tự học mô hình từ dự liệu và sử dụng nó để dự đoán.
+0:04:02 - 0:04:13, Bảng sau, Minh hoạng sự khác biệt giữa lập trình truyền thống và học máy giúp hiểu rõ hơn cách hai phương pháp này xử lý dữ liệu để đưa ra kết quả.
+0:04:13 - 0:04:21, Với lập trình truyền thống, có người cung cấp dữ liệu đầu vào cùng với mô hình hoặc là các quy tắc được lập trình thủ công.
+0:04:21 - 0:04:29, Máy tính sử dụng các quy tắc này để xử lý dữ liệu và tạo ra kết quả đầu ra.
+0:04:29 - 0:04:35, Cách tiếp cận này yêu cầu lập trình viên phải xác định rõ ràng các quy tắc và logic từ trước.
+0:04:35 - 0:04:41, Với học máy, máy tính không được cung cấp sẵn các quy tắc mà thay vào đó học từ dữ liệu.
+0:04:41 - 0:04:46, Ban đầu nó nhận dữ liệu mẫu và kết quả mong đợi để tạo ra một mô hình dự đoán.
+0:04:46 - 0:04:54, Khi có dữ liệu mới, mô hình đã học được. Được học sẽ giúp máy tính đưa ra kết quả mà không cần lập trình viên phải viết các quy tắc cụ thể.
+0:04:54 - 0:04:58, Như vậy thì lập trình truyền thống dựa trên quy tắc được con người xác định trước.
+0:04:58 - 0:05:02, trong khi học máy cho phép máy tính tự động tìm ra quy tắc từ dữ liệu,
+0:05:02 - 0:05:06, giúp nó thích nghi với các tình huống mới mà không cần phải tình chỉnh mạng ngục.
+0:05:06 - 0:05:14, Trong bài giới thiệu về khóa học Machine Learning Crash Course của Google,
+0:05:14 - 0:05:20, Peter Novik đã đề cập đến việc học máy không chỉ mang lại những lợi ích thiết thực,
+0:05:20 - 0:05:25, mà còn thay đổi căng bản cách chúng ta tiếp cận và giải quyết vấn đề.
+0:05:25 - 0:05:31, Cụ thể, các lợi ích học máy được ông chỉ ra là giảm thời gian lập trình.
+0:05:31 - 0:05:36, Việc sử dụng học máy có thể tự động hóa các tác vụ phức tạp,
+0:05:36 - 0:05:40, thay vì phải viết mã thủ công và tốn thời gian.
+0:05:40 - 0:05:45, Ví dụ như thay vì phải mất hàng tuần để viết một chương trình sửa lội chính tả,
+0:05:45 - 0:05:50, thì ta có thể dùng học máy để đạt kết quả tốt hơn chỉ trong một thời gian ngắn.
+0:05:50 - 0:05:57, Thứ hai là tùy chỉnh sản phẩm. Học máy cho phép dễ dàng tùy chỉnh sản phẩm cho các nhóm người dùng cụ thể.
+0:05:57 - 0:06:04, Ví dụ nếu muốn tạo ra một chương trình sự lỗi chính tả cho 100 ngôn ngữ, thì việc viết mả thủ công sẽ mất rất nhiều năm.
+0:06:04 - 0:06:12, Với học máy thì chúng ta chỉ cần thu thập dữ liệu cho ngôn ngữ mới và đưa vào cái mô hình đã có.
+0:06:12 - 0:06:23, Thứ ba là giải quyết các bài toán khó. Học máy có thể giải quyết các bài toán mà con người hoặc không thể lập trình thủ công, chẳng hạn như dận nhiệm khuôn mặt hay là dận nhiệm giọng nói.
+0:06:23 - 0:06:28, Thay vì phải viết mã chi tiết thì chúng ta chỉ cần cung cấp cho mô hình học máy nhiều dữ liệu mẫu.
+0:06:28 - 0:06:35, Đối với tư duy giải quyết vấn đề thì học máy đã thay đổi cách chúng ta tiếp cận vấn đề.
+0:06:35 - 0:06:38, Lập trình truyền thống chỉ dựa vào logic và toán học để chứng minh cái chương trình đúng.
+0:06:38 - 0:06:45, Tuy nhiên, học máy lại dựa trên quan sát, thí nghiệm và thống kê để đưa ra dự đoán từ dữ liệu không chắc chắn.
+0:06:45 - 0:06:55, Cái việc chuyển từ tư duy toán học logic sang khoa học tự nhiên sẽ giúp mở rộng khả năng giải quyết vấn đề và khám phá các lĩnh vực mới.
+0:06:55 - 0:06:58, Sau đây là các quiz.
+0:07:38 - 0:07:46, Để hiểu rõ sức mạnh và tìm năng của học máy, chúng ta cần phải nhìn lại hành trình phát triển của nó.
+0:07:46 - 0:07:51, Bài giảng hôm nay sẽ đưa chúng ta qua những cuộc mức quan trọng trong lịch sử học máy.
+0:07:51 - 0:07:58, Lịch sử Chí tòa Nhân tạo thì có mối liên hệ chặt chẽ với lịch sử phát triển của học máy,
+0:07:58 - 0:08:05, bởi những thuộc toán và tiến bộ trong tính toán của học máy đã góp phần quan trọng vào quá trình hình thành Chí tòa Nhân tạo.
+0:08:05 - 0:08:09, Mặc dù hai lĩnh vực này bắt đầu và định hình rõ ràng từ những năm 50,
+0:08:09 - 0:08:17, nhưng nếu nhiều phát minh quan trọng về thuật toán, thống kê, toán học và công nghệ đã xuất hiện từ trước và tiếp tục ảnh hưởng đến giai đoạn này,
+0:08:17 - 0:08:22, thực tế đã, con người thì đã quan tâm đến những câu hỏi về trí tuệ nhân tạc trong hàng thế kỷ.
+0:08:22 - 0:08:25, Chính vì vậy để dễ theo dõi thì chúng ta có thể chia cái lịch sử,
+0:08:25 - 0:08:31, học máy thành một số giai đoạn chính và mỗi giai đoạn được đánh dấu bởi những đột phá quan trọng và những thách thức riêng.
+0:08:31 - 0:08:35, Cụ thể,
+0:08:35 - 0:08:41, Giai đoạn thứ nhất là khởi nguồn của tri tệ nhân tạo và học máy vào những thập niên 1950
+0:08:41 - 0:08:47, thì có các cục mốc đó là Alan Turing và bài kiểm tra Turing năm 1950
+0:08:47 - 0:08:54, tức là Alan Turing đề xuất rằng máy có thể suy nghĩ nếu nó có thể bắt chước con người đủ tốt để đánh lừa người khác
+0:08:54 - 0:08:59, thế kì Turing đề xuất cái bài kiểm tra Turing, gọi là Turing test
+0:08:59 - 0:09:03, một thí nghiệm để xác định xem máy tính có thể thể hiện trí thông minh như con người hay không
+0:09:03 - 0:09:13, Mục tiêu không chỉ là đánh lừa người khác mà xem máy tính có thể giao tiếp một cách không thể phân biệt được với con người hay không. Đây là một hút mốc quan trọng.
+0:09:13 - 0:09:18, Và đặt ra câu hỏi về bản chất của trí tuệ và khả năng máy mốc là có thể suy nghĩ.
+0:09:18 - 0:09:29, Arthur Samuel đã phát triển chương trình chơi cờ đầu tiên trên máy tính và cũng là chương trình máy tính đầu tiên có khả năng tự học vào 1952.
+0:09:29 - 0:09:42, Trong giai đoạn này thì có hội nghị DatMuth và sự đa đời của thực ngữ AI năm 1956 thì một nhóm các nhà khoa học bao gồm John Martin Marvin Minsky,
+0:09:42 - 0:09:53, Nathaniel Rochester và Claude Sano tổ chức hội nghị DatMuth và đánh dấu sự khởi đầu chính thức của nghiên cứu AI.
+0:09:53 - 0:09:58, thuật ngữ Artificial Intelligence trí tuệ nhân tạo lần đầu tiên được sử dụng tại đây,
+0:09:58 - 0:10:05, đặt ra mục tiêu đầy tham vọng là mô phóng mọi khía cạnh của việc học tập và trí thông minh của con người bằng máy móc.
+0:10:08 - 0:10:13, Giai đoạn tiếp theo là Perceptron và mạng Neuron Sarkai vào thập niên 1960.
+0:10:13 - 0:10:22, Frank Rosenblatt đã phát triển Perceptron năm 1958, đây là mạng Neuron đơn giản đầu tiên có thể học từ dự lệm.
+0:10:22 - 0:10:25, Tuy nhiên nó chỉ có thể giải quyết các bài toán tiến tính.
+0:10:27 - 0:10:30, Mạng neuron này được kỳ vọng sẽ giúp máy tính có thể học hỏi giống con người.
+0:10:31 - 0:10:37, Tuy nhiên, nghiên cứu này đã gặp phải chỉ trích của Minsky và Pepper năm 1969.
+0:10:37 - 0:10:41, Marvin Minsky và Seymour Pepper chỉ ra rằng
+0:10:41 - 0:10:47, perceptron bị giới hạn và không thể được giải quyết các bài toán phi tiến tính, ví dụ như pháp tiến so.
+0:10:47 - 0:10:50, Điều này khiến nghiên cứu về mạng neuron bị đình trễ trong nhiều năm.
+0:10:52 - 0:11:02, Thời kỳ tiếp theo là thời kỳ hoàng kim của AI năm 1956 và đến 1974. Thời kỳ này có sự lạc quan mạnh mẽ về AI.
+0:11:02 - 0:11:13, Năm 1967, Marvin Minsky của MIT đã tự tin tuyên bố rằng, trong vòng một thế hệ, vấn đề tạo ra trí tuệ nhân tạo về cơ bản sẽ được giải quyết.
+0:11:13 - 0:11:16, nghiên cứu về sự lý ngôn ngữ tự nhiên phát triển mạnh mẽ,
+0:11:16 - 0:11:21, các thuật toán tìm kiếm được cải tiến để trở nên hiệu quả hơn,
+0:11:21 - 0:11:26, và khái niệm thế giới Vimo Microworks ra đời nơi các nhiệm vụ đơn giản
+0:11:26 - 0:11:29, có thể được thực hiện thông qua các khiến dẫn bằng ngôn ngữ tự nhiên,
+0:11:29 - 0:11:33, và các nghiên cứu về AI được chính phủ tài trợ mạnh mẽ.
+0:11:33 - 0:11:40, Các thành cựu quan trọng trong giai đoạn này có Sarky Teroport
+0:11:40 - 0:11:46, Năm 1966-1972 thì robot này có thể di chuyển và thực hiện nhiệm vụ một cách thông minh.
+0:11:46 - 0:11:54, Hay là chương trình ELISA năm 1966 là chatbot đầu tiên giả lập một nhà trị liệu dịch từ chữ therapist.
+0:11:54 - 0:11:59, Và Blox Group là một ví dụ về microgroup nơi các khối có thể được xếp trồng và sắp xét,
+0:11:59 - 0:12:03, đồng thời là môi trường để thử nghiệm việc dạy máy tính đa quyết định.
+0:12:03 - 0:12:07, Ví dụ như ở đây chúng ta thấy Sarkazer robot năm 1972 là robot di động đầu tiên,
+0:12:07 - 0:12:11, có khả năng nhận thức và lý luận về môi trường xung quanh.
+0:12:11 - 0:12:14, Sake có thể thực hiện các nhiệm vụ đòi hỏi phải lập kế hoạch,
+0:12:14 - 0:12:17, tìm đường và sắp xếp lại các thập thể đơn giản.
+0:12:17 - 0:12:21, Sake được phát triển tại Trung tâm Chí tế Nhân tạo của Viện nghiên cứu Stanford này,
+0:12:21 - 0:12:25, còn gọi là SRI International.
+0:12:25 - 0:12:28, Elyia năm 1966 là một chương trình máy tính tiên phong
+0:12:28 - 0:12:30, trong lĩnh vực xử lý ngôn ngực tự nhiên.
+0:12:30 - 0:12:35, Được phát triển từ năm 1964 đến 1967 tại MIT
+0:12:35 - 0:12:38, và bởi Joseph Weizenbaum.
+0:12:38 - 0:12:43, Elisa được tạo ra nhằm nghiên cứu sự tương tác giữa con người và máy móc,
+0:12:43 - 0:12:47, sử dụng phương pháp khớp mẫu và thay thế để mô phỏng hồi thoại.
+0:12:47 - 0:12:53, Nó tạo ra ảo giác rằng máy tính có thể hiểu người dùng mặc dù thực tế
+0:12:53 - 0:12:55, nó không thực sự hiểu được ý nghĩa của cuộc trò chuyện.
+0:12:55 - 0:13:02, Giai đoạn tiếp theo là mùa đông AI lần thứ nhất, 1974-1980.
+0:13:02 - 0:13:10, Lý do của AI xoay thoái đó là các hạt chế về phần cứng, máy tính không đủ mạnh để chạy các mô hình AI phức tạp.
+0:13:10 - 0:13:17, Thứ hai là thiếu dữ liệu. AI thời kỳ này chủ yếu dựa trên các quy tắc, các rule base nên không thể học được từ dữ liệu lớn.
+0:13:17 - 0:13:28, Và báo cáo Light Hill năm 1973 đã chỉ trích AI không đạt được tiến bộ thực tế cùng với sự thất vại của các dự án dịch máy dẫn đến việc chính phủ cắt giảm tài trợ.
+0:13:28 - 0:13:37, Hậu quả là tài trợ AI bị cắt giảm mạnh và niềm tin vào AI suy giảm, dẫn đến một giai đoạn trưởng lại trong nghiên cứu về AI.
+0:13:39 - 0:13:45, Sau đó là giai đoạn tiếp theo là sự hồi sinh và mùa đông AI lần thứ 2.
+0:13:45 - 0:13:49, Thì sự trở lại của AI nhờ hệ chuyên gia thì các hệ thống,
+0:13:49 - 0:13:54, chuyên gia như MySync, Trận đoán e-Khoa và X-Con cấu hình hệ thống máy tính đã đạt được một số thành công nhất định.
+0:13:54 - 0:13:58, và các công ty bắt đầu áp dụng AI vào thực tế trong lĩnh vực tài chính và y tế.
+0:13:58 - 0:14:02, Tuy nhiên, nó lại chứng kiến sự suy giảm lần nữa bởi vì chi phí duy trì cao,
+0:14:02 - 0:14:08, các hệ chuyên gia đòi hỏi cập nhật liên tục, tốn kém và không linh hoạt,
+0:14:08 - 0:14:12, không thể xử lý dữ liệu lớn và không có khả năng học hỏi từ dữ liệu.
+0:14:12 - 0:14:19, Một mùa đông AI khác diễn ra vào cuối thập niên 1980, từ 1987-1993
+0:14:19 - 0:14:23, khi sự kỳ vọng quá cao từ thập niên trước dẫn đến thất vọng AI.
+0:14:23 - 0:14:28, AI khi không đạt những bước tiến như mong đợi.
+0:14:30 - 0:14:34, Giai đoạn tiếp theo từ thập niên 1990 đến 2000,
+0:14:34 - 0:14:37, thì giai đoạn này Machine Learning đã tắt khỏi AI truyền thống,
+0:14:37 - 0:14:42, chuyển từ lập trình, quy tắc, tức là lập trình giữa trên chi tiết từng bước sang học từ dữ liệu.
+0:14:42 - 0:14:45, Thay vì sử dụng hệ chuyên gia với các quy tắc cố định,
+0:14:45 - 0:14:50, thì Machine Learning đã dựa vào các thuật toán có thể học từ dữ liệu, giúp mô hình linh hoạt và chính xác hơn.
+0:14:50 - 0:14:57, Các thuật toán ra đời như Super Vector Machine, Random Forest, Knife Bayer
+0:14:57 - 0:14:59, trở thành nền tảng của Machine Learning.
+0:14:59 - 0:15:04, Bên cạnh đó là sự gia tăng vượt bậc về tính toán và dữ liệu.
+0:15:04 - 0:15:06, Internet và điện thoại thông minh đã tạo ra
+0:15:06 - 0:15:09, cái dự liệu khổng lồ và sự xuất hiện của Big Data
+0:15:09 - 0:15:12, giúp có thể học từ dữ liệu kimô lớn hơn bao giờ hết.
+0:15:12 - 0:15:17, Máy tính thì ngày càng mạnh hơn và cho phép hướng luyện các mô hình phức tạp hơn.
+0:15:17 - 0:15:24, Ngoài ra thì các thuộc toán Machine Learning ngày càng được sử dụng rộng rãi trong nhiều ngành công nghiệp
+0:15:24 - 0:15:27, Ví dụ như trong tài chính, y tế, thương mại, điện tử
+0:15:27 - 0:15:32, Các hệ thống gợi ý bắt đầu được sử dụng rộng rãi, ví dụ như Amazon hay Netflix
+0:15:32 - 0:15:38, Gia đoạn tiếp theo là Bitdata và sự trở dạy của Deep Learning từ năm 2000 cho tới 2010
+0:15:38 - 0:15:44, Gia đoạn này tiếp tục chứng kiến sự bùng nổ của Bitdata và sự trở lại mạnh mẽ của mạng neuron nhân tạo
+0:15:44 - 0:15:56, Những yếu tố đã thúc đẩy, bao gồm sự gia tăng dữ liệu, sự phát triển của Internet và mạng xã hội đã giúp tạo ra một lượng dữ liệu khổng lồ và phân cứng mạnh mẽ hơn.
+0:15:56 - 0:16:12, Sự ra đời của GPU, Đơn vị Sử lý Đồ Họa, giúp tăng tốc hướng luyện các mô hình neuron dân tạo và Deep Learning hồi sinh, với Hilton, Benjo và LeCun đi tiên phong trong việc phát triển các mạng neuron học sau.
+0:16:12 - 0:16:22, Giai đoạn của Deep Learning và AI hiện đại từ năm 2010 tới 2021, đó là sự phát triển mạnh mẽ của Deep Learning.
+0:16:22 - 0:16:28, Năm 2012, AlexNet, một mạng neuron học sau, là lần đầu tiên đã chiến thắng trong cuộc thi ImageNet,
+0:16:28 - 0:16:33, chứng minh sức mạnh của Deep Learning và đánh dấu sự thống trị của mạng neuron trong nhận diện hình ảnh.
+0:16:33 - 0:16:41, Mô hình Transformer năm 2017 đã đặt nền tảng cho GPT và Perp cách mạng hóa, xử lý ngôn ngữ tự nhiên.
+0:16:41 - 0:16:44, tự nhiên làm đền tảng cho các hệ thống AI hiện đại.
+0:16:44 - 0:16:49, AI trong đời sống thực tế thì AI ngày càng được hỗ trợ trong các lĩnh vực tài chính,
+0:16:49 - 0:16:51, y tế, xe tự lái, thương mại, điện tử.
+0:16:51 - 0:16:54, Tuy nhiên cũng gặp các thách thích về đạo đức.
+0:16:54 - 0:16:59, Quý dụ như AI có thể tạo ra thiên vị và gây ra các vấn đề xã hội.
+0:16:59 - 0:17:06, Su hướng AI có trách nhiệm, Responsible AI và AI minh bạch ngày càng được quan tâm.
+0:17:11 - 0:17:19, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

@@ -1,0 +1,406 @@
+0:00:17 - 0:00:22, Các bước phát triển ứng dụng học máy.
+0:00:20 - 0:00:24, Chúng ta hãy cùng tìm hiểu các bước phát
+0:00:22 - 0:00:28, triển ứng dụng học máy với ba giai đoạn
+0:00:24 - 0:00:31, gồm chuẩn bị dữ liệu, xây dựng và đánh
+0:00:28 - 0:00:34, giá mô hình và triển khai và cải tiến.
+0:00:31 - 0:00:36, Giai đoạn một, chuẩn bị dữ liệu. Đây là
+0:00:34 - 0:00:40, giai đoạn đầu tiên trong phát triển ứng
+0:00:36 - 0:00:42, dụng học máy là một bước quan trọng để
+0:00:40 - 0:00:45, quyết định chất lượng của mô hình. Bước
+0:00:42 - 0:00:48, một bao gồm xác định bài toán, xác định
+0:00:45 - 0:00:50, mục tiêu, loại bài toán, yêu cầu đầu ra
+0:00:48 - 0:00:54, và các cái tiêu chí đánh giá.
+0:00:50 - 0:00:56, Bước hai là thu thập dữ liệu. Thu thập
+0:00:54 - 0:00:58, và đảm bảo dữ liệu có chất lượng tốt,
+0:00:56 - 0:01:02, đầy đủ nhãn để huấn luyện mô hình. Bước
+0:00:58 - 0:01:04, ba, chuẩn bị dữ liệu. Phải làm sạch,
+0:01:02 - 0:01:06, chuyển đổi định dạng, xử lý đặc trưng và
+0:01:04 - 0:01:09, tiền xử lý dữ liệu. Thế dữ liệu chất
+0:01:06 - 0:01:12, lượng cao là nền tảng để xây dựng một mô
+0:01:09 - 0:01:13, hình hiệu quả.
+0:01:12 - 0:01:15, Ở giai đoạn thứ hai là giai đoạn xây
+0:01:13 - 0:01:17, dựng và đánh giá mô hình.
+0:01:15 - 0:01:20, Thì giai đoạn này giúp đảm bảo mô hình
+0:01:17 - 0:01:22, hoạt động hiệu quả trước khi triển khai.
+0:01:20 - 0:01:24, Bước thứ tư đó là phát triển mô hình.
+0:01:22 - 0:01:26, Chúng ta phải lựa chọn thuậc toán phù
+0:01:24 - 0:01:28, hợp rồi sau đó huấn luyện mô hình và
+0:01:26 - 0:01:32, điều chỉnh siêu tham số để tối ưu hóa hệ
+0:01:28 - 0:01:33, xuất. Bước thứ năm là đánh giá mô hình.
+0:01:32 - 0:01:36, Chúng ta kiểm tra hiệu suất bằng các chỉ
+0:01:33 - 0:01:40, số đánh giá ví dụ như độ chính xác F1
+0:01:36 - 0:01:43, score, MSI và điều chỉnh nếu cần.
+0:01:40 - 0:01:44, Việc đánh giá kỹ lưỡng giúp đảm bảo mô
+0:01:43 - 0:01:47, hình không chỉ hoạt động tốt trên dữ
+0:01:44 - 0:01:49, liệu huấn luyện mà còn tổng quát hóa tốt
+0:01:47 - 0:01:52, trên dữ liệu thực tế.
+0:01:49 - 0:01:54, Giai đoạn ba là giai đoạn triển khai và
+0:01:52 - 0:01:58, cải tiến mô hình, đảm bảo mô hình hoạt
+0:01:54 - 0:01:59, động ổn định và hiệu quả trong thực tế.
+0:01:58 - 0:02:01, Thì bước thứ sáu đó là cái bước triển
+0:01:59 - 0:02:04, khai mô hình. Ta đưa mô hình vào môi
+0:02:01 - 0:02:06, trường thực tế để tích hợp và sử dụng.
+0:02:04 - 0:02:08, Bước thứ bảy là giám sát và cải tiến.
+0:02:06 - 0:02:10, Chúng ta theo dõi hiệu suất, cập nhật dữ
+0:02:08 - 0:02:13, liệu mới và tái huấn luyện khi cần để
+0:02:10 - 0:02:14, duy trì độ chính xác. Cái việc giám sát
+0:02:13 - 0:02:16, và cải tiến liên tục mô hình thích ứng
+0:02:14 - 0:02:19, với dữ liệu mới và duy trì cái hiệu suất
+0:02:16 - 0:02:19, lâu dài.
+0:02:23 - 0:02:27, Các cuộc thi học thuật
+0:02:28 - 0:02:33, thì ở đây trong lĩnh vực học máy thì các
+0:02:32 - 0:02:36, cái cuộc thi học thuật mà các bạn sinh
+0:02:33 - 0:02:38, viên và các nhà nghiên cứu có thể quan
+0:02:36 - 0:02:41, tâm. Ở đây tôi xin giới thiệu một số các
+0:02:38 - 0:02:44, cái cuộc thi học thuật thường gặp.
+0:02:41 - 0:02:46, Thứ nhất là video browser showdown, the
+0:02:44 - 0:02:48, video retrieval competition. Thì trong
+0:02:46 - 0:02:50, cái cuộc thi video browser showdown này
+0:02:48 - 0:02:53, thì có một sự kiện quốc tế
+0:02:50 - 0:02:53, là
+0:02:56 - 0:03:00, các cuộc thi học thuật
+0:03:00 - 0:03:06, thì video browser showdown là một cái sự
+0:03:03 - 0:03:08, kiện quốc tế về tìm kiếm nội dung video,
+0:03:06 - 0:03:11, đánh giá các cái công nghệ hiện tại của
+0:03:08 - 0:03:14, các hệ thống truy vấn video tương tác.
+0:03:11 - 0:03:16, Thì mục tiêu của cái VBS cuộc thi này đó
+0:03:14 - 0:03:20, là thúc đẩy nghiên cứu về các hệ thống
+0:03:16 - 0:03:22, truy vấn video quy mô lớn, hiệu quả,
+0:03:20 - 0:03:24, nhanh chóng và dễ sử dụng cho các cực
+0:03:22 - 0:03:28, bản tìm kiếm nội dung thực tế. Chẳng hạn
+0:03:24 - 0:03:32, như tìm kiếm ờ video cụ thể trong kho
+0:03:28 - 0:03:34, video với kích thước ngày càng tăng.
+0:03:32 - 0:03:37, Cuộc thi thứ hai là Nvidia AIC
+0:03:34 - 0:03:39, Challenge. Thì ví dụ như là cái nó có
+0:03:37 - 0:03:42, nhiều truck và trong đó một trong các
+0:03:39 - 0:03:44, truck đó là detecting violation of
+0:03:42 - 0:03:46, helmet rule of motorcyclist. Thì mục
+0:03:44 - 0:03:49, tiêu ở đây đó là phát hiện các trường
+0:03:46 - 0:03:51, hợp vi phạm quy định đội mũ bảo hiểm của
+0:03:49 - 0:03:53, người lái xe máy. Thì việc này nhằm tăng
+0:03:51 - 0:03:55, cường an toàn giao thông, đặc biệt là ở
+0:03:53 - 0:03:58, các quốc gia đang phát triển, nơi mà
+0:03:55 - 0:04:00, việc đội mũ bảo hiểm là bắt buộc nhưng
+0:03:58 - 0:04:02, thường bị vi phạm. Thế thì dữ liệu thì
+0:04:00 - 0:04:04, các đội tham gia sẽ làm việc với tập dữ
+0:04:02 - 0:04:06, liệu video hoặc hình ảnh để phát hiện
+0:04:04 - 0:04:08, người lái xe máy không đ đội mũ bảo
+0:04:06 - 0:04:10, hiểm. Dữ liệu này có thể bao gồm các
+0:04:08 - 0:04:12, video từ nhiều camera khác nhau trong
+0:04:10 - 0:04:15, các điều kiện giao thông khác nhau. Một
+0:04:12 - 0:04:18, cuộc thi khác đó là H CMCAI Challenge.
+0:04:15 - 0:04:21, Thì trong cuộc thi này thì đội thi sẽ
+0:04:18 - 0:04:23, đếm số lượng xe theo mỗi loại xe di
+0:04:21 - 0:04:25, chuyển theo các hướng khác nhau trong
+0:04:23 - 0:04:27, video được ghi nhận từ camera giao thông
+0:04:25 - 0:04:29, tại thành phố Hồ Chí Minh. Cái bài toán
+0:04:27 - 0:04:31, này phục vụ cho việc phân tích lưu lượng
+0:04:29 - 0:04:33, xe trên các tuyến đường và từ đó hỗ trợ
+0:04:31 - 0:04:35, việc đề xuất và thiết kế các giải pháp
+0:04:33 - 0:04:38, làm giảm cái tắc điểm giao thông.
+0:04:35 - 0:04:39, Về kiến thức toán bổ sung thì các kiến
+0:04:38 - 0:04:43, thức này được dạy trong cái môn học
+0:04:39 - 0:04:45, CS115 toán cho khoa học máy tính.
+0:04:43 - 0:04:47, Trước khi tiếp cận các cái thuật toán
+0:04:45 - 0:04:49, học máy thì bạn cần phải nắm vững các
+0:04:47 - 0:04:52, kiến thức nền tảng về đại số tiếng tính.
+0:04:49 - 0:04:55, Đó là một trong các cái công cụ cốt lõi.
+0:04:52 - 0:04:58, Vì sao? Bởi vì dữ liệu và mô hình trong
+0:04:55 - 0:05:01, học máy đều được biểu diễn và xử lý dưới
+0:04:58 - 0:05:02, dạng vecơ và ma trận.
+0:05:01 - 0:05:05, Hầu hết các cái thao tác như là huấn
+0:05:02 - 0:05:07, luyện, tính toán độ lỗi hay cập nhật
+0:05:05 - 0:05:10, trọng số đều dựa trên các cái phép toán
+0:05:07 - 0:05:12, này. Thế hiểu rõ các khái niệm như vecơ,
+0:05:10 - 0:05:15, không gian, vecơ, chuẩn, tích vô hướng,
+0:05:12 - 0:05:18, ma trận và các cái phép toán liên quan
+0:05:15 - 0:05:21, sẽ giúp bạn tiếp cận hiệu quả hơn với
+0:05:18 - 0:05:23, các thuật toán như là hội quyến tính,
+0:05:21 - 0:05:27, các thuật toán rút gọn chiều.
+0:05:23 - 0:05:29, PH như PCA hay là mạng Neuron.
+0:05:27 - 0:05:31, Nắm chắc đại số tiếng tính không chỉ
+0:05:29 - 0:05:35, giúp bạn hiểu mô hình hoạt động ra sao
+0:05:31 - 0:05:39, mà còn hỗ trợ trong việc tối ưu kiểm tra
+0:05:35 - 0:05:39, và cải tiến các cái mô hình.
+0:05:40 - 0:05:45, Thế để hiểu sâu và ứng dụng hiệu quả các
+0:05:42 - 0:05:47, cái thuật toán học máy thì bạn cần phải
+0:05:45 - 0:05:50, nắm vững các khái niệm về trị riêng,
+0:05:47 - 0:05:51, vecơ riêng và hệ phương trình kiến tính.
+0:05:50 - 0:05:54, Thì trì riêng và vecơ riêng là những
+0:05:51 - 0:05:56, công cụ giúp chúng ta phân tích rút gọn
+0:05:54 - 0:05:58, và hiểu cấu trúc dữ liệu đặc biệt quan
+0:05:56 - 0:06:00, trọng trong các thuật toán giảm chịu dữ
+0:05:58 - 0:06:02, liệu như là PCA. Việc tính toán trị
+0:06:00 - 0:06:03, riêng, vecơ riêng cho phép xác định
+0:06:02 - 0:06:05, những hướng quan trọng nhất trong tập dữ
+0:06:03 - 0:06:08, liệu và từ đó tối ưu hóa cái quá trình
+0:06:05 - 0:06:11, học. Bên cạnh đó thì hệ phương trình
+0:06:08 - 0:06:13, tiến tính là nền tảng để diễn tả và giải
+0:06:11 - 0:06:15, quyết nhiều bài toán trong học máy. Ví
+0:06:13 - 0:06:17, dụ như tiền trọng số tối ưu trong hồi
+0:06:15 - 0:06:18, quy tiến tính, việc thành thạo các cái
+0:06:17 - 0:06:22, phương pháp giải hệ phương trình như khử
+0:06:18 - 0:06:24, go đăng hay là sử dụng ma trận ngục đảo
+0:06:22 - 0:06:27, sẽ giúp giải quyết nhanh chóng và chính
+0:06:24 - 0:06:28, xác các cái bài toán thực tế. Vì vậy
+0:06:27 - 0:06:30, việc học và kỹ các cái kiến thức này
+0:06:28 - 0:06:33, không chỉ giúp bạn hiểu bản chất của các
+0:06:30 - 0:06:35, thuộc toán mà còn trang bị nền tảng toán
+0:06:33 - 0:06:38, học vững chất để phát triển các ứng dụng
+0:06:35 - 0:06:38, học máy hiệu quả.
+0:06:39 - 0:06:42, Thế để áp dụng hiệu quả các thuộc toán
+0:06:40 - 0:06:44, học máy hiện đại thì chúng ta cần phải
+0:06:42 - 0:06:46, hiểu sâu về các phương pháp phân rã ma
+0:06:44 - 0:06:48, trận và các vấn đề liên quan đến tính
+0:06:46 - 0:06:51, toán số trong đại số tướng tính. Các kỹ
+0:06:48 - 0:06:55, thuật phân rã ma trận như là Lu, Quya,
+0:06:51 - 0:06:57, SVD hay Koleski đóng vai trò rất quan
+0:06:55 - 0:06:59, trọng trong việc giải hệ phương trình,
+0:06:57 - 0:07:01, nén dữ liệu, giảm chiều và phân tích cấu
+0:06:59 - 0:07:02, trúc dữ liệu.
+0:07:01 - 0:07:05, Chúng giúp biến đổi các bài toán phức
+0:07:02 - 0:07:07, tạp thành những dạng đơn giản hơn và từ
+0:07:05 - 0:07:09, đó tăng tốc tính toán và cải thiện độ ổn
+0:07:07 - 0:07:11, định của thực toán. Đặc biệt SVD có là
+0:07:09 - 0:07:12, nền tảng quan trọng cho nhiều ứng dụng
+0:07:11 - 0:07:15, thực tế như nhận diện khuôn mặt, khuyến
+0:07:12 - 0:07:18, nghị sản phẩm hay là xử lý tín hiệu. Bên
+0:07:15 - 0:07:19, cạnh đó, khi làm việc với dữ liệu lớn và
+0:07:18 - 0:07:21, ma trận kích thước lớn, chúng ta thường
+0:07:19 - 0:07:24, gặp phải các vấn đề tính toán như tràn
+0:07:21 - 0:07:26, số hoặc mất ổn định số học.
+0:07:24 - 0:07:29, Hiểu rõ các vấn đề này và biết cách sử
+0:07:26 - 0:07:31, dụng các thuật toán. Tính toán số hiệu
+0:07:29 - 0:07:34, quả sẽ giúp đảm bảo được tính chính xác
+0:07:31 - 0:07:37, tốc độ và độ tin cậy khi triển khai các
+0:07:34 - 0:07:38, mô hình học máy trong thực tế.
+0:07:37 - 0:07:40, Chính vì vậy mà thành thạo các kiến thức
+0:07:38 - 0:07:42, về phân rã ma trận và tính toán số sẽ
+0:07:40 - 0:07:44, giúp bạn xử lý dữ liệu tốt hơn, tối ưu
+0:07:42 - 0:07:48, hóa mô hình và nâng cao chất lượng của
+0:07:44 - 0:07:48, giải pháp học máy.
+0:07:49 - 0:07:52, Tối ưu hóa là nền tảng của hầu hết các
+0:07:50 - 0:07:54, cái thuộc toán học máy. Bởi mục tiêu
+0:07:52 - 0:07:56, cuối cùng luôn là tìm ra giá trị tốt
+0:07:54 - 0:07:58, nhất của tham số để mô hình hoạt động
+0:07:56 - 0:08:01, hiệu quả nhất.
+0:07:58 - 0:08:03, Chúng ta cần hiểu rõ về hàm mục tiêu.
+0:08:01 - 0:08:05, Đây là hàm đánh giá chất lượng của mô
+0:08:03 - 0:08:09, hình và không gian tìm kiếm là phạm vi
+0:08:05 - 0:08:11, các giá trị mà mô hình có thể nhận. Việc
+0:08:09 - 0:08:13, xác định đúng hàm mục tiêu và miền giá
+0:08:11 - 0:08:16, trị hợp lệ là bước đầu tiên để giải
+0:08:13 - 0:08:19, quyết bài toán học máy. Các loại hàm mục
+0:08:16 - 0:08:21, tiêu như lồi, lõm hoặc không lồi quyết
+0:08:19 - 0:08:25, định đến mức độ khó và cách tiếp cận quá
+0:08:21 - 0:08:27, trình tối ưu hóa. Đặc biệt với hàm lồi,
+0:08:25 - 0:08:28, chúng ta có thể đảm bảo tìm được nghiệm
+0:08:27 - 0:08:30, tối ưu toàn cục.
+0:08:28 - 0:08:31, và các điều kiện hội tụ sẽ giúp đánh giá
+0:08:30 - 0:08:33, xem quá trình tối ưu có thành công hay
+0:08:31 - 0:08:35, không.
+0:08:33 - 0:08:38, Kiến thức về đạo hàm và gradient là chìa
+0:08:35 - 0:08:40, khóa để hướng tìm cái hướng tối ưu giúp
+0:08:38 - 0:08:44, cập nhật tham số mô hình một cách hiệu
+0:08:40 - 0:08:46, quả. Ngoài ra, ma trận Han cũng cung cấp
+0:08:44 - 0:08:48, thông tin về độ cong của hàm mục tiêu và
+0:08:46 - 0:08:52, hỗ trợ đánh giá điểm cực trị và lựa chọn
+0:08:48 - 0:08:53, thuật toán phù hợp.
+0:08:52 - 0:08:55, Sau khi tìm hiểu về hàm mục tiêu,
+0:08:53 - 0:08:57, gradient và các khái niệm cơ bản trong
+0:08:55 - 0:08:59, tối ưu hóa thì bước tiếp theo là khám
+0:08:57 - 0:09:01, phá các phương pháp tối ưu cụ thể được
+0:08:59 - 0:09:03, sử dụng trong học máy. Thì với các bài
+0:09:01 - 0:09:06, toán không ràng buộc, một trong những kỹ
+0:09:03 - 0:09:08, thuật quan trọng nhất là gradient design
+0:09:06 - 0:09:11, cùng các biến thể như batch, mini batch,
+0:09:08 - 0:09:13, stocastic, gradient design.
+0:09:11 - 0:09:16, Các phương pháp này giúp điều chỉnh tham
+0:09:13 - 0:09:18, số mô hình theo hướng giảm hàm mục tiêu
+0:09:16 - 0:09:20, và có thể áp dụng hiệu quả cho nhiều
+0:09:18 - 0:09:23, loại dữ liệu khác nhau. Ngoài ra, những
+0:09:20 - 0:09:28, thuật toán nâng cao như Newton, method
+0:09:23 - 0:09:30, và quasi Newton ví dụ như BFGS, L, BFGS
+0:09:28 - 0:09:33, tận dụng thêm thông tin về độ công của
+0:09:30 - 0:09:34, hàm mục tiêu để tăng tốc độ hội tụ.
+0:09:33 - 0:09:37, Đối với bài toán có ràng buộc, chúng ta
+0:09:34 - 0:09:40, cần đến các công cụ như phương pháp
+0:09:37 - 0:09:43, plăng và điều kiện khay kt để đảm bảo
+0:09:40 - 0:09:46, việc tối ưu vẫn tuân thủ các giới hạn
+0:09:43 - 0:09:47, hoặc điều kiện đặt ra cho các biến số.
+0:09:46 - 0:09:49, Những kiến thức này rất cần thiết khi mô
+0:09:47 - 0:09:51, hình phải đáp ứng các yêu cầu thực tế,
+0:09:49 - 0:09:54, ví dụ như giới hạn tài nguyên hoặc các
+0:09:51 - 0:09:56, quy tắc về dữ liệu. Việc nắm vững các
+0:09:54 - 0:09:58, phương pháp tối ưu này sẽ giúp bạn áp
+0:09:56 - 0:10:00, dụng linh hoạt và hiệu quả các thuật
+0:09:58 - 0:10:05, toán học máy kể cả khi gặp các điều kiện
+0:10:00 - 0:10:05, hoặc ràng vậc phức tạp. Trong thực tế,
+0:10:07 - 0:10:11, khi các mô hình học máy trở nên phức tạp
+0:10:09 - 0:10:13, hơn
+0:10:11 - 0:10:15, và dữ liệu ngày càng lớn thì các thuật
+0:10:13 - 0:10:18, toán tối ưu hiện đại đã ra đời để cải
+0:10:15 - 0:10:19, thiện hiệu quả huấn luyện. Startastic
+0:10:18 - 0:10:21, gradient design là một trong những thuật
+0:10:19 - 0:10:25, toán nền tảng tuy nhiên nó có thể gặp
+0:10:21 - 0:10:26, vấn đề về dao động hoặc là hội tụ chậm.
+0:10:25 - 0:10:30, Để khắc phục thì các biến thể như
+0:10:26 - 0:10:32, momentum và nesterop accelerated
+0:10:30 - 0:10:34, gradient giúp tăng tốc độ hồi thụ. và
+0:10:32 - 0:10:36, giảm hiện tượng mắt kẹt tại các điểm yên
+0:10:34 - 0:10:38, ngựa. Ngoài ra, các phương pháp tối ưu
+0:10:36 - 0:10:41, hóa với tốc độ học thích hợp thích ứng
+0:10:38 - 0:10:44, như ADA, ADTA,
+0:10:41 - 0:10:46, AMS Prof và ADAM được phát triển nhằm tự
+0:10:44 - 0:10:48, động điều chỉnh tốc độ học cho từng tham
+0:10:46 - 0:10:51, số, giúp mô hình học nhanh và ổn định
+0:10:48 - 0:10:54, hơn, đặc biệt là với dự lý không đồng
+0:10:51 - 0:10:55, nhất hoặc là thưa.
+0:10:54 - 0:10:58, Việc phân tích ưu nhiệt điểm của từng
+0:10:55 - 0:11:00, thuật toán là rất quan trọng.
+0:10:58 - 0:11:01, Chẳng hạn, Adam thường hội tụ nhanh và
+0:11:00 - 0:11:05, ổn định, nhưng đôi khi cho kết quả tổng
+0:11:01 - 0:11:07, quát kém hơn so với SCD đơn thuần.
+0:11:05 - 0:11:09, Lựa chọn thực tán phù hợp phụ thuộc vào
+0:11:07 - 0:11:12, đặc điểm dữ liệu, mô hình cũng như yêu
+0:11:09 - 0:11:14, cầu về tốc độ và độ chính xác. Bên cạnh
+0:11:12 - 0:11:16, đó, hiểu về tốc độ hội tụ và điều kiện
+0:11:14 - 0:11:18, hội tụ của các thuật toán sẽ giúp bạn
+0:11:16 - 0:11:21, kiểm soát quá trình huấn luyện, phòng
+0:11:18 - 0:11:24, chánh các sự cố như là quá khớp,
+0:11:21 - 0:11:26, overfitting hoặc không hội tụ.
+0:11:24 - 0:11:28, Nắm vững các thuật toán tối ưu hóa hiện
+0:11:26 - 0:11:30, đại là chìa khóa để xây dựng các mô hình
+0:11:28 - 0:11:34, học máy mạnh mẽ, hiệu quả và phù hợp hơn
+0:11:30 - 0:11:34, với từng bài toán thực tế.
+0:11:35 - 0:11:38, Để hiểu và xây dựng các mô hình học máy
+0:11:37 - 0:11:41, hiệu quả, chúng ta cần trang bị kiến
+0:11:38 - 0:11:43, thức nền tảng về xác suất thống kê. Đây
+0:11:41 - 0:11:45, là công cụ
+0:11:43 - 0:11:46, giúp chúng ta mô hình hóa sự bất định
+0:11:45 - 0:11:49, của dữ liệu và đưa ra các cái dự đoán
+0:11:46 - 0:11:51, hợp lý. Các quy tắc cơ bản như quy tắc
+0:11:49 - 0:11:53, cộng, quy tắc nhân, xác suất có điều
+0:11:51 - 0:11:55, kiện và định lý PS là nền tảng để xác
+0:11:53 - 0:11:57, định mối quan hệ giữa các biến, đồng
+0:11:55 - 0:11:59, thời giúp xây dựng các mô hình xác suất
+0:11:57 - 0:12:01, và thuật toán suy luận trong học máy.
+0:11:59 - 0:12:03, Khái niệm về biến ngẫu nhiên cả độc lập
+0:12:01 - 0:12:07, và phụ thuộc cùng các phân phối xác suất
+0:12:03 - 0:12:09, như BNULi, Binomio, Poison, Gosion giúp
+0:12:07 - 0:12:11, chúng ta mô tả và phân tích dữ liệu thực
+0:12:09 - 0:12:14, tế với góc nhìn xác suất.
+0:12:11 - 0:12:16, Để hiểu rõ và các phân phối này là rất
+0:12:14 - 0:12:18, quan trọng vì chúng xuất hiện liên tục
+0:12:16 - 0:12:21, trong các mô hình như hồi quy logistic,
+0:12:18 - 0:12:23, nes và nhiều thực toán phân loại khác.
+0:12:21 - 0:12:24, Đặc biệt phân phối Multinomial còn được
+0:12:23 - 0:12:26, ứng dụng rộng rãi trong các bài toán
+0:12:24 - 0:12:29, phân loại nhiều lớp như phân tích văn
+0:12:26 - 0:12:31, bản hoặc nhận diện hình ảnh.
+0:12:29 - 0:12:32, Bên cạnh các phân phối xác suất thì việc
+0:12:31 - 0:12:34, đo lường và phân tích dữ liệu bằng các
+0:12:32 - 0:12:36, chỉ số thống kê như kỳ vọng, phương sai
+0:12:34 - 0:12:39, và hiệp phương sai cũng rất quan trọng
+0:12:36 - 0:12:42, trong học máy. Kỳ vọng phản ánh giá trị
+0:12:39 - 0:12:44, trung bình trong khi phương sai đo lường
+0:12:42 - 0:12:47, độ biến thiên của dữ liệu. Hiệp phương
+0:12:44 - 0:12:50, sai và ma trận hiệp phương sai giúp
+0:12:47 - 0:12:52, chúng ta hiểu được mối quan hệ giữa
+0:12:50 - 0:12:54, nhiều biến, đặc biệt hữu ích khi xử lý
+0:12:52 - 0:12:57, dữ liệu đa chiều.
+0:12:54 - 0:12:59, Hệ số tương quan Peon là công cụ quan
+0:12:57 - 0:13:02, trọng để đánh giá mức độ liên kết tuyến
+0:12:59 - 0:13:04, tính giữa hai biến, từ đó hỗ trợ lựa
+0:13:02 - 0:13:07, chọn đặc chân hoặc phát hiện ra các mối
+0:13:04 - 0:13:08, quan hệ tiềm ẩn trong dữ liệu.
+0:13:07 - 0:13:11, Ngoài ra việc kiểm định giả thuyết và
+0:13:08 - 0:13:13, suy diễn thống kê là hoàn là nền tảng để
+0:13:11 - 0:13:16, đưa các ra các kết luận dựa trên dữ liệu
+0:13:13 - 0:13:19, mẫu. Các phương pháp kiểm định như test
+0:13:16 - 0:13:22, phân tích phương sai, ổn định chỉ chi
+0:13:19 - 0:13:24, bình phương cùng các chỉ số như p value
+0:13:22 - 0:13:26, và khoản tin cậy giúp đánh bạn đánh giá
+0:13:24 - 0:13:28, ý nghĩa thống kê của kết quả từ đó đưa
+0:13:26 - 0:13:30, ra quyết định khách quan và tin cậy hơn.
+0:13:28 - 0:13:32, Những kiến thức này không chỉ giúp bạn
+0:13:30 - 0:13:34, hiểu sâu hơn về bản chất dữ liệu mà còn
+0:13:32 - 0:13:36, là cơ sở để xây dựng, kiểm tra và đánh
+0:13:34 - 0:13:40, giá các mô hình học máy một cách khoa
+0:13:36 - 0:13:41, học và hiệu quả.
+0:13:40 - 0:13:43, Bên cạnh việc phân tích dữ liệu thì kỹ
+0:13:41 - 0:13:45, năng lấy mẫu và ước lượng tham số cũng
+0:13:43 - 0:13:47, đóng vai trò then chốt trong học máy.
+0:13:45 - 0:13:49, Các phương pháp lấy mẫu cho phép chúng
+0:13:47 - 0:13:52, ta rút ra thông tin từ dữ liệu lớn mà
+0:13:49 - 0:13:53, không cần quan sát toàn bộ, đồng thời hỗ
+0:13:52 - 0:13:55, trợ cho việc đánh giá và kiểm định mô
+0:13:53 - 0:13:56, hình.
+0:13:55 - 0:14:00, Ước lượng các tham số như trung bình hay
+0:13:56 - 0:14:02, phương sai từ mẫu giúp chúng ta hiểu đặc
+0:14:00 - 0:14:04, điểm của tổng thể dữ liệu. Trong thực tế
+0:14:02 - 0:14:07, thì các phương pháp ứng ước lược như
+0:14:04 - 0:14:12, maximum likelihood estimation mle,
+0:14:07 - 0:14:13, maximum apostary estimation map thường
+0:14:12 - 0:14:16, xuyên được sử dụng để tìm ra giá trị
+0:14:13 - 0:14:18, tham số tối ưu cho mô hình, từ đó nâng
+0:14:16 - 0:14:20, cao hiệu quả dự đoán.
+0:14:18 - 0:14:22, Ngoài ra, kỹ thuật Bootstraft sampling
+0:14:20 - 0:14:24, cũng đánh giúp đánh giá độ tin cậy của
+0:14:22 - 0:14:26, mô hình bằng cách tạo ra nhiều mẫu dữ
+0:14:24 - 0:14:28, liệu từ tập dữ liệu ban đầu, giúp ước
+0:14:26 - 0:14:31, lượng phân phối của các tham số hoặc
+0:14:28 - 0:14:32, kiểm tra tính ổn định của mô hình. Nắm
+0:14:31 - 0:14:34, vững các kiến thức về lấy mẫu và ước
+0:14:32 - 0:14:36, lượng tham số sẽ giúp bạn xây dựng và
+0:14:34 - 0:14:39, đánh giá các mô hình học máy một cách
+0:14:36 - 0:14:40, chắc chắn, đồng thời tự tin hơn khi đưa
+0:14:39 - 0:14:42, ra các quyết định dựa trên dữ liệu thực
+0:14:40 - 0:14:45, tế.
+0:14:42 - 0:14:47, Nói tóm lại, để học tốt môn học máy, ba
+0:14:45 - 0:14:49, chụ cột kiến thức cơ bản mà chúng ta cần
+0:14:47 - 0:14:52, nắm vững đó là đại số tiến tính, tứ hóa
+0:14:49 - 0:14:54, và xác suất thống kê. Đại số tiến tính
+0:14:52 - 0:14:56, cung cấp công cụ để biểu diễn và xử lý
+0:14:54 - 0:14:59, dữ liệu dưới dạng vecơ, ma trận và các
+0:14:56 - 0:15:01, phép toán liên quan. Kiến thức riêng về
+0:14:59 - 0:15:03, trị riêng, vecơ riêng, phân rã ma trận
+0:15:01 - 0:15:05, cũng như giải hệ phương trình tiến tính
+0:15:03 - 0:15:07, là nền tảng cho rất nhiều thuật toán học
+0:15:05 - 0:15:10, máy. Từ hồi quyến tính cho đến giảm
+0:15:07 - 0:15:12, chiều dữ liệu bằng PCA. Việc hiểu rõ các
+0:15:10 - 0:15:15, phép toán này sẽ giúp bạn thao tác hiệu
+0:15:12 - 0:15:18, quả với dữ liệu, xây dựng mô hình và tối
+0:15:15 - 0:15:20, ưu hóa các thuật toán phức tạp.
+0:15:18 - 0:15:23, Đối với tứ uy hóa thì là chìa khóa để
+0:15:20 - 0:15:29, tìm ra các tham số tối nhất cho mô hình
+0:15:23 - 0:15:29, học máy. Việc xác định các hàm mục tiêu
+0:15:30 - 0:15:34, sử dụng gradient lựa chọn các thuật toán
+0:15:32 - 0:15:36, tối ưu hiện đại như SGD, Adam cũng như
+0:15:34 - 0:15:39, xử lý các bài toán có hoặc không có ràng
+0:15:36 - 0:15:41, buộc là yếu tố quyết định đến tốc độ và
+0:15:39 - 0:15:43, hiệu quả huấn luyện của mô hình. Nắm
+0:15:41 - 0:15:45, vững các khái niệm về điều kiện hồi tụ,
+0:15:43 - 0:15:47, tốc độ hồi tụ cũng như ưu nhược điểm của
+0:15:45 - 0:15:49, từng phương pháp sẽ giúp bạn chọn được
+0:15:47 - 0:15:51, giải pháp phù hợp cho từng bài toán thực
+0:15:49 - 0:15:55, tế.
+0:15:51 - 0:15:56, Ở khía cạnh xác suất thống kê thì xác
+0:15:55 - 0:15:58, suất thống kê là nền tảng để mô hình hóa
+0:15:56 - 0:16:00, sự bất định trong dữ liệu và đưa ra các
+0:15:58 - 0:16:03, cái dự đoán hợp lý. Các khái niệm về xác
+0:16:00 - 0:16:04, suất cơ bản, phân phối xác suất, kỳ vọng
+0:16:03 - 0:16:06, phương sai, hiệp phương sai cùng các
+0:16:04 - 0:16:10, phương pháp kiểm chứng giả thiết và ước
+0:16:06 - 0:16:12, lực tham số như MLE, MAP hay Pushstrap,
+0:16:10 - 0:16:15, SAMLIN sẽ giúp bạn đánh giá và lựa chọn
+0:16:12 - 0:16:17, mô hình tốt hơn. Điều này đặc biệt quan
+0:16:15 - 0:16:19, trọng khi làm việc với dữ liệu thực tế,
+0:16:17 - 0:16:21, có nhiều biến động và không chắc chắn.
+0:16:19 - 0:16:22, Tóm lại thì việc thành thạo ba lĩnh vực
+0:16:21 - 0:16:25, này sẽ giúp tạo nền tảng vững chắc cho
+0:16:22 - 0:16:27, bạn trong việc hiểu, xây dựng, tối ưu và
+0:16:25 - 0:16:29, đánh giá các mô hình học máy, từ đó phát
+0:16:27 - 0:16:33, triển các ứng dụng.
+0:16:29 - 0:16:33, hiệu quả trong thực tế.
+0:17:40 - 0:17:42, M.

@@ -1,0 +1,202 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:34, tức là môi trường hay là thế giới mà Agent sẽ tương tác đến
+0:00:34 - 0:00:37, và tương tác ở đây sẽ là tương tác 2 chiều
+0:00:37 - 0:00:41, Agent sẽ quan sát trạng thái ST
+0:00:41 - 0:00:43, lưu ý là ở đây chúng ta sẽ có
+0:00:43 - 0:00:46, ngoài cái biến S hồi nãy chúng ta sẽ có thêm một cái chỉ số nữa
+0:00:46 - 0:00:47, đó là chỉ số T
+0:00:47 - 0:00:50, T này tương ứng là cái thời gian
+0:00:50 - 0:00:54, nó ám chỉ cái thời gian là tại cái thời điểm nào đó
+0:00:54 - 0:00:56, ví dụ như T là tại vị trí hiện tại
+0:00:56 - 0:01:00, T cộng 1 là thời điểm tiếp theo
+0:01:00 - 0:01:03, Agent sẽ quan sát trạng thái từ môi trường
+0:01:03 - 0:01:08, và thực hiện các hành động AT, action tại thời điểm T
+0:01:08 - 0:01:12, và Environment sẽ trả về trạng thái mới
+0:01:12 - 0:01:16, tức là ứng với action này, thì môi trường sẽ trả về trạng thái mới
+0:01:16 - 0:01:22, và cộng với lại cái phần thưởng cho cái trạng thái của ST
+0:01:22 - 0:01:24, cộng với cái phần thưởng
+0:01:25 - 0:01:27, của cái trạng thái trước đó
+0:01:27 - 0:01:29, ví dụ khi chúng ta chơi game
+0:01:29 - 0:01:32, thì chúng ta muốn có một cái Agent
+0:01:32 - 0:01:33, Agent mà chơi game
+0:01:33 - 0:01:35, và nó sẽ tương tác với cái môi trường
+0:01:35 - 0:01:39, thì cái môi trường này nó chính là cái setup của cái game của mình
+0:01:39 - 0:01:45, và khi chúng ta tương tác thì nó sẽ có các cái phần thưởng hoặc là hình phạt
+0:01:45 - 0:01:54, Ví dụ như nếu mà chúng ta tương tác và chúng ta ăn được một cái đối tượng trong game
+0:01:54 - 0:01:58, chẳng hạn chúng ta ăn được một cái tiền trong game thì cái reward của mình nó sẽ được tăng lên
+0:01:58 - 0:02:03, hoặc là nếu chúng ta rớt xuống dưới một cái bầu vật thì lúc đó reward nó sẽ tiến về âm vô cùng
+0:02:03 - 0:02:10, Rồi trong xe tự lái thì cái agent xe tự lái nó sẽ tương tác với cái môi trường chính là
+0:02:10 - 0:02:17, con đường, người bộ hành, xe xung quanh
+0:02:17 - 0:02:20, là đường phố, môi trường là đường phố
+0:02:22 - 0:02:27, khái niệm tiếp theo cũng rất quan trọng mà chúng ta cần phải tìm hiểu là trạng thái
+0:02:27 - 0:02:33, trạng thái là nó sẽ miêu tả tình huống hiện tại của môi trường của mình
+0:02:33 - 0:02:37, cung cấp thông tin để Agent có thể đưa ra quyết định hành động
+0:02:37 - 0:02:41, tức là nó, Agent này muốn đưa ra được cái hành động tiếp theo
+0:02:41 - 0:02:46, tại thời điểm t, thì chúng ta sẽ phải có được thông tin từ môi trường
+0:02:46 - 0:02:50, chứ nó không có thông tin để ra quyết định
+0:02:50 - 0:02:54, và đặc điểm của trạng thái của mình là
+0:02:54 - 0:02:57, nó sẽ từ đơn giản là
+0:02:57 - 0:03:01, ví dụ như nó có thể là một trạng thái của mê cung
+0:03:01 - 0:03:03, hoặc đến phức tạp hơn
+0:03:03 - 0:03:06, Ví dụ như nó là một hình ảnh camera trong xe tự lái
+0:03:07 - 0:03:08, Thì cái trạng thái này
+0:03:09 - 0:03:13, Nếu mà nói về đơn giản thì có thể là cái trạng thái của các bunker trong game
+0:03:14 - 0:03:16, Hoặc là cái vị trí trong mekong, v.v.
+0:03:16 - 0:03:25, Rồi phức tạp thì nó có thể là hình ảnh hoặc là các dữ liệu từ sensor mà chúng ta thu thập được
+0:03:25 - 0:03:26, Trong cái xe tự lái
+0:03:27 - 0:03:32, Thì rõ ràng là các dữ liệu phức tạp thì thường là các dữ liệu thô
+0:03:33 - 0:03:35, Các dữ liệu thôi
+0:03:35 - 0:03:42, Còn các dữ liệu đơn giản thì thường nó sẽ là có cái khái niệm và cái concept nó rất là rõ ràng
+0:03:42 - 0:03:49, Và thường thì cả dữ liệu đơn giản hay là dữ liệu phức tạp thì nó cũng sẽ đều được biểu diễn bằng vector
+0:03:49 - 0:03:54, hoặc là cái dạng ma trận 2D hình ảnh hoặc là các cái thông tin rời ràng
+0:03:54 - 0:03:58, Nhưng mà thường đơn giản nhất là nó sẽ biểu diễn dưới dạng là vector
+0:03:58 - 0:04:03, Tại vì chúng ta có một cái quy tắc đó là mọi dữ liệu đều có thể chuyển về được cái định dạng Vector
+0:04:03 - 0:04:10, Thì cái bàn gờ vua này nó sẽ đưa cái bốt cục của cái bàn gờ để đưa cho cái con Agent
+0:04:10 - 0:04:17, Thì đây là cái trạng thái, bốt cục của bàn gờ nó chính là cái trạng thái S tại cái thời điểm T của mình
+0:04:17 - 0:04:23, Hoặc là cái con robot, cái con robot nó bước đi trên cái mặt đất, đúng không?
+0:04:23 - 0:04:28, Vị trí của con robot, góc quay của con robot, vận tốc của con robot
+0:04:28 - 0:04:30, nó chính là cái trạng thái
+0:04:30 - 0:04:34, nó sẽ cung cấp cho con agent biết con robot đang ở trong cái trạng thái nào
+0:04:34 - 0:04:37, để nó có thể thực thi cái hành động tiếp theo
+0:04:38 - 0:04:41, Khá niệm cơ bản tiếp theo mà chúng ta sẽ cùng tìm hiểu đó chính là
+0:04:41 - 0:04:43, Hành động Action
+0:04:43 - 0:04:47, Thì đây là những gì mà agent có thể làm
+0:04:47 - 0:04:49, có thể làm trong một cái trạng thái
+0:04:49 - 0:04:51, có thể làm trong một cái trạng thái
+0:04:51 - 0:04:55, thì quyết định tương lai của Agent trong môi trường này
+0:04:55 - 0:04:56, thì với cái Action
+0:04:57 - 0:05:00, tại một cái trạng thái, nó sẽ cho biết tương lai của Agent
+0:05:00 - 0:05:02, trong môi trường này nó sẽ như thế nào
+0:05:03 - 0:05:05, và đặc điểm của mình, đầu tiên đó là
+0:05:05 - 0:05:06, Discrete
+0:05:06 - 0:05:09, tức là đây là các lựa chọn rời rạt
+0:05:09 - 0:05:12, hành động của chúng ta sẽ là một cái hành động rời rạt
+0:05:12 - 0:05:13, một cái lựa chọn rời rạt
+0:05:15 - 0:05:16, nó sẽ di chuyển
+0:05:16 - 0:05:18, ví dụ như chúng ta có thể di chuyển theo các cái hướng
+0:05:18 - 0:05:22, rồi có thể cái hành động của mình là nhảy hay là đi bộ
+0:05:22 - 0:05:24, hoặc là phanh xe
+0:05:24 - 0:05:27, thì đây chính là những cái ví dụ về
+0:05:27 - 0:05:29, về hành động mà dạng rời ràng
+0:05:29 - 0:05:32, nhưng cái hành động của mình nó cũng có thể là ở dạng liên tục
+0:05:32 - 0:05:35, continuous là các cái giá trị liên tục
+0:05:35 - 0:05:37, ví dụ như là một cái góc quay của một cái bánh xe
+0:05:37 - 0:05:40, thì cái góc quay này nó có thể là một cái con số lạng
+0:05:40 - 0:05:44, ví dụ như là 3.15 độ
+0:05:44 - 0:05:50, hoặc là kinh lực tác động, ví dụ như là 3.61 Nm
+0:05:50 - 0:05:53, hoặc là kinh lực của cái fan
+0:05:53 - 0:05:58, thì đây là những cái action mà nó là liên tục
+0:05:58 - 0:06:00, còn cái action mà dạng rời rạc
+0:06:00 - 0:06:03, thì cho biết đó là mình sẽ đi theo hướng nào
+0:06:03 - 0:06:05, đi hướng lên trên, đi hướng rẻ trái
+0:06:05 - 0:06:07, hoặc là chúng ta đứng yên nhảy
+0:06:07 - 0:06:09, hoặc là đi bộ
+0:06:09 - 0:06:13, fan xe ở đây là fan hay không fan
+0:06:13 - 0:06:17, tức là chúng ta cho biết hành động của chúng ta là có phanh hay không phanh chiếc xe
+0:06:17 - 0:06:19, thì ví dụ như trong game Mario
+0:06:19 - 0:06:23, thì chúng ta sẽ có các cái hành động là rời đạt
+0:06:23 - 0:06:27, là đi về bên tay trái, đi về tay phải, hoặc là nhảy
+0:06:27 - 0:06:31, còn trong cái xe tự lái, ở trong môi trường thực tế thì
+0:06:31 - 0:06:33, action của chúng ta sẽ là những cái giá trị liên tục
+0:06:33 - 0:06:37, ví dụ như là tốc độ của chúng ta
+0:06:37 - 0:06:42, hoặc là lực chúng ta sẽ đạp ga, lực chúng ta sẽ đạp phanh là gì
+0:06:42 - 0:06:48, hoặc là các action rời rạt, ví dụ như là quyết định xem là tăng tốc hay là giảm tốc
+0:06:48 - 0:06:50, rồi rẽ trái hay là rẽ phải
+0:06:50 - 0:06:55, nhưng mà đi kèm với các action rời rạt này thì nó sẽ có các action liên tục
+0:06:55 - 0:06:59, ví dụ như là muốn tăng tốc thì tăng tốc bao nhiêu
+0:06:59 - 0:07:01, rồi phải đạp ga là bao nhiêu
+0:07:01 - 0:07:05, rồi rẽ trái rẽ phải thì chúng ta sẽ xoay vô lăng là bao nhiêu độ như vậy
+0:07:07 - 0:07:11, và cái khái niệm quan trọng, cơ bản tiếp theo đó chính là
+0:07:11 - 0:07:21, Reward là R, thì đây là tín hiệu từ môi trường để đánh giá xem hành động của mình là tốt hay không
+0:07:21 - 0:07:27, Và giá trị của mình có thể nhận là giá trị số từ dương, âm hoặc số 0
+0:07:27 - 0:07:34, Đặc điểm như immediate reward, tức là phản hồi ngay sau khi hành động của mình xảy ra
+0:07:34 - 0:07:36, thì đó là ngay lập tức
+0:07:36 - 0:07:38, nhưng mà nó cũng có thể là 1 cái delay reward
+0:07:38 - 0:07:40, tức là có những cái hành động mà
+0:07:40 - 0:07:42, không phải trả ra tức thời mà phải
+0:07:42 - 0:07:44, chờ 1 khoảng thời gian sau nó mới có thể
+0:07:44 - 0:07:46, đưa ra được cái reward
+0:07:46 - 0:07:48, thì đây là 2 loại reward
+0:07:48 - 0:07:50, khác nhau là
+0:07:50 - 0:07:52, immediate hoặc là delay
+0:07:52 - 0:07:54, thì đối với cái delay là cái mà
+0:07:54 - 0:07:56, có lẽ là xuất hiện phổ biến nhất
+0:07:56 - 0:07:58, là vì tại 1 cái action
+0:07:58 - 0:08:00, hiện tại thì nhiều khi chúng ta sẽ
+0:08:00 - 0:08:02, không thấy được ngay cái reward của mình là gì
+0:08:02 - 0:08:08, mà phải chờ sau rất nhiều bước tiếp theo thì chúng ta mới có thể thấy rõ được phần thưởng trả về
+0:08:08 - 0:08:12, ví dụ như là reward của mình đó là thắng cả ván cờ
+0:08:12 - 0:08:15, thì phải sau rất nhiều bước chúng ta mới thấy được cái reward này
+0:08:15 - 0:08:23, thì nếu như chúng ta thắng ván cờ thì rõ ràng cái điểm của mình nó sẽ rất là cao là cộng 100 điểm
+0:08:23 - 0:08:29, rồi robot mà va chạm vô một cái chứng ngại vật nào đó thì đó sẽ là bị trừ điểm
+0:08:29 - 0:08:31, là điểm ong
+0:08:31 - 0:08:33, hoặc là xe đi đúng làng
+0:08:33 - 0:08:35, thì chúng ta sẽ có cộng một
+0:08:35 - 0:08:37, nhưng nếu mà lỡ chạm vào làng
+0:08:37 - 0:08:40, lấn làng thì chúng ta sẽ có điểm trường một
+0:08:40 - 0:08:44, đây là một số ví dụ về giá trị của reward của mình
+0:08:44 - 0:08:48, để cho biết môi trường đã tương tác với mình như thế nào
+0:08:48 - 0:08:54, và cái mà mình nhận được khi thực thi hành động trước đó là gì
+0:08:54 - 0:08:56, từ các khái niệm cơ bản này
+0:08:56 - 0:09:05, Bên bảng này thì chúng ta sẽ có hình dung về cái flow của các trạng thái hành động và reward
+0:09:05 - 0:09:07, Đầu tiên đó là môi trường
+0:09:07 - 0:09:13, Tại thời điểm t, cái agent sẽ nhận được trạng thái st từ môi trường
+0:09:13 - 0:09:18, Agent sẽ nhận được trạng thái để nó biết nó đang định vị nó đang ở đâu
+0:09:18 - 0:09:23, Sau đó thì cái agent từ trạng thái đó sẽ đưa ra action là at
+0:09:23 - 0:09:28, để thực hiện hành động AT để tương tác trở lại với môi trường này
+0:09:28 - 0:09:39, sau khi trạng thái ST agent thực hiện hành động AT thì môi trường sẽ phản hồi lại phần thưởng là RT
+0:09:39 - 0:09:42, thì nó sẽ phản hồi lại RT là gì
+0:09:42 - 0:09:49, và sau đó thì môi trường sẽ cho biết trạng thái tiếp theo của chúng ta là gì
+0:09:49 - 0:09:55, Ngoài RT là Reward của ActionAT
+0:09:55 - 0:10:01, thì nó sẽ cho biết trạng thái tiếp theo của môi trường sẽ là cái gì
+0:10:05 - 0:10:11, Cứ như vậy thì chúng ta sẽ lập đi lập lại cho đến khi nào mà kết thúc
+0:10:11 - 0:10:15, và một số ví dụ về bài toán học tăng cường
+0:10:15 - 0:10:21, Carpone, chế cây và cái xào
+0:10:21 - 0:10:25, Mục tiêu đó là chúng ta sẽ cân bằng cái xe đẩy
+0:10:25 - 0:10:28, Mục tiêu là cân bằng cây xào trên xe đẩy
+0:10:28 - 0:10:35, Giống như chúng ta làm shift với cây, làm sao để giữ cho cây này được thăng bằng, không bị ngã xuống dưới
+0:10:35 - 0:10:40, thì ở đây nó sẽ phải sử dụng rất nhiều những kiến thức về mặt vật lý
+0:10:40 - 0:10:45, chiếc xe, lực tương tác như thế nào, lực trọng trường ra sao
+0:10:45 - 0:10:51, góc nghi như thế này thì nó sẽ ảnh hưởng như thế nào đến việc ngã xuống của chiếc cây
+0:10:51 - 0:10:55, trọng lượng của cái vật ở bên trên đây nó sẽ là như thế nào
+0:10:55 - 0:10:58, thì ở đây nó sẽ dùng rất nhiều những kiến thức về mặt vật lý
+0:10:58 - 0:11:08, và với mục tiêu đó là để cân bằng cây xào trên xe đẩy này thì chúng ta sẽ có các trạng thái S
+0:11:08 - 0:11:16, trạng thái này nó sẽ cho biết là tại vị trí hiện tại thì cây xào đã tạo một góc theta
+0:11:16 - 0:11:20, một góc theta là bao nhiêu so với trục đứng này
+0:11:20 - 0:11:27, Mục tiêu là hướng đến để cho theta là 0 để cho cây xào đứng ở giữa
+0:11:27 - 0:11:42, Và tốc độ góc và tọa độ xi và vận tốc ngang là trạng thái của cây xào
+0:11:42 - 0:11:51, rồi hành động của chúng ta đó là chúng ta sẽ tương tác một cái lực nằm ngang tác động vào cái xe đẩy như thế nào
+0:11:51 - 0:11:55, thì đây chính là cái action
+0:11:55 - 0:12:00, lưu ý là ở đây chúng ta nhầm đây là action A
+0:12:00 - 0:12:03, và cái phần thưởng đó là gì?
+0:12:03 - 0:12:08, Cộng 1, nếu tại thời điểm cộng 1, tại mỗi thời điểm cây xào mà thẳng đứng
+0:12:08 - 0:12:12, tức là nếu như cây xào đạt được đến trạng thái mà thẳng đứng như thế này
+0:12:12 - 0:12:15, thì chúng ta sẽ được 1 điểm
+0:12:15 - 0:12:20, như vậy thì chúng ta sẽ dịch chuyển trái phải
+0:12:20 - 0:12:24, cái xe đẩy như thế nào đấy để cho cây xào này nó sẽ đứng yên
+0:12:24 - 0:12:29, và nó đứng ở giữa, nó không có bị ngả xuống hẳn về một phía nào đấy
+0:12:29 - 0:12:35, Đây chính là ví dụ về học tăng cường cho xe đẩy và cây sao
+0:12:35 - 0:12:38, Điều khiển chuyển động của robot
+0:12:38 - 0:12:44, Mục tiêu đó là làm cho robot có thể di chuyển về phía trước mà không ngã
+0:12:44 - 0:12:46, robot di chuyển về phía trước
+0:12:46 - 0:12:51, Nếu chúng ta để robot đi như thế này
+0:12:51 - 0:12:56, thì có thể nó sẽ di chuyển tùm lum hướng
+0:12:56 - 0:13:01, Trong khi đó nếu như chúng ta điều khiển cái con robot này mà đúng
+0:13:01 - 0:13:04, thì chúng ta sẽ thấy là cái con robot nó sẽ di chuyển về một hướng thôi
+0:13:04 - 0:13:07, và đồng thời nó sẽ không có bị ngã
+0:13:07 - 0:13:15, Còn cái con robot này chúng ta thấy là một hồi sau chúng ta thấy là nó bị lật hướng và có xu hướng là muốn lật ngã xuống
+0:13:15 - 0:13:18, Thế thì trạng thái của chúng ta đó là góc và vị trí của các cái khớp
+0:13:18 - 0:13:26, và hành động của chúng ta đó là tác động lực điều khiển của các cái khớp
+0:13:26 - 0:13:29, tắc động lực của điều kiện của cái khớp, ví dụ như ở đây là 1 cái cánh tay
+0:13:31 - 0:13:34, thì cái lực nó sẽ cho biết chúng ta sẽ nhấp cái cánh tay này lên
+0:13:34 - 0:13:37, hay là gặp cái cánh tay này xuống hay là giữ nguyên
+0:13:37 - 0:13:39, thì đây là 1 cái khớp tay
+0:13:39 - 0:13:41, đây là 1 cái khớp tay
+0:13:41 - 0:13:43, và phần thưởng đó là cộng 1
+0:13:43 - 0:13:46, tại mỗi lần đứng thẳng và không bị ngã
+0:13:49 - 0:13:55, chò chơi Atari thì mục tiêu đó là hoàn thành chò chơi để điểm số của mình là cao nhất
+0:13:55 - 0:14:03, và trạng thái của mình là S là dữ liệu pixel thô của trạng thái của trò chơi
+0:14:03 - 0:14:09, và hành động của chúng ta là điều khiển trò chơi, ví dụ như là đi qua trái, phải, lên, xuống
+0:14:09 - 0:14:16, và phần thưởng của mình là điểm tăng giảm ở mỗi bước của mỗi thời gian
+0:14:25 - 0:14:29, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

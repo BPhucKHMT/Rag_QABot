@@ -1,0 +1,113 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với câu hỏi thảo
+0:00:15 - 0:00:21, luận tiếp theo đó là ý nghĩa hình học
+0:00:18 - 0:00:23, của mô hình của mình là gì? Thì trong
+0:00:21 - 0:00:26, cái công thức của chúng ta thì chúng ta
+0:00:23 - 0:00:28, thấy nó sẽ là hàm sigmo của
+0:00:26 - 0:00:31, wx
+0:00:28 - 0:00:36, cộng cho b.
+0:00:31 - 0:00:40, Thế thì ý nghĩa của W và B ở đây sẽ là
+0:00:36 - 0:00:43, gì? Thì ở đây giả sử như chúng ta à xét
+0:00:40 - 0:00:45, cái đặc trưng đầu vào là trong một cái à
+0:00:43 - 0:00:49, một cái vecơ 2D. Có nghĩa là x của chúng
+0:00:45 - 0:00:51, ta là thuộc R2.
+0:00:49 - 0:00:55, Thì x lúc này sẽ bao gồm hai thành phần
+0:00:51 - 0:00:59, đó là x1 và x2.
+0:00:55 - 0:01:03, Thì x1 và x2 này sẽ là hai cái tọa độ là
+0:00:59 - 0:01:05, cái à giá trị tọa độ của một cái điểm
+0:01:03 - 0:01:08, của mình. Đó thì một cái điểm trong cái
+0:01:05 - 0:01:12, không gian của mình nó sẽ là bao gồm x1
+0:01:08 - 0:01:14, và x2.
+0:01:12 - 0:01:17, Thì các cái điểm này sẽ được tách ra làm
+0:01:14 - 0:01:20, hai phần. Và sau khi cái mô hình hồi quy
+0:01:17 - 0:01:23, logistic mà đã được huấn luyện xong thì
+0:01:20 - 0:01:26, chúng ta thấy nó đã tách ra à làm hai
+0:01:23 - 0:01:28, phần bằng một cái đường thẳng. Vậy thì
+0:01:26 - 0:01:33, cái ý nghĩa về mặt hình học của cái
+0:01:28 - 0:01:37, đường thẳng này đó chính là ờ WB à WX
+0:01:33 - 0:01:40, cộng B bằng 0.
+0:01:37 - 0:01:41, Thì như chúng ta biết đó là phương trình
+0:01:40 - 0:01:44, của một đường thẳng thì nó sẽ có dạng là
+0:01:41 - 0:01:47, một cái đẳng thức như thế này. Và nếu
+0:01:44 - 0:01:49, như chúng ta biểu diễn nó ra thành đầy
+0:01:47 - 0:01:51, dạng đầy đủ, tức là x của chúng ta gồm
+0:01:49 - 0:01:55, nhiều thành phần thì lúc này công thức
+0:01:51 - 0:01:58, của mình nó sẽ là w1x1
+0:01:55 - 0:02:00, cộng cho w2x2
+0:01:58 - 0:02:03, cộng cho b.
+0:02:00 - 0:02:05, Thì cái x của mình nó là một cái vecơ
+0:02:03 - 0:02:08, hai chiều thì W của mình tương ứng nó
+0:02:05 - 0:02:11, cũng sẽ có hai thành phần là hai chiều
+0:02:08 - 0:02:13, W1 W2 và cái này sẽ là bằng 0. Thì đây
+0:02:11 - 0:02:16, chính là cái dạng thức của cái phương
+0:02:13 - 0:02:18, trình đường thẳng
+0:02:16 - 0:02:20, dạng tổng quát mà chúng ta đã học ở
+0:02:18 - 0:02:21, chương trình phổ thông.
+0:02:20 - 0:02:24, Thế thì ý nghĩa của cái phương trình
+0:02:21 - 0:02:27, đường thẳng này đó là nó tách ra làm hai
+0:02:24 - 0:02:29, phần và những cái phần nào mà nằm ở phía
+0:02:27 - 0:02:31, trên
+0:02:29 - 0:02:34, cụ thể là các cái điểm màu xanh thì nó
+0:02:31 - 0:02:36, sẽ khi thế cái tọa độ đó khi thế tọa độ
+0:02:34 - 0:02:40, vào cái
+0:02:36 - 0:02:42, công thức là W1 x1 W2 X2 cộng cho B này
+0:02:40 - 0:02:44, á thì nó sẽ cùng dấu. Ví dụ như những
+0:02:42 - 0:02:47, cái điểm ở phía trên tức là màu xanh này
+0:02:44 - 0:02:51, khi chúng ta thế vào,
+0:02:47 - 0:02:55, chúng ta thế vào thì W1 x1 cộng cho W2
+0:02:51 - 0:02:58, x2 cộng cho B thì nó sẽ là một con số
+0:02:55 - 0:03:02, lớn hơn 0. Và tất cả các cái con à cái
+0:02:58 - 0:03:03, tọa độ của à tất cả các cái tọa độ của
+0:03:02 - 0:03:06, các cái điểm màu xanh này khi thế vào
+0:03:03 - 0:03:08, thì nó đều cùng dấu, tức là dương. Ngược
+0:03:06 - 0:03:11, lại. Thế thì nếu như ở phía trên mà
+0:03:08 - 0:03:12, dương thì ở phía ngược lại thì nếu mà
+0:03:11 - 0:03:15, chúng ta lấy cái tọa độ của các cái điểm
+0:03:12 - 0:03:18, màu cam này nè thế vào phương trình thì
+0:03:15 - 0:03:22, w1x1 cộng cho w2x2
+0:03:18 - 0:03:24, à nó sẽ là cộng b nó sẽ ra cùng dấu và
+0:03:22 - 0:03:27, nó sẽ là bé hơn 0.
+0:03:24 - 0:03:28, Mặt khác thì nó sẽ có thêm một cái tính
+0:03:27 - 0:03:31, chất hình học nữa đó là những cái điểm
+0:03:28 - 0:03:34, mà ở càng xa à có cái khoảng cách càng
+0:03:31 - 0:03:36, xa so với lại cái đường thẳng này á thì
+0:03:34 - 0:03:38, khi chúng ta thế vào đối với những cái
+0:03:36 - 0:03:41, điểm mà ví dụ như điểm này chúng ta thế
+0:03:38 - 0:03:43, vào thì chúng ta thấy cái khoảng cách
+0:03:41 - 0:03:47, của mình đó là xa nhất. Thì khi thế vào
+0:03:43 - 0:03:50, cái công thức w1 x1 w2 x2 cộng w à cộng
+0:03:47 - 0:03:53, b thì nó sẽ ra một con số rất là lớn à
+0:03:50 - 0:03:55, nó sẽ lớn hơn so với lại cái con số mà
+0:03:53 - 0:03:57, khi chúng ta thế vô tại đây. Thì cái này
+0:03:55 - 0:04:00, là ừ nó tương đương với lại một cái công
+0:03:57 - 0:04:01, thức về mặt khoảng cách điểm mà càng gần
+0:04:00 - 0:04:04, thì khi chúng ta thế vô cái công thức
+0:04:01 - 0:04:07, này thì nó sẽ ra một cái con số dương
+0:04:04 - 0:04:09, nhưng mà con số này gần gần bằng 0. Còn
+0:04:07 - 0:04:11, nếu như cái điểm mà xa hơn à khi thay
+0:04:09 - 0:04:13, thế vào công thức này thì nó cũng ra số
+0:04:11 - 0:04:16, dương nhưng mà cái con số của nó sẽ lớn
+0:04:13 - 0:04:19, hơn. Ở khí cạnh ngược lại thì ví dụ như
+0:04:16 - 0:04:22, cái điểm này thế vào thì chúng ta thấy
+0:04:19 - 0:04:25, là nó sẽ ra số âm nhưng mà nó sẽ gần số
+0:04:22 - 0:04:27, 0. Còn nếu chúng ta thế vô cái điểm này
+0:04:25 - 0:04:29, à là cái điểm mà nó có cái khoảng cách
+0:04:27 - 0:04:31, lớn thì khi chúng ta thế vào công thức
+0:04:29 - 0:04:34, này nó cũng ra số âm nhưng mà cái trị
+0:04:31 - 0:04:37, tuyệt đối của nó nó lớn hơn. Thì đó
+0:04:34 - 0:04:40, chính là cái ý nghĩa về mặt hình học của
+0:04:37 - 0:04:46, cái mô hình hồi quy logistic một cách
+0:04:40 - 0:04:48, tóm gọn. Đó là cái bộ tham số W và B. B
+0:04:46 - 0:04:51, là bias. Nó chính là cái bộ hệ số của
+0:04:48 - 0:04:54, cái phương trình đường thẳng để tách ra
+0:04:51 - 0:04:56, làm hai phần. à tách cái không gian của
+0:04:54 - 0:05:00, mình ra làm hai phần như thế này. Và các
+0:04:56 - 0:05:02, cái điểm màu xanh và màu cam ở đây thì
+0:05:00 - 0:05:04, khoảng cách mà càng gần đến cái đường
+0:05:02 - 0:05:08, phân lớp này thì khi thế vô cái trị
+0:05:04 - 0:05:11, tuyệt đối cái trị tuyệt đối của nó của
+0:05:08 - 0:05:13, nó sẽ là càng nhỏ và cái điểm càng xa
+0:05:11 - 0:05:14, thì cái trị tuyệt đối của nó sẽ càng xa.
+0:05:13 - 0:05:16, Thì đó chính là ý nghĩa hình học của mô
+0:05:14 - 0:05:28, hình.
+0:05:16 - 0:05:28, [âm nhạc]
