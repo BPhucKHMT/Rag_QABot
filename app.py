@@ -1,140 +1,137 @@
 import streamlit as st
 import time
+import json
 
-# --- 1. Thiết lập Trang và Tiêu đề ---
+# ============ BACKEND AGENT ============
+from rag.lang_graph_rag import call_agent  # hàm backend trả về JSON
+# ========================================
+
+# --- 1. Thiết lập giao diện ---
 st.set_page_config(page_title="Chatbot xịn", layout="wide")
 st.title("🤖 NVTiep Q&A")
 
-# --- 2. Hàm Tiện ích ---
-
+# --- 2. Tiện ích ---
 def truncate_text(text, max_length=35):
-    """Một hàm nhỏ để cắt ngắn tiêu đề cho sidebar"""
     if len(text) > max_length:
         return text[:max_length] + "..."
     return text
 
-# --- 3. Định nghĩa các hàm Callback ---
-
+# --- 3. Callback Sidebar ---
 def set_current_conversation(convo_id):
-    """Cập nhật session_state để chọn một cuộc trò chuyện"""
     st.session_state.current_conversation_id = convo_id
 
 def create_new_conversation():
-    """
-    Tạo một cuộc trò chuyện mới với ID duy nhất (dựa trên timestamp)
-    và chọn nó làm cuộc trò chuyện hiện tại.
-    """
-    # Sử dụng timestamp làm ID duy nhất và để sắp xếp
-    convo_id = f"chat_{int(time.time())}" 
-    
-    # Cấu trúc dữ liệu mới:
-    # Mỗi cuộc trò chuyện là một dict chứa 'title' và 'messages'
+    convo_id = f"chat_{int(time.time())}"
     st.session_state.conversations[convo_id] = {
-        "title": "Cuộc trò chuyện mới", # Tiêu đề mặc định
+        "title": "Cuộc trò chuyện mới",
         "messages": [
             {"role": "assistant", "content": "Bạn muốn hỏi gì hôm nay?"}
         ]
     }
-    # Chọn cuộc trò chuyện mới này
     st.session_state.current_conversation_id = convo_id
 
 # --- 4. Khởi tạo Session State ---
-
-# 'conversations' là một TỪ ĐIỂN (dict)
-# key: ID duy nhất (ví dụ: "chat_1678886400")
-# value: một dict khác chứa { "title": "...", "messages": [...] }
 if "conversations" not in st.session_state:
     st.session_state.conversations = {}
 
-# 'current_conversation_id' theo dõi ID của cuộc trò chuyện đang xem
 if "current_conversation_id" not in st.session_state:
     st.session_state.current_conversation_id = None
 
-# Tự động tạo và chọn cuộc trò chuyện đầu tiên nếu chưa có
 if not st.session_state.conversations:
     create_new_conversation()
 
-# --- 5. Tạo Thanh bên (Sidebar) ---
-
+# --- 5. Sidebar ---
 with st.sidebar:
     st.title("Cuộc trò chuyện")
-    
-    # Nút "Cuộc trò chuyện mới"
-    st.button("➕ Cuộc trò chuyện mới", 
-              on_click=create_new_conversation, 
-              use_container_width=True)
-    
-    st.divider() 
-    st.subheader("Gần đây") # Giống như trong ảnh của bạn
 
-    # Hiển thị danh sách các cuộc trò chuyện
-    # Sắp xếp theo ID (timestamp) để cuộc trò chuyện mới nhất lên đầu
-    # Chúng ta đảo ngược (reversed) danh sách keys
+    st.button("➕ Cuộc trò chuyện mới",
+              on_click=create_new_conversation,
+              use_container_width=True)
+
+    st.divider()
+    st.subheader("Gần đây")
+
     convo_ids = list(st.session_state.conversations.keys())
     for convo_id in reversed(convo_ids):
-        
-        # Lấy tiêu đề hiển thị từ cấu trúc dữ liệu
-        display_title = st.session_state.conversations[convo_id]["title"]
-        
+        title = st.session_state.conversations[convo_id]["title"]
         is_active = (convo_id == st.session_state.current_conversation_id)
-        
+
         st.button(
-            display_title,
+            title,
             on_click=set_current_conversation,
             args=(convo_id,),
             use_container_width=True,
             type="primary" if is_active else "secondary"
         )
 
-# --- 6. Tạo Khu vực Chat Chính ---
-
+# --- 6. Khu vực Chat Chính ---
 current_id = st.session_state.current_conversation_id
 
-# Chỉ hiển thị nếu có một cuộc trò chuyện đang được chọn
 if current_id and current_id in st.session_state.conversations:
-    
-    # Lấy dữ liệu của cuộc trò chuyện hiện tại
-    current_convo_data = st.session_state.conversations[current_id]
-    messages = current_convo_data["messages"]
-    
-    # 1. Hiển thị lịch sử tin nhắn
+
+    current_convo = st.session_state.conversations[current_id]
+    messages = current_convo["messages"]
+
+    # 1. Hiển thị lịch sử chat
     for message in messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    # 2. Xử lý input mới từ người dùng
-    if prompt := st.chat_input(f"Nhắn tin..."):
-        
-        # a. Thêm tin nhắn của người dùng vào danh sách
-        messages.append({"role": "user", "content": prompt})
-        
-        # --- LOGIC QUAN TRỌNG: CẬP NHẬT TIÊU ĐỀ ---
-        # Nếu tiêu đề vẫn là mặc định ("Cuộc trò chuyện mới"),
-        # cập nhật nó bằng nội dung prompt đầu tiên của người dùng.
-        rerun_needed = False
-        if current_convo_data["title"] == "Cuộc trò chuyện mới":
-            current_convo_data["title"] = truncate_text(prompt)
-            rerun_needed = True # Báo hiệu cần chạy lại để update sidebar
+    # 2. Input người dùng
+    if prompt := st.chat_input("Nhắn tin..."):
 
-        # Hiển thị tin nhắn của user ngay lập tức
+        # Lưu tin nhắn user
+        messages.append({"role": "user", "content": prompt})
+
+        # Cập nhật title nếu là chat mới
+        rerun_needed = False
+        if current_convo["title"] == "Cuộc trò chuyện mới":
+            current_convo["title"] = truncate_text(prompt)
+            rerun_needed = True
+
+        # Hiển thị cho người dùng
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # b. Tạo phản hồi "giả" (dummy) từ bot
-        response_content = f"Tôi là phản hồi cho câu: \"{prompt}\""
+        # Chuẩn hóa lịch sử chat cho backend
+        chat_history = [
+            {"role": m["role"], "content": m["content"]}
+            for m in messages
+        ]
 
-        # c. Hiển thị phản hồi của bot
+        # --- Gọi backend agent ---
         with st.chat_message("assistant"):
             with st.spinner("Bot đang suy nghĩ..."):
-                time.sleep(1.0) # Giả lập
-            st.markdown(response_content)
-        
-        # d. Thêm phản hồi của bot vào danh sách
-        messages.append({"role": "assistant", "content": response_content})
+                raw_response = call_agent(chat_history)
 
-        # Nếu chúng ta vừa cập nhật tiêu đề, hãy chạy lại script
-        # để sidebar hiển thị tiêu đề mới ngay lập tức
+                # Parse JSON trả về
+                try:
+                    answer = raw_response
+                except json.JSONDecodeError:
+                    st.markdown(raw_response)
+                    answer = None
+
+                if answer:
+                    # Hiển thị Summary
+                    st.markdown(f"**Summary:**\n{answer['text']}")
+
+                    st.divider()
+                    st.markdown("**Videos tham khảo:**")
+                    for url, start, end in zip(answer['video_url'], answer['start_timestamp'], answer['end_timestamp']):
+                        st.markdown(f"- [{url}]({url}) (Từ {start} đến {end})")
+
+                    # Lưu full response vào messages (summary + video list)
+                    video_refs = "\n".join([f"{u} (Từ {s} đến {e})"
+                                            for u, s, e in zip(answer['video_url'], answer['start_timestamp'], answer['end_timestamp'])])
+                    full_response = f"{answer['text']}\n\nVideos tham khảo:\n{video_refs}"
+                    messages.append({"role": "assistant", "content": full_response})
+                else:
+                    # Nếu không parse được, lưu raw_response
+                    messages.append({"role": "assistant", "content": raw_response})
+
+        # Rerun để update sidebar (nếu đổi title)
         if rerun_needed:
             st.rerun()
+
 else:
     st.info("Vui lòng tạo hoặc chọn một cuộc trò chuyện từ thanh bên.")

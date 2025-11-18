@@ -28,5 +28,5 @@ def build_rag_chain():
 
 if __name__ == "__main__":
     rag_chain = build_rag_chain()
-    response = rag_chain.invoke("Tại sao việc tự huấn luyện mô hình CLIP từ đầu là khó khả thi?")
+    response = rag_chain.invoke("diffusion bị gì để có lantent diffusion")
     print(response)
