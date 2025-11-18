@@ -1,0 +1,184 @@
+0:00:00 - 0:00:07, Cuối cùng trong bài này, chúng ta sẽ tìm hiểu một số biến thể của Attention.
+0:00:07 - 0:00:11, Chúng ta cùng nhìn lại Attention.
+0:00:11 - 0:00:18, Nếu như các giá trị S1, S2 cho đến Sn, chúng ta gọi nó là value.
+0:00:18 - 0:00:25, Nó là các trạng thái ẩn của decoder, chúng ta gọi là value.
+0:00:25 - 0:00:29, trong quá trình decode, vector h này
+0:00:29 - 0:00:35, chúng ta sẽ ký hiệu nó là h mà không có chỉ số để cho nó đơn giản thôi
+0:00:35 - 0:00:39, để sau này chúng ta dễ thảo luận các biến thể thôi
+0:00:39 - 0:00:42, đối với quá trình truy vấn
+0:00:42 - 0:00:51, từ vector h, chúng ta sẽ đi truy vấn đến tất cả các S1, S2 cho đến Sn
+0:00:51 - 0:00:58, Và xem xem cái vector nào là cái vector chúng ta quan tâm nhiều hơn
+0:00:58 - 0:01:03, Thì cái quá trình mà đi so sánh này thì nó gọi là truy vấn
+0:01:03 - 0:01:07, Do đó thì cái vector h sẽ gọi là query
+0:01:07 - 0:01:14, Và một cách tổng quát thì hai cái bộ giá trị là S1 cho đến Sn
+0:01:14 - 0:01:20, Và vector truy vấn h nó sẽ có số chiều khác nhau
+0:01:20 - 0:01:22, Đây là một cách tổng quát.
+0:01:22 - 0:01:29, Trong cái ví dụ ở đây, thì chúng ta để cho hai cái vector này là cùng số chiều.
+0:01:29 - 0:01:35, Nhưng mà một cách tổng quát thì chúng ta có thể để nó là hai cái vector có số chiều khác nhau.
+0:01:35 - 0:01:40, Và các cái bước thực hiện của cái Attention của mình, nó sẽ thực hiện 3 bước.
+0:01:40 - 0:01:44, Bước đầu tiên, đó là nó sẽ đi tính cái Attention Score.
+0:01:44 - 0:01:50, Nó sẽ đi tính cái Attention Score và nó sẽ tạo ra một cái vector là r.
+0:01:50 - 0:01:58, sau đó, Attention Score sẽ được đưa vào để thực hiện tính Attention Distribution với hàm Softmax
+0:01:58 - 0:02:03, và hàm Softmax này, thật ra đây chính là một quá trình chuẩn hóa
+0:02:03 - 0:02:08, chuẩn hóa cái R để tạo ra một bộ trọng số
+0:02:08 - 0:02:11, trước khi chúng ta tổng hợp thông tin ở Attention output
+0:02:11 - 0:02:18, rồi, bước cuối cùng, chúng ta tổng hợp thông tin, tổng ra Attention output
+0:02:18 - 0:02:21, thì C ở đây chính là tổng trọng số của alpha i và S_i
+0:02:21 - 0:02:25, Với cách biểu diễn h_t bằng h
+0:02:25 - 0:02:30, chúng ta sẽ thấy công thức của mình nhìn sẽ gọn gàng hơn
+0:02:30 - 0:02:34, chúng ta sẽ đỡ để tâm đến chỉ số t hơn
+0:02:34 - 0:02:38, Tại vì việc chúng ta tính toán Attention thực hiện hoàn toàn tương tự
+0:02:38 - 0:02:45, trong xuyên suốt chúng ta tính toán h_t với t là bằng 1 và bằng 2 thì nó cũng giống nhau
+0:02:45 - 0:02:49, Chúng ta giản lược được bớt chỉ số t này đi
+0:02:49 - 0:02:52, Và chúng ta nhìn vào đây chúng ta thấy
+0:02:52 - 0:02:55, Cái việc tính Attention Score này
+0:02:55 - 0:02:57, Nó sẽ có rất nhiều phiên bản khác nhau
+0:02:57 - 0:03:04, Là do sự khác biệt giữa số chiều của S và số chiều của H
+0:03:04 - 0:03:09, S_i sẽ có số chiều là D1, H sẽ có số chiều là D2
+0:03:09 - 0:03:13, Nếu vậy chúng ta sẽ xem các biến thể của nó là gì
+0:03:13 - 0:03:21, Biến thể đầu tiên là tính tích vô hướng
+0:03:21 - 0:03:26, đây chính là biến thể mà chúng ta đã bàn trước đây
+0:03:26 - 0:03:30, để thực hiện được phép tích vô hướng này
+0:03:30 - 0:03:39, tính h nhân với S_i này thì 2 cái D1 và D2 phải có kích thước bằng nhau
+0:03:39 - 0:03:43, Thì phải có điều kiện này thì chúng ta mới có thể thực hiện được nhân vô hướng
+0:03:43 - 0:03:46, Đây chính là phiên bản đã nói trước đây
+0:03:46 - 0:03:49, Sang biến thể thứ hai là Attention khi nhân với ma trận
+0:03:49 - 0:03:54, Như vậy thì chúng ta trong tình huống tiếp theo là D1 khác D2 thì sao?
+0:03:54 - 0:03:58, D1 mà khác D2 thì phép nhân này sẽ không thể nhân được với nhau
+0:03:58 - 0:04:05, Hay nói vui đó là R^D1 tức là không gian của trái đất
+0:04:05 - 0:04:14, R^D2 sẽ là một hành tinh khác, ví dụ như sao Hỏa
+0:04:14 - 0:04:29, Để 2 vector này có thể so sánh được với nhau, thực hiện phép tương đồng, chúng ta phải chiếu 1 vector này về không gian trái đất
+0:04:29 - 0:04:31, hoặc ngược lại, từ không gian trái đất về sao Hỏa
+0:04:31 - 0:04:34, tức là chúng ta sẽ phải đưa về cùng một cái không gian
+0:04:34 - 0:04:37, thì chúng ta sẽ chèn thêm vô một cái ma trận W ở giữa
+0:04:37 - 0:04:40, thì h chuyển vị nhân với W
+0:04:40 - 0:04:44, đó chính là chúng ta đang ánh xạ
+0:04:44 - 0:04:47, chúng ta đang ánh xạ hoặc là chiếu
+0:04:49 - 0:04:52, h về cái không gian
+0:04:54 - 0:04:56, của S_i
+0:04:56 - 0:05:00, Chiếu về cùng không gian, thì khi đó chúng ta mới thực hiện được phép nhân Scoring này
+0:05:00 - 0:05:05, Thì khi đó cái ma trận W này của mình
+0:05:05 - 0:05:10, Nó sẽ là một cái ma trận có kích thước là D2 nhân D1
+0:05:10 - 0:05:14, Và đây chính là cái ma trận trọng số của một cái mô hình
+0:05:14 - 0:05:16, Mà mình sẽ phải huấn luyện về sau
+0:05:16 - 0:05:19, Đây cũng sẽ là cái tham số mà mình có thể huấn luyện
+0:05:19 - 0:05:24, Và mô hình Attention với nhân ma trận này thì còn một cái tên gọi khác đó là Bi-Linear Attention
+0:05:24 - 0:05:28, hay còn gọi là Attention song tuyến
+0:05:28 - 0:05:32, Chúng ta sẽ qua các phiên bản khác của Attention
+0:05:32 - 0:05:36, Đó là chúng ta sẽ giảm bậc
+0:05:36 - 0:05:41, Thì cái idea của cái việc mà Attention với nhân ma trận giảm bậc này
+0:05:41 - 0:05:46, Nếu như R^D1 này là trái đất
+0:05:46 - 0:05:53, Query h là sao Hỏa?
+0:05:53 - 0:06:05, Trong phiên bản trước, chúng ta sẽ phải map sao Hỏa, map vector h về không gian trái đất hoặc ngược lại map trái đất về không gian sao Hỏa để có thể nhân được với nhau.
+0:06:05 - 0:06:11, Vì vậy, phiên bản nhân ma trận giảm bậc này sẽ tìm một cái không gian trung gian
+0:06:11 - 0:06:15, Ví dụ như đây là mặt trăng
+0:06:15 - 0:06:17, Lấy ví dụ.
+0:06:17 - 0:06:24, Vector h này sẽ chiếu lên trên cái không gian này
+0:06:24 - 0:06:29, Và S_i sẽ chiếu lên trên cái không gian này
+0:06:29 - 0:06:31, Chiếu về cùng một cái không gian mặt trăng
+0:06:31 - 0:06:39, thì khi đó các vector của mình mới có cùng chiều và nó có thể thực hiện các phép tính tích vô hướng được
+0:06:39 - 0:06:46, thì ở đây chúng ta sẽ thấy là r_i sẽ là bằng U nhân với h
+0:06:46 - 0:06:51, tức là chúng ta đang biến h về không gian mặt trăng
+0:06:51 - 0:06:59, V nhân với S_i, tức là chúng ta cũng đang ánh xạ S_i về không gian mặt trăng
+0:06:59 - 0:07:03, đưa về cùng một cái không gian để khi đó chúng ta có thể thực hiện được nhân
+0:07:03 - 0:07:05, hai cái kết quả này nhân tích vô hướng với nhau được
+0:07:05 - 0:07:09, và cái này thì khi chúng ta chọn được
+0:07:09 - 0:07:13, thì cái ma trận U và V này
+0:07:13 - 0:07:16, cái ma trận U và V này nó nên là những cái ma trận low-rank
+0:07:16 - 0:07:18, tức là có cái hạng nó thấp
+0:07:18 - 0:07:20, tức là chúng ta nên chọn cái k
+0:07:20 - 0:07:25, chúng ta nên chọn cái k nó bé hơn so với D1, D2 rất là nhiều
+0:07:25 - 0:07:29, thì cái việc chọn k sao cho cái hạng nó thấp
+0:07:29 - 0:07:33, để cho cái U và V này có cái hạng thấp, nó sẽ giúp cho chúng ta rất nhiều việc.
+0:07:34 - 0:07:40, Khi k mà thấp thì đồng nghĩa U của chúng ta, U của chúng ta sẽ là ít tham số.
+0:07:44 - 0:07:47, Tương tự như vậy V của chúng ta cũng sẽ ít tham số.
+0:07:48 - 0:07:53, Và cái ma trận U, V là hai cái ma trận trọng số để cho cái quá trình huấn luyện của mình.
+0:07:53 - 0:07:59, Nếu như ít tham số thì rõ ràng là chúng ta sẽ tránh được vấn đề về overfitting
+0:07:59 - 0:08:06, Không phải tránh mà chúng ta sẽ giảm bớt vấn đề về overfitting
+0:08:06 - 0:08:16, Đây là dạng biểu diễn dưới dạng hình ảnh trực quan để chúng ta hình dung được các ma trận Low-Rank là như thế nào
+0:08:16 - 0:08:25, Đây là vector h, và ma trận U là chiều k của mình
+0:08:25 - 0:08:27, k này càng nhỏ thì càng tốt
+0:08:27 - 0:08:29, Tương tự như vậy V
+0:08:29 - 0:08:33, V của mình cũng có số chiều là k
+0:08:33 - 0:08:37, low-rank k phải thấp thì 2 ma trận có hạng thấp
+0:08:37 - 0:08:39, Khi nhân 2 cái thằng này lại với nhau
+0:08:39 - 0:08:45, nhân U với lại V thì chúng ta sẽ có cái ma trận này
+0:08:45 - 0:08:49, ma trận này sẽ có cái kích thước giống với lại cái kích thước trong cái phiên bản trước
+0:08:49 - 0:08:51, đó là D2, nhân D1
+0:08:55 - 0:08:57, và phiên bản thứ 4
+0:08:57 - 0:08:59, đó là Attention
+0:08:59 - 0:09:01, với các cái tích ma trận
+0:09:01 - 0:09:03, tức là chúng ta sẽ có cái công thức như sau
+0:09:03 - 0:09:07, bản chất là chúng ta cũng ánh xạ cái S_i
+0:09:07 - 0:09:11, và h về cùng một cái không gian
+0:09:11 - 0:09:15, nhưng mà thay vì chúng ta thực hiện cái thao tác tích vô hướng
+0:09:15 - 0:09:19, thì chúng ta thực hiện cái phép cộng
+0:09:19 - 0:09:21, rồi sau đó qua cái hàm tanh
+0:09:21 - 0:09:25, rồi nhân với lại cái vector v
+0:09:25 - 0:09:27, thì trong cái trường hợp này
+0:09:27 - 0:09:31, W1, W2 và v sẽ có các cái kích thước như trên
+0:09:31 - 0:09:34, và đây sẽ là các cái trọng số của mô hình của mình
+0:09:34 - 0:09:36, đây là cái trọng số của mô hình của mình
+0:09:36 - 0:09:43, Rồi, như vậy thì chúng ta sẽ chú ý đến cái phiên bản biến thể này của Attention.
+0:09:43 - 0:09:53, Từ nay trở về sau là cái biến thể Attention với nhân ma trận giảm bậc được sử dụng trong các công thức của Transformer
+0:09:53 - 0:09:56, tại vì ý tưởng của nó rất hay và tổng quát.
+0:09:56 - 0:10:01, Tức là các vector ở các không gian khác nhau sẽ được map về cùng một không gian.
+0:10:01 - 0:10:11, chúng ta sẽ tìm các ma trận U và V để ánh xạ nó về cùng một không gian để từ đó là có thể thực hiện được
+0:10:11 - 0:10:18, cái thao tác nhân tích vô hướng hoặc là các cách khác đó là có thể so sánh được, có thể so sánh tương đồng được với nhau
+0:10:22 - 0:10:26, thì đó chính là các biến thể của Attention
+0:10:26 - 0:10:30, và Attention là một kỹ thuật tổng quát
+0:10:30 - 0:10:35, và nó có thể sử dụng cho những kiến trúc khác nhau
+0:10:35 - 0:10:37, chứ không chỉ là Seq2Seq
+0:10:37 - 0:10:42, ví dụ như trong lĩnh vực Deep Learning của hình ảnh
+0:10:42 - 0:10:45, mạng CNN cũng sử dụng Attention rất nhiều
+0:10:45 - 0:10:55, và thường sử dụng Attention để tăng hiệu năng của kết quả trong bài toán của bên thị giác máy tính
+0:10:55 - 0:11:04, cũng như dùng Attention để phục vụ trực quan hóa các kết quả của bên mạng CNN
+0:11:04 - 0:11:10, như chúng ta đã đề cập trong những slide trước, một trong những tính năng của Attention đó là tính năng có thể giải thích được
+0:11:10 - 0:11:20, và nó giúp chúng ta visualize kết quả của mình để biết được mô hình của mình tại sao nó đưa ra được lựa chọn đó
+0:11:20 - 0:11:26, nó sẽ chú ý đến cái vùng nào trong cái thông tin đầu vào của mình
+0:11:26 - 0:11:30, thì đây là một kỹ thuật rất là hay và áp dụng trong, không chỉ trong xử lý ngôn ngữ tự nhiên
+0:01:30 - 0:01:33, mà cả trong xử lý ảnh cũng dùng rất là nhiều
+0:11:33 - 0:11:38, Rồi nói chung, dùng cho rất nhiều bài toán chứ không phải dịch máy
+0:11:38 - 0:11:41, thì cái này chúng ta cũng đã nói trong những slide trước
+0:11:41 - 0:11:47, nó có thể áp dụng cho bài toán tóm tắt văn bản, chatbot hoặc là sinh code
+0:11:47 - 0:12:01, Định nghĩa một cách tổng quát cho Attention, chúng ta sẽ cho trước một tập các vector value và vector query
+0:12:01 - 0:12:09, Attention là một kỹ thuật để giúp chúng ta tính trọng số của các value dựa trên query này
+0:12:09 - 0:12:16, Query này giống như quá trình truy vấn tìm kiếm trên mạng internet
+0:12:16 - 0:12:18, đưa vào các từ khóa
+0:12:18 - 0:12:23, và nó sẽ đi so sánh với các từ khóa trên các trang web
+0:12:23 - 0:12:27, rồi sau đó nó sẽ tổng hợp thông tin lại để trả về cho chúng ta
+0:12:27 - 0:12:32, thì đó chúng ta so sánh nó với lại hệ thống search engine
+0:12:32 - 0:12:37, và trong mô hình Seq2Seq cộng với Attention thì
+0:12:37 - 0:12:40, mỗi một trạng thái ẩn của decoder
+0:12:40 - 0:12:42, thì nó sẽ được gọi là query
+0:12:42 - 0:12:46, và tất cả các trạng thái ẩn của encoder thì gọi là value
+0:12:46 - 0:12:49, như vậy thì ở đây chúng ta đang tổng quát hóa cho Attention
+0:12:49 - 0:12:55, với quá trình encode thì các giá trị ẩn của mình sẽ được gọi là value
+0:12:55 - 0:13:00, còn trong quá trình decode, tức là trong quá trình chúng ta bắt đầu giải mã
+0:13:00 - 0:13:02, chúng ta phải thực hiện công đoạn gọi là lookup
+0:13:02 - 0:13:06, và tra cứu vào những đoạn văn đầu vào
+0:13:06 - 0:13:12, để chúng ta nhìn lại xem là ứng với thời điểm hiện tại chúng ta cần phải để tâm đến cái value nào nhiều
+0:13:12 - 0:13:16, thì đó chính là một cái quá trình search, một cái quá trình tìm kiếm
+0:13:16 - 0:13:21, thì Attention của Seq2Seq với Attention
+0:13:21 - 0:13:26, nó sẽ được liên tưởng đến cái bài toán là tìm kiếm như vậy
+0:13:26 - 0:13:29, và như vậy thì trong cái bài hôm nay
+0:13:29 - 0:13:34, chúng ta đã cùng tìm hiểu qua về bài toán dịch máy
+0:13:34 - 0:13:36, Tại sao chúng ta tìm hiểu về bài toán này?
+0:13:37 - 0:13:39, Đó là vì đây là một cái bài toán khó
+0:13:40 - 0:13:43, và nó đồng thời có tính tổng quan
+0:13:43 - 0:13:45, nó sẽ có tính tổng quan cao
+0:13:45 - 0:13:48, Các mô hình mà có thể giải quyết được bài toán dịch máy
+0:13:48 - 0:13:51, thì đều có thể áp dụng để giải quyết các cái bài toán
+0:13:51 - 0:13:54, tương tự như là tóm tắt văn bản, như là chatbot
+0:13:54 - 0:13:56, như là tạo sinh code, đúng không?
+0:13:57 - 0:14:00, Và chúng ta đã tìm hiểu về một cái cải tiến
+0:14:00 - 0:14:03, của mạng RNN
+0:14:03 - 0:14:09, Đó chính là chúng ta sẽ dùng Attention, một kỹ thuật Attention.
+0:14:09 - 0:14:13, Attention đã giúp chúng ta giải quyết rất nhiều vấn đề.
+0:14:13 - 0:14:21, Vấn đề về nén thông tin, vấn đề về vanishing gradient
+0:14:25 - 0:14:30, và đồng thời nó có thể giúp chúng ta giải thích được kết quả
+0:14:30 - 0:14:34, hoặc là trực quan hóa
+0:14:34 - 0:14:43, và trong phần cuối thì chúng ta đã tìm hiểu về một số cái biến thể của Attention
+0:14:43 - 0:14:51, và trong số các cái biến thể này thì chúng ta cần phải nhớ đến cái biến thể đó là Attention
+0:14:51 - 0:14:59, với cái nhân ma trận Low-Rank, ma trận có cái hạng thấp
+0:14:59 - 0:15:07, và đây sẽ là một kỹ thuật Attention được sử dụng trong các kiến trúc về Transformer về sau

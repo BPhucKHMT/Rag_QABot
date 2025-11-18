@@ -1,0 +1,106 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:18, Như vậy thì chúng ta có thể thấy đó là ở
+0:00:15 - 0:00:20, đây nó đang bị lỗi và nó chưa có thể
+0:00:18 - 0:00:24, phân ra làm hai được. Thì bây giờ chúng
+0:00:20 - 0:00:26, ta sẽ cùng debx xem cái lỗi này có
+0:00:24 - 0:00:30, nguyên nhân là do đâu
+0:00:26 - 0:00:32, thì chúng ta sẽ dừng cái thực toán.
+0:00:30 - 0:00:35, Và
+0:00:32 - 0:00:38, chúng ta sẽ xem đầu tiên đó là chúng ta
+0:00:35 - 0:00:41, sẽ kiểm tra cái dữ liệu đầu vào trước là
+0:00:38 - 0:00:46, x của mình có đúng như chúng ta kỳ vọng
+0:00:41 - 0:00:46, hay không. Rồi sau đó là y.
+0:00:47 - 0:00:53, Rồi các cái phần còn lại thì chúng ta sẽ
+0:00:49 - 0:00:56, tạm thời là vòng lập là chúng ta sẽ khóa
+0:00:53 - 0:01:00, lại và chúng ta sẽ chạy. Thì chúng ta
+0:00:56 - 0:01:03, thấy là cái dữ liệu x của mình
+0:01:00 - 0:01:09, à y đây là y nè. Thì nếu đúng nó phải ra
+0:01:03 - 0:01:11, là một mãng gồm à các số là 00 sau đó sẽ
+0:01:09 - 0:01:14, là nối 111. Nhưng mà hình như nó đang
+0:01:11 - 0:01:16, hiểu sai là cho với mỗi cái thành phần
+0:01:14 - 0:01:20, x1 nó sẽ là có một cái nhãn riêng. Thành
+0:01:16 - 0:01:22, phần x2 là gán một cái nhãn riêng. Rồi à
+0:01:20 - 0:01:24, như vậy thì cái này là sai cái y. Tương
+0:01:22 - 0:01:28, tự như vậy x của mình thì lẽ ra là chúng
+0:01:24 - 0:01:30, ta sẽ phải nối lại à thì chúng ta lại đi
+0:01:28 - 0:01:33, trồng lên nó lên. Như vậy thì chúng ta
+0:01:30 - 0:01:36, sẽ sửa lại cái code này là ở chỗ cái hàm
+0:01:33 - 0:01:39, concast. Đầu tiên đối với y thì ở đây
+0:01:36 - 0:01:42, chúng ta sẽ không lấy là chấm shap tại
+0:01:39 - 0:01:45, vì nó sẽ lấy theo
+0:01:42 - 0:01:47, x1 và x2 mà chúng ta sẽ lấy là lens của
+0:01:45 - 0:01:50, hoặc ở đây chúng ta có cái biến nsf rồi
+0:01:47 - 0:01:53, chúng ta sẽ truyền nsf luôn
+0:01:50 - 0:01:56, đó. Rồi thì bây giờ chúng ta sẽ chạy lại
+0:01:53 - 0:01:58, ha. Và y lúc này nó đã đúng như chúng ta
+0:01:56 - 0:02:01, muốn. Đó là những 10 cái phần tử đầu
+0:01:58 - 0:02:03, tiên 10 cái điểm đầu tiên nó sẽ là số 0.
+0:02:01 - 0:02:08, 10 cái điểm tiếp theo thì nó sẽ là cái
+0:02:03 - 0:02:10, nhãn là 1. Đó. Bây giờ chúng ta sẽ sửa
+0:02:08 - 0:02:13, đến
+0:02:10 - 0:02:15, X. Thế thì X thay vì chúng ta còn c như
+0:02:13 - 0:02:18, thế này thì chúng ta sẽ phải thêm cái
+0:02:15 - 0:02:20, asis là bằng 1. Tại vì nếu không mặc
+0:02:18 - 0:02:22, định nó sẽ bằng 0. Tức là nó sẽ trồng
+0:02:20 - 0:02:24, lên. Còn chúng ta đang muốn trồng ngang
+0:02:22 - 0:02:29, ra.
+0:02:24 - 0:02:29, Đó. Rồi chúng ta sẽ in x.
+0:02:34 - 0:02:41, Rồi thì ở đây chúng ta sẽ để là 1 ha.
+0:02:38 - 0:02:45, Đó. Đó thì ở đây nè chúng ta thấy là nó
+0:02:41 - 0:02:49, đã có nối lại chúng ta sẽ có 20 cái x1
+0:02:45 - 0:02:51, và chúng ta sẽ có 20 cái x2.
+0:02:49 - 0:02:53, Rồi
+0:02:51 - 0:02:56, bây giờ chúng ta sẽ chạy lại cái chương
+0:02:53 - 0:02:56, trình của mình.
+0:03:05 - 0:03:11, Chúng ta sẽ chạy lại cái vòng lập này
+0:03:07 - 0:03:11, của mình lưu lại.
+0:03:12 - 0:03:18, Rồi chúng ta thấy là nó có cái sự à ok.
+0:03:16 - 0:03:20, Ở đây chúng ta thấy là nó đã bị thay
+0:03:18 - 0:03:21, đổi, biến đổi và tự nhiên ép về một cái
+0:03:20 - 0:03:25, đường tròn. Thì cái này nguyên nhân đó
+0:03:21 - 0:03:30, là vì à chúng ta thấy là một cái ô bên
+0:03:25 - 0:03:31, đây nó sẽ có ba 30 à xin lỗi là 200 có
+0:03:30 - 0:03:35, cái khoảng là giá trị là 200 trong khi
+0:03:31 - 0:03:37, một ô ở đây thì nó chỉ có khoảng là 0.5
+0:03:35 - 0:03:41, đó thì dẫn đến đó là
+0:03:37 - 0:03:43, nó bị bẻ méo cái hình đó. Do đó thì ở
+0:03:41 - 0:03:46, đây chúng ta sẽ giới hạn lại. Khi chúng
+0:03:43 - 0:03:49, ta vẽ thì chúng ta sẽ giới hạn lại là
+0:03:46 - 0:03:49, PLT
+0:03:49 - 0:03:58, chấ xlim thì nó sẽ kéo là từ 1 cho đến
+0:03:55 - 0:04:00, từ 0 cho đến 4 thôi. Và tương tự như vậy
+0:03:58 - 0:04:03, cho Yim
+0:04:00 - 0:04:05, thì chúng ta sẽ kéo là từ 0 cho đến 4.
+0:04:03 - 0:04:09, Rồi
+0:04:05 - 0:04:09, ở trên đây cũng vậy.
+0:04:16 - 0:04:22, Đó thì chúng ta sẽ thấy là khi chúng ta
+0:04:19 - 0:04:26, cố định cái X lim và Y lim á limit á thì
+0:04:22 - 0:04:28, nó sẽ không có bị bép bóp méo cái
+0:04:26 - 0:04:31, cái khung hình của mình. Và ban đầu thì
+0:04:28 - 0:04:32, nó sẽ nằm ở tuốc phía bên dưới. Cái mô
+0:04:31 - 0:04:34, hình của mình nó sẽ nằm cái đường
+0:04:32 - 0:04:36, boundary của mình nó nằm tuốc ở bên
+0:04:34 - 0:04:38, dưới. Sau đó chúng ta thấy là nó đã tịnh
+0:04:36 - 0:04:41, tiến dần đúng không? Nó tịnh tiến dần về
+0:04:38 - 0:04:43, khu vực này. Sau rồi nó sẽ xoay xoay lại
+0:04:41 - 0:04:46, để tách nó ra làm hai.
+0:04:43 - 0:04:48, Thì ở đây chúng ta có thể cho nó chậm
+0:04:46 - 0:04:50, hơn một chút để chúng ta hình dung cái
+0:04:48 - 0:04:53, cách mà nó chạy ha. Chúng ta nâng lên đó
+0:04:50 - 0:04:56, là khoảng 0.3 đi. Chậm lại khoảng ba
+0:04:53 - 0:04:56, lần.
+0:04:58 - 0:05:03, Thì ban đầu như đã nói là cái mô hình
+0:05:00 - 0:05:07, của mình nó sẽ nằm ở phía dưới.
+0:05:03 - 0:05:11, Sau đó thì à nó tiến dần về đây
+0:05:07 - 0:05:16, rồi sau đó nó xoay lại. Thì đây chính là
+0:05:11 - 0:05:20, à cái cách mà thực toán à logistic nó đã
+0:05:16 - 0:05:21, cập nhật cái trọng số như thế nào. Và
+0:05:20 - 0:05:24, trong cái quá trình cập nhật trọng số
+0:05:21 - 0:05:26, thì nó kéo cái đường phân lớp của mình
+0:05:24 - 0:05:29, đi về phía trung tâm của các cái điểm dữ
+0:05:26 - 0:05:31, liệu. Sau đó nó sẽ xoay lại. À nó sẽ
+0:05:29 - 0:05:34, xoay lại để cho các cái điểm dữ liệu của
+0:05:31 - 0:05:38, mình nó tách ra làm hai phần. Thì đây
+0:05:34 - 0:05:41, chính là cái phần minh họa cho thực toán
+0:05:38 - 0:05:41, logistic.
+0:05:41 - 0:05:53, [âm nhạc]

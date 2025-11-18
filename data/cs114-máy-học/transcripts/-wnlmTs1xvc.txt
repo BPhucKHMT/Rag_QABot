@@ -1,0 +1,70 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:37, bước xong là bước số 4
+0:00:37 - 0:00:50, Tiếp theo chúng ta sẽ thay đổi một số config để xem khi chúng ta thay đổi những siêu tam số của thuật toán gom cộng
+0:00:50 - 0:00:58, Thế thì ở đây khi chúng ta chọn ra số Cluster là 10 thì thực tế là vì chúng ta không biết trước cái nhãn của mình
+0:00:58 - 0:01:15, Mẫu dữ liệu nào là nhãn nào do đó cái việc mà chúng ta chọn 10 cụm thì khả năng cao là nó vẫn sẽ có những cái điểm mà nó đang sen giữa các đối tượng thuộc về các lớp khác nhau
+0:01:15 - 0:01:20, và đều có thể tăng kỷ năng của các đoạn đồng hồn của một cộng
+0:01:20 - 0:01:25, để tăng kỷ năng của các đoạn đồng hồn của một cộng
+0:01:25 - 0:01:28, thì chúng ta sẽ tăng số cộng lên
+0:01:28 - 0:01:34, Bí dụ như ở đây chúng ta đang chọn là k là 10
+0:01:34 - 0:01:37, thì khi chúng ta tăng số cộng này lên gấp 20 lần
+0:01:37 - 0:01:39, Lên gấp đôi 20 lần
+0:01:40 - 0:01:43, Thì chúng ta sẽ theo dõi xem thuật toán này của mình
+0:01:45 - 0:01:46, Các điểm của mình nó như thế nào
+0:01:47 - 0:01:48, Ở đây chúng ta sẽ cho chạy lại
+0:01:48 - 0:01:52, rồi
+0:02:02 - 0:02:10, rồi thì tăng số cùm lên thì chúng ta hy vọng rằng là các điểm ảnh trong cùm 1 cùm thì nó sẽ giống nhau nhiều hơn
+0:02:10 - 0:02:20, Khi cụm càng bé thì khả năng nó sẽ co lại và ít có tình huống các chữ số khác nhau
+0:02:20 - 0:02:22, nhưng nó lại nằm trong cụm 1 cái cụm
+0:02:26 - 0:02:30, Khi chúng ta chia nhỏ nó ra thì nó sẽ ra như thế này
+0:02:34 - 0:02:38, Với mỗi cụm chúng ta sẽ lấy mẫu và hiển thị tấm ảnh đó lên
+0:02:40 - 0:02:55, Cụm số 2 là con số 0, cụm số 3 là con số 1
+0:02:55 - 0:03:11, Cụm số 7 là số 8 rất nhiều, cụm số 8 là tầm số 1, cụm số 9 là số 6
+0:03:11 - 0:03:28, khi chia thành cụm, khả năng cao sẽ gom những điểm có cùng một chữ cái và chữ số vào chung một nhóm
+0:03:28 - 0:03:33, bây giờ chúng ta sẽ thử nghiệm thêm một số hướng tiếp cận khác
+0:03:33 - 0:03:40, Ví dụ như hiện giờ chúng ta đang gom cụm trên cái không gian mà đã giảm số chiều rồi
+0:03:40 - 0:03:44, và dầu sao thì việc mà chúng ta giảm số chiều này xuống
+0:03:44 - 0:03:51, thì nó cũng sẽ khiến cho mô hình của mình bị mất mát rất nhiều dữ liệu
+0:03:51 - 0:03:54, Do đó để mà có thể gom cụm chính xác hơn
+0:03:54 - 0:04:03, thì thay vì chúng ta gom cụm trên tập dữ liệu đã được giảm chiều
+0:04:03 - 0:04:06, thì chúng ta sẽ làm trên tập dữ liệu góc
+0:04:06 - 0:04:09, thì tập dữ liệu góc của mình nó sẽ nằm ở trong biến
+0:04:09 - 0:04:12, đó là xImage
+0:04:12 - 0:04:15, do đó thì chúng ta sẽ truyền vào xImage ở đây
+0:04:15 - 0:04:19, rồi
+0:04:19 - 0:04:23, bây giờ chúng ta sẽ chạy thử tháng
+0:04:23 - 0:04:25, công cụm
+0:04:25 - 0:04:31, và đương nhiên là vì trên dữ liệu góc của mình có 784 triều
+0:04:31 - 0:04:36, nó sẽ lớn hơn rất nhiều lần so với lại không gian 2 chiều của mình
+0:04:36 - 0:04:39, nên thuật toán này sẽ chạy chậm hơn
+0:04:45 - 0:04:49, Rồi, và nó tốn hết 20 giây để chạy chương trình này
+0:04:49 - 0:04:53, Sau khi chúng ta đã gom cụm trên số chiều góc xong
+0:04:53 - 0:04:58, thì chúng ta sẽ tìm cách trực quan hóa
+0:05:01 - 0:05:04, Rồi
+0:05:04 - 0:05:18, Và ở đây chúng ta thấy là một số cọm thì nó đã gom các cái điểm mà có cùng một cái mẫu dữ liệu là nó sẽ nằm về cùng một cái màu
+0:05:18 - 0:05:22, Ví dụ như ở đây chúng ta thấy là các cái cọm này là cùng một cái màu
+0:05:22 - 0:05:28, Nhưng mà một số cái cọm khác thì nó sẽ bị rải ra và nó đang sang lận nhau
+0:05:28 - 0:05:30, Thế thì bây giờ chúng ta sẽ cùng xem xem
+0:05:35 - 0:05:38, Rồi, thì khi chúng ta làm trên cái dữ liệu góc
+0:05:38 - 0:05:41, thì chúng ta thấy là cầm số 0
+0:05:41 - 0:05:44, là có số 4
+0:05:44 - 0:05:45, là toàn số 4
+0:05:45 - 0:05:47, rồi cầm số 1 là toàn
+0:05:47 - 0:05:50, cầm tiếp theo đó là toàn số 1
+0:05:50 - 0:05:52, cầm tiếp theo nữa là toàn số 1
+0:05:52 - 0:05:53, và có một cái số
+0:05:53 - 0:05:55, thì chúng ta thấy cái số này
+0:05:55 - 0:05:57, mặc dù chúng ta biết đó là có thể là số 9
+0:05:57 - 0:06:02, nhưng mà nó cũng khá là ốm, tức là nó cũng khá là giống cái con số 1 của mình
+0:06:02 - 0:06:07, rồi cụm tiếp, cụm số 4 này nè, thì là gồm toàn số 0
+0:06:07 - 0:06:14, còn cụm số 3 thì có số 3 và số 5 là nó sẽ đang xe nhau
+0:06:14 - 0:06:17, rồi cụm số 5 là toàn số 7
+0:06:17 - 0:06:23, rồi cụm số 6 thì gồm toàn, có số 4 nhưng mà đâu đó cái số này thì mình
+0:06:23 - 0:06:27, mình nhìn nó vẫn có thể hiểu là tại sao
+0:06:27 - 0:06:32, nó gom vô cụm số 4 là vì cách viết của nó cũng khá giống
+0:06:32 - 0:06:35, toàn số 2, toàn số 6
+0:06:35 - 0:06:40, Rõ ràng chúng ta thấy là khi chúng ta sử dụng thuộc toán gom cụm
+0:06:40 - 0:06:44, trên cùng một cái
+0:06:44 - 0:06:48, trên kênh góc, thì độ chính xác của nó cao hơn
+0:06:48 - 0:06:51, là vì nó không bị mất mát thông tin
+0:06:57 - 0:07:03, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

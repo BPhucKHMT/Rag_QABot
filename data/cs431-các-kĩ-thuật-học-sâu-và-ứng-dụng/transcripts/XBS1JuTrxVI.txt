@@ -1,0 +1,101 @@
+0:00:00 - 0:00:08, Để trực qua hóa, chúng ta sẽ phải log ra tham số cho nguồn hình này.
+0:00:08 - 0:00:12, Chúng ta sẽ có hai cái là theta1 và theta2.
+0:00:12 - 0:00:21, Trong đó, thành phần theta2 là cái mà chúng ta sẽ quan sát đầu tiên, xem có giá trị của nó như thế nào.
+0:00:21 - 0:00:30, để lấy giá trị tham số đầu tiên theta2, chúng ta sẽ lấy Neural Network.get weight
+0:00:33 - 0:00:36, và chúng ta sẽ truyền vô layer na layer số 2
+0:00:36 - 0:00:55, Rồi, như vậy thì chúng ta sẽ thấy là các giá trị của Theta 2 này sẽ có 8 giá trị thật cả.
+0:00:55 - 0:01:12, 8 giá trị này tương ứng là trọng số của các nốt trong mô hình này.
+0:01:12 - 0:01:27, Và cái trọng số này thì nó sẽ thể hiện là cái vai trò khi đưa ra cái output cuối cùng thì tôi sẽ tin cậy vào cái node nào.
+0:01:27 - 0:01:29, Tôi sẽ tin cậy vào cái node nào.
+0:01:29 - 0:01:39, Vậy thì trong số 8 cái node này thì đâu đó có những node có độ tin cậy thấp, ví dụ như là 0.3, 0.5, 0.4.
+0:01:39 - 0:01:48, nhưng cũng có những nốt độ tin cậy rất cao, dự như là lưu ý là độ tin cậy ở đây chúng ta sẽ thể hiện ở chỗ trì việc đối
+0:01:48 - 0:01:52, chứ không phải là sự lớn bé về mặt đại số của nó.
+0:01:52 - 0:02:01, Nó như vậy là trừ 17, 14, 11, 11, trừ 80 đó là những cái nốt có độ tin cậy rất cao.
+0:02:01 - 0:02:19, Với các đồ tên trẻ cao, chúng ta sẽ tìm cách trực quan hóa đường thẳng được tạo bởi các trọng số
+0:02:20 - 0:02:29, Đến các đồ tên trẻ cao, chúng ta đã tìm hiểu cách trực quan hóa đường thẳng trong bài logistic regression
+0:02:29 - 0:02:41, Chúng ta sẽ viết một cái vòng for, đoạn đầu là chúng ta vẽ các điểm data lên thôi.
+0:02:41 - 0:03:04, Điều này là đường thẳng có độ tin cải cao, tức là 0, 1, 0, 1, 2, 3, 4, 5, 6, 7
+0:03:04 - 0:03:12, Chúng ta sẽ visualize các neuron có độ tin tài cao và để vẽ đường thẳng.
+0:03:12 - 0:03:20, Với từng neuron thì chúng ta phải biến đổi công thức của mình từ dạng y bằng as cộng b.
+0:03:20 - 0:03:24, Trong đó a chính là trừ param 0 chia cho param 1.
+0:03:24 - 0:03:41, Rồi, lưu ý là cái param này là trọng số cho các cạnh nối đến cái x1 của x2, rồi param 0, đó chính là cái trọng số, param 0 chính là cái trọng số nối đến đây.
+0:03:41 - 0:03:45, Nấu đến thành phần bias
+0:03:45 - 0:03:52, Param 1 là nấu đến x1 là tương ứng với x1
+0:03:52 - 0:03:57, Param 2 là trọng số tự uống với lại x2
+0:03:57 - 0:03:59, Cho Theta 1
+0:03:59 - 0:04:04, Bây giờ chúng ta phải tính Theta 1 trước
+0:04:04 - 0:04:09, bằng neuralnet.get-weight
+0:04:15 - 0:04:18, và ở đây chúng ta sẽ truyền là 1
+0:04:18 - 0:04:22, bây giờ chúng ta sẽ lấy thành phần biass
+0:04:22 - 0:04:27, thì nó chính là bằng theta 1
+0:04:27 - 0:04:32, thành phần parem
+0:04:32 - 0:04:38, Theta là bằng theta 1,0
+0:04:38 - 0:04:43, Bây giờ chúng ta sẽ có công thức này
+0:04:43 - 0:04:53, Chúng ta sẽ thế vào để tính ra phương trình đường thẳng cho các node của mình
+0:04:53 - 0:05:10, Rồi, thì A sẽ là bằng trừ 3 rem 0, R chia cho 3 rem phục
+0:05:10 - 0:05:14, b sẽ là trừ bias
+0:05:14 - 0:05:18, chi cho params
+0:05:18 - 0:05:22, bột
+0:05:22 - 0:05:28, và ở đây
+0:05:28 - 0:05:32, params ở đây chúng ta phải lấy là
+0:05:32 - 0:05:38, để biết chúng ta sẽ tính như thế nào, chúng ta sẽ in nó ra trước
+0:05:38 - 0:05:41, Để xem nó như thế nào
+0:05:44 - 0:05:55, BiasParam là các bộ 8 giá trị tương ứng với 8 lốt
+0:05:55 - 0:06:02, Trong đó, Param sẽ có 2 thành phần là cho W1 và W2
+0:06:02 - 0:06:09, Vì vậy, mình muốn lấy ra thêm phần nào thì mình sẽ phải truyền thêm cái chỉ số nữa
+0:06:09 - 0:06:11, Tức là mình truyền vào chỉ số node thứ mấy
+0:06:11 - 0:06:13, Ở đây sẽ là params
+0:06:16 - 0:06:20, Params và không node thứ idx
+0:06:20 - 0:06:22, Vị trí là thứ idx
+0:06:22 - 0:06:24, Params 1 idx
+0:06:24 - 0:06:26, Params 1 idx
+0:06:26 - 0:06:28, Params 1 idx
+0:06:28 - 0:06:30, Bây giờ chúng ta sẽ vẽ nó lên
+0:06:30 - 0:06:34, Lt.plot và hai điểm của mình
+0:06:34 - 0:06:40, ở đây chúng ta sẽ lấy điểm từ trừ 1 cho đến 1
+0:06:40 - 0:06:47, rồi, tương ứng đường lấy điểm từ trừ 1 cho đến 1
+0:06:47 - 0:06:52, và điểm theo trục x2 hay trục y chúng ta ký hiệu ở đây
+0:06:52 - 0:06:57, Công thức này là a x b
+0:06:57 - 0:07:02, A x 1 b
+0:07:07 - 0:07:12, A x 1 b
+0:07:12 - 0:07:18, Rồi, thì ở đây chúng ta sẽ thấy là gì?
+0:07:18 - 0:07:25, Các cái điểm, xin lỗi các cái neuron mà có đội thiên trạng cao thì nó sẽ cắt
+0:07:25 - 0:07:30, Cái đường thẳng, xin lỗi nó sẽ cắt tập điểm của mình ra làm 2 phần
+0:07:30 - 0:07:36, Trong đó, 1 nửa, 1 ví dụ như cái đường màu tím nè, thì 1 nửa bên đây phải
+0:07:36 - 0:07:38, Thì nó đều là những cái điểm màu đỏ
+0:07:38 - 0:07:43, nhưng nửa bên trái lẫn lộn cả màu đỏ và màu xanh.
+0:07:43 - 0:07:46, Tất cả những đường thẳng vỏ lại cũng bắt tiến chất như vậy.
+0:07:46 - 0:07:49, Ví dụ như đường màu đỏ, nửa dưới sẽ là toàn màu đỏ
+0:07:49 - 0:07:53, nhưng nửa bên trên thì có lẫn màu đỏ và màu xanh.
+0:07:53 - 0:07:59, Vì vậy, mỗi đường thẳng này là một quyết classifier
+0:07:59 - 0:08:01, sẽ là một bộ phần lớp yếu.
+0:08:01 - 0:08:04, Tổ hợp của nhiều quyết classifier này
+0:08:04 - 0:08:09, thì nó sẽ giúp chúng ta tạo thành một bộ Strong Passifier, một bộ phân lớp mạnh
+0:08:09 - 0:08:15, tức là các đường màu xanh dương, màu xanh lá, màu tím, màu đỏ hợp lại
+0:08:15 - 0:08:20, thì nó sẽ giúp chúng ta tắt cái buồng màu đỏ ra buồng rìa bên ngoài
+0:08:20 - 0:08:24, và buồng màu xanh, cái điểm màu xanh là những điểm nằm ở bên trong
+0:08:24 - 0:08:31, Bây giờ chúng ta sẽ thử Visualize các điểm mà có độ tin cậy kém
+0:08:31 - 0:08:35, Ví dụ như là điểm số 012234
+0:08:35 - 0:08:38, và chúng ta sẽ xem tự các điểm có tinh cải kém
+0:08:38 - 0:08:40, 2234
+0:08:48 - 0:08:54, Với các điểm có độ tinh cải thấp thì nó sẽ đi xuyên qua
+0:08:54 - 0:08:58, Ví dụ như ở đây có hai đường thẳng là một kem và một xanh,
+0:08:58 - 0:09:01, nó đi xuyên qua tập điểm của mình.
+0:09:01 - 0:09:06, Vì việc đi xuyên qua tập điểm này thì nó sẽ không đóng góp cho việc là phân toàn,
+0:09:06 - 0:09:09, đó là một đỏ hoặc là một xanh.
+0:09:09 - 0:09:13, Thì nó sẽ không có nhiều giá trị tiến cải.
+0:09:13 - 0:09:16, Vì vậy, qua cái bài tập này,
+0:09:16 - 0:09:22, qua cái phép cài đặt này, chúng ta một lần nữa ứng dụng thư biện Keras
+0:09:22 - 0:09:27, để cài đặt cho kiến trúc mạng là NoRain Network
+0:09:27 - 0:09:33, Và một cách tổn quát thì sau này chúng ta có thể mở rộng lên thành nhiều hít đền layer hơn
+0:09:33 - 0:09:36, Ví dụ như ở đây chúng ta sẽ có là hít đền số 1
+0:09:36 - 0:09:40, thì sẽ truyền vào cho lớp tiếp theo là hít đền 1
+0:09:40 - 0:09:43, Rồi sẽ ra hít đền 2
+0:09:43 - 0:09:45, Hít đền 2 sẽ truyền vào đây
+0:09:45 - 0:09:47, Đúng không?
+0:09:47 - 0:09:49, Để ra hít đền số 3
+0:09:49 - 0:09:52, Và hít đền 3 truyền vào để ra cái output
+0:09:52 - 0:09:57, và số node ở đây chúng ta cũng có thể gia giảm
+0:09:57 - 0:10:01, có thể là 16, 32
+0:10:01 - 0:10:07, thì đây là cách thức cài đặt cho mạng Leroy Network
+0:10:07 - 0:10:09, sử dụng thư biệt Keras

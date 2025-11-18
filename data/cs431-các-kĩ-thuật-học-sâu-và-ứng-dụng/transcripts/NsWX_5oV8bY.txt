@@ -1,0 +1,41 @@
+0:00:00 - 0:00:12, Trong Transformer, chúng ta sẽ bắt gặp một cái khái niệm dùng rất là thường xuyên, đó chính là self-attention, tức là kỹ thuật tự chú ý.
+0:00:12 - 0:00:17, Thì ở trong bài trước, chúng ta đã nói về khái niệm là attention,
+0:00:17 - 0:00:23, tức là một từ truy vấn query của mình ở bước decoder
+0:00:23 - 0:00:34, nó sẽ truy xuất và tổng hợp thông tin từ các tập giá trị value của encoder.
+0:00:34 - 0:00:39, Thì như chúng ta thấy là đây là giai đoạn encoder và đây là giai đoạn decoder.
+0:00:39 - 0:00:42, trong giai đoạn decoder này, chúng ta sẽ phải lookup,
+0:00:42 - 0:00:48, chúng ta sẽ phải tra vào tất cả những từ trong giai đoạn encoder.
+0:00:48 - 0:00:52, Còn đây là encoder,
+0:00:52 - 0:00:54, còn đây là quá trình là decoder.
+0:00:54 - 0:01:00, Khi đó, nó gọi là attention,
+0:01:00 - 0:01:04, tức là sự truy vấn của một query ở bước decoder,
+0:01:04 - 0:01:10, Truy xuất vào và tổng hợp từ thông tin của các giá trị ở encoder.
+0:01:10 - 0:01:14, Từ decoder mình sẽ truy xuất vào encoder.
+0:01:16 - 0:01:25, Ở đây chúng ta thấy là điểm mạnh của self-attention chính là khả năng song song.
+0:01:25 - 0:01:28, Trong sơ đồ trước đây chúng ta thấy là tại cái vị trí này
+0:01:28 - 0:01:32, chúng ta sẽ bị phụ thuộc vào phép tính trước đó.
+0:01:32 - 0:01:37, Trong khi đó, tại đây thì chúng ta chỉ cần phụ thuộc vào 2 phép tính. Tại sao?
+0:01:37 - 0:01:48, Tại vì để tính ra được cái giá trị ở đây, chúng ta sẽ phải cần tính trước các giá trị ở layer trước đó.
+0:01:48 - 0:01:50, Ở đây là layer số 2.
+0:01:50 - 0:01:53, Ở đây là layer số 3.
+0:01:53 - 0:01:56, Đây là layer số 2.
+0:01:56 - 0:01:58, Và đây là layer số 1.
+0:01:58 - 0:02:05, thì để tính được layer số 3, chúng ta sẽ cần thông tin của layer số 1
+0:02:05 - 0:02:13, và thông tin của layer số 1 thì lại cần thông tin của layer số 2
+0:02:13 - 0:02:17, và ở layer số 2 thì lại cần thông tin của layer số 1
+0:02:17 - 0:02:21, thì tại đây chúng ta thấy là trạng thái ẩn này
+0:02:21 - 0:02:26, nó sẽ bị phụ thuộc bởi một phép tính trước đó, đó là đây
+0:02:26 - 0:02:29, Và các phép tính này thì thực hiện song song
+0:02:31 - 0:02:36, Chính vì nó thực hiện song song nên không có phép tính nào phụ thuộc với phép tính nào
+0:02:37 - 0:02:44, Rồi, và ở đây thì chúng ta sẽ có khái niệm self-attention thì thật ra nó cũng chính là attention nhưng mà
+0:02:44 - 0:02:54, nhưng mà thay vì chúng ta là mối quan hệ giữa encoder và decoder,
+0:02:56 - 0:03:05, đó là attention, và ở đây đó là cơ chế attention trong giai đoạn encoder,
+0:03:06 - 0:03:09, hoặc là trong giai đoạn decoder.
+0:03:09 - 0:03:16, Tức là mỗi từ nó sẽ chú ý đến nhau trong cùng một cái input hoặc là trong output
+0:03:16 - 0:03:19, Thì giả sử như đây là nguyên giai đoạn encoder
+0:03:19 - 0:03:27, Thì các cái từ nó sẽ tự chú ý với nhau
+0:03:27 - 0:03:29, Trong đó nó cũng chú ý đến chính nó
+0:03:29 - 0:03:31, Chú ý đến chính nó ở đây
+0:03:31 - 0:03:37, Và chú ý đến những cái từ còn lại trong giai đoạn encoder của mình
+0:03:37 - 0:03:46, hoặc là trong giai đoạn decoder, tức là nó sẽ tự chú ý đến những từ trong giai đoạn decoder của mình.
+0:03:46 - 0:03:52, Đó là sự khác biệt giữa khái niệm attention và self-attention.

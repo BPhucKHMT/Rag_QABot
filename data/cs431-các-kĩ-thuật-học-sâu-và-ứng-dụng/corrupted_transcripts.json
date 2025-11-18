@@ -1,0 +1,53 @@
+{
+  "corrupted_files": [
+    {
+      "video_id": "30kCjQ0BdUc",
+      "video_index": 58,
+      "title": "[CS431 - Chương 6] Part 1: Giới thiệu lĩnh vực xử lý ngôn ngữ tự nhiên (NLP)",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\30kCjQ0BdUc.txt"
+    },
+    {
+      "video_id": "7YLMIKqygPU",
+      "video_index": 26,
+      "title": "[CS431 - Chương 3] Part 4_1: Trực quan hóa mạng CNN",
+      "reason": "excessive_line_repetition",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\7YLMIKqygPU.txt"
+    },
+    {
+      "video_id": "A3iFEk5jllM",
+      "video_index": 22,
+      "title": "[CS431 - Chương 3] Part 2_2: Một số thành phần của mạng CNN",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\A3iFEk5jllM.txt"
+    },
+    {
+      "video_id": "aXB_C9IAyMg",
+      "video_index": 14,
+      "title": "[CS431 - Chương 2] Part 5a: Mạng neural Network (Neural Network)",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\aXB_C9IAyMg.txt"
+    },
+    {
+      "video_id": "JGxo_olUl2U",
+      "video_index": 69,
+      "title": "[CS431 - Chương 10] Part 4_2: Kiến trúc Transformer: Bộ Encoder",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\JGxo_olUl2U.txt"
+    },
+    {
+      "video_id": "KeNRQw9j_ps",
+      "video_index": 23,
+      "title": "[CS431 - Chương 3] Part 3_1: Cài đặt mạng CNN",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\KeNRQw9j_ps.txt"
+    },
+    {
+      "video_id": "my3qRjVJ7VM",
+      "video_index": 51,
+      "title": "[CS431 - Chương 9] Part 3: Một số biến thể của Attention",
+      "reason": "timestamp_discontinuous",
+      "source_path": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng\\transcripts\\my3qRjVJ7VM.txt"
+    }
+  ]
+}

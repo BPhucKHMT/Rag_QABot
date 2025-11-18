@@ -1,11 +1,9 @@
 from dotenv import load_dotenv
 import os
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
-
+from langchain_google_genai import ChatGoogleGenerativeAI
 load_dotenv()
 
 googleAPIKey = os.getenv('googleAPIKey')
-from langchain_google_genai import ChatGoogleGenerativeAI
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",   # hoặc gemini-1.5-pro, gemini-2.0-flash
     temperature=0.0,

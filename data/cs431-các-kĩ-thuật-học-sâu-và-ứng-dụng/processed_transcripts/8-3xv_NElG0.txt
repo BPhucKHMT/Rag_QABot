@@ -1,0 +1,121 @@
+0:00:00 - 0:00:12, Tiếp theo, chúng ta sẽ tìm hiểu về một số cái vấn đề đối với các mạng CNN và một số giải pháp để tạm thời khắc phục những vấn đề đó.
+0:00:12 - 0:00:21, Đầu tiên, chúng ta sẽ cùng khảo sát lại sơ đồ của thuật toán RNN này.
+0:00:21 - 0:00:27, Từ trái sang phải, chúng ta sẽ lần lượt feed các giá trị trong chuỗi vào.
+0:00:27 - 0:00:32, Các từ thứ t trừ 1 cho đến t cộng 1 vào.
+0:00:32 - 0:00:38, Và tại thời điểm thứ t, chúng ta sẽ có một giá trị loss thành phần, đó là Lt.
+0:00:38 - 0:00:46, Trong slide trước, chúng ta dùng hệ thống ký hiệu là trị tuyệt đối V, nhưng do nó sẽ dễ nhầm lẫn với V
+0:00:46 - 0:00:52, nên ở đây chúng ta sẽ ký hiệu nó bằng một từ tổng quát hơn, đó là k
+0:00:52 - 0:00:58, trong đó k là độ dài của cái vector của mình
+0:00:58 - 0:01:04, k của mình là độ dài của vector output hoặc vector dự đoán của mình
+0:01:04 - 0:01:10, Rồi, và chúng ta sẽ có cái hàm loss của mô hình sẽ là công thức như sau.
+0:01:10 - 0:01:14, Thì cái này là chúng ta đã được trình bày trong cái slide trước.
+0:01:14 - 0:01:21, Như vậy thì đến cái giai đoạn số 3, cái bước số 3 của cái quá trình mà xây dựng một cái mô hình máy học
+0:01:21 - 0:01:28, đó là chúng ta sẽ phải đi tính đạo hàm và có được đạo hàm rồi thì chúng ta sẽ đi cập nhật các tham số.
+0:01:28 - 0:01:33, thì công thức cho việc tính đạo hàm thì chúng ta sẽ có công thức như ở dưới đây
+0:01:33 - 0:01:38, đạo hàm của hàm loss theo ma trận U
+0:01:38 - 0:01:42, thì nó sẽ là bằng tổng của các đạo hàm thành phần
+0:01:42 - 0:01:47, tức là tổng của đạo hàm của Lt theo ma trận U
+0:01:47 - 0:01:50, đạo hàm của tổng bằng tổng các đạo hàm
+0:01:50 - 0:01:54, và tương tự như vậy cho các ma trận V và ma trận W kể sau
+0:01:54 - 0:02:00, Bây giờ chúng ta sẽ xem chi tiết hơn.
+0:02:00 - 0:02:07, Giả sử như hàm loss của mình là Lt này, mình gọi lại thay vì là Lt.
+0:02:07 - 0:02:19, Thế thì chúng ta sẽ để Lt là một cái hàm hợp bao gồm các hàm Fn, Fn-1, Fn-2 cho đến F2, F1 và W.
+0:02:19 - 0:02:25, và ở đây chúng ta đang xem xét cái việc tính đạo hàm này theo ma trận W
+0:02:25 - 0:02:31, tương tự, một cách tương tự cho cái việc chúng ta tính đạo hàm theo U và V
+0:02:31 - 0:02:33, bây giờ chúng ta sẽ tính theo W trước
+0:02:33 - 0:02:38, rồi, thì khi đó cái công thức đạo hàm hàm hợp chain rule
+0:02:38 - 0:02:43, là đạo hàm của Lt theo ma trận W
+0:02:43 - 0:02:52, thì sẽ là bằng đạo hàm của hàm thứ Fn theo Fn-1
+0:02:52 - 0:02:55, đạo hàm của Fn-1 theo Fn-2
+0:02:55 - 0:02:59, đạo hàm của F2 theo F1, đạo hàm của F1 theo W
+0:02:59 - 0:03:02, thì công thức này đã rất là quen thuộc rồi
+0:03:02 - 0:03:10, và khi chúng ta thực hiện lan truyền thì chúng ta sẽ đi thực hiện từ cái bước cuối cùng trước
+0:03:10 - 0:03:13, Ví dụ như Fn và Fn-1
+0:03:15 - 0:03:19, Bản chất chính là những thao tác ở bước cuối
+0:03:19 - 0:03:22, Ví dụ như là chúng ta tính hàm loss
+0:03:23 - 0:03:28, đó là sai số giữa y ngã, tức là giá trị dự đoán và giá trị thực tế
+0:03:28 - 0:03:34, Đến Fn-2, xin lỗi Fn, đạo hàm của Fn-1 theo Fn-2
+0:03:34 - 0:03:37, thì đó sẽ là cái thao tác Softmax
+0:03:37 - 0:03:41, và tổng hợp thông tin y ngã t từ s_t
+0:03:41 - 0:03:45, cứ như vậy thì nó sẽ lan truyền cho đến những cái thao tác tính đầu tiên
+0:03:45 - 0:03:48, cho đến những cái thao tác tính đầu tiên
+0:03:48 - 0:03:50, lan truyền, lan truyền
+0:03:50 - 0:03:52, nó sẽ lan truyền ngược về
+0:03:52 - 0:03:58, và cập nhật các cái đạo hàm để từ đó sẽ tính cho các cái tham số
+0:03:58 - 0:04:01, kèm theo cái ma trận W
+0:04:01 - 0:04:04, và ở đây chúng ta sẽ có cái nhận xét
+0:04:04 - 0:04:15, Đầu tiên đó chính là đa số các đạo hàm thành phần đều có giá trị tuyệt đối nhỏ hơn 1.
+0:04:15 - 0:04:27, Hay là cái công thức là trị tuyệt đối của đạo hàm F' là bé hơn 1. Tức là các thành phần này, đa số của nó sẽ là bé hơn 1.
+0:04:27 - 0:04:32, Thì điều này là tại sao chúng ta sẽ lấy cái ví dụ sau
+0:04:32 - 0:04:47, Chúng ta có cái công thức tính cho cái s_t, tức là cái trạng thái ở s_t là bằng sigmoid của U*x_t cộng cho W*s_{t-1}
+0:04:47 - 0:04:56, Và khi chúng ta triển khai cái đạo hàm này, thì nó sẽ là bằng đạo hàm của sigmoid,
+0:04:56 - 0:05:00, thì sẽ là bằng sigmoid nhân cho 1 trừ cho sigmoid.
+0:05:00 - 0:05:11, Mà chúng ta biết rằng là sigmoid của mình là một cái hàm mà dải giá trị của mình là từ 0 cho đến 1.
+0:05:11 - 0:05:15, Từ 0 cho đến 1, do đó cái giá trị này sẽ là từ 0 cho đến 1.
+0:05:15 - 0:05:17, Giá trị này sẽ là từ 0 cho đến 1.
+0:05:17 - 0:05:24, Và 1 trừ cho một cái giá trị từ 0 cho đến 1 thì nguyên cái này cũng sẽ là từ 0 cho đến 1.
+0:05:24 - 0:05:28, Như vậy tích của hai cái giá trị này cũng sẽ là từ 0 cho đến 1.
+0:05:28 - 0:05:32, Ma trận W, ma trận W của mình cũng vậy.
+0:05:32 - 0:05:39, Ma trận W cũng sẽ là các cái giá trị random ban đầu là lấy xung quanh cái phân bố chuẩn.
+0:05:39 - 0:05:41, do đó nó cũng sẽ từ 0 đến 1
+0:05:41 - 0:05:49, như vậy, tổng thể thì tất cả các cái giá trị thành phần ở đây đều là các giá trị từ 0 đến 1
+0:05:49 - 0:05:53, rồi
+0:05:53 - 0:05:59, và từ cái nhận xét số 1 đó, nó sẽ nảy sinh ra cho chúng ta đến cái nhận xét số 2
+0:05:59 - 0:06:06, khi chúng ta xử lý văn bản, đúng không? thì cái t này thường là những cái con số rất là lớn
+0:06:06 - 0:06:10, Có những cái đoạn văn bản dài lên đến hàng ngàn chữ.
+0:06:10 - 0:06:12, Ví dụ như cho bài toán tóm tắt văn bản,
+0:06:12 - 0:06:14, chúng ta sẽ đọc nguyên một cái cuốn truyện
+0:06:14 - 0:06:19, và chúng ta sẽ phải tổng hợp để tóm tắt lại
+0:06:19 - 0:06:22, cái nội dung chính của cái cuốn truyện đó là gì.
+0:06:22 - 0:06:25, Hoặc là trong một số cái bài toán dịch máy,
+0:06:25 - 0:06:28, thì cái cụm từ của mình nó có thể lên đến vài chục chữ,
+0:06:28 - 0:06:30, và vài chục từ.
+0:06:30 - 0:06:31, Và với vài chục từ này,
+0:06:31 - 0:06:33, thì nó cũng được xem là lớn rồi.
+0:06:33 - 0:06:35, Nó cũng đã xem được là lớn rồi.
+0:06:35 - 0:06:40, Và khi t này lớn thì n sẽ càng lớn
+0:06:40 - 0:06:43, và khi t càng lớn, tức là sao?
+0:06:43 - 0:06:47, Đối với cái văn bản của mình, khi t này càng lớn
+0:06:47 - 0:06:53, thì cái đạo hàm thành phần này cũng sẽ càng nhỏ
+0:06:53 - 0:06:59, Tại vì cứ một cái từ, chúng ta sẽ phải thực hiện tổ hợp rất nhiều thao tác
+0:06:59 - 0:07:03, Tổng hợp thông tin từ quá khứ, hiện tại qua hàm Softmax,
+0:07:03 - 0:07:05, nó sẽ còn nhiều cái hàm con
+0:07:05 - 0:07:06, như vậy t mà càng lớn
+0:07:06 - 0:07:12, tức là số từ mà càng lớn thì số lượng cái hàm f của cái hàm hợp này
+0:07:12 - 0:07:14, sẽ càng lớn
+0:07:14 - 0:07:15, mà nó càng lớn
+0:07:15 - 0:07:17, thì sẽ dẫn đến là cái đạo hàm này
+0:07:17 - 0:07:19, sẽ càng tiến về 0
+0:07:24 - 0:07:28, và ở đây chúng ta có một cái để ý đó là
+0:07:28 - 0:07:30, với cái loss L2
+0:07:30 - 0:07:32, tức là t nhỏ
+0:07:32 - 0:07:43, Đối với L2, hàm hợp của nó sẽ ngắn hơn hàm hợp của Lt
+0:07:43 - 0:07:48, Tại vì sao? Từ L2, chúng ta lan truyền ngược lại, thì ở đây chúng ta chỉ mất có 3 bước
+0:07:48 - 0:07:56, Trong khi đó, ở đây là t, khi chúng ta lan truyền ngược, chúng ta sẽ phải thực hiện hàm hợp này rất nhiều lần
+0:07:56 - 0:08:02, Do đó thì n của Lt này sẽ là rất là lớn.
+0:08:02 - 0:08:06, Thì cụ thể trong trường hợp này nó sẽ phải là đến t cộng 1 bước, đúng không?
+0:08:06 - 0:08:09, 1 bước, 2 bước cho đến đây là t cộng 1 bước.
+0:08:09 - 0:08:14, Rồi, và tại sao nó lại có cái việc là đạo hàm của mình?
+0:08:14 - 0:08:15, Tiến về 0?
+0:08:15 - 0:08:19, Thì như cái nhận xét số 1 chúng ta đã thấy
+0:08:19 - 0:08:22, là các cái giá trị đạo hàm thành phần này
+0:08:22 - 0:08:25, đại đa số là những con số bé hơn 1.
+0:08:25 - 0:08:28, là những con số bé hơn 1
+0:08:28 - 0:08:35, và các con số bé hơn 1 và nhân với nhau thì nó sẽ có xu hướng là tiến đến 0
+0:08:35 - 0:08:40, trong chương trình cấp 3, chúng ta đã từng học một kiến thức đó là
+0:08:40 - 0:08:48, lim của n tiến đến vô cùng của a mũ n với a là con số
+0:08:48 - 0:08:52, với a là con số bé hơn 1 lớn hơn 0
+0:08:52 - 0:08:55, thì lim của nó sẽ là bằng 0
+0:08:55 - 0:08:57, Còn nếu như chúng ta muốn kiểm chứng
+0:08:57 - 0:08:59, bằng một cách gọi là
+0:08:59 - 0:09:02, trực quan và nó có thể tính toán được
+0:09:02 - 0:09:04, thì chúng ta sẽ lấy một con số rất
+0:09:04 - 0:09:06, gần số 1 thôi là 0.9
+0:09:06 - 0:09:08, và chúng ta thử
+0:09:08 - 0:09:10, lũy thừa n
+0:09:10 - 0:09:12, với n ở đây chúng ta có thể cho là
+0:09:12 - 0:09:14, khoảng 20 đi
+0:09:14 - 0:09:16, thì chúng ta thấy cái con số này là con số
+0:09:16 - 0:09:18, rất là bé
+0:09:18 - 0:09:20, nó sẽ tiến về, tiến về 0
+0:09:20 - 0:09:22, Rồi

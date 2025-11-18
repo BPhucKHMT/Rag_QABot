@@ -1,0 +1,164 @@
+0:00:00 - 0:00:11, Rồi, đến năm 2012, AlexNet gây ra một tiếng vang lớn trong cộng đồng nghiên cứu
+0:00:11 - 0:00:19, khi kiến trúc mạng AlexNet giành được độ chính xác cao nhất, tỷ lệ lỗi thấp nhất và độ chính xác cao nhất
+0:00:19 - 0:00:28, cho cuộc thi trên tập ImageNet và nó chiến thắng tất cả những phương pháp sử dụng các đặc trưng
+0:00:28 - 0:00:31, và do các nhà khoa học họ thiết kế bằng tay
+0:00:31 - 0:00:34, Còn mạng CNN và AlexNet
+0:00:35 - 0:00:37, nó được thiết kế để cho tự động
+0:00:37 - 0:00:39, học các bộ lọc trích xuất đặc trưng
+0:00:39 - 0:00:41, thông qua các phép biến đổi convolution
+0:00:44 - 0:00:49, Thì những cái cải tiến chính của AlexNet
+0:00:49 - 0:00:52, đó chính là thay SIGMOID
+0:00:52 - 0:00:54, hàm activation SIGMOID bằng ReLU
+0:00:54 - 0:01:01, thì cái việc này nó sẽ giúp cho chúng ta tránh được cái hiện tượng, giảm được cái hiện tượng là vanishing.
+0:01:03 - 0:01:04, Gradient
+0:01:08 - 0:01:10, Vanishing Gradient là gì?
+0:01:10 - 0:01:14, Trong cái quá trình mà chúng ta cập nhật cái tham số theta bằng theta
+0:01:14 - 0:01:19, trừ cho alpha nhân cho đạo hàm của hàm loss theo theta, đúng không?
+0:01:19 - 0:01:20, Thì cái đạo hàm này nè
+0:01:20 - 0:01:26, Từng thành phần đạo hàm này sẽ được phân rã ra thành các hàm thành phần
+0:01:26 - 0:01:32, Nếu chúng ta viết dưới dạng là Chain Rule, tức là đạo hàm của hàm hợp
+0:01:32 - 0:01:36, thì nó sẽ là đạo hàm của hàm loss
+0:01:36 - 0:01:46, theo một hàm trung gian, ví dụ như là đạo hàm của hàm thứ nhất theo hàm thứ hai
+0:01:46 - 0:01:52, Rồi vân vân cho đến cái hàm thứ n theo biến theta
+0:01:52 - 0:02:00, Thì một loạt các cái đạo hàm này, từng cái đạo hàm thành phần này nếu như nó là những cái con số rất là nhỏ
+0:02:00 - 0:02:02, Ví dụ như con số mà bé hơn một
+0:02:02 - 0:02:08, Thì khi chúng ta nhân các cái con số bé hơn một thì nó sẽ có xu hướng tiến về không
+0:02:08 - 0:02:13, Trong cái quá trình cập nhật cái tham số của mình mà mục tiêu của cái việc cập nhật cái tham số này
+0:02:13 - 0:02:17, là để cho đạo hàm của mình càng lúc càng nhỏ, và gradient descent
+0:02:17 - 0:02:20, gradient descent tức là đạo hàm càng lúc càng giảm
+0:02:20 - 0:02:24, thì khi đạo hàm càng giảm thì các thành phần này càng lúc càng giảm
+0:02:24 - 0:02:27, các thành phần này càng lúc càng giảm
+0:02:27 - 0:02:31, thì dẫn đến đó là các con số nhỏ mà nhân với nhau sẽ tiến về 0
+0:02:31 - 0:02:35, và khi đạo hàm xấp xỉ bằng 0
+0:02:35 - 0:02:39, tức là bước nhảy theta này gần như không cập nhật
+0:02:39 - 0:02:41, nó gần như không cập nhật
+0:02:41 - 0:02:43, thì đó chính là hiện tượng vanishing gradient
+0:02:43 - 0:02:45, nó sẽ làm cho quá trình huấn luyện chậm
+0:02:53 - 0:02:55, Rồi, thì tại sao
+0:02:55 - 0:02:57, sigmoid nó lại khiến cho
+0:02:57 - 0:02:59, hiện tượng vanishing gradient
+0:02:59 - 0:03:01, nó diễn ra
+0:03:01 - 0:03:03, gọi là phổ biến
+0:03:03 - 0:03:05, còn ReLU thì nó sẽ giúp cho mình giảm
+0:03:05 - 0:03:07, hiện tượng này, đó là
+0:03:07 - 0:03:09, thì chúng ta quan sát hàm sigmoid
+0:03:13 - 0:03:16, Rồi, với hàm sigmoid này thì chúng ta thấy nó rất dễ bị bão hòa
+0:03:16 - 0:03:17, Bão hòa theo nghĩa là gì?
+0:03:17 - 0:03:20, Khi giá trị đầu vào x của mình
+0:03:20 - 0:03:22, sigmoid
+0:03:22 - 0:03:24, Khi giá trị đầu vào x của mình
+0:03:24 - 0:03:27, nó chỉ mới đạt được những giá trị rất là bé thôi
+0:03:27 - 0:03:29, thì nó đã đạt được trạng thái đó là
+0:03:29 - 0:03:31, đạo hàm
+0:03:31 - 0:03:34, Độ dốc của đạo hàm gần như là đi ngang
+0:03:34 - 0:03:36, Độ dốc đạo hàm gần như đi ngang
+0:03:36 - 0:03:40, tức là đạo hàm của mình rất là nhỏ, nó tiến về 0
+0:03:40 - 0:03:43, mà đạo hàm tiến về 0 thì tức là
+0:03:43 - 0:03:47, khi chúng ta nhân những cái giá trị này vô thì nó sẽ triệt tiêu
+0:03:47 - 0:03:51, thế thì tại sao ReLU lại chống được cái việc này?
+0:03:51 - 0:03:53, ReLU nó lại chống được cái việc này, đó là vì
+0:03:53 - 0:03:58, cái hàm ReLU của mình nó sẽ có tính chất đó là với những cái giá trị x mà lớn
+0:03:58 - 0:04:02, đúng không? lớn hơn 0, thì nó sẽ giữ nguyên cái giá trị hay nói cách khác
+0:04:02 - 0:04:08, Đó là đạo hàm của mình trong trường hợp này, độ dốc của mình trong trường hợp này luôn luôn là hằng số cố định.
+0:04:08 - 0:04:11, Và độ dốc của mình trong trường hợp này đó là bằng một.
+0:04:11 - 0:04:19, Thì việc đạo hàm bằng một này khiến cho các thành phần này, đâu đó các giá trị của mình sẽ cố định là bằng một.
+0:04:19 - 0:04:25, Nó không có tiến về số 0, nó sẽ không tiến về số 0 mà nó sẽ để các giá trị là bằng một.
+0:04:25 - 0:04:31, Các giá trị bằng một khi nhân vô sẽ không giảm bớt hiện tượng kéo giá trị của mình về không.
+0:04:31 - 0:04:39, Đó là lý giải một cách hơi ngắn gọn cho việc tại sao dùng ReLU sẽ hiệu quả hơn
+0:04:39 - 0:04:45, Tăng tốc độ huấn luyện của mình hơn và giảm hiện tượng vanishing
+0:04:45 - 0:04:57, Bây giờ chúng ta sẽ nói thêm các cải tiến tiếp theo của AlexNet đó chính là tăng độ sâu của kiến trúc mạng
+0:04:57 - 0:05:07, Bình thường các mạng trước đó chỉ có 2 phép convolution và thêm 2 phép biến đổi pooling, tức là 4 hoặc 5 phép biến đổi gì đó thôi
+0:05:07 - 0:05:15, Còn AlexNet thì nó sẽ có nhiều hơn số lượng phép biến đổi convolution và pooling
+0:05:15 - 0:05:24, Và khi mô hình học sâu này tăng lên thì đồng nghĩa là số lượng tham số cũng tăng lên
+0:05:24 - 0:05:31, Do đó, để tránh hiện tượng overfitting, AlexNet đã tăng cường dữ liệu nhiều hơn
+0:05:31 - 0:05:35, nó dùng phương pháp data augmentation
+0:05:38 - 0:05:40, Bằng cách đó là với mỗi ảnh
+0:05:40 - 0:05:45, Với mỗi ảnh, chúng ta sẽ thực hiện các phép tỷ lệ
+0:05:47 - 0:05:50, Rồi, chúng ta sẽ thực hiện phép xoay
+0:05:50 - 0:05:54, Rồi chúng ta thực hiện phép thêm nhiễu
+0:05:54 - 0:05:58, Rồi thay đổi độ sáng
+0:05:58 - 0:06:08, Với một ảnh chúng ta sẽ làm rất nhiều phép biến đổi khác nhau để tạo ra mẫu dữ liệu mới với cùng một nhãn
+0:06:08 - 0:06:13, Giống như là cái ảnh gốc đầu vào, thì nó sẽ giúp cho mình tăng data lên
+0:06:13 - 0:06:18, Và tăng data này lên thì nó sẽ giúp cho mình giảm hiện tượng overfitting
+0:06:18 - 0:06:30, Và một cái cải tiến cuối cùng so với những phiên bản trước đây không sử dụng GPU
+0:06:30 - 0:06:36, thì AlexNet đã cài đặt thuật toán của mình để cho có thể chạy được trên GPU
+0:06:36 - 0:06:39, và tốc độ huấn luyện nó nhanh hơn gấp 50 lần
+0:06:39 - 0:06:42, thì đây chính là những cái cải tiến chính của mạng AlexNet
+0:06:42 - 0:06:48, Và khi chúng ta Google cái bài báo, khi chúng ta Google cái tên bài báo ở đây
+0:06:48 - 0:07:00, thì chúng ta thấy rằng AlexNet có số lượt trích dẫn là khoảng 128 ngàn trích dẫn
+0:07:00 - 0:07:01, tức là gì?
+0:07:01 - 0:07:08, khi mỗi bài báo được xuất bản thì họ sẽ trích dẫn đến những bài báo mà họ tham khảo
+0:07:08 - 0:07:15, thì bài AlexNet này được cộng đồng tham khảo đến 128 ngàn lần
+0:07:15 - 0:07:19, thì đây là một trong những con số vô cùng khủng khiếp
+0:07:20 - 0:07:24, Tiếp theo chúng ta sẽ tìm hiểu đến kiến trúc mạng của VGG
+0:07:24 - 0:07:28, Đâu đó là vào 2014 đến 2015
+0:07:30 - 0:07:37, Các cải tiến của VGG so với AlexNet
+0:07:37 - 0:07:40, rất là đơn giản
+0:07:40 - 0:07:45, đó chỉ là chúng ta thay các filter kích thước 5x5, 7x7
+0:07:45 - 0:07:49, bằng các filter hay gọi là các bộ lọc
+0:07:49 - 0:07:50, đây là filter
+0:07:51 - 0:07:54, bằng các filter có kích thước là 3x3
+0:07:54 - 0:07:56, và thực hiện liên tiếp nhau
+0:07:56 - 0:07:59, thì việc này sẽ giúp chúng ta giải quyết vấn đề gì
+0:07:59 - 0:08:04, thì chúng ta sẽ làm trên một filter 5x5 trước
+0:08:04 - 0:08:05, thì nếu như bình thường
+0:08:05 - 0:08:08, chúng ta sẽ có một ảnh đầu vào
+0:08:08 - 0:08:14, sau đó chúng ta nhân convolution với một filter kích thước là 5x5
+0:08:14 - 0:08:18, chúng ta sẽ tạo ra một feature map
+0:08:18 - 0:08:25, và một điểm đặc trưng trên feature map output này
+0:08:25 - 0:08:32, nó được tạo bởi một vùng có kích thước 5x5
+0:08:32 - 0:08:34, ở trên ảnh input
+0:08:34 - 0:08:42, Trên ảnh input thì điểm này sẽ bị phụ thuộc bởi vùng có kích thước là 5x5
+0:08:42 - 0:08:44, Đây là cách bình thường
+0:08:48 - 0:08:53, Còn cái cải tiến của VGG đó là thay vì sử dụng kernel 5x5
+0:08:53 - 0:08:57, thì nhóm tác giả không sử dụng kernel 5x5 nữa hoặc 7x7 nữa
+0:08:57 - 0:09:01, mà thay hết bằng kernel filter 3x3
+0:09:01 - 0:09:04, và thực hiện liên tiếp nhau, ví dụ
+0:09:04 - 0:09:11, đây chúng ta có một ảnh thực hiện convolution với một kernel kích thước là 3x3
+0:09:11 - 0:09:16, rồi sau đó chúng ta sẽ tạo ra một tấm ảnh
+0:09:16 - 0:09:22, và cái ảnh này lại tiếp tục thực hiện convolution với lại kernel kích thước là 3x3
+0:09:22 - 0:09:26, để tạo ra một tấm ảnh khác
+0:09:26 - 0:09:34, Bây giờ chúng ta sẽ xem điểm đặc trưng trên feature map cuối cùng ở đây
+0:09:34 - 0:09:44, Điểm đặc trưng này được tạo ra ở vùng có kích thước là 3x3 của feature map này
+0:09:44 - 0:09:51, Vùng 3x3 được tạo ra bởi vùng 5x5
+0:09:51 - 0:10:07, Vùng 3x3 này thì tạo ra bởi vùng này, cái điểm này thì tạo ra bởi vùng này, cái điểm này thì tạo ra bởi vùng này
+0:10:07 - 0:10:20, Vì vậy, Feature Map của phép biến đổi cuối cùng sẽ được tạo bởi các điểm trong Feature Map của lớp trung gian.
+0:10:20 - 0:10:24, Và vùng kích thước sẽ là 3x3.
+0:10:24 - 0:10:29, Và vùng 3x3 sẽ được tạo bởi vùng 5x5 ở trên ảnh đầu vào.
+0:10:29 - 0:10:32, Vì vậy, xét về bản chất và tổng hợp thông tin.
+0:10:32 - 0:10:41, Nếu sử dụng phép biến đổi 5x5, thì một feature map output sẽ bị ảnh hưởng bởi 1 vùng 5x5 input đầu vào
+0:10:41 - 0:10:45, và dùng 2 phép convolution liên tiếp nhau thì nó cũng tương đương như vậy
+0:10:45 - 0:10:49, tức là 1 điểm ở đây sẽ được tổng hợp thông tin bởi 1 vùng 5x5
+0:10:49 - 0:10:53, Vùng ảnh hưởng này người ta gọi là Receptive Field
+0:10:53 - 0:11:07, Cách làm của VGG có cái gì hơn?
+0:11:07 - 0:11:19, Để tìm số lượng tham số, nếu dùng kernel 5x5 thì tổng số lượng tham số của mình là 25 tham số
+0:11:19 - 0:11:24, sau này mình sẽ viết tắt bằng chữ P đi
+0:11:24 - 0:11:27, còn nếu thực hiện hai phép convolution liên tiếp
+0:11:27 - 0:11:32, nó sẽ là 2 nhân cho 3 nhân 3 tức là 18
+0:11:32 - 0:11:33, tham số
+0:11:33 - 0:11:40, vậy thì rõ ràng 18 sẽ bé hơn so với 25
+0:11:40 - 0:11:44, và nếu chúng ta chia tỷ lệ thì 18 chia cho 25
+0:11:44 - 0:11:47, thì đâu đó nó cỡ khoảng 70%
+0:11:47 - 0:11:53, Chúng ta đã tiết giảm được khoảng 30% số tham số
+0:11:55 - 0:12:08, Đây là giải thích tại sao việc bỏ các filter kích thước 5x5, 7x7 và thay bằng 3x3
+0:12:08 - 0:12:10, sẽ giúp cho mình giảm số tham số
+0:12:10 - 0:12:12, Và giảm số tham số thì chúng ta biết rồi
+0:12:12 - 0:12:15, nó sẽ giúp cho mình giảm hiện tượng overfitting
+0:12:17 - 0:12:18, overfitting
+0:12:20 - 0:12:23, Rồi, đồng thời, cái này thì không gọi là cải tiến
+0:12:23 - 0:12:28, nhưng mà VGG đã tăng cái độ sâu của mạng lên
+0:12:29 - 0:12:35, từ VGG 11 lên VGG 13, rồi lên VGG 16 và lên VGG 19
+0:12:35 - 0:12:37, Thì cái này nó không được tính là cải tiến
+0:12:37 - 0:12:39, Và cải tiến lớn nhất của nó sẽ nằm ở cái chỗ này
+0:12:39 - 0:12:45, Đó là thay các cái filter lớn bằng những cái filter 3x3 liên tiếp
+0:12:45 - 0:12:51, Và trên đây thì chúng ta sẽ thấy là sơ đồ của một kiến trúc mạng là VGG16.
+0:12:51 - 0:12:56, Trong đó là VGG16 thì 16 thể hiện là các phép biến đổi bao gồm
+0:12:56 - 0:12:58, Convolution và Fully Connected.
+0:12:58 - 0:13:01, Tuy nhiên đây là 1, 2, 3, 4.
+0:13:01 - 0:13:06, Ở cái bước pooling này thì nó không có tạo ra đặc trưng mà nó chỉ là giảm chiều thôi nên nó không được tính.
+0:13:06 - 0:13:14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16.
+0:13:14 - 0:13:16, thì ý nghĩa của con số 16 là như vậy
+0:13:18 - 0:13:22, Rồi, và bây giờ nếu như chúng ta nhìn vô
+0:13:22 - 0:13:26, số lượt trích dẫn của kiến trúc mạng VGG
+0:13:26 - 0:13:31, thì thấy là VGG có số lượt trích dẫn là 121.000
+0:13:31 - 0:13:36, 121.000 trích dẫn thì đây cũng là số lượt vô cùng khủng khiếp

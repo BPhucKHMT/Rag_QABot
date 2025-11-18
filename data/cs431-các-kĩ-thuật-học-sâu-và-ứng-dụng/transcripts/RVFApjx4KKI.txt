@@ -1,0 +1,227 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, imageNet.
+0:00:30 - 0:00:39, đối tượng. Đây có vẻ như là một trong những bài toán khởi nguồn cho mạng CNN Deep Learning.
+0:00:39 - 0:00:46, Đầu vào của chúng ta sẽ có ảnh của 1 cái object và đầu ra mình sẽ cần phải phân loại xem cái object
+0:00:46 - 0:00:54, trong cái ảnh đầu vào này nó thuộc cái phân lớp là gì. Thì ở đây với một cái giả định rằng là trong cái tống hình này nó chỉ chứa
+0:00:54 - 0:01:04, với một giả định trong tóm hình này chỉ chứa duy nhất đối tượng.
+0:01:07 - 0:01:13, Thì như vậy thì output của mình chỉ có duy nhất một cái đáp án thôi,
+0:01:13 - 0:01:16, đó là cho bài toán phân loại đối tượng.
+0:01:16 - 0:01:20, Và kiến trúc của mình sẽ bao gồm hai thành phần.
+0:01:20 - 0:01:24, thành phần đầu tiên là học rút trích đặc trưng
+0:01:24 - 0:01:30, và thành phần thứ hai là mình sẽ phân lớp các đặc trưng đó vào các class
+0:01:30 - 0:01:34, thì đối với thành phần feature learning rút trích đặc trưng
+0:01:34 - 0:01:41, thì chúng ta sẽ có các module chính chính là module về convolution, relu và pooling
+0:01:41 - 0:01:50, Còn đối với mô đun về phân loại thì chúng ta sẽ có các biến đổi là fully connected và shoppe map.
+0:01:50 - 0:01:55, Đây chính là kiến trúc cao mảng của mạng CNN.
+0:01:55 - 0:02:06, Ngoài bài toán phân loại đối tượng mà chúng ta được tìm hiểu đó là object classification.
+0:02:06 - 0:02:15, thì chúng ta sẽ có một chủ đề cũng là phân loại đối tượng nhưng mà nó ở cấp độ gọi là 5-grand
+0:02:15 - 0:02:17, 5-grand có nghĩa là miệng
+0:02:17 - 0:02:19, có nghĩa là miệng
+0:02:19 - 0:02:20, nghĩa là sao?
+0:02:20 - 0:02:28, ví dụ, trước đây chúng ta chỉ phân biệt là hoa, cây cối, chó mèo v.v.
+0:02:28 - 0:02:33, Nhưng mà bây giờ trong các loại hoa thì nó có rất nhiều những loại hoa
+0:02:33 - 0:02:36, mà thuộc các chi, các nhánh trong giới sinh vật
+0:02:36 - 0:02:39, Bị dụng hoa lài, hoa hoẹ, hoa hồng
+0:02:39 - 0:02:43, Thậm chí là trong hoa hồng nó cũng có rất nhiều giống hoa hồng
+0:02:43 - 0:02:46, Hoa cút nó cũng có rất nhiều giống hoa cút
+0:02:46 - 0:02:50, Ở đây chính là Firebrand Object Classification
+0:02:50 - 0:02:58, và trong hình ở đây thì chúng ta có thù bộ dataset đó là PassportFlowerDataset
+0:02:59 - 0:03:06, Tương tự như vậy cho bài toán phân loại xe thì có rất nhiều loại xe khác nhau
+0:03:06 - 0:03:10, và thậm chí là trong cùng một hãng xe thì chúng ta sẽ có rất nhiều dòng
+0:03:10 - 0:03:13, tối như xe hạng A, B, C, V, V
+0:03:13 - 0:03:16, rồi ứng với từng hãng thì nó cũng sẽ có các đời xe
+0:03:16 - 0:03:21, thì ở đây chúng ta sẽ có một bộ data set đó là Stanford Car data set
+0:03:21 - 0:03:27, để thu thập và phân loại các dòng xe từng xưa đến nay.
+0:03:27 - 0:03:34, Rồi, ngoài ra thì nó cũng có một bài toán dạng phân loại đối tượng
+0:03:34 - 0:03:39, và dạng FireRain tức là MIN, đó chính là Fade Recognition.
+0:03:39 - 0:03:42, Trước đây thì chúng ta chỉ cần detect cái Fade,
+0:03:42 - 0:03:49, Tức là chúng ta sẽ đi so sánh cái gương mặt với lại các bộ phần khác trong cơ thể
+0:03:49 - 0:03:56, Ví dụ như là tay, ví dụ như là chân, hoặc là với những đối tượng khác
+0:03:56 - 0:03:59, Ví dụ như là xe, ví dụ như là cây
+0:03:59 - 0:04:08, Trong nội bộ phay, tức là cái gương mặt này, chúng ta sẽ có rất nhiều những định danh
+0:04:08 - 0:04:19, Mục tiêu của mình là phân biệt được định danh số 1 với định danh số 2, đó chính là data set.
+0:04:19 - 0:04:26, thì ở đây chúng ta sẽ có một bộ data set, đó là Webfade 260M data set
+0:04:26 - 0:04:33, và cái bộ data set này thì có chứa rất nhiều những ảnh gương mặt, rất nhiều những cái tư thế
+0:04:33 - 0:04:41, ví dụ như là chúng ta nhìn trực diện, nhìn về bên tay phải, nhìn xuống dưới, và nhìn về bên tay trái
+0:04:41 - 0:04:44, rồi có rất nhiều những cái chủng tộc
+0:04:44 - 0:04:52, Ví dụ có người da trắng, người da màu, rồi có người châu Á, người châu Âu, người châu Phi, v.v.
+0:04:52 - 0:04:55, Và có rất nhiều trạng thái.
+0:04:55 - 0:05:07, Ví dụ ở đây chúng ta sẽ có trạng thái đó là đeo khẩu trang, rồi sẽ có tình thú đó là ảnh này được chụp từ thời xưa, ảnh trắng đen.
+0:05:07 - 0:05:11, Rồi trạng thái ở đây thì cũng bao gồm là trạng thái về cảm xúc,
+0:05:11 - 0:05:17, dù như đang là tươi cười hoặc là đang giận dữ, ví dụ vậy.
+0:05:17 - 0:05:25, Và từ đó thì chúng ta sẽ thấy là tập Webfile 260 triệu data set này
+0:05:25 - 0:05:29, là thể hiện được tính khó của bài tán phân loại đối tượng.
+0:05:29 - 0:05:33, Nó rất là khác so với bài tán phân loại đối tượng bình thường
+0:05:33 - 0:05:35, mà mình đã được tìm hiểu trước đây.
+0:05:35 - 0:05:41, ở đây là các đối tượng ở đây nó sẽ có cùng những đặc điểm tổng thể
+0:05:41 - 0:05:46, đó là đều có mắt, có mũi, có miệng, có tóc
+0:05:46 - 0:05:49, nhưng mà làm sao có thể phân biệt được những chi tiết nhỏ
+0:05:49 - 0:05:52, để có thể giúp phân biệt được người này với người kia
+0:05:52 - 0:05:55, Thí dụ để phân biệt được người này với người kia thì người ta hay so sánh về
+0:05:55 - 0:06:01, màu da, so sánh về tỷ lệ phân bố, độ dài
+0:06:01 - 0:06:04, của các bộ phận trên mặt của mình
+0:06:04 - 0:06:09, thì tất cả những yếu tố đó tạo nên độ khó của bài tuán này.
+0:06:09 - 0:06:18, Và ứng dụng trong lĩnh vực về y tế thì chúng ta sẽ có bài tuán phân loại ung thư da.
+0:06:18 - 0:06:22, Ví dụ như ở đây là chúng ta sẽ có một vết.
+0:06:22 - 0:06:26, Nếu mà nhìn bề ngoài mà người bình thường thì có thể chúng ta sẽ xem đây là...
+0:06:26 - 0:06:33, có thể hiểu đây là cái nốt ruồi nhưng thực tế thì nó có thể là một dấu hiệu của bệnh ung thư.
+0:06:33 - 0:06:42, thì ở đây chúng ta sẽ phải phân biệt, xem làm hai loại, đó là giấu hiệu của mình là lành tính hay là ác tính.
+0:06:42 - 0:06:45, Thì đây là cái bài toán uống dụng trong lĩnh vực về y tế.
+0:06:45 - 0:06:58, Và trong ảnh y tế thì một số loại ảnh có tính phức tạp cao hơn và có đồ men không giống với đồ men của lĩnh vực mà mình thay thú luyện trên tập dữ liệu MNS.
+0:06:58 - 0:07:01, Ví dụ như là chụp trên ảnh CT scan
+0:07:03 - 0:07:05, hoặc là chụp trên ảnh MRI
+0:07:07 - 0:07:12, thì tất cả những cái này đều là những cái định giảng ảnh và nó không phổ biến trong thế giới thực
+0:07:12 - 0:07:18, dẫn đến đó là khi mà chúng ta hú luyện các cái mạng CNN trên các cái domain này
+0:07:18 - 0:07:20, thì có khi chúng ta sẽ phải hú luyện lại từ đầu
+0:07:20 - 0:07:28, chúng ta cũng không có thể tái sử dụng được nhiều những cái đặc trưng trong ảnh màu ảnh thế giới thực của mình.
+0:07:29 - 0:07:35, Và một số cái kỹ thuật mà ứng dụng của cái mạng CNN cho cái bài toán phân lớp
+0:07:35 - 0:07:40, ở những cái bài toán như vừa đề cập thì nó có rất nhiều những kỹ thuật khác nhau.
+0:07:40 - 0:07:47, Ví dụ, đối với cái bài toán nhận nhiễm ngươi mặt thì ở đây người ta sẽ tập trung vào cái việc là cải tiến chắc chắn hàm loss.
+0:07:47 - 0:07:54, Như chúng ta đã biết là trong một mô hình máy học thì nó sẽ có hàm mô hình
+0:07:54 - 0:07:56, và chúng ta sẽ có hàm loss
+0:07:58 - 0:07:59, Hàm loss
+0:07:59 - 0:08:03, Đối với hàm mô hình thì họ vẫn sử dụng kiến trúc mạng
+0:08:03 - 0:08:11, hoặc là các thành phần như là conclusion, pooling, activation, re-loop
+0:08:11 - 0:08:23, Nhưng mà khi tính toán các kế độ sai lệch giữa mẫu dữ liệu của mình với lại những mẫu dữ liệu của gương mặt của mình với lại những gương mặt khác
+0:08:23 - 0:08:28, thì chúng ta sẽ phải sử dụng cái Hamlox đặc biệt tại vì gương mặt là một loại đối tượng đặc biệt.
+0:08:28 - 0:08:35, Nó có những bộ phận rất giống nhau nhưng mà đồng thời nó cũng khác nhau ở các yếu tố rất là nhỏ.
+0:08:35 - 0:08:41, Và giải pháp của các thương tiết tượng tiên tiến nhất hiện nay cho bài toán nhận diệu của bà
+0:08:41 - 0:08:43, Đều là đến từ các cải tiến cho HamLogs
+0:08:43 - 0:08:48, Ví dụ như chúng ta có các mô hình như là ArcFade, SphereFade, VoW
+0:08:48 - 0:08:52, Thì nó đều sử dụng các độ đo là Angular, MarginLogs
+0:08:52 - 0:09:04, Và ý tưởng của HamLogs này là nó sẽ ếp để cho mô hình cố gắng học được những đặc trưng phân biệt cao
+0:09:04 - 0:09:09, và những đặc trưng phân biệt cao để tách biệt giữa những gương mặt tương tự nhau
+0:09:09 - 0:09:18, Ví dụ như chúng ta thấy trên hình trò này, mỗi một cái chấm đại diện cho đặc trưng của một face, một gương mặt
+0:09:20 - 0:09:23, Mình sẽ viết bằng tiếng Anh để cho nó rõ
+0:09:23 - 0:09:25, Mỗi cái này là một gương mặt
+0:09:25 - 0:09:28, và những gương mặt nào gần nhớm nhau
+0:09:28 - 0:09:31, Thực tế chúng ta thấy là có những gương mặt 2 người khác nhau
+0:09:31 - 0:09:36, nhưng mà có cái nét gương mặt nó ná ná giống nhau
+0:09:36 - 0:09:41, thì những cái phay đó nó sẽ đặt nằm ở gần nhau trên cái cung hình tròn này
+0:09:41 - 0:09:48, và nhiệm vụ của các cái HamLog này là cố gắng tắt các cái phay tương tự nhau tắt ra xa
+0:09:48 - 0:09:51, cái phay tương tự nhau tắt ra xa ví dụ chúng ta thấy là ở đây
+0:09:51 - 0:09:54, trên cái cung góc này, đúng không?
+0:09:54 - 0:10:01, thì nó sẽ maximize, tức là cực đại hóa cái góc này để tắt các cái điểm ở trên cái hình tròn này
+0:10:01 - 0:10:06, Đối với những gương mặt khác nhau thì nó sẽ tắt càng xa nhau ra
+0:10:06 - 0:10:09, Và đó chính là ý tưởng của việc tài tiến hàm loss
+0:10:09 - 0:10:13, Mặt khác trong một số lĩnh vực, ví dụ trong lĩnh vực y khoa
+0:10:13 - 0:10:18, Thì kết quả của mình khi chúng ta phân loại
+0:10:18 - 0:10:23, mà ra được độ chính xác là 99%
+0:10:23 - 0:10:27, Thì đôi khi các bác sĩ họ sẽ không sử dụng kết quả của mình
+0:10:27 - 0:10:34, kể cả khi mình chứng minh với họ là phương pháp, mô hình của mình có thể nhận diện được chính xác các bệnh đến 99%
+0:10:34 - 0:10:45, mà họ chỉ có thể sử dụng hệ thống của mình khi mình chỉ ra được những khu vực có khả năng là xác định được đó là bệnh.
+0:10:45 - 0:10:49, Tức là bên cạnh việc đưa ra kết quả đầu cuối là có bệnh hay không bệnh,
+0:10:49 - 0:10:57, thì ở đây mình phải thuyết phục người sử dụng rằng tôi đưa ra nhận diện được người này bị bệnh
+0:10:57 - 0:11:04, khi nó có những dấu hiệu rõ ràng và những dấu hiệu đó thì nó thể hiện ở những khu vực nhất định.
+0:11:04 - 0:11:07, Tức là chúng ta sẽ có tính giải thích được.
+0:11:07 - 0:11:11, Tính giải thích được trong AI hiện nay rất là quan trọng,
+0:11:11 - 0:11:20, tại vì nó không chỉ chứng minh được rằng AI có khả năng tiếp cận được những tri thức của con người,
+0:11:20 - 0:11:23, nhưng mà đồng thời nó có khả năng suy luận logic
+0:11:23 - 0:11:27, và đưa ra được những cái cao cứ, cách khách quan
+0:11:27 - 0:11:31, để giúp cho chúng ta đưa ra được cái kết quả phán xét cuối cùng.
+0:11:33 - 0:11:37, Như vậy thì trong phần trước chúng ta đã nghiên cứu về
+0:11:37 - 0:11:41, các bài toán phân loại đối tượng ở các cấp độ khác nhau.
+0:11:41 - 0:11:43, Đó là bài toán về FireRain.
+0:11:43 - 0:11:46, Đó là phân loại đối tượng ở mức độ miệng.
+0:11:46 - 0:11:49, Ví dụ như bài toán về phân loại các loài hoa,
+0:11:49 - 0:11:54, phân loại, biệt các loài xe, các chuẩn loại xe, gương mặt, v.v.
+0:11:54 - 0:11:58, Và có những hướng tiếp cận như là thay đổi các giá trị hàm loss
+0:11:58 - 0:12:01, hoặc là hướng tiếp cận RadCam, hoặc là Cam
+0:12:01 - 0:12:04, trong việc giải thích được các mô hình của mình.
+0:12:04 - 0:12:08, Trong phần tiếp theo, chúng ta sẽ cùng tìm hiểu về ứng dụng
+0:12:08 - 0:12:14, của mạng Deep Neural Network trong việc truy vấn hình ảnh.
+0:12:14 - 0:12:24, Y tưởng bài toán truy vấn hình ảnh đó là cho trước một cơ sở dưới điều ảnh, chúng ta sẽ có một ảnh truy vấn hay query
+0:12:24 - 0:12:33, và nhiệm vụ của mình đó là sẽ xác định độ tương đồng giữa ảnh truy vấn với tất cả những ảnh trong dataset
+0:12:33 - 0:12:41, và chúng ta sẽ trả về danh sách đã được sắp xét dảm dần theo mức độ tương đồng dảm dần
+0:12:41 - 0:12:43, thì ở đây chúng ta sẽ có một cái ví dụ
+0:12:43 - 0:12:46, ở đây chúng ta sẽ có một cái ảnh query
+0:12:46 - 0:12:49, query số 1, đây là ảnh query thứ 2
+0:12:49 - 0:12:52, vâng vâng, đây là ảnh truy vấn
+0:12:52 - 0:12:55, và ứng với một ảnh truy vấn thì chúng ta sẽ lục tìm trong cái database
+0:12:55 - 0:12:58, để trả về mỗi một cái hàng này
+0:12:58 - 0:13:01, sẽ là một cái kết quả ra về, trong đó
+0:13:01 - 0:13:03, cái nhóm đầu tiên được tô bởi màu xanh đậm
+0:13:03 - 0:13:06, chính là những cái ảnh có cái mức độ tương đồng
+0:13:06 - 0:13:09, rất là cao đối với cái ảnh truy vấn
+0:13:09 - 0:13:11, Chúng ta sẽ xét cái kết quả theo từng hàng.
+0:13:11 - 0:13:16, Và ở cột ở giữa thì chúng ta sẽ thấy là đây là những cái kết quả trí vấn
+0:13:16 - 0:13:19, có ký độ tương đồng cao.
+0:13:19 - 0:13:21, Bên đây là rất cao, còn đây là cao.
+0:13:21 - 0:13:25, Thì chúng ta có thể thấy là cái object trong ảnh trí vấn ở đây
+0:13:25 - 0:13:32, thì nó xuất hiện đâu đó ở một cái khu vực tương đối là nhỏ
+0:13:32 - 0:13:34, trong cái phạm vi của tấm hình.
+0:13:34 - 0:13:38, Và nó sẽ bị ảnh hưởng bởi những cái yếu tố như là bị che khuất
+0:13:38 - 0:13:45, Ví dụ như là chúng ta sẽ bị ảnh hưởng bởi yếu tố về ánh sáng và góc nhìn
+0:13:45 - 0:13:53, Thì nó sẽ làm cho kết quả so sánh tương đồng sẽ bị giảm xuống đáng kể
+0:13:53 - 0:13:58, Và đối với cái nhóm ảnh màu vàng thì đây là những cái ảnh có độ tương đồng rất là thấp
+0:13:58 - 0:14:04, Tại vì khu vực có sự xuất hiện của object của mình rất là nhỏ và nó đã bị biến đổi rất là nhiều
+0:14:04 - 0:14:09, thì đây là cái bài toán tri văn ảnh
+0:14:09 - 0:14:15, và ý tưởng chính để giải quyết cái bài toán tri văn ảnh này
+0:14:15 - 0:14:20, đó chính là chúng ta sẽ sử dụng các cái mạng CNN đã được huấn luyện sẵn
+0:14:20 - 0:14:23, như là những cái bộ rút trích trạch trưng
+0:14:23 - 0:14:29, thì ý tưởng nhanh nhất đó chính là chúng ta sẽ fit tất cả những cái ảnh trong cái database vào bên trong cái mạng CNN
+0:14:29 - 0:14:34, và mỗi một cái ảnh này nó sẽ tương ứng là một cái điểm, một cái feature.
+0:14:34 - 0:14:40, Và khi có cái ảnh query thì chúng ta sẽ đưa vào cái mạng CNN một lần nữa
+0:14:40 - 0:14:43, và chúng ta sẽ ra được cái feature một cam này.
+0:14:43 - 0:14:48, Và chúng ta sẽ dùng các giải thuật về độ tương đồng hoặc là độ đo khuãng cách
+0:14:48 - 0:14:56, để xác định tốt những cái ảnh có cái sự tương đồng hoặc là có cái khuãng cách đến đặc trưng truy vấn này.
+0:14:56 - 0:15:05, và tương ứng từng đặc trưng này chính là kết quả trả về, là những tấm ảnh chúng ta trả về.
+0:15:05 - 0:15:08, Đây là ý tưởng cho bài toán tri bóng ảnh.
+0:15:08 - 0:15:15, Tuy nhiên cách tiếp cận này sẽ xem toàn bộ tấm hình này như là một đặc trưng
+0:15:15 - 0:15:21, và nó sẽ bị một số vấn đề đó là nó sẽ bỏ sót những đặc trưng chi tiết ở bên trong.
+0:15:21 - 0:15:31, đôi khi chúng ta nhìn một tấm hình thì chúng ta sẽ xác định xem hình đó tốc vư tương đồng có giống với ảnh trí vấn hay không dựa vào những bộ phận bên trong
+0:15:31 - 0:15:37, ví dụ như chúng ta nhìn tấm hình này thì đôi khi chúng ta sẽ chỉ cần một bộ phận này thôi để đi so sánh
+0:15:37 - 0:15:44, chứ không sử dụng những thông tin ở vùng màu đen, những vùng mà chiếm tỷ trọng rất nhiều diện tích
+0:15:44 - 0:15:55, Như vậy thì đòi hỏi là đặc trưng CNN, đặc trưng Deep Learning của mình sẽ phải đi sâu vô đến mức độ chi tiết từng khu vực nhỏ.
+0:15:55 - 0:16:02, Và đó chính là ý tưởng của nguyên tiếp cận là đặc trưng DELF, DELF.
+0:16:02 - 0:16:09, Và ý tưởng của mạng CNN cho việc rút trích đặc trưng này, đó chính là chúng ta sẽ fit cái tâm ảnh này vào
+0:16:09 - 0:16:11, và chúng ta sẽ đúc trích ra đặc trưng dày đặt
+0:16:11 - 0:16:14, với mỗi một cái cột ở đây
+0:16:14 - 0:16:17, nó sẽ tương ứng là một cái đặc trưng
+0:16:17 - 0:16:20, trên một cái vùng cục bộ ở bên trong tấm hình
+0:16:20 - 0:16:23, tuy nhiên thì trong cái tấm hình của mình nó sẽ
+0:16:23 - 0:16:25, có những cái vùng không có chứa nhiều thông tin
+0:16:25 - 0:16:28, ví dụ như trong cái tấm hình vừa rồi chúng ta thấy là những cái vùng mà
+0:16:28 - 0:16:30, đồng màu khu vực này
+0:16:31 - 0:16:33, thì nó sẽ có ít thông tin để giúp cho mình
+0:16:33 - 0:16:36, phân biệt do đó thì cái khu vực này nó sẽ
+0:16:36 - 0:16:39, có cái Attention Thấp hoặc là có trọng số thấp
+0:16:39 - 0:16:42, nó sẽ có cái Score Thấp.
+0:16:42 - 0:16:50, Và những cái khu vực nào mà có cái sự thay đổi về mặt hình ảnh nhiều
+0:16:50 - 0:16:52, thì chỗ đó nó sẽ có trọng số cao.
+0:16:52 - 0:16:56, Thế thì để huấn luyện và xác định được cái khu vực nào có trọng số thấp
+0:16:56 - 0:16:59, khu vực nào có trọng số cao thì chúng ta sẽ có một cái lớp gọi là
+0:16:59 - 0:17:03, tính Attention Score và dựa trên Attention Score này
+0:17:03 - 0:17:13, nó sẽ bỏ đi những feature nào mà không có vai trò quan trọng
+0:17:13 - 0:17:20, và chỉ trừ lại những feature tốt, những feature đặc trưng cho tấm ảnh và gom lại thành deal feature.
+0:17:20 - 0:17:26, Và chúng ta đại diện một cái tấm ảnh này bằng danh sách những feature có vai trò quan trọng
+0:17:26 - 0:17:32, trên những khu vực có sự biến động, những khu vực có những điểm đặc trưng.
+0:17:32 - 0:17:41, Và dựa trên đặc trưng đã rút trích được từ tấm ảnh này, chúng ta sẽ làm tương tự như vậy cho toàn bộ tấm ảnh.
+0:17:41 - 0:17:45, Rồi sau đó chúng ta sẽ đánh chỉ mục vào trong một kế cơ sở du lịch chỉ mục.
+0:17:45 - 0:17:52, Và đối với ảnh query thì chúng ta cũng sẽ có các feature sau khi đã thực hiện với Attention Score.
+0:17:52 - 0:17:55, Chúng ta sẽ có những đặc trưng đại diện cho một tấm ảnh.
+0:17:55 - 0:18:01, và chúng ta sẽ đi so sánh, đi tra cứu trong cái last scale index này
+0:18:01 - 0:18:06, để từ đó xác định ra những cái feature nào gần với lại cái feature này nhất
+0:18:06 - 0:18:13, Rồi đồng thời chúng ta sẽ thực hiện cái theo tác là Geometric Verification
+0:18:13 - 0:18:17, tức là chúng ta sẽ tinh chỉnh lại cái ế vô về mặt hình học
+0:18:17 - 0:18:23, để cho cái tấm hình của mình xác định xem là vị trí thực sự của cái object nó nằm ở đâu
+0:18:23 - 0:18:25, Ví dụ trong hình hình này chúng ta thấy là
+0:18:25 - 0:18:27, qua cái phép Geometric Verification
+0:18:27 - 0:18:29, thì chúng ta xác định được cái object thực sự của mình
+0:18:29 - 0:18:31, là nằm trong cái khung màu vàng.
+0:18:31 - 0:18:36, Và chúng ta sẽ thực hiện một số thuật toán kinh điển
+0:18:36 - 0:18:39, ví dụ như thuật toán Ransack
+0:18:39 - 0:18:42, để loại bỏ những cái cặp điểm Outlayer
+0:18:42 - 0:18:44, những cặp điểm mà không thực sự tương đồng
+0:18:44 - 0:18:46, và trừa lại những cái cặp điểm Inlayer
+0:18:46 - 0:18:48, và đếm cái số điểm đó
+0:18:48 - 0:18:49, rồi chúng ta sẽ...
+0:18:49 - 0:18:51, số cặp điểm tương đồng nào mà càng cao
+0:18:51 - 0:18:57, thì mức độ giống nhau giữa ảnh trí vấn và ảnh đó sẽ là càng tốt
+0:18:57 - 0:18:59, và chúng ta sẽ sắp thích hạn đó càng cao.
+0:18:59 - 0:19:04, ỉ thì ý tưởng chính của thuật toán Dell là như vậy
+0:19:04 - 0:19:08, và các mô hình trí vấn có sử dụng Deep Learning
+0:19:08 - 0:19:10, thì cũng sẽ dựa trên ý tưởng này để phát triển tiếp.
+0:19:10 - 0:19:15, Hiện nay cũng có rất nhiều những phương pháp đã cải tiến từ phương pháp của Dell
+0:19:15 - 0:19:20, và cho những kết quả rất ấn tượng trong bài toán trí vấn hình ảnh.
+0:19:21 - 0:19:25, Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn

@@ -1,0 +1,154 @@
+0:00:00 - 0:00:07, Vấn đề đầu tiên mà chúng ta sẽ bàn về mạng RNN.
+0:00:07 - 0:00:12, Trong hai slide trước, chúng ta đưa ra những nhận xét.
+0:00:12 - 0:00:19, Những nhận xét đó sẽ là tiền đề để giải thích cho các vấn đề của mạng RNN.
+0:00:19 - 0:00:23, Vấn đề đầu tiên đó chính là sự phụ thuộc dài.
+0:00:23 - 0:00:28, Vấn đề đầu tiên đó là sự phụ thuộc dài hay còn gọi là long term dependency.
+0:00:28 - 0:00:30, Chúng ta lấy một cái ví dụ sau.
+0:00:30 - 0:00:32, Một cái ví dụ tiếng Anh sau.
+0:00:32 - 0:00:36, In France, I had a great time and I learned some of the...
+0:00:36 - 0:00:38, Chúng ta sẽ để trống.
+0:00:38 - 0:00:39, Language.
+0:00:39 - 0:00:42, Và nhiệm vụ của chúng ta cần phải đoán xem là.
+0:00:42 - 0:00:44, Trong cái chỗ trống này đó là gì.
+0:00:44 - 0:00:45, Đúng không?
+0:00:45 - 0:00:48, Thì chúng ta thấy là cái mô hình RNN.
+0:00:48 - 0:00:54, Nó không có cái cơ chế để cho phép chúng ta nắm bắt sự phụ thuộc dài của từ.
+0:00:54 - 0:01:00, Tức là nói chứ truyền xt sang xt cộng 1, xt cộng 1 sang xt cộng 2, vân vân.
+0:01:00 - 0:01:08, Nhưng mà nó không có cơ chế để cho chúng ta có thể lưu thông tin đối với những từ rất xa trước đó.
+0:01:08 - 0:01:15, Nó không có cơ chế nào để ý thức được những từ ở đằng xa, đúng không?
+0:01:15 - 0:01:17, Ví dụ từ France.
+0:01:17 - 0:01:22, Nó sẽ có khoảng cách xa đến chỗ chúng ta cần dự đoán hơn rất nhiều.
+0:01:22 - 0:01:25, so với những từ như là từ some, từ of, từ the.
+0:01:26 - 0:01:28, thì nó không có cơ chế đó.
+0:01:29 - 0:01:32, và trong khi cái từ mà chúng ta cần dự đoán.
+0:01:32 - 0:01:35, thì nó lại phụ thuộc vào những cái từ đó.
+0:01:35 - 0:01:37, thì ở đây chúng ta đang nói về language.
+0:01:37 - 0:01:40, như vậy thì khả năng cao là cái từ này sẽ là.
+0:01:40 - 0:01:42, từ French, từ tiếng Pháp.
+0:01:42 - 0:01:44, nhưng mà muốn biết được cái từ này là từ French.
+0:01:44 - 0:01:46, nó phải bám vào cái từ.
+0:01:47 - 0:01:48, ở cách nó rất xa.
+0:01:48 - 0:01:52, xa so với những từ of, the, some, learn.
+0:01:52 - 0:01:54, đó chính là cái từ France này.
+0:01:54 - 0:01:58, thì cái từ cần dự đoán phụ thuộc vào cái từ này.
+0:01:58 - 0:01:59, rất là xa.
+0:01:59 - 0:02:04, và RNN không có cơ chế để cho mình nắm bắt sự phụ thuộc dài này.
+0:02:08 - 0:02:13, Để giải thích cho cái việc này.
+0:02:13 - 0:02:17, đó là chúng ta sẽ dựa trên công thức của cái hàm độ lỗi.
+0:02:17 - 0:02:20, chúng ta sẽ dựa trên công thức của hàm độ lỗi.
+0:02:20 - 0:02:24, là chúng ta sẽ xét hai cái loss.
+0:02:24 - 0:02:29, xin lỗi, chúng ta sẽ xét hai cái loss là L2 và L_t.
+0:02:29 - 0:02:32, thì chúng ta sẽ có hai cái đạo hàm thành phần.
+0:02:32 - 0:02:36, và ở đây chúng ta cũng giả sử là chúng ta chỉ xét với cái biến W nha.
+0:02:36 - 0:02:41, hoàn toàn tương tự cho hai cái biến là V và U.
+0:02:41 - 0:02:54, Thì cái nhận xét đó là cái thành phần L2 nó sẽ đóng vai trò quan trọng hơn so với lại cái thành phần L_t.
+0:02:54 - 0:03:03, Trong cái công thức của cái hàm độ lỗi này, nó là bằng trung bình cộng của các cái hàm thành phần.
+0:03:03 - 0:03:09, Nhưng khi tính đạo hàm thì cái thành phần L2 nó lại đóng vai trò quan trọng hơn.
+0:03:09 - 0:03:11, Thì điều này là tại sao?
+0:03:11 - 0:03:19, Và cái việc này thì nó dẫn đến là cái từ thứ hai, là cái từ gần, nó sẽ có ảnh hưởng hơn so với lại cái từ thứ t.
+0:03:19 - 0:03:24, Thì cái điều này nó cũng chính là ý nghĩa cho cái việc là phụ thuộc dài đó.
+0:03:24 - 0:03:36, Thì điều này giải thích tại sao? Tại vì cái hàm L2, nó gần, nó gần hơn nên cái hàm này, cái hàm hợp của nó, nó sẽ ít phép biến đổi hơn.
+0:03:36 - 0:03:41, Hàm L_t ở xa hơn nên nó sẽ nhiều phép biến đổi hơn.
+0:03:41 - 0:03:46, Hàm hợp nào mà càng nhiều phép biến đổi thì các con số.
+0:03:46 - 0:03:49, Ví dụ 0.9...0.9...0.9...
+0:03:49 - 0:03:55, Chuỗi này càng dài thì nó sẽ càng tiến đến 0.
+0:03:55 - 0:04:00, Vậy thì vấn đề đặt ra là khi đạo hàm này tiến đến 0.
+0:04:00 - 0:04:14, Tức là nó đóng góp vào bên trong công thức của hàm tổng của chúng ta, tức là cái thằng này nó sẽ đóng góp ít.
+0:04:14 - 0:04:20, Trong khi đó L2 đóng góp vào hàm tổng này là đóng góp nhiều.
+0:04:20 - 0:04:25, mà cái hàm này thì nó lại là bằng trung bình cộng.
+0:04:25 - 0:04:29, nó lại bằng trung bình cộng của cái tổng.
+0:04:29 - 0:04:33, đó thì dẫn đến là cái thành phần mà đóng góp nhiều.
+0:04:33 - 0:04:38, nhưng mà hệ số của nó vẫn tương đương với lại cái hệ số của cái thằng đóng góp ít.
+0:04:38 - 0:04:42, thì đó chính là cái vấn đề và nó gây ra cái sự phụ thuộc dài.
+0:04:42 - 0:04:46, có những cái từ T càng dài.
+0:04:46 - 0:04:52, Còn cái T mà càng dài thì đóng góp cho công thức đạo hàm là càng ít.
+0:04:53 - 0:04:55, Trong khi đó những từ rất là ngắn.
+0:04:55 - 0:04:57, những từ rất là ngắn.
+0:04:57 - 0:05:00, thì những từ ở đầu tiên thì lại đóng góp nhiều hơn.
+0:05:00 - 0:05:03, Nó tạo ra sự mất cân xứng.
+0:05:03 - 0:05:05, Trong nguyên một câu của mình thì rõ ràng là.
+0:05:05 - 0:05:07, câu nào, từ nào.
+0:05:07 - 0:05:11, tại những vị trí nào cũng đều có những giá trị nhất định.
+0:05:11 - 0:05:19, và hiện tượng thứ 2 đó chính là hiện tượng vanishing gradient hoặc là exploding gradient.
+0:05:19 - 0:05:25, thì cũng dựa trên công thức của hàm hợp ở các slide trước.
+0:05:25 - 0:05:28, chúng ta có công thức đạo hàm của hàm hợp như sau.
+0:05:28 - 0:05:32, và nhận xét đó là khi văn bản của mình mà càng dài.
+0:05:32 - 0:05:36, tức là t này có thể tiến đến từ trừ vài trăm cho đến vài nghìn.
+0:05:36 - 0:05:43, thì đạo hàm tại L_t sẽ tiến đến 0.
+0:05:43 - 0:05:47, thì điều này, như chúng ta đã từng đề cập trước đó.
+0:05:47 - 0:05:56, cái công thức này, chúng ta có công thức đạo hàm của 1 cái hàm là sigmoid của Uxt.
+0:05:56 - 0:06:01, cộng cho Ws_t-1.
+0:06:01 - 0:06:04, công thức này là công thức của s_t.
+0:06:04 - 0:06:12, Thì khi chúng ta tính đạo hàm của nó thì nó sẽ ra cái công thức này.
+0:06:12 - 0:06:24, Nếu mà chỉ tính s_t theo s_t-1 thì các thành phần này đều là các con số nhỏ hơn 1.
+0:06:24 - 0:06:27, Xin lỗi là từ 0 cho đến 1.
+0:06:27 - 0:06:30, Con số này là từ 0 cho đến 1.
+0:06:30 - 0:06:36, W của mình ban đầu nó cũng sẽ khởi tạo bởi một cái giá trị random.
+0:06:36 - 0:06:43, Nó là một cái ma trận bởi các giá trị random trong mean là bằng 0 và standard deviation là bằng 1.
+0:06:43 - 0:06:48, Như vậy nó cũng là các cái con số rất là nhỏ.
+0:06:48 - 0:06:53, Và các cái con số mà nhỏ thì khi nhân với nhau nó sẽ nảy sinh ra cái vấn đề đó.
+0:06:53 - 0:07:01, Vì vậy, ở đây chúng ta sẽ có giải pháp để giải quyết vấn đề về vanishing gradient,
+0:07:01 - 0:07:05, vấn đề về tiêu biến gradient.
+0:07:05 - 0:07:10, Đó là thay vì chúng ta sử dụng hàm sigmoid,
+0:07:10 - 0:07:14, thay vì chúng ta sử dụng hàm sigmoid,
+0:07:14 - 0:07:17, thì chúng ta sẽ sử dụng hàm khác.
+0:07:17 - 0:07:20, Có thể là sử dụng hàm tanh.
+0:07:20 - 0:07:25, Nhưng mà lưu ý là với hàm tanh thì dải giá trị của mình.
+0:07:25 - 0:07:29, Thay vì là từ 0 đến 1 thì nó sẽ là từ trừ 1 cho đến 1.
+0:07:29 - 0:07:32, Thì suy cho cùng nó cũng là những con số với giá trị tuyệt đối.
+0:07:32 - 0:07:34, Bé hơn 1.
+0:07:34 - 0:07:39, Như vậy thì sigmoid và tanh không giúp cho mình giảm bớt hiện tượng vanishing này.
+0:07:39 - 0:07:43, Mà chúng ta sẽ sử dụng cái hàm ReLU.
+0:07:43 - 0:07:47, Tại vì sao? Hàm ReLU là có cái công thức như sau.
+0:07:47 - 0:07:52, là bằng max của 0 và x.
+0:07:52 - 0:07:57, như vậy thì hàm ReLU nó sẽ có cái đạo hàm với x mà lớn hơn 0.
+0:07:57 - 0:08:00, thì đạo hàm của nó sẽ là bằng 1.
+0:08:00 - 0:08:02, đạo hàm của nó sẽ là bằng 1.
+0:08:02 - 0:08:04, như vậy nó sẽ ngăn.
+0:08:04 - 0:08:06, nó sẽ giúp cho mình ngăn ngừa.
+0:08:06 - 0:08:09, nó sẽ giúp cho mình ngăn ngừa cái đạo hàm của mình.
+0:08:09 - 0:08:12, đạo hàm f_n, f_n-1.
+0:08:12 - 0:08:16, nó sẽ ngăn cho cái đạo hàm của mình bị tiêu biến dần.
+0:08:16 - 0:08:18, cho đến ma trận W.
+0:08:18 - 0:08:28, Thì đây cũng là một lý do tại sao từ năm 2012 sau cuộc thi MNIST thì tất cả, gần như tất cả các mô hình học sâu.
+0:08:28 - 0:08:34, đều chuyển từ sigmoid sang sử dụng các hàm ReLU hoặc các biến thể của ReLU.
+0:08:36 - 0:08:42, Và tiếp theo thì chúng ta sẽ giải quyết cái vấn đề liên quan đến ma trận W.
+0:08:42 - 0:08:44, Sigmoid thì chúng ta đã giải quyết rồi.
+0:08:44 - 0:08:47, do cái dải giá trị sigmoid là từ 0 cho đến 1.
+0:08:47 - 0:08:51, do đó chúng ta thay thế bằng ReLU.
+0:08:51 - 0:08:59, bây giờ đối với ma trận W thì ban đầu là chúng ta dùng cái phân bố là 0,1.
+0:08:59 - 0:09:04, thì các giá trị random của mình nó sẽ thường là sẽ nhỏ hơn 1 và lớn hơn 0.
+0:09:04 - 0:09:09, thì bây giờ W của mình mình sẽ cố định nó luôn là bằng một cái ma trận đơn vị.
+0:09:09 - 0:09:20, Ma trận đơn vị này, khi nhân với lại một cái ma trận khác, thì nó sẽ giúp ngăn ngừa cho việc thay đổi giá trị của cái ma trận.
+0:09:20 - 0:09:26, Ví dụ, I nhân với A thì nó sẽ bằng chính là A luôn.
+0:09:26 - 0:09:34, Và nó sẽ giúp ngăn chặn sự tiêu biến giá trị.
+0:09:34 - 0:09:38, Và cụ thể là giá trị của cái biến này.
+0:09:38 - 0:09:43, Nó ngăn giảm giá trị này xuống, giá trị theo kiểu tuyệt đối.
+0:09:43 - 0:09:46, Như vậy thì ở đây chúng ta sẽ có hai giải pháp.
+0:09:46 - 0:09:51, Giải pháp đầu tiên là thay thế hàm sigmoid hoặc là hàm tanh bằng ReLU.
+0:09:51 - 0:09:57, Và giải pháp thứ hai, đó là giá trị w chúng ta sẽ khởi tạo nó bằng một cái ma trận đơn vị.
+0:09:57 - 0:10:03, Và đây là hai cách để giúp chúng ta chống lại hiện tượng vanishing gradient.
+0:10:03 - 0:10:13, Và ngoài ra thì chúng ta sẽ còn một số cái vấn đề khác, ví dụ như cái vấn đề về Exploding Gradient.
+0:10:13 - 0:10:21, Exploding Gradient nó là ngược của Vanishing Gradient nếu như cái đạo hàm của mình mà lớn quá.
+0:10:21 - 0:10:25, các cái con số mà lớn thì khi nhân với nhau nó cũng sẽ có xu hướng là tiến đến cộng vô cùng.
+0:10:25 - 0:10:32, Như vậy thì ở đây người ta sẽ có một cái kỹ thuật để chống lại hiện tượng Exploding Gradient.
+0:10:32 - 0:10:34, Mình sẽ sử dụng clipping.
+0:10:34 - 0:10:36, Ngưỡng chặn.
+0:10:36 - 0:10:38, Tức là gradient mà quá lớn thì mình sẽ lấy nó.
+0:10:38 - 0:10:40, làm một mức trần thôi.
+0:10:40 - 0:10:42, Thì đó là exploding gradient.
+0:10:42 - 0:10:44, Bên cạnh.
+0:10:44 - 0:10:46, các giải pháp về gradient.
+0:10:46 - 0:10:48, thì người ta có một số.
+0:10:48 - 0:10:50, phương pháp khác.
+0:10:50 - 0:10:52, đó là chúng ta.
+0:10:52 - 0:10:54, thay các cái node.
+0:10:54 - 0:10:56, trong cái mạng.
+0:10:56 - 0:10:58, Recurrent Neural Network.
+0:10:58 - 0:11:00, thay vì chúng ta sử dụng.
+0:11:00 - 0:11:05, Cái cell ở dạng đơn giản, chúng ta có thể thay thế bằng các cái cổng.
+0:11:05 - 0:11:09, Chúng ta sẽ thay thế bằng các cái cổng để kiểm soát thông tin.
+0:11:09 - 0:11:16, Ví dụ đối với Cell này, thì các hàm sigmoid của mình.
+0:11:16 - 0:11:20, Với các hàm tanh hoặc hàm sigmoid của mình khi chúng ta thực hiện.
+0:11:20 - 0:11:26, Thì nó sẽ dễ tiêu biến và dễ tiêu biến có khả năng là nó làm cho thông tin của mình bị mất mát đi.
+0:11:26 - 0:11:39, Do đó thì chúng ta sẽ sử dụng LSTM cell để điều tiết thông tin, nhớ cái cần nhớ và quên cái cần quên.

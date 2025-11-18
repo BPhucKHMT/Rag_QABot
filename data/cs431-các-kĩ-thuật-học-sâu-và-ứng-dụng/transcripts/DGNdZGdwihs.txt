@@ -1,0 +1,115 @@
+0:00:00 - 0:00:05, Chúng ta sẽ tiến hành cài đặt một cái mạng Neural Network.
+0:00:05 - 0:00:13, Đặc tính của cái mạng Neural Network là nó giúp chúng ta giải quyết được các bài toán non-linear.
+0:00:13 - 0:00:24, Trong trường hợp này, chúng ta sẽ lấy tình huống đơn giản nhất của non-linear là các tập điểm hình tam giác và hình tròn.
+0:00:24 - 0:00:31, thì hai tập điểm này không thể chia tách ra được bởi một đường thẳng
+0:00:31 - 0:00:37, do đó thì đường đúng sẽ phải là một đường tròn như thế này
+0:00:37 - 0:00:41, thì nó mới có thể phân ra làm hai phần riêng biệt được
+0:00:41 - 0:00:44, Thì đây là một bài toán phi tuyến
+0:00:44 - 0:00:50, và để giải quyết bài toán này thì chúng ta cũng không cần thiết phải sử dụng một mạng Neural Network quá phức tạp
+0:00:50 - 0:00:52, thì ở đây chỉ cần có một lớp ẩn thôi
+0:00:52 - 0:00:58, Đây là một hidden layer.
+0:00:58 - 0:01:05, Mạng Neural Network đúng của chúng ta có thể có một, hai hoặc rất nhiều hidden layer.
+0:01:05 - 0:01:08, Nhưng trong trường hợp này, chúng ta chỉ cần một hidden layer.
+0:01:08 - 0:01:13, Thứ hai là tập điểm này chỉ có hai thành phần.
+0:01:13 - 0:01:19, Vì vậy, ở đây chúng ta sẽ có duy nhất một node output cuối cùng.
+0:01:19 - 0:01:28, ở đây là chúng ta sẽ có một lớp input, một hidden layer và một output
+0:01:28 - 0:01:37, và cái output này do giá trị của mình chỉ có một phân lớp, xin gọi nó có hai phân lớp
+0:01:37 - 0:01:43, nên ở đây chúng ta không sử dụng hàm Softmax mà chúng ta sẽ sử dụng hàm Sigmoid
+0:01:43 - 0:01:48, tại vì Sigmoid sẽ đưa miền giá trị của mình về đoạn từ 0 cho đến 1
+0:01:48 - 0:01:56, Lúc này giá trị y và y_hat này sẽ sử dụng độ đo là binary cross-entropy
+0:01:56 - 0:01:59, Đây là biến thể đơn giản của mạng Neural Network
+0:01:59 - 0:02:04, Tiếp theo, chúng ta sẽ tiến hành cài đặt cho ví dụ này
+0:02:08 - 0:02:12, Rồi, thì cũng tương tự, chúng ta sẽ có đoạn code để khởi tạo
+0:02:12 - 0:02:17, cho các tập điểm nằm trong và nằm bên ngoài vùng tròn
+0:02:17 - 0:02:21, Thì ở đây chúng ta có một thư viện là scikit-learn
+0:02:21 - 0:02:25, Nó sẽ có cái hàm, gọi là hàm `make_circles`
+0:02:25 - 0:02:27, Và cái hàm `make_circles` này
+0:02:27 - 0:02:32, thì nó sẽ giúp chúng ta tạo ra các cái điểm nằm trong và nằm ngoài hình tròn
+0:02:32 - 0:02:37, Các cái điểm nằm trong
+0:02:37 - 0:02:40, thì chúng ta sẽ được đánh dấu bằng màu đỏ
+0:02:40 - 0:02:46, Và các cái điểm nằm ngoài được đánh dấu bằng các cái điểm màu xanh lá
+0:02:46 - 0:02:49, Và các điểm có nhãn `y` thì được đánh dấu bằng màu đỏ
+0:02:49 - 0:02:55, Và những cái điểm nào màu đỏ thì sẽ được gắn nhãn là bằng 0
+0:02:55 - 0:03:00, Và những cái điểm nào màu xanh lá thì sẽ được gắn nhãn là bằng 1
+0:03:00 - 0:03:04, Và tất cả thì đều được ép về kiểu số thực
+0:03:04 - 0:03:13, Rồi, thì `x` của mình, cái tọa độ `x` của mình nó chính là tập dữ liệu tọa độ theo trục x1 và x2
+0:03:13 - 0:03:15, Tức là bao gồm hai chiều
+0:03:15 - 0:03:21, Y là cái nhãn, hoặc là nhận giá trị 0, hoặc là nhận giá trị là 1.
+0:03:22 - 0:03:25, Bây giờ về phần cài đặt thuật toán.
+0:03:26 - 0:03:32, Cũng tương tự cho các mô hình Logistic Regression và Support Vector Machine,
+0:03:32 - 0:03:33, chúng ta sẽ có một bộ khung.
+0:03:35 - 0:03:39, Ở đây, chúng ta sẽ có một hàm `get_weights`, đó là hàm `get_weights`.
+0:03:39 - 0:03:46, Triển khai hàm `get_weights` này thì chúng ta phải viết lại so với các mô hình trước đây
+0:03:46 - 0:03:52, Tại vì trong mạng Neural Network thì chúng ta sẽ có nhiều layer
+0:03:52 - 0:04:01, Nếu chúng ta muốn quan sát tham số của layer nào thì chúng ta phải truyền thêm chỉ số của layer đó vào
+0:04:01 - 0:04:07, Vì vậy chúng ta sẽ có thêm một phương thức để viết lại phương thức `get_weights` này
+0:04:07 - 0:04:15, Bây giờ, đối với hàm `build`, chúng ta sẽ có Input Dimension và Output Dimension
+0:04:15 - 0:04:26, Chúng ta cũng tương tự cài đặt, là `Input`, với `Shape` là bằng `Input`
+0:04:26 - 0:04:41, Tiếp theo là lớp Hidden Layer, để tạo ra `hidden`
+0:04:41 - 0:04:49, Lớp Hidden Layer sẽ được thực hiện bởi phép biến đổi Fully Connected
+0:04:49 - 0:04:54, Từ lớp input sang lớp Hidden này, nó được kết nối đầy đủ
+0:04:54 - 0:05:06, Activation là sử dụng hàm Sigmoid và sử dụng Bias
+0:05:06 - 0:05:11, Layer là Dense
+0:05:11 - 0:05:23, Output là 8 nodes
+0:05:23 - 0:05:30, Activation là Sigmoid
+0:05:30 - 0:05:38, UseBias là True
+0:05:38 - 0:05:47, Chúng ta phải truyền đầu vào cho nó là `hidden`
+0:05:47 - 0:05:51, Và với Output Layer, chúng ta lại một lần nữa
+0:05:55 - 0:06:00, Một lần nữa thì chúng ta sẽ đưa qua lớp biến đổi là Fully Connected tại vì bản chất
+0:06:00 - 0:06:06, Tất cả các cái node đầu vào và các cái node đầu ra thì nó kết nối đầy đủ với nhau
+0:06:06 - 0:06:09, Và ở đây nó cũng là một cái Dense layer
+0:06:09 - 0:06:15, Và cái Dense này thì cái Output của mình chỉ có duy nhất một node
+0:06:15 - 0:06:18, tại sao một node? tại vì ở đây chúng ta phân lớp nhị phân
+0:06:19 - 0:06:20, rồi
+0:06:21 - 0:06:23, ở đây sẽ có là
+0:06:23 - 0:06:24, Output
+0:06:25 - 0:06:28, là bằng Dense, trong đó chỉ có một node
+0:06:28 - 0:06:29, Activation
+0:06:31 - 0:06:33, thì chúng ta sẽ để là Sigmoid
+0:06:36 - 0:06:38, rồi sử dụng bias
+0:06:39 - 0:06:40, bằng True
+0:06:41 - 0:06:44, và input của nó chính là cái
+0:06:44 - 0:06:45, `hidden` ở phía trước
+0:06:47 - 0:06:49, Bây giờ chúng ta sẽ đóng gói
+0:06:49 - 0:06:53, cả cái này vào trong cái biến `model`
+0:06:57 - 0:07:01, và chúng ta sẽ trả về cho `self.model`
+0:07:02 - 0:07:04, Ở đây thì chúng ta sẽ không cần phải
+0:07:04 - 0:07:07, return cái gì ra bên ngoài
+0:07:07 - 0:07:10, Rồi, tương tự như vậy, ở đây chúng ta sẽ có optimizer
+0:07:10 - 0:07:22, sẽ là bằng `tf.keras.optimizers.SGD`
+0:07:22 - 0:07:28, với learning rate là bằng 0.1 để train cho nó nhanh
+0:07:28 - 0:07:32, và ở đây chúng ta sẽ có sử dụng momentum
+0:07:32 - 0:07:35, momentum sẽ giúp cho quá trình huấn luyện của mình nhanh hơn
+0:07:37 - 0:07:39, là bằng 0.9
+0:07:39 - 0:07:47, Thông thường mặc định sẽ là 0, nhưng theo kinh nghiệm momentum sẽ là 0.9
+0:07:47 - 0:07:52, Bây giờ chúng ta sẽ `compile` vào `model`
+0:07:52 - 0:07:58, Optimizer là `optimizer`
+0:07:58 - 0:08:24, Loss sẽ là `tf.keras.losses.BinaryCrossentropy`
+0:08:24 - 0:08:35, Chúng ta sẽ có thêm một tham số nữa, đó là số epoch, sẽ có thêm số epoch nữa,
+0:08:35 - 0:08:45, Tham số `num_epochs` sẽ là bằng `num_epochs`.
+0:08:45 - 0:08:54, Đối với hàm `get_weights`, chúng ta phải truyền vào layer số mấy
+0:08:54 - 0:09:05, Chúng ta sẽ truyền vào `self.model.layers` và truyền vào chỉ số của layer
+0:09:05 - 0:09:09, Rồi, chấm `get_weights`
+0:09:13 - 0:09:19, Rồi, bây giờ chúng ta sẽ tiến hành chạy thử đoạn training này, may quá không có lỗi
+0:09:19 - 0:09:26, Và để khởi tạo thì chúng ta sẽ tạo một đối tượng tên là `NeuralNetwork`
+0:09:26 - 0:09:30, Rồi, `neural_network.build`
+0:09:30 - 0:09:38, Chúng ta sẽ truyền vào số input là 2, số output là 1, tại vì chúng ta phân lớp nhị phân
+0:09:38 - 0:09:42, Rồi, chấm `summary()`
+0:09:42 - 0:09:51, Ở đây mô hình này có tất cả 33 tham số, trong đó có một lớp ẩn và một lớp output cuối cùng
+0:09:51 - 0:09:53, Lớp ẩn thì gồm có 8 neuron
+0:10:03 - 0:10:27, Chúng ta để số epoch là 1000, nhưng chúng ta giảm số epoch này xuống, vì chúng ta dùng momentum, nên bước cập nhật của mình rất nhanh
+0:10:27 - 0:10:37, Rồi, ta không hiểu `epoch`
+0:10:57 - 0:11:07, Mình sẽ gọi vào hàm `fit`
+0:11:07 - 0:11:17, `self.model.fit` và sẽ `fit` `X_train` và `y_train` cùng số lượng epoch
+0:11:17 - 0:11:25, Rồi, chúng ta sẽ train lại
+0:11:25 - 0:11:34, bắt đầu chúng ta thấy là loss rất là cao
+0:11:34 - 0:11:39, là 0.7
+0:11:39 - 0:11:46, sau đó thì loss đã giảm xuống còn dưới 0.1
+0:11:46 - 0:11:50, nó đã ra là 0.28
+0:11:50 - 0:11:55, Bây giờ chúng ta sẽ vẽ `history`
+0:11:55 - 0:12:01, Quá trình Train này thực hiện rất nhanh, chúng ta sẽ chạy lại cái này
+0:12:01 - 0:12:03, Chúng ta sẽ để là `history`
+0:12:08 - 0:12:12, Chút nữa chúng ta sẽ quan sát giá trị loss đã giảm như thế nào
+0:12:12 - 0:12:22, Chúng ta sẽ trả về loss của quá trình train
+0:12:22 - 0:12:37, Chúng ta thấy giá trị của loss liên tục giảm xuống
+0:12:37 - 0:12:41, Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn

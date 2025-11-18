@@ -1,0 +1,62 @@
+0:00:01 - 0:00:14, [âm nhạc]
+0:00:13 - 0:00:17, Tiếp theo thì chúng ta sẽ đến với cái
+0:00:14 - 0:00:19, câu hỏi so sánh cái hàm mất mát giữa
+0:00:17 - 0:00:22, việc tại sao chúng ta không sử dụng cái
+0:00:19 - 0:00:25, min square raw của mô hình hồi quy tiếng
+0:00:22 - 0:00:28, tính mà ở đây chúng ta lại dùng cái hàm
+0:00:25 - 0:00:30, khá là phức tạp đó là binary
+0:00:28 - 0:00:32, crossentropy. Đối với những bạn nào mà
+0:00:30 - 0:00:35, lần đầu thấy cái công thức này thì sẽ
+0:00:32 - 0:00:39, thấy đó là một cái hàm rất là à khoai vì
+0:00:35 - 0:00:40, nó có hàm block trong đó cũng như là cái
+0:00:39 - 0:00:44, số phép toán của mình nó thực hiện nhiều
+0:00:40 - 0:00:47, hơn nhiều. Thế thì cái L này á là sai số
+0:00:44 - 0:00:51, giữa rout và cái xác suất P. Đây chính
+0:00:47 - 0:00:51, là cái dự đoán của mình.
+0:00:53 - 0:00:57, Và nó có cái công thức như trên. Nhưng
+0:00:55 - 0:01:02, mà câu hỏi đó là tại sao chúng ta không
+0:00:57 - 0:01:02, sử dụng l y của p
+0:01:02 - 0:01:08, là bằng
+0:01:05 - 0:01:11, trừ p tất cả bình.
+0:01:08 - 0:01:12, Đây là công thức mà bình phương sai số.
+0:01:11 - 0:01:15, Thì tại sao chúng ta không sử dụng cái
+0:01:12 - 0:01:17, công thức này? Nó có xuất phát điểm từ
+0:01:15 - 0:01:21, cái
+0:01:17 - 0:01:23, miền giá trị của L và ở trong cái công
+0:01:21 - 0:01:26, thức là mean square Raw với lại cái miền
+0:01:23 - 0:01:28, giá trị ở trong cái hàm binary cross
+0:01:26 - 0:01:33, entropy. Thì ở đây chúng ta lấy một cái
+0:01:28 - 0:01:37, tình huống đó là y của mình là bằng 0 à
+0:01:33 - 0:01:41, và p của mình ví dụ như nó là bằng 1.
+0:01:37 - 0:01:41, Tức là chúng ta đang dự đoán sai.
+0:01:43 - 0:01:51, Thì điều gì sẽ xảy ra với cái tình huống
+0:01:46 - 0:01:51, này? Nếu chúng ta sử dụng MSE
+0:01:52 - 0:01:58, giống như ở đây thì cái size số của mình
+0:01:54 - 0:02:01, lúc này đó là bằng 0 - 1 tất cả bình
+0:01:58 - 0:02:03, phương nó sẽ là bằng 1. Trong khi đó nếu
+0:02:01 - 0:02:05, chúng ta thế những cái con số này vào
+0:02:03 - 0:02:09, cái công thức ở trên thì cái độ lỗi của
+0:02:05 - 0:02:11, mình nó sẽ là bằng cộng vô cùng.
+0:02:09 - 0:02:14, Một số ví dụ khác khi chúng ta không sử
+0:02:11 - 0:02:16, dụng các cái con số P nó mang tính chất
+0:02:14 - 0:02:17, tuyệt đối là 1 như thế này. Chúng ta
+0:02:16 - 0:02:21, cũng có thể thử những con số nhỏ hơn ví
+0:02:17 - 0:02:25, dụ như là 0.9 0.8 thì nó đều có một cái
+0:02:21 - 0:02:27, điểm chung. Đó là
+0:02:25 - 0:02:30, đối với cái hàm min square raw thì cái
+0:02:27 - 0:02:34, size số của mình nó khá là bé. Nó khá là
+0:02:30 - 0:02:38, bé. Mình lấy ví dụ i của mình là bằng 0
+0:02:34 - 0:02:40, và p của mình là bằng 0.9.
+0:02:38 - 0:02:44, Thì khi đó cái công thức ở trên nó sẽ là
+0:02:40 - 0:02:48, bằng 0.9 tất cả bình phương. Mà một cái
+0:02:44 - 0:02:51, con số nhỏ hơn 1 lớn hơn 0 thì khi chúng
+0:02:48 - 0:02:53, ta nhân lên thì nó sẽ lùi xuống nó sẽ
+0:02:51 - 0:02:58, càng lúc càng giảm chứ nó không có tăng
+0:02:53 - 0:03:01, lên. Đó thì đó chính là à cái sự khác
+0:02:58 - 0:03:03, biệt về mặt giá trị. thì hàm binary
+0:03:01 - 0:03:07, cross entrpy nó sẽ cho cái size số lớn
+0:03:03 - 0:03:10, hơn so với lại hàm dự đoán so với lại
+0:03:07 - 0:03:11, cái hàm min square raw. Vậy thì cái câu
+0:03:10 - 0:03:14, hỏi đặt ra đó là tại sao nó lại phải làm
+0:03:11 - 0:03:26, chuyện đó.
+0:03:14 - 0:03:26, [âm nhạc]

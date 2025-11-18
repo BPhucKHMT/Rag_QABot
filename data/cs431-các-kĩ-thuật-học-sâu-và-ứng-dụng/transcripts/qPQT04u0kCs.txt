@@ -1,0 +1,98 @@
+0:00:00 - 0:00:12, Chủ đề, học sâu, Machine Learning, ImageNet.
+0:00:30 - 0:00:34, số cột của cái ma trận A này
+0:00:34 - 0:00:38, nó phải đúng bằng với số phần tử của vector x được nhân
+0:00:38 - 0:00:42, khi đó thì tích Y bằng Ax
+0:00:42 - 0:00:46, là nó sẽ là một vector gồm có m chiều
+0:00:46 - 0:00:48, thì tại sao lại như vậy?
+0:00:48 - 0:00:50, thế là chúng ta sẽ giải thích kỹ hơn
+0:00:50 - 0:00:52, A nhân với x
+0:00:52 - 0:00:57, thì chúng ta sẽ thực hiện quy tắc đó là nhân theo lần lượt là hàng
+0:00:57 - 0:01:06, và cột giống như trong phần nhân vector với vector, thì nếu như A của mình là gồm tập hợp m hàng
+0:01:06 - 0:01:13, và như vậy thì mỗi một cái phần tử trên mỗi hàng nó sẽ gồm có n cột
+0:01:13 - 0:01:20, ví dụ như ở đây a_1, a_2 và a_m thì đều có là n cột
+0:01:20 - 0:01:28, và chúng ta sẽ thực hiện phép nhân theo hàng với lại x là một vector theo cột
+0:01:28 - 0:01:36, thì a_2 nhân với x thì chúng ta sẽ ra được giá trị scalar là a_2x
+0:01:36 - 0:01:38, đây sẽ là giá trị scalar
+0:01:42 - 0:01:45, và chúng ta thực hiện m phép nhân này
+0:01:45 - 0:01:50, thì kết quả của mình sẽ có m giá trị scalar
+0:01:50 - 0:01:56, Và như vậy tập hợp tất cả các giá trị scalar này thì nó sẽ là 1 vector
+0:01:56 - 0:01:59, Và vector này gồm có m phần tử
+0:01:59 - 0:02:04, Như vậy thì ở đây lưu ý này của chúng ta chỉ là nhắc lại những ý mình đã nói trên
+0:02:04 - 0:02:11, Kết quả của một phép tính nhân giữa ma trận và vector thì nó sẽ là 1 vector
+0:02:11 - 0:02:16, Và cái kích thước của phép nhân này chính là 1 vector m chiều
+0:02:16 - 0:02:24, ở đây thì chúng ta thấy, cái vector mình có thể xem nó như là một cái ma trận, tức là n nhân 1
+0:02:24 - 0:02:35, thì nhân một cái ma trận là m nhân n với một cái vector n nhân 1 thì nó sẽ ra một cái vector m nhân 1
+0:02:35 - 0:02:37, tức là một cái vector gồm có m phần tử
+0:02:37 - 0:02:46, Và đây là một ví dụ để minh họa cho phép nhân ma trận và vector này
+0:02:46 - 0:02:56, Nếu như chúng ta xem các thành phần dinh dưỡng vitamin A, C và chất xơ của các loại rau củ
+0:02:56 - 0:03:00, đó là cà rốt, bắp cải, dưa leo là cái ma trận được đánh khung ở đây
+0:03:00 - 0:03:10, thì khi đó giả sử x, y, z là số kg cà rốt bắp cải dưa leo mà mình mua được trong lần đi chợ này
+0:03:10 - 0:03:16, thì khi đó lượng vitamin A, C và chất xơ của bữa ăn ngày hôm đó
+0:03:16 - 0:03:20, nó chính là kết quả của phép nhân ma trận
+0:03:20 - 0:03:25, thì ở đây chúng ta thấy cũng giữ nguyên tắc nhân theo hàng và cột
+0:03:25 - 0:03:32, thì cái hàng này tương ứng nó sẽ ra một cái phần tử đó là lượng vitamin A
+0:03:32 - 0:03:35, vitamin A
+0:03:35 - 0:03:37, rồi cái hàng thứ hai
+0:03:37 - 0:03:45, nhân với lại cái vector x, y, z thì nó sẽ ra cái lượng là vitamin C
+0:03:45 - 0:03:50, và cái hàng thứ ba nhân với lại cái x, y, z thì mình sẽ ra cái lượng là chất xơ
+0:03:50 - 0:04:01, Giá trị của mình sẽ là hàm lượng vitamin A, C và chất xơ khi mình đi chợ trong ngày hôm đó
+0:04:01 - 0:04:10, Một ví dụ khác là chúng ta nhớ lại giải hệ phương trình tuyến tính hồi cấp 3
+0:04:10 - 0:04:15, thì ở đây chúng ta sẽ có hệ phương trình ví dụ như là a_1x, b_1y, c_1z bằng d_1
+0:04:16 - 0:04:18, thì chúng ta có 3 cái hệ phương trình như thế này
+0:04:18 - 0:04:22, thì hệ phương trình này có thể viết gọn lại
+0:04:22 - 0:04:30, thành, thực ra cũng không phải là gọn nhưng mà có thể biểu diễn nó dưới dạng là tích của ma trận các hệ số
+0:04:36 - 0:04:39, với một cái vector này, là vector này chính là biến số
+0:04:40 - 0:04:41, mà cần giải
+0:04:41 - 0:04:44, Và đây chính là cái vector kết quả
+0:04:47 - 0:04:52, Như vậy thì cái hệ phương trình có thể biểu diễn dưới dạng một cái phép nhân ma trận với vector
+0:04:54 - 0:04:59, Tiếp theo thì chúng ta sẽ tìm hiểu về phép nhân ma trận với ma trận
+0:04:59 - 0:05:03, Mở rộng của ma trận với vector thì chúng ta sẽ có phép nhân ma trận với ma trận
+0:05:03 - 0:05:07, Và ở đây thì chúng ta cũng sẽ thực hiện cái nguyên tắc tương tự như vậy
+0:05:07 - 0:05:13, đó là chúng ta sẽ nhân theo hàng và theo cột, hàng và cột
+0:05:13 - 0:05:17, thì khi đó chúng ta sẽ có cái kết quả là
+0:05:17 - 0:05:25, a_2 b_1 thì nó sẽ được tạo bởi cái hàng thứ 2 và cột thứ 1
+0:05:25 - 0:05:28, của cái ma trận
+0:05:28 - 0:05:32, thì chúng ta lưu ý ở đây nó sẽ có cái khái niệm gọi là chuyển vị
+0:05:32 - 0:05:34, chuyển vị thì mục tiêu đó là gì?
+0:05:34 - 0:05:37, là để biểu diễn dưới dạng hàng
+0:05:37 - 0:05:49, Và đây là một số cái thao tác, một số cái tính chất của phép nhân, ví dụ như có tính chất giao hoán, tính chất kết hợp
+0:05:49 - 0:05:59, Rồi, thì ứng dụng của phép nhân ma trận này đó chính là dùng trong các biến đổi hình học
+0:05:59 - 0:06:10, Lấy ví dụ như để thực hiện cái phép Translate, tức là cái phép tịnh tiến, thì chúng ta sẽ lấy một cái điểm gốc,
+0:06:10 - 0:06:18, chúng ta nhân với lại cái ma trận Translate này, thì cái ma trận Translate nó sẽ là một cái ma trận kích thước là 3x3
+0:06:18 - 0:06:25, và nếu như tập hợp các cái điểm đầu vào thì chúng ta sẽ tạo thành một cái hình ảnh, ví dụ ở đây có cái hình là chữ F,
+0:06:25 - 0:06:32, Chữ F này, khi nhân với cái ma trận tịnh tiến, thì nó sẽ tạo thành một hình ảnh kết quả.
+0:06:32 - 0:06:39, Thì các hệ số cho cái ma trận tịnh tiến này sẽ là 1 0 x, 0 1 y, 0 0 1.
+0:06:39 - 0:06:42, x, y này chính là cái vector tịnh tiến của mình.
+0:06:42 - 0:06:52, Tương tự như vậy, cho cái thao tác là Scale, tức là tỷ lệ xung quanh gốc tọa độ Origin và phép xoay.
+0:06:52 - 0:07:00, Nếu như thực hiện phép Scale, thì chúng ta muốn biến đổi cái ảnh của mình
+0:07:00 - 0:07:05, Thay đổi cái kích thước theo cái trục bề ngang và bề cao
+0:07:05 - 0:07:08, Giả sử như cái hệ số tỷ lệ của mình là W và H
+0:07:08 - 0:07:12, Thì khi đó đây chính là cái ma trận mà được sử dụng để biến đổi
+0:07:12 - 0:07:18, Và cái ảnh gốc của mình, ảnh gốc của mình nhân với cái ma trận này thì sẽ ra cái ảnh đã được Scale
+0:07:18 - 0:07:27, Tương tự như vậy thì chúng ta sẽ có ảnh gốc nhân với ma trận Rotate, tức là ma trận xoay
+0:07:27 - 0:07:30, với một góc là theta độ
+0:07:30 - 0:07:41, thì hệ số của ma trận này sẽ là cos theta trừ sin theta 0, sin theta cos theta 0, 0 0 1
+0:07:41 - 0:07:46, thì nhân cái ma trận này với cái ảnh gốc thì nó sẽ tạo ra một cái hình ảnh
+0:07:46 - 0:07:49, được xoay một cái góc là theta độ
+0:07:52 - 0:07:58, Sau đây sẽ là một số cái ma trận đặc biệt trong đại số tuyến tính
+0:07:58 - 0:08:00, Đầu tiên đó là ma trận đơn vị
+0:08:00 - 0:08:03, thì ma trận đơn vị nó sẽ là một cái ma trận vuông
+0:08:03 - 0:08:05, ma trận vuông là gì?
+0:08:05 - 0:08:08, là ma trận có số hàng và số cột bằng nhau
+00:08:08 - 0:08:13, và tất cả các phần tử trên đường chéo chính này nè
+00:08:13 - 0:08:15, nó đều là bằng một
+00:08:15 - 0:08:19, và tất cả những phần tử nằm ngoài đường chéo chính này bằng 0
+00:08:19 - 0:08:21, thì đây chính là ma trận đơn vị
+00:08:21 - 0:08:25, và ma trận đơn vị thì nó có tính chất
+00:08:25 - 0:08:29, đó là ma trận A mà nhân với I
+00:08:29 - 0:08:30, thì I là ma trận đơn vị
+00:08:30 - 0:08:32, thì nó sẽ bằng chính ma trận A
+00:08:32 - 0:08:36, thì trong Python nó sẽ có một cái hàm của NumPy
+00:08:36 - 0:08:41, đó là hàm `eye`, là để khởi tạo ra một cái ma trận đơn vị
+00:08:43 - 0:08:45, Ma trận tiếp theo, đó chính là ma trận nghịch đảo
+00:08:46 - 0:08:50, thì ma trận nghịch đảo là một cái ma trận vuông, ký hiệu là n nhân n
+00:08:52 - 0:08:57, thì ký hiệu là một cái ma trận A mũ trừ 1, đây là ma trận nghịch đảo
+00:08:57 - 0:09:08, Và ma trận này cũng sẽ là một ma trận vuông và ma trận nghịch đảo có tính chất đó là A mũ trừ 1
+00:09:08 - 0:09:13, Nhân với lại cái ma trận gốc là A thì nó sẽ là bằng ma trận đơn vị
+00:09:13 - 0:09:21, Thì đây là một cái loại ma trận đặc biệt và tuy nhiên cái ma trận nghịch đảo này không phải lúc nào nó cũng tồn tại
+00:09:21 - 0:09:31, Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn

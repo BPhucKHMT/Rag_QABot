@@ -1,0 +1,76 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, Machine Learning, ImageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, Machine Learning, ImageNet.
+0:00:30 - 0:00:33, đó chính là vấn đề về Long Term Dependency
+0:00:38 - 0:00:43, Tức là một cái từ ở một vị trí cuối câu
+0:00:43 - 0:00:47, thì có khả năng phụ thuộc vào một cái từ ở vị trí đầu câu
+0:00:47 - 0:00:50, như vậy là nó có sự phụ thuộc rất là xa
+0:00:51 - 0:00:56, Và cái thứ hai, đó chính là vấn đề về Vanishing Gradient
+0:01:00 - 0:01:06, Đây là vấn đề kinh điển của lĩnh vực học sâu tại vì các mô hình học sâu
+0:01:06 - 0:01:12, như là RNN nói riêng cũng như là các mạng RNN khác nói chung
+0:01:12 - 0:01:17, thì các kiến trúc của mình sẽ bao gồm rất nhiều các thao tác biến đổi
+0:01:17 - 0:01:23, và do có rất nhiều các thao tác biến đổi như vậy sẽ dẫn đến là cái hàm của mình
+0:01:23 - 0:01:29, khi tính đạo hàm theo hàm hợp thì sẽ là bao gồm tích của các hàm hợp thành phần.
+0:01:29 - 0:01:38, Với mỗi hàm hợp thành phần, nếu như nhận các giá trị gradient nhỏ dần và có giá trị từ 0 cho đến 1,
+0:01:38 - 0:01:45, thì nó sẽ làm cho giá trị gradient của mình có xu hướng là thu hẹp lại và tiến về 0.
+0:01:45 - 0:01:53, Thì đây là cái vấn đề cốt yếu của Deep Learning. Nếu như không có những giải pháp để giải quyết,
+0:01:53 - 0:01:59, Thế thì các biến thể hôm nay mà chúng ta cùng tìm hiểu thì để giúp cho giải quyết cái vấn đề này
+0:01:59 - 0:02:05, Đầu tiên, đó là chúng ta sẽ ôn lại một số kiến thức cơ bản về mạng RNN
+0:02:05 - 0:02:11, Trong mạng RNN thì chúng ta sẽ tính toán 2 bước tại một thời điểm t
+0:02:11 - 0:02:15, Tại một thời điểm t thì chúng ta sẽ tính S_t đầu tiên
+0:02:16 - 0:02:17, S_t là trạng thái ẩn
+0:02:17 - 0:02:22, Và trạng thái ẩn này thì được tính từ cái giá trị quá khứ
+0:02:26 - 0:02:30, Và kết hợp với lại cái thông tin của hiện tại
+0:02:33 - 0:02:45, Sau khi đã tổng hợp được thông tin rồi, thì chúng ta sẽ tiến hành đưa ra cái giá trị dự đoán là y_t dựa trên cái công thức đó là softmax của W_o nhân với S_t
+0:02:45 - 0:02:52, Và một số tình huống sử dụng của mạng RNN bao gồm là tình huống
+0:02:52 - 0:02:59, One-to-one, tức là biến từ đầu vào và tạo ra một giá trị output
+0:02:59 - 0:03:05, One-to-many, tức là từ một đầu vào, chúng ta sẽ tạo ra một chuỗi output
+0:03:05 - 0:03:10, Lấy ví dụ như bài toán, tạo ra một bài thơ từ một chủ đề cho trước
+0:03:10 - 0:03:16, Many to One là đầu vào sẽ là một chuỗi và đầu ra sẽ là một giá trị.
+0:03:16 - 0:03:24, Ví dụ cho cái tình huống sử dụng này, đó là bài toán Sentiment Analysis hoặc là bài toán phân loại văn bản.
+0:03:24 - 0:03:33, Dạng Many to Many dạng 1, chúng ta phải đọc hết toàn bộ chuỗi rồi sau đó mới tính toán ra cái giá trị chuỗi Output.
+0:03:33 - 0:03:40, thì ví dụ minh họa cho Many to Many dạng 1 chính là bài toán dịch máy hoặc là bài toán tóm tắt văn bản.
+0:03:40 - 0:03:54, Many to Many dạng 2, thì đầu vào là chúng ta sẽ nhận vào từng từ và chúng ta sẽ đưa ra giá trị dự đoán ngay tại thời điểm đó.
+0:03:54 - 0:03:59, Ví dụ cho dạng Many to Many dạng 2 này
+0:03:59 - 0:04:04, chính là bài toán Part-of-Speech Tagging, tức là gán nhãn từ loại.
+0:04:04 - 0:04:10, Và nội dung của ngày hôm nay chúng ta sẽ bao gồm 3 phần chính.
+0:04:10 - 0:04:14, Phần đầu tiên đó chính là Long Short Term Memory,
+0:04:14 - 0:04:19, tức là đây là một trong những kiến trúc được sử dụng rất phổ biến
+0:04:19 - 0:04:23, cho đến vào giai đoạn là những năm 2016.
+0:04:23 - 0:04:39, LSTM có từ năm 1990 rồi, tức là nó có những năm 90 nhưng mà nó đã được sử dụng cho đến tận năm 2015-2016 cho đến khi có sự ra đời của Transformer và Attention.
+0:04:39 - 0:04:45, Trong phần thứ 2 thì chúng ta sẽ tìm hiểu về biến thể Bidirectional RNN, tức là RNN 2 chiều
+0:04:45 - 0:04:52, Và ở phần số 3, phần cuối cùng, chúng ta sẽ tìm hiểu về Stacked RNN
+0:04:52 - 0:05:01, Giới thiệu về LSTM, LSTM là một trong những biến thể của RNN bao gồm 4 thành phần chính
+0:05:01 - 0:05:04, Đầu tiên đó là thành phần về Context Cell
+0:05:04 - 0:05:14, Đúng như cái tên gọi của Context Cell, tức là cell để chứa thông tin về mặt ngữ cảnh
+0:05:14 - 0:05:21, Để chứa thông tin về mặt ngữ cảnh của toàn bộ nội dung văn bản mà chúng ta đọc được
+0:05:21 - 0:05:32, Input Gate, tức là cổng input là nơi để cho chúng ta biết chúng ta sẽ nhận thông tin đó hay không
+0:05:32 - 0:05:37, chúng ta sẽ xử lý cái thông tin đó, đưa vào bên trong cái Context Cell này hay không
+0:05:37 - 0:05:51, Output Gate là để cho biết chúng ta có lấy cái thông tin đó và lấy cái thông tin từ cái Context Cell ra ngoài hay không
+0:05:51 - 0:06:02, và Forget Gate thì là cái cổng thông tin để cho chúng ta biết là có nên quên hết cái thông tin ở bên trong cái Context Cell này hay không
+0:06:02 - 0:06:11, Nếu chúng ta đưa hết thông tin vào bên trong và truyền đến cuối của văn bản,
+0:06:11 - 0:06:14, thì nó dẫn đến có rất nhiều thông tin thừa.
+0:06:14 - 0:06:19, Forget là nó sẽ giúp cho mình quên đi những thông tin không còn quan trọng nữa.
+0:06:21 - 0:06:26, Ba cổng này còn có một cách gọi khác.
+0:06:26 - 0:06:34, Đó chính là nó giúp cho chúng ta điều hướng luồng thông tin ra vào và ra khỏi Context Cell này
+0:06:34 - 0:06:41, Rồi, và mỗi cell trong mạng LSTM sẽ được xử lý tuần tự
+0:06:41 - 0:06:46, Nó cũng tương tự như cell của RNN, nó sẽ phải xử lý tuần tự
+0:06:46 - 0:06:49, Ở đây chúng ta sẽ ký hiệu là LSTM cell
+0:06:49 - 0:06:55, Bên trong LSTM cell này thì nó sẽ bao gồm 4 cái thành phần như đã nói
+0:06:55 - 0:07:02, LSTM rất thích hợp cho nhiệm vụ phân loại với dữ liệu tuần tự.
+0:07:02 - 0:07:13, LSTM chỉ là biến thể của RNN và phù hợp cho những dữ liệu giá trị sau phụ thuộc vào giá trị trước.
+0:07:13 - 0:07:20, LSTM cũng góp phần giải quyết vấn đề bộ nhớ ngắn hạn và Vanishing Gradient của RNN,
+0:07:20 - 0:07:25, chính nhờ cơ chế là nhớ cái cần nhớ và quên cái cần quên
+0:07:25 - 0:07:30, nó sẽ giúp cho chúng ta tạo ra các gradient hiệu quả hơn
+0:07:30 - 0:07:36, Rồi, thì đối với cái mạng RNN truyền thống thì chúng ta sẽ thấy là cái hiện tượng
+0:07:36 - 0:07:41, mà rất hay mắc phải đó chính là hiện tượng Vanishing Gradient
+0:07:41 - 0:07:46, và thứ hai đó là chúng ta không nhớ được những cái thông tin đủ dài
+0:07:46 - 0:07:52, Tức là có những cái từ ở đầu câu nhưng mà đến cuối câu thì nó quên mất
+0:07:52 - 0:08:01, Thì cái việc mà một cái từ ở đầu câu mà đến cuối câu nó quên mất đó là vì trong cái quá trình mà thông tin nó truyền xuyên suốt
+0:08:01 - 0:08:05, Cái trạng thái ẩn (Hidden State), nó truyền xuyên suốt trạng thái S_t
+0:08:05 - 0:08:11, Thì thông tin nào nó cũng nạp vào, thông tin nào nó cũng nạp vào cái trạng thái ẩn này
+0:08:11 - 0:08:15, dẫn đến là những từ đầu sẽ bị pha loãng thông tin đi
+0:08:15 - 0:08:22, còn những từ ở giữa hoặc là từ gần cuối thì thông tin rất dày đặc và đầy đủ
+0:08:22 - 0:08:27, và đó là vì cái module hàm tanh này nè
+0:08:27 - 0:08:35, gặp bất cứ cái thông tin nào của x_t khi chúng ta đưa vào thì cũng đẩy vào bên trong trạng thái ẩn
+0:08:35 - 0:08:39, Tức là thông tin nào nó cũng sẽ sử dụng cái x_t này hết
+0:08:39 - 0:08:42, Nó không có cái tính chất gọi là chắt lọc thông tin

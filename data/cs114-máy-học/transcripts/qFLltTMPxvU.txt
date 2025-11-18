@@ -1,0 +1,149 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với cái mô hình
+0:00:16 - 0:00:20, toán học của nó dướ dạng là vectơ. Thế
+0:00:18 - 0:00:24, thì ở trong cái công thức đằng trước á
+0:00:20 - 0:00:29, thì cái hàm nếu mà viết theo cái kiểu WB
+0:00:24 - 0:00:31, như vậy á thì nó sẽ khá là dài dòng à là
+0:00:29 - 0:00:34, bằng W1x1
+0:00:31 - 0:00:36, cộng cho W2X2
+0:00:34 - 0:00:41, cộng chấm chấm chấm đó thì nó sẽ dài
+0:00:36 - 0:00:46, dòng. Bây giờ chúng ta quy tụ W là thành
+0:00:41 - 0:00:48, W1, W2 cho đến WN và X sẽ là X1, X2 cho
+0:00:46 - 0:00:52, đến Xn. Thì khi đó cái hàm mô hình của
+0:00:48 - 0:00:55, mình sẽ viết gọn lại dướ dạng như sau.
+0:00:52 - 0:00:58, Đó là FWBX
+0:00:55 - 0:01:01, thì sẽ là bằng vectơ W nhân cho X. Thì
+0:00:58 - 0:01:06, khi đó chúng ta sẽ nhân phân phối vô
+0:01:01 - 0:01:08, từng phần tử W1X1, W2X2 và WN Xn.
+0:01:06 - 0:01:12, Rồi cuối cùng đó là chúng ta sẽ cộng cho
+0:01:08 - 0:01:16, thành phần bias. Thì đây là cái hàm mô
+0:01:12 - 0:01:17, hình viết với dạng là vectơ hóa và W
+0:01:16 - 0:01:22, nhân với X ở đây thì đây chính là cái ký
+0:01:17 - 0:01:26, hiệu của cái phép tích vô hướng
+0:01:22 - 0:01:26, của hai cái vecơ.
+0:01:28 - 0:01:33, Thì chúng ta chú ý cái công thức này. Và
+0:01:31 - 0:01:36, khi chúng ta đã có cái hàm mô hình rồi
+0:01:33 - 0:01:38, thì chúng ta sẽ đi tính cái hàm chi phí
+0:01:36 - 0:01:42, hay là hàm mất mát.
+0:01:38 - 0:01:45, Ờ thì ở đây cái công thức của mình nó sẽ
+0:01:42 - 0:01:48, là f wb
+0:01:45 - 0:01:50, xy trừ cho cái giá trị thực tế của mẫu
+0:01:48 - 0:01:54, dữ liệu thứ y tất cả bình phương. Và
+0:01:50 - 0:01:56, chúng ta sẽ lấy tổng size số à trung
+0:01:54 - 0:01:59, bình cộng của size số. Chúng ta lưu ý là
+0:01:56 - 0:02:02, nó sẽ có một thêm cái con số hai ở đây.
+0:01:59 - 0:02:04, Thì mục tiêu của nó đó là để cho khi
+0:02:02 - 0:02:07, chúng ta tính đạo hàm thì nó khử được
+0:02:04 - 0:02:09, cái con số 2 ở mũ của cái công thức này.
+0:02:07 - 0:02:11, Thì mục tiêu của nó là như vậy. Khi tính
+0:02:09 - 0:02:14, đạo hàm viết ra cái công thức của mình
+0:02:11 - 0:02:17, nó sẽ đẹp. Và W thì vẫn là bằng W1 cho
+0:02:14 - 0:02:20, đến WM là vecơ trọng số cần được huấn
+0:02:17 - 0:02:24, luyện của mô hình. B là hệ số chặn cũng
+0:02:20 - 0:02:25, là cái hệ số bias cần phải xác định của
+0:02:24 - 0:02:29, mình.
+0:02:25 - 0:02:33, Đương nhiên nếu mà V
+0:02:29 - 0:02:36, mà nó không giống à nó có các cái giá
+0:02:33 - 0:02:40, trị của mình nó độc lập
+0:02:36 - 0:02:43, thì nó sẽ thể hiện được là W1 sẽ có cái
+0:02:40 - 0:02:45, trọng số nhất định với cái X1. W2 nó sẽ
+0:02:43 - 0:02:49, có một cái trọng số tin tưởng nhất định
+0:02:45 - 0:02:50, đối với cái W đối với X2.
+0:02:49 - 0:02:53, Thì đây là những cái hệ số huấn luyện
+0:02:50 - 0:02:53, được.
+0:02:58 - 0:03:06, Rồi X thì nhìn có vẻ giống như là à biến
+0:03:04 - 0:03:09, số nhưng thật ra nó là hằng số hay là
+0:03:06 - 0:03:14, cái giá trị của mẫu dữ liệu mà mình thu
+0:03:09 - 0:03:16, thập được. à đưa cái này cho à cái cái
+0:03:14 - 0:03:20, việc chúng ta sẽ đưa cái mô hình này để
+0:03:16 - 0:03:23, huấn luyện nó và phục vụ cho cái mô hình
+0:03:20 - 0:03:26, của cái hàm loss này. Trong cái công
+0:03:23 - 0:03:29, thức của hàm Jacobi à hàm hàm J thì
+0:03:26 - 0:03:32, chúng ta thấy chỉ có biến số là W và B.
+0:03:29 - 0:03:34, Còn X Y và Y của mình thì nó tương ứng
+0:03:32 - 0:03:37, chính là cái dữ liệu
+0:03:34 - 0:03:39, chúng ta đưa vào
+0:03:37 - 0:03:41, à dữ liệu huấn luyện.
+0:03:39 - 0:03:44, Rồi m ở đây sẽ là cái số lượng mẫu dữ
+0:03:41 - 0:03:47, liệu huấn luyện của mình. Thì khi đó cái
+0:03:44 - 0:03:51, công thức cập nhật cho thuộc toán raden
+0:03:47 - 0:03:53, cũng hoàn toàn tương tự là w = w trừ cho
+0:03:51 - 0:03:56, alpha nhân đạo hàm. À có điều để ở đây
+0:03:53 - 0:03:58, là hàm của chúng ta là một cái hàm đa
+0:03:56 - 0:04:01, biến. Đó thì chúng ta sẽ ký hiệu như thế
+0:03:58 - 0:04:03, này. Đạo hàm của hàm đa biến. B cũng như
+0:04:01 - 0:04:07, vậy thì b sẽ là bằng b tr- alpha nhân
+0:04:03 - 0:04:10, cho đạo hàm của chi theo theo b.
+0:04:07 - 0:04:13, Ở đây chúng ta sẽ có cái tham số là
+0:04:10 - 0:04:16, learning ray là cái hệ số học
+0:04:13 - 0:04:19, hoặc là tốc độ học. Nhưng mà mình có một
+0:04:16 - 0:04:23, cái từ khác có thể là ừ nó sẽ gần gũi
+0:04:19 - 0:04:23, hơn đó là hệ số dò
+0:04:26 - 0:04:32, hay còn gọi là dò dẫm.
+0:04:29 - 0:04:36, Thì nếu như cái đạo hàm này á nó chỉ
+0:04:32 - 0:04:39, hướng cho chúng ta là đi hướng này
+0:04:36 - 0:04:39, đó
+0:04:39 - 0:04:43, thì chúng ta sẽ đi theo cái hướng ngược
+0:04:41 - 0:04:46, lại. Chúng ta sẽ đi theo cái hướng ngược
+0:04:43 - 0:04:48, lại
+0:04:46 - 0:04:50, thì chắc chắn nó sẽ hướng đến cái điểm
+0:04:48 - 0:04:52, cực tiểu.
+0:04:50 - 0:04:54, Và nếu chúng ta đi theo cái hướng cực
+0:04:52 - 0:04:56, lại không thì nó sẽ có cái tình huống là
+0:04:54 - 0:04:59, đạo hàm của mình nó sẽ có giá trị rất là
+0:04:56 - 0:05:02, lớn. mình sẽ không biết là đi như thế
+0:04:59 - 0:05:05, nào. Thì cách đi của chúng ta đó là
+0:05:02 - 0:05:07, chúng ta sẽ dò dẫm. À chúng ta sẽ dò dẫm
+0:05:05 - 0:05:09, chúng ta thêm vô một cái đại lượng alpha
+0:05:07 - 0:05:11, thì khi chúng ta đi thì chúng ta sẽ đi
+0:05:09 - 0:05:14, từng bước nhỏ thay vì chúng ta đi một
+0:05:11 - 0:05:21, cái bước lớn như thế này. Thì đó chính
+0:05:14 - 0:05:21, là cái ý nghĩa của à cái à hệ số alpha.
+0:05:25 - 0:05:31, Và tổng hợp lại thì chúng ta sẽ có đạo
+0:05:28 - 0:05:35, hàm riêng của hàm chi phí J theo từng
+0:05:31 - 0:05:39, cái WJ thì nó sẽ là bằng
+0:05:35 - 0:05:42, công thức này. Đối với W đối với WJ thì
+0:05:39 - 0:05:44, nó sẽ là bằng 1/m của tổng.
+0:05:42 - 0:05:47, hay nói cách khác đây chính là cái trung
+0:05:44 - 0:05:47, bình
+0:05:47 - 0:05:53, của cái sai số giữa giá trị dự đoán
+0:05:53 - 0:05:58, và giá trị thực tế
+0:05:56 - 0:06:01, và chưa hết chúng ta sẽ còn nhân với lại
+0:05:58 - 0:06:03, cái thành phần xy
+0:06:01 - 0:06:06, j
+0:06:03 - 0:06:09, và khi chúng ta cập nhật cái cho trọng
+0:06:06 - 0:06:13, số wj và b thì chúng ta sẽ cài đặt bằng
+0:06:09 - 0:06:13, cái hai cái công thức này.
+0:06:15 - 0:06:24, đó thì W và và B đã được cập nhật lại.
+0:06:21 - 0:06:26, Thế thì cái chi tiết cho từng bước của
+0:06:24 - 0:06:29, thực toán của chúng ta thì bước một đó
+0:06:26 - 0:06:33, là chúng ta sẽ khởi tạo các cái tham số
+0:06:29 - 0:06:35, của mô hình bao gồm là W1 cho đến WM
+0:06:33 - 0:06:38, cộng với lại cái hệ số hệ số chặn hay
+0:06:35 - 0:06:39, còn gọi là bias đó thì thường chúng ta
+0:06:38 - 0:06:41, để cho đơn giản để suy nghĩ chúng ta sẽ
+0:06:39 - 0:06:44, cho nó là một con số ngẫu nhiên còn cái
+0:06:41 - 0:06:47, việc mà cho giá trị nó bằng 0 hết thì nó
+0:06:44 - 0:06:50, sẽ tìm mẫn rất nhiều rủi ro đó thì cái
+0:06:47 - 0:06:54, cách này chúng ta hạn chế sử dụng mà ưu
+0:06:50 - 0:06:58, tiên là chọn ra các cái ờ giá trị ngẫu
+0:06:54 - 0:07:01, nhiên nhưng mà nó vừa phải. Tiếp theo đó
+0:06:58 - 0:07:03, là chúng ta sẽ lập cho đến khi hội tụ và
+0:07:01 - 0:07:08, chúng ta sẽ làm hai công việc đó là tính
+0:07:03 - 0:07:10, đạo hàm của hàm lỗi theo à W và tính đạo
+0:07:08 - 0:07:13, hàm của hàm lỗi theo B. Và khi chúng ta
+0:07:10 - 0:07:15, đã có được cái công thức của nó rồi thì
+0:07:13 - 0:07:17, chúng ta hoàn toàn có thể thế vào những
+0:07:15 - 0:07:21, cái phần phía sau. Ví dụ như là W cập
+0:07:17 - 0:07:25, nhật lại là bằng W trừ cho alpha nhân J
+0:07:21 - 0:07:28, chia cho đạo hàm theo WJ.
+0:07:25 - 0:07:30, Thì à cái công thức này thì hoàn toàn có
+0:07:28 - 0:07:31, thể tính tự động được. Nhưng mà cái đạo
+0:07:30 - 0:07:34, hàm này thì sao? Có tính được tự động
+0:07:31 - 0:07:38, hay không? Thì câu trả lời là có. Đạo
+0:07:34 - 0:07:42, hàm chúng ta có thể tính được cái ờ hàm
+0:07:38 - 0:07:44, số đạo hàm của một hàm số bất kỳ.
+0:07:42 - 0:07:47, Và chúng ta sẽ dừng cái thuật toán này
+0:07:44 - 0:07:52, khi thuậc toán của mình nó đã
+0:07:47 - 0:07:52, hội tụ. Nó đã hội tụ.
+0:07:53 - 0:08:05, [âm nhạc]

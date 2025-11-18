@@ -1,0 +1,128 @@
+0:00:00 - 0:00:07, Quá trình huấn luyện, một mô hình là Neural Machine Translation,
+0:00:07 - 0:00:11, tức là cái bài toán về dịch máy, mà có sử dụng CNN.
+0:00:11 - 0:01:06, Đó là khi chúng ta đưa vào các giá trị đầu vào, ví dụ như là đưa vào là I'm not sure, thì bắt đầu cái quá trình tính toán sẽ tạo ra các giá trị dự đoán. dựa trên cái ground truth thì chúng ta sẽ tính ra được cái loss cho từ đầu tiên của đoạn văn đích rồi sau đó đến từ thứ 2, chúng ta sẽ có cái loss thứ 2, từ thứ 3, sẽ có cái loss thứ 3 đến từ thứ 6, chúng ta sẽ ra được cái loss thứ 6. Và tổng hợp, à và lưu ý đó là các cái loss thành phần này thì nó được sử dụng là cross entropy loss của cái từ R. Tức là đối với cái văn bản đích là y ở đây thì lẽ ra là chúng ta phải trả ra từ R đúng không? Đây là ground truth nè.
+0:01:06 - 0:01:16, Thì ở đây cái dự đoán y này nè, nó sẽ đi so với lại cái vector biểu diễn của từ R để xem xem là hai cái vector đó nó có tương đồng với nhau hay không.
+0:01:16 - 0:01:21, Và để tính được cái sai số đó thì chúng ta sẽ sử dụng độ đo là cross entropy loss
+0:01:21 - 0:01:25, và trong trường hợp này là cross entropy loss cho cái từ R
+0:01:25 - 0:01:32, Rồi, tương tự như vậy, đến cái thứ 4 thì chúng ta sẽ là phải đưa ra được cái giá trị dự đoán
+0:01:32 - 0:01:38, và nếu như cái giá trị dự đoán này nó khớp với lại cái từ pa trong tiếng pháp,
+0:01:38 - 0:01:40, thì cái loss của mình sẽ rất là thấp
+0:01:40 - 0:01:45, nhưng nếu không khớp thì loss của mình sẽ là rất là cao
+0:01:46 - 0:01:52, Tương tự như vậy, đến từ cuối cùng lẽ ra mình phải trả về kết thúc
+0:01:52 - 0:01:56, đó là end, nhưng mình lại trả ra một từ khác
+0:01:56 - 0:02:00, thì rõ ràng là loss của mình sẽ là cao
+0:02:00 - 0:02:07, tổng hợp toàn bộ loss tương ứng với time step, thời điểm
+0:02:07 - 0:02:09, thì mình sẽ ra được là
+0:02:09 - 0:02:11, hàm loss như sau
+0:02:11 - 0:02:14, đây là trung bình cộng của các loss thành phần
+0:02:14 - 0:02:17, và trong quá trình huấn luyện
+0:02:17 - 0:02:19, thì từng loss thành phần này
+0:02:19 - 0:02:22, sẽ thực hiện thuật toán lan truyền ngược
+0:02:22 - 0:02:24, để cập nhật các trọng số
+0:02:24 - 0:02:27, trên mô hình ANN
+0:02:27 - 0:02:29, với loss số 1
+0:02:29 - 0:02:30, nó sẽ lan truyền độ lỗi
+0:02:30 - 0:02:32, lan truyền độ lỗi ngược
+0:02:32 - 0:02:35, loss số 2 sẽ lan truyền
+0:02:35 - 0:02:44, và toàn bộ các loss này sẽ được đưa lên lan truyền xuyên suốt toàn bộ mạng của mình
+0:02:44 - 0:02:50, và nó sẽ cập nhật các ma trận UVW
+0:02:50 - 0:02:56, ví dụ như đây là W, đây là U, đầu ra của mình sẽ là V
+0:02:56 - 0:03:00, nó sẽ cập nhật các ma trận trọng số này
+0:03:00 - 0:03:14, Để cho mô hình này có khả năng học được đặc trưng cấp cao hơn, chúng ta sẽ sử dụng kiến trúc Deep Stack Encoder
+0:03:14 - 0:03:25, Kiến trúc Deep Stack Encoder này, đầu ra của layer thứ Y sẽ là đầu vào của layer thứ Y cộng 1, tức là layer số 1
+0:03:25 - 0:03:35, Layer số 2 sẽ là đầu vào cho Layer số 3
+0:03:35 - 0:03:39, Đây là minh họa của seq2seq
+0:03:39 - 0:03:43, nhằm giúp chúng ta giải quyết được bài toán dịch máy
+0:03:43 - 0:03:48, mà có đặc trưng có thể học được qua các tầng
+0:03:48 - 0:03:52, từ tầng cấp thấp cho đến tầng cấp giữa cho đến tầng cấp cao
+0:03:52 - 0:04:01, Và thành tựu của Neural Machine Translation đó là nếu như năm 2014,
+0:04:01 - 0:04:09, Sutskever và các cộng sự đã đề xuất ra seq2seq thì ngay sau đó chỉ 2 năm,
+0:04:09 - 0:04:13, tức là với sự phát triển rất là nhanh thì chỉ sau 2 năm,
+0:04:13 - 0:04:19, là Google Translate đã sử dụng và đã chuyển toàn bộ các mô hình dịch máy
+0:04:19 - 0:04:26, Theo hướng tiếp cận truyền thống, đó là học thống kê sang hướng Neural Machine Translation
+0:04:26 - 0:04:30, sang dạng dùng ANN
+0:04:30 - 0:04:36, Sau đó cũng 2 năm, là đến năm 2018
+0:04:36 - 0:04:40, Gần như tất cả các công ty nào có sử dụng các dịch vụ dịch thuật
+0:04:40 - 0:04:44, đều chuyển đổi sử dụng sang mô hình này
+0:04:44 - 0:04:52, ví dụ như là Bing Translate của Microsoft cũng đã chuyển sang sử dụng các mô hình về Neural Machine Translation.
+0:04:52 - 0:04:55, Như vậy thì điều đó có thể nói là trong một thời gian rất ngắn,
+0:04:55 - 0:05:06, Seq2Seq đã tạo ra được một bước đột phá cả về trong học thuật lẫn trong lĩnh vực về công nghiệp, về công nghệ.
+0:05:06 - 0:05:12, Và các công ty công nghệ đã chuyển đổi hoàn toàn sang mô hình Seq2Seq này,
+0:05:12 - 0:05:16, thì điều đó chứng tỏ là tính hiệu quả của mô hình này
+0:05:16 - 0:05:21, và đồng thời nó có khả năng dễ dàng mở rộng cho rất nhiều những ngôn ngữ khác nhau
+0:05:21 - 0:05:27, cũng như là sau này khi có những từ khóa mới thì nó cũng có thể dễ dàng học và cập nhật lại được
+0:05:27 - 0:05:31, thì đó chính là thành tựu của Neural Machine Translation
+0:05:33 - 0:05:36, Và để đánh giá được mô hình dịch máy
+0:05:36 - 0:05:41, thì đây là một trong những bài toán khó trong việc là
+0:05:41 - 0:05:43, Đánh giá
+0:05:43 - 0:05:45, Tại vì một cái bản dịch của mình
+0:05:45 - 0:05:47, Một cái văn bản nguồn của mình
+0:05:47 - 0:05:49, Thì nó có khả năng nhiều
+0:05:49 - 0:05:51, Cách dịch khác nhau
+0:05:51 - 0:05:53, Ví dụ như cũng một cái câu đó
+0:05:53 - 0:05:55, Nhưng mà một cái người theo chuyên ngành
+0:05:55 - 0:05:57, Về khoa học
+0:05:57 - 0:05:59, Thì họ sẽ dịch theo một phong cách
+0:05:59 - 0:06:01, Và người theo chuyên ngành về
+0:06:01 - 0:06:03, Xã hội thì sẽ dịch theo
+0:06:03 - 0:06:05, Một cách hoặc là một người trẻ
+0:06:05 - 0:06:07, Và một người lớn tuổi
+0:06:07 - 0:06:09, Họ có thể dịch theo một cái cách khác nhau
+0:06:09 - 0:06:15, sau đó thì đánh giá một mô hình dịch máy thì đây là một cái vấn đề khó
+0:06:16 - 0:06:19, nhưng mà khó thì không có nghĩa là không có giải pháp
+0:06:19 - 0:06:25, và một trong những giải pháp phổ biến hiện nay để mà có thể đánh giá được mô hình dịch máy của mình có tốt hay không
+0:06:26 - 0:06:27, đó là sử dụng độ đo BLEU
+0:06:28 - 0:06:35, BLEU là viết tắt của chữ bilingual evaluation understudy
+0:06:35 - 0:06:43, thì BLEU so sánh cái phiên bản dịch máy với một hoặc là nhiều
+0:06:43 - 0:06:46, một thì tuy nhiên rồi, nhưng mà nó phải là để tăng tính khách quan
+0:06:46 - 0:06:49, thì nó nên là so với nhiều cái bản dịch khác nhau
+0:06:49 - 0:06:53, so với nhiều cái bản dịch khác nhau của các chuyên gia
+0:06:53 - 0:06:56, lưu ý là cái bản dịch này cũng phải là của chuyên gia nha
+0:06:56 - 0:07:00, chứ còn những người mà không chuyên về ngôn ngữ thì có thể là sẽ dịch không tốt
+0:07:00 - 0:07:05, và sau đó thì sẽ tính được cái độ tương đồng giữa cái bản dịch với lại cái bản của chuyên gia
+0:07:05 - 0:07:14, và ở đây cái cách mà người ta so sánh đó là sử dụng trung bình điều hòa của các N-gram Precision
+0:07:14 - 0:07:22, tức là thay vì chúng ta chỉ so với từng chữ thì ở đây chúng ta sẽ so với cụm N chữ
+0:07:22 - 0:07:35, Ví dụ như là bản dịch là một từ, rồi của chuyên gia đó là 1 N-gram 3 từ, đây là 1 N-gram 2 từ và đây là 1 N-gram 1 từ
+0:07:35 - 0:07:40, Nó sẽ tính trung bình cho N-gram Precision, trung bình điều hòa
+0:07:40 - 0:07:48, Và BLEU thì mặc dù là hiệu quả nhưng mà không có thực sự là hoàn hảo, nó cũng không hoàn hảo
+0:07:48 - 0:07:57, Tại vì sao? Tại vì nó sẽ bị bias hay bị chủ quan bởi các chuyên gia của mình
+0:07:57 - 0:08:02, Và như đã đề cập, dịch máy có rất nhiều cách dịch khác nhau, rất là uyển chuyển
+0:08:02 - 0:08:05, Mình không thể cố định được một cách dịch
+0:08:05 - 0:08:08, Rồi chưa kể là cái yếu tố về tính phức tạp của ngôn ngữ nữa
+0:08:08 - 0:08:12, Thế thì có nhiều cái bản dịch tốt, hậu quả đó là gì?
+0:08:12 - 0:08:16, Có nhiều cái bản dịch tốt nhưng mà BLEU thì lại cho cái score thấp
+0:08:16 - 0:08:20, và cái chuyện này thì cũng không phải là hiếm, chuyện này cũng không phải là hiếm xảy ra
+0:08:20 - 0:08:27, Tuy nhiên, cho tới thời điểm hiện tại thì BLEU là một trong những độ đo đánh giá mà tin cậy
+0:08:27 - 0:08:36, Nó không hoàn hảo nhưng mà nó vẫn có khả năng thể hiện được sự đối sánh tương đối giữa các phương pháp dịch máy với nhau
+0:08:36 - 0:08:41, Nó thể hiện được sự so sánh tương đối, ví dụ như phương pháp này tốt hơn phương pháp kia
+0:08:41 - 0:08:45, thì cái BLEU này nó sẽ tốt hơn phương pháp kia
+0:08:45 - 0:08:55, Tuy nhiên, nếu giá trị BLEU có thể hiện được bản dịch là thật sự tốt hay không thì nó chưa thể hiện được
+0:08:55 - 0:08:59, nhưng nó có thể giúp chúng ta so được phương pháp này, nó có tốt hơn phương pháp kia hay không
+0:09:01 - 0:09:10, Nguyên nhân cho việc score thấp là có ít số lượng N-gram trùng với bản dịch của chuyên gia
+0:09:10 - 0:09:19, Nếu chúng ta đưa ra một bản dịch mà không khớp được, không khớp từ nào với các chuyên gia thì nó sẽ có score thấp.
+0:09:19 - 0:09:26, Và đây là một ví dụ, đây là bản dịch của máy và đây là bản dịch của một người
+0:09:26 - 0:09:30, thì chúng ta sẽ thấy là từ D, ở đây nó sẽ khớp
+0:09:30 - 0:09:35, After D, tức là N-gram, trong trường hợp này là N là bằng 2
+0:09:35 - 0:09:40, Rồi Attack là 1, N-gram là trong trường hợp này N là bằng 1
+0:09:40 - 0:09:43, Rồi, so với lại cái bản dịch đối với người thứ 2
+0:09:43 - 0:09:46, thì chúng ta thấy là cái cụm từ International Airport
+0:09:46 - 0:09:50, NX thì ở đây là một cái bản dịch N-gram
+0:09:50 - 0:09:53, đây là khớp N-gram với N là bằng 4
+0:09:53 - 0:09:58, Rồi, tương tự như vậy cho 4 cái bản dịch
+0:09:58 - 0:10:05, và từ đó thì chúng ta sẽ tính ra được cái score trung bình, trung bình điều hòa cho 4 cái bản dịch này.
+0:10:07 - 0:10:21, Và theo dòng thời gian thì nếu như trước năm 2015, tức là năm 2014 là sự ra đời của Seq2Seq thì đến năm 2015 trở về sau
+0:10:21 - 0:10:29, là các hướng tiếp cận của Neural Machine Translation, tức là sử dụng ANN, dựa trên ANN
+0:10:29 - 0:10:40, thì nó cho tốc độ tăng trưởng, cho sự gia tăng về độ chính xác tăng lên rất là nhiều
+0:10:40 - 0:10:45, và chúng ta có thể thấy là độ dốc, độ dốc của đường màu xanh đậm này
+0:10:45 - 0:10:51, làm nó đi rất dốc, tức là sự tăng trưởng về độ chính xác của nó
+0:10:51 - 0:10:55, Trong khi đó, các hướng tiếp cận dựa trên thống kê
+0:10:55 - 0:10:57, Statistical dựa trên thống kê
+0:10:57 - 0:11:02, ví dụ như ở đây có 2 hướng dựa trên syntax và dựa trên phrase
+0:11:02 - 0:11:06, thì chúng ta thấy cũng có tăng trưởng nhưng mà tăng trưởng rất là thấp
+0:11:06 - 0:11:10, độ dốc của nó rất là thấp, tức là không có sự chênh lệch gì nhiều
+0:11:10 - 0:11:23, Và cũng từ 2017 trở về sau, chúng ta cũng thấy là không còn nhiều nghiên cứu sử dụng Phrase-Based hoặc là Syntax-Based Machine Translation theo hướng tiếp cận thống kê nữa.
+0:11:23 - 0:11:29, Chúng ta chỉ còn các hướng tiếp cận sử dụng Neural Machine Translation mà thôi.
+0:11:29 - 0:11:34, Điều này cho thấy là tầm ảnh hưởng của hướng tiếp cận Neural Machine Translation
+0:11:34 - 0:11:38, và nó đã đánh bật những phương pháp truyền thống trước đây
+0:11:38 - 0:11:42, để tạo ra một hướng đi mới, hiệu quả hơn
+0:11:42 - 0:11:46, và thậm chí đã có thể ứng dụng được trong công nghiệp ngay.

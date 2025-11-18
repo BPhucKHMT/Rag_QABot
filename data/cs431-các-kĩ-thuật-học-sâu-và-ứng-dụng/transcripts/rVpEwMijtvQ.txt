@@ -1,0 +1,69 @@
+0:00:00 - 0:00:06, Chúng ta sẽ cài cho biến thể cuối cùng.
+0:00:06 - 0:00:13, Khi bỏ relu, chúng ta thấy nó đã chạy xong rồi.
+0:00:13 - 0:00:15, Chúng ta sẽ quan sát thử.
+0:00:15 - 0:00:20, Chúng ta sẽ vẽ.
+0:00:20 - 0:00:29, thì nhìn vào sơ đồ này, ở đây chúng ta sẽ phải gom nó lại, gom hai cái legend này lại
+0:00:29 - 0:00:33, rồi, về lại
+0:00:33 - 0:00:46, rồi chúng ta sẽ thấy là cái relu phi mạng số 2 nó giảm rất là nhanh, đúng không, nó giảm rất là nhanh
+0:00:46 - 0:00:49, Nó nằm bên dưới đường màu xanh
+0:00:49 - 0:00:51, Thì điều đó có nghĩa là gì?
+0:00:51 - 0:00:55, Điều đó là, ví dụ tại Epoch số 5
+0:00:55 - 0:00:59, Thì phương pháp V2, tức là khi sử dụng Relu
+0:00:59 - 0:01:03, Nó cho cái loss thấp hơn sau với phiên bản số 1, tức là dùng sigmoid
+0:01:03 - 0:01:06, Tức là nó đã giúp cho mình hội tụ nhanh hơn
+0:01:06 - 0:01:11, Nhưng mà đương nhiên khi số Epoch càng lớn thì cả hai thằng cũng sẽ tiện trọng về
+0:01:11 - 0:01:13, Nhưng mà nó sẽ tốn thời gian hơn
+0:01:13 - 0:01:18, Tập Amnest là tập tuyến tính, rất dễ, rất đơn giản.
+0:01:18 - 0:01:27, Nó sẽ không thể nào thể hiện được sự khuất đại tốc độ train của Relu
+0:01:27 - 0:01:28, nhanh hơn sau Vsigmoid như thế nào.
+0:01:28 - 0:01:32, Khi chúng ta train với tập dữ liệu lớn như E-Mainnet,
+0:01:32 - 0:01:35, chúng ta sẽ thấy Relu hữu quả hơn rất nhiều.
+0:01:35 - 0:01:42, Nó sẽ giảm xuống, chúng ta sẽ thấy sự sụp giảm về loss rất nhanh.
+0:01:42 - 0:01:49, Đó chính là ý nghĩa của biến thể đầu tiên, đó là bỏ Sigloin Moist và thay thế bằng Relu
+0:01:49 - 0:01:52, thì tốc độ ngồi tụ của nó sẽ nhanh hơn.
+0:01:52 - 0:01:56, Còn về đủ chính xác, theo thời gian dài, đâu đó nó vẫn sẽ sắp xỉ với Sigmoid
+0:01:56 - 0:02:00, nhưng mà với thời gian mà mình có thể chờ đợi được để có thể huyết luyện
+0:02:00 - 0:02:05, thì việc dùng Sigmoid sẽ chậm hơn rất nhiều.
+0:02:05 - 0:02:08, Rồi tiếp theo, đó là chúng ta sẽ bỏ hết các lớp Pulling.
+0:02:08 - 0:02:11, Rồi, chúng ta đã cài đặt rồi.
+0:02:11 - 0:02:19, Bây giờ chúng ta sẽ sử dụng nó
+0:02:19 - 0:02:27, Ở đây chúng ta sẽ để là CNNv3 và History sẽ là History số 3
+0:02:27 - 0:02:34, Ở đây chúng ta sẽ khô phục ngược trở lại là SIGMOID
+0:02:34 - 0:02:36, Rồi chạy
+0:02:41 - 0:02:50, Bây giờ chúng ta sẽ trở thành hầm loss khi có đồng thời cả 3 keyspare 1, 2, 3
+0:02:55 - 0:03:03, V3 sẽ là width down, pull list
+0:03:03 - 0:03:33, Chúng ta sẽ cài luôn phiên bản thứ 4, đó chính là chúng ta bỏ hết các lớp comparison
+0:03:33 - 0:03:36, một điều rất là thú vị đó là
+0:03:36 - 0:03:39, chúng ta đặt sự nguyên ngờ là cái mạng
+0:03:39 - 0:03:41, conclusion thì
+0:03:41 - 0:03:44, cái vai trò của conclusion rõ ràng rất là lớn
+0:03:44 - 0:03:46, nhưng bây giờ chúng ta sẽ làm một thí nghiệm đó là bỏ hết
+0:03:46 - 0:03:49, cái conclusion thì xem điều gì sẽ xảy ra
+0:03:49 - 0:03:51, thì đó chính là ý nghĩa của
+0:03:51 - 0:03:53, cái phiên bạng số 4
+0:03:53 - 0:03:56, rồi bây giờ may quá
+0:03:56 - 0:03:58, cái phiên bạng số 3 nó đã chạy xong
+0:03:58 - 0:04:01, và chúng ta sẽ xem thử
+0:04:03 - 0:04:12, Rồi, chúng ta thấy là nếu như không có pool link, thì cái loss của mình gần như không giảm, nó cứ diễn nguyên.
+0:04:12 - 0:04:15, Loss gần như không giảm, nó cứ diễn nguyên.
+0:04:17 - 0:04:22, Rõ ràng là cái vai trò của pool link cũng rất là quan trọng.
+0:04:22 - 0:04:30, Nếu không có pool link thì cái loss của mình gần như đi ngang, nó không giúp cho mình giảm xuống.
+0:04:30 - 0:04:40, Bây giờ chúng ta sẽ quay sang phiên bản tiếp theo, đó là không có lớp Conv
+0:04:40 - 0:04:48, ở đây chúng ta phải sử dụng biến thể đầu tiên để mình code, chứ nếu không là sẽ nhầm lẩm
+0:04:48 - 0:04:53, Rồi, không có Conv, chúng ta sẽ bỏ đi lớp này, bỏ đi lớp này
+0:04:53 - 0:04:58, và ở đây chúng ta sẽ truyền vào input, head2 sẽ truyền vào đây
+0:04:58 - 0:05:02, tới đó chúng ta sẽ giãn cái thước liên tiếp 2 lần
+0:05:02 - 0:05:07, rồi, ở đây sẽ là cnn v4
+0:05:12 - 0:05:17, rồi, bây giờ chúng ta sẽ gọi cái ham này
+0:05:17 - 0:05:23, khởi tạo v4, history là 4
+0:05:23 - 0:05:26, cat run
+0:05:26 - 0:05:30, và tương tự như vậy, chúng ta sẽ vẽ sơ đồ ở đây
+0:05:30 - 0:05:35, rồi, chúng ta sẽ có history là 4
+0:06:05 - 0:06:15, Rồi, chúng ta thấy là cái loss của mình cũng có giảm, tuy nhiên cái tốc độ giảm của nó khá là chậm, tốc độ giảm khá chậm
+0:06:15 - 0:06:21, thì điều này cũng minh chứng cho cái việc đó là cái convolution của mình, nó đã giúp cho cái việc hướng luyện nó nhanh hơn
+0:06:21 - 0:06:26, mặc dù accuracy thì nó cũng có sửa vứt là nó càng lúc càng tăng, đúng không?
+0:06:26 - 0:06:33, nó có sửa vứt càng tăng nhưng với cùng cái số y tốc thì không có convolution, tốc độ nó sẽ chậm hơn rất là nhiều
+0:06:33 - 0:06:42, Cái đường màu đỏ là version 4 thì chúng ta thấy là nó nằm ở phía trên nếu không có Correlation nó sẽ nằm phía trên
+0:06:42 - 0:06:50, Vì vậy, cái phiên bản mà hoàn thiện nhất của chúng ta chính là cái phiên bản màu kem ở đây là đường nằm ở dưới cùng
+0:06:50 - 0:06:58, Là tương ứng phiên bản số 2 là thay cái sigmoid bằng Renu trong đó vẫn phải giữ vừa có Pulling và vừa có Convolution
+0:06:58 - 0:07:11, Vì vậy thì đây chính là bài tập tutorial để giúp chúng ta hiểu được vai trò của từng phát biến đổi bên trong nạc CNN

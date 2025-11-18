@@ -1,0 +1,65 @@
+0:00:00 - 0:00:08, Nội dung này thì chúng ta gồm có 3 phần đầu tiên đó là chúng ta sẽ cùng tìm hiểu về kiến trúc Transformer.
+0:00:08 - 0:00:17, Sau đó chúng ta sẽ cùng tìm hiểu về một số cái điểm yếu của Transformer và cuối cùng đó là một số ứng dụng cũng như là thành tựu.
+0:00:17 - 0:00:25, Đầu tiên thì về kiến trúc thì chúng ta sẽ xét đến cái động lực tại sao chúng ta cần phải có cái kiến trúc mạng Transformer.
+0:00:25 - 0:00:36, Động lực đầu tiên xuất phát từ việc đó là giữa hai cái từ bất kỳ trong đoạn văn input của mình
+0:00:36 - 0:00:42, chúng ta tương tác với nhau, tương tác về mặt thông tin với nhau, chúng ta phải tốn rất nhiều thao tác
+0:00:42 - 0:00:45, Ví dụ, ở đây chúng ta sẽ có hai cái từ này
+0:00:45 - 0:00:53, Rõ ràng là trong xử lý ngôn ngữ tự nhiên, nó sẽ có tình huống đó là các cái từ phải có sự liên hệ về mặt ý nghĩa với nhau
+0:00:53 - 0:00:58, thì từ đó chúng ta mới có thể hiểu rõ được nội dung của input của mình là gì
+0:00:58 - 0:01:03, khi đó chúng ta mới có thể đi tính toán ra các giá trị output cho phù hợp
+0:01:03 - 0:01:05, thì ở đây cũng vậy
+0:01:05 - 0:01:09, nếu như không có module attention này
+0:01:09 - 0:01:14, thì giữa hai từ bất kỳ trong một câu của mình
+0:01:14 - 0:01:16, nó tương tác với nhau
+0:01:16 - 0:01:20, thông qua số từ trong câu của mình
+0:01:20 - 0:01:22, tức là Sequence Length
+0:01:22 - 0:01:36, Chúng ta sẽ nói kỹ hơn về động lực của Transformer là làm sao chúng ta có thể tối thiểu hóa,
+0:01:36 - 0:01:46, tức là giảm bớt độ dài của sự tương tác này, giảm bớt được độ dài của sự tương tác giữa hai từ bất kỳ trong câu.
+0:01:46 - 0:01:52, và chúng ta sẽ tối đa hóa thao tác song song tại vì Deep Learning
+0:01:52 - 0:01:58, muốn hiệu quả thì nó phải khai thác được sức mạnh của thiết bị tính toán song song
+0:01:58 - 0:02:03, nhưng hiện tại thì nếu như chúng ta thực hiện tính toán
+0:02:03 - 0:02:07, tuần tự từ trái sang phải hoặc từ phải sang trái thì khi đó không có
+0:02:07 - 0:02:14, khai thác được điểm mạnh của GPU của các bộ xử lý song song
+0:02:14 - 0:02:22, Đối với ý tối thiểu hóa độ dài tương tác giữa các cặp từ, chúng ta sẽ lấy một ví dụ sau
+0:02:22 - 0:02:27, In France, I had a great time and I...
+0:02:27 - 0:02:31, Ở đây chúng ta sẽ điền vô chỗ trống Language
+0:02:31 - 0:02:36, Ở đây chúng ta sẽ thấy có từ Language từ France và từ này chúng ta cần phải điền vào
+0:02:36 - 0:02:41, thì khi đó chúng ta đang muốn điền cái thông tin vào cái chỗ trống này
+0:02:41 - 0:02:50, chúng ta cần phải có cái sự tương tác thông tin giữa từ France và từ Language
+0:02:50 - 0:02:53, và cả cái từ mà chúng ta cần phải điền vào chỗ trống này
+0:02:53 - 0:02:56, thì khi đó là thông tin của từ France
+0:02:56 - 0:03:02, khi mà lan truyền được đến đây, khi mà lan truyền được đến cái vị trí này
+0:03:02 - 0:03:09, vị trí này thì nó đã tốn một cái chi phí đó là Sequence Length. Sequence Length là chiều dài của chuỗi.
+0:03:09 - 0:03:19, Trong các hệ thống ký hiệu của mình, Sequence Length của mình là T hay thường được gọi là, thay vì O(Sequence Length) thì chúng ta sẽ ký hiệu là O(T), tức là chúng ta sẽ tốn T bước.
+0:03:19 - 0:03:27, Trong quá trình mà thông tin của từ France nó lan truyền đến được đây thì nó đã bị mất mát thông tin rất là nhiều rồi.
+0:03:27 - 0:03:39, Với kiến trúc hiện tại là tuần tự, thì rất khó để huấn luyện do có sự phụ thuộc dài từ Language,
+0:03:39 - 0:03:46, rồi chỗ trống ở đây sẽ phụ thuộc vào từ France để điền vào cái này là từ French.
+0:03:46 - 0:03:51, Muốn có được thông tin ở đây thì chúng ta phải có được thông tin từ France.
+0:03:51 - 0:03:57, Và cái việc khó huấn luyện này nó xuất phát từ cái vấn đề về Vanishing Gradient
+0:03:57 - 0:04:01, Tức là khi cái hàm biến đổi của mình mà càng dài
+0:04:01 - 0:04:06, thì các cái đạo hàm thành phần của mình càng bé
+0:04:06 - 0:04:08, Các cái đạo hàm thành phần của mình là bé
+0:04:08 - 0:04:13, thì khi chúng ta nhân lần lượt tất cả các cái đạo hàm thành phần này lại với nhau
+0:04:13 - 0:04:15, thì các cái giá trị bé nó nhân lại với nhau
+0:04:15 - 0:04:18, nó sẽ tạo ra những cái giá trị vô cùng bé
+0:04:18 - 0:04:23, nó làm giảm mất cái gọi là bước nhảy của cái tham số của mình.
+0:04:23 - 0:04:31, Thì đó là cái lý do tại sao khi có cái sự phụ thuộc dài thì cái mô hình của mình huấn luyện không còn hiệu quả nữa.
+0:04:33 - 0:04:41, Rồi, và ý tiếp theo của cái động lực tại sao chúng ta phải có, phải đề xuất ra cái kiến trúc mạng Transformer
+0:04:41 - 0:04:46, đó chính là chúng ta phải tối đa hóa số phép xử lý song song.
+0:04:46 - 0:05:03, Trong quá trình Feed Forward hoặc Backward, chúng ta cần tốn chi phí, tốn O(T), phép toán không song song.
+0:05:03 - 0:05:15, Thì ở trong hình này, chúng ta sẽ thấy nếu thực hiện từ trái sang phải, forward hoặc sau này khi chúng ta huấn luyện là backward
+0:05:15 - 0:05:25, thì ở bên trong ô này chúng ta sẽ ký hiệu là nó sẽ phụ thuộc vào những phép tính trước đó
+0:05:25 - 0:05:28, là cần phải phụ thuộc vào bao nhiêu phép tính trước đó
+0:05:28 - 0:05:36, Ví dụ, tại đây chúng ta thấy là giá trị là 1 là vì nó bị phụ thuộc vào một phép tính trước đó là đây
+0:05:36 - 0:05:42, Còn ở đây là bằng 0 là vì chúng ta tính trực tiếp luôn, chúng ta không có bị phụ thuộc vô phép tính nào trước đó
+0:05:42 - 0:05:48, Thì ở đây chúng ta sẽ bị phụ thuộc 2 phép tính do bị phụ thuộc ở đây là một phép tính
+0:05:48 - 0:05:54, Và cái phép tính ở đây, giá trị output ở đây nó lại bị phụ thuộc bởi một phép tính trước đó
+0:05:54 - 0:06:04, Vì vậy, khi chúng ta tính toán đến phần tử cuối cùng, đến trạng thái ẩn cuối cùng, thì chúng ta cần phải thực hiện các phép tính trước đó,
+0:06:04 - 0:06:13, tức là có sự phụ thuộc. Tuy nhiên, ở đây chúng ta sẽ thấy là GPU là một vi xử lý song song,
+0:06:13 - 0:06:22, thì nó chỉ có thể thực hiện được các phép độc lập, tức là nó sẽ phân rã các thao tác tính toán cho từng lõi xử lý
+0:06:22 - 0:06:27, và các cái lõi xử lý nó phải độc lập nhau thì khi đó nó mới tính toán được kết quả.
+0:06:27 - 0:06:36, Trong khi đó RNN hoặc là các biến thể của RNN thì cái trạng thái ẩn, các trạng thái ẩn của mình trong quá khứ
+0:06:36 - 0:06:45, nó sẽ tính xong thì khi đó mới tính được những trạng thái hiện tại, tức là trạng thái hiện tại sẽ bị phụ thuộc vào trạng thái ẩn trong quá khứ.
+0:06:45 - 0:06:55, Dẫn đến là không thể huấn luyện trên những data set cực lớn, tức là những kiến trúc biến thể RNN không khai thác được GPU.
+0:06:55 - 0:07:04, Dẫn đến là sau này chúng ta không thể sử dụng được sức mạnh của GPU để tính toán trên data set cực lớn với số tham số cực lớn.
+0:07:04 - 0:07:10, Đó chính là động lực tại sao chúng ta cần phải có Transformer.

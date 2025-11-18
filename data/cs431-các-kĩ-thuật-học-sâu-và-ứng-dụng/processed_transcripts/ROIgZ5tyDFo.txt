@@ -1,0 +1,143 @@
+0:00:00 - 0:00:16, Trong phần tiếp theo, chúng ta sẽ cùng tìm hiểu về cơ chế attention để giúp cho chúng ta giải quyết một số vấn đề của mạng RNN trong bài toán dịch máy, nói riêng, và trong các bài toán của NLP nói chung.
+0:00:16 - 0:00:29, Thì đầu tiên chúng ta sẽ cùng xem lại kiến trúc sequence to sequence và chúng ta xem coi vấn đề của nó đang mắc phải hiện giờ đó là gì.
+0:00:29 - 0:00:45, Tại cái node cuối cùng của quá trình encoder, chúng ta thấy là toàn bộ nội dung của câu văn nguồn đã dồn vào cái vector này
+0:00:45 - 0:00:47, Và như vậy thì nó sẽ gây ra cái điểm nghẽn
+0:00:47 - 0:00:50, Nó giống như là chúng ta hình dung cái phễu của mình vậy đó
+0:00:50 - 0:00:53, Nó hình dung nó giống như là cái phễu thông tin
+0:00:53 - 0:00:56, thì toàn bộ nội dung chúng ta đưa vào đây
+0:00:56 - 0:01:01, và ở đây thì nó sẽ bị dồn vào cái miệng phễu
+0:01:01 - 0:01:02, nó gọi là bottleneck
+0:01:02 - 0:01:03, nó sẽ bị dồn vào
+0:01:03 - 0:01:04, thế thì ở đây cũng vậy
+0:01:04 - 0:01:08, toàn bộ thông tin của từ I, từ Am, từ Not, từ Sure
+0:01:08 - 0:01:09, và các từ Am, Not, Sure
+0:01:09 - 0:01:10, dồn hết vào đây
+0:01:10 - 0:01:13, thì nó sẽ gây ra hiện tượng điểm nghẽn
+0:01:13 - 0:01:14, thế thì đó là về mặt hình tượng
+0:01:14 - 0:01:19, còn về mặt ý nghĩa thực sự của cái điểm nghẽn đó là gì
+0:01:19 - 0:01:22, đó là khi chúng ta xử lý đến cái từ Sure
+0:01:22 - 0:01:36, Cho dù chúng ta có sử dụng kiến trúc, chúng ta có sử dụng các biến thể như LSTM, GRU, Bidirectional RNNs,
+0:01:36 - 0:01:44, thì nó đều không thể giải quyết được vấn đề cố hữu, đó chính là vấn đề về thông tin bị mất, bị phai,
+0:01:44 - 0:01:48, hoặc khi lan truyền theo chiều tuần tự này.
+0:01:48 - 0:01:57, khi chúng ta lan truyền tuần tự thì cái thông tin của những cái từ đầu tiên nó đã bị mất thông tin, nó bị phai thông tin nhiều
+0:01:57 - 0:02:07, và dẫn đến đó là khi chúng ta lan truyền được đến cái từ cuối cùng ở đây, đến cái từ cuối cùng ở đây để tính ra được cái giá trị ở đây
+0:02:07 - 0:02:15, thì cái thông tin của cái từ Sure, ví dụ ở đây là cái thông tin của từ Sure là cần thiết để mà đưa ra được cái dự đoán đúng không?
+0:02:15 - 0:02:17, nó đã bị quên
+0:02:17 - 0:02:21, do nó đã bị biến đổi quá nhiều
+0:02:21 - 0:02:27, từ Sure đến đây là bị biến đổi 1 lần, 2 lần, 3 lần, 4 lần, 5 lần
+0:02:27 - 0:02:31, đến đây thì nó đã bị biến đổi hết 5 lần
+0:02:31 - 0:02:35, qua 5 lần biến đổi đó thì hàm lượng thông tin nó bị loãng đi
+0:02:35 - 0:02:39, đó chính là vấn đề thực sự của sequence to sequence
+0:02:39 - 0:02:42, và giải pháp làm sao có thể giải quyết vấn đề này
+0:02:42 - 0:02:45, thì chúng ta sẽ sử dụng cơ chế là Attention
+0:02:47 - 0:02:52, với cơ chế Attention thì cách thức làm của chúng ta sẽ là như sau
+0:02:53 - 0:03:00, Đầu tiên, khi chúng ta bắt đầu quá trình decode
+0:03:00 - 0:03:09, thì chúng ta sẽ đi tính score của trạng thái ở đây
+0:03:09 - 0:03:19, và đi tính với lại tất cả các cái score trạng thái ẩn của câu input của mình
+0:03:19 - 0:03:22, thì ở đây nó gọi là Attention Score
+0:03:22 - 0:03:26, Mục tiêu của nó là gì? Mục tiêu của việc tính Attention Score này là
+0:03:26 - 0:03:31, tại thời điểm tôi bắt đầu quá trình decode ra đây
+0:03:31 - 0:03:36, thì tôi sẽ để tâm từ Attention tiếng Anh
+0:03:36 - 0:03:40, Khi dịch ra tiếng Việt, mình có thể dùng từ nôm na đó là để tâm
+0:03:40 - 0:03:46, Tôi sẽ để tâm đến từ nào trong 4 từ ở đây
+0:03:46 - 0:03:50, khi tôi bắt đầu dịch tại vị trí này
+0:03:50 - 0:03:57, Để tính được sự để tâm đó, chúng ta sẽ dùng công thức tính độ tương đồng
+0:03:57 - 0:04:01, có thể dùng độ đo tích vô hướng
+0:04:01 - 0:04:06, và các giá trị Scalar, các giá trị ở đây, nó thể hiện cho sự tương đồng đó
+0:04:06 - 0:04:10, tuy nhiên các giá trị tương đồng này nếu như chúng ta sử dụng độ đo tích vô hướng
+0:04:10 - 0:04:16, thì nó sẽ chưa có được chuẩn hóa về một cái không gian xác suất
+0:04:16 - 0:04:20, do đó thì chúng ta sẽ tiến hành cái bước tiếp theo
+0:04:20 - 0:04:24, đó là tính Attention Distribution
+0:04:24 - 0:04:32, Attention Distribution là nó sẽ quy chiếu về một cái không gian có cái giá trị là từ 0 cho đến 1
+0:04:32 - 0:04:37, để normalize để chuẩn hóa nó lại và đưa về cái không gian phân bố xác suất
+0:04:37 - 0:04:45, Với cái Distribution này, chúng ta thấy rằng cái cột này sẽ cao hơn hẳn so với các cái cột này
+0:04:45 - 0:04:47, Thì điều đó có nghĩa là gì?
+0:04:47 - 0:04:59, khi chúng ta bắt đầu quá trình decode thì tại thời điểm này nó sẽ bắt đầu để ý từ này
+0:04:59 - 0:05:09, chúng ta sẽ chuyển sang các ví dụ khác đó là để ý đến từ I nhiều hơn sau những từ còn lại
+0:05:09 - 0:05:12, để ý đến từ I nhiều hơn
+0:05:12 - 0:05:21, và khi đó thì chúng ta sẽ biết rằng là toàn bộ thông tin của cái S1 này nè
+0:05:21 - 0:05:29, Nó nên được tổng hợp nhiều nhất để mà đưa ra cái phán đoán
+0:05:29 - 0:05:31, đưa ra cái phán đoán tiếp theo
+0:05:31 - 0:05:35, đưa ra cái phán đoán của cái quá trình mình dịch
+0:05:35 - 0:05:38, Thay vì là chúng ta đưa thông tin của cái từ Sure
+0:05:38 - 0:05:42, Thay vì chúng ta đưa thông tin của từ Sure thì chúng ta nên đưa thông tin của cái từ I
+0:05:42 - 0:05:45, Nó sẽ giúp chúng ta dịch ở chỗ này chính xác hơn
+0:05:45 - 0:05:51, Trong khi đó, với cái phiên bản cũ thì cái thông tin của từ Sure ở đây là nhiều nhất
+0:05:51 - 0:05:54, Đúng không? Thông tin của từ Sure nhiều nhất và đưa ra đến đây
+0:05:54 - 0:06:00, Thì cái việc dự đoán tiếp theo nó sẽ bị ảnh hưởng bởi từ Sure nhiều hơn là cái từ I
+0:06:00 - 0:06:04, Và khi chúng ta đã tính được cái Attention Distribution này rồi
+0:06:04 - 0:06:06, Chúng ta biết là chúng ta cần phải quan tâm
+0:06:06 - 0:06:08, chúng ta phải để ý đến cái từ I nhiều hơn rồi
+0:06:08 - 0:06:11, thì chúng ta sẽ đến giai đoạn đó là tổng hợp thông tin
+0:06:11 - 0:06:14, tổng hợp thông tin
+0:06:14 - 0:06:22, cái vector này là tổng có trọng số của các s1, s2, s3 cho đến s4 này
+0:06:22 - 0:06:28, theo trọng số, theo tỷ trọng đã được tính toán ở Attention Distribution
+0:06:28 - 0:06:33, và Attention tổng hợp các thông tin đó
+0:06:33 - 0:06:36, nó gọi là Attention Output
+0:06:36 - 0:06:39, và Attention Output thì sử dụng
+0:06:39 - 0:06:41, Attention Distribution để cộng có trọng số
+0:06:41 - 0:06:46, các vector đầu vào này, cộng có trọng số các vector trạng thái ẩn này
+0:06:46 - 0:06:50, và Attention Output sẽ liên quan
+0:06:50 - 0:06:54, đến từ mà chúng ta cần phải để ý
+0:06:54 - 0:06:56, tại quá trình dịch tại đây
+0:06:56 - 0:06:59, và nó sẽ loại bỏ được những thông tin thừa
+0:06:59 - 0:07:02, nó sẽ loại bỏ được những thông tin thừa
+0:07:02 - 0:07:10, Thì những thông tin dư thừa thì nó sẽ có Attention Score thấp hoặc Attention Distribution thấp
+0:07:10 - 0:07:15, Ví dụ đây là thông tin thừa nên chiều cao của nó thấp
+0:07:15 - 0:07:22, Còn những thông tin của những từ nào có liên quan nhiều thì nó sẽ là cao
+0:07:22 - 0:07:26, Ví dụ đây là một cái minh họa cho chuyện đấy
+0:07:26 - 0:07:34, và khi chúng ta tổng hợp được cái thông tin của cái Attention Output này
+0:07:34 - 0:07:38, phối hợp với lại cái thông tin của cái trạng thái ẩn tại đây
+0:07:38 - 0:07:42, thì chúng ta sẽ có đầy đủ thông tin hơn
+0:07:42 - 0:07:49, chúng ta sẽ có đầy đủ thông tin quan trọng để giúp cho cái việc đưa ra cái dự đoán là y mũ 1
+0:07:49 - 0:07:55, rồi tương tự như vậy chúng ta sẽ đến cái từ thứ 2
+0:07:55 - 0:08:00, và chúng ta cũng lấy cái vector ẩn trong quá trình decode ở đây
+0:08:00 - 0:08:08, đi tính dot product tích vô hướng với các vector ẩn của encoder
+0:08:08 - 0:08:12, rồi sau đó chúng ta sẽ ra được các score
+0:08:12 - 0:08:15, các score này chưa được chuẩn hóa
+0:08:15 - 0:08:21, do đó chúng ta sẽ dùng hàm chuẩn hóa và chút nữa chúng ta sẽ nói rõ hơn là công thức chuẩn hóa như thế nào
+0:08:21 - 0:08:23, chúng ta sẽ chuẩn hóa nó về
+0:08:24 - 0:08:26, cái không gian xác suất như thế này
+0:08:27 - 0:08:28, và ở đây thì
+0:08:28 - 0:08:29, đó cho thấy là
+0:08:30 - 0:08:31, cái từ Not
+0:08:32 - 0:08:33, cái từ Not này
+0:08:34 - 0:08:35, là chúng ta sẽ để ý nhiều nhất
+0:08:36 - 0:08:38, cái từ Not này sẽ để ý nhiều nhất
+0:08:38 - 0:08:39, còn cái từ Am
+0:08:39 - 0:08:41, thì nó sẽ để ý ít hơn
+0:08:41 - 0:08:43, còn hai cái từ I và Sure
+0:08:43 - 0:08:44, tương ứng ở đây
+0:08:44 - 0:08:45, thì nó sẽ để ý ít nhất
+0:08:46 - 0:08:47, thì trong tiếng Pháp
+0:08:48 - 0:08:49, cái Not này là phủ định
+0:08:49 - 0:08:53, thì ở trong tiếng Pháp tương ứng nó sẽ là hai cái từ là ne... pas
+0:08:53 - 0:08:55, ne, cái gì đấy, là pas
+0:08:55 - 0:08:57, đó là Not
+0:08:57 - 0:09:01, trong tiếng Anh thì cái từ ne này là nó sẽ chú ý đến
+0:09:01 - 0:09:03, nó sẽ để ý đến hai cái từ Am và từ Not
+0:09:03 - 0:09:07, nó không có chú ý đến từ I và từ Sure
+0:09:07 - 0:09:11, rồi tương tự như vậy, đến cái từ tiếp theo
+0:09:11 - 0:09:12, nó cần phải dự đoán
+0:09:12 - 0:09:16, thì sau khi chúng ta đưa vào cái từ ne thì cái từ tiếp theo chúng ta cần phải dự đoán
+0:09:16 - 0:09:19, nó để ý đến từ thứ 2 nhiều hơn
+0:09:19 - 0:09:20, tức là từ Am nhiều hơn
+0:09:20 - 0:09:23, thể hiện qua chiều cao này
+0:09:23 - 0:09:26, và trong tiếng Pháp
+0:09:26 - 0:09:28, suis tức là động từ to be
+0:09:28 - 0:09:30, Am của tiếng Anh
+0:09:30 - 0:09:33, suis này tức là Am của tiếng Anh
+0:09:33 - 0:09:36, như vậy với Attention Distribution này
+0:09:36 - 0:09:37, nó cũng thể hiện đúng là
+0:09:37 - 0:09:39, khi tôi bắt đầu đưa vào từ ne
+0:09:39 - 0:09:43, tôi sẽ bắt đầu để tâm để ý đến từ thứ 2
+0:09:43 - 0:09:44, tức là từ Am nhiều hơn
+0:09:44 - 0:09:49, do đó hàm lượng thông tin của từ Am sẽ được truyền vào đây
+0:09:49 - 0:09:51, Attention Output này nhiều hơn
+0:09:51 - 0:09:55, dẫn đến việc đưa ra dự đoán y mũ 3 chính xác hơn
+0:09:55 - 0:09:58, rồi tương tự như vậy
+0:09:58 - 0:10:01, pas trong tiếng Pháp là Not
+0:10:01 - 0:10:04, nó sẽ để ý vào từ Not này nhiều hơn
+0:10:04 - 0:10:09, suis sûr thì nó trong tiếng Pháp tương ứng là từ Sure
+0:10:09 - 0:10:14, các bạn sẽ thấy là ở đây nó sẽ cho cái trọng số cao hơn
+0:10:14 - 0:10:18, Hãy subscribe cho kênh Ghiền Mì Gõ để không bỏ lỡ những video hấp dẫn

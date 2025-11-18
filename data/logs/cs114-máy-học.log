@@ -1,0 +1,930 @@
+
+
+=== Process start 2025-11-18 00:05:52.870020 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+✓ API transcript OK
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+✓ API transcript OK
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+✓ API transcript OK
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+✓ API transcript OK
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+✓ API transcript OK
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+✓ API transcript OK
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+✓ API transcript OK
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+✓ API transcript OK
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+✓ API transcript OK
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+✓ API transcript OK
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+✓ API transcript OK
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+✓ API transcript OK
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 28/73: fazKT_4josc | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 29/73: OlCGL3uIcn8 | [CS114 - Tutorial] Unsupervised Learning (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 30/73: 3RrUezdwQ-s | [CS114 - Tutorial] Unsupervised Learning (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 31/73: -wnlmTs1xvc | [CS114 - Tutorial] Unsupervised Learning (Phần 2)
+⚠ API failed → Whisper
+✓ Whisper transcript OK
+
+>>> VIDEO 32/73: TioSSfpy1yA | [CS114 - Tutorial] Unsupervised Learning (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 33/73: NQkR51-HyOg | [CS114 - Tutorial] Neural Network (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 34/73: vqDSl2cle2o | [CS114 - Tutorial] Neural Network (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 35/73: i0v_PbwMiBs | [CS114 - Tutorial] Decision Tree
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 36/73: cPenwbVXQGM | [CS114 - Tutorial] Google Colab (Phần 5)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 37/73: 8VA4C-TS2cQ | [CS114 - Tutorial] Google Colab (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 38/73: UPHRxByLZnU | [CS114 - Tutorial] Google Colab (Phần 3)
+⚠ API failed → Whisper
+✓ Whisper transcript OK
+
+>>> VIDEO 39/73: v3ArDvxkL-U | [CS114 - Tutorial] Google Colab (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 40/73: Npf5IvqeXH8 | [CS114 - Tutorial] Google Colab (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 41/73: gK8D6uEJdho | [CS114 - Chương 8] Tổng kết môn học
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 42/73: DoXWiAg6UAA | [CS114 - Chương 2] Học máy tự động
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 43/73: KJJ6eFW1nV0 | [CS114 - Chương 2] Phân biệt một số loại mô hình học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 44/73: BnkbGbLfP3I | [CS114 - Chương 2] Các bước phát triển ứng dụng học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 45/73: Wi3K4XkzqTA | [CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 46/73: u3GD0b9vCDo | [CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 47/73: it7jk54r_N8 | [CS114 - Chương 2] Khái niệm học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 48/73: lAsAS0ChePY | [CS114 - Chương 1] Giới thiệu môn học
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 49/73: wdIjgotVuQM | [CS114 - Chương 8] Neural Network (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 50/73: 40kpU65MMoI | [CS114 - Chương 8] Neural Network (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 51/73: 6spgb9hK5To | [CS114 - Chương 8] Neural Network (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 52/73: mEMcmVX3hwg | [CS114 - Chương 8] SVM (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 53/73: rzKMT_sUg7Q | [CS114 - Chương 8] SVM (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 54/73: OKUHDwcQuJo | [CS114 - Chương 8] SVM (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 55/73: onVEt5FPeWc | [CS114 - Chương 8] Decision Tree (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 56/73: 8b8OKHIktqI | [CS114 - Chương 8] Decision Tree (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 57/73: vrLmplmZbLk | [CS114 - Chương 8] Decision Tree (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 58/73: tGizMGafWY0 | [CS114 - Chương 7] Học tăng cường - Phần 4
+⚠ API failed → Whisper
+✓ Whisper transcript OK
+
+>>> VIDEO 59/73: 6NcteEkIRBM | [CS114 - Chương 7] Học tăng cường - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 60/73: pTsVNxlbtbY | [CS114 - Chương 7] Học tăng cường - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 61/73: Ql0n4t39rAU | [CS114 - Chương 7] Học tăng cường - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 62/73: DAFPEgXUqSc | [CS114 - Chương 6] Hệ khuyến nghị - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 63/73: n8MHFQuTKMU | [CS114 - Chương 6] Hệ khuyến nghị - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 64/73: wqjn-IA5iu4 | [CS114 - Chương 6] Hệ khuyến nghị - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 65/73: N3ulTwujJH4 | [CS114 - Chương 5] Dimension Reduction - Phần 5
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 66/73: b8HuVAc0cb4 | [CS114 - Chương 5] Dimension Reduction - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 67/73: SINj0Z-2acc | [CS114 - Chương 5] Dimension Reduction - Phần 4
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 68/73: PtsZWpdkPrE | [CS114 - Chương 5] Dimension Reduction - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 69/73: RGEA9a14dBs | [CS114 - Chương 5] Dimension Reduction - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 70/73: 5vs9uLeRy3Q | [CS114 - Chương 5] Cluster - Phần 4
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 71/73: o7R9x8C9SSo | [CS114 - Chương 5] Cluster - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 72/73: PXfS6tZJIOI | [CS114 - Chương 5] Cluster - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 73/73: 9bI07JfvEh8 | [CS114 - Chương 5] Cluster - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+=== Done 2025-11-18 00:31:01.116262 | success=27, fail=46 ===
+
+
+=== Process start 2025-11-18 11:36:03.256911 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+⏭ Skipped (exists)
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+⏭ Skipped (exists)
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+⏭ Skipped (exists)
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+⏭ Skipped (exists)
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+⏭ Skipped (exists)
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+⏭ Skipped (exists)
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+⏭ Skipped (exists)
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+⏭ Skipped (exists)
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+
+
+=== Process start 2025-11-18 11:38:31.350695 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+⏭ Skipped (exists)
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+⏭ Skipped (exists)
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+⏭ Skipped (exists)
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+⏭ Skipped (exists)
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+⏭ Skipped (exists)
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+⏭ Skipped (exists)
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+⏭ Skipped (exists)
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+⏭ Skipped (exists)
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 28/73: fazKT_4josc | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 29/73: OlCGL3uIcn8 | [CS114 - Tutorial] Unsupervised Learning (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 30/73: 3RrUezdwQ-s | [CS114 - Tutorial] Unsupervised Learning (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: 'TranscriptWhisperFetcher' object has no attribute 'cookies_file'
+
+>>> VIDEO 31/73: -wnlmTs1xvc | [CS114 - Tutorial] Unsupervised Learning (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 32/73: TioSSfpy1yA | [CS114 - Tutorial] Unsupervised Learning (Phần 1)
+
+
+=== Process start 2025-11-18 11:40:28.045476 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+⏭ Skipped (exists)
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+⏭ Skipped (exists)
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+⏭ Skipped (exists)
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+⏭ Skipped (exists)
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+⏭ Skipped (exists)
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+⏭ Skipped (exists)
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+⏭ Skipped (exists)
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+⏭ Skipped (exists)
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 28/73: fazKT_4josc | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)
+
+
+=== Process start 2025-11-18 11:48:29.597217 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+⏭ Skipped (exists)
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+⏭ Skipped (exists)
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+⏭ Skipped (exists)
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+⏭ Skipped (exists)
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+⏭ Skipped (exists)
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+⏭ Skipped (exists)
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+⏭ Skipped (exists)
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+⏭ Skipped (exists)
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 28/73: fazKT_4josc | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 29/73: OlCGL3uIcn8 | [CS114 - Tutorial] Unsupervised Learning (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 30/73: 3RrUezdwQ-s | [CS114 - Tutorial] Unsupervised Learning (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 31/73: -wnlmTs1xvc | [CS114 - Tutorial] Unsupervised Learning (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 32/73: TioSSfpy1yA | [CS114 - Tutorial] Unsupervised Learning (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 33/73: NQkR51-HyOg | [CS114 - Tutorial] Neural Network (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 34/73: vqDSl2cle2o | [CS114 - Tutorial] Neural Network (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 35/73: i0v_PbwMiBs | [CS114 - Tutorial] Decision Tree
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 36/73: cPenwbVXQGM | [CS114 - Tutorial] Google Colab (Phần 5)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 37/73: 8VA4C-TS2cQ | [CS114 - Tutorial] Google Colab (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 38/73: UPHRxByLZnU | [CS114 - Tutorial] Google Colab (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 39/73: v3ArDvxkL-U | [CS114 - Tutorial] Google Colab (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 40/73: Npf5IvqeXH8 | [CS114 - Tutorial] Google Colab (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 41/73: gK8D6uEJdho | [CS114 - Chương 8] Tổng kết môn học
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 42/73: DoXWiAg6UAA | [CS114 - Chương 2] Học máy tự động
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 43/73: KJJ6eFW1nV0 | [CS114 - Chương 2] Phân biệt một số loại mô hình học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 44/73: BnkbGbLfP3I | [CS114 - Chương 2] Các bước phát triển ứng dụng học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 45/73: Wi3K4XkzqTA | [CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 46/73: u3GD0b9vCDo | [CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 47/73: it7jk54r_N8 | [CS114 - Chương 2] Khái niệm học máy
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 48/73: lAsAS0ChePY | [CS114 - Chương 1] Giới thiệu môn học
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 49/73: wdIjgotVuQM | [CS114 - Chương 8] Neural Network (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 50/73: 40kpU65MMoI | [CS114 - Chương 8] Neural Network (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 51/73: 6spgb9hK5To | [CS114 - Chương 8] Neural Network (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 52/73: mEMcmVX3hwg | [CS114 - Chương 8] SVM (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 53/73: rzKMT_sUg7Q | [CS114 - Chương 8] SVM (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 54/73: OKUHDwcQuJo | [CS114 - Chương 8] SVM (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 55/73: onVEt5FPeWc | [CS114 - Chương 8] Decision Tree (Part 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 56/73: 8b8OKHIktqI | [CS114 - Chương 8] Decision Tree (Part 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 57/73: vrLmplmZbLk | [CS114 - Chương 8] Decision Tree (Part 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 58/73: tGizMGafWY0 | [CS114 - Chương 7] Học tăng cường - Phần 4
+⏭ Skipped (exists)
+
+>>> VIDEO 59/73: 6NcteEkIRBM | [CS114 - Chương 7] Học tăng cường - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 60/73: pTsVNxlbtbY | [CS114 - Chương 7] Học tăng cường - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 61/73: Ql0n4t39rAU | [CS114 - Chương 7] Học tăng cường - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 62/73: DAFPEgXUqSc | [CS114 - Chương 6] Hệ khuyến nghị - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 63/73: n8MHFQuTKMU | [CS114 - Chương 6] Hệ khuyến nghị - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 64/73: wqjn-IA5iu4 | [CS114 - Chương 6] Hệ khuyến nghị - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 65/73: N3ulTwujJH4 | [CS114 - Chương 5] Dimension Reduction - Phần 5
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 66/73: b8HuVAc0cb4 | [CS114 - Chương 5] Dimension Reduction - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 67/73: SINj0Z-2acc | [CS114 - Chương 5] Dimension Reduction - Phần 4
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 68/73: PtsZWpdkPrE | [CS114 - Chương 5] Dimension Reduction - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 69/73: RGEA9a14dBs | [CS114 - Chương 5] Dimension Reduction - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 70/73: 5vs9uLeRy3Q | [CS114 - Chương 5] Cluster - Phần 4
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 71/73: o7R9x8C9SSo | [CS114 - Chương 5] Cluster - Phần 3
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 72/73: PXfS6tZJIOI | [CS114 - Chương 5] Cluster - Phần 2
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+>>> VIDEO 73/73: 9bI07JfvEh8 | [CS114 - Chương 5] Cluster - Phần 1
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m unable to download video data: HTTP Error 403: Forbidden
+
+=== Done 2025-11-18 11:58:37.256003 | success=27, fail=46 ===
+
+
+=== Process start 2025-11-18 12:15:33.457368 ===
+
+>>> VIDEO 1/73: 5MgxCUTD9I4 | [CS114 - Chương 4] Vector hóa (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 2/73: 7IdTMLLCPxw | [CS114 - Chương 4] Vector hóa (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 3/73: rVJXIPI3laA | [CS114 - Chương 4] Câu hỏi thảo luận 6
+⏭ Skipped (exists)
+
+>>> VIDEO 4/73: _BDeNgLzVtI | [CS114 - Chương 4] Câu hỏi thảo luận 5
+⏭ Skipped (exists)
+
+>>> VIDEO 5/73: 8KfV0kYAUxk | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 6/73: XRseUdxehgo | [CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 7/73: IReTdn_z-es | [CS114 - Chương 4] Câu hỏi thảo luận 3
+⏭ Skipped (exists)
+
+>>> VIDEO 8/73: 9Iv6TuyWU5g | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 9/73: EarBLLqMgLg | [CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 10/73: m_jt8-LpwLs | [CS114 - Chương 4] Câu hỏi thảo luận 1
+⏭ Skipped (exists)
+
+>>> VIDEO 11/73: Sp6gOu7BFpo | [CS114 - Chương 4] Mô phỏng (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 12/73: d208XcqDgDI | [CS114 - Chương 4] Mô phỏng (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 13/73: oxjqoqQ79O4 | [CS114 - Chương 4] Mô hình phân lớp
+⏭ Skipped (exists)
+
+>>> VIDEO 14/73: qFLltTMPxvU | [CS114 - Chương 3] Hồi quy đa biến (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 15/73: XdW4AEPxahk | [CS114 - Chương 3] Hồi quy đa biến (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 16/73: uyUMxrFwKCE | [CS114 - Chương 3] Hồi quy đa biến (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 17/73: abEjEZwTp2o | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)
+⏭ Skipped (exists)
+
+>>> VIDEO 18/73: TXPLlYL6Dms | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)
+⏭ Skipped (exists)
+
+>>> VIDEO 19/73: I2JXWweJm0g | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 20/73: NCSIAbS9gWs | [CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 21/73: CB_v2ZxAyKw | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 22/73: _nPettH0cXg | [CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)
+⏭ Skipped (exists)
+
+>>> VIDEO 23/73: F_EdKKp8Rb4 | [CS114 - Chương 3] Feature Engineering
+⏭ Skipped (exists)
+
+>>> VIDEO 24/73: m2XJJvGxll8 | [CS114 - Chương 3] Feature Scaling
+⏭ Skipped (exists)
+
+>>> VIDEO 25/73: JqHpAp-xdu0 | [CS114 - Chương 3] Mô phỏng
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] JqHpAp-xdu0: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990C69A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990C69A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 26/73: wBAm3lczqXs | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] wBAm3lczqXs: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990C6F70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990C6F70>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 27/73: xptu0eq_CXQ | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] xptu0eq_CXQ: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990B12E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990B12E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 28/73: fazKT_4josc | [CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] fazKT_4josc: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x000001419908A610>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x000001419908A610>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 29/73: OlCGL3uIcn8 | [CS114 - Tutorial] Unsupervised Learning (Phần 4)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] OlCGL3uIcn8: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141992E9E20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141992E9E20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 30/73: 3RrUezdwQ-s | [CS114 - Tutorial] Unsupervised Learning (Phần 3)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] 3RrUezdwQ-s: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990B4340>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x00000141990B4340>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 31/73: -wnlmTs1xvc | [CS114 - Tutorial] Unsupervised Learning (Phần 2)
+⏭ Skipped (exists)
+
+>>> VIDEO 32/73: TioSSfpy1yA | [CS114 - Tutorial] Unsupervised Learning (Phần 1)
+⚠ API failed → Whisper
+❌ Whisper failed: [0;31mERROR:[0m [youtube] TioSSfpy1yA: Unable to download API page: <yt_dlp.networking._requests.SocksHTTPSConnection object at 0x000001419929D220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it (caused by TransportError('<yt_dlp.networking._requests.SocksHTTPSConnection object at 0x000001419929D220>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+>>> VIDEO 33/73: NQkR51-HyOg | [CS114 - Tutorial] Neural Network (Phần 2)
+⚠ API failed → Whisper

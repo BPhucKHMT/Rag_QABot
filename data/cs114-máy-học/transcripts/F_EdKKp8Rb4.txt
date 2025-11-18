@@ -1,0 +1,311 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với một trong những
+0:00:15 - 0:00:22, kỹ thuật à cực kỳ quan trọng khi chúng
+0:00:18 - 0:00:25, ta sử dụng mô hình hồi quyến tính và
+0:00:22 - 0:00:27, cũng như là các cái mô hình mà
+0:00:25 - 0:00:29, dạng đơn giản như là tuyến tính đó chính
+0:00:27 - 0:00:32, là kỹ thuật feature engineering.
+0:00:29 - 0:00:35, Thế thì feature engineering là gì? Là
+0:00:32 - 0:00:38, một cái quá trình mà để chúng ta tạo ra
+0:00:35 - 0:00:40, hoặc là biến đổi các cái đặc trưng à đầu
+0:00:38 - 0:00:42, vào cho mô hình máy học. Thế thì chúng
+0:00:40 - 0:00:46, ta biết rằng cái mô hình dự đoán của
+0:00:42 - 0:00:50, mình thì y thì nó sẽ là bằng các cái W
+0:00:46 - 0:00:52, nhân với lại xy.
+0:00:50 - 0:00:55, Sau đó sẽ cộng với lại cái bias.
+0:00:52 - 0:00:57, Thế thì cái vai trò của Xi này cực kỳ
+0:00:55 - 0:00:59, quan trọng đối với mô hình tuyến kính
+0:00:57 - 0:01:02, tuyến tính. Bản chất của một cái mô hình
+0:00:59 - 0:01:05, tuyến tính là nó không tìm ra đặc trưng
+0:01:02 - 0:01:09, mới mà nó chỉ là đánh giá xem cái vai
+0:01:05 - 0:01:13, trò của cái đặc trưng đó nó ảnh hưởng
+0:01:09 - 0:01:15, như thế nào đến cái giá trị đầu ra y đó.
+0:01:13 - 0:01:18, hay nói cái khác đó là nó đi tìm cái
+0:01:15 - 0:01:22, trọng số thể hiện cái sự quan trọng
+0:01:18 - 0:01:25, của cái đặc trưng xy à trong cái việc là
+0:01:22 - 0:01:27, đưa ra cái giá trị dự đoán. Thế thì à
+0:01:25 - 0:01:30, nếu như chúng ta đưa vào những cái đặc
+0:01:27 - 0:01:33, trưng xy này bằng những cái đặc trưng mà
+0:01:30 - 0:01:35, không quan trọng thì cái trọng số w i
+0:01:33 - 0:01:38, của mình nó sẽ được gán là bằng 0. Nó sẽ
+0:01:35 - 0:01:41, tiến về bằng 0. Nhưng mà như vậy thì rõ
+0:01:38 - 0:01:44, ràng nó sẽ không giúp cho cái quá trình
+0:01:41 - 0:01:46, dự đoán cái giá trị output. Muốn tìm
+0:01:44 - 0:01:49, được những cái đặc trưng thật sự có ích
+0:01:46 - 0:01:52, hữu ích cho cái việc là dự đoán cái giá
+0:01:49 - 0:01:55, trị target là I này nè thì nó sẽ cần có
+0:01:52 - 0:01:57, một cái bước gọi là feature engineering.
+0:01:55 - 0:02:00, Và feature engineering ở những cái giai
+0:01:57 - 0:02:03, đoạn đầu của các cái mô hình học máy đó
+0:02:00 - 0:02:06, chính là chúng ta sẽ phải dựa trên cái
+0:02:03 - 0:02:09, domain knowledge
+0:02:06 - 0:02:13, tức là cái tri thức một cái tên gọi khác
+0:02:09 - 0:02:15, đó chính là tri thức chuyên gia.
+0:02:13 - 0:02:19, domain knowledge thì có thể thực hiện
+0:02:15 - 0:02:21, cái việc feature engineering này bằng
+0:02:19 - 0:02:25, cách đó là chúng ta sẽ biến đổi trên cái
+0:02:21 - 0:02:28, feature góc à thì chúng ta có thể là lấy
+0:02:25 - 0:02:30, log bình phương hoặc là căn bậc ha đó
+0:02:28 - 0:02:32, lấy log lấy bình phương hoặc là lấy căn
+0:02:30 - 0:02:35, bậc ha thì đối với cái bình phương hoặc
+0:02:32 - 0:02:37, là lấy bậc lớn hơn thì ở trong cái slide
+0:02:35 - 0:02:40, sau chúng ta sẽ có cái kỹ thuật nó gọi
+0:02:37 - 0:02:40, là polynomioal
+0:02:43 - 0:02:46, regression.
+0:02:47 - 0:02:53, Rồi thì ngoài ra thì chúng ta có thể kết
+0:02:51 - 0:02:55, hợp nhiều cái đặc trưng góc lại với
+0:02:53 - 0:02:58, nhau. Kết hợp nhiều cái đặc trưng góc
+0:02:55 - 0:03:00, lại với nhau để tạo ra một cái đặc trưng
+0:02:58 - 0:03:02, mới, tạo ra cái feature mới. Ví dụ đặc
+0:03:00 - 0:03:05, trưng gốc của chúng ta chỉ có thuộc tính
+0:03:02 - 0:03:07, đó là à thông tin đó là giá nhà và chiều
+0:03:05 - 0:03:11, sâu của căn nhà. Thì chúng ta biết rằng
+0:03:07 - 0:03:14, là khi mua nhà thì cái việc định giá một
+0:03:11 - 0:03:16, căn nhà nó có ngoài việc chiều dạ chiều
+0:03:14 - 0:03:19, chiều rộng và chiều sâu thì nó còn phụ
+0:03:16 - 0:03:21, thuộc vào cái yếu tố về diện tích. Đó
+0:03:19 - 0:03:23, thì cái diện tích này nè nó chính là cái
+0:03:21 - 0:03:26, domain knowledge
+0:03:23 - 0:03:28, và nó khai thác bằng cách là đưa vào cái
+0:03:26 - 0:03:30, thông tin chiều rộng và chiều sâu nhân
+0:03:28 - 0:03:32, lại với nhau thực hiện cái phép nhân để
+0:03:30 - 0:03:35, tính ra được.
+0:03:32 - 0:03:38, Rồi một số ví dụ khác ví dụ như là trong
+0:03:35 - 0:03:40, những cái bài toán mà có ký tính ứng
+0:03:38 - 0:03:43, dụng trong thực tế đó thì domain
+0:03:40 - 0:03:47, knowledge là một cái vai trò là cực kỳ
+0:03:43 - 0:03:50, quan trọng quyết định phần lớn đến cái
+0:03:47 - 0:03:52, độ chính xác của một cái mô hình hồi
+0:03:50 - 0:03:55, quyến tính hoặc là mô hình logistic
+0:03:52 - 0:03:57, regression về sau. Tại vì cái domain
+0:03:55 - 0:03:59, knowledge này á nó tạo ra cho chúng ta
+0:03:57 - 0:04:01, những cái đặc trưng thật sự hữu ích. Còn
+0:03:59 - 0:04:05, nếu như chúng ta chỉ lấy những cái đặc
+0:04:01 - 0:04:06, trưng X mà là những đặc trưng thô thì có
+0:04:05 - 0:04:10, thể nó sẽ không phản ánh được những cái
+0:04:06 - 0:04:13, quy luật trong tự nhiên. Đó. Do đó thì à
+0:04:10 - 0:04:15, hai cái kỹ thuật một đó là chuẩn hóa,
+0:04:13 - 0:04:17, lấy log, lấy bình phương, lấy căn bậc
+0:04:15 - 0:04:19, hai hoặc là cái kỹ thuật mà kết hợp các
+0:04:17 - 0:04:21, cái đặc trưng góc để tạo ra đặc trưng
+0:04:19 - 0:04:24, mới thì nó có cái vai trò rất là quan
+0:04:21 - 0:04:27, trọng trong cái việc là quyết định đến
+0:04:24 - 0:04:29, cái độ chính xác của một cái hệ thống ờ
+0:04:27 - 0:04:31, máy học.
+0:04:29 - 0:04:33, Và trong thậm chí trong nhiều trường hợp
+0:04:31 - 0:04:35, thì feature engineering còn quan trọng
+0:04:33 - 0:04:37, hơn cả cái việc lựa chọn mô hình. Tức là
+0:04:35 - 0:04:40, chúng ta chọn mô hình nào không quan
+0:04:37 - 0:04:42, trọng mà feature có tốt hay không nó mới
+0:04:40 - 0:04:44, là quan trọng. Thì ý của cái câu này là
+0:04:42 - 0:04:46, như vậy. Thì một lần nữa chúng ta chỉ
+0:04:44 - 0:04:48, khẳng định lại cái vai trò của cái
+0:04:46 - 0:04:51, feature engineering này là rất là quan
+0:04:48 - 0:04:53, trọng. Và để có một cái feature
+0:04:51 - 0:04:55, engineering tốt thì nó phải có cái
+0:04:53 - 0:04:57, domain knowledge tức là phải có cái tri
+0:04:55 - 0:05:01, thức trong cái lĩnh vực.
+0:04:57 - 0:05:03, Thì vì chúng ta đang làm chúng ta là à
+0:05:01 - 0:05:05, trong lĩnh vực khoa học máy tính. Thế
+0:05:03 - 0:05:07, thì chúng ta sẽ ngay ban đầu chúng ta sẽ
+0:05:05 - 0:05:09, không có cái domain knowledge tức là cái
+0:05:07 - 0:05:13, tri thức chuyên môn.
+0:05:09 - 0:05:16, Như vậy thì để mà có thể hỗ trợ cho à
+0:05:13 - 0:05:17, các cái đối tác của chúng ta trong cái
+0:05:16 - 0:05:20, việc xây dựng mô hình một cách hiệu quả
+0:05:17 - 0:05:22, thì chúng ta cũng phải tích cực trong
+0:05:20 - 0:05:24, cái việc là tự học tập để mà bổ sung
+0:05:22 - 0:05:27, thêm cái domain knowledge này nhằm tạo
+0:05:24 - 0:05:29, ra các cái đặc trưng tốt hơn phục vụ cho
+0:05:27 - 0:05:33, cái việc mà dự đoán của mô hình nó chính
+0:05:29 - 0:05:36, xác hơn. Và các cái mô cái cái feature
+0:05:33 - 0:05:38, engineering này á thì bản chất của nó là
+0:05:36 - 0:05:41, gì? bản chất của nó là chúng ta đang đi
+0:05:38 - 0:05:43, tìm ra, đi khai thác ra các cái mối quan
+0:05:41 - 0:05:46, hệ phức tạp hoặc là cái mối quan hệ ẩn
+0:05:43 - 0:05:49, trong dữ liệu mà cái mô hình tuyến tính
+0:05:46 - 0:05:51, nó bỏ qua. Và như đã nói, thực ra bản
+0:05:49 - 0:05:54, chất của mô hình tuyến tính nó không
+0:05:51 - 0:05:56, phải là nó đi tìm ra đặc trưng mới mà
+0:05:54 - 0:05:58, bản chất của nó chỉ là đi đánh trọng số
+0:05:56 - 0:06:00, những cái đặc trưng đã có chứ không phải
+0:05:58 - 0:06:04, là tìm ra đặc trưng mới. Các cái mô hình
+0:06:00 - 0:06:07, học sâu hiện đại thì nó sẽ có cái phần
+0:06:04 - 0:06:08, là rút trích ra đặc trưng. Nhưng cái
+0:06:07 - 0:06:11, việc rút chích đặc trưng đó thì nó cũng
+0:06:08 - 0:06:14, có tính chất là theo một cái quy luật
+0:06:11 - 0:06:16, nhất định. Còn đôi khi cái domain
+0:06:14 - 0:06:18, knowledge nó phải là một cái sự tích lũy
+0:06:16 - 0:06:20, kinh nghiệm của rất nhiều năm chúng ta
+0:06:18 - 0:06:22, mới có được à mới có thể tạo ra được
+0:06:20 - 0:06:26, những cái đặc trưng mà hiệu quả. Thì đó
+0:06:22 - 0:06:28, chính là cái ý tưởng của feature
+0:06:26 - 0:06:31, engineering.
+0:06:28 - 0:06:35, Thì một cái dạng mở rộng của mô hình
+0:06:31 - 0:06:38, linear regression và có cái sự tham gia
+0:06:35 - 0:06:40, của feature engineering đó chính là
+0:06:38 - 0:06:44, polynomial regression.
+0:06:40 - 0:06:46, Trong cái giả định của chúng ta thì cái
+0:06:44 - 0:06:52, y thì nó sẽ là phụ thuộc một cách tuyến
+0:06:46 - 0:06:52, tính với lại một cái đặc trưng x.
+0:06:52 - 0:06:56, Và ở đây là mối quan hệ tuyến tính.
+0:06:57 - 0:07:02, Nhưng thực tế thì chúng ta biết các cái
+0:07:00 - 0:07:04, mối quan hệ này nó không có bao giờ nó
+0:07:02 - 0:07:07, tuyến tính mà nó sẽ có một cái mối quan
+0:07:04 - 0:07:11, hệ phi tuyến nhất định. Đó. Vậy thì ờ
+0:07:07 - 0:07:12, làm sao chúng ta có thể hồi chúng ta có
+0:07:11 - 0:07:14, thể dự đoán được chính xác cái giá trị
+0:07:12 - 0:07:18, output đầu ra đối với những cái mối quan
+0:07:14 - 0:07:21, hệ mà phi tiến tính. Thế thì polino
+0:07:18 - 0:07:23, regression nó sẽ giúp cho chúng ta
+0:07:21 - 0:07:25, mô tả cái mối quan hệ phi tiến tính đó,
+0:07:23 - 0:07:28, mô hình hóa cái mối quan hệ phi tiến
+0:07:25 - 0:07:31, tính đó bằng những cái đặc trưng dạng
+0:07:28 - 0:07:34, lũy thừa, bậc lũy thừa. Tức là thay vì
+0:07:31 - 0:07:35, chúng ta chỉ cung cấp là x thì bây giờ
+0:07:34 - 0:07:36, chúng ta sẽ cung cấp cái đặc trưng của
+0:07:35 - 0:07:40, chúng ta.
+0:07:36 - 0:07:44, là thêm là x bình phương, x lũ lý thừa 3
+0:07:40 - 0:07:45, và x l x lũy thừ 4 vân vân.
+0:07:44 - 0:07:48, Đó thì đây là những cái đặc trưng bổ
+0:07:45 - 0:07:50, sung thêm à mà chúng ta đã nói trong cái
+0:07:48 - 0:07:52, bước cái cái slide trước đó đó là
+0:07:50 - 0:07:55, feature engineering. Vậy thì tại sao
+0:07:52 - 0:07:57, chúng ta cần phải có cái polynom
+0:07:55 - 0:08:01, polynomial regression? Tức là bổ sung
+0:07:57 - 0:08:03, thêm các cái đặc trưng mà bật cao. Thì
+0:08:01 - 0:08:06, lý do đó là vì cái mô hình lini
+0:08:03 - 0:08:07, regression nó chỉ có phù hợp với những
+0:08:06 - 0:08:10, cái dữ liệu có xu hướng tiến tính thôi.
+0:08:07 - 0:08:12, Nhưng thực tế thì lại không có cái xu
+0:08:10 - 0:08:15, hướng đó mà nó có cái mối quan hệ phức
+0:08:12 - 0:08:18, tạp hơn. Đó. Cụ thể đó là dữ liệu thì nó
+0:08:15 - 0:08:19, sẽ có ở dạng đường cong phức tạp và
+0:08:18 - 0:08:22, linear regression thì nó sẽ không cho
+0:08:19 - 0:08:26, cái mối quan hệ phức tạp. Đó. Lấy ví dụ
+0:08:22 - 0:08:26, như à chúng ta có cái
+0:08:27 - 0:08:32, mối quan hệ là dạng đường cong như thế
+0:08:29 - 0:08:34, này.
+0:08:32 - 0:08:39, Đó thì cái trục ngang của mình là X và
+0:08:34 - 0:08:42, trục đứng sẽ là cái trục Y.
+0:08:39 - 0:08:46, Thì khi đó cái đường cong để mà fit được
+0:08:42 - 0:08:48, với cái dữ liệu của mình đó nó sẽ có một
+0:08:46 - 0:08:50, dạng như thế này. Và đây là một cái dạng
+0:08:48 - 0:08:53, bậc hai.
+0:08:50 - 0:08:55, Đó là một cái đường cong bậc hai. Do đó
+0:08:53 - 0:08:58, thì mô hình linear regression truyền
+0:08:55 - 0:09:00, thống với cái đặc trưng là xit
+0:08:58 - 0:09:02, được. Tại vì không có thể nào mà có một
+0:09:00 - 0:09:04, đường thẳng. Nếu mà có một cái đường
+0:09:02 - 0:09:06, thẳng để mà fit qua thì đâu đó chỉ có
+0:09:04 - 0:09:08, thể là đường thẳng này. Nhưng mà rõ ràng
+0:09:06 - 0:09:11, sau này khi cái điểm dữ liệu của mình mà
+0:09:08 - 0:09:15, nó đi lên theo cái quy luật như thế này
+0:09:11 - 0:09:18, thì không thể nào mà nó fit được. Đó.
+0:09:15 - 0:09:20, Rồi và polynomial nó sẽ giúp cho chúng
+0:09:18 - 0:09:22, ta giải quyết được vấn đề này. Đó là mô
+0:09:20 - 0:09:23, hình hóa được cái mối quan hệ phi tuyến
+0:09:22 - 0:09:26, để fit vào cái đường trongg cho cái dữ
+0:09:23 - 0:09:31, liệu.
+0:09:26 - 0:09:33, Và thực chất nó là một cái một cái cách
+0:09:31 - 0:09:34, của feature engineering. Tức là nếu như
+0:09:33 - 0:09:36, đặc trưng của chúng ta chỉ đơn thuần
+0:09:34 - 0:09:39, chúng ta đưa vào là x thì bây giờ chúng
+0:09:36 - 0:09:43, ta sẽ bổ sung thêm là x bình phương x
+0:09:39 - 0:09:46, lũy thừa 3 và vân vân x lư thừa tô 4. Và
+0:09:43 - 0:09:52, khi đó thì chúng ta sẽ có cái bộ trọng
+0:09:46 - 0:09:59, số là W1 cho X rồi W2 cộng cho W2 của X
+0:09:52 - 0:10:01, bình cộng cho W3 của X l từ 3 vân vân.
+0:09:59 - 0:10:05, Thì bản chất đây chính là một cái mô
+0:10:01 - 0:10:08, hình hồi quy đa biến. Trong đó các cái
+0:10:05 - 0:10:11, biến mới thành phần tham gia vào đó là x
+0:10:08 - 0:10:15, bình phương và x từ 3.
+0:10:11 - 0:10:17, Và cái việc sử dụng polynomial thì chúng
+0:10:15 - 0:10:21, ta lưu ý đó là vì các cái x lũy thừ 2 và
+0:10:17 - 0:10:23, x lũy thừ 3 á là cái bậc của nó rất là
+0:10:21 - 0:10:26, cao nên cái giá trị của mình nó tăng lên
+0:10:23 - 0:10:29, rất là nhanh. Mình lấy ví dụ x của mình
+0:10:26 - 0:10:33, là bằng 2 thì nếu lũy thừa 2 lên nó sẽ
+0:10:29 - 0:10:36, là 4, lũy thừa 3 lên là 8. Đó thì chúng
+0:10:33 - 0:10:38, ta thấy là cái giải giá trị của mình nó
+0:10:36 - 0:10:40, đã tăng lên cấp lũy thừa. Do đó thì một
+0:10:38 - 0:10:42, trong những công việc rất là quan trọng
+0:10:40 - 0:10:44, đó chính là phải thực hiện cái feature
+0:10:42 - 0:10:47, scaling. Tức là chúng ta sẽ phải chuẩn
+0:10:44 - 0:10:49, hóa cho các cái đặc trưng này. Ngoài ra
+0:10:47 - 0:10:51, thì chúng ta cũng cần phải lựa chọn cái
+0:10:49 - 0:10:53, bậc nào cho phù hợp. Không phải là cái
+0:10:51 - 0:10:56, kỹ thuật này nó đơn giản là chúng ta cứ
+0:10:53 - 0:10:58, tăng bật lên là xong mà chúng ta phải có
+0:10:56 - 0:11:01, cái domain knowledge tức là chúng ta sẽ
+0:10:58 - 0:11:03, phải có một cái mối quan hệ à chúng ta
+0:11:01 - 0:11:07, sẽ phải có cái tri thức chuyên ngành để
+0:11:03 - 0:11:09, mà dự đoán được dự biết được là y của
+0:11:07 - 0:11:11, mình nó sẽ cần có cái thông tin x bậc
+0:11:09 - 0:11:14, mấy để chúng ta đưa vào cái bậc cho phù
+0:11:11 - 0:11:16, hợp chứ không phải là chúng ta cứ nhồi
+0:11:14 - 0:11:19, nhét vào bậc 4 bậc 5 bậc 6 cho đến bậc
+0:11:16 - 0:11:21, 100 thì mô hình nó sẽ tự học ra thì
+0:11:19 - 0:11:23, không phải như vậy Khi mô hình của mình
+0:11:21 - 0:11:25, mà bổ sung thêm quá nhiều đặc trưng như
+0:11:23 - 0:11:27, vậy thì nó rất dễ bị cái hiện tượng là
+0:11:25 - 0:11:29, overfitting.
+0:11:27 - 0:11:32, Thế thì nhắc lại những cái hiện tượng
+0:11:29 - 0:11:35, over underfitting overfitting thì
+0:11:32 - 0:11:39, underfitting đó là cái đường một à một
+0:11:35 - 0:11:43, cong à đường hình màu đỏ này đúng không?
+0:11:39 - 0:11:46, Chúng ta thấy là nó là một cái bậc hai.
+0:11:43 - 0:11:49, Trong khi thực sự cái dữ liệu của mình à
+0:11:46 - 0:11:54, là các cái điểm chấm ở đây nó được tạo
+0:11:49 - 0:11:56, ra theo cái quy luật là một cái bậc ba.
+0:11:54 - 0:11:58, Thì cái bậc 3 này nó sẽ không fit với
+0:11:56 - 0:12:01, bậc hai. Và bậc hai này thì thường là
+0:11:58 - 0:12:04, dưới cơ so với bậc hai nên nó sẽ gây ra
+0:12:01 - 0:12:06, cái hiện tượng là underfitting.
+0:12:04 - 0:12:08, Còn overfitting đó là xảy ra khi cái mô
+0:12:06 - 0:12:12, hình của mình nó quá phức tạp. Ví dụ như
+0:12:08 - 0:12:15, đây là một cái fit, một cái à đối chiếu
+0:12:12 - 0:12:16, khớp với lại dữ liệu mà bậc đến 19.
+0:12:15 - 0:12:19, Trong khi thực tế dữ liệu của mình nó
+0:12:16 - 0:12:22, chỉ có bậc 3 thôi.
+0:12:19 - 0:12:24, Thì cái bậc 19 này nó quá lớn so với cái
+0:12:22 - 0:12:27, bậc 3. Nên chúng ta thấy là cái đường mô
+0:12:24 - 0:12:28, hình của mình nó sẽ đi xuyên qua. Nó
+0:12:27 - 0:12:30, không phải là đi xuyên qua nữa mà là nó
+0:12:28 - 0:12:33, đi đến trực tiếp các cái điểm này luôn.
+0:12:30 - 0:12:35, nó nối các cái điểm này lại à nó nối
+0:12:33 - 0:12:38, trực tiếp các cái điểm này lại và dẫn
+0:12:35 - 0:12:41, đến là cái mô hình của mình mặc dù cái
+0:12:38 - 0:12:43, size số cực thấp
+0:12:41 - 0:12:46, các cái đường màu x màu màu vàng này
+0:12:43 - 0:12:51, size số rất thấp
+0:12:46 - 0:12:54, đó nhưng mà khi chúng ta test thì chắc
+0:12:51 - 0:12:57, chắn nó sẽ không có chính xác đó tại vì
+0:12:54 - 0:12:59, đi theo cái quy luật như thế này
+0:12:57 - 0:13:01, đó thì
+0:12:59 - 0:13:03, rõ ràng là nếu mà cái đường màu vàng này
+0:13:01 - 0:13:05, mà tiếp tục thì nó sẽ bị lệch ra khỏi
+0:13:03 - 0:13:08, cái các cái tập dữ liệu đúng của mình.
+0:13:05 - 0:13:11, Đó. Đây ví dụ như những cái điểm màu đỏ
+0:13:08 - 0:13:12, này sẽ là những cái điểm đúng. Thì cái
+0:13:11 - 0:13:15, đường màu vàng này vì nó quá khớp so với
+0:13:12 - 0:13:16, lại các cái mẫu dữ liệu và đặc biệt có
+0:13:15 - 0:13:19, những cái giá trị outlayer ví dụ như
+0:13:16 - 0:13:22, những giá trị này nó có thể khiến cho
+0:13:19 - 0:13:24, cái sự lệch lạc của mô hình ngày càng
+0:13:22 - 0:13:26, cao hơn. đó thì đối với cái mô hình quá
+0:13:24 - 0:13:28, phức tạp nó sẽ rất là nhạy cảm với các
+0:13:26 - 0:13:31, cái
+0:13:28 - 0:13:35, điểm gọi là điểm nhiễu.
+0:13:31 - 0:13:37, Và cuối cùng đó là một cái good fit. Thì
+0:13:35 - 0:13:40, à cái đường bậc hai xin gọi cái đường
+0:13:37 - 0:13:43, bậc ba nó sẽ dùng một cái mô hình bởi
+0:13:40 - 0:13:45, cái mô hình bậc ba luôn. Thì hai cái
+0:13:43 - 0:13:50, đường bậc ba này nó sẽ giúp cho dữ liệu
+0:13:45 - 0:13:53, của chúng ta là nó à gọi là fit phù hợp
+0:13:50 - 0:13:55, và vừa đúng với lại cái rotus của mình.
+0:13:53 - 0:13:58, Thì hai cái đường này chúng ta thấy là
+0:13:55 - 0:14:00, nó đi khá là sát với nhau. Nó đi khá là
+0:13:58 - 0:14:05, sát với nhau và đi theo cái dạng đường
+0:14:00 - 0:14:17, cong đúng như là cái round trot ban đầu.
+0:14:05 - 0:14:17, [âm nhạc]

@@ -1,0 +1,102 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:19, Để tăng cái tính thuyết phục hơn thì
+0:00:16 - 0:00:21, chúng ta sẽ tìm cách là chỉ tập trung
+0:00:19 - 0:00:25, vào cái khu vực có cái điểm dữ liệu của
+0:00:21 - 0:00:27, mình. Thế thì ở đây chúng ta sẽ trực
+0:00:25 - 0:00:29, quan hóa thì chúng ta sẽ giới hạn lại
+0:00:27 - 0:00:32, cái view của mình.
+0:00:29 - 0:00:36, Đó là plt.xlmit.
+0:00:32 - 0:00:39, Thì ví dụ như à giải giá trị của mình
+0:00:36 - 0:00:41, chúng ta thấy là chúng ta sẽ lấy x limit
+0:00:39 - 0:00:43, là từ trừ
+0:00:41 - 0:00:46, ờ trong cái khoảng này đi ha là từ -3
+0:00:43 - 0:00:46, cho đến 4.
+0:00:48 - 0:00:56, Và y thì có thể là từ vì ở đây nó có bậc
+0:00:52 - 0:01:00, 4 đó. bậc 4 thì nó có thể là con số rất
+0:00:56 - 0:01:05, là lớn nên chúng ta sẽ lấy giá trị ở đây
+0:01:00 - 0:01:09, có thể lên đến là à 50 và trục đúng của
+0:01:05 - 0:01:12, mình á thì có thể là khoảng là 5 à 50.
+0:01:09 - 0:01:15, Rồi bây giờ chúng ta sẽ xem thử xem cái
+0:01:12 - 0:01:17, hình nó vẽ như thế nào. Đó thì ở đây là
+0:01:15 - 0:01:18, chúng ta đang đi hơi lố. Chúng ta đang
+0:01:17 - 0:01:20, đi hơi lố.
+0:01:18 - 0:01:26, À nếu như chúng ta tập trung vào cái khu
+0:01:20 - 0:01:26, vực này thì có thể là nó sẽ à rõ hơn.
+0:01:27 - 0:01:31, Đó.
+0:01:29 - 0:01:35, Rồi.
+0:01:31 - 0:01:36, Thế thì ở đây cái do cái giá trị khởi
+0:01:35 - 0:01:39, tạo của chúng ta nó quá lớn nên đâm ra
+0:01:36 - 0:01:42, khi chúng ta vẽ chúng ta sẽ nhìn thấy là
+0:01:39 - 0:01:45, nó đi quá xa. Đó thì ở đây chúng ta sẽ
+0:01:42 - 0:01:47, giảm nó xuống là còn khoảng năm thôi.
+0:01:45 - 0:01:52, Rồi
+0:01:47 - 0:01:52, và chúng ta sẽ chạy lại.
+0:02:01 - 0:02:10, Rồi ở đây thì chúng ta sẽ để là ví dụ
+0:02:03 - 0:02:10, như à cái bước nhãy của mình là 0.01 ha
+0:02:10 - 0:02:14, để cho cái tốc độ huấn luyện của nó
+0:02:12 - 0:02:15, nhanh hơn.
+0:02:14 - 0:02:18, À nhưng mà vì nó nhanh quá nên nó bị
+0:02:15 - 0:02:21, phân kỳ. Nó cứ chạy qua chạy lại nó bị
+0:02:18 - 0:02:23, phân kỳ. Rồi ở đây chúng ta sẽ để lại là
+0:02:21 - 0:02:26, 0.01
+0:02:23 - 0:02:30, và x ở đây thì có thể chúng ta chỉ lấy
+0:02:26 - 0:02:33, trong cái phạm vi là -30 cho đến khoảng
+0:02:30 - 0:02:33, 5 thôi.
+0:02:36 - 0:02:42, À ở đây chúng ta bị nhầm ha. Tức là ở
+0:02:40 - 0:02:44, đây là x limit còn đây phải là y limit
+0:02:42 - 0:02:50, mới đúng. Tức là trục tung của mình là
+0:02:44 - 0:02:53, phải từ trừ 50 cho đến khoảng a -50 cho
+0:02:50 - 0:02:53, đến khoảng là 5 thôi.
+0:02:54 - 0:02:59, Đó
+0:02:57 - 0:03:03, thì chúng ta thấy là cái mô hình của
+0:02:59 - 0:03:05, chúng ta đang tìm cách để fit vào. Chúng
+0:03:03 - 0:03:09, ta thấy là càng lúc nó đang fit vào các
+0:03:05 - 0:03:11, cái điểm nè. Nó bẻ cái đường bậc B. để
+0:03:09 - 0:03:12, cho nó đi qua các cái điểm của mình.
+0:03:11 - 0:03:15, Tương tự như vậy, ở đây nó cũng sẽ cố
+0:03:12 - 0:03:18, gắng bẻ cái đường bậc B để đi qua các
+0:03:15 - 0:03:18, cái điểm của mình.
+0:03:19 - 0:03:24, Và chắc chắn là một cái đường cong bậc B
+0:03:22 - 0:03:26, thì dù sao khi chúng ta fit thì nó cũng
+0:03:24 - 0:03:29, sẽ có thể bẻ được tại vì cái tính tùy
+0:03:26 - 0:03:32, biến của hàm bậc B rất là cao nhưng à nó
+0:03:29 - 0:03:35, sẽ bị sai biệt ở cái khu vực mà ngoài
+0:03:32 - 0:03:37, rìa của cái phân bố. Tức là khi đi ra
+0:03:35 - 0:03:40, ngoài cái phạm vi của cái phân bố này á
+0:03:37 - 0:03:43, thì các cái điểm dữ liệu của mình sẽ bị
+0:03:40 - 0:03:47, sai. Thì cụ thể hơn chúng ta có thể lấy
+0:03:43 - 0:03:50, nới cái cái phạm vi này ra là thành -5
+0:03:47 - 0:03:53, thì chúng ta sẽ thấy rõ hơn.
+0:03:50 - 0:03:53, Từ -5
+0:03:55 - 0:03:58, đó.
+0:03:59 - 0:04:04, Thì cho dù cái mô hình của mình khi mà
+0:04:01 - 0:04:06, nó huấn luyện thì cái đường này nó cũng
+0:04:04 - 0:04:10, sẽ là bóp đầu đi lên. Nó sẽ cong nó đi
+0:04:06 - 0:04:12, xuống sau rồi nó sẽ đi lên. Đó thì nó sẽ
+0:04:10 - 0:04:15, bị sai ở ngoài rìa của cái phân bố này.
+0:04:12 - 0:04:17, Nó sẽ bị sai ở ngoài rìa của phân bố.
+0:04:15 - 0:04:21, Nhưng mà đương nhiên khi mà huấn luyện
+0:04:17 - 0:04:25, đủ lâu thì có thể là cái đường bậc B nó
+0:04:21 - 0:04:29, sẽ bẻ ra và nó sẽ ép cho các cái giá trị
+0:04:25 - 0:04:31, của trọng số của Đ W1. à s của hàm bậc 4
+0:04:29 - 0:04:35, của cái thành phần bậc 4 và thành phần
+0:04:31 - 0:04:39, bậc 3 là nó sẽ giảm xuống. Đó thì ở đây
+0:04:35 - 0:04:39, chúng ta sẽ lấy một cái ví dụ ha.
+0:04:46 - 0:04:52, Rồi bây giờ chúng ta sẽ in ra. Thì ví dụ
+0:04:49 - 0:04:56, như chúng ta lập khoảng 100 lần thì
+0:04:52 - 0:05:01, chúng ta sẽ in ra ví dụ là bằng 0. Đó.
+0:04:56 - 0:05:03, Rồi vào đây thì sẽ cộng bằng 1
+0:05:01 - 0:05:06, if
+0:05:03 - 0:05:06, it
+0:05:07 - 0:05:13, phần trăm cho
+0:05:09 - 0:05:13, 5 ví dụ 100 đi.
+0:05:15 - 0:05:21, Rồi thì chúng ta sẽ in ra cái bộ trọng
+0:05:18 - 0:05:21, số W1.
+0:05:23 - 0:05:29, Rồi chúng ta chỉ cần in ra các cái thành
+0:05:24 - 0:05:32, phần là W1, W2. và W3 W4 thôi. Rồi bây
+0:05:29 - 0:05:34, giờ chúng ta sẽ
+0:05:32 - 0:05:37, xem coi là trong cái quá trình huấn
+0:05:34 - 0:05:40, luyện thì các cái bộ trọng số của mình
+0:05:37 - 0:05:40, nó đã cập nhật ra sao.
+0:05:45 - 0:05:59, À quên và
+0:05:47 - 0:05:59, [âm nhạc]

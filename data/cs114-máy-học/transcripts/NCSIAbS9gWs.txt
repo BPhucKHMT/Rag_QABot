@@ -1,0 +1,83 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:20, Chúng ta sẽ cùng đến với câu hỏi thảo
+0:00:15 - 0:00:21, luận cho mô hình à hồi quy logistic
+0:00:20 - 0:00:25, logistic.
+0:00:21 - 0:00:28, Thì ở đây chúng ta sẽ có một số câu hỏi
+0:00:25 - 0:00:30, để thảo luận. Đầu tiên đó là hàm mô hình
+0:00:28 - 0:00:33, của mình. Tại sao chúng ta không sử dụng
+0:00:30 - 0:00:36, những cái hàm đơn giản như là hàm hồi
+0:00:33 - 0:00:40, quyến tính mà chúng ta lại sử dụng cái
+0:00:36 - 0:00:45, hàm khá là phức tạp như thế này là sigma
+0:00:40 - 0:00:48, của wx + b. Thế thì khi chúng ta đưa cái
+0:00:45 - 0:00:50, công thức sigma của wx + b
+0:00:48 - 0:00:53, thì cái sigma nó là một cái hàm đặc
+0:00:50 - 0:00:53, biệt.
+0:00:54 - 0:01:01, Nó đặc biệt là vì thứ nhất đó là một cái
+0:00:57 - 0:01:03, hàm để ép cái giải giá trị của mình từ
+0:01:01 - 0:01:06, trừ vô cùng cộng vô cùng sang cái giải
+0:01:03 - 0:01:10, giá trị là từ 0 cho đến 1. À chúng ta
+0:01:06 - 0:01:15, biết rằng là wx + b thì ban đầu của mình
+0:01:10 - 0:01:17, á là nó sẽ thuộc r tức là tập số thực à
+0:01:15 - 0:01:18, từ trừ vô cùng cho đến cộng vô cùng.
+0:01:17 - 0:01:23, Nhưng mà cái việc đó thì nó sẽ không
+0:01:18 - 0:01:25, giúp cho chúng ta phân định được là cái
+0:01:23 - 0:01:27, mẫu dữ liệu của mình nó thuộc về cái lớp
+0:01:25 - 0:01:31, nào. Do đó thì chúng ta sẽ đưa qua một
+0:01:27 - 0:01:33, cái hàm sig ở đây để giúp chúng ta ép
+0:01:31 - 0:01:36, cái giá trị từ
+0:01:33 - 0:01:40, trừ vô cùng cộng vô cùng về cái đoạn giá
+0:01:36 - 0:01:43, trị từ 0 cho đến 1.
+0:01:40 - 0:01:47, Đó. Và với cái giá trị mà trả ra từ 0
+0:01:43 - 0:01:51, cho đến 1 thì chúng ta ờ tương đồng với
+0:01:47 - 0:01:51, lại cái giá trị xác suất
+0:01:53 - 0:01:57, tương đồng với cái giá trị xác suất.
+0:01:54 - 0:02:01, Nghĩa là nó sẽ thuộc cái giải là từ 0
+0:01:57 - 0:02:04, cho đến 1 và nó càng lớn thì nó sẽ xác
+0:02:01 - 0:02:06, suất nó thuộc về cái lớp positive là
+0:02:04 - 0:02:11, càng cao. Còn ngược lại thì nó sẽ thuộc
+0:02:06 - 0:02:13, về cái lớp âm tính, lớp negative.
+0:02:11 - 0:02:16, Trong cái công thức của cái hàm mô hình
+0:02:13 - 0:02:19, ở đây thì chúng ta sẽ thấy nó còn một
+0:02:16 - 0:02:22, cái tính chất nữa đó chính là sigmo là
+0:02:19 - 0:02:25, một cái hàm tính đạo hàm rất là dễ và
+0:02:22 - 0:02:25, đẹp.
+0:02:27 - 0:02:32, Đó cụ thể đó là chúng ta có thể chứng
+0:02:29 - 0:02:37, minh được đạo hàm của sigmo thì sẽ là
+0:02:32 - 0:02:39, bằng sig nhân với lại 1 trừ sig.
+0:02:37 - 0:02:42, Thì tại sao chúng ta có được cái công
+0:02:39 - 0:02:47, thức đẹp như thế này? Đó là nhờ cái hàm
+0:02:42 - 0:02:51, e mũ. E mũ là một cái hàm đa thức mà có
+0:02:47 - 0:02:54, thể được bảo lãnh là
+0:02:51 - 0:02:57, có thể tính được cái giải giá trị từ đảm
+0:02:54 - 0:02:59, bảo được cái giải giá trị từ -1 cho đến
+0:02:57 - 0:03:02, à từ 0 cho đến 1 để đưa về cái không
+0:02:59 - 0:03:05, gian à xác suất. Thế thì ở đây chúng ta
+0:03:02 - 0:03:07, sẽ
+0:03:05 - 0:03:09, phân tích xem là với cái sigo như thế
+0:03:07 - 0:03:13, này thì nó sẽ có những cái yếu điểm gì
+0:03:09 - 0:03:16, hay không. Thì trong cái công thức này á
+0:03:13 - 0:03:20, đó là nó sẽ bé hơn hoặc bằng tổng của
+0:03:16 - 0:03:23, hai cái này thì sigmax nhân cộng cho 1 -
+0:03:20 - 0:03:30, sigmax thì nó sẽ là bằng 1 tất cả bình
+0:03:23 - 0:03:32, phương chia cho 4. Đó. Như vậy thì cái
+0:03:30 - 0:03:35, đây ví dụ như đây chính là a ha, đây là
+0:03:32 - 0:03:40, a, đây là b thì a nh b sẽ bé hơn hoặc
+0:03:35 - 0:03:43, bằng a + b tất cả bình chia 4 thì sig
+0:03:40 - 0:03:48, cộng cho 1 - sig nó chính là bằng bằng
+0:03:43 - 0:03:51, 1. Thì cái à giá trị lớn nhất của mình
+0:03:48 - 0:03:52, cho cái hàm sig này đó chính là à xin
+0:03:51 - 0:03:55, lỗi đạo hàm của sig này đó chính là
+0:03:52 - 0:03:58, 0.25. Và nếu như sau này các cái mô hình
+0:03:55 - 0:04:00, của mình học sâu á mà có nhiều cái hàm
+0:03:58 - 0:04:05, kích hoạt này thì có thể sẽ gây ra cái
+0:04:00 - 0:04:05, hiện tượng nó gọi là vanishing radian.
+0:04:05 - 0:04:10, Vanishing radian thì đây là một cái vấn
+0:04:07 - 0:04:12, đề rất là khó khăn à trong cái việc mà
+0:04:10 - 0:04:14, huấn luyện cái mô hình của mình nó có
+0:04:12 - 0:04:16, thể
+0:04:14 - 0:04:20, thực hiện được cái bước cập nhật tham số
+0:04:16 - 0:04:22, một cách nhanh chóng thì radian design à
+0:04:20 - 0:04:24, nó sẽ cản trở cái việc đó. Và một trong
+0:04:22 - 0:04:27, những cái cản trợ đó chính là đến từ cái
+0:04:24 - 0:04:27, hàm kích hoạt của mình.
+0:04:29 - 0:04:41, [âm nhạc]

@@ -1,0 +1,90 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:18, Trong thực tế thì dữ liệu của chúng ta
+0:00:16 - 0:00:21, nó sẽ không hoàn toàn là một cái dữ liệu
+0:00:18 - 0:00:23, à tuyến tính mà nó có thể là một cái dữ
+0:00:21 - 0:00:26, liệu phi tuyến. À thế nào là một cái dữ
+0:00:23 - 0:00:29, liệu tuyến tính thì chúng ta có thể minh
+0:00:26 - 0:00:33, họa đó là x và đây là y ha. thì tuyến
+0:00:29 - 0:00:37, tính đó là nó sẽ đồng biến
+0:00:33 - 0:00:37, như thế này hoặc là nghịch biến
+0:00:37 - 0:00:42, đó thì một là đường đi lên hoặc là hai
+0:00:40 - 0:00:44, đó là đường đi xuống như thế này thì nó
+0:00:42 - 0:00:48, được gọi là tuyến tính còn cái dữ liệu
+0:00:44 - 0:00:48, phi tuyến đây là tuyến tính
+0:00:49 - 0:00:54, còn đối với cái dữ liệu phi tuyến á thì
+0:00:52 - 0:00:58, cái y của mình nó sẽ phụ thuộc bởi một
+0:00:54 - 0:01:00, cái hàm không phải là hàm bậc 1 đối với
+0:00:58 - 0:01:03, X mình lấy ví dụ đơn giản như là hàm bậc
+0:01:00 - 0:01:09, hai đi.
+0:01:03 - 0:01:09, Đó thì đây là các cái tập dữ liệu.
+0:01:09 - 0:01:15, Đây là các cái dữ liệu mà
+0:01:12 - 0:01:16, cho cái mối quan hệ giữa y và x đó là
+0:01:15 - 0:01:18, một cái mối quan hệ phi tuyến. Thì nếu
+0:01:16 - 0:01:20, đúng chúng ta sẽ phải tìm được một cái
+0:01:18 - 0:01:23, đường như thế này. Một cái đường dạng
+0:01:20 - 0:01:26, bậc hai như thế này. Thì đây là một cái
+0:01:23 - 0:01:29, ví dụ của phi tuyến.
+0:01:26 - 0:01:31, Thế thì cái
+0:01:29 - 0:01:34, mô hình hồi quy tuyến tính của mình liệu
+0:01:31 - 0:01:37, có sử dụng được cho cái dữ liệu phi
+0:01:34 - 0:01:40, tuyến hay không?
+0:01:37 - 0:01:44, Thì câu trả lời đó là được. Câu trả lời
+0:01:40 - 0:01:46, là được. Nếu chúng ta nhìn kỹ á thì cái
+0:01:44 - 0:01:48, sự cái mô hình mà hồi quy tuyến tính á
+0:01:46 - 0:01:51, thì cái chữ tuyến tính ở đây á nó không
+0:01:48 - 0:01:56, phải là thể hiện cái tuyến tính giữa cái
+0:01:51 - 0:01:58, đặc trưng và cái giá trị đầu ra.
+0:01:56 - 0:02:03, mà nó sẽ thể hiện cái mối quan hệ bậc
+0:01:58 - 0:02:04, mới của đạo hàm theo cái biến W và B,
+0:02:03 - 0:02:07, tức là cái biến mô hình của mình. Thì
+0:02:04 - 0:02:10, khi chúng ta lấy đạo hàm
+0:02:07 - 0:02:12, của W và B thì nó sẽ ra một cái hàm bậc
+0:02:10 - 0:02:16, một
+0:02:12 - 0:02:18, hay là một cái hàm tuyến tính.
+0:02:16 - 0:02:21, Đó thì cái khái niệm tuyến tính ở đây á
+0:02:18 - 0:02:24, nó chính là đang nói cho cái đạo hàm
+0:02:21 - 0:02:27, ờ của cái hàm lỗi của mình.
+0:02:24 - 0:02:30, Còn nếu như X và Y ở đây các bạn chọn ra
+0:02:27 - 0:02:33, những cái đặc trưng phù hợp thì hoàn
+0:02:30 - 0:02:34, toàn có thể sử dụng được. Lấy ví dụ đối
+0:02:33 - 0:02:36, với cái trường hợp phi tuyến ở đây thì
+0:02:34 - 0:02:39, chúng ta sẽ làm một cái nó gọi là
+0:02:36 - 0:02:43, feature engineering. Tức là chúng ta sẽ
+0:02:39 - 0:02:43, rút trích ra đặc trưng.
+0:02:46 - 0:02:55, Nếu như bình thường chúng ta sử dụng là
+0:02:50 - 0:02:59, w và x à xin lỗi wx + b thì ở đây chúng
+0:02:55 - 0:03:03, ta sẽ có một cái ờ đặc trưng mới đó là
+0:02:59 - 0:03:05, xy tất cả bình phương. Rồi đồng thời
+0:03:03 - 0:03:08, chúng ta sẽ có thêm cả cái xy và có thêm
+0:03:05 - 0:03:11, cái thành phần bias. thì cái công thức
+0:03:08 - 0:03:17, của mình lúc này nó sẽ mở rộng ra đó là
+0:03:11 - 0:03:17, một cái mô hình hồi quyến tính đa biến.
+0:03:19 - 0:03:24, Lúc này thì W của mình nó sẽ không phải
+0:03:21 - 0:03:27, là một giá trị scalar mà chúng ta sẽ
+0:03:24 - 0:03:31, tách nó ra làm hai phần. Cụ thể đó là
+0:03:27 - 0:03:34, chúng ta sẽ có w ờ 1xy
+0:03:31 - 0:03:37, cộng cho w2
+0:03:34 - 0:03:40, xy bình. Rồi sau đó chúng ta sẽ cộng
+0:03:37 - 0:03:43, thêm cái thành phần bias nữa. Thì lúc
+0:03:40 - 0:03:45, này là chúng ta có nhiều hơn nhiều hơn
+0:03:43 - 0:03:49, một biến. Tức là đây là một cái mô hình
+0:03:45 - 0:03:49, hồi quy đa biến.
+0:03:50 - 0:03:56, Và nếu chúng ta nhìn nó theo cái góc độ
+0:03:54 - 0:03:59, là cái biến x đầu vào thì nó là bậc hai.
+0:03:56 - 0:04:01, Nhưng nếu chúng ta nhìn kỹ ở đây cái
+0:03:59 - 0:04:04, biến số của mình nó không phải là xy
+0:04:01 - 0:04:09, hoặc là y yyy mà biến số của mình chính
+0:04:04 - 0:04:12, là b w1 và w2. Thế thì cả bw1 w2 nó đều
+0:04:09 - 0:04:15, là những cái hàm bậc 1. Nó đều là những
+0:04:12 - 0:04:18, cái hàm bậc một nên nó vẫn là một cái mô
+0:04:15 - 0:04:22, hình hồi quy tiến tính. Đó, như vậy thì
+0:04:18 - 0:04:25, à trả lời tóm lại cho cái câu hỏi đó là
+0:04:22 - 0:04:26, dữ liệu mà có mối quan hệ phi tuyến thì
+0:04:25 - 0:04:28, chúng ta có sử dụng mô hình hồi quy tiến
+0:04:26 - 0:04:31, tính được hay không? Thì câu trả lời đó
+0:04:28 - 0:04:33, chính là được. Và chúng ta sẽ phải sử
+0:04:31 - 0:04:36, dụng thêm một cái đặc trưng nữa nó gọi
+0:04:33 - 0:04:38, là đặc trưng x bình phương để cho cái mô
+0:04:36 - 0:04:41, hình của mình có thể học được với cái
+0:04:38 - 0:04:41, mối quan hệ phi tuyến tính này.
+0:04:42 - 0:04:54, [âm nhạc]

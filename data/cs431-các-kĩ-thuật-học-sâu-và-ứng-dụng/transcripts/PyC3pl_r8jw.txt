@@ -1,0 +1,137 @@
+0:00:00 - 0:00:14, Ôn tập - Phần 1. Bài 4. Các kiến trúc mạng CNN phổ biến
+0:00:14 - 0:00:19, Bài 4. Các kiến trúc mạng CNN phổ biến
+0:00:19 - 0:00:23, Thì phần đầu tiên chúng ta sẽ ôn tập lại kiến trúc mạng CNN
+0:00:23 - 0:00:27, Sau đó chúng ta sẽ đề cập đến một số kiến trúc mạng CNN phổ biến hiện nay
+0:00:27 - 0:00:30, Và các kiến trúc mạng này luôn là nền tảng
+0:00:30 - 0:00:34, Để cho các thuật toán cũng như là các bài toán trong thị giác máy tính
+0:00:34 - 0:00:36, Về sau họ sử dụng để phát triển tiếp
+0:00:36 - 0:00:39, Cuối cùng đó là chúng ta sẽ tìm hiểu các cách thức
+0:00:39 - 0:00:42, Để sử dụng một cái mạng huấn luyện sẵn (Pretrained Model) như thế nào
+0:00:42 - 0:00:46, Về ôn tập mạng CNN thì chúng ta biết rằng
+0:00:46 - 0:00:54, Đầu vào của mạng CNN sẽ là tấm ảnh và ảnh này có thể là ảnh màu hoặc là ảnh xám
+0:00:54 - 0:01:00, Trong ví dụ này thì ảnh này có 3 kênh màu đó là Red, Green và Blue
+0:01:00 - 0:01:06, Và qua phép biến đổi convolution và ReLU ngay sau đó thì chúng ta sẽ tạo ra 1 tensor
+0:01:06 - 0:01:10, Và cái tensor này thì nó còn gọi là feature map
+0:01:10 - 0:01:21, Và sau đó thì chúng ta sẽ tiến hành thực hiện phép pooling để giảm chiều của dữ liệu này.
+0:01:21 - 0:01:32, Giả sử như tấm ảnh này, feature map này sẽ có kích thước đó là bề ngang là w, bề cao là h,
+0:01:32 - 0:01:38, Độ sâu, tức là số đặc trưng của mình là d
+0:01:38 - 0:01:42, Khi thực hiện phép pooling mặc định s của mình cho là bằng 2
+0:01:42 - 0:01:45, Thì cái kích thước theo chiều ngang và chiều cao sẽ giảm một nửa
+0:01:45 - 0:01:49, Tức là bề ngang của mình lúc này sẽ còn là w chia 2
+0:01:49 - 0:01:54, Và bề cao của mình trong trường hợp này sẽ giảm xuống còn là h chia 2
+0:01:54 - 0:01:57, Nếu s bằng 3 thì cái này sẽ giảm 3 lần
+0:01:57 - 0:02:07, và chúng ta sẽ thực hiện phép pooling trên các kênh độc lập nhau, các feature độc lập nhau
+0:02:07 - 0:02:09, do đó thì cái D này sẽ giữ nguyên
+0:02:09 - 0:02:14, chúng ta chỉ giảm cái bề ngang và bề cao của feature map thôi
+0:02:14 - 0:02:18, rồi tương tự như vậy cũng thực hiện với các phép convolution, ReLU và pooling
+0:02:18 - 0:02:24, thì đến cái bước cuối cùng thì chúng ta cũng sẽ ra được một cái tensor đó là feature
+0:02:24 - 0:02:31, Và feature này sẽ được duỗi ra để tạo ra thành một dạng vector
+0:02:31 - 0:02:37, Tại vì các phép biến đổi fully connected sau hay còn gọi là mạng Neural Network của mình
+0:02:37 - 0:02:42, thì nó chỉ có thể thực hiện được trên vector mà thôi
+0:02:42 - 0:02:49, Rồi, thì cái vector này khi chúng ta đi qua lớp biến đổi kết nối đầy đủ
+0:02:49 - 0:02:55, Cho đến lớp cuối cùng, chúng ta sẽ gặp lớp Softmax
+0:02:55 - 0:03:02, Mục tiêu của lớp Softmax này là chuyển đổi các vector về dạng phân bố xác suất
+0:03:02 - 0:03:08, Tức là với mỗi phần tử trong vector cuối cùng này, thì miền giá trị của nó là từ 0 cho đến 1
+0:03:08 - 0:03:15, Và tổng tất cả các xác suất này, xác suất thuộc về lớp car, truck, van, bicycle
+0:03:15 - 0:03:18, tổng của nó sẽ là bằng một
+0:03:18 - 0:03:21, thì đây là công dụng của hàm Softmax
+0:03:21 - 0:03:25, thì chúng ta ôn lại về kiến trúc mạng CNN
+0:03:25 - 0:03:28, trong mạng CNN thì có một phép biến đổi
+0:03:28 - 0:03:32, nó có một phép biến đổi đó là phép convolution hay còn gọi là tích chập
+0:03:32 - 0:03:38, thì bản chất của phép convolution này đó là một phép biến đổi tuyến tính
+0:03:38 - 0:03:42, và nhiệm vụ của nó là để rút trích đặc trưng hình ảnh
+0:03:42 - 0:03:45, Ví dụ như chúng ta có 1 ảnh đầu vào ở đây
+0:03:45 - 0:03:48, và chúng ta nhân với lại 1 filter
+0:03:48 - 0:03:50, chúng ta nhân với 1 filter
+0:03:50 - 0:03:53, rồi filter này sẽ tạo ra 1 feature
+0:03:54 - 0:03:58, và cái feature này có cái ý nghĩa, có cái concept đó là các biên cạnh
+0:04:01 - 0:04:02, theo chiều dọc
+0:04:02 - 0:04:16, Các filter này giá trị của nó ban đầu là được khởi tạo ngẫu nhiên
+0:04:16 - 0:04:19, nhưng mà sau quá trình mà mạng CNN huấn luyện
+0:04:19 - 0:04:29, thì các giá trị tham số của filter này sẽ được mạng huấn luyện
+0:04:29 - 0:04:37, trên dữ liệu thật, được mạng CNN huấn luyện trên dữ liệu thật và nó sẽ tự động cập nhật
+0:04:37 - 0:04:50, và các trọng số của filter này sẽ cập nhật như thế nào để cho kết quả của việc nhận diện cuối cùng của mình đạt được độ chính xác cao nhất
+0:04:50 - 0:04:58, Rồi, vừa rồi thì là phép biến đổi convolution, bây giờ chúng ta sẽ qua cái khái niệm gọi là các phép convolution
+0:05:05 - 0:05:18, Thì ở đây chúng ta sẽ có 1 animation đó là với input đầu vào qua nhiều filter thì chúng ta sẽ có nhiều feature và mỗi cái này sẽ gọi là 1 feature
+0:05:18 - 0:05:23, và tập hợp của các feature thì gọi là Feature Map
+0:05:23 - 0:05:26, là tập hợp của các feature
+0:05:26 - 0:05:35, thì ở đây chúng ta sẽ có một công thức để nhớ về kích thước của filter cũng như kích thước của tensor output
+0:05:35 - 0:05:41, nếu như đầu vào của mình, độ sâu này là có độ sâu là D
+0:05:41 - 0:05:48, thì filter của mình sẽ phải có độ sâu tương ứng D luôn
+0:05:48 - 0:05:50, để khi chúng ta lấy filter này
+0:05:50 - 0:05:56, nó trượt thì nó phải vừa khớp với input của mình
+0:05:56 - 0:06:03, và ở đây chúng ta sẽ có K filter
+0:06:03 - 0:06:11, và khi chúng ta thực hiện K filter này thì output của mình cũng sẽ có độ sâu tương ứng là K
+0:06:11 - 0:06:22, Chúng ta sẽ nhớ các cách thức để setup cho độ sâu của filter và output trong quá trình lập trình
+0:06:22 - 0:06:30, Vậy chúng ta đã ôn qua một số kiến thức về những kiến trúc phổ biến
+0:06:30 - 0:06:34, Cấu tạo chung của một cái mạng CNN
+0:06:34 - 0:06:38, Bây giờ chúng ta sẽ đến với một số kiến trúc mạng CNN phổ biến
+0:06:38 - 0:06:48, Rồi, trên đây là sơ đồ về kết quả, về độ lỗi khi nhận diện hình ảnh.
+0:06:48 - 0:06:51, Thì ở đây là càng thấp là càng tốt.
+0:06:51 - 0:06:55, Và ở đây sẽ là các cột mốc về mặt thời gian.
+0:06:55 - 0:07:00, Thì ở đây chúng ta sẽ nói đến đầu tiên, đó là tập dữ liệu ImageNet.
+0:07:00 - 0:07:04, Đây là một trong những tập dữ liệu vô cùng lớn.
+0:07:04 - 0:07:06, ImageNet là viết tắt của chữ là
+0:07:06 - 0:07:08, ImageNet là Large Scale Visual Recognition Challenge
+0:07:08 - 0:07:10, tức là ImageNet được sử dụng
+0:07:10 - 0:07:12, cho cuộc thi là Large Scale Visual
+0:07:12 - 0:07:14, Recognition Challenge
+0:07:14 - 0:07:16, và cái scale
+0:07:16 - 0:07:18, cái kích thước của tập ImageNet này
+0:07:18 - 0:07:20, nó rất là rất là lớn
+0:07:20 - 0:07:22, đó bao gồm là 14 triệu
+0:07:22 - 0:07:24, bao gồm 14 triệu ảnh
+0:07:24 - 0:07:26, và tổng số lớp mà nó phải nhận diện
+0:07:26 - 0:07:28, đó là 20.000 lớp
+0:07:28 - 0:07:30, 20.000 lớp
+0:07:30 - 0:07:32, và cái cuộc thi này
+0:07:32 - 0:07:36, được tổ chức hàng năm từ năm 2010 trở về sau
+0:07:36 - 0:07:42, và hai bài toán chính mà nó thực hiện đó chính là bài toán phân lớp, phân loại và bài toán phát hiện đối tượng
+0:07:42 - 0:07:47, thì ở đây chúng ta sẽ cùng điểm qua một số cái cột mốc của mạng CNN
+0:07:47 - 0:07:51, đầu tiên đó là cái cột mốc vào những năm 1990
+0:07:51 - 0:07:54, tức là mạng CNN không phải có trong những năm 2010 trở lại đây
+0:07:54 - 0:07:57, mạng CNN nó có từ những năm 1990
+0:07:57 - 0:08:00, tức là khoảng gần 30 năm rồi
+0:08:00 - 0:08:06, Và với những phiên bản đời đầu thì cho độ chính xác cũng chưa có được đủ tốt
+0:08:06 - 0:08:12, Mà cho đến khi năm 2012, với một số những cải tiến của AlexNet
+0:08:12 - 0:08:18, thì chúng ta sẽ thấy ra là có một sự bùng nổ của mạng học sâu
+0:08:18 - 0:08:26, Sau đây chúng ta sẽ lần lượt tìm hiểu qua một số kiến trúc mạng phổ biến, nổi tiếng
+0:08:26 - 0:08:32, Đầu tiên chúng ta cũng không nên quên nhắc lại về kiến trúc mạng LeNet
+0:08:32 - 0:08:39, Kiến trúc mạng LeNet thì một trong những phát kiến lớn nhất của nó chính là lớp tích chập
+0:08:39 - 0:08:48, tức là phép biến đổi convolution và lớp convolution là sự cải tiến của phép biến đổi fully connected
+0:08:48 - 0:08:53, Tức là cái phép kết nối đầy đủ
+0:08:53 - 0:08:58, Mạng LeNet thì nó sẽ cải tiến, nó không sử dụng cái Fully Connected nữa
+0:08:58 - 0:09:03, Mà nó sẽ sử dụng cái cơ chế đó là Locally Connected
+0:09:03 - 0:09:10, Và đồng thời là nó sẽ chia sẻ trọng số
+0:09:10 - 0:09:13, Nó sẽ chia sẻ trọng số
+0:09:13 - 0:09:25, Để chi, mục tiêu của nó đó chính là để làm giảm số lượng tham số của phép biến đổi của mình
+0:09:25 - 0:09:32, Và khi giảm số lượng tham số thì nó sẽ dẫn đến giúp chúng ta giảm được hiện tượng Overfitting
+0:09:32 - 0:09:37, Hiện tượng Overfitting có nghĩa là gì?
+0:09:37 - 0:09:46, Khi mô hình huấn luyện trên tập dữ liệu train, độ chính xác rất cao hoặc độ lỗi rất thấp
+0:09:46 - 0:09:53, nhưng khi chúng ta áp dụng trong thực tế, trên tập dữ liệu test, độ chính xác giảm rất đáng kể
+0:09:53 - 0:09:55, Đó là hiện tượng Overfitting
+0:09:55 - 0:10:07, Một trong những điểm nhấn khác của mạng CNN đó chính là lớp pooling, sử dụng average pooling
+0:10:07 - 0:10:15, Nhiệm vụ của average pooling này, như hồi nãy chúng ta có đề cập, đó là để giảm kích thước feature map của mình
+0:10:15 - 0:10:23, Ví dụ input feature map của mình là như thế này, sau khi thực hiện phép pooling, nó sẽ giảm xuống, còn khoảng một nửa
+0:10:23 - 0:10:28, Và lưu ý là giảm 1 nửa cho kích thước theo bề ngang và bề cao
+0:10:28 - 0:10:34, nhưng tổng số lượng các phần tử trong tensor này sẽ giảm 4 lần
+0:10:34 - 0:10:37, tại vì bề ngang mà giảm 2 lần, bề cao mà giảm 2 lần
+0:10:37 - 0:10:41, thì lúc đó là nhân lên, chúng ta sẽ ra là giảm đến 4 lần
+0:10:41 - 0:10:46, Và khi phép pooling này thực hiện cho đến bước cuối cùng
+0:10:46 - 0:10:58, Thực hiện cho đến bước cuối cùng, chúng ta sẽ có bước gọi là flatten để đưa vào mạng fully-connected ở phía sau
+0:10:58 - 0:11:04, Rõ ràng là khi kích thước của mình giảm xuống, khi kích thước của tensor, feature map giảm xuống
+0:11:04 - 0:11:11, thì khi chúng ta flatten ra, kích thước của vector này cũng sẽ giảm xuống
+0:11:11 - 0:11:25, Nếu màu đỏ tạo ra cái vector này, thì khi chúng ta dùng pooling, thì feature map sẽ giảm xuống một phần tư.
+0:11:25 - 0:11:34, Và khi giảm xuống một phần tư, thì các bạn sẽ thấy phép kết nối đầy đủ này, số lượng trọng số cũng sẽ giảm đi.
+0:11:34 - 0:11:42, Phép Pooling này sẽ có thêm một công dụng ngoài giảm kích thước của tensor,
+0:11:42 - 0:11:49, nó sẽ còn giảm số lượng tham số ở bước fully connected phía sau.
+0:11:49 - 0:11:52, Và đồng thời, việc này sẽ có hai công dụng.
+0:11:52 - 0:11:56, Công dụng đầu tiên là giảm hiện tượng overfitting.
+0:11:56 - 0:12:06, Công dụng thứ 2 là tăng tốc độ của quá trình và tính toán của mình lên.
+0:12:06 - 0:12:09, Rồi, nó sẽ có một cái thành phần nữa đó là Activation.
+0:12:09 - 0:12:14, Chúng ta trong phiên bản LeNet đời đầu vào những năm 1998,
+0:12:14 - 0:12:18, chúng ta sử dụng những hàm Activation kinh điển, đó là sigmoid và hàm tanh.
+0:12:18 - 0:12:24, Và đây là hình vẽ cho kiến trúc của LeNet thời điểm đó.
+0:12:24 - 0:12:28, Lưu ý là thời điểm đó người ta dùng từ khóa là Subsampling
+0:12:28 - 0:12:30, chúng ta hiểu đó chính là Pooling
+0:12:30 - 0:12:32, Đây chính là phép Pooling của mình

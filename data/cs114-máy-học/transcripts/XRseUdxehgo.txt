@@ -1,0 +1,215 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với câu hỏi tiếp
+0:00:15 - 0:00:20, theo đó là mô hình của mình sẽ như thế
+0:00:18 - 0:00:22, nào khi mà cái dữ liệu của mình nó bị
+0:00:20 - 0:00:25, mất cân bằng. Thế thì trong thực tế
+0:00:22 - 0:00:26, chúng ta thấy rằng là cái dữ liệu của
+0:00:25 - 0:00:29, mình không phải lúc nào nó cũng đồng đều
+0:00:26 - 0:00:32, nhau và nó rất dễ xảy ra cái hiện tượng
+0:00:29 - 0:00:34, nó gọi là bị mất cân bằng. Thì nếu như
+0:00:32 - 0:00:37, chúng ta vẽ dưới dạng là một cái sơ đồ
+0:00:34 - 0:00:41, như thế này, trong đó trục ngang chính
+0:00:37 - 0:00:41, là các cái class của mình
+0:00:42 - 0:00:48, à các cái class. Còn trục đứng sẽ là cái
+0:00:45 - 0:00:48, số mẫu.
+0:00:50 - 0:00:54, Thì với những cái nếu mà chúng ta sắp
+0:00:52 - 0:00:57, theo thứ tự giảm dần thì những cái class
+0:00:54 - 0:01:00, đầu tiên là những cái cột rất là lớn.
+0:00:57 - 0:01:02, đó nhưng mà càng về sau thì chúng ta
+0:01:00 - 0:01:05, thấy là
+0:01:02 - 0:01:07, cái cột của mình nó càng lúc càng giảm.
+0:01:05 - 0:01:09, Đó thì ở đây nó đã có cái sự mất cân
+0:01:07 - 0:01:11, bằng
+0:01:09 - 0:01:13, giữa những cái mẫu dữ liệu top đầu và
+0:01:11 - 0:01:17, những cái mẫu dữ liệu top dưới. Chúng ta
+0:01:13 - 0:01:19, thấy có cái sự phân biệt rất là có một
+0:01:17 - 0:01:22, cái sự lệch rất là lớn, rất là sai khác
+0:01:19 - 0:01:23, về số mẫu. Vậy thì khi chúng ta huấn
+0:01:22 - 0:01:26, luyện với những cái dữ liệu mà bị mất
+0:01:23 - 0:01:27, cân bằng như thế này thì điều gì sẽ xảy
+0:01:26 - 0:01:29, ra?
+0:01:27 - 0:01:32, Thì ở đây là một cái hình ảnh để minh
+0:01:29 - 0:01:35, họa trực quan cái mô hình của mình khi
+0:01:32 - 0:01:37, mà huấn luyện trên cái dữ liệu bị mất
+0:01:35 - 0:01:39, cân bằng. Và ở đây chúng ta chỉ xét hai
+0:01:37 - 0:01:42, mẫu à hai lớp đối tượng để cho dễ hình
+0:01:39 - 0:01:47, dung. Đầu tiên đó là các điểm màu xanh
+0:01:42 - 0:01:47, tức là những cái mẫu dữ liệu mà đa số.
+0:01:47 - 0:01:54, Còn những cái mẫu dữ liệu màu cam đó là
+0:01:51 - 0:01:54, thiểu số.
+0:01:55 - 0:02:00, Rồi. Thế thì chúng ta sẽ thấy là ở bình
+0:01:58 - 0:02:02, thường chúng ta có cái cuộc thi giống
+0:02:00 - 0:02:04, như là cuộc thi kéo co thì nó sẽ kéo về
+0:02:02 - 0:02:06, bên nào thì bên nó thắng. Nhưng ở đây
+0:02:04 - 0:02:10, chúng ta sẽ ngược lại nó không phải là
+0:02:06 - 0:02:12, kéo co mà là đẩy co. Thì bên nào đẩy bên
+0:02:10 - 0:02:14, nào mà đẩy về phía đối phương thì bên đó
+0:02:12 - 0:02:18, sẽ là chiến thắng. Thế thì ở đây chúng
+0:02:14 - 0:02:21, ta thấy cái tập đa số này á là số lượng
+0:02:18 - 0:02:24, nhiều hơn nên nó sẽ đẩy mạnh hơn dẫn đến
+0:02:21 - 0:02:29, là xu hướng là nó sẽ đẩy cái đường phân
+0:02:24 - 0:02:31, lớp về cái phía thiểu số. Đó. Và khi đó
+0:02:29 - 0:02:33, thì những cái điểm ở phía ngược lại,
+0:02:31 - 0:02:36, những cái điểm thiểu số thì do cái lực
+0:02:33 - 0:02:38, đẩy nó không đủ mạnh đó nên cái đường
+0:02:36 - 0:02:43, của mình nó sẽ tiến về sát với lại cái
+0:02:38 - 0:02:45, biên của các cái điểm thiểu số.
+0:02:43 - 0:02:47, Vậy thì câu hỏi đó là tại sao nó lại có
+0:02:45 - 0:02:49, cái vấn đề này? thì chúng ta sẽ giải
+0:02:47 - 0:02:52, thích bằng cái công thức của cái hàm
+0:02:49 - 0:02:55, loss.
+0:02:52 - 0:02:57, Trong công thức của binary cross entropy
+0:02:55 - 0:03:02, thì chúng ta thấy nó sẽ chia ra làm hai
+0:02:57 - 0:03:07, phần và phần đầu tiên tương ứng là cho
+0:03:02 - 0:03:10, cái trường hợp là y là bằng 1.
+0:03:07 - 0:03:12, À tức là nếu nhãn dữ liệu của mình á mà
+0:03:10 - 0:03:15, bằng 1 thì chúng ta sẽ có cái công thức
+0:03:12 - 0:03:18, này. Tại vì sao? Tại vì với y mà bằng 1
+0:03:15 - 0:03:21, á thì cái 1 - y của mình nó bằng 0. Đó,
+0:03:18 - 0:03:22, 1 - y nó sẽ là bằng 0 thì 0 nhân với bao
+0:03:21 - 0:03:26, nhiêu thì cũng bằng 0. Do đó cái thành
+0:03:22 - 0:03:28, phần này nó sẽ không có tác dụng à trong
+0:03:26 - 0:03:32, cái hàm loss.
+0:03:28 - 0:03:33, Thì giả sử như bây giờ chúng ta
+0:03:32 - 0:03:36, bây giờ chúng ta sẽ giả sử như là cái
+0:03:33 - 0:03:40, nhãn của cái tập màu xanh này tương ứng
+0:03:36 - 0:03:43, là y bằng 1 và nhãn cho những cái điểm
+0:03:40 - 0:03:45, màu cam tương ứng sẽ là y = 0. Và chúng
+0:03:43 - 0:03:50, ta hoàn toàn có thể lập luận một cách
+0:03:45 - 0:03:51, tương tự như vậy. À thì nếu y = 1 và y
+0:03:50 - 0:03:55, bằng
+0:03:51 - 0:03:57, 0 thì những cái thành phần mà ở vế bên
+0:03:55 - 0:03:59, tay trái khi chúng ta tính tổng các cái
+0:03:57 - 0:04:09, sai số lại ha công thức của chúng ta đó
+0:03:59 - 0:04:12, là tổng của các cái l ờ i p à li pi
+0:04:09 - 0:04:14, với y chạy từ 1 cho đến tổng số mẫu dữ
+0:04:12 - 0:04:15, liệu của mình.
+0:04:14 - 0:04:18, Ví dụ trong toàn bộ cái tập dữ liệu
+0:04:15 - 0:04:21, chúng ta có 100 mẫu đi thì nây sẽ là
+0:04:18 - 0:04:24, 100. Thế thì ờ công thức này như chúng
+0:04:21 - 0:04:26, ta đã nói đã tách ra làm hai phần đó. Nó
+0:04:24 - 0:04:28, sẽ tách ra làm hai phần. Thì những cái
+0:04:26 - 0:04:31, phần nào mà liên quan đến cái nhãn y = 1
+0:04:28 - 0:04:34, á thì nó sẽ cộng dồn lại hết. những cái
+0:04:31 - 0:04:38, phần nào mà liên quan đến cái y = 0 á,
+0:04:34 - 0:04:40, đây là y = 0, đây là y = 1. Đó thì thành
+0:04:38 - 0:04:43, phần nào liên quan đến cái y = 0 thì nó
+0:04:40 - 0:04:46, sẽ là lấy vé bên tay phải. Tại vì với y
+0:04:43 - 0:04:48, = 0 chúng ta thế vô đây thì bên tay trái
+0:04:46 - 0:04:50, là 0 nhân với bao nhiêu cũng bằng 0. Đó.
+0:04:48 - 0:04:51, Do đó thì nó sẽ bỏ đi cái thành phần này
+0:04:50 - 0:04:54, bên tay trái đi, chỉ chừa thành phần bên
+0:04:51 - 0:04:56, tay phải thôi. Đó thì cái ý nghĩa của
+0:04:54 - 0:04:58, cái công thức binary cross entropy đó là
+0:04:56 - 0:05:01, chia ra cho hai tình huống. một tình
+0:04:58 - 0:05:03, huống là với nhãn y = 1 tức là bên đây
+0:05:01 - 0:05:05, và một tình huống cho cái nhãn là với
+0:05:03 - 0:05:08, bên tay trái. Thế thì với cái tổng này
+0:05:05 - 0:05:11, thì chúng ta thấy là à giả sử như cái
+0:05:08 - 0:05:13, lụp tập hợp các cái điểm màu xanh nó có
+0:05:11 - 0:05:15, chứa đa số thì khi đó chúng ta tách nó
+0:05:13 - 0:05:18, ra
+0:05:15 - 0:05:23, à cái công thức ở trên đó là sẽ là bằng
+0:05:18 - 0:05:26, trừ của tổng của y
+0:05:23 - 0:05:29, log pi
+0:05:26 - 0:05:31, cho những cái tập màu xanh tính tổng
+0:05:29 - 0:05:36, trên những cái tập màu xanh. Đó. Rồi
+0:05:31 - 0:05:43, thành phần thứ hai nó sẽ là tổng của 1 -
+0:05:36 - 0:05:43, y nhân với lại log của 1 - p
+0:05:46 - 0:05:53, với những cái điểm màu cam.
+0:05:51 - 0:05:55, Vậy thì cái lực lượng màu xanh rõ ràng
+0:05:53 - 0:05:58, là nó sẽ lấn lướt cái lực lượng màu cam.
+0:05:55 - 0:06:01, Do đó cái khi chúng ta huấn luyện một
+0:05:58 - 0:06:04, cái mô hình máy học để mà cực tiểu hóa
+0:06:01 - 0:06:09, cái giá trị hàm lỗi này thì nó sẽ ưu
+0:06:04 - 0:06:12, tiên nó sẽ ưu tiên để mà làm giảm cái
+0:06:09 - 0:06:15, giá trị của cái y này. Thì rõ ràng chúng
+0:06:12 - 0:06:19, ta thấy là hai cái đường xin lỗi cái hai
+0:06:15 - 0:06:22, cái tập điểm màu xanh và màu cam nó sẽ
+0:06:19 - 0:06:24, mâu thuẫn với nhau về mặt mục tiêu. À nó
+0:06:22 - 0:06:29, sẽ mâu thuẫn với nhau về mặt mục tiêu.
+0:06:24 - 0:06:31, Nếu như cái đường này á mà tiến về cái
+0:06:29 - 0:06:34, phía màu cam thì chắc chắn cái giá trị
+0:06:31 - 0:06:37, lỗi của cái tập điểm màu cam này nó sẽ
+0:06:34 - 0:06:37, lớn.
+0:06:37 - 0:06:44, Nếu cái đường này nó tiến về màu cam thì
+0:06:40 - 0:06:47, giá trị lỗi của ờ
+0:06:44 - 0:06:49, giá trị lỗi do cái đường này tạo ra đối
+0:06:47 - 0:06:53, với cái à các cái điểm màu cam nó sẽ là
+0:06:49 - 0:06:57, lớn. Và ngược lại cái giá trị lỗi do cái
+0:06:53 - 0:07:01, đường này tạo ra đối với cái ờ
+0:06:57 - 0:07:04, đối với cái phần màu xanh nó sẽ nhỏ đi.
+0:07:01 - 0:07:06, Đó. Thì tại sao lại như vậy? Tại vì cái
+0:07:04 - 0:07:08, lực lượng của màu xanh nó nhiều hơn lực
+0:07:06 - 0:07:10, lượng màu cam. Do đó nó sẽ ưu tiên cho
+0:07:08 - 0:07:12, cái tại vì chúng ta đang cực tiểu hóa
+0:07:10 - 0:07:15, cái giá trị hàm lỗi. Chúng ta muốn làm
+0:07:12 - 0:07:18, cho cái size số tổng thể là giảm xuống.
+0:07:15 - 0:07:20, Thì bây giờ bên nào mà nó đông hơn thì
+0:07:18 - 0:07:22, mình giảm bên đó thì nó sẽ có lợi hơn.
+0:07:20 - 0:07:25, Chứ còn nếu mà ví dụ như bên màu cam ít
+0:07:22 - 0:07:27, hơn mà mình cứ chăm chăm làm giảm cái độ
+0:07:25 - 0:07:30, lỗi cho những cái điểm màu cam thì bù
+0:07:27 - 0:07:33, lại là các cái điểm màu xanh nó sẽ lớn
+0:07:30 - 0:07:35, thì tổng thể là cái lỗi của mình nó sẽ
+0:07:33 - 0:07:39, lớn. Do đó thì xét về mặt trọng số bình
+0:07:35 - 0:07:42, quân thì cái mô hình của mình là
+0:07:39 - 0:07:44, ưu tiên cho những cái tập nào mà ờ ưu
+0:07:42 - 0:07:47, tiên để mà làm giảm cái lỗi cho những
+0:07:44 - 0:07:51, cái tập nào mà có lực lượng lớn hơn. Đó.
+0:07:47 - 0:07:53, Thế thì ở đây tại sao cái công thức này
+0:07:51 - 0:07:55, khi mà cái đường thẳng này nó tiến về
+0:07:53 - 0:07:58, sát càng sát cái tầm điểm màu cam thì
+0:07:55 - 0:08:00, cái lỗi của mình nó lớn. Đó là vì chúng
+0:07:58 - 0:08:02, ta có cái công thức của cái hàm sig của
+0:08:00 - 0:08:06, wx
+0:08:02 - 0:08:06, cộng b.
+0:08:06 - 0:08:12, Thì sigmo là một cái hàm mà nó có giải
+0:08:09 - 0:08:12, giá trị là
+0:08:13 - 0:08:17, từ 0 cho đến 1.
+0:08:17 - 0:08:24, Từ 0 cho đến 1. Thì khi mà cái đường
+0:08:21 - 0:08:26, thẳng này mà càng tiến về cái đường phân
+0:08:24 - 0:08:28, lớp này á mà khi càng tiến về các điểm
+0:08:26 - 0:08:30, màu cam thì như chúng ta đã
+0:08:28 - 0:08:32, trả lời trong cái câu hỏi thảo luận
+0:08:30 - 0:08:35, trước. Ý nghĩa hình học của nó đó chính
+0:08:32 - 0:08:37, là cái khoảng cách
+0:08:35 - 0:08:41, ý nghĩa hình học của cái này đó chính là
+0:08:37 - 0:08:43, cái cái phương trình của
+0:08:41 - 0:08:45, là cái tham số của cái phương trình của
+0:08:43 - 0:08:47, cái đường phân lớp. Và cái giá trị khi
+0:08:45 - 0:08:50, chúng ta thế vào wx + b á, chúng ta lấy
+0:08:47 - 0:08:55, một cái giá trị ở đây, lấy một cái cặp
+0:08:50 - 0:08:58, x1 và x2 ở đây á chúng ta thế vào, chúng
+0:08:55 - 0:09:00, ta thế vào cái wx + b á thì nó sẽ ra là
+0:08:58 - 0:09:04, cái khoảng cách.
+0:09:00 - 0:09:06, Đó, thì khi đường thẳng phân lớp này
+0:09:04 - 0:09:08, càng tiến về cái điểm màu cam, tức là
+0:09:06 - 0:09:10, khoảng cách càng nhỏ hay nói cách khác
+0:09:08 - 0:09:14, là càng tiến về 0.
+0:09:10 - 0:09:15, Cái này càng tiến về 0 thì cái sig của 0
+0:09:14 - 0:09:19, thì chúng ta thấy là tại vị trí 0 nè,
+0:09:15 - 0:09:22, tại vị trí 0 ở đây thì nó sẽ là bằng 0.5
+0:09:19 - 0:09:25, tức là cái size số lớn. Đó là một cái
+0:09:22 - 0:09:27, size số lớn. Ngược lại đối với những cái
+0:09:25 - 0:09:30, điểm màu xanh thì chúng ta thấy cái
+0:09:27 - 0:09:32, khoảng cách của mình là lớn. thì khoảng
+0:09:30 - 0:09:34, cách của mình càng lớn, tức là nó sẽ
+0:09:32 - 0:09:36, càng tiến về tiến về phía bên đây. Đó
+0:09:34 - 0:09:38, thì giả sử như cái khoảng cách của mình
+0:09:36 - 0:09:40, là một cái con số nà nó nằm ở đây đi.
+0:09:38 - 0:09:43, Thì khi chúng ta thế vào thì sig của
+0:09:40 - 0:09:46, mình nó sẽ là bằng 1. À sigmo của mình
+0:09:43 - 0:09:48, nó sẽ là bằng 1.
+0:09:46 - 0:09:51, Còn ở khí cạnh ngược lại thì cái sigmo
+0:09:48 - 0:09:54, của
+0:09:51 - 0:09:57, của mình nó sẽ là càng tiến về sig của
+0:09:54 - 0:10:00, 0. Tức là giá trị của nó sẽ là 0.5. Còn
+0:09:57 - 0:10:03, ở đây sẽ là bằng 1.
+0:10:00 - 0:10:05, Rồi thì rõ ràng là giống như là cái cuộc
+0:10:03 - 0:10:09, thi kéo co thì bên nào chiếm cái số
+0:10:05 - 0:10:12, lượng lớn hơn thì nó sẽ ưu tiên ưu tiên
+0:10:09 - 0:10:14, hơn. Thì đó chính là cái ý nghĩa của cái
+0:10:12 - 0:10:17, việc và khi chúng ta huấn luyện trên cái
+0:10:14 - 0:10:29, dữ liệu bị mất cân bằng.
+0:10:17 - 0:10:29, [âm nhạc]

@@ -1,0 +1,51 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:20, Để giải thích cho vấn đề này thì chúng
+0:00:15 - 0:00:22, ta sẽ vẽ cái sơ đồ như sau. Nếu như hai
+0:00:20 - 0:00:27, cái giá trị y và p này á mà khớp với
+0:00:22 - 0:00:29, nhau tức là y = phi
+0:00:27 - 0:00:30, đó chúng ta thế vào cái hàm loss này sai
+0:00:29 - 0:00:33, số của mình lúc này nó không còn bằng 1
+0:00:30 - 0:00:35, nữa mà nó bằng 0.
+0:00:33 - 0:00:40, Tương tự như vậy, khi chúng ta thế y mà
+0:00:35 - 0:00:43, bằng p vào trên, ví dụ như là y = 0 và p
+0:00:40 - 0:00:46, cũng bằng 0 thì khi chúng ta thế vào cái
+0:00:43 - 0:00:50, lỗi này, hàm lỗi binary cross entropy nó
+0:00:46 - 0:00:54, cũng sẽ là bằng 0 luôn. Như vậy thì
+0:00:50 - 0:00:58, chúng ta sẽ vẽ một cái biểu đồ đó là
+0:00:54 - 0:00:58, giữa hai cái hàm
+0:01:00 - 0:01:07, mà cùng có cái giá trị nhỏ nhất à cùng
+0:01:04 - 0:01:07, có cái giá trị nhỏ nhất
+0:01:08 - 0:01:16, tại cái vị trí này đây là thêta sao?
+0:01:12 - 0:01:20, Thì câu hỏi đó là ờ hàm nào sẽ là hàm
+0:01:16 - 0:01:23, tốt hơn? Thì chúng ta nhìn vô đây một
+0:01:20 - 0:01:24, là hàm có cái độ dốc lớn. Hay đó khác là
+0:01:23 - 0:01:27, khi chúng ta mới thay đổi những cái giá
+0:01:24 - 0:01:30, trị mà nó bị sai số, bị lệch với nhau
+0:01:27 - 0:01:33, thì cái loss của mình nó sẽ tiến lên
+0:01:30 - 0:01:36, thành một cái con số rất là lớn. Thì đây
+0:01:33 - 0:01:38, là cái độ dốc nó lớn nè. Và hàm thứ hai
+0:01:36 - 0:01:42, độ dốc sẽ thoay thoải hơn.
+0:01:38 - 0:01:47, Thì à dựa trên cái lý thuyết về đạo hàm,
+0:01:42 - 0:01:50, chúng ta biết rằng là cái đường số 1 nó
+0:01:47 - 0:01:52, sẽ cho cái độ dốc cao, tức là cái đạo
+0:01:50 - 0:01:56, hàm của mình nó lớn.
+0:01:52 - 0:01:56, Tức là đạo hàm của mình nó lớn.
+0:01:58 - 0:02:04, Đạo hàm của chi theo theta và đạo hàm
+0:02:00 - 0:02:07, của chi theo bều là những cái con số
+0:02:04 - 0:02:09, lớn. Và khi chúng ta tính ra được những
+0:02:07 - 0:02:12, cái đạo hàm này lớn á thì cái quá trình
+0:02:09 - 0:02:15, cập nhật của chúng ta là theta là bằng
+0:02:12 - 0:02:17, theta trừ cho alpha nhân cho đạo hàm
+0:02:15 - 0:02:20, này. Thì nếu như cái giá trị đạo hàm này
+0:02:17 - 0:02:22, mà lớn
+0:02:20 - 0:02:25, thì rõ ràng là cái bước nhảy này nó sẽ
+0:02:22 - 0:02:27, lớn và nó sẽ dễ dàng giúp cho chúng ta
+0:02:25 - 0:02:30, huấn luyện nhanh hơn và dễ thoát ra khỏi
+0:02:27 - 0:02:33, điểm cực tiểu cục bộ dễ hơn. Thì thì đó
+0:02:30 - 0:02:36, là chính là
+0:02:33 - 0:02:39, ý do tại sao chúng ta chọn cái hàm số 1
+0:02:36 - 0:02:41, thay vì hàm số hai. Là vì với cái độ dốc
+0:02:39 - 0:02:44, cao thì sau này cái việc cập nhật tham
+0:02:41 - 0:02:48, số theta hoặc là b của mình nếu có thì
+0:02:44 - 0:02:48, nó sẽ nhanh hơn.
+0:02:48 - 0:03:00, [âm nhạc]

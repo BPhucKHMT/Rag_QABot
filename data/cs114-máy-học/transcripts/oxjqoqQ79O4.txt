@@ -1,0 +1,261 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:28 - 0:00:32, Chúng ta sẽ cùng tìm hiểu về bài Bài
+0:00:29 - 0:00:34, toán phân loại classification,
+0:00:32 - 0:00:37, một trong những phương pháp học có giám
+0:00:34 - 0:00:39, sát cơ bản nhất trong học máy.
+0:00:37 - 0:00:43, Ở đây nhiệm vụ của mô hình là dự đoán
+0:00:39 - 0:00:46, lớp, nhãn hoặc là loại của một đối tượng
+0:00:43 - 0:00:48, dựa trên dữ liệu đầu vào. Cụ thể, mô
+0:00:46 - 0:00:51, hình sẽ nhận vào một hoặc nhiều biến số
+0:00:48 - 0:00:55, độc lập hay còn gọi là các đặc trưng
+0:00:51 - 0:00:58, features, ví dụ như chiều cao, cân nặng,
+0:00:55 - 0:01:00, màu sắc, đặc trưng hình ảnh.
+0:00:58 - 0:01:02, Kết quả đầu ra là một biến phân loại rời
+0:01:00 - 0:01:05, rẹt,
+0:01:02 - 0:01:07, tức là một giá trị thuộc về nh một nhóm
+0:01:05 - 0:01:10, hoặc một nhãn xác định. Ví dụ, dự đoán
+0:01:07 - 0:01:12, loại hoa là cẩm chướng hồng hay cúc, dự
+0:01:10 - 0:01:15, đoán bệnh có hay không
+0:01:12 - 0:01:17, hoặc xác định email là spam hay không
+0:01:15 - 0:01:19, spam.
+0:01:17 - 0:01:20, Mục tiêu chính của bài toán phân loại là
+0:01:19 - 0:01:23, tìm ra một ranh giới quyết định hay còn
+0:01:20 - 0:01:26, gọi là decision boundary
+0:01:23 - 0:01:29, tối ưu trên không gian đặc trưng. Nhờ đó
+0:01:26 - 0:01:31, mà mô hình có thể gán nhãn chính xác cho
+0:01:29 - 0:01:34, các dữ liệu mới dựa vào các đặc trưng
+0:01:31 - 0:01:34, đầu vào.
+0:01:37 - 0:01:41, Hồi quy logistic là một trong những mô
+0:01:39 - 0:01:43, hình phân loại nhị phân phổ biến nhất và
+0:01:41 - 0:01:46, được ứng dụng rộng rãi trong nhiều lĩnh
+0:01:43 - 0:01:47, vực thực tiễn.
+0:01:46 - 0:01:50, Đối với lĩnh vực tài chính và kinh
+0:01:47 - 0:01:52, doanh, các ngân hàng và doanh nghiệp
+0:01:50 - 0:01:55, thường sử dụng hồi quy logistic để dự
+0:01:52 - 0:01:58, đoán khả năng khách hàng rời bỏ dịch vụ
+0:01:55 - 0:02:00, hay còn gọi là turn tradition. Ngoài ra,
+0:01:58 - 0:02:03, mô hình này còn được dùng để phát hiện
+0:02:00 - 0:02:06, các giao dịch thẻ tín dụng có dấu hiệu
+0:02:03 - 0:02:09, gian lận hay không hoặc phân loại hồ sơ
+0:02:06 - 0:02:11, vây vốn để xác định khách hàng có nguy
+0:02:09 - 0:02:15, cơ vỡ nợ hay không.
+0:02:11 - 0:02:18, Trong lĩnh vực y tế và sức khỏe, hồi quy
+0:02:15 - 0:02:20, logistic cũng đóng vai trò then chốt. Ví
+0:02:18 - 0:02:22, dụ, mô hình này giúp các bác sĩ chẩn
+0:02:20 - 0:02:24, đoán bệnh dựa trên kết quả xét nghiệm.
+0:02:22 - 0:02:28, Một bài toán phân loại điển hình bệnh
+0:02:24 - 0:02:30, nhân có mắc bệnh hay không. Logistic
+0:02:28 - 0:02:32, regression cũng còn được sử dụng để dự
+0:02:30 - 0:02:35, đoán nguy cơ tái nhập viện của bệnh nhân
+0:02:32 - 0:02:38, hoặc phân loại mẫu bệnh phẩm lành tính
+0:02:35 - 0:02:41, hay ác tính, hỗ trợ quá trình ra quyết
+0:02:38 - 0:02:43, định lâm sàn.
+0:02:41 - 0:02:46, Trong lĩnh vực công nghệ và đời sống,
+0:02:43 - 0:02:48, hồi quy logistic xuất hiện trong nhiều
+0:02:46 - 0:02:51, ứng dụng quen thuộc với chúng ta. Chẳng
+0:02:48 - 0:02:54, hạn các hệ thống email sử dụng hồi quy
+0:02:51 - 0:02:57, logistic để phân loại thư rác hay phân
+0:02:54 - 0:02:59, tích cảm xúc văn văn bản, ví dụ như phân
+0:02:57 - 0:03:01, loại một bình luận là tích cực hay tiêu
+0:02:59 - 0:03:04, cực. Như vậy thì dù ở bất kỳ lĩnh vực
+0:03:01 - 0:03:06, nào hồi quy logistic đều phát huy vai
+0:03:04 - 0:03:09, trò quan trọng trong việc giải quyết các
+0:03:06 - 0:03:09, bài toán phân loại.
+0:03:13 - 0:03:17, Vì sao phân loại? Bài toán phân loại lại
+0:03:15 - 0:03:20, quan trọng bởi vì nó là phổ biến và thực
+0:03:17 - 0:03:23, tế. Bài toán phân loại xuất hiện ở hầu
+0:03:20 - 0:03:24, hết các lĩnh vực tài chính, y tế, thương
+0:03:23 - 0:03:26, mại, điện tử, truyền thông xã hội vân
+0:03:24 - 0:03:28, vân. Nhiều quyết định quan trọng như cho
+0:03:26 - 0:03:30, vay, chận đoán bệnh, sàn lọc hồ sơ, phát
+0:03:28 - 0:03:35, hiện gian lận đều là các vạch toán phân
+0:03:30 - 0:03:37, loại. Dễ hiểu và dễ triển khai.
+0:03:35 - 0:03:39, Hồi quy logistic là mô hình phân loại
+0:03:37 - 0:03:41, nhị phân đơn giản nhưng hiệu quả và dễ
+0:03:39 - 0:03:43, triển khai. Được sử dụng rộng rãi như
+0:03:41 - 0:03:46, một bas slide trước khi thử các thuật
+0:03:43 - 0:03:48, toán phức tạp hơn. Khả năng diễn giải, ý
+0:03:46 - 0:03:50, nghĩa của từng hệ số.
+0:03:48 - 0:03:52, Trọng số trong mô hình cho phép giải
+0:03:50 - 0:03:55, thích tác động của các đặc trưng đầu vào
+0:03:52 - 0:03:56, đến kết quả phân loại phù hợp cho các
+0:03:55 - 0:03:59, ứng dụng cần minh bạch và giải thích
+0:03:56 - 0:04:03, được. Ví dụ như y tế và tài chính. Khả
+0:03:59 - 0:04:05, năng mở rộng và ứng dụng.
+0:04:03 - 0:04:07, Hồi quy logistic là nền tảng cho các mô
+0:04:05 - 0:04:10, hình nâng cao như regulariz logistic
+0:04:07 - 0:04:11, regression, multicass classification,
+0:04:10 - 0:04:16, submart regression, bài toán phân loại
+0:04:11 - 0:04:18, đa lớp và nhiều mô hình sâu hơn.
+0:04:16 - 0:04:22, Chúng ta hãy cùng tìm hiểu cái mô hình
+0:04:18 - 0:04:24, toán học của hồi quy logistic.
+0:04:22 - 0:04:27, Trong ờ
+0:04:24 - 0:04:29, ví dụ này thì chúng ta sử dụng hồi quy
+0:04:27 - 0:04:31, logistic để dự đoán nguy cơ một bệnh
+0:04:29 - 0:04:33, nhân
+0:04:31 - 0:04:35, sẽ tái nhập viện dựa trên số ngày nằm
+0:04:33 - 0:04:38, viện ở lần nhập viện trước đó. Cũng
+0:04:35 - 0:04:41, chúng ta có công thức như sau.
+0:04:38 - 0:04:43, Thì ở đây chúng ta sẽ thấy là X là biến
+0:04:41 - 0:04:46, đầu vào hay là đặc trưng độc lập. Biến
+0:04:43 - 0:04:51, này sử dụng để dự đoán. Ví dụ như dự
+0:04:46 - 0:04:54, đoán số ngày nằm viện ở lần à
+0:04:51 - 0:04:55, nhập viện gần nhất của bệnh nhân. Y ở
+0:04:54 - 0:04:58, đây là biến mục tiêu hay là biến phụ
+0:04:55 - 0:05:01, thuộc là kết quả cần phân loại. Ví dụ
+0:04:58 - 0:05:05, như y = 1 thì bệnh nhân sẽ tái nhập viện
+0:05:01 - 0:05:09, trong 30 ngày tới và y = 0 là
+0:05:05 - 0:05:09, không tái nhập viện.
+0:05:14 - 0:05:18, Tiếp theo thì chúng ta có hai tham số
+0:05:16 - 0:05:21, quan trọng của mô hình. Thứ nhất là W
+0:05:18 - 0:05:23, tức là trọng số hay là weight. Tham số
+0:05:21 - 0:05:25, này cho biết mức độ ảnh hưởng của số
+0:05:23 - 0:05:29, ngày nằm viện x đến xác suất tái nhập
+0:05:25 - 0:05:32, viện. Nếu W lớn hơn 0 thì mỗi ngày nằm
+0:05:29 - 0:05:34, viện sẽ tăng thêm, sẽ làm tăng xác suất
+0:05:32 - 0:05:36, bệnh nhân tái nhập viện. Điều này phản
+0:05:34 - 0:05:39, ánh thực tế là những bệnh vân nhân phải
+0:05:36 - 0:05:41, nằm viện lâu thường có tình trạng bệnh
+0:05:39 - 0:05:43, nặng hoặc hồi phục kém nên họ có nguy cơ
+0:05:41 - 0:05:46, tá nhập viện cao hơn. Nếu mà W nhỏ hơn 0
+0:05:43 - 0:05:49, thì mỗi ngày nằm viện tăng thêm thì sẽ
+0:05:46 - 0:05:52, làm giảm xác suất tá nhập viện.
+0:05:49 - 0:05:55, Nếu W = 0 thì số ngày nằm viện không ảnh
+0:05:52 - 0:05:57, hưởng đến xác suất tá nhập viện. Ví dụ
+0:05:55 - 0:06:00, như W mà bằng 0.15 thì mỗi ngày nằm viện
+0:05:57 - 0:06:03, tăng lên sẽ làm tăng xác suất tái nhập
+0:06:00 - 0:06:06, viện. Hệ số thứ
+0:06:03 - 0:06:10, hai đó là hệ số chặn B. Đây là xác giá
+0:06:06 - 0:06:13, trị xác suất cơ bản khi số ngày nằm việt
+0:06:10 - 0:06:15, bằng 0 giúp mô hình phù hợp hơn với dữ
+0:06:13 - 0:06:17, liệu thực tế. Hệ số chặn này điều chỉnh
+0:06:15 - 0:06:19, mô hình để phản ánh tốt hơn xu hướng của
+0:06:17 - 0:06:22, dữ liệu, tránh dự đoán xác suất phi thực
+0:06:19 - 0:06:22, tế.
+0:06:25 - 0:06:32, Thứ ba đó là hàm shit mode được dùng
+0:06:29 - 0:06:35, chuyển đổi tổng w x + b thành giá trị
+0:06:32 - 0:06:37, xác suất nằm trong khoảng 01.
+0:06:35 - 0:06:40, Đây là điểm khác biệt then chốt của hội
+0:06:37 - 0:06:42, quy logistic so với hội quy tiến tính.
+0:06:40 - 0:06:46, Đây cách sử dụng mô hình thì sau khi
+0:06:42 - 0:06:49, chúng ta tính được xác suất P
+0:06:46 - 0:06:52, ta sẽ đặt một ngưỡng thường là 0.5. Nếu
+0:06:49 - 0:06:54, xác suất lớn hơn hoặc bằng 0.5 5 dự đoán
+0:06:52 - 0:06:57, bệnh nhân sẽ tái nhập viện. Ngược lại,
+0:06:54 - 0:07:01, nếu xác suất nhỏ hơn 0.5 thì dự đoán
+0:06:57 - 0:07:01, bệnh nhân sẽ không tái nhập viện.
+0:07:02 - 0:07:08, Chúng ta sẽ định nghĩa hàm mất mát lot
+0:07:05 - 0:07:10, function theo như cái thuật toán mà
+0:07:08 - 0:07:14, chúng ta giải trong các cái bài toán máy
+0:07:10 - 0:07:15, học. Thì hàm mất mát ở đây dùng để đo
+0:07:14 - 0:07:19, lường sự khác biệt giữa xác suất dự đoán
+0:07:15 - 0:07:21, phê và nhãn thực tế Y của từng mẫu. Mục
+0:07:19 - 0:07:24, tiêu của mô hình là làm cho sự khác biệt
+0:07:21 - 0:07:26, này càng nhỏ càng tốt.
+0:07:24 - 0:07:28, Khi có sự khác biệt nhỏ có nghĩa là xác
+0:07:26 - 0:07:31, suất mô hình dự đoán ra rất gần với kết
+0:07:28 - 0:07:34, quả thực tế. chứng tỏ mô hình hoạt động
+0:07:31 - 0:07:37, tốt. Để đo lường sự khác biệt này, hồi
+0:07:34 - 0:07:39, quy logistic sử dụng hàm binary cross
+0:07:37 - 0:07:42, entropies
+0:07:39 - 0:07:44, à hay còn gọi là log loss thì chúng ta
+0:07:42 - 0:07:48, sẽ thấy cái công thức như trong hình vẽ.
+0:07:44 - 0:07:50, Ý nghĩa ở đây là nếu mà y là nhãn thực
+0:07:48 - 0:07:52, tế
+0:07:50 - 0:07:55, thì
+0:07:52 - 0:07:57, 0 hoặc 1 thì chúng ta sẽ có p là xác
+0:07:55 - 0:08:00, suất dữ đoán mà mô hình đưa ra cũng là
+0:07:57 - 0:08:03, một con số từ 0 tới 1. Nếu y = 1 thì p
+0:08:00 - 0:08:07, càng gần 1 thì lại càng tốt. Nhưng mà
+0:08:03 - 0:08:08, nếu y = 0 thì p càng gần 0 thì càng tốt.
+0:08:07 - 0:08:10, Công thức này đo lường sự khác biệt một
+0:08:08 - 0:08:13, cách rất thông minh, không phải bằng
+0:08:10 - 0:08:16, phép trừ đơn giản mà bằng cách phạt nặng
+0:08:13 - 0:08:16, những dự đoán sai.
+0:08:25 - 0:08:29, Chúng ta có thể thấy ở đây là ví dụ như
+0:08:27 - 0:08:31, là nhắc lại giống như hồi nãy thì chúng
+0:08:29 - 0:08:34, ta sẽ thấy y mà bằng 1 thì công thức trở
+0:08:31 - 0:08:36, thành là à trừ log p. Như vậy thì sự
+0:08:34 - 0:08:40, khác biệt được đo bằng trừ log p mà nếu
+0:08:36 - 0:08:43, dự đoán p gần với 1 thì sự khác biệt là
+0:08:40 - 0:08:46, nhỏ. Ví dụ như p = 0.99.
+0:08:43 - 0:08:52, Nhưng mà nếu đoán p xa với 1 ví dụ như p
+0:08:46 - 0:08:54, = 0.1 thì giá trị à sẽ rất là lớn.
+0:08:52 - 0:08:57, Như vậy thì cái trừ log p là đo chính
+0:08:54 - 0:08:59, xác mức độ lệch của dự đoán p so với giá
+0:08:57 - 0:09:01, trị đúng là 1. Còn trong trường hợp
+0:08:59 - 0:09:03, tương tự thì với nhãn thực tế là y = 0
+0:09:01 - 0:09:06, thì công thức nó sẽ trở thành là l sẽ
+0:09:03 - 0:09:08, bằng loss sẽ bằng là log của 1 - p. Thế
+0:09:06 - 0:09:11, thì lúc này sự khác biệt sẽ được đo bằng
+0:09:08 - 0:09:13, trừ log của 1 - p. Và nếu dự đoán p gần
+0:09:11 - 0:09:17, với 0 ví dụ như p = 0.01 thì sự khác
+0:09:13 - 0:09:20, biệt này là nhỏ. Nếu dự đoán p xa với 0
+0:09:17 - 0:09:23, ví dụ như p = 0.9 thì sự khác biệt này
+0:09:20 - 0:09:23, là lớn.
+0:09:23 - 0:09:27, Như vậy thì chúng ta sẽ thấy là một cách
+0:09:25 - 0:09:29, tương tự thì trừ log của 1 - p nó đo
+0:09:27 - 0:09:32, chính xác cái mức độ lệch của dự đoán p
+0:09:29 - 0:09:34, so với giá trị đúng là 0. Thì bằng cách
+0:09:32 - 0:09:36, tối thiểu hóa hàm mất mát này thì chúng
+0:09:34 - 0:09:39, ta đang huấn luyện mô hình sao cho nó có
+0:09:36 - 0:09:41, thể đưa ra xác suất dự đoán P khớp nhất
+0:09:39 - 0:09:44, với dạng thực tế Y dựa trên dữ liệu huấn
+0:09:41 - 0:09:44, luyện.
+0:09:45 - 0:09:48, Tương tự thì chúng ta có hàm chi phí.
+0:09:46 - 0:09:50, Hàm chi phí thì đơn giản đó là trung
+0:09:48 - 0:09:53, bình loss của tất cả các mẫu trong tập
+0:09:50 - 0:09:57, huấn luyện theo như công thức. Trong đó
+0:09:53 - 0:09:59, m là số lượng mẫu và phi
+0:09:57 - 0:10:02, ở trên là xác suất dự đoán cho mẫu thứ
+0:09:59 - 0:10:04, y. Mục tiêu của quá trình huấn luyện là
+0:10:02 - 0:10:07, tìm ra tham số WB để cos function có giá
+0:10:04 - 0:10:09, trị nhỏ nhất à tương ứng với việc mô
+0:10:07 - 0:10:11, hình dự đoán tốt nhất.
+0:10:09 - 0:10:15, Cũng tương tự như trên thì chúng ta sẽ
+0:10:11 - 0:10:18, qua cái bước là à tìm cái quá trình huấn
+0:10:15 - 0:10:20, luyện à tìm ra tham số WB để có function
+0:10:18 - 0:10:23, nhỏ nhất bằng thuật toán gradient
+0:10:20 - 0:10:23, desent.
+0:10:23 - 0:10:29, Thì bước đầu tiên là chúng ta khởi tạo
+0:10:26 - 0:10:31, các tham số của mô hình cụ thể là W và B
+0:10:29 - 0:10:33, với giá trị ban đầu có thể là zero hoặc
+0:10:31 - 0:10:36, là một con số ngẫu nhiên nhỏ.
+0:10:33 - 0:10:38, Tiếp theo thì nó là một quá trình lập
+0:10:36 - 0:10:40, của quá trình cập nhật các tham số này
+0:10:38 - 0:10:43, dựa trên cái gradient cho tới khi hội
+0:10:40 - 0:10:45, tụ. Thì ở mỗi vòng lập thì chúng ta sẽ
+0:10:43 - 0:10:49, tính toán đạo hàm của hàm chi phí đối
+0:10:45 - 0:10:52, với từng tham số W và B như trên màn
+0:10:49 - 0:10:55, hình. Thì giá trị gradient này cho biết
+0:10:52 - 0:10:58, hướng thay đổi của hàm chi phí nếu chúng
+0:10:55 - 0:11:01, ta điều chỉnh các tham số. Thế thì để
+0:10:58 - 0:11:04, giảm các
+0:11:01 - 0:11:06, hàm chi phí thì ta cập nhật W và B theo
+0:11:04 - 0:11:10, hướng ngược lại.
+0:11:06 - 0:11:12, Với chiều tăng của gradient mỗi
+0:11:10 - 0:11:14, lần một lượng nhỏ tương ứng với Lin Ray
+0:11:12 - 0:11:16, đã chọn cái cái thuật toán này thì nó
+0:11:14 - 0:11:19, cũng tương tự như là hồi quy tiến tính
+0:11:16 - 0:11:19, mà thôi.
+0:11:21 - 0:11:26, thì chúng ta sẽ ở cứ mỗi lần cập nhật
+0:11:23 - 0:11:28, thì W và B sẽ được điều chỉnh dựa trên
+0:11:26 - 0:11:30, trung bình sai số giữa xác suất dự đoán
+0:11:28 - 0:11:32, và nhãn dữ liệu thực tế của toàn bộ dữ
+0:11:30 - 0:11:34, liệu huấn luyện.
+0:11:32 - 0:11:36, Quá trình này được lặp lại nhiều lần và
+0:11:34 - 0:11:37, sau mỗi lần cập nhật ta sẽ kiểm tra điều
+0:11:36 - 0:11:40, kiện dừng.
+0:11:37 - 0:11:42, Ví dụ như khi hàm chi phí không còn giảm
+0:11:40 - 0:11:44, đáng kể hoặc đã đạt đến số vòng lập tối
+0:11:42 - 0:11:46, đa thì khi thuật toán kết thúc các giá
+0:11:44 - 0:11:48, trị cuối cùng của W và B chính là bộ
+0:11:46 - 0:11:51, tham số tối ưu giúp mô hình dự đoán xác
+0:11:48 - 0:11:52, suất gần với thực tế nhất. Như vậy thì
+0:11:51 - 0:11:54, chúng ta sẽ thấy gradient design là một
+0:11:52 - 0:11:56, quá trình tối ưu lặp đi lặp lại liên tục
+0:11:54 - 0:12:00, điều chỉnh các tham số dựa trên dữ liệu
+0:11:56 - 0:12:05, giúp logistic regression học ra được mô
+0:12:00 - 0:12:05, hình dự đoán tốt nhất.
+0:12:05 - 0:12:09, Tiếp theo là cái phần quiz.
+0:12:14 - 0:12:26, [âm nhạc]

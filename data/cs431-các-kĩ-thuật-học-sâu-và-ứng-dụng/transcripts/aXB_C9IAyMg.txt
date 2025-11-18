@@ -1,0 +1,164 @@
+0:00:00 - 0:00:10, Đối với mô hình Neural Network, đây chính là mô hình học sâu đầu tiên mà chúng ta sẽ học trong khóa học này.
+0:00:10 - 0:00:23, Các mô hình linear regression, logistic regression và Softmax Regression trước đây được sinh ra để giải quyết các bài toán tuyến tính.
+0:00:23 - 0:00:39, Ví dụ đối với mô hình Linear Regression, dữ liệu của Y của mình sẽ phụ thuộc một cách tuyến tính với giá trị x đầu vào, nó sẽ đồng biến hoặc là nghịch biến.
+0:00:39 - 0:00:49, Đối với mô hình Logistic Regression, nó là bài toán phân lớp và các tập điểm ở đây của mình, nó hoàn toàn có thể phân tách được bởi một đường thẳng.
+0:00:49 - 0:00:57, Đối với mô hình Softmax Regression cho trường hợp phân lớp nhiều lớp, thì ở đây chúng ta cũng tương tự như vậy.
+0:00:57 - 0:01:10, Đó là chúng ta sẽ có thể tách ra bởi các đường thẳng như thế này và sử dụng các đường thẳng.
+0:01:10 - 0:01:18, Đối với những trường hợp phi tuyến hoặc nonlinear,
+0:01:18 - 0:01:26, chúng ta sẽ phải sử dụng mô hình phức tạp hơn và có số lớp biến đổi sâu hơn, đó chính là Neural Network.
+0:01:26 - 0:01:29, Thế nào là một dữ liệu phi tuyến?
+0:01:29 - 0:01:38, Đối với trường hợp tuyến tính, chúng ta có thể chia tách được bởi một đường thẳng.
+0:01:38 - 0:01:42, Ví dụ hai tập tam giác và tròn có thể chia tách được bởi một đường thẳng
+0:01:42 - 0:01:46, Còn trong ví dụ phi tuyến, như ở đây
+0:01:46 - 0:01:53, thì không có cách nào chúng ta có thể dùng được một đường thẳng để chia ra làm hai
+0:01:53 - 0:02:00, Ví dụ ở đây, không có cách nào chia hai tập tròn và tam giác này ra làm hai hết
+0:02:00 - 0:02:02, thì ở đây nó sẽ gọi là phi tuyến
+0:02:02 - 0:02:04, và trong trường hợp thực tế
+0:02:04 - 0:02:07, thì trường hợp phi tuyến này là muôn hình vạn trạng
+0:02:07 - 0:02:09, nó không nhất thiết phải là cái dạng hình tròn như thế này
+0:02:09 - 0:02:13, ở đây chúng ta lấy cái dạng hình tròn để cho nó đơn giản và dễ hình dung
+0:02:13 - 0:02:17, vậy thì đối với việc phân loại dữ liệu phi tuyến
+0:02:17 - 0:02:21, thì chúng ta cần phải hiệu chỉnh lại cái mạng Softmax
+0:02:21 - 0:02:23, theo cái hướng như thế nào
+0:02:23 - 0:02:27, để mà có thể giải quyết được các cái bài toán phi tuyến này
+0:02:27 - 0:02:35, Cách để hiệu chỉnh mạng Softmax là tăng số lớp biến đổi lên, hay gọi là lớp ẩn,
+0:02:35 - 0:02:40, và thêm các hàm kích hoạt phi tuyến.
+0:02:40 - 0:02:50, Thế thì ở đây, thế nào gọi là các lớp khái niệm về lớp ẩn và thế nào là các phép biến đổi phi tuyến?
+0:02:50 - 0:02:55, Tại lớp biến đổi đầu tiên, tại lớp đầu tiên đó là lớp input.
+0:02:57 - 0:03:03, Rồi, chúng ta sẽ thực hiện nhân tích vô hướng với lại cái bộ tham số theta 1.
+0:03:03 - 0:03:09, Thì đây chính là một cái lớp biến đổi hay còn gọi là lớp ẩn.
+0:03:09 - 0:03:17, Rồi, sau khi chúng ta thực hiện cái phép tích vô hướng xong, chúng ta sẽ đồng thời thực hiện ngay cái phép biến đổi là sigmoid.
+0:03:17 - 0:03:20, Ở đây là một cái hàm biến đổi phi tuyến.
+0:03:20 - 0:03:25, Và rồi, hàm phi tuyến này thì có thể là sigmoid.
+0:03:25 - 0:03:31, Nhưng nó cũng có thể là tanh, nó cũng có thể là ReLU
+0:03:31 - 0:03:37, Sau đây thì đối với mô hình Deep Learning với mạng CNN thì chúng ta sẽ sử dụng ReLU, Leaky ReLU, Convolution
+0:03:37 - 0:03:40, Thì miễn sao nó phải là một cái hàm phi tuyến
+0:03:40 - 0:03:47, Tại vì nếu như chúng ta tiến hành các phép biến đổi tiếp theo và không có lớp biến đổi phi tuyến này
+0:03:47 - 0:03:51, Thì nó sẽ dẫn đến cái việc là phép biến đổi tuyến tính
+0:03:51 - 0:03:53, Ngay sau đó là một phép biến đổi tuyến tính
+0:03:53 - 0:03:56, thì nó sẽ tạo ra một tổ hợp tuyến tính
+0:03:57 - 0:03:59, mà tổ hợp tuyến tính
+0:04:00 - 0:04:03, thì không thể giải quyết được các bài toán phi tuyến
+0:04:03 - 0:04:07, đó là lý do nó phải chèn vào giữa các hàm kích hoạt
+0:04:07 - 0:04:12, các hàm kích hoạt phi tuyến
+0:04:12 - 0:04:14, thì sigmoid gọi là hàm kích hoạt
+0:04:14 - 0:04:17, và sigmoid này nó phải là một hàm phi tuyến
+0:04:17 - 0:04:21, và nó có thể là sigmoid, hàm tanh, hàm ReLU
+0:04:21 - 0:04:23, Miễn là 1 hàm phi tuyến
+0:04:23 - 0:04:25, Và đây là cái lớp ẩn thứ nhất
+0:04:25 - 0:04:27, Sau đó nó qua đây, nó sẽ là 1 cái lớp ẩn
+0:04:29 - 0:04:33, Thứ 2, và ở đây nó sẽ có các cái node
+0:04:33 - 0:04:35, Ở đây nó sẽ có các cái node
+0:04:35 - 0:04:39, Và cái số node này chúng ta cũng có thể tùy biến gia giảm
+0:04:39 - 0:04:41, Nó không nhất thiết là bằng m
+0:04:41 - 0:04:43, Nó có thể lớn hơn m hoặc nhỏ hơn m
+0:04:43 - 0:04:48, Câu hỏi đặt ra đó là bao nhiêu node và bao nhiêu lớp ẩn
+0:04:48 - 0:04:55, thì trả lời luôn đó là mình sẽ không biết trước số node và số lớp ẩn là bao nhiêu.
+0:04:55 - 0:04:59, Mình không biết trước số lớp ẩn và cũng như số node tối ưu,
+0:04:59 - 0:05:04, nhưng mình sẽ phải dựa trên một số kinh nghiệm liên quan đến việc thiết kế kiến trúc mạng.
+0:05:04 - 0:05:10, Ví dụ như nếu dữ liệu của mình phức tạp và rất phi tuyến, dữ liệu của mình rất nhiều,
+0:05:10 - 0:05:14, thì chúng ta có thể tăng số lớp ẩn lên và tăng số node lên.
+0:05:14 - 0:05:23, Tuy nhiên trong trường hợp dữ liệu của mình đơn giản hơn và dữ liệu ít thì chúng ta có thể thu nhỏ, thu hẹp số lớp ẩn và thu hẹp số node lại.
+0:05:23 - 0:05:25, Đó là dựa trên kinh nghiệm.
+0:05:25 - 0:05:35, Mình cũng sẽ có một số kỹ thuật liên quan đến việc tìm các siêu tham số, số node và số lớp ẩn.
+0:05:35 - 0:05:40, Mình có thể dùng phương pháp tìm kiếm để tìm ra các siêu tham số này.
+0:05:40 - 0:05:49, Sau khi biến đổi qua lớp thứ 1, lớp thứ 2 và đến lớp thứ L, lớp L là lớp cuối cùng.
+0:05:49 - 0:05:56, Chú ý là với lớp L, ngay sau khi thực hiện phép biến đổi tuyến tính ở đây,
+0:05:56 - 0:06:01, chúng ta sẽ thực hiện hàm softmax.
+0:06:01 - 0:06:05, Thay vì hàm kích hoạt ở đây, chúng ta sẽ sử dụng hàm softmax.
+0:06:05 - 0:06:15, Tại sao chúng ta lại phải dùng cái hàm softmax này để chúng ta đưa tất cả các cái giá trị y ngã này về cái không gian xác suất.
+0:06:19 - 0:06:27, Chúng ta sẽ đưa về không gian xác suất. Không gian xác suất nghĩa là sao? Tất cả các cái giá trị y này nó sẽ thuộc cái giá trị là từ 0 cho đến 1.
+0:06:27 - 0:06:33, Và tổng tất cả các cái y_k này nó sẽ là bằng 1.
+0:06:33 - 0:06:38, Khi chúng ta đưa vào không gian xác suất thì chúng ta sẽ cảm nhận được
+0:06:38 - 0:06:43, khả năng thuộc về lớp số 1 là bao nhiêu phần trăm, khả năng thuộc về lớp số 2 là bao nhiêu phần trăm.
+0:06:43 - 0:06:47, Đó chính là kiến trúc của mạng Neural Network.
+0:06:47 - 0:06:55, Công thức cho việc thiết kế hàm dự đoán của mình
+0:06:55 - 0:06:58, nhìn ở đây thì chúng ta sẽ thấy khá phức tạp.
+0:06:58 - 0:07:05, Nhưng mà thật ra nếu để ý kỹ thì nó cũng có cái logic để cho chúng ta có thể nhớ một cách rất là nhanh.
+0:07:05 - 0:07:15, Đầu tiên, lớp biến đổi đầu tiên đó là chúng ta sẽ từ cái x này, x của mình chính là cái dữ liệu đầu vào qua theta 1,
+0:07:15 - 0:07:25, nhân tích vô hướng theta 1, rồi sau đó chúng ta sẽ thực hiện phép sigmoid và phép sigmoid này sẽ được thực hiện lần lượt trên từng phần tử đầu ra.
+0:07:25 - 0:07:28, và chúng ta sẽ gọi là ElementWise.
+0:07:28 - 0:07:33, Đây chính là tầng số 1.
+0:07:33 - 0:07:37, Sau đó, chúng ta lại qua tiếp nhân với lại sigmoid.
+0:07:37 - 0:07:41, Chúng ta sẽ nhân với lại sigmoid thứ 2.
+0:07:41 - 0:07:44, Chúng ta sẽ nhân với lại theta 2.
+0:07:44 - 0:07:46, Rồi sau đó nó sẽ qua sigmoid.
+0:07:46 - 0:07:51, Đầu ra của cái này chính là tầng số 2.
+0:07:51 - 0:07:53, LAYER 2
+0:07:55 - 0:08:00, Cứ như vậy, cho đến layer thứ L-1 và layer thứ L
+0:08:00 - 0:08:10, Thì đối với layer thứ L, chúng ta lưu ý là ngay sau đó chúng ta sẽ không thực hiện cái sigmoid
+0:08:10 - 0:08:12, Mà chúng ta sẽ phải thực hiện cái hàm softmax
+0:08:12 - 0:08:19, Tại vì trong trường hợp mà phân lớp nhiều lớp, thì chúng ta sẽ sử dụng cái hàm softmax này để đưa nó về không gian xác suất
+0:08:19 - 0:08:22, Như vậy thì công thức này thì nó sẽ rất là dài,
+0:08:22 - 0:08:25, nó bao gồm là một cái hàm hợp của rất nhiều hàm.
+0:08:25 - 0:08:30, Hàm nhân với lại theta 1, sigmoid, nhân với theta 2, sigmoid,
+0:08:30 - 0:08:32, vân vân cho đến theta L, rồi Softmax.
+0:08:32 - 0:08:35, Thì đây là một cái hàm hợp rất là phức tạp.
+0:08:35 - 0:08:42, Và càng số lớp ẩn của mình càng lớn thì cái hàm này nó sẽ càng phức tạp nhiều.
+0:08:42 - 0:08:44, Và sang cái bước số 2,
+0:08:44 - 0:08:46, sang cái bước số 2 đó là thiết kế cái hàm lỗi,
+0:08:46 - 0:08:52, thì chúng ta tiếp tục dùng công thức hoàn toàn tương tự với của Softmax
+0:08:52 - 0:08:57, nếu như trường hợp nhiều mẫu và không vector hóa
+0:08:57 - 0:08:59, thì cái y_k này nè
+0:08:59 - 0:09:02, cái y_i này, đó sẽ là một cái vector
+0:09:02 - 0:09:05, và chúng ta sẽ có cái chỉ số k
+0:09:05 - 0:09:08, chạy từ 1 cho đến K lớn
+0:09:08 - 0:09:10, rồi cái y ngã của mình
+0:09:10 - 0:09:14, đây chính là y ngã nè, đây chính là y nè
+0:09:14 - 0:09:27, Và chúng ta sẽ duyệt qua từng phần tử, lấy y thứ 1, nhân với y ngã 1, y thứ 2, nhân với y ngã 2, y thứ 3
+0:09:27 - 0:09:34, Và khi nhân xong rồi cộng lại, chúng ta sẽ ra được 1 cái loss cho 1 mẫu
+0:09:34 - 0:09:40, Và cái loss cho 1 mẫu này chúng ta sẽ đi tính trung bình cộng cho tất cả n mẫu này
+0:09:40 - 0:09:47, thì chúng ta sẽ được công thức cho Cross entropy, thì công thức này hoàn toàn tương tự với Softmax.
+0:09:47 - 0:09:53, Và viết dưới dạng là nhiều mẫu nhưng mà ở dạng vector hóa thì chúng ta có thể viết gọn lại như thế này.
+0:09:53 - 0:09:57, Hàm loss của mình sẽ là bằng trung bình cộng của Cross entropy của Softmax.
+0:09:57 - 0:10:08, Chúng ta lưu ý là ở đây, cái công thức này là công thức của Softmax, nhưng mà công thức này đúng ra phải là công thức ở bên trái.
+0:10:08 - 0:10:12, Vì công thức này quá lớn nên ở đây chúng ta có thể viết lại
+0:10:13 - 0:10:16, Công thức ở đây là mình dùng nhầm của Softmax
+0:10:16 - 0:10:19, Công thức này nếu đúng nó phải là y ngã
+0:10:20 - 0:10:21, Trong đó y ngã
+0:10:23 - 0:10:25, Y ngã chính là bằng công thức này
+0:10:26 - 0:10:29, Nếu mà đưa công thức đó qua đây thì nó rất là dài
+0:10:29 - 0:10:31, Do đó mình cứ gọn lại là y ngã
+0:10:32 - 0:10:35, Của rồi tính Softmax của y ngã
+0:10:35 - 0:10:45, Nguyên này là Softmax, nguyên này là Softmax, như vậy là y ngã và y, cross entropy của y ngã và y
+0:10:45 - 0:10:53, Công thức này mình sẽ viết lại hay là trung bình cộng của cross entropy của y ngã và y
+0:09:08 - 0:09:10, rồi cái y ngã của mình
+0:10:53 - 0:10:59, Trong đó y ngã thì nó sẽ là bằng Softmax, mình chép công thức ở slide trước vào
+0:10:59 - 0:11:03, Softmax Theta thứ L
+0:11:03 - 0:11:07, Nhân với Sigmoid của ....
+0:11:07 - 0:11:12, Sigmoid của Theta thứ 2
+0:11:12 - 0:11:16, Sigmoid của Theta thứ 1
+0:11:16 - 0:11:19, Nhân với X
+0:11:19 - 0:11:26, Đây là công thức cho mạng Neural Network
+0:11:26 - 0:11:30, và hàm lỗi của Neural Network.
+0:11:30 - 0:11:38, Vì vậy, chúng ta sẽ tổng kết lại dựa trên cách biểu diễn dạng đồ thị của các kiến trúc mạng.
+0:11:38 - 0:11:40, Đồ thị của các kiến trúc mạng.
+0:11:40 - 0:11:42, Ở đây nói là kiến trúc cho nó sang thôi,
+0:11:42 - 0:11:46, chứ còn nó mới chỉ là những cái node đầu tiên đơn giản.
+0:11:46 - 0:11:50, Trước khi chúng ta qua mô hình học sâu như là CNN, RNN,
+0:11:50 - 0:11:54, thì đối với cái mạng đầu tiên, đó là Linear Regression,
+0:11:54 - 0:12:03, nó chỉ bao gồm duy nhất một node và cái node này sẽ là cái node tuyến tính để tổng hợp thông tin có trọng số từ các thông tin đầu vào.
+0:12:04 - 0:12:12, Và cái này thì thường dùng cho giải quyết các bài toán hồi quy và tuyến tính.
+0:12:14 - 0:12:19, Tức là cái giá trị y ngã này phụ thuộc một cách tuyến tính với lại cái dữ liệu đầu vào x.
+0:12:19 - 0:12:28, Trong trường hợp y này là bài toán phân lớp, nó sẽ nhận hai giá trị là 0 và 1.
+0:12:28 - 0:12:39, Ngoài node tuyến tính, chúng ta sẽ có thêm một hàm sigmoid để ép miền giá trị từ trừ vô cùng đến
+0:12:39 - 0:12:48, cộng vô cùng về miền giá trị từ 0 đến 1 và tương ứng sẽ tạo ra nhãn y mình mong muốn dự đoán.
+0:12:48 - 0:12:56, Đối với bài toán mà chúng ta phân lớp nhiều hơn hai lớp,
+0:12:56 - 0:12:58, cụ thể đây là K lớn hơn hai,
+0:12:58 - 0:13:01, thì chúng ta sẽ sử dụng mô hình Softmax
+0:13:01 - 0:13:06, sau khi chúng ta thực hiện theta chuyển vị nhân với x,
+0:13:06 - 0:13:08, x là dữ liệu đầu vào này,
+0:13:08 - 0:13:10, thì chúng ta sẽ qua cái hàm Softmax.
+0:13:40 - 0:13:43, nó sẽ là một cái vector bao gồm K thành phần.
+0:13:44 - 0:13:48, Và khi giải quyết các cái bài toán mà mang tính chất phi tuyến,
+0:13:49 - 0:13:54, thì chúng ta sẽ phải sử dụng cái mạng Neural Network bao gồm nhiều layer hơn.
+0:13:54 - 0:13:57, Và với mỗi layer thì chúng ta sẽ có nhiều cái node hơn.
+0:13:58 - 0:14:05, Và số node này thì nó sẽ gia giảm, tăng hay giảm tùy vào tính chất của dữ liệu.
+0:14:05 - 0:14:09, Dữ liệu mà càng phức tạp, càng phi tuyến thì chúng ta sẽ sử dụng nhiều layer hơn.
+0:14:09 - 0:14:15, Dữ liệu càng đơn giản thì chúng ta sẽ càng sử dụng ít layer hơn và số node của mình ít hơn.
+0:14:15 - 0:14:17, Đó là dựa trên kinh nghiệm thiết kế.
+0:14:17 - 0:14:23, Rồi, thì như vậy là cái nội dung của bài Neural Network cũng như là
+0:14:23 - 0:14:27, mô hình máy học tổng quát, linear regression, logistic regression, Softmax Regression
+0:14:27 - 0:14:31, chúng ta đã học qua.
+0:14:31 - 0:14:36, Và như vậy nếu có những câu hỏi nào thì chúng ta có thể đặt ra câu hỏi.
+0:14:36 - 0:14:44, Cũng như là cuối buổi thì chúng ta sẽ có cái bài tập quiz, cái bài tập trắc nghiệm để kiểm tra lại kiến thức.

@@ -1,0 +1,64 @@
+0:00:00 - 0:00:22, Chào các bạn, hôm nay chúng ta sẽ cùng đến với bài Transformer và một số ứng dụng của Transformer trong xử lý ngôn ngữ tự nhiên.
+0:00:22 - 0:00:25, Đây có thể nói là một trong những bài rất quan trọng,
+0:00:25 - 0:00:33, nó sẽ là nền tảng cho chúng ta để có thể học tiếp những cái thành tựu của Transformer
+0:00:33 - 0:00:38, trong các lĩnh vực khác, không phải chỉ trong lĩnh vực về xử lý ngôn ngữ tự nhiên,
+0:00:38 - 0:00:43, mà cũng có thể dùng trong lĩnh vực về hình ảnh, về xử lý âm thanh.
+0:00:43 - 0:00:48, Thì nội dung của bài hôm nay chúng ta sẽ cùng đầu tiên,
+0:00:48 - 0:00:55, Đó là chúng ta sẽ ôn tập về một số cái khái niệm, ví dụ như là attention là gì
+0:00:55 - 0:01:02, Rồi chúng ta sẽ tính attention score, attention distribution và attention output là gì
+0:01:02 - 0:01:09, Thì trong cái hình ở đây chúng ta thấy là các trạng thái ẩn là S1, S2 cho đến SN của mình
+0:01:09 - 0:01:11, thì nó sẽ được gọi là value
+0:01:11 - 0:01:17, Còn các cái vector truy vấn thì chúng ta sẽ gọi là query
+0:01:17 - 0:01:20, như các ở đây thì được gọi là query
+0:01:20 - 0:01:22, và chúng ta sẽ đi lần lượt tính
+0:01:22 - 0:01:24, cái giá trị trọng số
+0:01:24 - 0:01:28, của cái query với lại cái vector value này
+0:01:28 - 0:01:30, để từ đó là chúng ta biết là
+0:01:30 - 0:01:33, tại cái vị trí hiện tại chúng ta sẽ quan tâm
+0:01:33 - 0:01:36, đến cái từ nào trong cái chuỗi input của mình
+0:01:36 - 0:01:40, và sau đó chúng ta sẽ cùng tổng hợp cái attention output
+0:01:40 - 0:01:44, để lấy cái trạng thái ẩn
+0:01:44 - 0:01:47, của cái từ nào mà chúng ta đang quan tâm nhiều
+0:01:47 - 0:01:52, Còn những từ nào mà chúng ta không quan tâm nhiều thì trọng số của nó sẽ thấp hơn.
+0:01:52 - 0:02:02, Từ attention output này, chúng ta sẽ được sử dụng để đi tính toán các giá trị output ở mức decoder.
+0:02:02 - 0:02:06, Đây chính là ý tưởng của attention.
+0:02:06 - 0:02:16, Ngoài ra, chúng ta cũng ôn tập về một số cái mô hình, cách thức mà chúng ta sử dụng mô hình đệ quy cho bài toán NLP.
+0:02:16 - 0:02:24, thì đầu tiên đó là cái chuỗi input của mình, nó sẽ được encode 2 chiều, bidirectional có nghĩa là 2 chiều
+0:02:24 - 0:02:31, để đảm bảo cho cái đầu vào của mình mình có thể đọc theo trình tự từ trái sang phải và từ phải sang trái
+0:02:31 - 0:02:38, chúng ta có đầy đủ được cái thông tin về mặt ngữ cảnh của input một cách đầy đủ
+0:02:38 - 0:02:51, Trong mô hình đệ quy, khi chưa có Transformer ra đời, chúng ta sẽ sử dụng kiến trúc RNN với cell LSTM Long-Short-Term Memory.
+0:02:51 - 0:03:01, Đây chính là ý tưởng chung, những kiến trúc chung cho các mô hình đệ quy sử dụng cho các bài toán NLP.
+0:03:01 - 0:03:11, Và ở trong hình đây thì chúng ta thấy đó là cái bước encoder thì nó sẽ được thực hiện tính toán, đó là 2 chiều, bi directional.
+0:03:11 - 0:03:18, Và ở đây chúng ta ký hiệu bằng các cái trạng thái ẩn là bằng các cái vector màu xanh tương ứng là encoder.
+0:03:18 - 0:03:27, Rồi, để tính toán cho cái output thì chúng ta cũng sẽ biểu diễn output dưới dạng chuỗi.
+0:03:27 - 0:03:33, dạng chuỗi input của mình nó đã là chuỗi rồi thì output của mình nó cũng sẽ dạng chuỗi và chúng ta sử dụng LSTM
+0:03:33 - 0:03:41, chúng ta cũng sử dụng LSTM để sinh ra kết quả, tuy nhiên ở đây chúng ta có một cái nhận xét đó là cái LSTM này thì
+0:03:41 - 0:03:51, nó sẽ đi theo một chiều chứ nó không có đi hai chiều tại vì về nguyên tắc là ở cái quá trình output chúng ta sẽ không thấy trước
+0:03:51 - 0:04:05, Ví dụ như trong trường hợp Encoder chúng ta có thể đi theo chiều ngược lại là vì chúng ta được phép thấy cái dữ kiện của mình ở phía sau truyền lên phía trước và phía trước truyền phía sau.
+0:04:05 - 0:04:11, Nhưng mà khi chúng ta tính giá trị output, chúng ta không được phép thấy những giá trị phía sau.
+0:04:11 - 0:04:15, Chúng ta chỉ phải lần lượt suy đoán từng từ một.
+0:04:15 - 0:04:21, Chúng ta suy đoán ở đây, sau đó mới đến đây, sau đó mới đến đây.
+0:04:21 - 0:04:27, Chứ không có chuyện là chúng ta nhận được thông tin từ giá trị cuối truyền lên đầu.
+0:04:27 - 0:04:31, Tại vì lúc đó chúng ta chưa biết cái đáp án.
+0:04:31 - 0:04:37, Đó là lý do tại sao phần Output chúng ta sẽ ký hiệu bằng một màu riêng,
+0:04:37 - 0:04:46, và chúng ta chỉ có 1 chiều, thay vì là 2 chiều, giống như trên đây, ở trên đây là 2 chiều.
+0:04:51 - 0:05:02, Cuối cùng, các mô hình đệ quy cho bài toán NLP có sử dụng một kỹ thuật, đó là Attention để linh hoạt truy xuất bộ nhớ của mình.
+0:05:02 - 0:05:04, để linh hoạt truy xuất bộ nhớ của mình.
+0:05:04 - 0:05:07, Thì ở đây chúng ta sẽ xét đến cái quá trình
+0:05:07 - 0:05:10, chúng ta decode tại cái vị trí này.
+0:05:10 - 0:05:14, Đúng không? Thì tại đây nếu như không có attention module này
+0:05:14 - 0:05:19, thì các thông tin của những từ rất là xa
+0:05:19 - 0:05:24, nó sẽ tương tác được nhưng mà phải thông qua số bước di chuyển rất là dài.
+0:05:24 - 0:05:29, Trong khi đó nếu nhờ attention, đúng không nhờ module attention này
+0:05:29 - 0:05:37, thì chúng ta có thể linh hoạt truy xuất được các thông tin từ đầu, cũng như từ đầu tiên
+0:05:37 - 0:05:43, chúng ta có thể truy xuất từ đầu tiên một cách dễ dàng và với số bước rất là ngắn
+0:05:43 - 0:05:47, Ví dụ trong cái hình này, trong quá trình này, tại cái vị trí này
+0:05:47 - 0:05:55, chúng ta có thể truy xuất từ đầu tiên chỉ thông qua một phép biến đổi, đó là tại đây
+0:05:55 - 0:05:59, 1 phép biến đổi, trong khi đó nếu như chúng ta thực hiện tại đây
+0:05:59 - 0:06:05, không có attention output, chúng ta sẽ phải đi 1 lần, 2 lần, 3 lần, 4 lần, 5 lần
+0:06:05 - 0:06:11, chúng ta phải mất 5 lần xử lý, 5 lần biến đổi thì mới đến được
+0:06:11 - 0:06:16, đến cái vị trí mà chúng ta cần phải xử lý. Trong khi đó với cái output,
+0:06:16 - 0:06:22, với cái attention output thì tại đây chúng ta kết nối trực tiếp, rồi sau đó chúng ta sẽ
+0:06:22 - 0:06:25, đưa ra giá trị tính toán tiếp theo.
+0:06:25 - 0:06:32, Đây chính là ý tưởng của attention và điểm mạnh của attention đó là cho phép
+0:06:32 - 0:06:37, mình có thể linh hoạt truy xuất đến cái bộ nhớ của mình.

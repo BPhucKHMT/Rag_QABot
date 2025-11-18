@@ -1,0 +1,174 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, imageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, imageNet.
+0:00:30 - 0:00:37, Đầu của Deep Learning trong những vật sự liên ngu ngự tự nhiên thì RNN là gần như là một trong những kiến trúc
+0:00:37 - 0:00:45, mà được sử dụng rất là phổ biến và gần như tất cả các bài báo đều xoay xung quanh các biến thể của mạng RNN này.
+0:00:45 - 0:00:54, Và nội dung chính của ngày hôm nay chúng ta sẽ cùng giới thiệu qua loại dữ liệu dạng chuỗi.
+0:00:54 - 0:00:58, thì đối với những loại dữ liệu dạng chuỗi, nó sẽ có những tính chất gì,
+0:00:58 - 0:01:02, nó có gì khác so với những loại dữ liệu khác.
+0:01:02 - 0:01:05, Và từ đó thì chúng ta sẽ biết rằng là
+0:01:05 - 0:01:09, liệu có thể sử dụng được các kiến trúc mạng trước đây,
+0:01:09 - 0:01:14, ví dụ như là Neural Network bình thường cho loại dữ liệu dạng chuỗi này hay không.
+0:01:14 - 0:01:18, Trong phần thứ hai thì chúng ta sẽ cùng tìm hiểu sâu hơn
+0:01:18 - 0:01:21, về kiến trúc mạng Recurrent Neural Network,
+0:01:21 - 0:01:25, xem các cấu phần của mạng Railcuren Neural Network
+0:01:25 - 0:01:28, là cái gì và cách thức tính toán như thế nào.
+0:01:28 - 0:01:33, Và cuối cùng, chúng ta sẽ cùng tìm hiểu về
+0:01:33 - 0:01:37, một số bánh đề của mạng ANN hiện nay
+0:01:37 - 0:01:40, đang gấp gập phải và các giải pháp
+0:01:40 - 0:01:44, để giúp chúng ta giải quyết những bánh đề đó như thế nào.
+0:01:44 - 0:01:48, Đầu tiên đó là loại dữ liệu dàn chuỗi.
+0:01:48 - 0:01:53, thì dữ liệu dạng chuỗi nó xuất hiện ở trong một số hình thức
+0:01:53 - 0:01:58, ví dụ như là loại dữ liệu quang bản, là dữ liệu âm thanh, hoặc là dữ liệu giá chứng khoá
+0:01:58 - 0:02:00, thế thì thế nào gọi là dữ liệu dạng chuỗi?
+0:02:00 - 0:02:09, Dữ liệu dạng chuỗi nó sẽ được mô hình hóa dữ dạng là XT, XT cộng 1, v.v.
+0:02:09 - 0:02:19, thì đầu ra giá trị tiếp theo nó sẽ đi phụ thuộc vào giá trị ở phía trước
+0:02:19 - 0:02:25, thông thường trong các nội dung của mình, không phải các từ xt và xt cộng 1 nó độc lập nhau
+0:02:25 - 0:02:27, mà nó có sự phụ thuộc lẫn nhau
+0:02:27 - 0:02:34, cái từ thứ t cộng 1 nó sẽ có mối quan hệ phụ thuộc với lại từ thứ t
+0:02:34 - 0:02:39, Và trong tổng thuệ một câu hoặc là một đoạn âm thanh hoặc là giá trứng khoán v.v.
+0:02:39 - 0:02:45, thì tùy vào trình tự xuất hiện của các giá trị lầu vào
+0:02:45 - 0:02:48, mà mình sẽ có ý nghĩa khác nhau hoàn toàn
+0:02:48 - 0:02:53, Ví dụ, đối với văn bản thì chúng ta hay có câu đó là
+0:02:53 - 0:02:57, bí dụ từ tiếng Anh đi là mình sẽ dễ minh họa nhất là
+0:02:57 - 0:03:01, Do you understand?
+0:03:02 - 0:03:04, Chắc là bạn có hiểu không?
+0:03:05 - 0:03:10, Thì cái từ do này nó đặt ở phía trước nên ở đây chính là cái câu hỏi
+0:03:11 - 0:03:16, Nhưng cũng ba cái từ này nếu như chúng ta đặt ở cái trình tự khác
+0:03:16 - 0:03:20, Ví dụ như là you do understand
+0:03:20 - 0:03:25, thì nó lại ra một câu khẳng định
+0:03:25 - 0:03:28, là bạn hiểu rồi đó
+0:03:28 - 0:03:32, còn ở trên đó là bạn có hiểu không?
+0:03:32 - 0:03:37, đó thì trình tự xuất hiện của các từ xt và xt cộng 1 rất là quan trọng
+0:03:37 - 0:03:41, do đó dữ liệu dạng chuỗi chúng ta cần phải chú ý đến cái ứng tố này
+0:03:41 - 0:03:44, đó là trình tự
+0:03:44 - 0:03:52, Và chúng ta sẽ so sánh một số loại dữ liệu với nhau để xem cái sự khác biệt của nó là gì.
+0:03:52 - 0:04:01, Đối với dữ liệu chuỗi và cụ thể ở đây, chúng ta sẽ lấy một ví dụ đó là dữ liệu văn bản.
+0:04:01 - 0:04:07, Ví dụ để minh họa cho dữ liệu này là một câu, một đoạn văn.
+0:04:07 - 0:04:12, Ví dụ như là bầu trời xanh và bãi biển ống ánh.
+0:04:12 - 0:04:19, thì dữ liệu hình ảnh chúng ta sẽ có ví dụ đó là 1 tấm hình như thế này
+0:04:19 - 0:04:23, rồi đối với dữ liệu mà dạng đặc trưng
+0:04:23 - 0:04:26, ví dụ như các thuộc tính của 1 học sinh
+0:04:26 - 0:04:28, chúng ta có các thuộc tính ví dụ như là
+0:04:28 - 0:04:30, thuộc tính đầu tiên là lớp 7
+0:04:30 - 0:04:32, thuộc tính thứ 2 15 tuổi
+0:04:32 - 0:04:37, thuộc tính thứ 3 là điểm toán
+0:04:37 - 0:04:41, thuộc tính thứ 4 là điểm văn
+0:04:41 - 0:04:46, Thực tính thứ 5, đó là định trung bình, ví dụ vậy
+0:04:46 - 0:04:52, Về các biểu diễn thông thường của loại dữ liệu dạng chuỗi
+0:04:52 - 0:04:57, đó chính là chúng ta sẽ sử dụng dạng danh sách các từ hay gọi là string
+0:04:57 - 0:05:03, trong lập trình của mình, gọi là string hoặc là mảng các ký tư
+0:05:03 - 0:05:05, Ờ?
+0:05:05 - 0:05:07, Rồi
+0:05:07 - 0:05:21, Trong loại dữ liệm là hình ảnh thì chúng ta sẽ có cách biểu diễn phổ biến đó chính là dữ liệm ma trận 2 chiều đối với những cái ảnh mà không có màu hay còn gọi là ảnh mức sáng, ảnh grayscale
+0:05:25 - 0:05:28, Và tensor 3 chiều đối với ảnh màu
+0:05:28 - 0:05:35, Và ảnh màu này có 3 canh màu thông thường là Red, Green, Blue, Đỏ, Xanh lá và Xanh dương.
+0:05:35 - 0:05:46, Còn để biểu diễn cho dữ liệu dưới dạng đặc trưng của một đối tượng, người ta thường hay sử dụng đó là biểu diễn dưới dạng vector.
+0:05:46 - 0:05:51, Rồi, và tiếp theo đó là về hệ thống ký hiệu.
+0:05:51 - 0:05:59, Đối với dĩa liệu dàn chuỗi, chúng ta hay ký hiệu đó là W1, W2, cho đến Wt
+0:05:59 - 0:06:06, trong đó t chính là số từ trong một câu hoặc là độ dài
+0:06:06 - 0:06:11, Và chúng ta có một lưu ý đó là độ dài của văn bản t này
+0:06:11 - 0:06:17, là có thể thay đổi, t có thể là rất ít, ví dụ như chỉ là bằng một
+0:06:17 - 0:06:21, nhưng nó cũng có thể rất là nhiều, ví dụ như có thể lên đến hàng ngày.
+0:06:23 - 0:06:27, Còn đối với dữ liệu hình ảnh, chúng ta sẽ ký hiệu nó dưới dạng là ma trận.
+0:06:27 - 0:06:30, Ví dụ trong trường hợp này, chúng ta sử dụng ma trận 2 chiều.
+0:06:30 - 0:06:33, Còn đối với tensor 3 chiều thì nó sẽ phức tạp hơn một chút.
+0:06:33 - 0:06:41, Đối với ma trận 2 chiều, chúng ta sẽ có 2 thông số, đó là bề ngang và bề cao
+0:06:41 - 0:06:45, là để thể hiện kích thước của hình ảnh của mình.
+0:06:45 - 0:06:59, Bề ngang và bề cao, và chúng ta cũng lưu ý, đó là bề ngang và bề cao, bề rộng và bề dài, trong đây là dùng từ bề rộng và bề dài thì hoàn toàn có thể thay đổi được.
+0:06:59 - 0:07:05, Có thể thay đổi, thì chúng ta thấy là các ảnh của mình có thể có những độ phân giải khác nhau.
+0:07:05 - 0:07:09, Có những ảnh rất là nhỏ nhưng mà có những ảnh rất là to.
+0:07:09 - 0:07:26, Còn khi biểu diễn cho đặc trưng của một đối tượng thì thông thường chúng ta sẽ phải biểu diễn dưới dạng là một vector với n phần tử và n này phải là cố định, n này sẽ là không thay đổi.
+0:07:26 - 0:07:27, và không thay đổi.
+0:07:27 - 0:07:43, Và tính chất của các phần tử trong dữ liệu này của mình đó là, đầu tiên đối với dữ liệu dạng chuỗi thì hồi nãy chúng ta đã có trình bày rồi là tính trình tự.
+0:07:43 - 0:07:45, Nó rất là quan trọng.
+0:07:45 - 0:07:50, Từ thứ hai, mà đứng sau từ thứ một thì nó sẽ có một ý nghĩa
+0:07:51 - 0:07:57, Nhưng từ thứ W2 mà đứng trước từ W1 thì nó lại có một ý nghĩa khác giống như ví dụ ở trên
+0:07:57 - 0:08:07, Do đó thì ở đây chúng ta sẽ có mối quan hệ đó là các phần tử trong dữ liệu phụ thuộc theo một chiều thời gian
+0:08:07 - 0:08:15, Tại sao ở đây mình lại dùng cái từ là thời gian? Tại vì ngôn gốc của ngôn ngữ nó xuất phát là từ giọng nói, từ tiếng nói.
+0:08:15 - 0:08:27, Thì khi tiếng nói của mình mà mình cất ra, thì nó đi theo cái chuỗi là cái chuỗi thời gian. Lúc mà nó đưa vô bên trong qua cái đường là thính giác, thì nó sẽ là đi theo cái chuỗi thời gian.
+0:08:27 - 0:08:32, thì đó là tại sao mình lại dùng cái từ đó là phụ thuộc theo chiều thời gian
+0:08:32 - 0:08:37, tương tự như vậy cho dữ liệu âm thanh và chiến khoán, thì cái T này hàm ý đó là thời gian
+0:08:37 - 0:08:44, Đối với dữ liệu hình ảnh thì cái sự phụ thuộc này là nó sẽ phụ thuộc ở hai chiều
+0:08:44 - 0:08:49, nó phụ thuộc ở cả hai chiều và hai chiều này nó gọi là chiều không gian
+0:08:49 - 0:08:53, bề ngang, bề cao, nó gọi là chiều không gian
+0:08:53 - 0:09:00, Trong khi đó, dữ liệu đặc trưng thì các phần tử này đột lập nhau.
+0:09:00 - 0:09:12, Nghĩa là sao? Nếu như chúng ta quy ước là thành phần đầu tiên là lớp, thành phần thứ hai là tuổi, thành phần thứ ba là điểm toái, thành phần thứ tư là điểm văn, thành phần thứ năm là điểm trung bình.
+0:09:12 - 0:09:27, Vì nếu như chúng ta đổi lại trình tượng này, ví dụ chúng ta đưa điểm toán lên trước, sau đó sẽ đến điểm văn, sau đó đến điểm trung bình, sau đó là lớp và sau đó là tuổi
+0:09:27 - 0:09:35, Thì cái thông tin của cái đặc trưng này nó vẫn bảo toàn, nó không hề thay đổi cái nội dung
+0:09:35 - 0:09:39, Nó không thay đổi cái nội dung của cái đặc trưng
+0:09:39 - 0:09:46, Trong khi đó cũng là cái từ do từ you từ understand nhưng nếu chúng ta đảo lại thứ tự cho nhau
+0:09:46 - 0:09:50, Do lên trước, do ra sau thì đó là khảo định
+0:09:50 - 0:09:53, Nhưng mà do lên trước, do ra sau thì đó là câu hỏi
+0:09:53 - 0:09:56, thì tự nhiên cái ý nghĩa của cái đoạn văn,
+0:09:56 - 0:09:59, của cái văn bạng đó là bị thay đổi hoàn toàn.
+0:10:00 - 0:10:01, Cũng tương tự như vậy cho hình ảnh.
+0:10:02 - 0:10:04, Nếu như chúng ta đưa các đối tượng hình ảnh này
+0:10:05 - 0:10:07, lên trên các vị trí khác nhau,
+0:10:07 - 0:10:08, dịu như đưa đám mây xuống dưới,
+0:10:09 - 0:10:10, đưa mặt trời lên trên,
+0:10:10 - 0:10:15, thì tự nhiên nó sẽ tạo ra một tấm hình có cái kích thước,
+0:10:15 - 0:10:17, xử lời nó có cái ý nghĩa khác nhau hoàn toàn.
+0:10:18 - 0:10:22, Do đó thì ở đây hai cái loại dữ liệu chuỗi và hình ảnh
+0:10:22 - 0:10:25, thì nó bị phụ thuộc lẫn nhau, nó bị rèn buộc lẫn nhau.
+0:10:26 - 0:10:29, Trong khi đó, dữ liệu vector thì nó sẽ độc lập.
+0:10:33 - 0:10:40, Và ý tưởng để áp dụng cho loại dữ liệu văn bản lên trên các mô hình máy học,
+0:10:40 - 0:10:41, đúng không?
+0:10:41 - 0:10:47, Thì đó chính là chúng ta có những ý tưởng đầu tiên để kế thừa những thành tựu
+0:10:47 - 0:10:49, của mạng neural network trước đây.
+0:10:49 - 0:10:57, Thế thì, khó khăn đầu tiên mà chúng ta khi áp dụng dữ liệu dạng chuỗi vào một mạng Neuro Network
+0:10:57 - 0:10:59, là chúng ta có một nhận xét như sau.
+0:10:59 - 0:11:10, Văn bảng có độ dài không cố định. Ví dụ, đối với câu này, ở đây độ dài của văn bảng này là 2.
+0:11:10 - 0:11:14, Nhưng ở câu sau, bầu trời xanh và biển vàng ống ánh việu vậy,
+0:11:14 - 0:11:18, thì cái độ dài của mình có thể lên đến là 10 chữ
+0:11:18 - 0:11:24, trong khi đó, cái mạng Neuro Network của mình, cái đầu vào của mình nó lại cố định
+0:11:24 - 0:11:27, thì chúng ta đã học cái mạng Neuro Network rồi
+0:11:27 - 0:11:31, đầu vào của mình nếu như nó chỉ có 4 Neuron
+0:11:31 - 0:11:36, thì xuyên xuất từ cái quá trình huấn luyện cho đến quá trình dự đoán
+0:11:36 - 0:11:42, nó cũng hoàn toàn có thể là, nó sẽ giữ nguyên là 4 Neuron
+0:11:42 - 0:11:49, Có bạn sẽ hỏi là tại sao ở trong cái mạng CNN, đúng không?
+0:11:49 - 0:11:56, thì các cái ảnh của mình khi chúng ta đưa vào một cái mạng CNN
+0:11:56 - 0:12:03, đưa vào một cái mạng CNN thì nó sẽ làm một cái thao tác đó là Scale
+0:12:03 - 0:12:07, mình sẽ đưa một cái ảnh rất to Scale về đúng cái tỷ lệ
+0:12:07 - 0:12:10, scale về đúng tỷ lệ mà cái mạng CNN này
+0:12:10 - 0:12:13, nó dận làm đầu vào, đúng không?
+0:12:13 - 0:12:16, thì đối với ảnh, nó lại là một loại dữ liệu đặc biệt
+0:12:18 - 0:12:21, các cái trình tượng, các cái điểm ảnh
+0:12:21 - 0:12:23, nó phụ thuộc theo trình tượng không gian, đúng không?
+0:12:23 - 0:12:26, nhưng mà một cái ảnh to, một cái ảnh to
+0:12:26 - 0:12:28, đó, ví dụ như chúng ta có một cái đối tượng ở đây
+0:12:29 - 0:12:32, khi chúng ta thu nhỏ nó lại
+0:12:32 - 0:12:35, để tạo ra thành một cái ảnh nhỏ
+0:12:35 - 0:12:38, Đáp ứng được cái yêu cầu đầu vào của cái mạng CNN
+0:12:38 - 0:12:41, thì về mặt ngũ nghĩa là chúng ta nhìn vô tâm ảnh này
+0:12:41 - 0:12:45, chúng ta vẫn biết được cái ý nghĩa của nó hay nói cách khác là ý nghĩa nó không thay đổi
+0:12:46 - 0:12:50, Còn ở đây, cái đoạn văn của mình
+0:12:50 - 0:12:53, mình sẽ không có cái cách nào để mà mình nén
+0:12:53 - 0:12:57, mình nén cái đoạn văn này
+0:12:57 - 0:13:00, về cái dạng là một cái vector 4 chiều
+0:13:01 - 0:13:03, cố định là số chiều
+0:13:03 - 0:13:11, Có bạn sẽ nói, tôi dùng giải pháp là backward có được hay không?
+0:13:11 - 0:13:20, Tức là mọi câu trong quan bản, hoặc mọi từ trong quan bản sẽ đưa về cái dạng là một cái vector cố định số chiều.
+0:13:20 - 0:13:27, Ví dụ cái từ tuyệt, nó tương ứng sẽ là 0100.
+0:13:27 - 0:13:41, Từ quá là 0010
+0:13:41 - 0:14:05, Và khi chúng ta sử dụng mô hình Backup Work thì chúng ta sẽ trộn hai vector này lại với nhau để tạo thành một vector đó là 0,1,1,0 để ra vector biểu diễn cho từ quả và số từ của vector biểu diễn này nó sẽ đều cố định là V
+0:14:05 - 0:14:12, tức là số phần tử trong tập Dixelory, trong tập tiểu điển
+0:14:12 - 0:14:18, tương tự như vậy cho câu bầu trời xanh và biển vàng ống ánh, ví dụ vậy
+0:14:18 - 0:14:21, thì nó cũng sẽ biểu diễn với một vector có số chiều là b
+0:14:21 - 0:14:24, tại như vậy thì nó cố định số chiều
+0:14:24 - 0:14:29, Với giải pháp này, nó sẽ bị một vấn đề là
+0:14:29 - 0:14:32, nó không đảm bảo được yếu tố về mặt trình tự
+0:14:32 - 0:14:33, Trình tự
+0:14:33 - 0:14:35, Tại sao? Tại vì cái câu
+0:14:35 - 0:14:38, Do you understand?
+0:14:40 - 0:14:43, Với cái câu là You do understand
+0:14:49 - 0:14:51, Sẽ có cùng cái vector biểu diễn
+0:14:51 - 0:14:53, Nó sẽ có cùng một cái vector biểu diễn
+0:14:53 - 0:14:54, Ví dụ như là
+0:14:54 - 0:15:00, Một, không, không, không, một, một, không, few, by
+0:15:00 - 0:15:03, cả hai từ này đều có cùng cách biểu diện.
+0:15:05 - 0:15:08, Thì như vậy là tính đảm bảo của mạng Neural Network
+0:15:08 - 0:15:13, là cho cái phần tính thứ tự của ban bản là không đảm bảo.
+0:15:13 - 0:15:15, Và đó chính là những cái rào cản
+0:15:16 - 0:15:20, để cho chúng ta không thể sử dụng cái mạng Neural Network
+0:15:20 - 0:15:24, một cách trực tiếp với cái loại diễn liệu là ban bản
+0:15:24 - 0:15:27, hoặc là cho các cái loại diễn liệu dạng chuỗi khác.

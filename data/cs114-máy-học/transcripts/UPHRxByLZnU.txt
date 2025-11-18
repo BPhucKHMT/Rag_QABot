@@ -1,0 +1,233 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, logistic regression, imageNet.
+0:00:30 - 0:00:35, những cách sử dụng Machine Learning để giải quyết bài toán Image Classification đơn giản
+0:00:35 - 0:00:38, và chạy thử bằng Google Collab.
+0:00:38 - 0:00:43, Thì ở đây các thầy đã chuẩn bị cho các bạn một cái Collab Notebook
+0:00:43 - 0:00:47, các bạn có thể truy cập ở đường link bên dưới này.
+0:00:49 - 0:00:55, Khi các bạn vào cái Collab Notebook, công việc đầu tiên mà các bạn nên làm
+0:00:55 - 0:01:02, Đó là vào menu File và các bạn tùy chọn là Save a copy in Drive
+0:01:02 - 0:01:10, Có nghĩa là tạo ra một cái bản copy của cái Collab Notebook này và trong tài khoản Google Drive của các bạn
+0:01:10 - 0:01:16, Trước khi các bạn bắt đầu chạy hay là bắt đầu làm gì thì các bạn nên tạo một cái bản copy trước
+0:01:16 - 0:01:24, Tại vì nếu các bạn muốn hiểu rõ một ví dụ thì cách duy nhất là các bạn phải chạy thử
+0:01:24 - 0:01:32, Quang sát kết quả và sau đó phải điều chỉnh cái code này và chạy lại để xem cái mình hiểu nó có chính xác hay không
+0:01:32 - 0:01:36, Mình có thể chỉnh sửa lại cái chương trình của người khác theo ý mình hay không
+0:01:36 - 0:01:40, Thì để làm được video đó các bạn phải tạo một cái bản copy
+0:01:40 - 0:01:46, Còn version mà các thầy share cho các bạn là version chỉ đọc
+0:01:46 - 0:01:53, Trong bài dạng này, cái đường link kia là cái notebook chỉ có thể đọc thôi
+0:01:53 - 0:01:58, à không có quyền chỉnh sửa, sửa thì cũng không safe lại được
+0:01:58 - 0:02:03, đó nên các bạn nên tạo một cái bản copy trong Google Drive của mình để các bạn có thể chỉnh sửa
+0:02:03 - 0:02:07, thì giới thiệu đơn sản nhanh về bài toán này
+0:02:07 - 0:02:14, đây là bài toán Image Classification, phân loại chó mèo, đó là tên bài toán
+0:02:14 - 0:02:22, bài toán này input đầu vào sẽ là một hình ảnh và chúng ta mong muốn đầu ra
+0:02:22 - 0:02:30, là kết quả phức loại cho biết hình đưa vào là thuộc nhóm mèo hay nhóm chó, cast hay docs.
+0:02:30 - 0:02:36, Và cái loại bài toán như vậy người ta gọi là bài toán binary classification.
+0:02:36 - 0:02:42, Trong số các lớp bài toán machine learning đây là lớp bài toán classification.
+0:02:42 - 0:02:48, Là lớp bài toán phổ biến nhất hiện nay trong machine learning mà người ta đã giải quyết được.
+0:02:48 - 0:02:54, Và trong classifications, loại đơn giản nhất là binary classification
+0:02:54 - 0:02:59, có nghĩa là output chỉ có thể là 1 trong 2 giá trị thôi, mail hoặc là chó thôi
+0:02:59 - 0:03:06, Nếu như lọt ảnh đầu vào chứa con gì khác 1 trong 2 con này
+0:03:06 - 0:03:09, thì model cũng chỉ trả lời là mail hoặc chó thôi
+0:03:09 - 0:03:13, Lúc đó không cần quan tâm đúng sai nữa, lúc nào kết quả ra cũng là
+0:03:13 - 0:03:18, 1 trong 2 giá trị mà thôi thì bài toán đó gọi là binary classification
+0:03:20 - 0:03:26, thì tiêu trí để đánh giá một cái model, thực hiện cái công việc dự đoán như thế đó
+0:03:26 - 0:03:34, thường trong bài toán binary classification tiêu trí đánh giá phổ biến hay được dùng là accuracy, độ chính xác
+0:03:34 - 0:03:40, Đổi chính xác được tính là số lần mà model dự đoán đúng
+0:03:40 - 0:03:44, Trên tổng số lần các bạn thực hiện kiểm tra
+0:03:44 - 0:03:48, Trên tập kiểm tra có bao nhiêu ảnh các bạn đưa cho model
+0:03:48 - 0:03:54, Tiến hành phân lợp, phân loại ra xem đây là ảnh chó hay là ảnh mèo
+0:03:54 - 0:03:59, Số lượng ảnh đúng chia cho tổng số ảnh thì cái thông số đó gọi là accuracy
+0:03:59 - 0:04:02, Chúng ta còn nhiều tiêu chí đánh giá khác
+0:04:02 - 0:04:04, cho bài toán Classification
+0:04:04 - 0:04:12, nhưng đối với bài toán hiện tại để dùng để minh họa thì chúng ta dùng tiêu chí Accuracy cho nó đơn giản
+0:04:12 - 0:04:16, đó là bước xác định một cái bài toán Machine Learning
+0:04:16 - 0:04:19, các bạn phải chỉ rõ được đầu vào đầu ra của bài toán
+0:04:19 - 0:04:23, và từ đầu vào đầu ra các bạn sẽ xác định được
+0:04:23 - 0:04:27, cái loại bài toán này là loại bài toán gì trong Machine Learning
+0:04:27 - 0:04:33, và chúng ta sử dụng tiêu chí gì để tránh giá là cái model có tốt hay không.
+0:04:33 - 0:04:39, Phải xác định đầy đủ những cái thông tin này thì chúng ta mới tiến hành bước tiếp theo
+0:04:39 - 0:04:43, sử dụng Machine Learning để giải quyết bài toán.
+0:04:43 - 0:04:47, Thì bước tiếp theo là bước thu thập dữ liệu.
+0:04:47 - 0:04:51, Thu thập dữ liệu thì đúng ra là chúng ta phải đi thu thập các hình ảnh.
+0:04:51 - 0:04:55, Dính đầu vào dữ liệu chúng ta là hình ảnh mà chúng ta phải đi thu thập các hình ảnh này
+0:04:55 - 0:04:57, từ trong thực tế
+0:04:57 - 0:05:03, nhưng mà rất may là bài toán này nó cũng phổ biến và đơn giản nên
+0:05:03 - 0:05:07, cái thư viện TensorFlow người ta đã thu thập mẫu cho chúng ta
+0:05:07 - 0:05:11, một cái bộ dữ liệu
+0:05:11 - 0:05:17, gồm rất là nhiều ảnh, chó với mèo và cái label tương ứng cho từng tấm ảnh rồi
+0:05:17 - 0:05:23, nên chúng ta quyết thu thập dữ liệu này đơn giản là chúng ta tải
+0:05:23 - 0:05:27, data set từ tư viện TensorFlow về và sử dụng.
+0:05:28 - 0:05:31, Nhà bước 3 là bước chuẩn bị dữ liệu.
+0:05:33 - 0:05:37, Mã nguồn cụ thể của 3 bước này được cho ở cell bên dưới.
+0:05:38 - 0:05:41, Bên trên này là mô tả và ngay bên dưới này là mã nguồn.
+0:05:42 - 0:05:45, Vía cầm bài thanh, phía dưới sẽ là kết quả thực thi.
+0:05:46 - 0:05:51, Thì phần đầu là phần import các tư viện cần thiết.
+0:05:51 - 0:05:56, Ở đây chúng ta sẽ xây dựng model sử dụng một thư viện Deep Learning là thư viện TensorFlow
+0:05:56 - 0:06:04, Kỹ thuật Deep Learning là kỹ thuật phổ biến nhất hiện nay để giải quyết bài toán image classification
+0:06:04 - 0:06:12, và hiện nay nó cũng đang làm khá tốt và với sự hỗ trợ của thư viện thì chúng ta viết code nó cũng nhẹ nhàng hơn
+0:06:12 - 0:06:18, Rồi, ở đây chúng ta kiểm tra cái phiên bản TensorFlow được cài đặt bên trong.
+0:06:18 - 0:06:23, Ở đây chúng ta muốn kiểm tra chủ yếu là cài đặt bên trong cái máy ảo Google
+0:06:23 - 0:06:29, Collab nè, tại vì Google Collab họ cung cấp cái máy ảo cài gần như là đầy
+0:06:29 - 0:06:35, đủ các thư viện, nhưng không phải là version mới nhất.
+0:06:35 - 0:06:39, nhưng không phải là version mới nhất
+0:06:39 - 0:06:45, các thư viện machine learning cài đã khó rồi
+0:06:45 - 0:06:49, giữ cho nó được update cập nhật thường xuyên còn khó hơn
+0:06:49 - 0:06:56, và thực hiện công việc update này trên 1 kệ thống server rất nhiều máy tính thì nó còn khó dữ nữa
+0:06:56 - 0:07:02, nên Google cũng không cập nhật cài version thư viện quá thường xuyên
+0:07:02 - 0:07:16, Vì thế các thầy có thói quen là khi chạy ứng dụng thì in luôn thông tin về version phiên bản của cái thư viện ra để biết kết quả này là mình chạy hồi nào, hồi version bao nhiêu.
+0:07:16 - 0:07:29, Rồi, bước xác định bài toán chúng ta đã làm rồi. Tiếp theo là chúng ta tải về và sử dụng lại bộ dữ liệu cat-visit-doc từ TensorFlow Dataset.
+0:07:29 - 0:07:36, xét, chúng ta import thư viện và chúng ta dùng hamlot, hamlot này các bạn có thể hoàn toàn chạy thử ở đây
+0:07:36 - 0:07:47, chúng ta xin cấp máy ảo ở đây bằng đầu chúng ta cấp máy ảo chạy cpu thôi ha để các bạn hình dung cái code này nó hoạt động như thế nào trước
+0:07:47 - 0:07:55, và máy ảo CPU thì có ưu điểm là các bạn được giữ máy trong thời gian rất là dài
+0:07:55 - 0:08:04, các bạn có thể dùng để kiểm tra chạy thử nghiền ẩm nghiên cứu cái mã nguồn mà không lo máy bị thu hồi
+0:08:04 - 0:08:12, đến thường là chúng ta sẽ yêu cầu request 1 cái máy CPU trước để chúng ta chạy thử khi nào thấy code đúng
+0:08:12 - 0:08:20, rồi và chúng ta cần nó chạy nhanh hơn thì chúng ta mới request tới những tài nguyên cấp cao hơn của Google Collab
+0:08:20 - 0:08:27, thì cái lệnh data.load này các bạn thấy đầu tiên là chúng ta in ra version của TensorFlow
+0:08:27 - 0:08:31, thì hôm nay Google Collab cung cấp version 2.19
+0:08:31 - 0:08:35, có thể lúc các bạn học hôm nay thì nó sẽ là version khác cũng không sao
+0:08:35 - 0:08:46, Nhi vọng những dòng code này tới lúc các bạn học nó vẫn chưa bị đào thái, vẫn còn chạy được
+0:08:46 - 0:09:00, Rồi sau khi bring version ra xong chúng ta load kế dataset thì hàm load này nó sẽ tự động thực hiện luôn công việc download kế dataset từ trên trang chủ của TensorFlow về
+0:09:00 - 0:09:05, không phải data set này nằm sẵn trong thư viện nha các bạn
+0:09:05 - 0:09:11, data set này nằm trên internet và các bạn phải có internet thì các bạn mới download về được
+0:09:11 - 0:09:16, dĩ nhiên phải có internet thì chúng ta mới dùng được Google Collab rồi
+0:09:16 - 0:09:22, và cái công việc download này sẽ do máy ảo của Google Collab thực hiện
+0:09:22 - 0:09:27, các bạn thấy tốc độ tải ở đây là 71 megabyte một giây
+0:09:27 - 0:09:30, megabyte không phải megabit nha các bạn
+0:09:30 - 0:09:36, có nghĩa là nó vào khoảng 500, gần 600 megabit per second
+0:09:36 - 0:09:38, một tốc độ cũng khá là cao
+0:09:38 - 0:09:41, đặc biệt đây là server trigger to quốc tế
+0:09:41 - 0:09:43, ngoài tài nguyên tính toán
+0:09:43 - 0:09:46, CPU và CPU Google Collab
+0:09:46 - 0:09:49, cung cấp cho các bạn một máy chủ ảo
+0:09:49 - 0:09:51, còn một loại tài nguyên đáng quý nữa
+0:09:51 - 0:09:59, đó là kết nối mạng rất là nhanh. Rồi, và sau khi Dow về xong thì tiếp theo
+0:09:59 - 0:10:07, chúng ta sẽ thực hiện cái bước tiền xử lý dữ liệu. Bước tiền xử lý này bao gồm
+0:10:07 - 0:10:15, chia tập dữ liệu thành hai phần và thực hiện cái hàm format này lên từng tấm hình
+0:10:15 - 0:10:24, Bên trong data set này, chúng ta chỉ thực hiện một bước tiền xử lý đơn giản thôi đó là bước resize.
+0:10:24 - 0:10:34, Thực ra có hai bước mà chúng ta viết gọn trên một hàm. Đầu tiên là resize ảnh trong data set về kích thước 150 x 150.
+0:10:34 - 0:10:40, 150 x 150 là ảnh nó hình vuông như thế này. Đây là ví dụ về data set của chúng ta.
+0:10:40 - 0:10:46, ảnh nó hình vuông như thế này, còn trong thực tế ảnh chụp từ các thiết bị ngày nay đa số sẽ là hình chữ nhật
+0:10:49 - 0:10:56, Nhưng mà khi các bạn đã xây dựng một cái model thì model không thể nhận ảnh có nhiều kích thước khác nhau
+0:10:56 - 0:11:04, đến từ nhiều cái thiết bị khác nhau mà ảnh lúc to lúc nhỏ lúc ngang lúc dọc vâng vâng model sẽ rất là khó xử lý
+0:11:04 - 0:11:11, Nên ở đây để loại trừ những trường hợp đó, chúng ta muốn model chỉ tập trung,
+0:11:11 - 0:11:21, những gì chủ thể trong ảnh là chó hay mèo thôi, chúng ta không muốn để model giải quyết những vấn đề liên quan đến kích thước,
+0:11:21 - 0:11:32, cái chiều xoay của ảnh thì ở đây tôi sử dụng cách đơn giản đó là resize tấm ảnh về kích thước là 150 x 150.
+0:11:32 - 0:11:36, Resize là một cái thao tác rất là cơ bản trong xử lý ảnh vững dụng
+0:11:36 - 0:11:42, Và mả nguồn của thuật toán Resize này
+0:11:42 - 0:11:45, thì nó cũng đã nằm sẵn trong thư viện TensorFlow rồi
+0:11:45 - 0:11:47, chúng ta chỉ cần gọi một hàm là xong
+0:11:47 - 0:11:52, khấu này chưa liên quan gì đến model và đến machine learning cả
+0:11:52 - 0:11:55, nên đó là khấu tiền xử lý chúng ta chưa đụng gì đến
+0:11:55 - 0:11:58, machine learning ở bước này hết chúng ta chỉ đang
+0:11:58 - 0:12:00, Thu nhỏ cái ảnh lại thôi ha
+0:12:00 - 0:12:04, 150 x 150 là kích thước không phải to lắm
+0:12:04 - 0:12:08, Nên hầu hết ảnh ở đây sẽ bị thu nhỏ lại
+0:12:08 - 0:12:13, Nhưng mà do chủ thể của chúng ta là chó hoặc mèo là hai động vật cũng khá là to
+0:12:13 - 0:12:17, Nên chắc là thu nhỏ ảnh lại thì vẫn có thể nhìn được
+0:12:17 - 0:12:22, Rồi, cuối cùng chúng ta chia data set này thành 2 phần là training set
+0:12:22 - 0:12:25, Và validation set
+0:12:25 - 0:12:31, Training dataset sẽ chiếm 0,8, tức là 80%
+0:12:31 - 0:12:37, Kích thước của dataset và validation set sẽ chiếm 20% còn lại
+0:12:37 - 0:12:39, Đó là bước tiền xử lý
+0:12:39 - 0:12:47, Bước thứ 4 là chúng ta phát triển lựa chọn và xây dựng model
+0:12:47 - 0:12:55, Ở đây có một model đơn giản được xây dựng ra bằng thư viện Keras trong TensorFlow
+0:12:55 - 0:12:59, Keras là một thư viện đường đi kèm với TensorFlow
+0:12:59 - 0:13:05, Nó chưa danh sách các model mà các bậc tiền nhân đi trước đã
+0:13:05 - 0:13:09, Đề xuất suy nghĩ rất là đắng, đó thật ra nhiều
+0:13:09 - 0:13:13, nghiên cứu khoa học họ đề xuất thì Keras lưu những model
+0:13:13 - 0:13:16, này để chúng ta có thể gép lại với nhau
+0:13:16 - 0:13:19, để hình thành một model mới cho bài toán của mình
+0:13:19 - 0:13:23, Ở đây chúng ta có một model dựa trên ký tưởng là
+0:13:23 - 0:13:29, CNN, tức là Convolutional Neural Network là một cái mạng học sâu
+0:13:29 - 0:13:32, sử dụng cái phép toán Convolution
+0:13:32 - 0:13:33, đó
+0:13:33 - 0:13:42, phép toán này, cái mạng này đã có rất là nhiều tài liệu chứng minh là nó hiệu quả trong bài toán Image Classification
+0:13:42 - 0:13:49, và chúng ta sử dụng lại thôi, đoạn code này kế thừa từ rất nhiều cái mạng nguồn khác có trên mạng
+0:13:49 - 0:14:01, Đầu vào chúng ta sẽ là một cái ảnh có kích thước là 150 x 150 và đây là ảnh màu có 3 kênh màu red green blue đó là 3 con số ở đây.
+0:14:01 - 0:14:09, Đó, đầu tiên là chiều dài của ảnh, chiều cao của ảnh và số lượng màu của mỗi điểm ảnh.
+0:14:09 - 0:14:18, Chúng ta sẽ thực hiện qua rất nhiều cái thao tác trên neural network để cuối cùng đầu ra của chúng ta là một con số duy nhất.
+0:14:21 - 0:14:36, Đầu ra của chúng ta là một cái layer trong nội neural network chỉ chứa một số duy nhất và cái số này sẽ được đưa vào một cái hàm sigmoid để cho ra kết quả sau cục.
+0:14:36 - 0:14:41, Đó là một kỹ thuật Image Classification đơn giản
+0:14:41 - 0:14:45, Các bạn từ từ sẽ được học về kỹ thuật này trong những chương tiếp theo
+0:14:45 - 0:14:51, Ở đây chúng ta ghi ra để chạy thử vinh hỏa cho khả năng của Google Collab
+0:14:54 - 0:14:58, Tiếp theo là yêu cầu của thư viện thì chúng ta sẽ chạy lệnh model.com.by
+0:14:58 - 0:15:08, Và chúng ta đưa các tham số vào để có thể thực hiện quá trình huấn luyện cho cái model này.
+0:15:08 - 0:15:15, Chúng ta sẽ cố gắng dựa trên kiến trúc convolutional neural network này.
+0:15:15 - 0:15:23, Chúng ta tìm ra cái model cho kết quả dự đoán tốt nhất bằng thuật toán ADAM optimization.
+0:15:23 - 0:15:28, và chúng ta đánh giá mức độ tốt bằng metric accuracy
+0:15:29 - 0:15:32, sau đó chúng ta sẽ đi huấn luyện model
+0:15:33 - 0:15:40, huấn luyện là tìm ra các cái tham số để model có thể đưa ra kết quả dự đoán tốt nhất
+0:15:41 - 0:15:46, thì quá trình huấn luyện này sẽ được thực hiện thông qua 5 lần lập
+0:15:46 - 0:15:54, 5 lần lập. Đầu tiên là chúng ta đưa tất cả các ảnh trong training set và trong model chúng ta xem.
+0:15:55 - 0:16:02, Thử dụng thuộc toán Adam Optimization này chúng ta điều chỉnh lại các tham số để cho model có thể nhận diện được cái ảnh này.
+0:16:03 - 0:16:12, Sau khi chạy qua hết một loạt các ảnh, chúng ta sẽ inh ra kết quả hiện tại của model, accuracy của model đang là bao nhiêu.
+0:16:12 - 0:16:20, Và trên tập Accuracy Validation Set thì Accuracy là bao nhiêu?
+0:16:20 - 0:16:30, Sau khi dây chúng ta lập 5 lần lập như thế, chúng ta đưa toàn bộ cáp ảnh vào model, chúng ta điều chỉnh tham số cho kết quả nó tốt hơn.
+0:16:30 - 0:16:38, Rồi chúng ta qua ảnh tiếp theo, thì các ảnh này sẽ đưa vào lần lượt theo từng patch,
+0:16:38 - 0:16:46, là một lần model sẽ học trong 32 tấm ảnh một lần các bạn hoàn toàn có thể tăng con số 32 này lên
+0:16:46 - 0:16:53, không nhất các bạn thậm chí các bạn có thể đưa toàn bộ ảnh trong model vào một lần cũng được nếu như máy các bạn
+0:16:53 - 0:17:04, đủ mạnh ở đây chúng ta có 580 bách mỗi bách 30 ảnh là chúng ta có khoảng 15.000
+0:17:04 - 0:17:09, Mình có khoảng 15.000 tấm ảnh trong training set
+0:17:09 - 0:17:14, Nếu mấy bạn có đủ bộ nhớ để lưu toàn bộ 15.000 tấm ảnh
+0:17:14 - 0:17:19, Mỗi ảnh bao gồm 150 x 150 ohm
+0:17:19 - 0:17:24, 150 bình phương pixel
+0:17:24 - 0:17:27, Nếu các bạn nhắm mấy mình đủ RAM để chứa
+0:17:27 - 0:17:31, Các bạn có thể tăng patch size lên là 15.000 chạy toàn bộ
+0:17:31 - 0:17:33, Cái data set này một lần duy nhất cũng được
+0:17:34 - 0:17:36, Nhưng mà
+0:17:36 - 0:17:39, Điều đó thì thương là cũng không khôn quan cho lắm
+0:17:39 - 0:17:43, Tại vì nếu các bạn tin ý các bạn sẽ nhìn thấy ở đây là thời gian chạy
+0:17:43 - 0:17:46, Của một lần lập có nghĩa là để trend hết một lần
+0:17:46 - 0:17:48, Gần 15.000 thám ảnh đó
+0:17:49 - 0:17:53, Sẽ phải tốn 1.123 giây
+0:17:55 - 0:17:59, Nếu bạn nào tính nhảm nhanh thì có thể thấy con số này là
+0:17:59 - 0:18:00, Gần 20 phút
+0:18:01 - 0:18:03, 1 phút là 1200 giây
+0:18:03 - 0:18:05, 1 giờ là 3600 giây
+0:18:05 - 0:18:07, thì 20 phút chứ 20 phút sẽ là 1200
+0:18:07 - 0:18:11, ở đây chúng ta 1123 gần 20 phút
+0:18:11 - 0:18:15, cho 1 lần lập 15000 tấm ảnh
+0:18:15 - 0:18:17, mà chúng ta lập 5 lần như vậy
+0:18:17 - 0:18:19, như vậy thời gian training
+0:18:19 - 0:18:21, tổng cộng là khoảng hơn
+0:18:21 - 0:18:23, đâu đó cỡ 2 tiếng đồ hồ
+0:18:23 - 0:18:27, có nghĩa là cái notebook này các thầy đã phải chạy từ trước
+0:18:27 - 0:18:29, và là treo máy cho tấm ảnh
+0:18:29 - 0:18:34, và là treo máy cho nó chạy mới lấy được kết quả này về cho các bạn.
+0:18:34 - 0:18:36, Rõ do ở đây
+0:18:38 - 0:18:41, Google Collab cho chúng ta sử dụng CPU tới khoảng 70 giờ
+0:18:41 - 0:18:45, họ cũng đã có dùng ý rồi, một cái ví dụ đơn giản nhỏ thế này thôi
+0:18:45 - 0:18:52, nhưng mà các bạn dùng một kỹ thuật cân cái khối lượng tính toán cao như Deep Learning
+0:18:52 - 0:18:57, thì nếu chỉ dùng 2 CPU Core đơn giản của Google Collab
+0:18:57 - 0:19:09, các bạn sẽ phải tốn gần 2 tiếng đầu hồ cho kết quả 5 lần lập như thế này và kết quả này theo biểu đồ xong
+0:19:09 - 0:19:17, thì trên tập training set model càng học thì càng thông minh hơn, accuracy càng ngày càng cao
+0:19:17 - 0:19:24, nhưng mà trên tập validation set thì ban đầu model học thì accuracy có vẻ tăng nhưng từ từ nó đang
+0:19:24 - 0:19:33, hình như là nó tăng không được cao nữa, đầu tiên là nó từ 0.70 mấy nó nhảy lên gần 0.8
+0:19:33 - 0:19:43, tức là từ đây là khoảng 7.3, 7.4% nhảy lên gần 80%, sau đó nhảy lên hơn 80%
+0:19:43 - 0:19:47, và hai lần training tiếp theo thì chưa đầy 5%
+0:19:47 - 0:19:54, có nghĩa là đối với dữ liệu mà model đã được thấy
+0:19:54 - 0:20:00, tức là model, dữ liệu đã được sử dụng để train cho model thì model nó xử lý rất là tốt
+0:20:00 - 0:20:06, các bạn thấy training accuracy, tức là kể độ chính xác trên tập dữ liệu mà model được dùng để train
+0:20:06 - 0:20:11, nó đã gần 90% rồi, và có vẻ nó còn có thể tăng nữa
+0:20:11 - 0:20:16, Nhưng trên dữ liệu mà chúng ta chừa lại, chúng ta không dùng để tên
+0:20:17 - 0:20:23, Chúng ta trên validation set thì tốc độ tăng của accuracy không được nhanh như thế
+0:20:23 - 0:20:38, Đây cũng là một đặc trưng mà các bạn sẽ quan sát học cho các bài tiếp theo khi chúng ta làm quen với một số các mô hình mại học khác
+0:20:38 - 0:20:53, Khi chúng ta có được một model, thì tiếp theo tới giai đoạn này chúng ta đã thấy được kết quả trend của model và chúng ta thấy được trên tập dữ liệu dùng để kiểm tra hay tập validation.
+0:20:53 - 0:21:03, Kết quả tăng không được mỹ mạng cho lắm thì chúng ta có thể đề xuất triển khai hoặc là chúng ta cải thiện mô hình
+0:21:03 - 0:21:09, Nếu chúng ta thấy mô hình accuracy này đối với tôi như vậy là được tạm được
+0:21:09 - 0:21:18, Tôi không yêu cầu quá cao 80% nghĩa là đưa 10 tấm ảnh, máy dự đoán đúng được 8 tấm, sai 2 tấm và tôi thấy như vậy là đủ rồi
+0:21:18 - 0:21:23, đủ rồi thì thôi có thể triển khai sử dụng mô hình này trong bài toán thực tế của tôi.
+0:21:24 - 0:21:28, Nếu không thì tôi sẽ phải tiến hành cải tiến model.
+0:21:31 - 0:21:35, Mà muốn cải tiến model thì thường các bạn sẽ phải có một bước đó là các bạn quan sát
+0:21:36 - 0:21:43, cái model nó chạy. Các bạn xem những trường hợp nào nó hay sai để các bạn cố gắng tìm ra
+0:21:43 - 0:21:51, ý tưởng xem model sai ở đâu và từ đó chúng ta đề xuất phương án cải tiến nếu được
+0:21:51 - 0:21:59, chúng ta chỉnh sửa điều chỉnh lại model sau đó chúng ta huấn luyện lại model và chúng ta lại quan sát kết quả đánh giá
+0:21:59 - 0:22:04, xem nó có ổn hay chưa, chúng ta lập đi lập lại quá trình này thì đó chính là sự cải tiến
+0:22:04 - 0:22:16, Rồi, mà sự cải tiến này sẽ phải trả giá nó tương đối đắc, tại vì mỗi lần huấn luyện lại model là 2 tiếng đồng hồ
+0:22:16 - 0:22:30, Trong các phần tiếp theo, chúng ta sẽ quan sát thêm cũng với ví chủ này. Làm sao để khâu training model này được nhanh hơn.
+0:22:30 - 0:22:37, Làm sao chúng ta cắt giảm cái 2 tiếng đồng hồ này xuống. Chúng ta muốn cải tiến được model thì chúng ta phải thử nghiệm.
+0:22:37 - 0:22:45, chúng ta phải quan sát thực tiện nó hoạt động, chúng ta đưa hình vào sẵn, chúng ta quan sát khách nó chạy
+0:22:45 - 0:22:51, rồi từ đó chúng ta mới có ý tưởng để chúng ta thực hiện cải tiến
+0:22:51 - 0:22:58, và sau đó chúng ta phải kiểm tra lại xem cải tiến đó có thực sự là đưa ra kết quả tốt hơn hay không
+0:22:58 - 0:23:04, nhưng mà cứ mỗi lần thực hiện một thay đổi tốt 2 tiếng đồng hồ để train
+0:23:04 - 0:23:06, thì cái tốc độ cải tiến các bạn sẽ không thể nhanh được
+0:23:06 - 0:23:09, chúng ta phải bằng cách nào đó kéo giảm cái tốc độ này xuống
+0:23:09 - 0:23:12, chúng ta sẽ đến với điều đó trong những video tiếp theo

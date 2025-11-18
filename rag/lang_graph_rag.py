@@ -117,6 +117,10 @@ graph.add_edge("rag", END)
 
 workflow = graph.compile()
 
+## lấy work_flow
+def get_workflow():
+    return workflow
+
 # -------------------------
 # Test run
 # -------------------------

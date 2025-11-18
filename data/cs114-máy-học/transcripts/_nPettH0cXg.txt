@@ -1,0 +1,412 @@
+0:00:01 - 0:00:15, [âm nhạc]
+0:00:13 - 0:00:19, Tiếp theo thì chúng ta sẽ cùng minh họa
+0:00:15 - 0:00:21, cho cái ý tưởng của feature engineering.
+0:00:19 - 0:00:24, Thì đầu tiên chúng ta cũng sẽ import thư
+0:00:21 - 0:00:24, viện NP.
+0:00:25 - 0:00:31, Và bước đầu tiên đó là chúng ta sẽ khởi
+0:00:27 - 0:00:31, tạo các cái dữ liệu.
+0:00:32 - 0:00:37, Thế thì giả sử như cái mô hình của mình
+0:00:34 - 0:00:40, nó được tạo bởi các cái điểm ờ có cái
+0:00:37 - 0:00:41, mối quan hệ là một cái dạng đường cong
+0:00:40 - 0:00:44, và giả sử như ở đây chúng ta xét là
+0:00:41 - 0:00:50, đường cong bậc hai thì x thì chúng ta
+0:00:44 - 0:00:54, cũng sẽ lấy là np.range Range từ 0
+0:00:50 - 0:01:00, à cục hiệu từ 1 cho đến 3 đi và bước
+0:00:54 - 0:01:02, nhảy là 0.2 2 và y thì sẽ là bằng x cộng
+0:01:00 - 0:01:05, cho
+0:01:02 - 0:01:10, x bình phương cộng cho
+0:01:05 - 0:01:13, x bình cộng cho x
+0:01:10 - 0:01:17, - 3. Ví dụ vậy. Và hệ số ở đây ví dụ như
+0:01:13 - 0:01:17, là à -4
+0:01:18 - 0:01:25, cộng cho y à cộng cho 5 nhân x - 3. Đó.
+0:01:23 - 0:01:27, Và đương nhiên chúng ta cũng phải thêm
+0:01:25 - 0:01:30, vô một cái đại lượng nhiễu tại vì không
+0:01:27 - 0:01:32, phải lúc nào nó cũng có thể là
+0:01:30 - 0:01:34, à ra một cái
+0:01:32 - 0:01:35, gọi là lấy mẫu chúng ta lấy chính xác
+0:01:34 - 0:01:37, được mà có thể có cái size số trong cái
+0:01:35 - 0:01:41, quá trình chúng ta lấy mẫu thì dẫn đến
+0:01:37 - 0:01:44, là mô hình của mình nó có khả năng sẽ
+0:01:41 - 0:01:46, dự đoán sai. Do đó thì cái việc thêm mua
+0:01:44 - 0:01:47, một cái đại lượng nhiễu nó cũng giúp cho
+0:01:46 - 0:01:50, chúng ta xác định xem mô hình của mình
+0:01:47 - 0:01:51, có ổn định trước các cái nhiễu này hay
+0:01:50 - 0:01:54, không.
+0:01:51 - 0:01:58, Rồi thì ở đây chúng ta sẽ lấy theo nhiễu
+0:01:54 - 0:02:01, phân phối chuẩn với tâm mi là bằng 0,
+0:01:58 - 0:02:05, standard deviation là bằng 1 và số mẫu
+0:02:01 - 0:02:10, của chúng ta thì là sẽ bằng lens của x.
+0:02:05 - 0:02:13, Rồi bây giờ chúng ta sẽ à import m
+0:02:10 - 0:02:13, plotlift
+0:02:14 - 0:02:17, chp plot
+0:02:20 - 0:02:27, splt
+0:02:22 - 0:02:29, và chúng ta sẽ show chúng ta sẽ đưa lên
+0:02:27 - 0:02:33, trên cái sơ đồ để chúng ta xem coi xi
+0:02:29 - 0:02:33, của mình nhìn nó như thế nào.
+0:02:35 - 0:02:38, Rồi plt.S
+0:02:39 - 0:02:46, và chúng ta sẽ chạy thì à
+0:02:43 - 0:02:50, đó thì với cái
+0:02:46 - 0:02:52, x khoảng này thì nó chưa có đạt được cái
+0:02:50 - 0:02:53, à cái hình vẽ gì chúng ta mong muốn. Đó
+0:02:52 - 0:02:56, chúng ta phải lấy cái khoảng nó rộng
+0:02:53 - 0:03:01, hơn. Thì ví dụ như ở đây chúng ta lấy là
+0:02:56 - 0:03:03, từ trừ 3 cho đến 3 và bước nhãy là 0.5.
+0:03:01 - 0:03:04, 5
+0:03:03 - 0:03:06, chúng ta nâng cái khoảng giá trị của x
+0:03:04 - 0:03:09, lên đó thì chúng ta thấy là nó đã có cái
+0:03:06 - 0:03:12, đường cong như thế này và chúng ta có
+0:03:09 - 0:03:15, thể tăng lên cái size số cho cái đường
+0:03:12 - 0:03:18, cong này bằng cách đó là nhân với 2
+0:03:15 - 0:03:22, và giá trị ở đầu ra bên đây cái bên tay
+0:03:18 - 0:03:24, phải có thể tăng lên là bằng 4
+0:03:22 - 0:03:25, đó thì nó sẽ ra cái dạng đường cong bậc
+0:03:24 - 0:03:30, hai.
+0:03:25 - 0:03:31, Rồi thì bây giờ chúng ta sẽ à nếu đúng
+0:03:30 - 0:03:33, như bình thường thì chúng ta chỉ sử dụng
+0:03:31 - 0:03:36, một cái đặc trưng X nhưng mà bây giờ
+0:03:33 - 0:03:38, chúng ta sẽ đưa thêm
+0:03:36 - 0:03:40, cái
+0:03:38 - 0:03:44, x bình phương như là một cái đặc trưng
+0:03:40 - 0:03:49, mới ha. Thì bây giờ mình sẽ có thêm một
+0:03:44 - 0:03:51, cái nữa là xỉ thừa 2 thì sẽ là bằng x
+0:03:49 - 0:03:53, mũ 2. Tuy nhiên ở đây chúng ta kiểm
+0:03:51 - 0:03:56, chứng lại thì không biết là cái x m 2
+0:03:53 - 0:04:00, này á là nó đang tính có đúng hay không
+0:03:56 - 0:04:02, thì chúng ta sẽ in ra x và in ra x bình
+0:04:00 - 0:04:05, phương để xem xem là cái giá trị đặc
+0:04:02 - 0:04:06, trưng mà chúng ta bình phương ở đây có
+0:04:05 - 0:04:08, đúng như những gì chúng ta kỳ vọng hay
+0:04:06 - 0:04:11, không.
+0:04:08 - 0:04:15, Thì đây chúng ta thấy là à -3 - 2,5 thì
+0:04:11 - 0:04:19, tương ứng bình phương nó sẽ ra là 9 6,25
+0:04:15 - 0:04:23, rồi -2 thì là thành 4 đó 3 thì sẽ là
+0:04:19 - 0:04:27, thành 9. Như vậy là nó đã tính đúng.
+0:04:23 - 0:04:33, Bây giờ chúng ta sẽ khởi tạo à khởi tạo
+0:04:27 - 0:04:36, các cái à trọng số của mô hình.
+0:04:33 - 0:04:40, Thì à ở đây sẽ có bao ba bao gồm là x1 à
+0:04:36 - 0:04:42, w1 tương ứng cho x và w2 là tương ứng
+0:04:40 - 0:04:45, cho x bình phương. Thì ví dụ như ở đây
+0:04:42 - 0:04:50, chúng ta có là
+0:04:45 - 0:04:52, ờ khởi tạo là bằng 10 đi. Rồi W2
+0:04:50 - 0:05:00, thì sẽ là bằng
+0:04:52 - 0:05:03, à -10. B là bias thì sẽ là bằng -5.
+0:05:00 - 0:05:05, Rồi thì bây giờ chúng ta sẽ huấn chúng
+0:05:03 - 0:05:07, ta sẽ cài đặt cho cái thực toán desend Y
+0:05:05 - 0:05:10, tr thì bước đầu tiên đó là chúng ta sẽ
+0:05:07 - 0:05:13, tính đạo hàm.
+0:05:10 - 0:05:13, [âm nhạc]
+0:05:14 - 0:05:21, Bước thứ hai đó là chúng ta sẽ cập nhật
+0:05:18 - 0:05:23, các cái tham số của mô hình.
+0:05:21 - 0:05:25, Và bước số ba đó là chúng ta sẽ trực
+0:05:23 - 0:05:28, quan hóa.
+0:05:25 - 0:05:31, Và cuối cùng đó là chúng ta sẽ kiểm tra
+0:05:28 - 0:05:34, cái điều kiện dừng.
+0:05:31 - 0:05:37, Rồi thì à để tính đạo hàm thì cái công
+0:05:34 - 0:05:41, thức cũng tương tự như trong slide trước
+0:05:37 - 0:05:43, về cái mô hình hồi quy đa biến.
+0:05:41 - 0:05:45, Thì ở đây chúng ta sẽ có cái công thức
+0:05:43 - 0:05:47, đó là
+0:05:45 - 0:05:50, ờ
+0:05:47 - 0:05:53, derivative của
+0:05:50 - 0:05:59, J. đúng không? À ở đây derivative theo
+0:05:53 - 0:06:02, W1 thì nó sẽ là bằng NP. Min
+0:05:59 - 0:06:02, của
+0:06:02 - 0:06:08, nó sẽ là giá trị dự đoán trừ cho giá trị
+0:06:05 - 0:06:12, thực tế. Thì giá trị dự đoán của chúng
+0:06:08 - 0:06:17, ta chính là x W1
+0:06:12 - 0:06:22, nhân với X cộng cho W2
+0:06:17 - 0:06:24, nhân với lại à X bình phương cộng cho
+0:06:22 - 0:06:27, và tất cả thì chúng ta sẽ trừ cho trừ
+0:06:24 - 0:06:29, cho Y.
+0:06:27 - 0:06:32, Rồi
+0:06:29 - 0:06:34, và ở đây là cái thành phần ờ vì chúng ta
+0:06:32 - 0:06:40, đang xét trên cái thành phần là W nên nó
+0:06:34 - 0:06:43, sẽ có nhân với lại cái đạo hàm của ờ của
+0:06:40 - 0:06:46, cái W1 theo cái vế này thì đạo hàm của
+0:06:43 - 0:06:49, W1 theo cái vế này thì nó sẽ là bằng X.
+0:06:46 - 0:06:52, Do đó ở đây chúng ta sẽ nhân thêm với X.
+0:06:49 - 0:06:56, Tương tự như vậy thì chúng ta sẽ có cái
+0:06:52 - 0:07:00, đạo hàm bậc hai à xin lỗi đạo hàm cho w2
+0:06:56 - 0:07:03, thì nó sẽ là bằng w1x + w2x2
+0:07:00 - 0:07:06, + b - y và nhân cho cái đạo hàm của cái
+0:07:03 - 0:07:10, vế bên trong này theo w2 thì đạo hàm của
+0:07:06 - 0:07:12, cái này theo w2 nó sẽ là bằng x2 tức là
+0:07:10 - 0:07:17, x bình.
+0:07:12 - 0:07:19, À tương tự như vậy cho bias B thì chúng
+0:07:17 - 0:07:21, ta sẽ nhân cho cái đạo hàm của cái vế
+0:07:19 - 0:07:23, bên trong này theo B. Thì chúng rõ ràng
+0:07:21 - 0:07:26, là các cái thành phần này đối với B nó
+0:07:23 - 0:07:30, là hằng số do đó đạo hàm bằng 0. Còn đạo
+0:07:26 - 0:07:31, hàm của B à theo B thì nó sẽ là bằng 1.
+0:07:30 - 0:07:35, Do đó thì chúng ta sẽ không có phải nhân
+0:07:31 - 0:07:37, ở đây. Bước tiếp theo cập nhật tham số
+0:07:35 - 0:07:40, thì rất là đơn giản đó là W1 sẽ là bằng
+0:07:37 - 0:07:45, W1 trừ cho alpha
+0:07:40 - 0:07:49, nhân cho đạo hàm của W1.
+0:07:45 - 0:07:54, Tương tự như vậy cho W2
+0:07:49 - 0:07:54, W2 và tương tự cho B.
+0:07:56 - 0:08:01, đạo hàm theo B. Sau khi chúng ta cập
+0:07:59 - 0:08:06, nhật xong thì chúng ta sẽ kiểm tra điểm
+0:08:01 - 0:08:06, dừng đó là if ABS của derivative
+0:08:07 - 0:08:15, của W1 mà bé hơn một cái ngưỡng epsilon
+0:08:10 - 0:08:18, và trị tuyệt đối của derivative của W2
+0:08:15 - 0:08:24, bé hơn
+0:08:18 - 0:08:27, và trị tuyệt đối của derivative theo B.
+0:08:24 - 0:08:30, bé hơn silon thì chúng ta sẽ
+0:08:27 - 0:08:34, và ở đây chúng ta sẽ có thêm hai cái
+0:08:30 - 0:08:36, siêu tham số đó là alpha là bằng 0.0 à
+0:08:34 - 0:08:38, 0.01.
+0:08:36 - 0:08:40, Nếu mà nó chậm quá thì chúng ta có thể
+0:08:38 - 0:08:43, tăng cái alpha này lên và ngưỡng dừng
+0:08:40 - 0:08:45, thì là bằng 0.001.
+0:08:43 - 0:08:49, Thì đây là điều kiện dừng. Bây giờ chúng
+0:08:45 - 0:08:53, ta sẽ chạy trước để xem xem là cái W1,
+0:08:49 - 0:08:58, W2, W1 và B có tiến về các cái giá trị
+0:08:53 - 0:09:01, hệ số ở đây không. Nếu đúng thì W1
+0:08:58 - 0:09:03, là tương ứng à với lại X. À ở đây nó thứ
+0:09:01 - 0:09:05, tự nó hơi bị ngược ha. Tức là ở đây
+0:09:03 - 0:09:10, chúng ta đang xét là x bình phương xong
+0:09:05 - 0:09:12, rồi mới đến xong rồi mới đến bias. Thì ở
+0:09:10 - 0:09:14, đây chúng ta sẽ sửa lại một chút xíu W1
+0:09:12 - 0:09:19, thì chúng ta sẽ đi theo cái biến x bình
+0:09:14 - 0:09:23, phương. Do đó chúng ta sẽ để là x 2. W
+0:09:19 - 0:09:26, thì đi theo với biến x và b là bias. Do
+0:09:23 - 0:09:29, đó thì tính đạo hàm của cái vế bên trong
+0:09:26 - 0:09:31, này theo W1 thì chúng ta sẽ ra là X2 tức
+0:09:29 - 0:09:34, là x bình phương
+0:09:31 - 0:09:34, rồi
+0:09:35 - 0:09:43, cộng B - Y. Đạo hàm của nguyên cái vế
+0:09:39 - 0:09:45, này theo W2 thì nó sẽ là bằng X. Do đó ở
+0:09:43 - 0:09:49, đây chúng ta sẽ sửa lại là bằng nhân với
+0:09:45 - 0:09:53, X. Rồi bây giờ chúng ta sẽ cho chạy và
+0:09:49 - 0:09:57, kiểm tra xem là W1 có tiến về -4 và W2
+0:09:53 - 0:09:58, có tiến về 5 và byas có tiến về -3 hay
+0:09:57 - 0:10:03, không.
+0:09:58 - 0:10:03, Thì ở đây chúng ta sẽ in ra ha.
+0:10:10 - 0:10:17, Rồi đây sẽ là W2,
+0:10:13 - 0:10:17, đây sẽ là bias.
+0:10:18 - 0:10:28, Và chúng ta nên có một cái câu thông báo
+0:10:21 - 0:10:30, đó là cái tham số của mô hình sau khi
+0:10:28 - 0:10:33, tham số của mô hình mà sau khi chúng ta
+0:10:30 - 0:10:33, huấn luyện.
+0:10:33 - 0:10:36, Rồi
+0:10:41 - 0:10:48, thì à sau khi huấn luyện chúng ta thấy
+0:10:43 - 0:10:52, là W1 là nó tiến về à 0.2,
+0:10:48 - 0:10:55, W2 thì tiến về là 0.7 và B là -33. Thì
+0:10:52 - 0:10:58, có vẻ như là ở đây nó vẫn chưa có hội
+0:10:55 - 0:11:01, tụ. Thì chúng ta sẽ cùng kiểm tra một
+0:10:58 - 0:11:05, lần nữa xem cái công thức của mình cũng
+0:11:01 - 0:11:07, như là cái à
+0:11:05 - 0:11:11, cách tính đã chính xác hay chưa ha. Thì
+0:11:07 - 0:11:14, đạo hàm theo ờ W1 thì nó sẽ là bằng
+0:11:11 - 0:11:18, trung bình cộng đúng không? trung bình
+0:11:14 - 0:11:23, của các cái size số này à trung bình của
+0:11:18 - 0:11:28, cái size số này nhân với lại x2 rồi à
+0:11:23 - 0:11:31, nhân với x và wa trong cái công thức của
+0:11:28 - 0:11:34, đạo hàm theo b chúng ta cũng đã nhân sai
+0:11:31 - 0:11:38, đúng không chúng ta chưa có sửa lại thì
+0:11:34 - 0:11:41, w1 phải nhân với lại x bình phương và w2
+0:11:38 - 0:11:43, thì phải nhân với x
+0:11:41 - 0:11:43, rồi
+0:11:43 - 0:11:48, Và ở đây chúng ta tạm bỏ cái này để
+0:11:47 - 0:11:50, chúng ta xem coi thuậc toán nó chạy đúng
+0:11:48 - 0:11:53, hay không.
+0:11:50 - 0:11:56, Đó. Rồi như vậy thì sau khi chạy xong
+0:11:53 - 0:12:00, chúng ta thấy là W1 thì đã tiến đến -4
+0:11:56 - 0:12:05, đúng như ở đây. W thì tiến đến 5 đúng
+0:12:00 - 0:12:09, như ở đây và B thì tiến đến là trừ
+0:12:05 - 0:12:12, 20 2,8. Thì rõ ràng chúng ta thấy là
+0:12:09 - 0:12:14, công thức này à cái thuật toán gradient
+0:12:12 - 0:12:17, nó rất là hiệu quả và nó vẫn có thể tính
+0:12:14 - 0:12:20, đúng khi chúng ta cung cấp thêm một cái
+0:12:17 - 0:12:24, feature phù hợp. Bây giờ tiếp theo chúng
+0:12:20 - 0:12:26, ta sẽ thử trực quan hóa thì chúng ta sẽ
+0:12:24 - 0:12:33, dùng là PLT.plot
+0:12:26 - 0:12:36, của X và Y kèm theo đó là à R0
+0:12:33 - 0:12:36, rồi plt.p
+0:12:37 - 0:12:45, à ví dụ như là 0.2 đi. Rồi
+0:12:42 - 0:12:47, và đồng thời chúng ta cũng sẽ vẽ cái
+0:12:45 - 0:12:50, đường cong của mình. Thế thì cái đường
+0:12:47 - 0:12:54, cong của mình mình sẽ dựa trên x và mình
+0:12:50 - 0:12:57, sẽ tính toán theo cái công thức này.
+0:12:54 - 0:13:00, Nhưng mà chúng ta sẽ không tính theo cái
+0:12:57 - 0:13:02, à bộ trọng số round tức là cái bộ trọng
+0:13:00 - 0:13:07, số -4
+0:13:02 - 0:13:09, 5 - 3 mà chúng ta sẽ tính theo
+0:13:07 - 0:13:12, đúng cái công thức nguyên bản của mình.
+0:13:09 - 0:13:15, Đó là B. Ở đây sẽ là cộng B. Đây sẽ là
+0:13:12 - 0:13:15, W1.
+0:13:17 - 0:13:23, Rồi đây sẽ là W2 và X thì chúng ta không
+0:13:21 - 0:13:27, có phải tạo lại nữa. Chúng ta đã có rồi.
+0:13:23 - 0:13:29, X và X bình phương chúng ta đã có rồi.
+0:13:27 - 0:13:32, Rồi Y chính là cái giá trị mà chúng ta
+0:13:29 - 0:13:34, cần phải vẽ. Thế thì ở đây chúng ta sẽ
+0:13:32 - 0:13:39, vẽ bằng dạng đường. Do đó chúng ta sẽ
+0:13:34 - 0:13:41, không có cái R0 ở đây. Và X thì thay vì
+0:13:39 - 0:13:46, chúng ta vẽ là X và Y thì chúng ta sẽ vẽ
+0:13:41 - 0:13:46, X và cái giá trị chúng ta dự đoán.
+0:13:46 - 0:13:51, Thì nếu mà chúng ta muốn ký hiệu thì
+0:13:48 - 0:13:55, cũng được. Đó là y predict ha. Viết tắc
+0:13:51 - 0:13:59, của chữ predict sẽ là bằng
+0:13:55 - 0:13:59, w1 nhân cho x bình
+0:14:00 - 0:14:08, cộng cho w2 nh x cộng cho b. Và ở đây
+0:14:03 - 0:14:10, thì chúng ta sẽ để là y predict.
+0:14:08 - 0:14:12, Rồi bây giờ chúng ta sẽ chạy thử cái à
+0:14:10 - 0:14:14, chương trình này ha.
+0:14:12 - 0:14:18, Đó, chúng ta thấy ban đầu cái đường cong
+0:14:14 - 0:14:21, của mình là nó cong lên như thế này đó.
+0:14:18 - 0:14:23, Sau đó thì
+0:14:21 - 0:14:26, đường cong của mình nó dành fit vào các
+0:14:23 - 0:14:32, cái tập điểm lấy mẫu đã lấy mẫu của
+0:14:26 - 0:14:32, chúng ta đó. đã dần lấy vào fit vào.
+0:14:32 - 0:14:37, Rồi thì đây là chúng ta đang minh họa
+0:14:34 - 0:14:39, cho cái tình huống đó là good fitting.
+0:14:37 - 0:14:40, Điều gì xảy ra nếu như chúng ta
+0:14:39 - 0:14:43, underfitting
+0:14:40 - 0:14:45, thì chúng ta sẽ thay cái mô hình này
+0:14:43 - 0:14:48, bằng một cái mô hình chỉ có một tham số
+0:14:45 - 0:14:52, thôi. Đó là W1 thôi. Thôi thì ở đây
+0:14:48 - 0:14:54, chúng ta vẫn cứ để là W2 ha.
+0:14:52 - 0:14:58, Nhưng mà cái mô hình của mình sẽ giảm số
+0:14:54 - 0:14:58, tham số xuống.
+0:14:58 - 0:15:03, tính đạo hàm thì đây là cái tình huống
+0:15:00 - 0:15:07, gọi là good fitting.
+0:15:03 - 0:15:07, Còn ở đây sẽ là underfitting.
+0:15:11 - 0:15:18, Thì lúc này chỉ có W1 và công thức của
+0:15:14 - 0:15:18, mình là chỉ có X thôi.
+0:15:19 - 0:15:26, w1 nh x + b - y
+0:15:22 - 0:15:30, rồi w1 nh x
+0:15:26 - 0:15:34, cộng b tr- y và ở đây sẽ là nhân với x
+0:15:30 - 0:15:38, tại vì đạo hàm của w1 à đạo hàm của cái
+0:15:34 - 0:15:41, hàm này theo w1 thì nó sẽ là bằng x
+0:15:38 - 0:15:44, rồi à ở đây thì chúng ta sẽ
+0:15:41 - 0:15:47, không có cập nhật w2 chúng ta chỉ cập
+0:15:44 - 0:15:50, nhật w1 và b thôi.
+0:15:47 - 0:15:53, Và khi chúng ta trực quan thì chúng ta
+0:15:50 - 0:15:55, cũng sẽ à chỉ có W1
+0:15:53 - 0:15:59, và X
+0:15:55 - 0:15:59, rồi cộng cho B
+0:16:01 - 0:16:07, pa. Rồi đạo hàm điều kiện dừng thì ở đây
+0:16:04 - 0:16:11, chúng ta sẽ không có W2
+0:16:07 - 0:16:11, mà chỉ có W1 và B.
+0:16:13 - 0:16:19, Rồi ờ bây giờ chúng ta sẽ chạy thử.
+0:16:17 - 0:16:22, Đó thì rõ ràng là cái đường thẳng của
+0:16:19 - 0:16:25, chúng ta sẽ không thể nào mà có thể fit
+0:16:22 - 0:16:27, được vào khi mà cái đường cái phía bên
+0:16:25 - 0:16:29, trên này nó đi rớt xuống đúng không? Nó
+0:16:27 - 0:16:31, đi xuống thì đồng thời cái cạnh còn lại
+0:16:29 - 0:16:34, nó sẽ đi lên nó sẽ thoát ra khỏi các cái
+0:16:31 - 0:16:37, điểm bên dưới. Thì đây là cái tình huống
+0:16:34 - 0:16:37, underfitting.
+0:16:39 - 0:16:44, Nó tiến rất là chậm. Tức là nó đã gần
+0:16:41 - 0:16:46, như hội tụ rồi. Và rõ ràng là à không
+0:16:44 - 0:16:48, thể nào mà có thể dùng một cái đường
+0:16:46 - 0:16:52, thẳng để xắp xỉ được cái à các cái điểm
+0:16:48 - 0:16:52, mà dạng parabol như thế này.
+0:16:57 - 0:17:02, Rồi tiếp theo thì chúng ta sẽ cùng thử
+0:16:59 - 0:17:05, nghiệm cho cái tình huống gọi là
+0:17:02 - 0:17:09, overfitting. Thế thì ở đây chúng ta sẽ
+0:17:05 - 0:17:12, tạo ra một cái mô hình mà gồm có bậc ví
+0:17:09 - 0:17:14, dụ như là bậc 4 thì chúng ta sẽ tạo thêm
+0:17:12 - 0:17:17, là W3
+0:17:14 - 0:17:19, W4.
+0:17:17 - 0:17:22, Đó.
+0:17:19 - 0:17:25, Rồi mô hình của chúng ta thì ở đây là
+0:17:22 - 0:17:29, good fitting đúng không? Thì à chúng ta
+0:17:25 - 0:17:32, bỏ đi good fitting và underfitting.
+0:17:29 - 0:17:32, À
+0:17:33 - 0:17:38, rồi chúng ta chỉ để là overfitting.
+0:17:39 - 0:17:44, Và với cái công thức của overfitting
+0:17:42 - 0:17:49, thì chúng ta sẽ mượn lại cái code của
+0:17:44 - 0:17:49, good fitting chúng ta bổ sung thêm.
+0:17:52 - 0:17:58, Rồi thì bây giờ giả sử W1 sẽ là X mũ ở
+0:17:57 - 0:18:04, đây chúng ta có bao nhiêu bậc? Có bốn
+0:17:58 - 0:18:07, bậc. Do đó chúng ta sẽ bổ sung thêm à
+0:18:04 - 0:18:10, bậc 3 và bậc 4.
+0:18:07 - 0:18:13, 3 và bậc 4.
+0:18:10 - 0:18:18, Rồi
+0:18:13 - 0:18:21, à W1, W2, W3, W4
+0:18:18 - 0:18:25, và ở đây sẽ là W
+0:18:21 - 0:18:31, 1 nhân với lại X m 4, W2 nhân với lại X
+0:18:25 - 0:18:35, mũ 3 cộng cho W3
+0:18:31 - 0:18:38, nhân cho X và
+0:18:35 - 0:18:40, mũ 2 cộng cho W1
+0:18:38 - 0:18:42, nhân với
+0:18:40 - 0:18:44, à W4.
+0:18:42 - 0:18:48, Ok. Để cho nó có cái sự tương đồng thì
+0:18:44 - 0:18:52, lẽ ra chúng ta nên để W1 với X W4 với X4
+0:18:48 - 0:18:54, đi ha. W4, W3
+0:18:52 - 0:18:56, và W2,
+0:18:54 - 0:19:01, W1
+0:18:56 - 0:19:03, nhân với lại X nhân với lại X1
+0:19:01 - 0:19:05, cộng cho B.
+0:19:03 - 0:19:09, Rồi các cái công thức ở dưới đây chúng
+0:19:05 - 0:19:11, ta không nên tái sử dụng lại tại vì à nó
+0:19:09 - 0:19:15, rất là phức tạp nên chúng ta nên copy từ
+0:19:11 - 0:19:17, công thức ở phía trên xuống. Thế thì W1
+0:19:15 - 0:19:20, ờ
+0:19:17 - 0:19:24, rồi thì chúng ta sẽ có cái sai số giữa
+0:19:20 - 0:19:26, giá trị dự đoán và giá trị thực tế ở đây
+0:19:24 - 0:19:29, và nhân với lại cái đạo hàm của cái vế
+0:19:26 - 0:19:31, bên trong theo W1 thì W1 nó sẽ là đạo
+0:19:29 - 0:19:34, hàm của nó sẽ là X. Do đó ở đây chúng ta
+0:19:31 - 0:19:37, sẽ sửa lại là X. Rồi tương tự như vậy
+0:19:34 - 0:19:43, chúng ta sẽ có cái công thức cho x2 W2
+0:19:37 - 0:19:45, W3 và W4 và B. Thì đối với W2 thì khi
+0:19:43 - 0:19:48, chúng ta lấy cái phần đạo hàm của cái vế
+0:19:45 - 0:19:50, bên trong này theo W2 thì nó sẽ ra là x
+0:19:48 - 0:19:54, bình phương.
+0:19:50 - 0:19:58, Rồi cứ như vậy tăng lên x lũy thừ 3
+0:19:54 - 0:20:00, x lũy thừ 4 và cuối cùng là B thì nó sẽ
+0:19:58 - 0:20:02, không có
+0:20:00 - 0:20:05, đó. Tại vì đạo hàm của cái vế bên trong
+0:20:02 - 0:20:06, này theo B thì đạo hàm của B theo B là
+0:20:05 - 0:20:09, 1. Còn các cái thành phần còn lại thì nó
+0:20:06 - 0:20:12, xem như là hàng số.
+0:20:09 - 0:20:14, Và bây giờ chúng ta sẽ cập nhật.
+0:20:12 - 0:20:18, Thì cái công thức cập nhật ở đây cũng
+0:20:14 - 0:20:18, không có thay đổi nhiều. W
+0:20:19 - 0:20:26, đạo hàm bậc hai
+0:20:22 - 0:20:26, đạo hàm theo W3
+0:20:26 - 0:20:31, và đạo hàm theo W4.
+0:20:31 - 0:20:37, đạo hàm theo W4B.
+0:20:35 - 0:20:41, Rồi và khi chúng ta plot thì chúng ta sẽ
+0:20:37 - 0:20:44, dùng cái công thức này để chúng ta plot.
+0:20:41 - 0:20:47, Thì đây chính là cái y dự đoán à chúng
+0:20:44 - 0:20:50, ta thiếu cho cộng B nữa ha. Đó. Rồi sau
+0:20:47 - 0:20:52, đó chúng ta sẽ xem cái mô hình. Ok. Ở
+0:20:50 - 0:20:54, đây chúng ta chủ yếu là trực quan hóa.
+0:20:52 - 0:20:56, Còn tham số thì chắc chắn là sai rồi. Do
+0:20:54 - 0:20:58, đó chúng ta cũng không cần thiết phải
+0:20:56 - 0:21:01, hiển thị kiểu này ha. Bây giờ chúng ta
+0:20:58 - 0:21:03, sẽ chạy thử cái mô hình khi mà nó bị
+0:21:01 - 0:21:05, underfitting.
+0:21:03 - 0:21:09, Thì chúng ta thấy là à nó cứ nhảy lên
+0:21:05 - 0:21:12, nhảy xuống. Lý do đó là vì cái
+0:21:09 - 0:21:14, ờ đường đi đúng không? Một cái cái cái
+0:21:12 - 0:21:16, bước nhảy của mình nó quá lớn dẫn đến là
+0:21:14 - 0:21:18, mô hình của mình nó không hồi tụ được.
+0:21:16 - 0:21:22, Đó. Thế thì bây giờ để không có cái hiện
+0:21:18 - 0:21:25, tượng này thì có thể chúng ta sẽ phải
+0:21:22 - 0:21:28, giảm cái learning rate xuống.
+0:21:25 - 0:21:31, Ví dụ như là 0.00
+0:21:28 - 0:21:31, 01
+0:21:35 - 0:21:39, rồi. Thế thì chúng ta nhìn thấy là
+0:21:38 - 0:21:42, một lúc sau thì chúng ta cũng sẽ thấy là
+0:21:39 - 0:21:44, cái đường của mình nó sẽ cố gắng nó bám
+0:21:42 - 0:21:47, theo các cái điểm. Thì đó là cái hiện
+0:21:44 - 0:21:49, tượng overfitting.
+0:21:47 - 0:21:52, Đó là cái hiện tượng overfitting.
+0:21:49 - 0:21:54, Nhưng mà thực tế thì nó có cái dữ liệu
+0:21:52 - 0:21:57, của mình nó đâu có đi theo cái đường
+0:21:54 - 0:21:59, cong à nó đâu có đi theo các cái đường
+0:21:57 - 0:22:01, cong à bậc hai à xin lộ đâu có đi theo
+0:21:59 - 0:22:04, các đường cong bậc 4 rất là lớn như thế
+0:22:01 - 0:22:06, này đâu đúng không? Thì rõ ràng là có
+0:22:04 - 0:22:09, thể là nó đúng ở một vài điểm ở bên
+0:22:06 - 0:22:12, trong nhưng mà khi đi ra ngoài biên thì
+0:22:09 - 0:22:14, cái mô hình của mình nó chắc chắn là sẽ
+0:22:12 - 0:22:16, bị lệch lạc.
+0:22:14 - 0:22:19, Thì đây là cái hiện tượng là
+0:22:16 - 0:22:19, underfitting à overfitting.
+0:22:23 - 0:22:35, [âm nhạc]

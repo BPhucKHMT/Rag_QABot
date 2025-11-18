@@ -1,0 +1,125 @@
+0:00:00 - 0:00:05, Chủ đề, học sâu, machine learning, logistic regression, ImageNet.
+0:00:05 - 0:00:10, Chủ đề, học sâu, machine learning, ImageNet.
+0:00:14 - 0:00:23, Trong phần trước, chúng ta đã tìm hiểu qua các tensor không chiều, một chiều, hai chiều, ba chiều và nhiều chiều.
+0:00:23 - 0:00:33, thì chúng ta đã biết rằng các tensor này được sử dụng để biểu diễn cho các loại dữ liệu thích hợp. Sang nội dung tiếp theo.
+0:00:33 - 0:00:41, Chúng ta sẽ tìm hiểu về một số thao tác biến đổi, một số phép toán trên các tensor này
+0:00:41 - 0:00:45, và tương ứng nó sẽ được sử dụng để biến đổi dữ liệu.
+0:00:45 - 0:00:50, Phép đầu tiên là một trong những phép rất thú vị, đó chính là phép chuyển vị.
+0:00:50 - 0:00:58, Phép chuyển vị này là nhằm biến các vector từ dạng cột sang dạng hàng.
+0:00:58 - 0:01:06, Ví dụ như đây là ma trận A, thì chuyển vị của ma trận A tương ứng sẽ xoay vector A2.
+0:01:06 - 0:01:12, Ví dụ ở đây chúng ta thấy vector A2 từ dạng cột sẽ được chuyển sang dạng hàng.
+0:01:12 - 0:01:21, Và ở hình minh họa ở đây thì chúng ta thấy đó là ma trận A thì bao gồm các giá trị
+0:01:21 - 0:01:26, ví dụ như là 1, 2, 3, 4, 5, 6, 7, 8
+0:01:26 - 0:01:32, và khi chuyển vị thì nó sẽ tương ứng là một cái thao tác đối xứng qua trục đường chéo
+0:01:32 - 0:01:38, và cái ma trận sau khi đã thực hiện đối xứng qua cái trục đường chéo này
+0:01:38 - 0:01:42, đó là a chuyển vị, nó sẽ có giá trị là 1, 5, 9, 13
+0:01:42 - 0:01:49, thì đây là một ví dụ để minh họa cách thức thực hiện thao tác chuyển vị
+0:01:49 - 0:01:57, và chuyển vị thì thường được sử dụng để giúp cho việc tính toán nó thuận tiện và đi theo một quy tắc thống nhất
+0:01:57 - 0:02:02, Thao tác quan trọng tiếp theo là thao tác cộng vector
+0:02:02 - 0:02:12, Hai vector x và y để có thể thực hiện được phép cộng với nhau, nó nhất thiết phải có cùng số chiều
+0:02:12 - 0:02:18, ví dụ trong trường hợp này là cùng là vector có 1 chiều nhưng mà có n phần tử
+0:02:18 - 0:02:22, Lưu ý là cùng chiều và cùng số phần tử
+0:02:22 - 0:02:29, thì ở đây là chúng ta sẽ có 1 chiều nhưng mà 1 chiều với n phần tử
+0:02:29 - 0:02:37, Hai vector này muốn cộng được thì nó phải cùng chiều là 1 và số phần tử là n
+0:02:37 - 0:02:44, và khi cộng thì chúng ta sẽ phải thực hiện từng phần tử với nhau
+0:02:44 - 0:02:47, ví dụ như phần tử thứ nhất thì sẽ cộng với phần tử thứ nhất
+0:02:47 - 0:02:53, và để ra phần tử thứ nhất của vector kết quả, tương tự như vậy cho phần tử thứ hai
+0:02:53 - 0:03:00, thì ở đây chúng ta có thể lấy một cái ví dụ minh họa là vector 1, 2, 3
+0:03:00 - 0:03:09, và khi cộng với lại cái vector là 3, 2, 1 ví dụ vậy
+0:03:09 - 0:03:17, thì chúng ta sẽ ra một cái vector 3 cộng 1 là 4, 2 cộng 2 là 4, 3 cộng 1 là 4
+0:03:17 - 0:03:19, Như vậy chúng ta sẽ ra một cái vector gồm toàn số 4
+0:03:19 - 0:03:24, Đây là một ví dụ để minh họa cho phép cộng trên vector.
+0:03:24 - 0:03:32, Tiếp theo, đó chính là phép cộng trên ma trận cũng tương tự như là cộng trên vector.
+0:03:32 - 0:03:39, Để hai ma trận A và B có thể thực hiện được thao tác cộng,
+0:03:39 - 0:03:42, thì nó nhất thiết phải có cùng số chiều và cùng số phần tử.
+0:03:42 - 0:03:48, ở đây trong trường hợp này là hai chiều và số phần tử là m và n
+0:03:48 - 0:03:52, thì ở đây chúng ta lấy một cái ví dụ là ma trận a
+0:03:52 - 0:03:59, là tại phần tử thứ a mười hai thì nó sẽ phải cộng với lại cái phần tử là b mười hai
+0:03:59 - 0:04:05, để ra một cái ma trận kết quả và giá trị tại vị trí mười hai
+0:04:05 - 0:04:08, giá trị ở đây sẽ là tổng của hai cái phần tử này
+0:04:08 - 0:04:15, thì ở đây chúng ta có thể lấy một cái ví dụ nhỏ thôi, ví dụ như là 1, 2, 3, 4
+0:04:15 - 0:04:20, chúng ta cộng với lại ma trận là 3, 0, 1, 0
+0:04:20 - 0:04:24, thì chúng ta sẽ ra được một cái ma trận có cùng kích thước
+0:04:24 - 0:04:34, mà 1 cộng 3 sẽ là 4, 2 cộng 0 sẽ là 2, 3 cộng 1 sẽ là 4 và 4 cộng 0 sẽ là 4
+0:04:34 - 0:04:36, và đây là ma trận kết quả
+0:04:36 - 0:04:43, Ứng dụng của phép cộng ma trận này, chúng ta có thể lấy một ví dụ như sau
+0:04:43 - 0:04:50, Nếu như chúng ta cộng trung bình 3 kênh màu Red, Green, Blue tương ứng là 3 ma trận
+0:04:50 - 0:04:57, RGB và tính trung bình, thì kết quả của mình sẽ ra là một cái ma trận
+0:04:57 - 0:05:04, Và ma trận này chính là ảnh trung bình, là ảnh mức xám để biểu diễn cho tấm ảnh
+0:05:04 - 0:05:09, Phép tiếp theo là phép tích Hadamard.
+0:05:09 - 0:05:13, Phép tích Hadamard cũng tương tự như phép cộng.
+0:05:13 - 0:05:16, Hai ma trận A và B muốn thực hiện phép tích Hadamard
+0:05:16 - 0:05:21, phải có cùng số chiều và cùng số phần tử trên các chiều đó.
+0:05:21 - 0:05:27, Ở đây, các phần tử sẽ được nhân tương ứng
+0:05:27 - 0:05:31, và hai phần tử này nhân vào thì sẽ ra giá trị ở đây.
+0:05:31 - 0:05:35, thực hiện là phép nhân lần lượt theo từng phần tử
+0:05:35 - 0:05:38, Và đây là một ví dụ vui
+0:05:38 - 0:05:42, Trên ảnh gốc là img
+0:05:42 - 0:05:46, chúng ta sẽ thực hiện thao tác tích Hadamard
+0:05:46 - 0:05:50, với một ảnh gốc gọi là ảnh mask hay ảnh mặt nạ
+0:05:50 - 0:05:54, Nếu như các giá trị trên vùng trắng này
+0:05:54 - 0:05:56, nhận giá trị là 1
+0:05:56 - 0:06:00, và các vùng trên vùng đen nhận giá trị là 0
+0:06:00 - 0:06:06, thì cái kết quả khi nhân img với cái ảnh mask mà nhân tích Hadamard
+0:06:06 - 0:06:09, thì nó sẽ ra cái ảnh kết quả như sau
+0:06:09 - 0:06:13, và cái ý nghĩa của cái ảnh này đó chính là chúng ta xóa cái dây giày này đi
+0:06:13 - 0:06:15, giống như là tưởng tượng người này đang bay
+0:06:15 - 0:06:20, thì tại sao cái ảnh kết quả này nó ra được cái hình như thế này
+0:06:20 - 0:06:24, là vì các cái giá trị trên cái vùng trắng này mà nhận giá trị là 1
+0:06:24 - 0:06:28, thì 1 nhân với lại các cái phần tử ở đây
+0:06:28 - 0:06:31, thì nó sẽ giữ nguyên cái giá trị là các phần tử ở đây
+0:06:31 - 0:06:35, do đó thì tại vì 1 nhân với bao nhiêu thì cũng chính là bằng số đó
+0:06:35 - 0:06:41, như vậy tương ứng cái vùng màu trắng sẽ là nguyên giá trị
+0:06:41 - 0:06:51, mà riêng cái vùng của cái dây ở đây thì nhân cho cái vùng màu đen tức là giá trị bằng không
+0:06:51 - 0:06:55, thì không nhân với bao nhiêu cũng bằng không do nó sẽ triệt tiêu đi
+0:06:55 - 0:06:58, và dẫn đến là cái vùng này, nó sẽ có màu là màu đen
+0:06:58 - 0:07:03, màu đen nó sẽ trùng với màu nền ở vùng này để tạo ra cái hiệu ứng
+0:07:03 - 0:07:06, đó là chúng ta đang muốn xóa bỏ dây giày ở đây đi
+0:07:08 - 0:07:14, một cái thao tác nhân khác được sử dụng phổ biến hơn
+0:07:14 - 0:07:18, đó chính là phép nhân vector và nhân ở đây
+0:07:18 - 0:07:22, đó là nhân vô hướng hay còn gọi là tích vô hướng
+0:07:22 - 0:07:32, Hai vector a và b có thể thực hiện được tích vô hướng với nhau nếu như nó có cùng số phần tử
+0:07:32 - 0:07:38, Ví dụ như ở đây chúng ta sẽ ký hiệu đó là a chuyển vị nhân với b
+0:07:38 - 0:07:45, Vì a mặc định đó là viết dưới dạng là cột
+0:07:45 - 0:07:50, a là viết dưới dạng cột
+0:07:50 - 0:08:02, để đảm bảo quy tắc nhân giữa hai vector, chúng ta sẽ ký hiệu đó là a chuyển vị để chuyển từ dạng cột sang dạng hàng
+0:08:02 - 0:08:14, sau đó chúng ta sẽ nhân với lại vector b, quy tắc nhân đó là nhân theo hàng và cột
+0:08:14 - 0:08:20, Từng phần tử ở đây sẽ nhân lại với nhau
+0:08:20 - 0:08:26, Sau đó chúng ta sẽ thực hiện tổng tất cả các tích này
+0:08:26 - 0:08:31, a1, b1, b2, an, bn
+0:08:31 - 0:08:37, Biểu diễn dưới dạng hình học của thao tác nhân này chính là phép chiếu
+0:08:37 - 0:08:42, thì ở đây chúng ta sẽ có hai vector A và B
+0:08:42 - 0:08:45, tích vô hướng của hai vector A và B
+0:08:45 - 0:08:48, thì nó tương ứng sẽ thực hiện phép chiếu vector A xuống vector B
+0:08:48 - 0:08:55, và giá trị của phép tích vô hướng này nó sẽ có giá trị như trên
+0:08:55 - 0:09:14, và chúng ta chú ý đó là tích vô hướng của a chuyển vị b thì nó cũng tương ứng sẽ là bằng tích vô hướng của b chuyển vị nhân với a
+0:09:14 - 0:09:20, Tức là nó sẽ có thể thực hiện cái thao tác gọi là giao hoán với nhau
+0:09:20 - 0:09:24, A chuyển vị nhân B thì cũng sẽ là bằng B chuyển vị nhân A
+0:09:25 - 0:09:30, Thì đây là một cái ví dụ của phép nhân vector với vector
+0:09:30 - 0:09:43, Nếu như chúng ta có cái dữ liệu các thành phần vitamin A, vitamin C và chất xơ của các loại rau củ đó là cà rốt, bắp cải và dưa leo
+0:09:43 - 0:09:55, Ví dụ như 35, 0.5 và 0.5 ở đây tương ứng là vector biểu diễn cho vitamin A
+0:09:55 - 0:09:59, có trong các loại cà rốt, bắp cải và dưa leo
+0:09:59 - 0:10:09, Nếu chúng ta gọi x, y, z là số kg cà rốt, bắp cải và dưa leo
+0:10:09 - 0:10:11, chúng ta mua được trong lần đi chợ đó
+0:10:11 - 0:10:27, thì khi đó lượng vitamin A mà chúng ta có bổ sung cho cái bữa ăn ngày hôm đó sẽ là 35, 0.5, 0.5 nhân theo hàng và cột
+0:10:27 - 0:10:34, thì đây chính là lượng vitamin A mà chúng ta sẽ cung cấp cho cái bữa ăn ngày hôm đó
+0:10:34 - 0:10:43, Tiếp theo, đó chính là thực hiện thao tác nhân ma trận với vector
+0:10:43 - 0:10:50, Thì để ma trận A có thể nhân được với lại vector x
+0:10:50 - 0:10:56, thì nó sẽ phải đảm bảo đó là số hàng, số cột
+0:10:56 - 0:11:06, Đây là số cột của a, nó tương ứng là số phần tử trong chiều thành phần của vector x.
+0:11:06 - 0:11:10, Như vậy n ở đây phải tương ứng bằng n ở đây.
+0:11:10 - 0:11:18, Và khi đó tích y là bằng a nhân với x thì nó sẽ là một vector.
+0:11:18 - 0:11:25, Nói như vậy kết quả của thao tác nhân giữa ma trận với một vector, nó sẽ là một vector.
+0:11:25 - 0:11:27, thì tại sao là như vậy?
+0:11:27 - 0:11:29, nếu như chúng ta thực hiện theo đúng nguyên tắc
+0:11:29 - 0:11:31, nhân hàng với cột
+0:11:31 - 0:11:33, thì chúng ta thấy a
+0:11:33 - 0:11:35, chúng ta sẽ thực hiện nhân theo hàng
+0:11:35 - 0:11:38, ở đây a chúng ta có tất cả là
+0:11:38 - 0:11:40, n hàng
+0:11:40 - 0:11:42, rồi
+0:11:42 - 0:11:47, lưu ý là ở đây chúng ta có một sự nhầm lẫn
+0:11:47 - 0:11:51, ở đây sẽ là có m hàng
+0:11:51 - 0:12:01, và mỗi một vector A1, A2 ở đây thì nó sẽ thuộc Rn, tức là gồm có n phần tử
+0:12:01 - 0:12:07, thì khi đó chúng ta sẽ nhân theo hàng và x thì chúng ta sẽ nhân theo cột
+0:12:07 - 0:12:11, thì kết quả của thao tác nhân này

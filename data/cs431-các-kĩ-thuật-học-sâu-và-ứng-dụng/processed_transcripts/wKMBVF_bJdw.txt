@@ -1,0 +1,131 @@
+0:00:00 - 0:00:04, Phương thức 9 là phương thức build và train trong class build,
+0:00:04 - 0:00:09, sẽ tiến hành định nghĩa kiến trúc của mạng RNN.
+0:00:09 - 0:00:13, Chúng ta sẽ cùng nhìn lại kiến trúc của mình.
+0:00:13 - 0:00:17, Đầu tiên, đó chính là embedding layer.
+0:00:17 - 0:00:20, Xin lỗi, đầu tiên của mình là input.
+0:00:20 - 0:00:30, input này sẽ chứa các chỉ số index của các từ trong câu comment, trong câu review của mình
+0:00:30 - 0:00:36, nó chỉ chứa chỉ số chứ không có lưu dữ liệu gốc ban đầu
+0:00:36 - 0:00:42, Lớp input này sẽ có đầu vào của mình
+0:00:42 - 0:00:47, là MaxReviewLen, tức là ở đây là 500
+0:00:47 - 0:00:53, Vậy ở đây sẽ là một vector 500 chiều, 500 phần tử
+0:00:53 - 0:00:57, Input của mình sẽ là một vector có 500 phần tử
+0:00:57 - 0:01:03, Cho dù review ngắn hay review dài thì cũng sẽ đều có 500 phần tử
+0:01:03 - 0:01:09, Lớp tiếp theo chính là lớp Embedding
+0:01:09 - 0:01:17, Embedding này sẽ có thông tin vocab_size, tức là số lượng từ của mình.
+0:01:17 - 0:01:22, Chúng ta sẽ xem xét dictionary.
+0:01:22 - 0:01:26, Do mô hình của mình chưa được load lên, nhưng khi load lên xong,
+0:01:26 - 0:01:35, Word2Vec.vector chính là ma trận trọng số đã được huấn luyện của mình.
+0:01:35 - 0:01:43, thì nó sẽ có hai thông số về kích thước, đó là Dictionary Length, tức là tổng số từ trong tập từ điển của mình
+0:01:43 - 0:01:50, và Embedding Dim, tức là chiều của vector mà mình dự kiến mình sẽ biểu diễn
+0:01:50 - 0:01:56, thì ở đây là khoảng 1 triệu, Dictionary Length là gần 1 triệu
+0:01:56 - 0:02:03, và Embedding Dim là 300, do ở đây mình sẽ dùng là 300.
+0:02:03 - 0:02:14, Giờ đây chúng ta sẽ để là embedding_vocab_size, tức là số từ trong từ điển của mình
+0:02:14 - 0:02:20, ở đây sẽ là Embedding Layer
+0:02:20 - 0:02:26, và như đã đề cập hồi nãy, tức là cái thông số Embedding Layer này chúng ta hoàn toàn có thể thay đổi
+0:02:26 - 0:02:31, chúng ta hoàn toàn có thể thay đổi và cho cái mô hình của mình nó học Embedding Layer này luôn
+0:02:31 - 0:02:37, thay vì là một cái layer tĩnh, nhưng mà trong cái ví dụ này thì chúng ta đang xem xét nó là một cái layer tĩnh
+0:02:37 - 0:02:47, Embedding Initializer
+0:02:47 - 0:03:03, Embedding Layer sẽ có các Regularizer
+0:03:03 - 0:03:10, Ở phía sau thì chúng ta đã có một cái bộ code tương ứng cho LSTM.
+0:03:10 - 0:03:15, Ở đây là nó sẽ có thêm hai thông số nữa.
+0:03:15 - 0:03:21, Thông số đầu tiên đó chính là weight.
+0:03:21 - 0:03:27, Weight chính là mô hình của Word2Vec mà chúng ta đã học trước đây.
+0:03:27 - 0:03:31, Và ở đây chúng ta sẽ sử dụng nhưng không hề huấn luyện lại.
+0:03:31 - 0:03:41, Chúng ta sẽ sử dụng không huấn luyện lại do đó, trainable sẽ là bằng False, tức là embedding này có được train lại hay không?
+0:03:41 - 0:03:51, Ở đây là không, chúng ta sẽ không train lại, chúng ta sẽ tái sử dụng luôn cho bộ trọng số của mô hình của Word2Vec.
+0:03:51 - 0:04:00, Rồi, và ở đây thì chúng ta sẽ cùng truyền vào input layer
+0:04:00 - 0:04:07, thì ở đây nó sẽ có thông tin là input, input này là kết quả của lớp biến đổi trước đó
+0:04:07 - 0:04:18, Cái lớp tiếp theo đó chính là lớp RNN, và lớp RNN này thì nó sẽ cho chúng ta biết
+0:04:18 - 0:04:29, Chúng ta sẽ biết kích thước của hidden layer là bao nhiêu, và kích thước của quá trình biến đổi là state là bao nhiêu
+0:04:39 - 0:04:47, Sau khi thực hiện embedding layer, lưu ý là nó không phải là vector 32 chiều, mà nó sẽ là 300 chiều
+0:04:48 - 0:04:56, Trong trường hợp tổng quát thì cái output này, số chiều của output của embedding này có thể là con số bất kỳ để chúng ta định nghĩa
+0:04:56 - 0:04:59, Và mô hình của mình sẽ học cái embedding layer
+0:04:59 - 0:05:03, Còn trong trường hợp này embedding layer của mình là tĩnh thì ở đây sẽ là 300
+0:05:03 - 0:05:09, Và qua đây thì chúng ta sẽ qua cái RNN cell thì chúng ta sẽ tính ra cái state
+0:05:09 - 0:05:13, State này chính là cái vector của cái trạng thái ẩn ở đây
+0:05:13 - 0:05:17, Và nó có thể là 64 chiều, ở đây chúng ta để 64 chiều
+0:05:17 - 0:05:25, Sau đó, chúng ta sẽ thực hiện phép biến đổi là Dense, tức là kết nối đầy đủ để từ state này biến thành output.
+0:05:25 - 0:05:34, Và ở đây chúng ta phân loại nhị phân nên ở đây sẽ là 1 node, hàm activation sẽ là sigmoid.
+0:05:38 - 0:05:43, Đầu ra của mình sẽ là 1 node và activation sẽ là sigmoid.
+0:05:43 - 0:05:52, Đầu vào là hidden, hidden là kết quả của layer trước đó, là Simple RNN
+0:05:52 - 0:05:58, Chúng ta có thể để là 64, theo như sơ đồ sẽ là 64
+0:05:58 - 0:06:06, Hàm loss của mình sẽ sử dụng binary cross entropy, sử dụng Adam
+0:06:06 - 0:06:12, Độ đo đánh giá của mình sẽ là accuracy, rồi chúng ta sẽ fit
+0:06:12 - 0:06:16, Bây giờ chúng ta sẽ bắt đầu chạy model
+0:06:16 - 0:06:18, Bây giờ chúng ta không có nhiều thời gian
+0:06:18 - 0:06:21, Mô hình của Word2Vec đã được load lên rồi
+0:06:21 - 0:06:23, Bây giờ chúng ta sẽ cùng xem
+0:06:23 - 0:06:28, Kích thước của Dictionary Length là bao nhiêu
+0:06:28 - 0:06:34, Và Embedding Dim là bao nhiêu
+0:06:34 - 0:06:45, Chúng ta đã load mô hình rồi nên mình sẽ không phải load lại nữa
+0:06:45 - 0:06:49, Tại vì nó sẽ tốn mất 3 phút
+0:06:49 - 0:06:58, Đây là Dictionary Length là bằng 900 ngàn và embedding của mình sẽ là 300
+0:06:58 - 0:07:02, Tức là cái kích thước của tập từ điển của mình sẽ là gần 1 triệu
+0:07:02 - 0:07:04, Bây giờ chúng ta sẽ chạy RNN
+0:07:06 - 0:07:11, Rồi chúng ta sẽ khởi tạo một lớp đối tượng là RNN và gọi hàm build
+0:07:11 - 0:07:15, Build này sẽ dựng lên kiến trúc của mạng RNN của mình
+0:07:16 - 0:07:18, Rồi sau đó chúng ta sẽ tiến hành train
+0:07:22 - 0:07:26, Vì việc train này cũng tốn của chúng ta khoảng 3-4 phút
+0:07:26 - 0:07:34, Do là cái mạng RNN thì nó không có thực hiện tính toán song song được, các cái bước của mình nó đều thực hiện tuần tự
+0:07:34 - 0:07:38, nên cái tốc độ tính toán của mình nó sẽ rất là chậm
+0:07:38 - 0:07:45, Rồi thì chúng ta quan sát ở đây là cái loss của mình là đang 0.7
+0:07:45 - 0:07:50, và accuracy của mình đang là khoảng 51-52%
+0:07:50 - 0:07:53, loss của mình nó đang có xu hướng giảm xuống
+0:07:53 - 0:07:59, Đây là 1 trên 3 epoch
+0:07:59 - 0:08:19, Nếu như chương trình này chạy xong, thì trong history này sẽ lưu loss của quá trình huấn luyện của mình.
+0:08:19 - 0:08:26, Quá trình train này chạy xong thì trong history này nó sẽ lưu loss của quá trình huấn luyện của mình
+0:08:26 - 0:08:28, Chúng ta sẽ in ở đây
+0:08:28 - 0:08:35, Để quan sát trọng số của mô hình của mình thì chúng ta sẽ dùng rnn.model.layers
+0:08:35 - 0:08:40, Chúng ta cũng có thể viết một phương thức lấy trọng số
+0:08:40 - 0:08:45, Nhưng mà ở đây cho nhanh thì chúng ta có thể để rnn.model.layers
+0:08:45 - 0:08:48, Và chúng ta sẽ lấy layer số 2
+0:08:48 - 0:08:59, Tại sao? Tại vì đây là layer số 0, là input layer, sau đó sẽ là layer số 1, là embedding layer
+0:08:59 - 0:09:03, Thì hai cái này là không có tham số huấn luyện nào
+0:09:03 - 0:09:08, Chủ yếu cái tham số huấn luyện của mình sẽ nằm ở lớp RNN này
+0:09:08 - 0:09:13, Nằm ở lớp RNN này, do đó nó sẽ nằm ở layer số 2, 0, 1, 2
+0:09:18 - 0:09:29, Và get_weights() thì chúng ta sẽ có 3 cái bộ trọng số là UVW.
+0:09:29 - 0:09:39, Trong số 3 trọng số thì ở đây chúng ta đang lấy là cái trọng số thứ 3 trong 3 cái bộ tham số là UVW.
+0:09:48 - 0:10:06, sau một thời gian, mô hình của mình đã kết thúc quá trình huấn luyện
+0:10:06 - 0:10:09, và nó đang ở trong giai đoạn là kết thúc
+0:10:09 - 0:10:15, thì cho mỗi cái Epoch thì nó sẽ chiếm khoảng là 110 giây
+0:10:15 - 0:10:17, không, khoảng trung bình là 110 giây
+0:10:17 - 0:10:23, rồi, thì ở đây chúng ta sẽ in ra để xem coi cái loss của mình nó như thế nào
+0:10:23 - 0:10:26, nhưng mà về quan sát thì chúng ta thấy là
+0:10:26 - 0:10:29, cái loss của mình nó giảm
+0:10:29 - 0:10:34, nhưng mà đến cái Epoch thứ 3 là nó bắt đầu nó không còn giảm được nữa
+0:10:34 - 0:10:42, Và accuracy đạt cao nhất là 66%
+0:10:42 - 0:10:49, Đây là kết quả khi chúng ta train với 3 cái epoch của mình
+0:10:49 - 0:10:57, Và đây là cái biểu đồ, nó giảm xuống và bắt đầu tăng lên
+0:10:57 - 0:11:10, Trọng số sẽ là 64, tại vì trong sơ đồ này, state của mình có 64,
+0:11:10 - 0:11:16, nên trọng số của mình ở đây không có là 32, mà là 64.
+0:11:16 - 0:11:23, Bây giờ chúng ta sẽ tiến hành dự đoán trên dữ liệu test
+0:11:23 - 0:11:30, và xem xem model của mình có độ chính xác là bao nhiêu phần trăm
+0:11:38 - 0:11:49, Trong việc đánh giá, chúng ta sẽ kiểm tra xem nếu y lớn hơn 0.5 thì nó tương ứng là nhãn 1
+0:11:49 - 0:11:51, Còn ngược lại thì nó sẽ là bằng 0
+0:11:51 - 0:11:56, Và chúng ta sẽ đưa nó về vector sau đó
+0:11:56 - 0:12:01, Chúng ta sẽ kiểm tra xem cái Y predict này có khớp với lại Y test hay không
+0:12:01 - 0:12:04, Có bằng bằng Y test hay không
+0:12:04 - 0:12:13, Sau đó chúng ta sẽ tính tổng tất cả những cái mẫu cho cái kết quả bằng nhau
+0:12:13 - 0:12:23, Chia cho tổng số mẫu của mình, tức là chia cho Y_test, thì khi đó chúng ta sẽ có được độ chính xác
+0:12:23 - 0:12:51, Chúng ta sẽ cùng quan sát xem kết quả của mình khi mà chúng ta dự đoán trên tập dữ liệu test là bằng bao nhiêu?
+0:13:21 - 0:13:28, Simple RNN sẽ thay bằng LSTM
+0:13:32 - 0:13:34, Rồi, chúng ta sẽ thay bằng LSTM
+0:13:34 - 0:13:36, Ở đây chúng ta sẽ để là 64
+0:13:38 - 0:13:41, Rồi, đây sẽ để là embedding
+0:13:42 - 0:13:43, Cho nó dễ hiểu nha
+0:13:44 - 0:13:45, Rồi, đây sẽ là hidden
+0:13:51 - 0:14:01, Bây giờ, chúng ta tạo lớp đối tượng LSTM và train lại từ đầu
+0:14:01 - 0:14:08, Bắt đầu quá trình train của mình
+0:14:08 - 0:14:20, Độ chính xác của chúng ta trong trường hợp này là 74%
+0:14:20 - 0:14:26, thì so với lại phiên bản dùng RNN chỉ có 68%
+0:14:26 - 0:14:37, điều này cho thấy đó là khi chúng ta sử dụng LSTM cell với cùng cấu hình tương tự như RNN
+0:14:37 - 0:14:43, là cùng hidden layer cũng có phần Dense layer, activation function
+0:14:43 - 0:14:51, và số hidden và số chiều của vector trạng thái ẩn của mình là 64 chiều
+0:14:51 - 0:14:55, thì ở đây chúng ta thấy LSTM cho kết quả chính xác hơn
+0:14:55 - 0:15:00, như vậy thì qua cái tutorial này thì chúng ta đã cùng thực hiện
+0:15:00 - 0:15:07, cài đặt cái mạng RNN biến thể và biến thể của nó đó là LSTM
+0:15:07 - 0:15:16, Một cách tổng quát thì chúng ta cũng có thể không sử dụng embedding layer như là một cái ma trận cố định này
+0:15:16 - 0:15:23, Mà chúng ta có thể cho mô hình của mình có thể học, tự học embedding này
+0:15:23 - 0:15:27, Thay vì sử dụng một cái ma trận tĩnh
+0:15:27 - 0:15:33, Và cái kết quả thì khi chúng ta sử dụng cái ma trận embedding, xin lỗi cái lớp embedding
+0:15:33 - 0:15:44, Lớp embedding này được huấn luyện cho kết quả càng tốt hơn so với việc sử dụng một embedding cố định.

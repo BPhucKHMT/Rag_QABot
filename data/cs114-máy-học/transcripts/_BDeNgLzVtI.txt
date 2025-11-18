@@ -1,0 +1,117 @@
+0:00:01 - 0:00:14, [âm nhạc]
+0:00:13 - 0:00:16, Trong phần tiếp theo thì chúng ta sẽ
+0:00:14 - 0:00:19, cùng tìm hiểu về sự nhạy cảm của đường
+0:00:16 - 0:00:21, phân lớp hay còn gọi là boundary
+0:00:19 - 0:00:23, classifier. Nó ảnh hưởng như thế nào đến
+0:00:21 - 0:00:26, cái độ chính xác của mô hình và đặc biệt
+0:00:23 - 0:00:29, đó là khi chúng ta làm trên cái tập dữ
+0:00:26 - 0:00:33, liệu test. Thế thì ờ như chúng ta đã
+0:00:29 - 0:00:35, biết là cái đường phân lớp của mình đó
+0:00:33 - 0:00:39, nó sẽ có cái phương trình đường thẳng
+0:00:35 - 0:00:42, được tạo ra bởi cái hệ số mà chúng ta đã
+0:00:39 - 0:00:46, huấn luyện được đó là wx + b là bằng 0.
+0:00:42 - 0:00:48, Thế thì cái w chính là cái hệ số của cái
+0:00:46 - 0:00:52, mô hình cái tham số của mô hình sau khi
+0:00:48 - 0:00:54, chúng ta đã huấn luyện ra xong. Vậy thì
+0:00:52 - 0:00:57, cái đường phân lớp này nó sẽ có cái sự
+0:00:54 - 0:00:59, nhạy cảm như thế nào?
+0:00:57 - 0:01:01, Đó thì với cái điểm
+0:00:59 - 0:01:04, hình tròn ở đây ha thì đây là một cái
+0:01:01 - 0:01:04, tập dữ liệu test.
+0:01:05 - 0:01:10, Thì với cái đường phân lớp như thế này
+0:01:07 - 0:01:13, thì nó nói cái điểm dữ liệu test này đó
+0:01:10 - 0:01:13, là cái điểm màu xanh
+0:01:14 - 0:01:21, đó. Nhưng nếu cái mô hình của chúng ta
+0:01:19 - 0:01:23, nó học ra và nó ra cái đường phân lớp
+0:01:21 - 0:01:26, như thế này thì rõ ràng với cái cách
+0:01:23 - 0:01:29, chia như thế này thì cái điểm này nó sẽ
+0:01:26 - 0:01:32, nói đó là màu cam.
+0:01:29 - 0:01:34, Thì đây chính là cái sự nhạy cảm rõ ràng
+0:01:32 - 0:01:36, là với cùng một cái vị trí, với cùng một
+0:01:34 - 0:01:39, cái đặc trưng là của cái điểm test này
+0:01:36 - 0:01:41, thì hai cái đường phân lớp khác nhau nó
+0:01:39 - 0:01:44, sẽ cho hai cái kết quả phân lớp khác
+0:01:41 - 0:01:47, nhau. Đối với cái đường nét Đức đó thì
+0:01:44 - 0:01:49, nó nói rằng điểm này là điểm màu xanh.
+0:01:47 - 0:01:51, Đối với cái đường nét liền này thì nó
+0:01:49 - 0:01:55, nói cái điểm này là điểm màu cam. Vậy
+0:01:51 - 0:01:58, thì rốt cuộc điểm nào ờ phân loại nào là
+0:01:55 - 0:02:01, đúng? Thì chúng ta sẽ xét cái tình huống
+0:01:58 - 0:02:03, hy hữu tiếp theo đó là cái đường phân
+0:02:01 - 0:02:08, lớp của mình nó sẽ bị thiên lệch rồi hẳn
+0:02:03 - 0:02:11, về một phía. Lấy ví dụ như chúng ta xét
+0:02:08 - 0:02:13, một cái đường phân loại như thế này.
+0:02:11 - 0:02:18, Rồi và với cái đường phân loại này thì
+0:02:13 - 0:02:21, chúng ta xét cái một cái điểm test. Đây
+0:02:18 - 0:02:24, là cái dữ liệu test của mình.
+0:02:21 - 0:02:26, Thì rõ ràng là về mặt trực quan và về
+0:02:24 - 0:02:28, mặt cảm giác thì chúng ta có thể thấy là
+0:02:26 - 0:02:32, cái điểm test này nó nên thuộc về cái
+0:02:28 - 0:02:35, lớp màu cam. Nhưng vì cái đường phân lớp
+0:02:32 - 0:02:38, này nó đã bị ép về gần với cái phía các
+0:02:35 - 0:02:41, cái điểm màu cam nên khi đây à chúng ta
+0:02:38 - 0:02:43, có một cái mẫu dữ liệu mới ở đây thì nó
+0:02:41 - 0:02:47, sẽ nói rằng là đây là cái điểm màu xanh.
+0:02:43 - 0:02:50, đó vì nó tiến về quá sát so với cái biên
+0:02:47 - 0:02:52, của cái điểm màu cam nên cái mô hình của
+0:02:50 - 0:02:54, mình
+0:02:52 - 0:02:57, nghĩ rằng cái điểm test này nó sẽ là
+0:02:54 - 0:03:00, điểm màu xanh. Đó thì lẽ ra là nếu mà về
+0:02:57 - 0:03:02, mặt trực quát trực giác thì cái điểm này
+0:03:00 - 0:03:04, nó xứng đáng là điểm màu cam hơn do nó
+0:03:02 - 0:03:06, nằm gần với lại các cái tập điểm màu cam
+0:03:04 - 0:03:08, hơn. Như vậy thì giữa hai cái đường nét
+0:03:06 - 0:03:09, đứt
+0:03:08 - 0:03:12, và nét liền thì chúng ta thấy là cái
+0:03:09 - 0:03:14, điểm cái đường nét đứt này nó sẽ tốt
+0:03:12 - 0:03:16, hơn.
+0:03:14 - 0:03:19, [âm nhạc]
+0:03:16 - 0:03:21, Đó. Nhưng mặt khác thì chúng ta thấy là
+0:03:19 - 0:03:25, hai cái đường phân lớp nét Đức và nét
+0:03:21 - 0:03:27, liền. Khi chúng ta ờ thử nghiệm trên cái
+0:03:25 - 0:03:30, tập dữ liệu trend thì rõ ràng là cái tập
+0:03:27 - 0:03:32, dữ liệu trend của mình á cả hai thằng
+0:03:30 - 0:03:35, đều co cho cái độ chính xác rất là cao.
+0:03:32 - 0:03:37, Tức là tập trend thì đều tốt. Nhưng mà
+0:03:35 - 0:03:40, đối với cái đường nét đứt thì khi chúng
+0:03:37 - 0:03:42, ta test
+0:03:40 - 0:03:46, thì nó sẽ cho cái kết quả phân loại tốt
+0:03:42 - 0:03:49, đối với cái điểm mới này.
+0:03:46 - 0:03:51, Trong khi đó cái đường
+0:03:49 - 0:03:56, à nét liền thì cái tập dữ liệu test của
+0:03:51 - 0:03:56, mình nó sẽ không tốt.
+0:03:56 - 0:04:01, Và trong lý thuyết về máy học thì trend
+0:03:58 - 0:04:04, mà tốt mà test không tốt á thì chúng ta
+0:04:01 - 0:04:06, nói cái tập dữ liệu cái mô hình của mình
+0:04:04 - 0:04:08, nó bị hiện tượng gọi là overfitting. Như
+0:04:06 - 0:04:11, vậy là cái đường phân loại này nó sẽ bị
+0:04:08 - 0:04:13, hiện tượng overfitting. Đó. Như vậy thì
+0:04:11 - 0:04:16, làm sao chúng ta có thể tạo ra được một
+0:04:13 - 0:04:18, cái đường phân loại mà nó cân bằng?
+0:04:16 - 0:04:20, à nó cân bằng được giữa các cái tập
+0:04:18 - 0:04:22, điểm. Thì cái khái niệm cân bằng ở đây
+0:04:20 - 0:04:25, sau này thì chúng ta sẽ học về cái mô
+0:04:22 - 0:04:27, hình là SVM là support vector machine.
+0:04:25 - 0:04:32, Thì cái khái niệm cân bằng ở đây đó là
+0:04:27 - 0:04:34, nó sẽ cố gắng để cho cái biên
+0:04:32 - 0:04:37, của các cái điểm màu xanh và biên của
+0:04:34 - 0:04:40, các cái điểm màu cam
+0:04:37 - 0:04:42, thì cái điểm cái đường phân lớp né gạch
+0:04:40 - 0:04:45, này nè nó sẽ nằm ở khúc giữa để nó trung
+0:04:42 - 0:04:48, hòa nó trung dung giữa hai cái đường
+0:04:45 - 0:04:50, phân lớp này nó nằm ở khúc giữa thì đó
+0:04:48 - 0:04:53, là cái đường tốt nhất của mình thì đây
+0:04:50 - 0:04:55, sẽ là cái đường tốt nhất vì khi nó cân
+0:04:53 - 0:04:57, bằng được cả hai bên thì đó là cái lý
+0:04:55 - 0:05:00, thuyết của SVM. Còn đối với mạng Neuron
+0:04:57 - 0:05:02, Network hoặc là đối với logistic
+0:05:00 - 0:05:06, regression thì chúng ta không có cái cơ
+0:05:02 - 0:05:08, chế để cho cái đường boundary, cái đường
+0:05:06 - 0:05:10, phân loại của mình nó nằm ở trung dung ở
+0:05:08 - 0:05:12, giữa nhưng mà nhìn chung thì nó cũng ra
+0:05:10 - 0:05:15, được một cái kết quả tương đối tốt.
+0:05:12 - 0:05:18, Nhưng mà tốt nhất hay không thì nó chưa
+0:05:15 - 0:05:20, có đạt được. Thì đó chính là cái sự nhạy
+0:05:18 - 0:05:23, cảm của cái đường phân loại đặc trưng
+0:05:20 - 0:05:35, của mình.
+0:05:23 - 0:05:35, [âm nhạc]

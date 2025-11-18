@@ -1,0 +1,218 @@
+0:00:00 - 0:00:05, Tiếp theo, chúng ta sẽ tìm hiểu về kiến trúc mạng Google Lnet.
+0:00:05 - 0:00:09, Chữ L này tương ứng là tượng chữ YAN LE KUN.
+0:00:09 - 0:00:13, Khu Google Lnet đã có những cái kể tiếng sau.
+0:00:13 - 0:00:24, Đầu tiên, nó sử dụng lớp Botonet, convolution 1v1 để giảm chiều đặc trưng trước khi thực hiện phép biến đổi.
+0:00:24 - 0:00:28, Trên kênh filter có kích thước lớn hơn là 5.5.
+0:00:28 - 0:00:34, Lưu ý là trong Google Lnet thì họ phát triển xong xong với lại VGG
+0:00:34 - 0:00:37, Nên ở đây họ vẫn sử dụng những filter có kích thức lớn
+0:00:37 - 0:00:42, Rồi, đồng thời cái cải tiến thứ 2 đó là họ sử dụng module Inception
+0:00:42 - 0:00:46, Là các nhánh xong xong, ở đây chúng ta thấy là có các nhánh xong xong
+0:00:46 - 0:00:51, Rồi sau đó nó sẽ tổng hợp thông tin lại
+0:00:51 - 0:00:55, Với các filter với kích thước khác nhau
+0:00:55 - 0:00:59, Chúc nửa chúng ta sẽ bàn thêm 2 cái cải tiến này cụ thể đó là gì
+0:00:59 - 0:01:06, Cái kiến trúc mạng của Google Internet cho số được trích dẫn đó là 58 ngàn
+0:01:06 - 0:01:09, 58 ngàn trích dẫn, cũng rất là lớn
+0:01:09 - 0:01:14, Rồi đầu tiên đó là cái cải tiến đầu tiên đó là Bot.net
+0:01:14 - 0:01:18, Thì bình thường nếu như chúng ta không sử dụng Bot.net, tức là cái cách làm bình thường
+0:01:18 - 0:01:20, Đây là chính là cái cách làm bình thường
+0:01:20 - 0:01:30, Thì chúng ta sẽ thực hiện phép convolution trên kernel, trên filter có kích thước là 5x5
+0:01:30 - 0:01:37, Và số lượng filter ở đây sẽ là 48 filter
+0:01:37 - 0:01:40, Số lượng filter ở đây sẽ là 48 filter
+0:01:40 - 0:01:45, Thì khi nhân với kernel kích thước là 5x5, đương nhiên chúng ta sẽ ngầm hiểu là nó sẽ có
+0:01:45 - 0:01:47, 5x5x480
+0:01:47 - 0:01:50, tại vì quy ước đó là độ sâu của filter
+0:01:50 - 0:01:53, nó phải bằng với độ sâu của input của mình
+0:01:53 - 0:01:57, thì nó sẽ tạo ra một cái
+0:01:57 - 0:01:59, feature map có kích thước là 14 như 14
+0:01:59 - 0:02:02, đây là trục không gian, width, height, dĩa nguyên
+0:02:02 - 0:02:04, và độ sâu của mình
+0:02:04 - 0:02:07, nó sẽ bằng đúng số lượng filter của mình
+0:02:07 - 0:02:09, độ sâu của mình ở đây là 48
+0:02:09 - 0:02:11, đúng bằng số lượng filter
+0:02:11 - 0:02:20, Thì nếu như không sử dụng Botox thì ở đây chúng ta sẽ xem tổng số tham số của mình nếu như chúng ta sử dụng
+0:02:20 - 0:02:35, Nếu như chúng ta sử dụng, đó chính là 14 x 14 x 480 x 5 x 5 x 400 x 48
+0:02:35 - 0:02:39, thì đây chính là tổng số lượng phép tính
+0:02:45 - 0:02:51, Nếu như có sử dụng Botonac thì Botonac ở đây là gì?
+0:02:51 - 0:02:56, Botonac đó là khi input đầu vào của mình
+0:02:58 - 0:03:04, thay vì chúng ta trực tiếp biến đổi thành output có kích thước đó là 14 x 14 x 48
+0:03:04 - 0:03:06, thì chúng ta sẽ qua một cái bức trung gian
+0:03:06 - 0:03:10, và cái trung gian này nó sẽ sử dụng cái 1 nhân 1 convolution
+0:03:11 - 0:03:13, nó sử dụng 1 nhân 1 convolution
+0:03:13 - 0:03:15, và thay vì biến đổi trực tiếp sang 48
+0:03:15 - 0:03:20, thì chúng ta sẽ qua một cái trung gian đó là sử dụng 16 cái filter
+0:03:20 - 0:03:22, 16 cái filter
+0:03:22 - 0:03:27, có kích thước là 1 nhân 1 nhân cho 480
+0:03:29 - 0:03:31, Rồi, như vậy thì
+0:03:31 - 0:03:38, sau đó chúng ta sẽ nhân với filter có kích thước là 5x5 x16
+0:03:38 - 0:03:42, thì bình thường ở bên đây là 5x5 x480
+0:03:42 - 0:03:44, thì nhờ cái bot tonac này
+0:03:44 - 0:03:47, thay vì chúng ta nhân với 480 thì chúng ta chỉ việc nhân với 16 thôi
+0:03:47 - 0:03:54, và đây chính là lý do để giúp cho kiến trúc mạng của mình giảm số lượng tham số
+0:03:54 - 0:03:58, và đồng thời nó cũng sẽ giảm số lượng tính toán rất là nhiều
+0:03:58 - 0:04:13, Đối với phép biến đổi confusion 1 x 1 và 16 phép biến đổi này thì chúng ta sẽ có là 14 x 14 x 480 x 1 x 1 x 16
+0:04:13 - 0:04:16, Đây chính là số phép tính
+0:04:16 - 0:04:22, Tư tưởng như vậy thì 5 x 5 x 48 thì chúng ta sẽ có như đây phép tính
+0:04:22 - 0:04:27, Tổng lại thì nó chỉ có 5 triệu phép tính so với lại 112 triệu phép tính
+0:04:27 - 0:04:30, thì chúng ta thấy là số lượng phép tính nó giảm đi rất là nhiều
+0:04:31 - 0:04:33, Rồi, và khi số phép tính này giảm
+0:04:34 - 0:04:37, thì số tham số của mình đồng thời cũng sẽ giảm luôn
+0:04:37 - 0:04:40, số tham số của mình trong trường hợp này cũng sẽ giảm luôn
+0:04:40 - 0:04:43, thì bình thường ở bên đây, số tham số của mình đó là
+0:04:43 - 0:04:49, 5 x 5 x 48
+0:04:49 - 0:04:55, và 5 x 5 x 480, đây là kích thước của filter
+0:04:55 - 0:04:58, sau đó nó sẽ nhân với lại 48 filter nữa
+0:04:58 - 0:05:00, nó sẽ nhân với 48 filter nữa
+0:05:00 - 0:05:03, thì bên đây chúng ta chỉ có là
+0:05:03 - 0:05:07, 1 nhân 1 nhân cho 480
+0:05:07 - 0:05:10, đây là cái kích thước của cái filter của mình
+0:05:10 - 0:05:12, và mình sẽ nhân với lại số lượng là 16
+0:05:12 - 0:05:16, 16 cái filter kích thước là 1 nhân 1 nhân 4580
+0:05:16 - 0:05:17, rồi
+0:05:17 - 0:05:21, và sau đó chúng ta sẽ thực hiện FabConclusion với
+0:05:21 - 0:05:23, cái kernel
+0:05:23 - 0:05:24, cái filter có kích thước là 5
+0:05:24 - 0:05:31, Nhân 5, nhân 16, đây là cái kích thước của cái filter của mình để thoải mạng là cái độ sâu giống với bên này
+0:05:31 - 0:05:33, Và nhân với lại 48
+0:05:35 - 0:05:39, Nhân với lại 48 thì ở đây sẽ ra là số lượng tham số
+0:05:39 - 0:05:45, Và chúng ta có thể tính toán là tổng của hai cái này nó sẽ nhỏ hơn rất là nhiều
+0:05:45 - 0:05:48, Sau với lại số lượng tham số ở đây
+0:05:50 - 0:05:52, Thì đây là cái lớp bottleneck
+0:05:52 - 0:05:58, Ngoài ra, một cái cải tiến khác của Google Lens S đó chính là cái lớp module gọi Inception
+0:05:58 - 0:06:02, Thì ý tưởng của cái module Inception đó là gì?
+0:06:02 - 0:06:11, Chúng ta sẽ không biết được là cái filter của mình kích thước 1 x 1, hay là 3 x 3, hay là 5 x 5, hay là 7 x 7 v.v.
+0:06:11 - 0:06:16, Chúng ta không biết được cái kích thước của cái filter bao nhiêu là tốt nhất
+0:06:16 - 0:06:19, Do đó thì chúng ta cứ thực hiện hết
+0:06:19 - 0:06:21, thì ở đây chúng ta sẽ thực hiện với convolution 1.1
+0:06:21 - 0:06:23, ở đây thực hiện convolution 3.3
+0:06:23 - 0:06:25, đây thực hiện convolution 5.5
+0:06:25 - 0:06:28, và max pooling 3.3
+0:06:28 - 0:06:32, và sau đó chúng ta sẽ thực hiện phép biến đổi là concat
+0:06:32 - 0:06:34, tại vì sau mỗi phép biến đổi này
+0:06:34 - 0:06:37, sau mỗi phép biến đổi này chúng ta sẽ có 1 feature map
+0:06:42 - 0:06:46, và lưu ý, đó là feature map này có thể có các hít độ sâu khác nhau
+0:06:46 - 0:06:49, Nhưng cái kích thước bền ngang bền cao nó phải giống nhau
+0:06:59 - 0:07:03, Và khi chúng ta con cat lại thì chúng ta sẽ tạo ra một cái feature map
+0:07:04 - 0:07:06, Có kích thước rất là dài
+0:07:06 - 0:07:16, Đoạn này là cái này, đoạn này là cái này, đoạn này là cái này và đoạn này là cái này.
+0:07:16 - 0:07:28, Đây là minh hòa cho việc thực hiện phép Toàn Cát, Toàn Cát là nối đặc trưng lại.
+0:07:28 - 0:07:37, Và cái đặc trưng tổng này người ta hy vọng là nó chứa đầy đủ thông tin để giúp cho chúng ta thực hiện cái quá trình biến đổi và nhiệm vệ.
+0:07:37 - 0:07:45, Rồi, vậy thì sau khi chúng ta đã khảo sát qua các kiến trúc mạng LENET, AlexNet và Google LENET,
+0:07:45 - 0:07:49, thì chúng ta đang quan sát có một cái điều gì đang xảy ra.
+0:07:49 - 0:07:56, Đầu tiên là AlexNet. AlexNet nó chỉ có 8 layer và có độ dài như thế này.
+0:07:56 - 0:08:05, VGG có đến 19 layer và xét về mối tương quan thì chúng ta thấy nó dài hơn rất nhiều so với lại 8 layer
+0:08:05 - 0:08:17, Và Google L Lnet cho số layer là 22 layer, như vậy chúng ta thấy là càng về sau, số layer của mình sẽ càng tăng
+0:08:17 - 0:08:26, Và kết quả của mình kể lúc độ chính xác càng tốt
+0:08:26 - 0:08:32, Thay hiện qua cái việc đó là AlexNet thì chiến thắng trong cuộc thi vào năm 2012
+0:08:32 - 0:08:34, VGG thì năm 2014
+0:08:34 - 0:08:39, Và GoogleNet cũng chiến thắng trong năm 2014, tức là cái độ chính xác của mình càng lúc càng tan
+0:08:39 - 0:08:43, Độ chính xác
+0:08:43 - 0:08:47, Và GoogleNet nếu mà chúng ta vẽ chúng ta sẽ thấy nó nhỏ chi chít như thế này
+0:08:47 - 0:08:52, Vậy thì theo một cách nội suy bình thường thì chúng ta sẽ suy nghĩ rằng là
+0:08:52 - 0:08:57, Thôi, chúng ta cứ việc tăng layer lên thì tự nhiên độ chính xác của mình sẽ tăng lên, đúng không?
+0:08:57 - 0:09:05, Thì ở đây chúng ta sẽ có một biểu đồ để so sánh mối tương quan về kích thước của các kiến trúc mạng
+0:09:05 - 0:09:11, AlexNet 8 layer chỉ có nhiều đây, VGG 19 chỉ có kích thước này nhiều đây
+0:09:11 - 0:09:15, Và ResNet chiến thắng trong cuộc thi năm 2015
+0:09:15 - 0:09:17, nó có cái kích thước nhiều đài
+0:09:18 - 0:09:20, Rất là dài so với những kiến trúc trước đây
+0:09:20 - 0:09:24, Thế thì khi kiến trúc mạng mà càng dài
+0:09:24 - 0:09:27, kiến trúc mạng càng có nhiều các lớp biến đổi
+0:09:27 - 0:09:29, thì nó sẽ có những cái bấn đề gì
+0:09:29 - 0:09:33, Và ResNet đã giải quyết cái bấn đề đó như thế nào
+0:09:33 - 0:09:37, thì chúng ta sẽ cùng tìm hiểu trong phần tiếp theo
+0:09:37 - 0:09:39, đó là kiến trúc mạng ResNet
+0:09:39 - 0:09:48, Cái vấn đề mà ResNet họ phát hiện ra đó là khi tăng cái độ chính xác lên thì hình như có vẻ cái độ chính xác sẽ càng tăng.
+0:09:48 - 0:09:57, Đó là cái quan sát khi trên 3 cái kiến trúc mạng là CalixNet, VGG, rồi Inception.
+0:09:57 - 0:10:07, Tuy nhiên khi mà họ tiến hành càng tăng nhiều hơn nữa, khi số lượng layer mà lớn hơn 20, thì điều này nó không còn đúng nữa.
+0:10:07 - 0:10:10, tăng độ sâu lên và nó không còn hiệu quả nữa
+0:10:10 - 0:10:13, Thay hiện qua cái việc ở đây là hạm độ lỗi
+0:10:13 - 0:10:15, Độ lỗi là càng thấp càng tốt thì các bạn thấy là
+0:10:15 - 0:10:18, 20 layer thì nó nằm ở dưới cồn tức là tốt nhất
+0:10:18 - 0:10:19, Đây là tốt nhất
+0:10:22 - 0:10:25, Còn cái 56 layer nhiều nhất
+0:10:25 - 0:10:27, thì nó lại nằm ở trên cồn tức là tệ nhất
+0:10:27 - 0:10:31, Nó không còn đúng như cái mà mình mong đợi nữa
+0:10:31 - 0:10:33, Tức là càng tăng số layer thì
+0:10:33 - 0:10:35, cái độ lỗi của mình càng giảm
+0:10:35 - 0:10:38, hay là độ đổi của mình càng nhỏ, độ chính xác càng cao
+0:10:39 - 0:10:42, Vậy thì, cái cải tiến của Restad nó rất là đơn giản
+0:10:42 - 0:10:46, đó là nó vẫn sẽ tăng cái độ sâu, tăng cái số lớp
+0:10:47 - 0:10:49, và cái độ sâu của khi khiến trúc mạng lên
+0:10:49 - 0:10:50, thì cái này nó không được tính là cải tiến ha
+0:10:51 - 0:10:54, nhưng cái cải tiến lớn nhất của nó, cái vấn đề
+0:10:54 - 0:10:56, hay nhất của nó đó chính là cái Skip Connection
+0:10:57 - 0:10:59, Một cái mạng bình thường
+0:10:59 - 0:11:01, Feature Map x đồ vào
+0:11:01 - 0:11:04, nó sẽ thực hiện cái phép Combination, Relu, Combination, Relu
+0:11:04 - 0:11:05, để tạo ra cái hát
+0:11:05 - 0:11:10, Đây là cái hàm miễn đổi theo cách bình thường
+0:11:10 - 0:11:16, thì Residual, ResNet đã có cái module gọi là Residual
+0:11:16 - 0:11:23, là nó đã thực hiện phép cộng với 9 đặc trưng x đầu vào
+0:11:23 - 0:11:27, Nếu như chúng ta nhìn vô cái hàm ở đây thì chúng ta thấy công thức rất là đơn giản
+0:11:27 - 0:11:30, x thực hiện conclusion
+0:11:30 - 0:11:32, thì đây là cách làm bình thường
+0:11:32 - 0:11:34, và nó sẽ lấy dự kiện x đầu vào
+0:11:34 - 0:11:38, cộng vào chính kết quả của hai phép convolution vừa rồi
+0:11:38 - 0:11:41, thì hx là mặt fx cộng x
+0:11:41 - 0:11:43, thì đây chính là cái cải tiến của nó
+0:11:43 - 0:11:45, bình thường, đây là bình thường
+0:11:48 - 0:11:50, và cải tiến của nó cực kỳ đơn giản, đúng không?
+0:11:50 - 0:11:52, Vậy thì chúng ta sẽ cùng tìm hiểu xem
+0:11:52 - 0:11:55, tại sao phép biến đổi này
+0:11:55 - 0:11:57, nó có thể cải thiện được mô hình
+0:11:57 - 0:11:59, thì chúng ta phải nhắc lại
+0:11:59 - 0:12:02, đến hiện tượng ra vợ lạp vanishing
+0:12:07 - 0:12:10, Hiện tượng vanishing gradient này gây ra khi
+0:12:10 - 0:12:13, đạo hàm của hàm hợp
+0:12:13 - 0:12:17, là đạo hàm của hàm loss theo hàm 1
+0:12:17 - 0:12:21, đạo hàm của hàm 1 theo hàm thứ 2
+0:12:21 - 0:12:27, đạo hàm thứ n theo biến theta
+0:12:27 - 0:12:36, Trong quá trình cập nhật, đạo hàm này càng lúc càng bé
+0:12:36 - 0:12:41, Và các giá trị bé mà nhân với nhau sẽ dẫn đến cái thằng này tiến về 0
+0:12:41 - 0:12:49, Như vậy để hảm lại việc tiến đạo hàm này, trên ruôi này, đạo hàm hàm hợp này tiến về 0
+0:12:49 - 0:12:58, thì chúng ta sẽ tìm cách tăng giá trị này lên, tăng giá trị đạo hàm lên
+0:12:58 - 0:13:02, và cách tăng rất dễ là chúng ta sẽ cộng thêm một đại lực x
+0:13:02 - 0:13:12, thì bây giờ chúng ta sẽ xem thử nếu như bình thường hàm hx của mình là hàm conclusion của x
+0:13:12 - 0:13:16, khi chúng ta tính đạo hàm h phải x
+0:13:16 - 0:13:21, thì nó sẽ là đạo hàm của phép biến đổi convolution này
+0:13:21 - 0:13:26, bây giờ nếu như hx của mình
+0:13:26 - 0:13:32, nó sẽ là bằng convolution của x cộng thêm x
+0:13:32 - 0:13:35, thì lúc này đạo hàm của h
+0:13:35 - 0:13:39, lúc này, lưu ý là cái h của mình bây giờ mình đang dùng cái hiệu ở trên đây
+0:13:39 - 0:13:47, Đạo hàm của H của mình lúc này chính là Convolution cộng thêm một
+0:13:47 - 0:13:55, Và chính cái thao tác cộng thêm một này đã giúp cho đạo hàm của mình tăng giá trị lên
+0:13:55 - 0:13:59, Tăng cái giá trị của tương đạo hàm thành phần này lên
+0:13:59 - 0:14:05, Và các đạo hàm thành phần này tăng lên thì đa giảm của hàng này sẽ giảm xuống
+0:14:05 - 0:14:12, Vậy là cái đà giảm sẽ bị giảm xuống
+0:14:14 - 0:14:20, Và dẫn đến đó là cái chuỗi đạo hàm này nó sẽ lâu tiếng về không hơn
+0:14:20 - 0:14:23, Thì việc sử dụng cái Skip Connection này
+0:14:23 - 0:14:30, Nó sẽ giúp cho chúng ta chống được cái hiện tượng vanishing radian
+0:14:30 - 0:14:36, Và chống bionic sync radia này thì nó sẽ giúp cho chúng ta phấn luyện nhanh hơn
+0:14:36 - 0:14:42, Tại vì sao? Khi đạo hàm này đủ lớn, phấn luyện nhanh hơn
+0:14:42 - 0:14:47, Phấn luyện nhanh hơn thì do là theo tác theta là bằng theta trừ cho alpha
+0:14:47 - 0:14:54, Nhân cho đạo hàm của L theo theta thì giá trị này lớn, lâu giảm
+0:14:54 - 0:14:56, Vẫn đến là bước nhảy của mình sẽ nhanh
+0:14:56 - 0:14:58, Nó sẽ nhảy nhanh
+0:14:58 - 0:15:01, Động học nhảy nhanh hơn
+0:15:01 - 0:15:04, Thì đó chính là cái cải tiến của mạng ResNet
+0:15:04 - 0:15:06, Và với một cái cải tiến vô cùng bé như thế này thôi
+0:15:06 - 0:15:09, Thì chúng ta thấy là cái impact của nó cực kỳ cao
+0:15:09 - 0:15:11, Và cho đến thời điểm hiện giờ là năm 2024
+0:15:11 - 0:15:15, Thì những cái mạng CNN mà khi người ta nhắc đến
+0:15:15 - 0:15:19, Để mà làm một cái backbone, để làm một cái nền tảng
+0:15:19 - 0:15:22, Để cho huấn luyện để giải quyết các bài đoán bình thị giám mỹ tính
+0:15:22 - 0:15:24, Người ta vẫn nhắc đến ResNet rất là nhiều
+0:15:24 - 0:15:27, Và bên trái đó chính là cái hình hồi nãy
+0:15:27 - 0:15:37, Hồi nãy chúng ta show là càng tăng số lượng layer lên thì độ chính xác hoặc accuracy sẽ càng giảm
+0:15:39 - 0:15:43, Tức là càng tệ, càng tăng layer lên thì nó sẽ càng tệ
+0:15:43 - 0:15:55, Độ lỗi rất là cao, nhưng khi sử dụng với ResNet thì chúng ta sẽ thấy những cái thằng có độ lỗi thấp nhất
+0:15:55 - 0:16:03, Đúng không? Là 110 layer, 56 layer, 44 layer, 32 layer, 20 layer
+0:16:03 - 0:16:07, Tức là những cái thằng nằm ở dưới là những cái thằng có số lượng layer rất là lớn
+0:16:07 - 0:16:09, Lớn hơn sau với những thằng ở trên
+0:16:09 - 0:16:14, Như vậy, nhờ cái module Skip Connection này hay còn gọi là Residual Module
+0:16:14 - 0:16:19, Thì nó đã giúp cho cái mạng của mình có khả năng là càng look càng dài hơn
+0:16:19 - 0:16:33, Rồi, và với cái cải tiến rất là đơn giản như vậy thì cái bài ResNet đạt được số lượt trích dẫu là 214.000
+0:16:33 - 0:16:38, Tức là các bài báo trước các bạn thấy là đều dưới 200.000
+0:16:38 - 0:16:42, Riêng cái bài này với cải tiến rất là đơn giản đúng không
+0:16:42 - 0:16:49, và cái thời điểm mà nó ra cũng là ra sau những cái bài kia là 2016, những bài kia là 2014-2015
+0:16:49 - 0:16:54, thằng này ra sau nhưng mà cái số lực trích dẫn còn nhiều hơn và nhiều hơn gần gấp đôi
+0:16:54 - 0:17:01, sau với lại các cái bài trước thì đủ cho thấy là ResNet nó có một cái sức ảnh hưởng kinh khủng khiếp như thế nào

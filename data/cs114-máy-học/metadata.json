@@ -1,0 +1,448 @@
+{
+  "playlist_id": "PLb62OySGqC9wDaL2dnF_5J8f49e_YNi2f",
+  "title": "CS114 - Máy học",
+  "description": "",
+  "published_at": "2025-10-03T09:03:03.330368Z",
+  "channel_title": "Trường Đại học Công nghệ Thông tin - UIT",
+  "total_videos": 73,
+  "videos": [
+    {
+      "video_id": "5MgxCUTD9I4",
+      "title": "[CS114 - Chương 4] Vector hóa (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=5MgxCUTD9I4",
+      "published_at": "2025-10-21T00:18:35Z"
+    },
+    {
+      "video_id": "7IdTMLLCPxw",
+      "title": "[CS114 - Chương 4] Vector hóa (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=7IdTMLLCPxw",
+      "published_at": "2025-10-21T00:18:16Z"
+    },
+    {
+      "video_id": "rVJXIPI3laA",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 6",
+      "url": "https://www.youtube.com/watch?v=rVJXIPI3laA",
+      "published_at": "2025-10-20T23:45:55Z"
+    },
+    {
+      "video_id": "_BDeNgLzVtI",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 5",
+      "url": "https://www.youtube.com/watch?v=_BDeNgLzVtI",
+      "published_at": "2025-10-20T23:45:41Z"
+    },
+    {
+      "video_id": "8KfV0kYAUxk",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=8KfV0kYAUxk",
+      "published_at": "2025-10-20T23:45:24Z"
+    },
+    {
+      "video_id": "XRseUdxehgo",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 4 (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=XRseUdxehgo",
+      "published_at": "2025-10-20T23:45:09Z"
+    },
+    {
+      "video_id": "IReTdn_z-es",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 3",
+      "url": "https://www.youtube.com/watch?v=IReTdn_z-es",
+      "published_at": "2025-10-20T23:44:49Z"
+    },
+    {
+      "video_id": "9Iv6TuyWU5g",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=9Iv6TuyWU5g",
+      "published_at": "2025-10-20T23:44:30Z"
+    },
+    {
+      "video_id": "EarBLLqMgLg",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 2 (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=EarBLLqMgLg",
+      "published_at": "2025-10-20T23:44:15Z"
+    },
+    {
+      "video_id": "m_jt8-LpwLs",
+      "title": "[CS114 - Chương 4] Câu hỏi thảo luận 1",
+      "url": "https://www.youtube.com/watch?v=m_jt8-LpwLs",
+      "published_at": "2025-10-20T23:43:10Z"
+    },
+    {
+      "video_id": "Sp6gOu7BFpo",
+      "title": "[CS114 - Chương 4] Mô phỏng (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=Sp6gOu7BFpo",
+      "published_at": "2025-10-20T23:42:02Z"
+    },
+    {
+      "video_id": "d208XcqDgDI",
+      "title": "[CS114 - Chương 4] Mô phỏng (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=d208XcqDgDI",
+      "published_at": "2025-10-20T23:41:47Z"
+    },
+    {
+      "video_id": "oxjqoqQ79O4",
+      "title": "[CS114 - Chương 4] Mô hình phân lớp",
+      "url": "https://www.youtube.com/watch?v=oxjqoqQ79O4",
+      "published_at": "2025-10-20T23:41:27Z"
+    },
+    {
+      "video_id": "qFLltTMPxvU",
+      "title": "[CS114 - Chương 3] Hồi quy đa biến (Phần 3)",
+      "url": "https://www.youtube.com/watch?v=qFLltTMPxvU",
+      "published_at": "2025-10-20T23:17:53Z"
+    },
+    {
+      "video_id": "XdW4AEPxahk",
+      "title": "[CS114 - Chương 3] Hồi quy đa biến (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=XdW4AEPxahk",
+      "published_at": "2025-10-20T23:17:37Z"
+    },
+    {
+      "video_id": "uyUMxrFwKCE",
+      "title": "[CS114 - Chương 3] Hồi quy đa biến (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=uyUMxrFwKCE",
+      "published_at": "2025-10-20T23:17:22Z"
+    },
+    {
+      "video_id": "abEjEZwTp2o",
+      "title": "[CS114 - Chương 3] Câu hỏi thảo luận (Phần 4)",
+      "url": "https://www.youtube.com/watch?v=abEjEZwTp2o",
+      "published_at": "2025-10-20T23:16:55Z"
+    },
+    {
+      "video_id": "TXPLlYL6Dms",
+      "title": "[CS114 - Chương 3] Câu hỏi thảo luận (Phần 3)",
+      "url": "https://www.youtube.com/watch?v=TXPLlYL6Dms",
+      "published_at": "2025-10-20T23:16:38Z"
+    },
+    {
+      "video_id": "I2JXWweJm0g",
+      "title": "[CS114 - Chương 3] Câu hỏi thảo luận (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=I2JXWweJm0g",
+      "published_at": "2025-10-20T23:16:20Z"
+    },
+    {
+      "video_id": "NCSIAbS9gWs",
+      "title": "[CS114 - Chương 3] Câu hỏi thảo luận (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=NCSIAbS9gWs",
+      "published_at": "2025-10-20T23:16:05Z"
+    },
+    {
+      "video_id": "CB_v2ZxAyKw",
+      "title": "[CS114 - Chương 3] Minh họa Feature Engineering (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=CB_v2ZxAyKw",
+      "published_at": "2025-10-20T23:15:40Z"
+    },
+    {
+      "video_id": "_nPettH0cXg",
+      "title": "[CS114 - Chương 3] Minh họa Feature Engineering (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=_nPettH0cXg",
+      "published_at": "2025-10-20T23:15:25Z"
+    },
+    {
+      "video_id": "F_EdKKp8Rb4",
+      "title": "[CS114 - Chương 3] Feature Engineering",
+      "url": "https://www.youtube.com/watch?v=F_EdKKp8Rb4",
+      "published_at": "2025-10-20T23:14:30Z"
+    },
+    {
+      "video_id": "m2XJJvGxll8",
+      "title": "[CS114 - Chương 3] Feature Scaling",
+      "url": "https://www.youtube.com/watch?v=m2XJJvGxll8",
+      "published_at": "2025-10-20T23:14:10Z"
+    },
+    {
+      "video_id": "JqHpAp-xdu0",
+      "title": "[CS114 - Chương 3] Mô phỏng",
+      "url": "https://www.youtube.com/watch?v=JqHpAp-xdu0",
+      "published_at": "2025-10-20T23:13:41Z"
+    },
+    {
+      "video_id": "wBAm3lczqXs",
+      "title": "[CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 3)",
+      "url": "https://www.youtube.com/watch?v=wBAm3lczqXs",
+      "published_at": "2025-10-20T23:13:12Z"
+    },
+    {
+      "video_id": "xptu0eq_CXQ",
+      "title": "[CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=xptu0eq_CXQ",
+      "published_at": "2025-10-20T23:12:56Z"
+    },
+    {
+      "video_id": "fazKT_4josc",
+      "title": "[CS114 - Chương 3] Mô hình hồi quy đơn biến (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=fazKT_4josc",
+      "published_at": "2025-10-20T23:12:41Z"
+    },
+    {
+      "video_id": "OlCGL3uIcn8",
+      "title": "[CS114 - Tutorial] Unsupervised Learning (Phần 4)",
+      "url": "https://www.youtube.com/watch?v=OlCGL3uIcn8",
+      "published_at": "2025-10-11T02:19:08Z"
+    },
+    {
+      "video_id": "3RrUezdwQ-s",
+      "title": "[CS114 - Tutorial] Unsupervised Learning (Phần 3)",
+      "url": "https://www.youtube.com/watch?v=3RrUezdwQ-s",
+      "published_at": "2025-10-11T02:18:51Z"
+    },
+    {
+      "video_id": "-wnlmTs1xvc",
+      "title": "[CS114 - Tutorial] Unsupervised Learning (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=-wnlmTs1xvc",
+      "published_at": "2025-10-11T02:18:37Z"
+    },
+    {
+      "video_id": "TioSSfpy1yA",
+      "title": "[CS114 - Tutorial] Unsupervised Learning (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=TioSSfpy1yA",
+      "published_at": "2025-10-11T02:18:22Z"
+    },
+    {
+      "video_id": "NQkR51-HyOg",
+      "title": "[CS114 - Tutorial] Neural Network (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=NQkR51-HyOg",
+      "published_at": "2025-10-11T02:17:55Z"
+    },
+    {
+      "video_id": "vqDSl2cle2o",
+      "title": "[CS114 - Tutorial] Neural Network (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=vqDSl2cle2o",
+      "published_at": "2025-10-11T02:17:40Z"
+    },
+    {
+      "video_id": "i0v_PbwMiBs",
+      "title": "[CS114 - Tutorial] Decision Tree",
+      "url": "https://www.youtube.com/watch?v=i0v_PbwMiBs",
+      "published_at": "2025-10-11T02:17:16Z"
+    },
+    {
+      "video_id": "cPenwbVXQGM",
+      "title": "[CS114 - Tutorial] Google Colab (Phần 5)",
+      "url": "https://www.youtube.com/watch?v=cPenwbVXQGM",
+      "published_at": "2025-10-11T02:16:55Z"
+    },
+    {
+      "video_id": "8VA4C-TS2cQ",
+      "title": "[CS114 - Tutorial] Google Colab (Phần 4)",
+      "url": "https://www.youtube.com/watch?v=8VA4C-TS2cQ",
+      "published_at": "2025-10-11T02:16:40Z"
+    },
+    {
+      "video_id": "UPHRxByLZnU",
+      "title": "[CS114 - Tutorial] Google Colab (Phần 3)",
+      "url": "https://www.youtube.com/watch?v=UPHRxByLZnU",
+      "published_at": "2025-10-11T02:16:24Z"
+    },
+    {
+      "video_id": "v3ArDvxkL-U",
+      "title": "[CS114 - Tutorial] Google Colab (Phần 2)",
+      "url": "https://www.youtube.com/watch?v=v3ArDvxkL-U",
+      "published_at": "2025-10-11T02:16:10Z"
+    },
+    {
+      "video_id": "Npf5IvqeXH8",
+      "title": "[CS114 - Tutorial] Google Colab (Phần 1)",
+      "url": "https://www.youtube.com/watch?v=Npf5IvqeXH8",
+      "published_at": "2025-10-11T02:15:55Z"
+    },
+    {
+      "video_id": "gK8D6uEJdho",
+      "title": "[CS114 - Chương 8] Tổng kết môn học",
+      "url": "https://www.youtube.com/watch?v=gK8D6uEJdho",
+      "published_at": "2025-10-10T16:01:04Z"
+    },
+    {
+      "video_id": "DoXWiAg6UAA",
+      "title": "[CS114 - Chương 2] Học máy tự động",
+      "url": "https://www.youtube.com/watch?v=DoXWiAg6UAA",
+      "published_at": "2025-10-10T15:42:51Z"
+    },
+    {
+      "video_id": "KJJ6eFW1nV0",
+      "title": "[CS114 - Chương 2] Phân biệt một số loại mô hình học máy",
+      "url": "https://www.youtube.com/watch?v=KJJ6eFW1nV0",
+      "published_at": "2025-10-10T15:42:22Z"
+    },
+    {
+      "video_id": "BnkbGbLfP3I",
+      "title": "[CS114 - Chương 2] Các bước phát triển ứng dụng học máy",
+      "url": "https://www.youtube.com/watch?v=BnkbGbLfP3I",
+      "published_at": "2025-10-10T15:41:45Z"
+    },
+    {
+      "video_id": "Wi3K4XkzqTA",
+      "title": "[CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 2)",
+      "url": "https://www.youtube.com/watch?v=Wi3K4XkzqTA",
+      "published_at": "2025-10-10T15:38:06Z"
+    },
+    {
+      "video_id": "u3GD0b9vCDo",
+      "title": "[CS114 - Chương 2] Lập trình truyền thống & Học máy (Part 1)",
+      "url": "https://www.youtube.com/watch?v=u3GD0b9vCDo",
+      "published_at": "2025-10-10T15:37:34Z"
+    },
+    {
+      "video_id": "it7jk54r_N8",
+      "title": "[CS114 - Chương 2] Khái niệm học máy",
+      "url": "https://www.youtube.com/watch?v=it7jk54r_N8",
+      "published_at": "2025-10-10T15:36:17Z"
+    },
+    {
+      "video_id": "lAsAS0ChePY",
+      "title": "[CS114 - Chương 1] Giới thiệu môn học",
+      "url": "https://www.youtube.com/watch?v=lAsAS0ChePY",
+      "published_at": "2025-10-10T15:35:44Z"
+    },
+    {
+      "video_id": "wdIjgotVuQM",
+      "title": "[CS114 - Chương 8] Neural Network (Part 3)",
+      "url": "https://www.youtube.com/watch?v=wdIjgotVuQM",
+      "published_at": "2025-10-03T12:48:10Z"
+    },
+    {
+      "video_id": "40kpU65MMoI",
+      "title": "[CS114 - Chương 8] Neural Network (Part 2)",
+      "url": "https://www.youtube.com/watch?v=40kpU65MMoI",
+      "published_at": "2025-10-03T12:47:52Z"
+    },
+    {
+      "video_id": "6spgb9hK5To",
+      "title": "[CS114 - Chương 8] Neural Network (Part 1)",
+      "url": "https://www.youtube.com/watch?v=6spgb9hK5To",
+      "published_at": "2025-10-03T12:47:35Z"
+    },
+    {
+      "video_id": "mEMcmVX3hwg",
+      "title": "[CS114 - Chương 8] SVM (Part 3)",
+      "url": "https://www.youtube.com/watch?v=mEMcmVX3hwg",
+      "published_at": "2025-10-03T12:47:16Z"
+    },
+    {
+      "video_id": "rzKMT_sUg7Q",
+      "title": "[CS114 - Chương 8] SVM (Part 2)",
+      "url": "https://www.youtube.com/watch?v=rzKMT_sUg7Q",
+      "published_at": "2025-10-03T12:46:59Z"
+    },
+    {
+      "video_id": "OKUHDwcQuJo",
+      "title": "[CS114 - Chương 8] SVM (Part 1)",
+      "url": "https://www.youtube.com/watch?v=OKUHDwcQuJo",
+      "published_at": "2025-10-03T12:46:43Z"
+    },
+    {
+      "video_id": "onVEt5FPeWc",
+      "title": "[CS114 - Chương 8] Decision Tree (Part 3)",
+      "url": "https://www.youtube.com/watch?v=onVEt5FPeWc",
+      "published_at": "2025-10-03T12:46:22Z"
+    },
+    {
+      "video_id": "8b8OKHIktqI",
+      "title": "[CS114 - Chương 8] Decision Tree (Part 2)",
+      "url": "https://www.youtube.com/watch?v=8b8OKHIktqI",
+      "published_at": "2025-10-03T12:46:00Z"
+    },
+    {
+      "video_id": "vrLmplmZbLk",
+      "title": "[CS114 - Chương 8] Decision Tree (Part 1)",
+      "url": "https://www.youtube.com/watch?v=vrLmplmZbLk",
+      "published_at": "2025-10-03T12:45:35Z"
+    },
+    {
+      "video_id": "tGizMGafWY0",
+      "title": "[CS114 - Chương 7] Học tăng cường - Phần 4",
+      "url": "https://www.youtube.com/watch?v=tGizMGafWY0",
+      "published_at": "2025-10-03T12:37:20Z"
+    },
+    {
+      "video_id": "6NcteEkIRBM",
+      "title": "[CS114 - Chương 7] Học tăng cường - Phần 3",
+      "url": "https://www.youtube.com/watch?v=6NcteEkIRBM",
+      "published_at": "2025-10-03T12:37:02Z"
+    },
+    {
+      "video_id": "pTsVNxlbtbY",
+      "title": "[CS114 - Chương 7] Học tăng cường - Phần 2",
+      "url": "https://www.youtube.com/watch?v=pTsVNxlbtbY",
+      "published_at": "2025-10-03T12:36:43Z"
+    },
+    {
+      "video_id": "Ql0n4t39rAU",
+      "title": "[CS114 - Chương 7] Học tăng cường - Phần 1",
+      "url": "https://www.youtube.com/watch?v=Ql0n4t39rAU",
+      "published_at": "2025-10-03T12:36:22Z"
+    },
+    {
+      "video_id": "DAFPEgXUqSc",
+      "title": "[CS114 - Chương 6] Hệ khuyến nghị - Phần 3",
+      "url": "https://www.youtube.com/watch?v=DAFPEgXUqSc",
+      "published_at": "2025-10-03T11:23:42Z"
+    },
+    {
+      "video_id": "n8MHFQuTKMU",
+      "title": "[CS114 - Chương 6] Hệ khuyến nghị - Phần 2",
+      "url": "https://www.youtube.com/watch?v=n8MHFQuTKMU",
+      "published_at": "2025-10-03T11:23:28Z"
+    },
+    {
+      "video_id": "wqjn-IA5iu4",
+      "title": "[CS114 - Chương 6] Hệ khuyến nghị - Phần 1",
+      "url": "https://www.youtube.com/watch?v=wqjn-IA5iu4",
+      "published_at": "2025-10-03T11:23:15Z"
+    },
+    {
+      "video_id": "N3ulTwujJH4",
+      "title": "[CS114 - Chương 5] Dimension Reduction - Phần 5",
+      "url": "https://www.youtube.com/watch?v=N3ulTwujJH4",
+      "published_at": "2025-10-03T11:22:00Z"
+    },
+    {
+      "video_id": "b8HuVAc0cb4",
+      "title": "[CS114 - Chương 5] Dimension Reduction - Phần 3",
+      "url": "https://www.youtube.com/watch?v=b8HuVAc0cb4",
+      "published_at": "2025-10-03T11:20:53Z"
+    },
+    {
+      "video_id": "SINj0Z-2acc",
+      "title": "[CS114 - Chương 5] Dimension Reduction - Phần 4",
+      "url": "https://www.youtube.com/watch?v=SINj0Z-2acc",
+      "published_at": "2025-10-03T11:20:28Z"
+    },
+    {
+      "video_id": "PtsZWpdkPrE",
+      "title": "[CS114 - Chương 5] Dimension Reduction - Phần 2",
+      "url": "https://www.youtube.com/watch?v=PtsZWpdkPrE",
+      "published_at": "2025-10-03T11:20:14Z"
+    },
+    {
+      "video_id": "RGEA9a14dBs",
+      "title": "[CS114 - Chương 5] Dimension Reduction - Phần 1",
+      "url": "https://www.youtube.com/watch?v=RGEA9a14dBs",
+      "published_at": "2025-10-03T11:20:02Z"
+    },
+    {
+      "video_id": "5vs9uLeRy3Q",
+      "title": "[CS114 - Chương 5] Cluster - Phần 4",
+      "url": "https://www.youtube.com/watch?v=5vs9uLeRy3Q",
+      "published_at": "2025-10-03T11:19:33Z"
+    },
+    {
+      "video_id": "o7R9x8C9SSo",
+      "title": "[CS114 - Chương 5] Cluster - Phần 3",
+      "url": "https://www.youtube.com/watch?v=o7R9x8C9SSo",
+      "published_at": "2025-10-03T11:19:15Z"
+    },
+    {
+      "video_id": "PXfS6tZJIOI",
+      "title": "[CS114 - Chương 5] Cluster - Phần 2",
+      "url": "https://www.youtube.com/watch?v=PXfS6tZJIOI",
+      "published_at": "2025-10-03T11:18:04Z"
+    },
+    {
+      "video_id": "9bI07JfvEh8",
+      "title": "[CS114 - Chương 5] Cluster - Phần 1",
+      "url": "https://www.youtube.com/watch?v=9bI07JfvEh8",
+      "published_at": "2025-10-03T11:05:08Z"
+    }
+  ]
+}

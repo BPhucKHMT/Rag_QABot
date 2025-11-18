@@ -1,0 +1,147 @@
+0:00:01 - 0:00:16, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với một số câu hỏi
+0:00:16 - 0:00:22, thảo luận cho mô hình hồi quyến tính để
+0:00:18 - 0:00:25, giúp cho chúng ta hiểu rõ hơn về cái ý
+0:00:22 - 0:00:27, nghĩa của các cái công thức và tại sao
+0:00:25 - 0:00:30, chúng ta lại có những cái hàm biến đổi
+0:00:27 - 0:00:33, như vậy. Đầu tiên thì chúng ta sẽ xét
+0:00:30 - 0:00:36, đến cái hàm mô hình của mình. Thì trong
+0:00:33 - 0:00:38, cái hàm mô hình của mình nó sẽ à có một
+0:00:36 - 0:00:41, cái thành phần nó gọi là tham số B. Thì
+0:00:38 - 0:00:44, B này á còn có một cái tên gọi đó là
+0:00:41 - 0:00:47, bias.
+0:00:44 - 0:00:49, B là viết tắc của chữ bias. Thế thì vai
+0:00:47 - 0:00:53, trò của
+0:00:49 - 0:00:55, tham số B trong mô hình sau đây là gì?
+0:00:53 - 0:00:57, Tại sao mình lại phải có cái tham số B
+0:00:55 - 0:00:59, này?
+0:00:57 - 0:01:02, Thì ở đây có rất nhiều cách giải thích
+0:00:59 - 0:01:07, khác nhau. Chúng ta sẽ có hai cách giải
+0:01:02 - 0:01:07, thích. Cách giải thích đầu tiên á
+0:01:08 - 0:01:14, đó là chúng ta dựa trên à lý thuyết về
+0:01:11 - 0:01:14, toán
+0:01:14 - 0:01:19, và cụ thể hơn đó là chúng ta sẽ dựa trên
+0:01:17 - 0:01:22, cái lý thuyết về à phương trình đường
+0:01:19 - 0:01:25, thẳng. À đây là một phần của toán giải
+0:01:22 - 0:01:25, thích.
+0:01:26 - 0:01:31, Rồi thì ở đây chúng ta sẽ thấy là trong
+0:01:28 - 0:01:35, cái công thức này thì nó sẽ có thành
+0:01:31 - 0:01:39, phần W và thành phần B là hai cái tham
+0:01:35 - 0:01:41, số cần huấn luyện và nó tương ứng chính
+0:01:39 - 0:01:47, là cái hệ số của cái phương trình đường
+0:01:41 - 0:01:47, thẳng trong cái không gian Oxy của mình.
+0:01:47 - 0:01:54, Ví dụ như đây là X và trục tung là Y.
+0:01:52 - 0:01:57, Thì rõ ràng hồi xưa trong chương trình
+0:01:54 - 0:02:00, toán phổ thông chúng ta đã từng học cái
+0:01:57 - 0:02:05, công thức về phương trình đường thẳng đó
+0:02:00 - 0:02:05, là y = ax + b.
+0:02:05 - 0:02:12, y = ax + b. Thế thì ở đây là cấp độ mà
+0:02:09 - 0:02:15, trong mô hình máy học à và ở bậc đại học
+0:02:12 - 0:02:18, thì cái tham số a và b ở đây nó sẽ được
+0:02:15 - 0:02:22, thay bằng w và và b.
+0:02:18 - 0:02:25, Và rõ ràng nếu như chúng ta bỏ đi cái
+0:02:22 - 0:02:30, thành phần B này thì lúc này phương
+0:02:25 - 0:02:32, trình của chúng ta chỉ còn là y = ax.
+0:02:30 - 0:02:35, mà trong lý thuyết chúng ta đã được học
+0:02:32 - 0:02:37, thì cái phương trình y = ax thì đó chỉ
+0:02:35 - 0:02:41, là một tập hợp các cái đường thẳng mà đi
+0:02:37 - 0:02:44, qua góc tọa độ này. Điều đó có nghĩa là
+0:02:41 - 0:02:46, chúng ta sẽ không thể tùy biến cái mô
+0:02:44 - 0:02:48, hình của mình để cho nó có thể đáp ứng
+0:02:46 - 0:02:51, được rất nhiều loại dữ liệu khác nhau.
+0:02:48 - 0:02:54, Ví dụ dữ liệu của chúng ta à đi như thế
+0:02:51 - 0:02:54, này
+0:02:55 - 0:03:00, đó thì rõ ràng là cái chúng ta cần sẽ là
+0:02:58 - 0:03:02, có một cái đường
+0:03:00 - 0:03:04, không đi qua góc tọa độ thì nó mới có
+0:03:02 - 0:03:07, thể đi xuyên qua các cái điểm ở dữ liệu
+0:03:04 - 0:03:09, của mình để mà mình xắp xỉ nó bằng một
+0:03:07 - 0:03:12, cái hàm hồi quy tiến tính.
+0:03:09 - 0:03:15, Thì nếu ràn buộc cái B à nếu bỏ cái ràng
+0:03:12 - 0:03:17, buộc B đi thì rõ ràng là chúng ta sẽ bị
+0:03:15 - 0:03:20, giới hạn cái đường thẳng các cái đường
+0:03:17 - 0:03:23, thẳng quay xung quanh góc tọa độ dẫn đến
+0:03:20 - 0:03:25, đó là nó không thể fit được vào cái dữ
+0:03:23 - 0:03:27, liệu bất kỳ của mình. Thì đó chính là
+0:03:25 - 0:03:30, cái
+0:03:27 - 0:03:33, ý đầu tiên. Và cái cách giải thích thứ
+0:03:30 - 0:03:37, hai đó là chúng ta có thể sử dụng lý
+0:03:33 - 0:03:37, thuyết về mặt thông tin.
+0:03:39 - 0:03:43, Thì đây là lý thuyết về thông tin
+0:03:48 - 0:03:54, rồi. Thế thì lý thuyết về thông tin ờ
+0:03:51 - 0:03:57, thì vai trò của bias ở đây là gì? Rõ
+0:03:54 - 0:04:01, ràng trong các cái mô hình dự đoán, các
+0:03:57 - 0:04:03, cái giá trị đầu ra thì chúng ta phải giả
+0:04:01 - 0:04:06, định những cái tham số, những cái biến
+0:04:03 - 0:04:11, số đầu vào. Cụ thể trong trường hợp này
+0:04:06 - 0:04:14, đó chính là cái à đặc trưng x đầu vào.
+0:04:11 - 0:04:16, Nhưng điều gì xảy ra nếu như à cái y ngã
+0:04:14 - 0:04:21, của mình tức là cái giá trị dự đoán của
+0:04:16 - 0:04:23, mình là đây nó không có phụ thuộc vào x
+0:04:21 - 0:04:25, mà nó có thể phụ thuộc vào nhiều yếu tố
+0:04:23 - 0:04:27, khác.
+0:04:25 - 0:04:29, Lấy ví dụ trong bài toán dự đoán giá
+0:04:27 - 0:04:32, nhà, chúng ta thấy là một cái căn nhà
+0:04:29 - 0:04:35, thì nó không chỉ nó phụ thuộc vào cái
+0:04:32 - 0:04:38, thông tin về mặt diện tích
+0:04:35 - 0:04:40, mà nó còn có thể phụ thuộc vào cái
+0:04:38 - 0:04:44, các cái thông tin khác mà chúng ta không
+0:04:40 - 0:04:46, biết được. Ví dụ như
+0:04:44 - 0:04:48, lộ giới trước nhà đúng không? Hoặc có
+0:04:46 - 0:04:51, những cái mà chúng ta không thể đo lường
+0:04:48 - 0:04:54, được. Ví dụ như là à hàng xóm của mình
+0:04:51 - 0:04:58, có vui vẻ hay không, có gần cái nơi công
+0:04:54 - 0:05:02, an ninh trật tự hay không. Đó thì cái B
+0:04:58 - 0:05:05, này nó sẽ đại diện cho những cái đặc
+0:05:02 - 0:05:07, trưng mà chúng ta không biết hoặc là
+0:05:05 - 0:05:12, chúng ta không kiểm soát được.
+0:05:07 - 0:05:12, nó sẽ đại diện cho cái thông tin
+0:05:19 - 0:05:25, mà không có à kiểm soát bởi X.
+0:05:28 - 0:05:35, Đó thì như vậy là chúng ta đã xem xét à
+0:05:32 - 0:05:39, nó ở hai cái góc độ.
+0:05:35 - 0:05:40, Đó là lý thuyết về ờ toán đúng không? Là
+0:05:39 - 0:05:43, cái phương trình đường thẳng của mình
+0:05:40 - 0:05:44, nếu bỏ đi cái thành phần B thì nó sẽ bị
+0:05:43 - 0:05:49, giới hạn là chỉ xoay xung quanh góc tọa
+0:05:44 - 0:05:52, độ và nó sẽ không thể à xấp xỉ được với
+0:05:49 - 0:05:55, lại các cái điểm dữ liệu à của chúng ta
+0:05:52 - 0:05:56, một cách tổng bát là không không thể. Và
+0:05:55 - 0:05:58, khi chúng ta cho thêm cái thành phần B
+0:05:56 - 0:06:02, vô thì cái phương trình đường thẳng của
+0:05:58 - 0:06:04, mình nó sẽ tùy biến hơn, nó sẽ linh động
+0:06:02 - 0:06:07, hơn để có thể fit với lại những cái dữ
+0:06:04 - 0:06:09, liệu mà không đi qua góc tọa độ. Cách
+0:06:07 - 0:06:12, giải thích thứ hai đó là chúng ta dựa
+0:06:09 - 0:06:15, trên lý thuyết về mặt thông tin. Tức là
+0:06:12 - 0:06:17, à cái thành phần bias này nó sẽ đại diện
+0:06:15 - 0:06:19, cho tất cả những cái thông tin mà không
+0:06:17 - 0:06:22, có được kiểm soát bởi cái Excel vào thì
+0:06:19 - 0:06:25, nó sẽ dồn hết vào trong cái B. Và đương
+0:06:22 - 0:06:26, nhiên chúng ta sẽ giả định rằng là B
+0:06:25 - 0:06:29, trong trường hợp này sau khi chúng ta
+0:06:26 - 0:06:33, huấn luyện xong thì đó là một cái à tham
+0:06:29 - 0:06:35, số cố định nó không có biến động. Trong
+0:06:33 - 0:06:38, khi x của mình đó là cái đặc trưng đầu
+0:06:35 - 0:06:40, vào thì đó là biến động. Và khi x chúng
+0:06:38 - 0:06:43, ta thay đổi thì nó sẽ đưa đến cái giá
+0:06:40 - 0:06:45, trị y ngã của chúng ta là cái giá trị dự
+0:06:43 - 0:06:47, đoán của mình cũng sẽ thay đổi. Đó thì
+0:06:45 - 0:06:50, vì cái các cái thông tin mà chúng ta
+0:06:47 - 0:06:52, không kiểm soát được á nên chúng ta sẽ
+0:06:50 - 0:06:56, cho nó neo lại nó cố định. Còn đương
+0:06:52 - 0:06:57, nhiên về thực tế thì khi chúng ta huấn
+0:06:56 - 0:06:59, luyện với những cái tình huống phức tạp
+0:06:57 - 0:07:02, thì có thể chúng ta sẽ phải update lại
+0:06:59 - 0:07:05, cái mô hình của mình nhiều lần để cho nó
+0:07:02 - 0:07:09, có thể à giải quyết được cái vấn đề đó
+0:07:05 - 0:07:12, là à tham số X và B thì B nó có thể cập
+0:07:09 - 0:07:14, nhật được theo cái xu hướng mới. B có
+0:07:12 - 0:07:17, thể cập nhật theo cái xu hướng mới. Đối
+0:07:14 - 0:07:20, với những cái biến mà có tác động không
+0:07:17 - 0:07:22, à gọi là chúng ta không kiểm soát nó. Ừ,
+0:07:20 - 0:07:25, chúng ta không biết trước đó là cái gì
+0:07:22 - 0:07:27, nhưng nó vẫn có tác động đến cái giá của
+0:07:25 - 0:07:30, hoặc là cái output của mình. Thì đó
+0:07:27 - 0:07:34, chính là cái câu hỏi thảo luận đầu tiên
+0:07:30 - 0:07:46, về vai trò của tham số B.
+0:07:34 - 0:07:46, [âm nhạc]

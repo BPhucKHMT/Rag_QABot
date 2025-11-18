@@ -1,0 +1,71 @@
+0:00:00 - 0:00:10, Chủ đề, học sâu, Machine Learning, Logistic Regression, CNN, ImageNet.
+0:00:15 - 0:00:25, Tiếp theo, đó chính là tensor 3D. Về mặt ký hiệu, chúng ta sẽ biểu diễn bởi một ký tự viết hoa và tô đậm.
+0:00:25 - 0:00:31, Và ở đây chúng ta thấy là tensor 3D nên chúng ta sẽ có 3 thành phần
+0:00:31 - 0:00:36, Và nói một cách khác thì đây là một tensor với 3 chiều không gian
+0:00:36 - 0:00:42, Và có kích thước từng chiều lần lượt sẽ là m, n và p
+0:00:42 - 0:00:50, Thì hiểu một cách nôm na, tensor 3D nó chính là một tập hợp các ma trận có cùng kích thước
+0:00:50 - 0:00:55, và chúng ta lấy một ví dụ là một tensor 3 chiều như sau
+0:00:55 - 0:00:58, thì để tạo ra tensor 3 chiều này
+0:00:58 - 0:01:01, chúng ta sẽ sử dụng đoạn code Python như sau
+0:01:01 - 0:01:08, thì chúng ta thấy các giá trị của vector đầu tiên đó là 123
+0:01:08 - 0:01:13, tập hợp các vector cùng chiều thì nó sẽ tạo ra một ma trận
+0:01:13 - 0:01:17, và chúng ta sẽ có ma trận là 123456
+0:01:17 - 0:01:19, tương ứng nó sẽ là lát cắt ở đây
+0:01:19 - 0:01:28, và tập hợp các lát cắt này, chúng ta sẽ có 10, 20, 30, 40, 50, 60 là một lát cắt
+0:01:28 - 0:01:34, rồi 100, 200, 300, 400, 500, 600 là một lát cắt
+0:01:34 - 0:01:38, thì tập hợp tất cả các lát cắt ma trận này, nó sẽ tạo thành một tensor
+0:01:38 - 0:01:41, và tensor 3D.
+0:01:41 - 0:01:52, và tương tự như vector và scalar thì tensor 3D thì chúng ta sẽ sử dụng ndim và shape
+0:01:52 - 0:01:56, để kiểm tra xem số chiều của nó có phải là 3
+0:01:56 - 0:02:02, và kích thước theo từng chiều nó có phải là kích thước mà mình đang mong muốn khởi tạo hay không
+0:02:02 - 0:02:09, ví dụ như trong trường hợp này chúng ta sẽ thấy là kích thước của chiều đầu tiên sẽ là 4 chiều
+0:02:09 - 0:02:19, Kích thước của chiều thứ 2 sẽ là 2 chiều. Kích thước của chiều thứ 3 là 3 chiều.
+0:02:19 - 0:02:23, Và 4 chiều chính là kích thước ở đây.
+0:02:25 - 0:02:31, Và ứng dụng của tensor 3D đó chính là dùng để biểu diễn ảnh màu.
+0:02:31 - 0:02:35, Trong số những các ảnh màu thì chúng ta thấy ảnh Red, Green, Blue (RGB)
+0:02:35 - 0:02:39, là một trong những các ảnh màu nổi tiếng và phổ biến
+0:02:39 - 0:02:41, thì chúng ta thấy có một hình mẫu ở đây
+0:02:41 - 0:02:44, Bản chất tấm hình mà chúng ta nhìn thấy ở đây
+0:02:44 - 0:02:48, đó chính là được tạo bởi 3 lát cắt
+0:02:48 - 0:02:52, tương ứng là 3 kênh màu Red, Green và Blue
+0:02:52 - 0:02:57, và các giá trị trên từng kênh Red, Green, Blue này
+0:03:01 - 0:03:04, thì nó sẽ tạo thành một tensor
+0:03:04 - 0:03:08, và tensor này có độ sâu là 3
+0:03:08 - 0:03:11, có chiều cao là 5
+0:03:11 - 0:03:15, và có chiều ngang là 5 luôn
+0:03:15 - 0:03:18, thì đây là một tensor, một tensor 3D
+0:03:18 - 0:03:20, để biểu diễn cho tấm ảnh
+0:03:20 - 0:03:21, và lưu ý ở đây là
+0:03:21 - 0:03:24, đây là một ví dụ minh họa tượng trưng
+0:03:24 - 0:03:28, tại vì chúng ta thấy tấm ảnh này nó sẽ có rất nhiều hàng, rất nhiều cột
+0:03:28 - 0:03:33, chúng ta sẽ biểu diễn một tensor có kích thước đó là 3 nhân 5 nhân 5
+0:03:35 - 0:03:38, và các tensor khác hay còn gọi là tensor nhiều chiều
+0:03:38 - 0:03:43, thì chúng ta sẽ ghép các tensor 3D có cùng kích thước
+0:03:43 - 0:03:46, thì chúng ta sẽ tạo được tensor 4D
+0:03:46 - 0:03:50, rồi tương tự như vậy chúng ta ghép các tensor 4D
+0:03:50 - 0:03:52, sẽ tạo thành các tensor 5D
+0:03:52 - 0:03:53, là cứ như vậy.
+0:03:53 - 0:04:01, thì ở đây là hình ảnh minh họa cho các tensor 1D, 2D, 3D, 4D, 5D
+0:04:01 - 0:04:11, Mình rất hay lấy ví dụ này để minh họa cho ý nghĩa của các tensor nhiều chiều
+0:04:11 - 0:04:18, Đầu tiên, nếu như chúng ta xem thông tin của một bạn sinh viên
+0:04:18 - 0:04:26, bao gồm tuổi, lớp, điểm số trung bình của từng môn
+0:04:26 - 0:04:30, thì nó là một tensor 1D
+0:04:30 - 0:04:35, tập hợp các vector để biểu diễn các sinh viên
+0:04:35 - 0:04:39, thì nó sẽ tạo ra thành một ma trận 2 chiều
+0:04:39 - 0:04:45, và chúng ta sẽ xem ma trận này để biểu diễn cho một lớp học
+0:04:48 - 0:04:55, Rồi tập hợp các tensor 2D hay tập hợp các lớp học thì chúng ta sẽ tạo thành tensor 3D
+0:04:55 - 0:05:03, và nó tương ứng ý nghĩa trong thực tế đó chính là một trường học
+0:05:03 - 0:05:14, Rồi, tập hợp các tensor 3D tạo ra thành tensor 4D thì khái niệm này tương ứng trong cuộc sống của mình
+0:05:14 - 0:05:19, đó chính là tập hợp các trường trong một quốc gia
+0:05:19 - 0:05:42, Và tương tự như vậy, tensor 5D thì nó sẽ là tập hợp các trường trong châu Á, ví dụ vậy, hoặc châu Âu.
+0:05:42 - 0:05:46, tập hợp các trường trong các châu lục thì nó sẽ tạo thành các trường trên thế giới
+0:05:49 - 0:06:01, Thì đây là một ví dụ dễ hiểu để giúp cho các bạn hiểu các khái niệm và tưởng tượng ra được khái niệm về tensor 5D, 6D
+0:06:01 - 0:06:08, và chúng ta có thể lấy minh họa cho tensor 4D
+0:06:08 - 0:06:12, là thường được sử dụng để biểu diễn cho các video
+0:06:12 - 0:06:15, tại sao?
+0:06:15 - 0:06:20, tại vì nếu như chúng ta xem một frame ảnh trong video
+0:06:20 - 0:06:22, là một tensor 3D
+0:06:22 - 0:06:25, thì tập hợp các tensor 3D này
+0:06:25 - 0:06:26, có cùng kích thước này
+0:06:26 - 0:06:28, thì có phải tạo thành một video không?
+0:06:28 - 0:06:35, Và như vậy thì video nó sẽ tương đương với việc chúng ta sẽ dùng tensor 4D để biểu diễn

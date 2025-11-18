@@ -1,0 +1,97 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:20, Tiếp theo thì chúng ta sẽ cùng mô hình
+0:00:16 - 0:00:22, hóa toán học cho cái trường hợp mà hồi
+0:00:20 - 0:00:25, quy đa biến.
+0:00:22 - 0:00:27, Thì đối với mô hình mà hồi quy nhiều
+0:00:25 - 0:00:31, biến thì chúng ta cũng hoàn toàn tương
+0:00:27 - 0:00:35, tự mở rộng ra từ mô hình à đơn biến.
+0:00:31 - 0:00:37, Công thức của mô hình đơn biến đó là wx
+0:00:35 - 0:00:40, + b.
+0:00:37 - 0:00:42, Thì đây chính là cái giá trị dự đoán và
+0:00:40 - 0:00:44, chúng ta sẽ mở rộng nó ra. Thay vì chúng
+0:00:42 - 0:00:47, ta chỉ có một biến x thì bây giờ chúng
+0:00:44 - 0:00:52, ta sẽ có x1 x2. Và tương ứng thì chúng
+0:00:47 - 0:00:55, ta cũng sẽ có hệ số W1 cho X1 cộng cho
+0:00:52 - 0:01:01, W2
+0:00:55 - 0:01:04, cộng chấm chấm chấm cộng cho WN Xn với n
+0:01:01 - 0:01:06, là số đặc trưng của mình. Sau đó chúng
+0:01:04 - 0:01:08, ta cũng không quên là cộng cho cái thành
+0:01:06 - 0:01:11, phần bias B.
+0:01:08 - 0:01:15, Thì nhắc lại là tại sao phải có cái
+0:01:11 - 0:01:17, thành phần BASP này. Đó là đại diện à
+0:01:15 - 0:01:19, cho những cái đặc trưng mà chúng ta
+0:01:17 - 0:01:22, không thống kê được, chúng ta không thu
+0:01:19 - 0:01:25, thập thông tin được. Rõ ràng nếu mà nói
+0:01:22 - 0:01:28, để dự đoán một cái giá trị output thì có
+0:01:25 - 0:01:31, chắc là chúng ta cần đủ n đặc trưng này
+0:01:28 - 0:01:34, là có thể à xác định được hay không? Thì
+0:01:31 - 0:01:37, câu trả lời là không. Do đó thì chúng ta
+0:01:34 - 0:01:38, sẽ luôn có một cái thành phần bias để
+0:01:37 - 0:01:43, cho mô hình của mình nó có cái tính chất
+0:01:38 - 0:01:46, tổng quát và có thể khắc phục được cái
+0:01:43 - 0:01:50, tình trạng đó là thu thập thiếu thông
+0:01:46 - 0:01:52, tin của đặc trưng. Thì khi này cái hệ
+0:01:50 - 0:01:55, thống của chúng ta
+0:01:52 - 0:01:57, cái mô hình của chúng ta sẽ ký hiệu X.
+0:01:55 - 0:02:00, Thì cái chúng ta lưu ý là cái chỉ số bên
+0:01:57 - 0:02:03, dưới là chỉ số J sẽ là thể hiện cái
+0:02:00 - 0:02:07, feature thứ mấy? Feature thứ mấy? trong
+0:02:03 - 0:02:10, cái tập n feature này và chi của mình nó
+0:02:07 - 0:02:14, sẽ chạy từ 1 cho đến 2n
+0:02:10 - 0:02:15, và n là số đặc trưng của mình. Hay nói
+0:02:14 - 0:02:19, cách khác đó là cái độ rộng của cái bảng
+0:02:15 - 0:02:19, dữ liệu của mình.
+0:02:22 - 0:02:28, Đó chính là cái độ rộng của cái bản dữ
+0:02:23 - 0:02:31, liệu của mình. Rồi à theo chiều à theo
+0:02:28 - 0:02:34, hàng thì chúng ta sẽ có cái chỉ số y ở
+0:02:31 - 0:02:38, phía trên. Còn J thì chúng ta sẽ đi từ
+0:02:34 - 0:02:42, cột là từ cột thứ nhất, thứ hai cho đến
+0:02:38 - 0:02:45, cột thứ N. Còn J à còn Y cái chỉ số ở
+0:02:42 - 0:02:47, phía trên được viết bằng à cái dấu mũ
+0:02:45 - 0:02:50, này ha. Thì cái giới này á dùng cái dấu
+0:02:47 - 0:02:52, mở ngoặc đóng ngoặc này á để hàm ý đó là
+0:02:50 - 0:02:54, đây không phải là phép mũ mà đây chỉ là
+0:02:52 - 0:02:57, một cái ký hiệu mẫu dữ liệu thứ mấy
+0:02:54 - 0:02:59, thôi. Thì y của mình sẽ là một cái dòng
+0:02:57 - 0:03:01, dữ liệu.
+0:02:59 - 0:03:04, Và đây là vecơ đặc trưng đại diện cho
+0:03:01 - 0:03:09, mẫu dữ liệu thứ y hay là còn gọi là
+0:03:04 - 0:03:10, training example thứ y. Thì nếu y = 2
+0:03:09 - 0:03:13, thì chúng ta sẽ có cái công thức như thế
+0:03:10 - 0:03:16, này. Cái dạng biểu diện như thế này. Mẫu
+0:03:13 - 0:03:20, dữ liệu thứ hai nó là một cái vectơ n
+0:03:16 - 0:03:22, chiều bao gồm x21, x22 cho đến x2m. Thì
+0:03:20 - 0:03:25, trên cái bảng dữ liệu, mỗi một cái hàng
+0:03:22 - 0:03:29, chính sẽ là một cái vecơ. à sẽ là một
+0:03:25 - 0:03:33, cái vecơ như vậy
+0:03:29 - 0:03:36, đó. Thì đây sẽ là x y một cái hàng dữ
+0:03:33 - 0:03:36, liệu này.
+0:03:42 - 0:03:49, Rồi và bây giờ thì chúng ta sẽ qua cái
+0:03:45 - 0:03:52, công thức của à cái mô hình dự đoán đó
+0:03:49 - 0:03:56, là F của WB. Lưu ý ở đây à tham số của
+0:03:52 - 0:03:59, mình lúc này sẽ là WB. Trong đó W ở
+0:03:56 - 0:04:01, trong cái bài mà hồi quy đơn biến thì W
+0:03:59 - 0:04:03, chỉ là một giá trị scalar, là một giá
+0:04:01 - 0:04:05, trị đơn. Còn ở đây W nó sẽ là một cái
+0:04:03 - 0:04:09, vecơ
+0:04:05 - 0:04:12, nó sẽ là một vectơ và W nhân với X thì
+0:04:09 - 0:04:14, nó sẽ ra cái vế bên đây. Nhưng chúng ta
+0:04:12 - 0:04:16, cũng không quên là sẽ có một cái thành
+0:04:14 - 0:04:20, phần bias. Chúng ta sẽ cộng bias ở phía
+0:04:16 - 0:04:24, cuối đó. Thì xy à xj ở đây chính là cái
+0:04:20 - 0:04:26, đặc trưng thứ j và wj chính là cái trọng
+0:04:24 - 0:04:30, số hay là hệ số tương ứng với lại đặc
+0:04:26 - 0:04:34, trưng thứ j cái chỉ số j đây.
+0:04:30 - 0:04:37, Rồi b là cái hệ số chặn hoặc là bias và
+0:04:34 - 0:04:40, vecơ à đặc trưng của một cái đối tượng
+0:04:37 - 0:04:44, thì nó sẽ được ký hiệu là bằng x có cái
+0:04:40 - 0:04:44, vecơ phía trên.
+0:04:44 - 0:04:50, Và tiếp theo thì chúng ta sẽ biểu diễn
+0:04:47 - 0:04:52, nó dưới dạng là một cái vecơ. Thì bình
+0:04:50 - 0:04:55, thường W của mình sẽ là bao gồm W1 rồi
+0:04:52 - 0:04:57, W2 vân vân. Thì chúng ta sẽ gom nó lại
+0:04:55 - 0:05:01, thành một cái vectơ W như thế này. Tương
+0:04:57 - 0:05:04, tự như vậy cho cái đặc trưng X độ vào
+0:05:01 - 0:05:08, thì nó sẽ gồm có n phần tử. Thì X của
+0:05:04 - 0:05:08, mình là một cái vectơ n phần tử.
+0:05:09 - 0:05:21, [âm nhạc]

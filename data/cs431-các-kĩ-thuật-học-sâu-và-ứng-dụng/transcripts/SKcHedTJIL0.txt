@@ -1,0 +1,264 @@
+0:00:00 - 0:00:09, Về cấu tạo của một mạng Conversion Neural Network, thì nó sẽ có những thành phần chính sau đây.
+0:00:09 - 0:00:16, Nếu như chúng ta tra cứu trên mạng internet, chúng ta thấy là khi người ta vẽ một kiến trúc mạng CNN,
+0:00:16 - 0:00:22, thì nó hay sử dụng trái dạng là hình khối, ảnh đầu vào, ví dụ ở đây là ảnh một chiếc xe,
+0:00:22 - 0:00:27, rồi nó sẽ biến đổi thành một cái khối, thì cái khối này nó gọi là đặc trưng.
+0:00:27 - 0:00:31, và nó được thực hiện bởi phép convolution
+0:00:31 - 0:00:34, đây là phép convolution và ngay sau phép convolution
+0:00:34 - 0:00:35, nó sẽ thực hiện phép reload
+0:00:35 - 0:00:38, rồi khi tạo ra feature này xong
+0:00:38 - 0:00:40, chúng ta sẽ thực hiện phép pooling
+0:00:40 - 0:00:43, để giảm kích thước của tấm hình này lại
+0:00:43 - 0:00:45, giảm kích thước của đặc trưng này lại
+0:00:45 - 0:00:46, và cứ như vậy
+0:00:46 - 0:00:50, tự nhiên khi chúng ta mới bắt đầu tìm hiểu kiến trúc này
+0:00:50 - 0:00:52, thì chúng ta sẽ hơi bị rối
+0:00:52 - 0:00:55, do đó ở đây chúng ta sẽ phân loại ra
+0:00:55 - 0:01:02, Bốn phép biến đổi chính mà mạng CNN được sử dụng xuyên suốt trong toàn bộ kiến trúc này.
+0:01:02 - 0:01:05, Bốn phép biến đổi đó chính là phép Combustion,
+0:01:05 - 0:01:11, phép Activation, tức là tư ấn là hàm kích hoạt, tầng kích hoạt,
+0:01:11 - 0:01:14, tầng Pooling và tầng Fully Connected.
+0:01:14 - 0:01:19, Đây chính là 4 phép, 4 phép biến đổi chính và chúng ta sẽ phối hợp.
+0:01:19 - 0:01:20, Phối hợp như thế nào?
+0:01:20 - 0:01:25, Thông thường tất cả các tầng Convolution và Activation
+0:01:25 - 0:01:29, tầng kích hoạt nó sẽ đi chung với nhau thành một cặp
+0:01:29 - 0:01:33, tức là ngay sau Convolution nó sẽ là tầng Activation
+0:01:33 - 0:01:37, và tầng Activation này thì thường người ta sử dụng cái hàm
+0:01:37 - 0:01:38, đó là hàm đây luôn
+0:01:38 - 0:01:40, và như vậy nó sẽ đi theo cặp với nhau
+0:01:40 - 0:01:43, và cái cặp điến đổi Convolution Activation này
+0:01:43 - 0:01:45, nó sẽ được thực hiện ca lần
+0:01:45 - 0:01:49, thì lâu lâu nó sẽ chọt vào một cái tầng Pooling
+0:01:49 - 0:02:00, Mục tiêu của tầng pooling này là để giảm kích thước của feature
+0:02:00 - 0:02:07, Và khi giảm kích thước của feature thì sau này tầng pooling data sẽ giảm số lượng tham số
+0:02:07 - 0:02:12, Cái việc giảm số lượng tham số sẽ có tác dụng gì thì chúng ta sẽ bàn luận sau
+0:02:12 - 0:02:19, Phối hợp các cặp convolution, activation và pooling này, chúng ta sẽ làm n lần
+0:02:19 - 0:02:25, và cứ thực hiện đi thực hiện lại. Thì hết cái giai đoạn này, nó sẽ gọi là rút chích trạc trưng
+0:02:28 - 0:02:30, Nó sẽ gọi là rút chích trạc trưng
+0:02:31 - 0:02:36, Và khi kết thúc giai đoạn rút chích trạc trưng này, nó sẽ đến cái tầng fully connected
+0:02:36 - 0:02:44, thì ở đây sẽ là tầng thực hiện công việc đó là phân lớp đặc trưng
+0:02:46 - 0:02:50, các đặc trưng đã được thực hiện bởi 3 tầng trước
+0:02:50 - 0:02:52, thì qua đến tầng Fully Connected này
+0:02:52 - 0:02:58, thật ra nó chính là mạng Neural Network của mình
+0:03:00 - 0:03:04, và tầng Neural Network này, nhiệm vụ của nó sẽ là đi phân loại đặc trưng
+0:03:04 - 0:03:10, Chúng ta sẽ có một số đồ đó là một ảnh một chiếc xe
+0:03:10 - 0:03:16, nó thực hiện phép convolution, rồi lại relu, convolution relu, sau đó lại pooling
+0:03:16 - 0:03:22, rồi sau đó convolution relu, convolution relu, rồi lại pooling
+0:03:22 - 0:03:29, Tương ứng với tham số k và n ở đây, k của mình trong trường hợp này chính là 2
+0:03:29 - 0:03:35, Chúng ta thực hiện 2 lần các trập biến đổi Conversion Relu, Conversion Relu
+0:03:35 - 0:03:41, N là bằng 3, có nghĩa là nguyên 1 bộ này chúng ta sẽ thực hiện 3 lần
+0:03:41 - 0:03:46, Conversion Relu, Conversion Relu và Pulling
+0:03:46 - 0:03:49, Đây là 1 bộ, rồi 1 bộ nữa
+0:03:49 - 0:03:52, Và 1 bộ nữa
+0:03:52 - 0:03:55, Như vậy là n trong trường hợp này là bằng 3
+0:03:55 - 0:04:00, và khi thực hiện xong thì nó sẽ đến tầng Fully Connected để thực hiện phần lớp
+0:04:00 - 0:04:07, và cái Output của mình đầu ra kỳ vọng nó sẽ ra một cái phân vố sát xúc
+0:04:07 - 0:04:11, trong đó cái phần Car, tức là chiếc xe đó, nó cho phân vố cao nhất
+0:04:11 - 0:04:15, thì đây chính là một cái kiến trúc mạng CNN phổ dụng
+0:04:15 - 0:04:24, thế thì bây giờ tiếp theo, chúng ta sẽ đến với công thức biến đổi của từng lớp biến đổi này
+0:04:24 - 0:04:26, Đầu tiên đó chính là tầng Convolution
+0:04:26 - 0:04:30, Tầng Convolution như đã giới thiệu trong phần 1
+0:04:30 - 0:04:32, thì bản chất của phép biến ngộ rỗi Convolution
+0:04:32 - 0:04:36, tức là chúng ta sẽ có một cái filter
+0:04:36 - 0:04:41, và chúng ta sẽ trượt lên trên toàn bộ tấm ảnh này
+0:04:41 - 0:04:45, và ảnh này nối là ảnh xám
+0:04:45 - 0:04:48, ảnh ở đây là ảnh xám
+0:04:48 - 0:04:50, và khi chúng ta biến đổi xong
+0:04:50 - 0:04:52, thì chúng ta sẽ tạo ra một cái feature
+0:04:52 - 0:04:55, ở đây không phải feature map là feature nha
+0:04:55 - 0:04:57, feature tức là chúng ta mới có một cái đặc trưng thôi
+0:04:58 - 0:05:04, rồi kết quả của phép biến đổi x với phép biến đổi convolution trên filter w
+0:05:04 - 0:05:07, thì nó sẽ tạo ra một cái feature
+0:05:07 - 0:05:09, thì đây là phép biến đổi convolution
+0:05:09 - 0:05:14, và điều gì xảy ra nếu như chúng ta thực hiện phép biến đổi convolution
+0:05:14 - 0:05:18, nhưng mà trên 3 kênh màu là red, green, blue
+0:05:18 - 0:05:23, Vì vậy ở đây, một cách tổn quát có thể là có độ sâu
+0:05:23 - 0:05:27, Độ sâu trong trường hợp này sẽ là bằng 3 kênh màu
+0:05:27 - 0:05:33, Thì ở đây chúng ta sẽ sử dụng một cái filter
+0:05:33 - 0:05:39, Nó sẽ có độ sâu tương ứng màu với sổng độ sâu của input
+0:05:39 - 0:05:42, Thì đây chính là dữ liệu đầu vào
+0:05:42 - 0:05:46, Còn đây là filter
+0:05:46 - 0:05:52, Và filter này sẽ có độ sâu đúng bằng với độ sâu của input.
+0:05:52 - 0:06:04, Và khi chúng ta tưởng tượng filter này giống như là một cục Robic, chúng ta cũng sẽ trượt lên toàn bộ dữ liệu đồ vào này.
+0:06:04 - 0:06:08, thì chúng ta sẽ tính ra một cái vị trí này, chúng ta sẽ tính ra được một giá trị
+0:06:08 - 0:06:11, dịch chuyển tiếp thì chúng ta sẽ lại tính một giá trị tiếp theo
+0:06:11 - 0:06:16, dịch chuyển tiếp chúng ta sẽ dịch chuyển đến một cái vị trí mới, chúng ta sẽ tính ra một cái giá trị
+0:06:16 - 0:06:20, cứ như vậy chúng ta sẽ tạo ra một cái feature
+0:06:20 - 0:06:25, như vậy đối với phép convolution nhưng mà trên cái dữ liệu đầu vào
+0:06:25 - 0:06:27, thay vì là ảnh xám mà là ảnh red and blue
+0:06:27 - 0:06:30, thì cái độ sâu của cái filter của mình
+0:06:30 - 0:06:33, nó phải đúng bằng cái độ sâu của cái ảnh đầu vào
+0:06:33 - 0:06:40, Và như vậy thì kết quả ở đây chúng ta sẽ có là kết quả cho một đặc trưng, tức là một filter
+0:06:40 - 0:06:44, Một filter thì chúng ta sẽ ra một đặc trưng
+0:06:44 - 0:06:58, Giống như hồi nãy trong slide minh hoại cho lọc Sobeo, thì đặc trưng của lọc Sobeo tương ứng là nó sẽ tìm ra cạnh theo chiều thẳng đứng, theo chiều dọc
+0:06:58 - 0:07:06, Với mẫu filter, chúng ta sẽ có một đặc trưng và nhiều filter, chúng ta sẽ tạo ra nhiều đặc trưng
+0:07:06 - 0:07:11, Với cảnh đầu vàng, nhân với lại filter màu vàng, chúng ta sẽ tạo ra đặc trưng vàng
+0:07:11 - 0:07:16, Với filter màu xanh, chúng ta sẽ tạo ra đặc trưng xanh
+0:07:16 - 0:07:18, Cứ như vậy
+0:07:18 - 0:07:23, ở đây chúng ta có 4 filter, tương ứng chúng ta sẽ có 4 đặc trưng
+0:07:23 - 0:07:26, và chúng ta sẽ trồng lớp 4 đặc trưng này lại với nhau
+0:07:26 - 0:07:29, thì nó sẽ tạo ra thành 1 tensor output
+0:07:29 - 0:07:38, và trong cái feature này chúng ta sẽ tạo ra 1 khối 3D
+0:07:38 - 0:07:42, khối 3D này được gọi chính là tensor
+0:07:42 - 0:07:46, và tên của nó gọi là feature map
+0:07:46 - 0:07:52, trong slide trước thì nó gọi là Feature
+0:07:52 - 0:07:57, còn tập hợp các Feature thì người ta sẽ gọi nó là Feature Map
+0:07:57 - 0:08:00, nếu ảnh đầu vào của mình kích thước là 28
+0:08:00 - 0:08:04, thì ảnh đầu ra kích thước sẽ còn 24
+0:08:04 - 0:08:05, là tại vì sao?
+0:08:05 - 0:08:11, tại vì khi chúng ta app filter chúng ta trượt lên đây
+0:08:11 - 0:08:20, Khi mà chúng ta app lên cái bin của tấm ảnh, chúng ta trượt đến đây và chúng ta sẽ chạm đến cái bin này
+0:08:20 - 0:08:30, và nó sẽ không lố ra bên ngoài, do đó nó sẽ bị thất thoát, sẽ bị mất đi, giảm từ 28 xuống còn 24
+0:08:30 - 0:08:33, Đó là lý do tại sao nó giảm xuống
+0:08:33 - 0:08:40, Và ở đây thì chúng ta chỉ cần nhớ đến một công thức liên quan đến việc kích thước của filter
+0:08:40 - 0:08:46, Nếu như ảnh đầu vào trong trường hợp này có độ sâu là D,
+0:08:46 - 0:08:53, thì filter của mình sẽ có độ sâu đúng bằng D luôn,
+0:08:53 - 0:08:56, đúng bằng D luôn, tức là bằng 3.
+0:08:56 - 0:09:03, Và ở đây nếu như số lượng filter của mình là K,
+0:09:03 - 0:09:06, tổng quát là K, trong trường hợp này K là bằng 4,
+0:09:06 - 0:09:10, thì kế độ sâu của tensor output của mình
+0:09:10 - 0:09:12, nó cũng chính là bằng k.
+0:09:12 - 0:09:15, Có bao nhiêu filter thì ở đây nó sẽ có
+0:09:15 - 0:09:17, bấy nhiêu kế độ sâu
+0:09:17 - 0:09:19, thì đây là một cái của
+0:09:19 - 0:09:22, quy luật chúng ta ráng nhớ công thức của nó.
+0:09:22 - 0:09:27, Và ở đây chúng ta sẽ có cái ví dụ tính toán số học
+0:09:27 - 0:09:31, ở đây chúng ta sẽ có kế phép biến đổi là convolution
+0:09:31 - 0:09:34, với cái dữ liệu ảnh đầu vào là ảnh 5x5
+0:09:34 - 0:09:36, với cái giá trị như trên
+0:09:36 - 0:09:43, khi chúng ta app filter 3x3 lên đây, thì chúng ta sẽ lần lượt lấy các giá trị này
+0:09:43 - 0:09:48, nhân với lại các phần tử ở đây, thì không nhân với trường 1 nó sẽ ra là 0
+0:09:48 - 0:09:51, và cứ như vậy, không nhân với 25 nó sẽ ra là 0
+0:09:51 - 0:09:55, và cứ nhân vô thì chúng ta sẽ có được kết quả như thế này
+0:09:55 - 0:10:03, và chúng ta sẽ lưu ý là phải thực hiện thêm 1 cái thao tác nữa là tổng tất cả các phần tử trên cái mask này
+0:10:03 - 0:10:08, 75, 80, 0 sẽ là 35
+0:10:08 - 0:10:14, Vì vậy, tại vị trí này, khi nhân với filter 3x3 này
+0:10:14 - 0:10:19, thì nó sẽ tạo ra 1 giá trị đó là 235
+0:10:19 - 0:10:22, và chúng ta sẽ lần lượt trượt từ trái sang phải
+0:10:22 - 0:10:26, tương ứng ở đây, chúng ta sẽ điền giá trị ra
+0:10:26 - 0:10:33, Và chúng ta sẽ có 1 animation để minh họa cho phép trượt này
+0:10:33 - 0:10:38, Ấn đầu vào sẽ là ảnh 5x5 và filter mình là 3x3
+0:10:40 - 0:10:46, Thì chúng ta sẽ cho filter này trượt lên trên vị trí đầu tiên
+0:10:46 - 0:10:53, Và chúng ta sẽ thấy ý nghĩa của filter này chính là những con số 0 này
+0:10:53 - 0:10:57, khi nhân với các giá trị trên điểm ảnh góc thì nó sẽ trịt tiêu
+0:10:57 - 0:10:59, 0 này sẽ là trịt tiêu
+0:10:59 - 0:11:01, chỉ còn lại số 1 này
+0:11:01 - 0:11:08, ý nghĩa của filter này chính là tổn tất cả các giá trị màu của cảnh đầu vào
+0:11:08 - 0:11:10, theo trục dọc này
+0:11:10 - 0:11:14, ở đây chúng ta thấy là 0 là cộng 0 là cộng 1
+0:11:14 - 0:11:15, tương ứng nó sẽ là 1
+0:11:15 - 0:11:20, các bạn sẽ thử tự điền vào các giá trị này xem nó là bao nhiêu
+0:11:23 - 0:11:29, khi trượt qua đây, nó tương xác là 3 cộng 4 cộng 1
+0:11:29 - 0:11:34, ý nghĩa của filter này là cộng các thành phần trên cột ở giữa
+0:11:34 - 0:11:37, 3 cộng 4 cộng 1 sẽ ra là 8
+0:11:37 - 0:11:40, 0 cộng 2 cộng 0 sẽ ra là 2
+0:11:40 - 0:11:42, rồi trượt xuống dưới
+0:11:42 - 0:11:45, 0 cộng 1 cộng 0 ra 1
+0:11:45 - 0:11:48, cứ như vậy nó sẽ lấp đầy
+0:11:48 - 0:11:51, Và lưu ý là ở đây đầu vào của mình là 3 x 3
+0:11:51 - 0:11:58, nhưng mà khi chúng ta tính với cái filter này xong thì nó chỉ còn lại cái feature là cái thước là 3 x 3 thôi
+0:11:58 - 0:12:01, Đầu vào là 5 x 5 thì output của mình chỉ là 3 x 3 thôi
+0:12:01 - 0:12:09, Rồi, ở đây chúng ta sẽ có thêm một cái tham số nữa đó là stride
+0:12:09 - 0:12:12, tức là cái độ dài của cái bức trượt filter
+0:12:12 - 0:12:15, thì ở đây nếu bình thường chúng ta sẽ trượt một đấu bị
+0:12:15 - 0:12:19, Ở đây chúng ta sẽ có cái Strike trong trường hợp này
+0:12:19 - 0:12:22, chúng ta sẽ cho Strike là bằng 2
+0:12:22 - 0:12:24, tức là chúng ta sẽ nhảy khóc
+0:12:24 - 0:12:26, Rồi
+0:12:26 - 0:12:30, Ở trong trường hợp này, ví dụ chúng ta đã làm trong Slide trước thì Strike là bằng 1
+0:12:30 - 0:12:33, nhưng mà bây giờ chúng ta sẽ làm thử với Strike bằng 2
+0:12:33 - 0:12:36, với Strike bằng 2 thì các giá trị ở đây là bao nhiêu
+0:12:36 - 0:12:38, thì cái mẹo để chúng ta có thể tính nhanh đó
+0:12:38 - 0:12:42, đó chính là chúng ta sẽ lấy các giá trị này chúng ta đình xuống
+0:12:42 - 0:12:44, và nhảy khóc, bỏ qua cái này
+0:12:44 - 0:12:46, Chúng ta lấy giá trị này, chúng ta đi hình xuống
+0:12:46 - 0:12:49, Nhẹ cốc, bỏ qua và đi hình xuống
+0:12:49 - 0:12:52, Nhẹ cốc, bỏ cái năng này đi hình xuống
+0:12:52 - 0:12:55, Như vậy, khi chúng ta trượt
+0:13:00 - 0:13:02, Rồi, như vậy thì khi chúng ta trượt
+0:13:05 - 0:13:09, Thì cái giá trị khi mà với cái bước nhảy Strike bằng 2
+0:13:09 - 0:13:14, đó sẽ là 1, 2, 2, 5
+0:13:14 - 0:13:18, và giá trị này hiểu một cách nona đó là nó cộp p từ feature map ở phía dưới cộp xuống
+0:13:18 - 0:13:22, nhưng mà nó bỏ qua hàng và cột này
+0:13:22 - 0:13:24, tức là nó đang làm giảm
+0:13:24 - 0:13:27, nó đang làm giảm cái độ phân giải
+0:13:29 - 0:13:31, của feature map
+0:13:32 - 0:13:34, của đặc trưng
+0:13:36 - 0:13:38, với cái bút nhảy là stride là 2
+0:13:38 - 0:13:40, và chúng ta sẽ giảm khoảng một nửa
+0:13:42 - 0:13:44, Tiếp theo đó chính là padding
+0:13:44 - 0:13:46, thì hồi nãy chúng ta đã nói rồi
+0:13:46 - 0:13:48, với một ảnh 5x5
+0:13:48 - 0:13:52, sau khi nhân với filter 3x3
+0:13:52 - 0:13:54, thì nó sẽ giảm xuống là còn 3x3
+0:13:54 - 0:13:56, nhưng mà chúng ta mong muốn
+0:13:56 - 0:13:58, là giữ nguyên cái thông tin
+0:13:58 - 0:14:00, của đặc trưng đồ vào
+0:14:00 - 0:14:02, giữ nguyên cái thông tin của đặc trưng đồ vào
+0:14:02 - 0:14:04, thì thay vì là giảm xuống còn 3x3
+0:14:04 - 0:14:06, chúng ta mong muốn là không
+0:14:06 - 0:14:09, nó vẫn giữ nguyên cái kích thước góc đầu vào là 5x5
+0:14:09 - 0:14:12, thì ở đây chúng ta lấy một cái ví dụ nhỏ hơn
+0:14:12 - 0:14:14, chúng ta lấy một cái ví dụ nhỏ hơn để dễ tính
+0:14:14 - 0:14:19, ảnh đầu vào nếu như kích thước là 3x3 thì khi chúng ta lấy cái filter 3x3 chúng ta trồng lên đây
+0:14:19 - 0:14:22, chúng ta thực hiện cái phép tính tổng ở đây đúng không
+0:14:22 - 0:14:24, rồi tổng theo cái cọc ở giữa nè
+0:14:24 - 0:14:27, thì 4 cộng 1 cộng 4 nó sẽ ra là 9
+0:14:27 - 0:14:29, và kết thúc cái quá trình nhân convolution
+0:14:29 - 0:14:33, và cái kích thước của mình nó giảm xuống chỉ còn là 1x1
+0:14:33 - 0:14:35, thì mình không muốn cái điều này
+0:14:35 - 0:14:38, mình muốn là giữ nguyên cái kích thước đầu vào
+0:14:38 - 0:14:43, mình muốn giữ nguyên kích thước đầu vào thì nếu như ở đây ảnh của mình là 3x3
+0:14:43 - 0:14:47, mình sẽ trèn thêm các cái giá trị ở bên ngoài vào
+0:14:47 - 0:14:51, thì nó sẽ tạo ra thành một cái ảnh là 5x5
+0:14:51 - 0:14:53, với các cái giá trị padding ở đây
+0:14:53 - 0:14:59, và lấy cái ảnh 5x5 này nhân với filter 3x3 thì nó sẽ tạo ra cái feature map là 3x3
+0:14:59 - 0:15:04, như vậy là 3x3 đầu vào và đầu ra của mình nó bỗng giữ nguyên là 3x3
+0:15:04 - 0:15:09, thì giá trị ở đây chính là giá trị padding
+0:15:09 - 0:15:14, và mình có rất nhiều chiến thuật
+0:15:14 - 0:15:19, trong trường hợp này chúng ta đang chèn thêm số 0 vào viền của tấm ảnh
+0:15:19 - 0:15:21, sẽ có một số chiến thuật khác
+0:15:21 - 0:15:23, thì thật ra theo quan điểm của mình
+0:15:23 - 0:15:26, chiến thuật các bạn chọn padding kiểu nào
+0:15:26 - 0:15:29, thì nó cũng không ảnh hưởng nhiều lắm đến kết quả cuối cùng
+0:15:29 - 0:15:30, tại vì sao?
+0:15:30 - 0:15:41, Tại vì tấm ảnh của các bạn là một tấm ảnh rất lớn và object của các bạn trong tấm hình này cũng là object rất lớn.
+0:15:41 - 0:15:49, Và việc đưa ra quyết định phân loại nội dung của tấm ảnh này sẽ dựa trên phần rột của tấm ảnh.
+0:15:49 - 0:15:59, Chứ còn phần biên của tấm ảnh này sẽ không đóng góp nhiều trong việc đưa ra thông tin để phân loại dữ liệu bên trong.
+0:15:59 - 0:16:02, do đó phần ngoại biên này không quá quan trọng
+0:16:04 - 0:16:05, nó sẽ không quan trọng
+0:16:05 - 0:16:08, do đó các bạn dùng chiến thuật padding nào cũng được
+0:16:08 - 0:16:12, zero padding, chèn số 0, hoặc là padding theo mỗi chiều
+0:16:12 - 0:16:18, nó sẽ có cái thước khác nhau, ví dụ như chèn bên chiều phía trên là 2
+0:16:18 - 0:16:22, nhưng bên chiều dọc thì nó lại chỉ chèn 1
+0:16:22 - 0:16:25, ở đây là chèn theo kiểu là lấy giá trị gần nhất để copy ra
+0:16:25 - 0:16:30, Ví dụ như đây, số 1 đúng không? thì nó sẽ copy ra đây
+0:16:32 - 0:16:35, Số 9 thì nó sẽ copy ra đây
+0:16:35 - 0:16:38, Các chiến thuật trẻ này thì theo mình đó là
+0:16:38 - 0:16:41, nó cũng không ảnh hưởng nhiều đến kết quả nhận viện cuối cùng
+0:16:42 - 0:16:45, Và đến tầng tiếp theo
+0:16:45 - 0:16:47, đó chính là tầng activation
+0:16:47 - 0:16:50, Tầng activation này thì đây là một cái tầng
+0:16:50 - 0:16:51, mà biến đổi phi tuyến
+0:16:51 - 0:16:59, Thì như chúng ta đã từng nhận xét trước đó, cái phép Conversion này đó là cái phép biến đổi tuyến tính
+0:16:59 - 0:17:08, Nếu như chúng ta thực hiện cái phép Conversion nối tiếp với một cái phép Conversion mà không có cái phép tuyến tính ở giữa
+0:17:08 - 0:17:13, thì có không có một cái phép vi tuyến ở giữa đó, thì đâu đó nó sẽ tạo ra thành một cái tổ hợp
+0:17:13 - 0:17:16, một cái tổ hợp tuyến tính mà thôi
+0:17:16 - 0:17:21, Tức là tuyến tính và biến đổi tuyến tính thì nó sẽ tạo ra một tổ hợp tuyến tính
+0:17:21 - 0:17:25, Mà tổ hợp tuyến tính thì nó sẽ không giải được
+0:17:25 - 0:17:29, Nó sẽ không giải quyết được các bài toán phi tuyến
+0:17:29 - 0:17:36, Do đó thì chúng ta sẽ phải ngay sau phép tiến đổi collision
+0:17:36 - 0:17:39, chúng ta phải có một tầng activation phi tuyến
+0:17:39 - 0:17:42, Trước đây người ta sử dụng hàm sigmoid
+0:17:42 - 0:17:49, Nhưng mà gần đây, khi khối lượng dữ liệu lớn, khi kiến trúc mạng càng sâu hơn,
+0:17:49 - 0:17:58, thì người ta nhận thấy là đổi từ sigmoid sang relu sẽ giúp cho việc huấn luyện nhanh hơn.
+0:17:58 - 0:18:00, Và việc huấn luyện sẽ nhanh hơn.
+0:18:00 - 0:18:06, Và việc này là do chúng ta làm giảm hiện đựng vanishing.
+0:18:06 - 0:18:10, Radiant
+0:18:10 - 0:18:16, Đây là chủ đề thêm để cho các bạn tìm hiểu về sao.
+0:18:16 - 0:18:20, Với việc sử dụng tầng Activation là Relu,
+0:18:20 - 0:18:24, nó đã giúp cho mình giảm hiện tượng Vanishing Radiant,
+0:18:24 - 0:18:26, tức là tiêu biến với đạo hàm.
+0:18:26 - 0:18:29, Đạo hàm của mình trong quá trình cập nhật,
+0:18:29 - 0:18:33, nó càng lúc càng nhỏ, dẫn đến bước cập nhật của mình sẽ càng chậm.
+0:18:33 - 0:18:40, Activation dùng Hamrelo, thì đạo hàm của mình sẽ không bị hiện tượng này
+0:18:40 - 0:18:43, và không bị hiện tượng này thì nó sẽ hướng luyện và nhanh hơn

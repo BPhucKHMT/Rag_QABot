@@ -1,0 +1,318 @@
+0:00:01 - 0:00:13, [âm nhạc]
+0:00:13 - 0:00:18, Chúng ta sẽ cùng đến với một phần rất là
+0:00:15 - 0:00:20, quan trọng trong lập trình với các cái
+0:00:18 - 0:00:24, mô hình dựa trên gradient đó chính là
+0:00:20 - 0:00:26, vector hóa cái thực toán radian design.
+0:00:24 - 0:00:29, Chúng ta sẽ cùng nhắc lại thực toán Rent
+0:00:26 - 0:00:32, Decens thì khởi tạo của chúng ta là sẽ
+0:00:29 - 0:00:35, có các cái tham số của mô hình là W và
+0:00:32 - 0:00:39, B. Trong đó W thì tương ứng là cái trọng
+0:00:35 - 0:00:42, số của cái đặc trưng đầu bào X B là cho
+0:00:39 - 0:00:45, cái thành phần là bias.
+0:00:42 - 0:00:51, Và dữ liệu đầu bào của chúng ta thì sẽ
+0:00:45 - 0:00:55, bao gồm là các cái mẫu dữ liệu là x1, x2
+0:00:51 - 0:00:57, cho đến à x tướng m.
+0:00:55 - 0:01:02, Và tương tự như vậy thì y tức là cái
+0:00:57 - 0:01:05, nhãn đầu ra chúng ta cũng sẽ có i1, I2
+0:01:02 - 0:01:05, cho đến im.
+0:01:06 - 0:01:11, Rồi thì khi chúng ta có được cái x và y
+0:01:09 - 0:01:13, chúng ta thế vào đây thì chúng ta sẽ
+0:01:11 - 0:01:17, tính được cái đạo hàm. À ở đây chúng ta
+0:01:13 - 0:01:18, lưu ý là cái chỉ số chúng ta sẽ không để
+0:01:17 - 0:01:21, dưới giống như trên hình ha. Và chúng ta
+0:01:18 - 0:01:26, để cái chỉ số ở trên thì cái cách viết
+0:01:21 - 0:01:30, của mình sẽ là x thứ nhất
+0:01:26 - 0:01:34, x thứ hai là mẫu dữ liệu thứ hai. Rồi
+0:01:30 - 0:01:36, mẫu dữ liệu thứ m.
+0:01:34 - 0:01:40, Rồi y thì cũng vậy. Y sẽ là mẫu dữ liệu
+0:01:36 - 0:01:42, thứ nhất, thứ hai
+0:01:40 - 0:01:45, và
+0:01:42 - 0:01:45, thứ m.
+0:01:47 - 0:01:50, Thế thì ở đây chúng ta sẽ đặt câu hỏi là
+0:01:49 - 0:01:53, tại sao chúng ta không ký hiệu ở bên
+0:01:50 - 0:01:56, dưới để cho nó thuận tiện. Nó có lý do
+0:01:53 - 0:02:00, của nó đó là trong trường hợp mô hình
+0:01:56 - 0:02:01, này chúng ta mở rộng sang cái à đa biến
+0:02:00 - 0:02:04, tức là một cái đặc trưng đầu vào của
+0:02:01 - 0:02:07, chúng ta sẽ có nhiều biến đầu vào thì
+0:02:04 - 0:02:09, khi đó cái chỉ số bên dưới sẽ dùng để
+0:02:07 - 0:02:13, minh họa cho các cái đặc trưng của mình.
+0:02:09 - 0:02:16, Lấy ví dụ à mẫu dữ liệu thứ nhất chúng
+0:02:13 - 0:02:18, ta sẽ có đặc trưng thứ nhất của mẫu dữ
+0:02:16 - 0:02:21, liệu thứ nhất. Ví dụ như đây là diện
+0:02:18 - 0:02:24, tích của một căn nhà. Mẫu dữ liệu thứ
+0:02:21 - 0:02:28, nhất và cái đặc trưng thứ hai ví dụ như
+0:02:24 - 0:02:32, là cái số phòng ngủ rồi mẫu dữ liệu thứ
+0:02:28 - 0:02:33, nhất và cho cái mẫu đặc trưng thứ ba ví
+0:02:32 - 0:02:36, dụ như là chiều cao của tòa nhà. Ví dụ
+0:02:33 - 0:02:39, vậy thì đây chính là cái phần chỉ số bên
+0:02:36 - 0:02:42, dưới để dùng để đánh số cái số lượng đặc
+0:02:39 - 0:02:42, trưng
+0:02:42 - 0:02:48, số đặc trưng.
+0:02:45 - 0:02:53, Còn cái chỉ số ở phía trên đó là cái chỉ
+0:02:48 - 0:02:53, số của à thứ tự của mẫu.
+0:02:56 - 0:03:03, Thế thì bây giờ chúng ta sẽ tìm cách đơn
+0:02:59 - 0:03:06, giản hóa cái công thức này. Và
+0:03:03 - 0:03:08, ờ khi tính toán với cái dữ liệu mà đã
+0:03:06 - 0:03:10, được vecơ hóa thì cái thuật toán của
+0:03:08 - 0:03:13, mình nó cũng sẽ tính toán nhanh hơn. Vậy
+0:03:10 - 0:03:15, thì đầu tiên chúng ta sẽ xem xét ở cái
+0:03:13 - 0:03:18, không gian là đặc trưng trước. Nếu như
+0:03:15 - 0:03:23, chúng ta đặt theta nó sẽ bao gồm hai cái
+0:03:18 - 0:03:26, thành phần đó là W và B. Chúng ta gom nó
+0:03:23 - 0:03:29, lại thành một vectơ.
+0:03:26 - 0:03:31, Thì khi chúng ta tính toán chúng ta lấy
+0:03:29 - 0:03:34, cái thành phần trọng số của cái theta
+0:03:31 - 0:03:37, này chúng ta nhân với x
+0:03:34 - 0:03:39, nhân với x thì x của mình nó cũng sẽ đi
+0:03:37 - 0:03:43, tương ứng. Ví dụ thành phần đầu tiên là
+0:03:39 - 0:03:46, W thì nó sẽ có là mẫu dữ liệu thứ thứ
+0:03:43 - 0:03:50, nhất và cái thành phần thứ hai chúng ta
+0:03:46 - 0:03:52, sẽ gán là 1. Tại sao là 1? Tại vì B ở
+0:03:50 - 0:03:53, đây là bias thì chúng ta xem như chúng
+0:03:52 - 0:03:56, ta có được cái đặc trưng mới và đặc
+0:03:53 - 0:04:00, trưng này cố định nó là 1 thì B nhân với
+0:03:56 - 0:04:05, 1 chính là bias w nhân với X thì khi đó
+0:04:00 - 0:04:08, theta nhân với X thì nó sẽ ra là wx
+0:04:05 - 0:04:12, 1 cộng cho thì chúng ta nhân cái theta
+0:04:08 - 0:04:14, chữ vị thôi nhân với x thì nó sẽ ra cái
+0:04:12 - 0:04:17, công thức như thế này. Và ở đây chúng ta
+0:04:14 - 0:04:20, sẽ không tính cho một biến x10, một mẫu
+0:04:17 - 0:04:24, dữ liệu x10 mà chúng ta sẽ tính cho tất
+0:04:20 - 0:04:24, cả các cái mẫu dữ liệu của mình
+0:04:25 - 0:04:29, cho đến mẫu dữ liệu thứ m.
+0:04:29 - 0:04:35, Rồi và khi đó theta nhân x thì nó sẽ là
+0:04:33 - 0:04:42, một chuỗi
+0:04:35 - 0:04:42, à một vectơ các cái w x1 + b wx2
+0:04:42 - 0:04:53, cộng b phẩy vân vân cho đến w x
+0:04:48 - 0:04:53, m cộng b.
+0:04:53 - 0:04:59, Rồi và khi đó thì chúng ta sẽ có cái
+0:04:56 - 0:05:01, vecơ này và chúng ta qua cái hàm sigmid
+0:04:59 - 0:05:03, thì cái hàm sig đó là một cái hàm mà nó
+0:05:01 - 0:05:07, sẽ tính theo
+0:05:03 - 0:05:10, 11 wise. Do đó thì à chúng ta sẽ tính
+0:05:07 - 0:05:13, toán trên x hàm sigma trên từng cái phần
+0:05:10 - 0:05:16, tử của cái vecơ này. Như vậy thì cái
+0:05:13 - 0:05:20, công thức mà viết gọn lại của cái p của
+0:05:16 - 0:05:23, mình là cái xác suất là sẽ là bằng sig
+0:05:20 - 0:05:25, của th chuẩn về x. Một cách tương tự đối
+0:05:23 - 0:05:29, với trường hợp mà cái biến số của mình
+0:05:25 - 0:05:31, nó có nhiều hơn một đặc trưng thì chúng
+0:05:29 - 0:05:36, ta cũng làm tương tự như vậy. Khi đó x
+0:05:31 - 0:05:36, của chúng ta nó sẽ là
+0:05:36 - 0:05:42, à mẫu dữ liệu thứ nhất
+0:05:39 - 0:05:45, và thành phần thứ nhất, đặc trưng thứ
+0:05:42 - 0:05:48, nhất, mẫu dữ liệu thứ nhất
+0:05:45 - 0:05:51, và thành phần thứ hai vân vân cho đến
+0:05:48 - 0:05:53, cái mẫu dữ liệu thứ nhất và thành phụ
+0:05:51 - 0:05:55, thứ n.
+0:05:53 - 0:05:58, Rồi sau đó thì chúng ta sẽ có thêm cái
+0:05:55 - 0:06:01, ba và cứ như vậy cho đến cái mẫu dữ liệu
+0:05:58 - 0:06:03, thứ m
+0:06:01 - 0:06:05, thành phần đặc trưng thứ nhất. Mẫu dữ
+0:06:03 - 0:06:08, liệu thứ m
+0:06:05 - 0:06:11, thành phần đặc trưng thứ à thứ hai vân
+0:06:08 - 0:06:14, vân cho đến mẫu dữ liệu thứ m và thành
+0:06:11 - 0:06:17, phần đặc trưng thứ n. Và cuối cùng đó là
+0:06:14 - 0:06:19, bias. Thì khi chúng ta đưa về cái dạng
+0:06:17 - 0:06:21, như thế này thì khi chúng ta tính toán
+0:06:19 - 0:06:26, thì nó sẽ được tính hàng loà. Và theta
+0:06:21 - 0:06:32, lúc này thì nó sẽ bao gồm là theta là
+0:06:26 - 0:06:35, bằng W1, W2 cho đến W thứ N. Và thành
+0:06:32 - 0:06:38, phần cuối cùng đó là bias.
+0:06:35 - 0:06:42, Rồi thì khi đó cái dự đoán cái xác suất
+0:06:38 - 0:06:46, dự đoán của chúng ta nó sẽ là một cái
+0:06:42 - 0:06:49, có công thức đó là sigmo của theta
+0:06:46 - 0:06:51, chuyển vị nhân với x. Thì khi chúng ta
+0:06:49 - 0:06:53, lấy theta chuyển vị trang x thì chúng ta
+0:06:51 - 0:06:57, sẽ lấy thành phần w1 nhân với lại cái
+0:06:53 - 0:07:02, x11 thành phần w2 nhân với x12 thành
+0:06:57 - 0:07:06, phần thứ n nhân với x1n và b nhân với 1.
+0:07:02 - 0:07:10, Rồi thì bây giờ chúng ta sẽ thử à lập
+0:07:06 - 0:07:14, trình cho cái à công thức mà mới này ha.
+0:07:10 - 0:07:16, Thì ở đây chúng ta sẽ có một cái
+0:07:14 - 0:07:18, logistic regression ngoài phiên bản
+0:07:16 - 0:07:21, vectorize. Và cái code ở bên đây thì
+0:07:18 - 0:07:23, chúng ta đã được copy nguyên vẹn từ cái
+0:07:21 - 0:07:27, code logistic cũ.
+0:07:23 - 0:07:30, Chúng ta copy qua đây. Rồi thì để cho nó
+0:07:27 - 0:07:31, đỡ rối chúng ta sẽ tắt cái kia đi. Và
+0:07:30 - 0:07:34, bây giờ chúng ta sẽ gom nhóm đầu tiên đó
+0:07:31 - 0:07:36, là cái tham số. Thì chúng ta sẽ tạo ra
+0:07:34 - 0:07:39, một cái biến hoạt theta là bằng
+0:07:36 - 0:07:39, np.array.
+0:07:40 - 0:07:45, Ừ.
+0:07:42 - 0:07:48, Và vì nó là dạng cột đúng không nên
+0:07:45 - 0:07:52, chúng ta sẽ có thành phần W1
+0:07:48 - 0:07:52, thì nó là bằng 12.
+0:07:53 - 0:07:58, Rồi thành phần tiếp theo là 34.
+0:07:57 - 0:08:00, Còn nếu không chúng ta cũng có thể dùng
+0:07:58 - 0:08:02, một cái hàm random. Nhưng mà ở đây chúng
+0:08:00 - 0:08:05, ta muốn minh họa cái cách chuyển đổi
+0:08:02 - 0:08:07, code từ phiên bản trước sang phiên bản
+0:08:05 - 0:08:09, sau là dùng vecơ nên chúng ta dùng chính
+0:08:07 - 0:08:13, những cái con số này để cho chúng ta dễ
+0:08:09 - 0:08:16, liên tục. Rồi và khi đó thì cái W1 W2
+0:08:13 - 0:08:20, chúng ta sẽ bỏ đi nhưng mà chúng ta sẽ
+0:08:16 - 0:08:22, để cái comment để ch chúng ta có thể đối
+0:08:20 - 0:08:25, chiếu. Sau khi chúng ta đã tạo xong cái
+0:08:22 - 0:08:27, thay
+0:08:25 - 0:08:29, ở đây chúng ta để thêm dấu chấm để cho
+0:08:27 - 0:08:32, nó đưa về dạng số thực ha. Tiếp theo thì
+0:08:29 - 0:08:36, chúng ta sẽ tạo cái biến X. Thế thì X
+0:08:32 - 0:08:40, của mình nó sẽ bao gồm à hai thành phần
+0:08:36 - 0:08:43, đó là X R và X à red. Và ở đây thì chúng
+0:08:40 - 0:08:45, ta đã có một cái bước là chúng ta sẽ
+0:08:43 - 0:08:48, trộn hai cái này lại là concast như thế
+0:08:45 - 0:08:51, này. Nhưng mà khi chúng ta concast lại á
+0:08:48 - 0:08:54, thì nó sẽ thiếu một cái thành phần
+0:08:51 - 0:08:57, đó là bias. Do đó chúng ta sẽ bổ sung
+0:08:54 - 0:09:03, thêm cái ba phía sau thì x sẽ là bằng
+0:08:57 - 0:09:08, xcast của cái x cũ. XC với X cũ.
+0:09:03 - 0:09:08, Và ở đây sẽ là np.
+0:09:08 - 0:09:17, Số phần tử của mình thì sẽ là bằng ờ
+0:09:12 - 0:09:17, tổng số mẫu của cái x cũ ha là x.sve.
+0:09:19 - 0:09:25, Rồi và x.s sét thì ở đây chúng ta sẽ lấy
+0:09:22 - 0:09:29, số hàng à số cột của mình số cột do đó
+0:09:25 - 0:09:30, thì sẽ là để là 1 và assist ở đây sẽ là
+0:09:29 - 0:09:32, bằng 0 tại vì chúng ta trồng lên nhau
+0:09:30 - 0:09:36, chứ không chúng ta không có nối chúng ta
+0:09:32 - 0:09:38, trồng lên rồi thì để kiểm chứng xem à
+0:09:36 - 0:09:44, cái giá trị này nó như thế nào thì chúng
+0:09:38 - 0:09:46, ta sẽ in lại x và chúng ta sẽ in ra y
+0:09:44 - 0:09:48, để xem coi các cái giá trị nó ra đúng
+0:09:46 - 0:09:50, như chúng ta mong muốn hay không. Tương
+0:09:48 - 0:09:53, tự như vậy thì chúng ta cũng sẽ in ra
+0:09:50 - 0:09:53, theta.
+0:10:00 - 0:10:05, Rồi thì ở đây nó báo lỗi ở cái code chỗ
+0:10:02 - 0:10:05, này.
+0:10:11 - 0:10:20, Rồi chúng ta sẽ xem cái X ở trên nó ra
+0:10:16 - 0:10:22, cái gì. Và cái num one nó ra cái gì để
+0:10:20 - 0:10:25, mình xem xem là nó có con cá được hay
+0:10:22 - 0:10:25, không.
+0:10:29 - 0:10:36, Rồi X thì chúng ta sẽ thấy đó là một cái
+0:10:33 - 0:10:40, ma trận gồm có hai hàng và rất nhiều cột
+0:10:36 - 0:10:44, ở đây ha. Hai hàng và rất nhiều cột. Còn
+0:10:40 - 0:10:46, one à thì nó là một cái vecơ. Đó là một
+0:10:44 - 0:10:49, cái vecơ. Do đó để mà trồng được thì
+0:10:46 - 0:10:52, chúng ta sẽ phải đưa cái ones này vào
+0:10:49 - 0:10:55, bên trong một cái array. Còn không thì
+0:10:52 - 0:10:59, chúng ta có thể tạo ra là thành một cái
+0:10:55 - 0:11:04, tle. Chúng ta sẽ truyền vào một cái tle
+0:10:59 - 0:11:05, rồi 1 và số cột của x thì nó sẽ hiểu
+0:11:04 - 0:11:10, rằng chúng ta đang tạo ra một cái ma
+0:11:05 - 0:11:10, trận thay vì chúng ta tạo một vectơ.
+0:11:23 - 0:11:31, Rồi bây giờ chúng ta sẽ
+0:11:26 - 0:11:31, kiểm tra lại xem cái lỗi nó nằm ở đâu.
+0:11:32 - 0:11:37, Rồi thì lỗi tiếp tục nó nằm ở trong cái
+0:11:34 - 0:11:39, hàm concast này.
+0:11:37 - 0:11:42, Canot interpret
+0:11:39 - 0:11:42, 10 data.
+0:11:42 - 0:11:48, Rồi bây giờ chúng ta sẽ xem lại ha.
+0:11:46 - 0:11:51, print
+0:11:48 - 0:11:56, X
+0:11:51 - 0:11:56, và in cái one set này.
+0:12:04 - 0:12:07, Rồi.
+0:12:10 - 0:12:17, Ok. Thì cái hàm NP1 nó đã không có chạy
+0:12:14 - 0:12:21, được. Lý do đó là vì ờ ở đây chúng ta
+0:12:17 - 0:12:24, truyền vào size đúng không? Ta phải để
+0:12:21 - 0:12:26, là cái dấu mỗi ngoặc một và một cái cặp
+0:12:24 - 0:12:29, như thế này. Thì ở đây do có quá nhiều
+0:12:26 - 0:12:33, dấu ngoặc nên chúng ta dễ bị dầm.
+0:12:29 - 0:12:36, Thì đây sẽ là một cái tpple.
+0:12:33 - 0:12:39, Đây sẽ là một cái tle. của số 1 và số
+0:12:36 - 0:12:41, cột của mình.
+0:12:39 - 0:12:45, Rồi sau đó cái thành phần thứ hai là của
+0:12:41 - 0:12:50, cái hàm NP1. Và thành phần cuối cùng sẽ
+0:12:45 - 0:12:52, là cái à hàm print. Chúng ta sẽ in lại.
+0:12:50 - 0:12:56, Ok, đó là đúng rồi. Bây giờ chúng ta sẽ
+0:12:52 - 0:12:58, kiểm tra lại trong cái code ở đây.
+0:12:56 - 0:13:02, NP1 thì ở đây chúng ta chưa bọc nó lại
+0:12:58 - 0:13:05, ha. Bọc cái một và cái shap.
+0:13:02 - 0:13:08, Rồi thành phần thứ hai
+0:13:05 - 0:13:12, là hàm on và thành phần thứ ba đó là
+0:13:08 - 0:13:16, chúng ta sẽ gom cái x và cái np on này
+0:13:12 - 0:13:19, lại. Và bây giờ chúng ta sẽ chạy lại.
+0:13:16 - 0:13:22, Như vậy là x của chúng ta đã ra đúng
+0:13:19 - 0:13:25, rồi. Thành phần đầu tiên x1, thành phần
+0:13:22 - 0:13:28, thứ hai x2 và thành phần thứ ba là các
+0:13:25 - 0:13:32, cái con số 1 là bias. Y của chúng ta thì
+0:13:28 - 0:13:35, thành phần 0 là chiếm đa số là vì nó có
+0:13:32 - 0:13:39, gấp 10 lần so với lại thành phần là cái
+0:13:35 - 0:13:41, nhãn một và bias.
+0:13:39 - 0:13:45, À ở đây cũng đã có gắn cái bias và hai
+0:13:41 - 0:13:48, cái đặt hai cái trọng số của x1 và x2.
+0:13:45 - 0:13:50, Tiếp theo thì chúng ta sẽ tiến hành à
+0:13:48 - 0:13:53, cài đặt cái thực toán rent des. thì cái
+0:13:50 - 0:13:56, công thức của mình nó sẽ không còn phức
+0:13:53 - 0:13:59, tạp như thế này mà nó chỉ đơn giản đó là
+0:13:56 - 0:13:59, napla
+0:13:59 - 0:14:08, là bằng
+0:14:01 - 0:14:10, np. Min của chúng ta sẽ lấy cái sig
+0:14:08 - 0:14:14, của theta
+0:14:10 - 0:14:18, chuyển vị là chấm t ha. Sau đó chúng ta
+0:14:14 - 0:14:21, dâng với lại và chúng ta dùng cái l dot
+0:14:18 - 0:14:24, với lại cái biến x của mình với cái ma
+0:14:21 - 0:14:29, trận x của mình ở trên đây. Rồi sau đó
+0:14:24 - 0:14:29, thì chúng ta sẽ trừ cho
+0:14:33 - 0:14:39, rồi ở đây thì chúng ta sẽ tính sig xong
+0:14:36 - 0:14:41, đúng không? Thì chúng ta sẽ trừ cho y.
+0:14:39 - 0:14:46, Và sau khi trừ cho y xong thì chúng ta
+0:14:41 - 0:14:49, không quên chúng ta nhân với lại cái à x
+0:14:46 - 0:14:52, của mình nhân với cái x của mình. Rồi
+0:14:49 - 0:14:54, sau đó là tính min thì lúc này náp la
+0:14:52 - 0:14:57, theo theta
+0:14:54 - 0:14:59, nó sẽ là có cái công thức như thế này.
+0:14:57 - 0:15:01, Và bây giờ thì tương tự như vậy công
+0:14:59 - 0:15:03, thức cập nhật của mình cũng sẽ gọn gàng
+0:15:01 - 0:15:05, hơn. Chúng ta không phải tách ra làm
+0:15:03 - 0:15:08, nhiều phần như thế này
+0:15:05 - 0:15:10, mà theta
+0:15:08 - 0:15:13, là bằng theta.
+0:15:10 - 0:15:16, trừ cho alpha
+0:15:13 - 0:15:20, nhân với lại nap thta. Rồi
+0:15:16 - 0:15:26, và ở bên dưới thì chúng ta cũng sẽ đi
+0:15:20 - 0:15:30, tính cái W0, W1, W2 và B. Thì W0 à W1
+0:15:26 - 0:15:33, của chúng ta đó chính là cái theta mà
+0:15:30 - 0:15:33, phần tử đầu tiên.
+0:15:36 - 0:15:39, Rồi, W2
+0:15:40 - 0:15:47, thì sẽ là thành phần theta theta 1.
+0:15:43 - 0:15:50, W1 thì là theta0 còn W2 thì sẽ là theta
+0:15:47 - 0:15:53, 1.
+0:15:50 - 0:15:55, Còn thành phần bias thì nó sẽ là thành
+0:15:53 - 0:15:58, phần số hai của theta là thành phần cuối
+0:15:55 - 0:15:58, cùng.
+0:15:58 - 0:16:02, Thì đương nhiên cái cách code như thế
+0:16:00 - 0:16:05, này thì nó sẽ hơi rối đối trong cái lúc
+0:16:02 - 0:16:07, mà chúng ta bóc tách cái tham số ra.
+0:16:05 - 0:16:09, Nhưng mà đây chỉ là phục vụ cho cái việc
+0:16:07 - 0:16:11, trực quan hóa nên lâu lâu chúng ta mới
+0:16:09 - 0:16:13, sử dụng thôi. Còn ở trên thì chúng ta sẽ
+0:16:11 - 0:16:16, phải dùng thường xuyên. À và lúc này thì
+0:16:13 - 0:16:18, chúng ta sẽ không còn cái đạo hàm mà
+0:16:16 - 0:16:20, chúng ta sẽ có na. Thế thì thôi để đơn
+0:16:18 - 0:16:25, giản chúng ta sẽ không để cái chữ na la
+0:16:20 - 0:16:30, ta nữa và chúng ta chỉ để napla thôi.
+0:16:25 - 0:16:30, Rồi thì náp la mà thành phần đầu tiên.
+0:16:39 - 0:16:44, Rồi thành phần thứ hai, thành phần đầu
+0:16:41 - 0:16:46, tiên là 00
+0:16:44 - 0:16:53, thành phần thứ hai đó là 1
+0:16:46 - 0:16:53, và thành phần thứ ba đó là 20.
+0:16:54 - 0:16:58, Rồi bây giờ chúng ta sẽ kiểm tra code
+0:16:56 - 0:17:01, này lại một lần nữa và chúng ta sẽ thực
+0:16:58 - 0:17:01, thi.
+0:17:02 - 0:17:09, Thì ở đây là nó đang có cái à lỗi size
+0:17:06 - 0:17:11, trong cái việc mà
+0:17:09 - 0:17:15, tính cái giá trị của mình thì là index
+0:17:11 - 0:17:18, error là 00 10 và 20. Thì bây giờ chúng
+0:17:15 - 0:17:20, ta sẽ kiểm tra xem cái theta của mình à
+0:17:18 - 0:17:23, cái náp la của mình đó là cái kích thước
+0:17:20 - 0:17:26, của nó là bằng bao nhiêu thì chúng ta sẽ
+0:17:23 - 0:17:26, in rapla
+0:17:29 - 0:17:32, chấm sá.
+0:17:33 - 0:17:39, Rồi thì napla chấm set thì nó lại ra là
+0:17:36 - 0:17:41, một cái con số scalar. Thì đây là vô lý
+0:17:39 - 0:17:44, tại vì lẽ ra chúng ta kỳ vọng nó phải ra
+0:17:41 - 0:17:46, một cái vecơ có kích thước giống với lại
+0:17:44 - 0:17:48, kích thước của theta thì khi đó chúng ta
+0:17:46 - 0:17:48, mới có thể trừ được.

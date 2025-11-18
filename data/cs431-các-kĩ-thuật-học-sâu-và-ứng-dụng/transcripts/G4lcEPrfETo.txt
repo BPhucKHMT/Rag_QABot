@@ -1,0 +1,176 @@
+0:00:00 - 0:00:09, Đối với mô hình Softmax regression, chúng ta cũng sẽ phát triển từ mô hình logistic regression.
+0:00:09 - 0:00:17, Đầu tiên chúng ta sẽ xem điều kiện, đó là nhãn của dữ liệu Y, nó thuộc một tập C.
+0:00:17 - 0:00:25, Trong đó, C này, số lượng phần tử K là lớn hơn 2. Đối với mô hình logistic regression,
+0:00:25 - 0:00:35, K là bằng 2, trong trường hợp nhiều hơn 2 lớp thì chúng ta sẽ sử dụng mô hình Softmax.
+0:00:35 - 0:00:38, Và ở đây chúng ta sẽ thấy có 3 tập điểm.
+0:00:38 - 0:00:47, Thì chúng ta hy vọng rằng là cái output y này của mình nếu như mà nó chỉ có gắn duy nhất một nhãn,
+0:00:47 - 0:00:49, một nhãn duy nhất.
+0:00:51 - 0:00:57, Và y của mình nó chỉ có thể là có một nhãn thì chúng ta sẽ sử dụng cái vector nó gọi là one-hot.
+0:00:58 - 0:01:00, Nó gọi là one-hot.
+0:01:00 - 0:01:07, Còn trong trường hợp mà đa nhãn, tức là y của mình có thể vừa thuộc một lớp, có thể thuộc hai lớp, có thể thuộc ba lớp,
+0:01:07 - 0:01:12, thì chúng ta cũng sẽ sử dụng vector biểu diễn dạng 0,1 như thế này.
+0:01:12 - 0:01:16, Nhưng lúc này nó không còn gọi là vector one-hot nữa, mà gọi là binary coding.
+0:01:16 - 0:01:24, Rồi, thì đây là cách để biểu diễn cái y trong trường hợp mà nó có một nhãn hoặc nó có nhiều nhãn.
+0:01:24 - 0:01:32, Đối với mô hình phân loại nhị phân, chúng ta đã học trước đây, chúng ta sử dụng mô hình logistic regression,
+0:01:32 - 0:01:44, thì việc tìm ra được một bộ tham số theta tương đương với việc tìm ra được một đường thẳng để phân tách hai tập điểm này ra làm 2.
+0:01:44 - 0:01:48, Đường thẳng này được tạo bởi tham số theta.
+0:01:48 - 0:01:54, Với công thức đó là, ví dụ trong trường hợp này là x1, x2.
+0:01:54 - 0:02:06, Công thức cho phương trình đường thẳng này là theta0, theta1, x1, theta2, x2 là bằng 0.
+0:02:06 - 0:02:08, Đây là phương trình đường thẳng.
+0:02:08 - 0:02:11, Đại diện cho đường thẳng này là một tham số theta.
+0:02:11 - 0:02:20, Nếu chúng ta mở rộng mô hình logistic, K mô hình logistic cho K lớp,
+0:02:20 - 0:02:22, trong ví dụ này chúng ta lấy K bằng 3,
+0:02:22 - 0:02:36, thì với dữ liệu đầu vào x, chúng ta sẽ có nhân với lại một tham số để tạo ra giá trị z1. Sau đó, z1 qua hàm sigmoid,
+0:02:36 - 0:02:38, Chúng ta sẽ tạo ra giá trị y_mũ 1.
+0:02:38 - 0:02:45, Đây chính là một cái logistic model.
+0:02:45 - 0:02:49, Đây là một cái mô hình logistic.
+0:02:49 - 0:02:51, Và ứng với cái mô hình logistic này,
+0:02:51 - 0:02:56, thì chúng ta sẽ có một cái đường phân lớp màu cam ở đây.
+0:02:56 - 0:03:02, Tương tự như vậy, chúng ta sẽ học ra một cái mô hình logistic thứ 2.
+0:03:02 - 0:03:04, Và chúng ta sẽ có một cái đường phân lớp.
+0:03:04 - 0:03:11, Và với mô hình Logistic thứ K, chúng ta sẽ có một đường phân lớp ở đây.
+0:03:11 - 0:03:23, Và ở đây chúng ta sẽ đưa ra quyết định là rốt cuộc thì nó sẽ thuộc về lớp Tam giác, lớp tròn, hay là lớp X.
+0:03:23 - 0:03:28, Với một giả định đó là trong trường hợp này chúng ta sẽ sử dụng đơn nhãn.
+0:03:28 - 0:03:38, Trong trường hợp này, chúng ta đơn nhãn tức là 1 điểm chỉ được gắn vào duy nhất 1 trong 3 lớp tròn, tam giác và X.
+0:03:38 - 0:03:43, Vì vậy, làm sao chúng ta chọn ra được nó thuộc về lớp tròn, tam giác hay X?
+0:03:43 - 0:03:53, Thì chúng ta sẽ chọn trong K mô hình này, chúng ta sẽ chọn mô hình nào mà có cái xác suất đầu ra là cao nhất.
+0:03:53 - 0:03:57, Tức là y_mũ 1, y_mũ 2 cho đến y_mũ K.
+0:03:57 - 0:04:01, Thì giá trị nào cao nhất thì chúng ta sẽ nói nó thuộc về phân lớp đó.
+0:04:01 - 0:04:07, Tuy nhiên nếu mà làm như thế này thì nó sẽ nảy sinh ra một số vấn đề.
+0:04:07 - 0:04:13, Và vấn đề đó là nếu như cái điểm của mình nó nằm ở trong cái khu vực,
+0:04:13 - 0:04:23, mà nó sẽ nằm trong cái tam giác này thì nếu dựa trên cái đường phân chia màu cam,
+0:04:23 - 0:04:27, thì nó sẽ nói là không thuộc tam giác.
+0:04:27 - 0:04:31, Đối với đường màu đen, nó sẽ nói là không phải là hình tròn.
+0:04:31 - 0:04:36, Đối với đường màu xanh, nó sẽ nói không thuộc dấu X.
+0:04:36 - 0:04:41, Như vậy, rốt cuộc điểm này sẽ thuộc về lớp nào?
+0:04:41 - 0:04:44, Tương tự như vậy, nó sẽ ở cái vùng nhiễu.
+0:04:44 - 0:04:47, Nó sẽ thuộc về lớp tam giác.
+0:04:47 - 0:04:50, Cái này sẽ nói về lớp X.
+0:04:50 - 0:04:54, Vì vậy, chúng ta sẽ kết luận điểm này thuộc về lớp nào?
+0:04:54 - 0:04:59, Đó chính là cái vùng gây nhập nhằng khó khăn cho chúng ta.
+0:04:59 - 0:05:06, Để giải quyết vấn đề này, chúng ta sẽ có 3 giá trị này.
+0:05:06 - 0:05:08, Chúng ta có thể sử dụng cái mô hình đó là
+0:05:08 - 0:05:14, chúng ta sẽ gọi hàm Max của các giá trị y này.
+0:05:14 - 0:05:34, Tuy nhiên, nếu chúng ta dùng hàm Max này, thì nó sẽ nảy sinh ra một vấn đề đó là hàm Max này là một hàm khó tính đạo hàm.
+0:05:34 - 0:05:41, Và hàm khó tính đạo hàm thì cái bước số 3 của chúng ta khi mà chúng ta dùng cái thuật toán Gradient Descent nó cũng sẽ khó tính.
+0:05:41 - 0:05:47, Như vậy thì giải pháp của mình trong trường hợp này đó chính là mô hình Softmax.
+0:05:47 - 0:05:51, Thay vì dùng hàm Max thì chúng ta sẽ sử dụng một cái hàm gọi là hàm Softmax.
+0:05:51 - 0:05:57, Thì chúng ta ý tưởng đó là bỏ hết tất cả các cái node sigmoid ở đây,
+0:05:57 - 0:06:02, mà chúng ta sẽ thay nó bằng một cái hàm duy nhất đó là hàm Softmax.
+0:06:02 - 0:06:11, Với các dữ liệu đầu vào là z1, z2, ..., zK, đầu ra sẽ lần lượt tương ứng là y_mũ 1, y_mũ 2 cho đến y_mũ K.
+0:06:11 - 0:06:16, Và công thức để thiết kế hàm dự đoán cũng rất đơn giản.
+0:06:16 - 0:06:20, Fθx sẽ bằng Softmax của theta chuyển vị nhân x.
+0:06:20 - 0:06:25, Bình thường ở đây sẽ là sigmoid, thì ở đây chúng ta sẽ bỏ đi và thay bằng một hàm Softmax.
+0:06:25 - 0:06:37, Và nếu chúng ta đặt z là bằng theta x, là cái vector z bao gồm các thành phần z1, z2, ..., zK,
+0:06:37 - 0:06:42, thì khi đó công thức của Softmax sẽ có công thức như sau:
+0:06:42 - 0:06:45, Softmax z sẽ là bằng y_mũ, tức là giá trị dự đoán,
+0:06:45 - 0:06:56, Với công thức của thành phần thứ i của y_mũ sẽ là bằng e mũ z_i chia cho tổng của K,
+0:06:56 - 0:07:01, chạy từ 1 cho đến K lớn e mũ z_k.
+0:07:01 - 0:07:09, Công thức này nhìn có vẻ phức tạp, tuy nhiên chúng ta có thể đưa ra một số con số để chúng ta có thể tính thử.
+0:07:09 - 0:07:15, Ví dụ như z của mình, nó sẽ là bằng giá trị là 1, 2, 3.
+0:07:15 - 0:07:20, Mình cố tình đưa ra cái con số này để cho nó tăng liên tục và nó dễ tính.
+0:07:20 - 0:07:25, Thì cái giá trị y_mũ của mình sẽ là một cái vector.
+0:07:25 - 0:07:33, Trong đó, cái thành phần đầu tiên của mình sẽ là e mũ.
+0:07:33 - 0:07:38, Thì ở đây, thành phần tử đầu tiên sẽ là e mũ 1.
+0:07:38 - 0:07:49, Chia cho tổng của các e mũ k, tức là e mũ 1 cộng cho e mũ 2 cộng cho e mũ 3.
+0:07:50 - 0:07:55, Tương tự như vậy, thành phần thứ 2 của vector dự đoán y_mũ sẽ là e mũ 2,
+0:07:55 - 0:08:00, chia cho tổng e mũ 1 cộng cho e mũ 2 cộng cho e mũ 3.
+0:08:00 - 0:08:07, Và thành phần cuối cùng nó sẽ là e mũ 3, chia cho e mũ 1, cộng cho e mũ 2, cộng cho e mũ 3.
+0:08:07 - 0:08:13, Vì vậy thì chúng ta có thể thấy nó có một tính chất đó là gì?
+0:08:13 - 0:08:20, Các giá trị y_mũ i này đều là những con số lớn hơn 0 và bé hơn 1.
+0:08:20 - 0:08:27, Đó là những con số lớn hơn 0 tại vì e mũ x là một hàm mà miền giá trị của nó là dương.
+0:08:27 - 0:08:30, Tất cả các phần tử này đều là dương.
+0:08:30 - 0:08:37, Rồi tổng, tất cả các cái y_mũ i này thì nó sẽ là bằng một.
+0:08:37 - 0:08:43, Ví dụ như trong ví dụ này thì chúng ta thấy là tổng của nó sẽ là bằng e mũ một,
+0:08:43 - 0:08:47, cộng cho e mũ hai, cộng cho e mũ ba.
+0:08:47 - 0:08:55, Tất cả chia cho cái mẫu số chung, đó là e mũ một, cộng cho e mũ hai, cộng cho e mũ ba.
+0:08:55 - 0:08:57, Thì cái này nó sẽ là bằng một.
+0:08:57 - 0:09:01, Vì vậy thì cái hàm Softmax nó có một tính chất khá hay đó là
+0:09:01 - 0:09:05, nó sẽ ánh xạ các giá trị z1, z2, ..., zK,
+0:09:05 - 0:09:10, thuộc dải giá trị là từ trừ vô cùng, dương vô cùng.
+0:09:10 - 0:09:14, Nó sẽ ánh xạ cái giá trị z này, đúng không?
+0:09:14 - 0:09:17, Trên cái miền giá trị là từ trừ vô cùng, dương vô cùng.
+0:09:17 - 0:09:23, Về cái giá trị y_mũ i, nó sẽ thuộc cái đoạn là từ 0 cho đến 1.
+0:09:23 - 0:09:28, Và tổng tất cả các giá trị y_mũ này đều bằng một.
+0:09:28 - 0:09:32, Đây chính là một cái không gian xác suất.
+0:09:34 - 0:09:39, Tại vì trong cái không gian xác suất, mỗi một cái phần tử này, mỗi một cái giá trị dự đoán này,
+0:09:39 - 0:09:42, nó là cái xác suất để thuộc về một cái lớp số 1.
+0:09:42 - 0:09:45, Cái này sẽ là xác suất thuộc về cái lớp số 2.
+0:09:45 - 0:09:47, Và cái này sẽ là cái xác suất thuộc về cái lớp số K.
+0:09:48 - 0:09:52, Và các cái xác suất này đều tuân theo tính chất từng phần tử này.
+0:09:52 - 0:09:56, Từng xác suất này đều là những con số từ 0 cho đến 1.
+0:09:56 - 0:10:01, Và tổng tất cả các biến cố, tổng tất cả các xác suất đều là bằng 1.
+0:10:01 - 0:10:03, Đây là tính chất rất hay của Softmax.
+0:10:03 - 0:10:07, Đồng thời, Softmax của mình là một hàm liên tục,
+0:10:07 - 0:10:10, và đạo hàm của nó cũng sẽ tính rất dễ dàng.
+0:10:10 - 0:10:12, Tại sao mình nói có thể tính dễ dàng?
+0:10:12 - 0:10:16, Vì các bạn thấy ở trong đây nó có sử dụng các hàm là e mũ,
+0:10:16 - 0:10:18, mà chúng ta biết rồi, e mũ x,
+0:10:18 - 0:10:21, đạo hàm cũng chính là bằng e mũ x.
+0:10:21 - 0:10:27, Thì chính nhờ tính chất này nên khi chúng ta tính đạo hàm của Softmax thì nó sẽ ra công thức rất là đẹp.
+0:10:27 - 0:10:36, Tuy nhiên trong phạm vi của bước 2 và bước 3 thì chúng ta sẽ không tính đạo hàm của Softmax.
+0:10:36 - 0:10:41, Và như cũng đã giới thiệu thì Softmax đã được hỗ trợ tính đạo hàm
+0:10:41 - 0:10:45, thông qua các thư viện của Deep Learning Framework rồi.
+0:10:45 - 0:10:48, Thì ở đây mình sẽ không có đề cập đến chi tiết,
+0:10:48 - 0:10:50, mà sẽ sử dụng các Deep Learning Framework sau.
+0:10:53 - 0:10:58, Và đối với bước số 2, tức là cái bước để mà thiết kế hàm lỗi,
+0:10:58 - 0:11:03, thì đối với trường hợp một mẫu, chúng ta sẽ có công thức hàm lỗi.
+0:11:03 - 0:11:08, Cái công thức này gọi là Cross-entropy.
+0:11:11 - 0:11:15, Thì thực ra công thức này là công thức dạng tổng quát của Binary Cross-entropy.
+0:11:15 - 0:11:25, Với y_mũ của mình, nó sẽ là một cái vector dự đoán.
+0:11:28 - 0:11:36, Còn y của mình thì nó sẽ là cái vector dữ liệu thực tế.
+0:11:36 - 0:11:45, Vì vậy, bây giờ mình sẽ lấy một trường hợp ví dụ, đó là y của mình là có ba thành phần thôi, đó là 0, 1, 0.
+0:11:45 - 0:11:52, Tức là y này nó đang nói là mẫu dữ liệu của mình nó đang thuộc về lớp thứ hai.
+0:11:52 - 0:12:00, Ví dụ đây là y, trong trường hợp này là 0, 1, 0.
+0:12:00 - 0:12:04, Y trong trường hợp này là 1, 0, 0.
+0:12:04 - 0:12:09, Y trong trường hợp này là 0, 0, 1.
+0:12:09 - 0:12:16, Thì ở đây hàm ý là cái nhãn của mình là cái nhãn tam giác.
+0:12:16 - 0:12:19, Rồi, đây là giá trị thực tế.
+0:12:19 - 0:12:22, Còn giá trị dự đoán, y_mũ.
+0:12:22 - 0:12:28, Nếu như cái y_mũ này của mình mà khớp với giá trị dự đoán 0, 0, 1,
+0:12:28 - 0:12:36, Thì khi chúng ta thế vô cái công thức này, nó sẽ là bằng 0 nhân log(0).
+0:12:36 - 0:12:38, Có dấu trừ ở đằng trước nữa.
+0:12:38 - 0:12:40, Trong cái công thức này thì nó thiếu dấu trừ nha.
+0:12:40 - 0:12:42, Nó sẽ có cái dấu trừ ở đằng trước.
+0:12:42 - 0:12:48, Cộng cho 1 nhân log(1), cộng cho 0 nhân log(0).
+0:12:48 - 0:12:54, Thì 0 nhân log(0) (có thể xem là 0), và 1 nhân log(1) (tức là log của 1 là 0).
+0:12:54 - 0:12:59, Vì vậy thì lỗi của mình sẽ là 0 trong trường hợp dự đoán đúng.
+0:12:59 - 0:13:01, Đây là trường hợp dự đoán đúng.
+0:13:01 - 0:13:06, Trường hợp dự đoán sai, tức là y là bằng 0, 1, 0.
+0:13:06 - 0:13:13, Nhưng mà y_mũ của mình thì nó lại là bằng 1, 0, 1 đi.
+0:13:13 - 0:13:15, 1, 0, 0 đi.
+0:13:15 - 0:13:32, Lúc này, loss của mình sẽ là bằng trừ của (0 nhân log(1) + 1 nhân log(0) + 0 nhân log(0)).
+0:13:32 - 0:13:34, Thì rõ ràng là 0 nhân với mấy cũng bằng 0.
+0:13:34 - 0:13:36, Nhân với mấy cũng bằng 0.
+0:13:36 - 0:13:38, Và lúc này thì cái loss của mình,
+0:13:38 - 0:13:40, nó sẽ là bằng trừ của
+0:13:40 - 0:13:42, (1 nhân log(0)).
+0:13:42 - 0:13:44, Thì trong bài
+0:13:44 - 0:13:46, Cross-entropy chúng ta biết rồi,
+0:13:46 - 0:13:48, log(0) nó chính là bằng trừ vô cùng.
+0:13:48 - 0:13:50, Do đó thì trừ của trừ nó sẽ ra là dương vô cùng.
+0:13:50 - 0:13:52, Nó sẽ tạo ra một con số vô cùng lớn.
+0:13:53 - 0:13:55, Và sở dĩ có con số vô cùng lớn,
+0:13:55 - 0:13:58, nó sẽ giúp cho đạo hàm lớn.
+0:13:58 - 0:14:00, Đạo hàm lớn thì việc cập nhật tham số sẽ nhanh hơn.
+0:14:00 - 0:14:02, Thế nên là nhắc lại ý tưởng cũ.
+0:14:02 - 0:14:05, Rồi, thì đây là cho trường hợp một mẫu dữ liệu.
+0:14:05 - 0:14:07, Đối với trường hợp mà toàn bộ mẫu dữ liệu,
+0:14:07 - 0:14:13, tức là dữ liệu đầu vào là một tập hợp các mẫu.
+0:14:13 - 0:14:15, Vì ở đây chúng ta có N mẫu,
+0:14:16 - 0:14:18, với N mẫu chúng ta sẽ tính trung bình cộng.
+0:14:18 - 0:14:20, Lưu ý là có dấu trừ ở đằng trước.
+0:14:20 - 0:14:28, Và với từng mẫu, chúng ta lại tính công thức cho từng phần tử của vector nhãn thực tế y và vector dự đoán y_mũ.
+0:14:28 - 0:14:34, Với mẫu thứ i, chúng ta sẽ có vector nhãn thực tế y^(i).
+0:14:34 - 0:14:38, Với mẫu thứ i, chúng ta sẽ có vector dự đoán y_mũ^(i).
+0:14:38 - 0:14:49, Rồi qua công thức Cross-entropy này, thực hiện element-wise, tức là thực hiện trên từng phần tử, chúng ta sẽ ra một giá trị lỗi.
+0:14:49 - 0:14:55, Và chúng ta sẽ tính trung bình cộng tất cả các lỗi này trên toàn bộ N mẫu.
+0:14:55 - 0:15:00, Thì đây là công thức toàn bộ mẫu và không có vector hóa.
+0:15:00 - 0:15:05, Đối với trường hợp nhiều mẫu, toàn bộ mẫu mà có vector hóa,
+0:15:05 - 0:15:07, thì chúng ta sẽ có công thức rất gọn như sau:
+0:15:07 - 0:15:11, Đó là bằng trung bình cộng của Cross-entropy,
+0:15:11 - 0:15:16, của Cross-entropy và đầu vào của mình sẽ là
+0:15:16 - 0:15:20, Softmax của theta chuyển vị nhân x.
+0:15:20 - 0:15:28, Và đây là giá trị thực tế y. Đây là dự đoán, đây là giá trị thực.
+0:15:28 - 0:15:35, Và chúng ta sẽ thực hiện Cross-entropy trên từng mẫu y, trên từng phần tử,
+0:15:35 - 0:15:37, sau đó tính trung bình cộng lại.
