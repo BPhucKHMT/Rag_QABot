@@ -1,0 +1,62 @@
+[
+    {
+        "page_content": "trong phạm vi của môn này thì chúng ta sẽ ôn tập cái ngôn ngữ lập trình Python Tại vì như đã đề cập thì các bạn chắc là đã học Python trong một số cái môn học trước đây hoặc là sử dụng Python như là một trong những cái ngôn ngữ lập trình để làm đồ án của các cái môn học trước đây do đó thì trong môn học này thì chúng ta chỉ ôn tập đầu tiên thì chúng ta sẽ nói sơ qua một vài cái tính chất của Python đó là một cái ngôn ngữ bậc cao high level programming language. Nó là một cái trình thông dịch hay còn gọi là một cái interpreter Và nó có cái tính đa năng thì như đã đề cập Python có thể lập trình ứng dụng hoàn toàn có thể lập trình máy học và Trí tuệ nhân tạo.",
+        "metadata": {
+            "playlist": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+            "video_url": "https://www.youtube.com/watch?v=_BGaEHA1U6s",
+            "filename": "_BGaEHA1U6s",
+            "title": "[CS116 -  Lập trình Python cho Máy học] Video 1.2.1: Lập trình Python - Biến và kiểu dữ liệu (P1)",
+            "start_timestamp": "0:00:17",
+            "end_timestamp": "0:01:08",
+            "chunk_id": 0
+        }
+    },
+    {
+        "page_content": "Python có thể làm trong lĩnh vực về dữ liệu lớn thì nó rất là đa năng và một cái điều quan trọng nữa đó là Python hỗ trợ Lập trình hướng đối tượng. Đây là một trong những cái phong cách lập trình phổ biến được các lập trình viên trên thế giới sử dụng và cái tư tưởng Lập trình hướng đối tượng sẽ giúp cho lập trình viên có thể tiếp cận đến các ngôn ngữ này một cách dễ dàng. Đó là những cái lý do tại sao chúng ta nên học Python thì thứ nhất Đây là một ngôn ngữ rất là đơn giản thứ hai đó là rõ ràng, dễ đọc và cái thứ ba đó là một ngôn ngữ dễ học và cái thứ tư rất là quan trọng đó là Python có cộng đồng rất là lớn thì như chúng ta đã nói trong slide trước Python có từ không phải từ gần đây mà nó đã có từ hàng chục năm về trước Do đó thì Cộng đồng phát triển cái cộng đồng sử dụng ngôn ngữ Python cũng rất là nhiều do đó thì những cái mẹo những cái lỗi trong quá trình sử dụng Python sẽ được cộng đồng chia sẻ để cho chúng ta có thể kế thừa. Thì thư viện Python cũng chính vì cái lịch sử phát triển rất là lâu đời như vậy thì Python nó cũng có rất nhiều những cái thư viện đi kèm hỗ trợ.",
+        "metadata": {
+            "playlist": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+            "video_url": "https://www.youtube.com/watch?v=_BGaEHA1U6s",
+            "filename": "_BGaEHA1U6s",
+            "title": "[CS116 -  Lập trình Python cho Máy học] Video 1.2.1: Lập trình Python - Biến và kiểu dữ liệu (P1)",
+            "start_timestamp": "0:01:02",
+            "end_timestamp": "0:02:24",
+            "chunk_id": 1
+        }
+    },
+    {
+        "page_content": "Ví dụ như SciPy, nó sẽ có scikit-learn scikit-learn sẽ là cái thư viện chính trong cái môn này. Ngoài ra thì nó cũng có thư viện như là xử lý tính toán số học NumPy rồi thư viện Matplotlib để Trực Quan Hóa thì đây là các cái thư viện rất là kinh điển trong Python. Và những gã khổng lồ nào đang sử dụng Python thì chúng ta thấy các cái ngôn ngữ và các gã khổng lồ có sử dụng Python có thể nhắc đến ví dụ như là Instagram rồi Google rồi Facebook thì đây là những cái gã khổng lồ có sử dụng ngôn ngữ Python trong các quá trình phát triển các sản phẩm của họ. Và ở đây chúng ta đưa ra một cái ví dụ cực kỳ nhỏ, cực kỳ đơn giản để minh họa tại sao Python được ưa thích.",
+        "metadata": {
+            "playlist": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+            "video_url": "https://www.youtube.com/watch?v=_BGaEHA1U6s",
+            "filename": "_BGaEHA1U6s",
+            "title": "[CS116 -  Lập trình Python cho Máy học] Video 1.2.1: Lập trình Python - Biến và kiểu dữ liệu (P1)",
+            "start_timestamp": "0:02:18",
+            "end_timestamp": "0:03:19",
+            "chunk_id": 2
+        }
+    },
+    {
+        "page_content": "Ở đây chúng ta thấy ngôn ngữ C C++ và Java đây là ba cái ngôn ngữ rất là phổ biến hiện nay thì để có thể thực hiện được một cái câu lệnh là Hello world thì các cái ngôn ngữ này sẽ phải làm rất là dài dòng trong khi đó Python chỉ cần thực hiện đúng một dòng code là chúng ta có thể thực hiện được rồi. Thì đây là một cái ví dụ nhỏ để minh họa cho cái việc Python rất là gọn gàng, dễ học. Về môi trường lập trình thì Python có rất nhiều những cái môi trường lập trình hỗ trợ thì nổi tiếng nhất chính là PyCharm. Bên cạnh đó thì Python cũng được hỗ trợ trong Visual Studio Code. thì trong phạm vi của môn học này thì tôi khuyến khích là các bạn có thể sử dụng Visual Studio Code. Tại vì đây là một cái IDE, một cái môi trường lập trình có tích hợp với rất nhiều những cái ngôn ngữ khác nhau. Nếu như các bạn có học thêm với các cái ngôn ngữ khác như là C++, Java vân vân thì có thể sử dụng cái IDE này dùng chung luôn để chia sẻ đỡ nặng máy. Ngoài ra thì một cái tính chất Nữa của Visual Studio Code chính là rất là nhẹ. Bên cạnh đó thì chúng ta sẽ sử dụng một cái môi trường cũng rất là nổi tiếng gần đây đó là Jupyter. Đây là một cái web interface để cho phép chúng ta có thể lập trình Python và nhờ cái web interface thì chúng ta có thể tương tác nó thuận tiện hơn, trực quan hơn và cũng như chúng ta có thể chia sẻ cái file mã nguồn một cách dễ dàng để cho những cái người khác có thể theo dõi cái số liệu trong quá trình mà mình xử lý tính toán. rất là phổ biến hiện nay nữa đó chính là Colab. Colab là một cái môi trường lập trình được tài trợ bởi Google. Thì chỉ cần chúng ta có tài khoản Gmail thì đều có thể sử dụng và cái giao diện của nó thì cũng tương tự như là Jupyter Notebook tức là các cái file mà chúng ta tương tác nó sẽ giống như là file notebook. Có điều là nó sẽ được lưu trữ online và hoàn toàn miễn phí ở Google.",
+        "metadata": {
+            "playlist": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+            "video_url": "https://www.youtube.com/watch?v=_BGaEHA1U6s",
+            "filename": "_BGaEHA1U6s",
+            "title": "[CS116 -  Lập trình Python cho Máy học] Video 1.2.1: Lập trình Python - Biến và kiểu dữ liệu (P1)",
+            "start_timestamp": "0:03:15",
+            "end_timestamp": "0:05:46",
+            "chunk_id": 3
+        }
+    },
+    {
+        "page_content": "Các cái file notebook này sẽ được lưu trên Google Drive và dễ dàng chia sẻ với nhau. Vậy thì để có thể sử dụng được cái Colab thì chúng ta có thể truy cập vào địa chỉ là colab chấm research.google.com. Và đây sẽ là cái giao diện và đính kèm với cái bài giảng ngày hôm nay thì chúng ta sẽ có hai cái bài tập luyện tập. Ở đây thì chúng ta sẽ được thực hiện vào cuối buổi. Rồi về tài liệu tham khảo thì như đã đề cập ha, chúng ta sẽ có cái trang chủ của Colab và hai cái bài tập luyện tập sử dụng Colab. Ngoài ra thì chúng ta sẽ có các cái cuốn sách như đã liệt kê ở trong cái bìa sách ở đây: Python 101 và Python 201 tương ứng với lại hai cái mức độ, hai cái trình độ khác nhau. Đây là mức độ cơ bản và Đây là mức độ nâng cao hơn.",
+        "metadata": {
+            "playlist": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+            "video_url": "https://www.youtube.com/watch?v=_BGaEHA1U6s",
+            "filename": "_BGaEHA1U6s",
+            "title": "[CS116 -  Lập trình Python cho Máy học] Video 1.2.1: Lập trình Python - Biến và kiểu dữ liệu (P1)",
+            "start_timestamp": "0:05:42",
+            "end_timestamp": "0:06:44",
+            "chunk_id": 4
+        }
+    }
+]
