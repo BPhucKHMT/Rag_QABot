@@ -1,0 +1,71 @@
+{
+  "id": "chat_1763684495",
+  "title": "vae là gì",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Bạn muốn hỏi gì hôm nay?"
+    },
+    {
+      "role": "user",
+      "content": "vae là gì"
+    },
+    {
+      "role": "assistant",
+      "content": {
+        "text": "**Variational Autoencoder (VAE)** là một mô hình tạo sinh dựa trên biến tiềm ẩn [1] và là một biến thể mang tính xác suất của Autoencoder [3].\n\n**Mục tiêu chính:**\n- Biểu diễn dữ liệu thật [0].\n- Tạo ra dữ liệu cho các tình huống ngoại vi (outlier) để cân bằng bộ dữ liệu huấn luyện, giúp mô hình học tốt hơn và không bị bias [1].\n\n**Đặc điểm và cơ chế hoạt động:**\n- VAE bao gồm hai thành phần chính: **encoder** và **decoder** [5].\n- Thay vì mã hóa dữ liệu đầu vào thành một vector tiềm ẩn `z` cố định như Autoencoder, VAE mã hóa thành một **phân bố** [3]. Phân bố này thường là phân bố Gauss, được đại diện bởi hai tham số: **vector trung bình (mi)** và **vector độ lệch chuẩn (sigma)** [3].\n- Sau đó, một vector `z` tiềm ẩn sẽ được lấy mẫu ngẫu nhiên từ phân bố này [3].\n- **Kỹ thuật tái tham số hóa (Reparameterization trick)** là quan trọng trong VAE [5], [2]. Kỹ thuật này giúp giải quyết khó khăn trong việc huấn luyện bằng Gradient Descent do yếu tố ngẫu nhiên và thao tác lấy mẫu (sampling) không tính đạo hàm được [5], [2].\n\n**Huấn luyện VAE:**\n- Quá trình mã hóa (encoder) được tham số hóa bởi `phi`, tính toán ra `mi` và `sigma` từ ảnh đầu vào `x` [3].\n- Quá trình giải mã (decoder) được tham số hóa bởi `theta` [3].\n- Hàm lỗi của VAE bao gồm hai thành phần: **sai số tái tạo** (so sánh `x` ban đầu với `x` sau khi giải mã) và **thành phần chính quy** (đảm bảo phân bố của `mi` và `sigma` xấp xỉ với phân bố tiềm ẩn mong muốn) [3].\n\n**So sánh với mô hình Diffusion:**\n- VAE có tham số (`phi`) và chỉ có một bước encoding để đến random noise, trong khi mô hình Diffusion có nhiều bước encoding và không có tham số [4].",
+        "filename": [
+          "-2bJ_8EO9ZE",
+          "hrxNKadDpw4",
+          "NJVpvCzceRk",
+          "peYaH97QeEw",
+          "qCEs0PIGwek",
+          "-2bJ_8EO9ZE"
+        ],
+        "video_url": [
+          "https://youtube.com/watch?v=-2bJ_8EO9ZE",
+          "https://youtube.com/watch?v=hrxNKadDpw4",
+          "https://youtube.com/watch?v=NJVpvCzceRk",
+          "https://youtube.com/watch?v=peYaH97QeEw",
+          "https://youtube.com/watch?v=qCEs0PIGwek",
+          "https://youtube.com/watch?v=-2bJ_8EO9ZE"
+        ],
+        "title": [
+          "[CS315 - Chương 3] Deep Generative Models (1) - Part 4",
+          "[CS315 - Chương 3] Deep Generative Models (1) - Part 1",
+          "[CS315 - Chương 3] Deep Generative Models (2) - Part 4",
+          "[CS315 - Chương 3] Deep Generative Models (1) - Part 3 (Phần 1)",
+          "[CS315 - Chương 3] Deep Generative Models (2) - Part 3",
+          "[CS315 - Chương 3] Deep Generative Models (1) - Part 4"
+        ],
+        "start_timestamp": [
+          "0:08:53",
+          "0:15:50",
+          "0:05:49",
+          "0:04:58",
+          "0:11:23",
+          "0:00:14"
+        ],
+        "end_timestamp": [
+          "0:09:44",
+          "0:18:04",
+          "0:06:23",
+          "0:12:10",
+          "0:13:16",
+          "0:01:35"
+        ],
+        "confidence": [
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high"
+        ],
+        "type": "rag"
+      }
+    }
+  ],
+  "created_at": "2025-11-21T07:21:35.169346",
+  "updated_at": "2025-11-21T07:22:29.983086"
+}

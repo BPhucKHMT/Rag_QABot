@@ -1,6 +1,15 @@
 # Core dependencies for RAG QA Bot
 # ==================================
 
+# Web & API
+streamlit
+fastapi==0.115.0
+uvicorn[standard]==0.32.1
+motor==3.6.0  # Async MongoDB driver for FastAPI
+pymongo==4.9  # MongoDB sync driver (dependency)
+requests==2.32.3  # For Streamlit -> FastAPI communication
+pydantic==2.10.3  # Data validation
+
 # LangChain ecosystem
 langchain==0.3.27
 langchain-chroma==0.2.4
@@ -22,7 +31,11 @@ rank-bm25==0.2.2
 
 # LLM & Transformers
 transformers==4.57.1
-#torch==2.8.0+cu126
+--extra-index-url https://download.pytorch.org/whl/cu116
+torch
+torchvision
+torchaudio
+
 accelerate==1.10.1
 bitsandbytes==0.48.2
 tokenizers==0.22.1
@@ -42,7 +55,7 @@ google-api-python-client==2.187.0
 dotenv
 youtube-transcript-api==1.2.3
 pytube==15.0.0
-# yt-dlp==2025.11.12
+yt-dlp==2025.11.12
 librosa==0.11.0
 hf_transfer==0.1.9
 ffmpeg==1.4

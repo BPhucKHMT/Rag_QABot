@@ -1,0 +1,40 @@
+{
+  "playlists": [
+    {
+      "playlist_id": "PLb62OySGqC9wDaL2dnF_5J8f49e_YNi2f",
+      "folder_name": "cs114-máy-học",
+      "title": "CS114 - Máy học",
+      "total_videos": 73,
+      "processed_videos": 73,
+      "failed_videos": 0,
+      "created_at": "2025-11-21T06:37:47.788617"
+    },
+    {
+      "playlist_id": "PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP",
+      "folder_name": "cs315-máy-học-nâng-cao",
+      "title": "CS315 - Máy học nâng cao",
+      "total_videos": 74,
+      "processed_videos": 74,
+      "failed_videos": 0,
+      "created_at": "2025-11-21T06:47:50.848078"
+    },
+    {
+      "playlist_id": "PLb62OySGqC9xl1_deMF_UXP5tA2Tvt17_",
+      "folder_name": "cs431-các-kĩ-thuật-học-sâu-và-ứng-dụng",
+      "title": "CS431 - Các kĩ thuật học sâu và ứng dụng",
+      "total_videos": 70,
+      "processed_videos": 70,
+      "failed_videos": 0,
+      "created_at": "2025-11-21T06:57:19.386804"
+    },
+    {
+      "playlist_id": "PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n",
+      "folder_name": "cs116-lập-trình-python-cho-máy-học",
+      "title": "CS116 - Lập trình Python cho Máy học",
+      "total_videos": 79,
+      "processed_videos": 79,
+      "failed_videos": 0,
+      "created_at": "2025-11-21T07:08:00.476524"
+    }
+  ]
+}

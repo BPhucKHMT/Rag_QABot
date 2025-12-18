@@ -6,13 +6,13 @@ playlists:
     enabled: true
     # CS315
   - url: "https://www.youtube.com/playlist?list=PLb62OySGqC9xHEhxcX1BIX2H8oyvwOzCP"
-    enabled: false
+    enabled: true
     # CS431
   - url: "https://www.youtube.com/playlist?list=PLb62OySGqC9xl1_deMF_UXP5tA2Tvt17_"
     enabled: true  # Tạm thời không xử lý
   
   - url: https://www.youtube.com/playlist?list=PLb62OySGqC9yGRvUaSe-iWFuXYuM8X6_n
-    enabled: false
+    enabled: true
 
 # Cài đặt chung
 settings:

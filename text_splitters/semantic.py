@@ -17,7 +17,7 @@ class TranscriptChunker:
             breakpoint_threshold_amount=85,
             min_chunk_size=300,
             add_start_index=True,
-            buffer_size=1
+            buffer_size=2 
         )
 
     def __call__(self, documents: List[dict], output_dir: str) -> List[dict]:

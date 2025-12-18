@@ -1,0 +1,449 @@
+0:00:13 - 0:00:20, Cho đến thời điểm này thì mạng AN cho dù
+0:00:17 - 0:00:23, với các cái biến thể như là dip hay là B
+0:00:20 - 0:00:26, directional thì nó vẫn còn bị một cái
+0:00:23 - 0:00:28, điểm yếu rất là lớn đó chính là vấn đề
+0:00:26 - 0:00:30, về điểm nghẽn thông tin hay còn gọi là
+0:00:28 - 0:00:32, botonec.
+0:00:30 - 0:00:36, Thì đây là cái hiện tượng gì? Chúng ta
+0:00:32 - 0:00:39, sẽ cùng xem à một vài cái ví dụ để minh
+0:00:36 - 0:00:42, họa. Ở trên đây đó là một cái kiến trúc
+0:00:39 - 0:00:47, an được sử dụng để encode một cái câu
+0:00:42 - 0:00:49, văn bản nguồn và decode. Inn thì dùng để
+0:00:47 - 0:00:53, dịch sang một cái văn bản đích. Ví dụ
+0:00:49 - 0:00:56, như đây là chúng ta dịch từ tiếng Anh
+0:00:53 - 0:01:00, sang tiếng Pháp. Thế thì cái điểm ngãn
+0:00:56 - 0:01:03, thông tin nó sẽ hiện ở cái botonc này.
+0:01:00 - 0:01:06, Tại cái vị trí cuối cùng mà chúng ta
+0:01:03 - 0:01:08, encode cái câu văn bản nguồn thì mọi
+0:01:06 - 0:01:12, thông tin của văn bản nguồn đều được
+0:01:08 - 0:01:17, chứa trong duy nhất một cái vecơ này.
+0:01:12 - 0:01:20, À và đây chính là cái điểm ngãn của mình
+0:01:17 - 0:01:24, đó khiến cho cái mô hình của mình nó
+0:01:20 - 0:01:28, không đủ thông tin toàn cục và thông tin
+0:01:24 - 0:01:32, cần thiết tại một thời điểm để chúng ta
+0:01:28 - 0:01:35, dịch ra. Ví dụ tại cái vecơ này chúng ta
+0:01:32 - 0:01:37, muốn dịch ra cái từ R thì có thể cái
+0:01:35 - 0:01:39, thông tin của cái từ i là cái từ quan
+0:01:37 - 0:01:40, trọng nhất để giúp cho chúng ta dịch cái
+0:01:39 - 0:01:43, từ R này nè.
+0:01:40 - 0:01:47, thì cái hàm lượng thông tin của nó đã bị
+0:01:43 - 0:01:50, mai một rất là nhiều rồi. Vì từ ai khi
+0:01:47 - 0:01:52, đến được cái điểm nghẽn này nè thì nó đã
+0:01:50 - 0:01:55, bị biến đổi một lần, hai lần, ba lần,
+0:01:52 - 0:01:57, bốn lần và năm lần. Và đây là một cái ví
+0:01:55 - 0:02:00, dụ rất là bé trong những cái bài toán
+0:01:57 - 0:02:03, phức tạp hơn. Ví dụ như là bài toán tóm
+0:02:00 - 0:02:05, tắt văn bản thì để kể từ lúc chúng ta
+0:02:03 - 0:02:07, đọc hết cái văn bản cho đến lúc chúng ta
+0:02:05 - 0:02:11, bắt đầu tóm tắt nó có thể lên đến hàng
+0:02:07 - 0:02:14, trăm hoặc thậm chí là hàng ngàn chữ,
+0:02:11 - 0:02:17, hàng ngàn cái token thì dẫn đến là cái
+0:02:14 - 0:02:20, từ ở đầu tiên nó đến cái chỗ điểm ngãn
+0:02:17 - 0:02:23, này nè nó đã bị quên
+0:02:20 - 0:02:26, từ ai
+0:02:23 - 0:02:27, đã bị quên nhiều.
+0:02:26 - 0:02:29, Mình nói nó quên hết thì cũng không đúng
+0:02:27 - 0:02:32, đúng không? Tại vì có thể chúng ta sử
+0:02:29 - 0:02:34, dụng một số cái à biến thể như là LSDM
+0:02:32 - 0:02:37, để giúp cho chúng ta lưu được những cái
+0:02:34 - 0:02:40, thông tin quan trọng nhưng mà đâu đó nó
+0:02:37 - 0:02:44, vẫn sẽ bị quên
+0:02:40 - 0:02:46, bị quên đi một phần hoặc là quên nhiều.
+0:02:44 - 0:02:48, Thế thì khi cái từ I này mà bị quen
+0:02:46 - 0:02:50, nhiều thì đến lúc chúng ta cần dịch ra
+0:02:48 - 0:02:53, cái từ R chúng ta bắt gặp cái từ start
+0:02:50 - 0:02:56, là bắt đầu quá trình decode á thì cái
+0:02:53 - 0:02:59, khả năng chúng ta ra cái từ R này là
+0:02:56 - 0:02:59, thấp. Nó sẽ thấp.
+0:03:00 - 0:03:04, Trong khi đó nếu ch chúng ta bắt đầu
+0:03:02 - 0:03:07, dịch mà sau khi chúng ta vừa đọc xong
+0:03:04 - 0:03:09, cái từ i á thì xác suất chúng ta dịch ra
+0:03:07 - 0:03:13, được cái từ r cái từ rơ trong tiếng pháp
+0:03:09 - 0:03:15, là từ của mình á thì nó sẽ cao hơn. Đó
+0:03:13 - 0:03:20, thì đó chính là cái mô tả cho cái hiện
+0:03:15 - 0:03:20, tượng là điểm ngãn thông tin.
+0:03:21 - 0:03:28, Và khi chúng ta dự đoán đến cái từ
+0:03:26 - 0:03:31, từ su đúng không? Khi chúng ta dự đoán
+0:03:28 - 0:03:33, đến cái từ xa thì rõ ràng là cái thông
+0:03:31 - 0:03:36, tin của cái từ xua góc ban đầu ở đây khi
+0:03:33 - 0:03:39, chúng ta lan truyền đến được cái từ su
+0:03:36 - 0:03:42, này cũng hoàn toàn tương tự nó đã bị mất
+0:03:39 - 0:03:44, thông tin đi rất là nhiều rồi. Do đó thì
+0:03:42 - 0:03:46, cái điểm ngãn thông tin này chúng ta cần
+0:03:44 - 0:03:49, phải giải quyết.
+0:03:46 - 0:03:51, Đó thì cái cơ chế để giải quyết đó chính
+0:03:49 - 0:03:54, là cái cơ chế.
+0:03:51 - 0:03:56, Thì chút nữa chúng ta sẽ cùng lý giải
+0:03:54 - 0:03:58, tại sao cái attention có thể giúp cho
+0:03:56 - 0:04:00, chúng ta giải quyết được cái vấn đề điểm
+0:03:58 - 0:04:02, nghẽn về mặt thông tin. Còn đầu tiên thì
+0:04:00 - 0:04:04, chúng ta sẽ tìm hiểu thế nào là
+0:04:02 - 0:04:08, extension và cách thức thực hiện của nó
+0:04:04 - 0:04:10, đó là gì. Thì đầu tiên đó là chúng ta có
+0:04:08 - 0:04:16, các cái lớp hit chúng ta sẽ có các cái
+0:04:10 - 0:04:18, vecơ hidden là s là s. Khi cái quá trình
+0:04:16 - 0:04:21, dịch bắt đầu đúng không? Quá trình
+0:04:18 - 0:04:24, decode bắt đầu thì chúng ta nạp vào cái
+0:04:21 - 0:04:26, từ sạc.
+0:04:24 - 0:04:29, Đây là một cái từ cái token để đánh dấu
+0:04:26 - 0:04:34, cái quá trình decode. Thì chúng ta sẽ
+0:04:29 - 0:04:36, tiến hành lấy cái H P1 này nè. Tức là
+0:04:34 - 0:04:39, cái vecơ
+0:04:36 - 0:04:44, đánh dấu cái quá trình dịch.
+0:04:39 - 0:04:46, Lấy cái H này đi so sánh với lại S à đi
+0:04:44 - 0:04:50, so sánh với lại các cái vecơ ẩn của
+0:04:46 - 0:04:51, encoder để xem để tính cái attention
+0:04:50 - 0:04:54, score.
+0:04:51 - 0:04:57, Để tính cái extension score để cho biết
+0:04:54 - 0:05:01, là tại cái thời điểm này nè là t = 1
+0:04:57 - 0:05:03, chúng ta sẽ attend chúng ta sẽ quan tâm
+0:05:01 - 0:05:06, đến cái
+0:05:03 - 0:05:08, từ nào, cái token nào.
+0:05:06 - 0:05:10, Thì để tính cái attension score thì
+0:05:08 - 0:05:13, chúng ta dùng cái phép biến đổi đó là
+0:05:10 - 0:05:16, tích vô hướng. Lấy cái HT này nhân tích
+0:05:13 - 0:05:20, vô hướng với lại cái các cái S. Đó ví dụ
+0:05:16 - 0:05:23, như tại đây là HT với S1, tại đây là HT
+0:05:20 - 0:05:25, với S2 vân vân. Thì mỗi cái giá trị vô
+0:05:23 - 0:05:27, hướng này nó sẽ là một cái giá trị à một
+0:05:25 - 0:05:30, cái tích vô hướng này là một cái scan.
+0:05:27 - 0:05:33, Chúng ta sẽ đưa hết vào một vectơ. Thì
+0:05:30 - 0:05:36, như vậy RT này sẽ là một vectơ. Vậy thì
+0:05:33 - 0:05:38, kích thước của nó sẽ là bao nhiêu?
+0:05:36 - 0:05:41, Ở đây chúng ta thấy kích thước của nó
+0:05:38 - 0:05:45, chính là đúng bằng n
+0:05:41 - 0:05:47, đây. Như vậy RT sẽ là một cái vectơ n
+0:05:45 - 0:05:49, chiều.
+0:05:47 - 0:05:51, Tiếp theo thì cái vì cái tích vô hướng
+0:05:49 - 0:05:54, này á cái giải giá trị của mình nó rất
+0:05:51 - 0:05:57, là lớn từ à trừ vô cùng cho đến cộng vô
+0:05:54 - 0:06:01, cùng. Do đó thì chúng ta sẽ phải chuẩn
+0:05:57 - 0:06:03, hóa nó bằng cái hàm subm. Thì qua cái
+0:06:01 - 0:06:07, việc chuẩn hóa chúng ta sẽ ra được cái
+0:06:03 - 0:06:11, xác suất là à cái từ HT này nó đang
+0:06:07 - 0:06:15, extend 90%. Ví dụ vậy
+0:06:11 - 0:06:18, 90% đến cái từ. Còn các cái từ còn lại
+0:06:15 - 0:06:22, thì đều là dưới 10%. Như vậy là nó đang
+0:06:18 - 0:06:25, tập trung nhiều vào cái từ.
+0:06:22 - 0:06:27, và alpha t sẽ là cái trọng số này, trọng
+0:06:25 - 0:06:30, số của các cái từ này. Thế thì qua cái
+0:06:27 - 0:06:32, hàm x max chúng ta biết rằng là nó không
+0:06:30 - 0:06:36, thay đổi cái kích thước của cái vecơ đầu
+0:06:32 - 0:06:38, vào. Do đó, nếu này là vectơ n chiều thì
+0:06:36 - 0:06:42, alpha t của chúng ta cũng là một cái
+0:06:38 - 0:06:44, vectơ n chiều.
+0:06:42 - 0:06:47, Sau khi chúng ta biết là chúng ta phải
+0:06:44 - 0:06:49, attend vào cái từ i nhiều rồi á thì
+0:06:47 - 0:06:52, chúng ta sẽ tính cái attention output
+0:06:49 - 0:06:55, bằng cách là nhân các cái trọng số ở
+0:06:52 - 0:06:58, extension distribution ở đây với chính
+0:06:55 - 0:07:01, cái các vecơ có chứa thông tin đầy đủ
+0:06:58 - 0:07:03, nhất của các cái từ này đó là S1, S2 cho
+0:07:01 - 0:07:04, đến Sn.
+0:07:03 - 0:07:09, Như vậy thì cái bước tiếp theo đó là
+0:07:04 - 0:07:14, chúng ta sẽ tính tổng trọng số alpha
+0:07:09 - 0:07:17, với các cái s là các cái vectơ ẩn
+0:07:14 - 0:07:18, chứa cái thông tin của các từ ở đây. Đó
+0:07:17 - 0:07:21, thì chúng ta sẽ ra được cái context
+0:07:18 - 0:07:21, vector.
+0:07:21 - 0:07:28, Và cái context vector này ứng với cái ví
+0:07:24 - 0:07:31, dụ này thì nó đang chứa 90%
+0:07:28 - 0:07:34, cái thông tin
+0:07:31 - 0:07:37, của cái từ quan trọng nhất của mình tại
+0:07:34 - 0:07:41, thời điểm hiện tại đó là từ. Thì khi đó
+0:07:37 - 0:07:43, cái vectơ C này nó sẽ giúp cho chúng ta
+0:07:41 - 0:07:47, đi decode chính xác hơn để xác suất để
+0:07:43 - 0:07:49, mà nó ra được cái từ J sẽ là cao hơn. Do
+0:07:47 - 0:07:52, đó chúng ta sẽ lấy cái vectơ CT này còn
+0:07:49 - 0:07:54, cát với lại cái HT ở trước đó. Thì thực
+0:07:52 - 0:07:59, sự mà nói cái thông tin chính để giúp
+0:07:54 - 0:08:02, cho chúng ta decode nó nằm ở đây. Đó.
+0:07:59 - 0:08:04, Còn cái HT này như đã nói, khi đã bị
+0:08:02 - 0:08:06, biến đổi rất là nhiều rồi thì cái hàm
+0:08:04 - 0:08:13, lượng thông tin của cái từ I trong cái
+0:08:06 - 0:08:13, HT này à rất là ít, rất là ít.
+0:08:14 - 0:08:19, Trong khi cái thông tin của từ tại cái
+0:08:17 - 0:08:21, vectơ CT này thì sẽ nhiều hơn tại vì nó
+0:08:19 - 0:08:23, chiếm 90%
+0:08:21 - 0:08:26, cái S1
+0:08:23 - 0:08:29, tức là cái tỷ trọng cực kỳ cao. Tại vì
+0:08:26 - 0:08:31, S1 là nó chứa thông tin của từ i là
+0:08:29 - 0:08:33, nhiều nhất.
+0:08:31 - 0:08:36, Rồi sau khi chúng ta đã còn cát được cái
+0:08:33 - 0:08:41, vecơ này thì chúng ta sẽ bắt đầu decode
+0:08:36 - 0:08:43, để đi tính ra cái output dự đoán
+0:08:41 - 0:08:46, thì chúng ta sẽ tính hoàn toàn tương tự
+0:08:43 - 0:08:47, như không có attention. Có nghĩa là gì?
+0:08:46 - 0:08:49, Hai cái vecơ này chúng ta ráp lại với
+0:08:47 - 0:08:53, nhau đúng không? Thì sau đó chúng ta sẽ
+0:08:49 - 0:08:59, nhân với lại một cái vectơ V. V nhân với
+0:08:53 - 0:09:02, lại CT và HT.
+0:08:59 - 0:09:05, Rồi sau đó qua cái hàm S max
+0:09:02 - 0:09:09, để chúng ta tính cái xác suất của cái từ
+0:09:05 - 0:09:10, nào trong cái từ tiếng Pháp tương ứng.
+0:09:09 - 0:09:13, Thì tương tự như là extension không có
+0:09:10 - 0:09:14, extension.
+0:09:13 - 0:09:16, Và ở đây thì chúng ta có một chú ý đó là
+0:09:14 - 0:09:19, CT
+0:09:16 - 0:09:22, à thì nó có kích thước là bao nhiêu? thì
+0:09:19 - 0:09:26, CT nó sẽ có kích thước giống với lại
+0:09:22 - 0:09:29, kích thước của S mà S chúng ta biết rồi
+0:09:26 - 0:09:32, đó. Đó là một cái vecơ D chiều. Tất cả S
+0:09:29 - 0:09:36, và H đều là cái vectơ D chiều. Do đó ở
+0:09:32 - 0:09:40, đây sẽ là vectơ D. Sau khi chúng ta còn
+0:09:36 - 0:09:46, cát lại CT với lại HT thì ở đây nó sẽ ra
+0:09:40 - 0:09:49, vecơ đó là 2D. Tại vì CT là vectơ D
+0:09:46 - 0:09:53, chiều còn H cũng là vectơ D chiều cộng
+0:09:49 - 0:09:55, lại thì sẽ ra vectơ 2D.
+0:09:53 - 0:09:58, Như vậy thì chúng ta đã cùng tìm hiểu
+0:09:55 - 0:10:01, qua cái à kiến trúc anen kết hợp vẽ
+0:09:58 - 0:10:05, tension. Thì anen kết hợp với attention.
+0:10:01 - 0:10:07, Nếu mà chúng ta biểu diễn gọn lại bằng
+0:10:05 - 0:10:10, cái sơ đồ ở đây thì chúng ta thấy
+0:10:07 - 0:10:13, kể cả khi cái văn bản này của chúng ta
+0:10:10 - 0:10:13, rất là dài,
+0:10:13 - 0:10:21, ví dụ là có 1000 đi, mình có 1000 cái
+0:10:17 - 0:10:26, token đầu vào
+0:10:21 - 0:10:26, à 1000 cái từ đi. Rồi
+0:10:27 - 0:10:33, thì khi chúng ta bắt đầu cái quá trình à
+0:10:30 - 0:10:35, dịch là tại đây à không khi chúng ta bắt
+0:10:33 - 0:10:39, đầu cái quá trình là encode. Ví dụ như
+0:10:35 - 0:10:41, tại cái vị trí thứ Tây
+0:10:39 - 0:10:46, chúng ta đến đây và chúng ta sẽ đi truy
+0:10:41 - 0:10:49, vấn trong 1000 từ này xem từ nào là từ
+0:10:46 - 0:10:50, được extend tại thời điểm hiện tại. Rồi
+0:10:49 - 0:10:54, sau đó chúng ta sẽ tổng hợp để ra một
+0:10:50 - 0:10:58, cái vecơ như thế này. Như vậy nếu đi
+0:10:54 - 0:11:00, theo cái đường như cũ thì cái từ thứ hai
+0:10:58 - 0:11:03, giả sử như cái từ đang cần decode là cái
+0:11:00 - 0:11:06, từ thứ hai ở đây đi thì sẽ phải đi lần
+0:11:03 - 0:11:09, lượt qua rất nhiều đúng không? Chúng ta
+0:11:06 - 0:11:13, sẽ phải đi qua ít nhất là 1000 từ tức là
+0:11:09 - 0:11:14, chúng ta sẽ phải biến đổi 1000 lần.
+0:11:13 - 0:11:19, Trong khi đó, nếu chúng ta đi theo cái
+0:11:14 - 0:11:22, con đường màu xanh lá ở đây
+0:11:19 - 0:11:25, đó thì từ đây lên đây xong từ đây chúng
+0:11:22 - 0:11:28, ta đi dự đoán cái giá trị tiếp theo thì
+0:11:25 - 0:11:32, nó chỉ mất có hai lần biến đổi. Như vậy
+0:11:28 - 0:11:36, là 2 so với 10.000 lần thì rõ ràng là
+0:11:32 - 0:11:40, cái 2 nó sẽ có chứa thông tin nó sẽ ít
+0:11:36 - 0:11:40, bị mất thông tin hơn.
+0:11:43 - 0:11:49, Như vậy thì có thể thấy là annen với
+0:11:46 - 0:11:51, attention là một cái biến thể rất là
+0:11:49 - 0:11:54, quan trọng để giúp cho chúng ta
+0:11:51 - 0:11:56, ít bị mất mát thông tin. Và cũng nhờ các
+0:11:54 - 0:11:57, cái kết nối tắt này, chúng ta thấy là
+0:11:56 - 0:12:00, khi chúng ta huấn luyện, chúng ta có cái
+0:11:57 - 0:12:02, y ngã ở đây thì nhờ cái kết nối tắt
+0:12:00 - 0:12:05, chúng ta đi ngược lên à chúng ta đi
+0:12:02 - 0:12:07, ngược lại
+0:12:05 - 0:12:11, rồi chúng ta lại đi ngược lại. Thì cái
+0:12:07 - 0:12:13, việc chúng ta cập nhật cái tham số ở
+0:12:11 - 0:12:15, những cái
+0:12:13 - 0:12:17, tình huống là cái chữ đầu tiên nó sẽ
+0:12:15 - 0:12:20, không bị cái hiện tượng là vanishing
+0:12:17 - 0:12:23, radian. Tuy nhiên với attention thì nó
+0:12:20 - 0:12:25, vẫn sẽ có những cái điểm yếu. Vậy thì
+0:12:23 - 0:12:30, vấn đề của nó là gì? Thứ nhất đó là
+0:12:25 - 0:12:34, chúng ta tính tuần tự trái sang phải.
+0:12:30 - 0:12:37, Đó thì nó vì cái tính tuần tự à cái tính
+0:12:34 - 0:12:38, tuần tự hoặc là chúng ta đi theo cái
+0:12:37 - 0:12:40, hướng ngược lại cũng như vậy ha. Thì cái
+0:12:38 - 0:12:43, sự từ tự tuần tự tính từ bên trái trước
+0:12:40 - 0:12:45, rồi mới đến bên phải sau nó sẽ không thể
+0:12:43 - 0:12:47, song song hóa được cái tính toán.
+0:12:45 - 0:12:50, Và chính cái việc này nó sẽ gây ra cái
+0:12:47 - 0:12:53, việc là lãng phí về GPU. Tại vì đến cái
+0:12:50 - 0:12:56, thời điểm mà attention ra thì các cái
+0:12:53 - 0:12:59, mạng học sâu của CNN đã khai thác sức
+0:12:56 - 0:13:00, mạnh GPU để tính toán song song và tăng
+0:12:59 - 0:13:03, tốc độ huấn luyện lên rất là nhiều lần
+0:13:00 - 0:13:06, rồi. Nhưng mà nếu vẫn còn encode theo
+0:13:03 - 0:13:08, cái kiểu như thế này thì chúng ta sẽ rất
+0:13:06 - 0:13:12, khó có thể khai thác được sức mạnh của
+0:13:08 - 0:13:16, GPU. Cái tiếp theo đó là các cái vecơ
+0:13:12 - 0:13:18, biểu diễn từ à ở encoder thì chưa thực
+0:13:16 - 0:13:20, sự tương tác với nhau.
+0:13:18 - 0:13:24, Ví dụ chúng ta thấy cái sự tương tác ở
+0:13:20 - 0:13:28, đây nếu có chỉ là giữa hai cái từ à ví
+0:13:24 - 0:13:31, dụ như là hai từ XT và XT
+0:13:28 - 0:13:31, cộng 1.
+0:13:33 - 0:13:37, Đó thì chúng ta thấy là nó chỉ có cái sự
+0:13:35 - 0:13:41, tương tác giữa hai cái từ liên tiếp ví
+0:13:37 - 0:13:44, dụ như là XT và XT + 1 nó có tương tác
+0:13:41 - 0:13:48, qua lại còn nó sẽ không có tương tác một
+0:13:44 - 0:13:50, cách trực tiếp với những cái từ ở xa hơn
+0:13:48 - 0:13:51, đó thì nó sẽ thiếu cái tính tương tác
+0:13:50 - 0:13:54, giữa các từ để tạo ra những cái đặc
+0:13:51 - 0:13:56, trưng mới. Chưa tận dụng được các cái
+0:13:54 - 0:13:59, mẹo của các cái mô hình học sâu hiện
+0:13:56 - 0:14:00, đại. đó thì rõ ràng trong cái tiến trình
+0:13:59 - 0:14:03, phát triển của các cái môn học sau có
+0:14:00 - 0:14:06, rất nhiều những cái trick, những cái mẹo
+0:14:03 - 0:14:08, đã được tìm ra để nhằm giải quyết vấn đề
+0:14:06 - 0:14:11, overfitting và vaning radian nhưng mà
+0:14:08 - 0:14:14, cái biến thể này chưa có khai thác được
+0:14:11 - 0:14:17, nhiều. Vậy thì chúng ta sẽ cùng đến với
+0:14:14 - 0:14:22, một trong cái những biến thể rất là nổi
+0:14:17 - 0:14:24, tiếng đó là Transformer. Thì Transformer
+0:14:22 - 0:14:27, nó kế thừa được rất nhiều cái mẹo trong
+0:14:24 - 0:14:30, cái mô hình học sau. Đầu tiên đó là
+0:14:27 - 0:14:34, chúng ta sẽ xem đến cái yếu tố tương tự
+0:14:30 - 0:14:38, trái sang phải. Nếu như trong anen
+0:14:34 - 0:14:42, chúng ta ờ encod
+0:14:38 - 0:14:46, cái tính thứ tự này á để nhằm đảm bảo là
+0:14:42 - 0:14:46, phân biệt được cái từ do you understand
+0:14:47 - 0:14:54, với lại cái từ you do understand là hai
+0:14:50 - 0:14:54, cái câu khác nhau
+0:14:55 - 0:15:01, đó thì nó sẽ xử lý từ do trước xong rồi
+0:14:58 - 0:15:03, đến từ du thì dẫn đến là cái thông tin
+0:15:01 - 0:15:05, của từ du sẽ nhiều hơn và so với lại
+0:15:03 - 0:15:10, thông tin của từ do thì cái việc chúng
+0:15:05 - 0:15:12, ta có cái dấu mũi tên này là để phục vụ
+0:15:10 - 0:15:16, cho cái thể loại dữ liệu là có tính thứ
+0:15:12 - 0:15:18, tự của văn bản. Vậy thì bây giờ
+0:15:16 - 0:15:20, Transformer đã giải quyết cái vấn đề này
+0:15:18 - 0:15:25, như thế nào?
+0:15:20 - 0:15:25, đó. Đó là dùng cái positional edding.
+0:15:32 - 0:15:39, Tức là ví dụ như khi chúng ta có một cái
+0:15:35 - 0:15:41, từ ở đây, một cái nốt ở đây. Rồi sau đó
+0:15:39 - 0:15:44, thì chúng ta sẽ đưa vào một cái tính
+0:15:41 - 0:15:46, toán. Và nếu như chúng ta để cái dấu mũi
+0:15:44 - 0:15:49, tên này thì nó sẽ tạo ra cái sự phụ
+0:15:46 - 0:15:52, thuộc lẫn nhau giữa từ trước với từ sau.
+0:15:49 - 0:15:56, Do đó ở đây chúng ta sẽ gắn thêm vào một
+0:15:52 - 0:15:59, cái position. Thì ví dụ như ở đây là từ
+0:15:56 - 0:16:01, do đi ha. thì chúng ta sẽ gắn thêm cái
+0:15:59 - 0:16:05, từ à gắn thêm cái thông tin về mặt vị
+0:16:01 - 0:16:09, trí đó là vị trí số 1. Rồi tiếp theo đó
+0:16:05 - 0:16:11, là từ à từ từ
+0:16:09 - 0:16:15, thì chúng ta sẽ gắn thêm cái vị trí là
+0:16:11 - 0:16:17, số 2. Đó thì cái việc gắn này nó sẽ phải
+0:16:15 - 0:16:20, nhờ cái
+0:16:17 - 0:16:23, module là positional embedding.
+0:16:20 - 0:16:28, Từ do nó sẽ được biến thành một cái vecơ
+0:16:23 - 0:16:32, biểu diễn. Từ do nó sẽ là v của do.
+0:16:28 - 0:16:35, Còn cái số 1 thì nó sẽ là
+0:16:32 - 0:16:37, một cái positional eding của số 1. Thì
+0:16:35 - 0:16:40, đây là một cái vecơ và hai cái vecơ này
+0:16:37 - 0:16:42, cộng lại với nhau để nó vừa có chứa được
+0:16:40 - 0:16:46, thông tin của từ đu mà vừa có chứa được
+0:16:42 - 0:16:47, thông tin của số 1. Thì cái positional
+0:16:46 - 0:16:49, này chúng ta có thể sử dụng một công
+0:16:47 - 0:16:53, thức cố định hoặc là chúng ta sẽ huấn
+0:16:49 - 0:16:54, luyện luôn cái P này để cho khi chúng ta
+0:16:53 - 0:16:57, gặp cái vị trí số 1 thì chúng ta sẽ dùng
+0:16:54 - 0:16:58, một vectơ. Khi chúng ta đến cái vị trí
+0:16:57 - 0:17:01, số hai, chúng ta sẽ dùng một cái vecơ
+0:16:58 - 0:17:03, khác và hai cái vecơ đó sẽ đại diện cho
+0:17:01 - 0:17:07, hai cái thứ tự khác nhau. Thì đó chính
+0:17:03 - 0:17:11, là hai cái positional edding. Và đây
+0:17:07 - 0:17:13, chính là cái module mà mình nghĩ rằng là
+0:17:11 - 0:17:15, rất là quan trọng để giúp cho chúng ta
+0:17:13 - 0:17:17, đoạn tuyệt với lại cái kiến trúc anen
+0:17:15 - 0:17:19, trước đây. Các cái kiến trúc anen trước
+0:17:17 - 0:17:22, đây nó bị một cái rạo cản đó chính là
+0:17:19 - 0:17:23, cái tính thứ tự đó.
+0:17:22 - 0:17:27, nó sẽ khiến cho chúng ta không khai thác
+0:17:23 - 0:17:31, được cái GPU. Còn nếu bỏ được cái này
+0:17:27 - 0:17:34, thì cái việc tính toán do cộng 1 và du +
+0:17:31 - 0:17:37, 1 hay là vecơ biểu diễn của do cộng vecơ
+0:17:34 - 0:17:40, biểu diễn của 1 và nó sẽ độc lập với
+0:17:37 - 0:17:42, nhau thì khi đó chúng ta sẽ xử lý song
+0:17:40 - 0:17:45, song được.
+0:17:42 - 0:17:48, Ngoài ra thì Transformer còn rất nhiều
+0:17:45 - 0:17:51, những cái à
+0:17:48 - 0:17:54, những cái khai thác đến những cái mẹo
+0:17:51 - 0:17:58, của các cái mô hình trước đây. Ví dụ cái
+0:17:54 - 0:18:00, add này đây là một cái skip connection
+0:17:58 - 0:18:03, thì chúng ta đã biết skip connection sẽ
+0:18:00 - 0:18:08, giúp cho chúng ta à giải quyết cái vấn
+0:18:03 - 0:18:08, đề đó là vanishing radian.
+0:18:09 - 0:18:15, Còn cái à nó tương ứng là cái phép cộng
+0:18:12 - 0:18:16, này ha. Còn cái NOM
+0:18:15 - 0:18:21, thì mục đích của nó đó là giúp cho chúng
+0:18:16 - 0:18:21, ta chống cái hiện tượng overfitting.
+0:18:23 - 0:18:30, Multihad extension thì nó sẽ giải quyết
+0:18:26 - 0:18:31, cái vấn đề trước đây. Đó chính là à các
+0:18:30 - 0:18:34, cái từ nó không có cái tính tương tác
+0:18:31 - 0:18:37, nhau. Các cái từ biểu các cái vecơ biểu
+0:18:34 - 0:18:39, diễn của từ ở cái encoder này nè nó
+0:18:37 - 0:18:42, thiếu cái cái tính tương tác với nhau.
+0:18:39 - 0:18:46, Thì cái multihead attention này nó sẽ
+0:18:42 - 0:18:49, giúp cho chúng ta tương tác
+0:18:46 - 0:18:49, đặc trưng
+0:18:51 - 0:18:56, giữa các cái từ đầu vào.
+0:18:55 - 0:19:01, Thì ở đây chúng ta dùng cái từ là token
+0:18:56 - 0:19:01, ha. giữa các cái token đầu bạn
+0:19:01 - 0:19:09, đó nhằm giúp tạo ra các cái đặc trưng nó
+0:19:04 - 0:19:12, có cái à tỉnh gọi là phần loại cao hơn,
+0:19:09 - 0:19:13, các đặc trưng cấp cao hơn.
+0:19:12 - 0:19:16, Nếu như chúng ta thực hiện cái multihead
+0:19:13 - 0:19:19, extension này thì bản chất nó chỉ là
+0:19:16 - 0:19:20, cộng trọng số. Nó chỉ là cộng trọng số.
+0:19:19 - 0:19:23, Do đó thì nó sẽ không giải quyết được
+0:19:20 - 0:19:25, các cái bài toán phi tiến tính. Để mà
+0:19:23 - 0:19:29, phi tiến tính hóa thì chúng ta sẽ phải
+0:19:25 - 0:19:32, có cái lớp fit forward này. Đó thì đây
+0:19:29 - 0:19:35, là giúp cho chúng ta nâ linear,
+0:19:32 - 0:19:37, giải quyết các cái bài toán nâ linear
+0:19:35 - 0:19:40, add và nom cũng tương tự như ở dưới ha.
+0:19:37 - 0:19:45, Rồi ở đây chúng ta sẽ thấy là nó sẽ có
+0:19:40 - 0:19:48, cái biến thể của stock ở đây. Stock
+0:19:45 - 0:19:50, layer.
+0:19:48 - 0:19:52, Mục đích của cái stock layer này ví dụ
+0:19:50 - 0:19:56, là lặp lại sáu lần này để giúp cho chúng
+0:19:52 - 0:19:57, ta tạo ra các cái đặc trưng học sâu à
+0:19:56 - 0:20:00, giúp cho chúng ta giải quyết được các
+0:19:57 - 0:20:02, cái bài toán phức tạp.
+0:20:00 - 0:20:04, Ở cái nhánh decoder cũng hoàn toàn có
+0:20:02 - 0:20:07, các cái kỹ thuật tương tự nhưng nó có
+0:20:04 - 0:20:10, duy nhất một cái module khác biệt đó
+0:20:07 - 0:20:13, chính là cross attention. Tại sao ở đây
+0:20:10 - 0:20:16, chúng ta dùng cái từ cross? là vì có cái
+0:20:13 - 0:20:21, sự băng qua từ cái encoder sang cái
+0:20:16 - 0:20:25, decoder. Đó thì nhờ có cái sự à tổng hợp
+0:20:21 - 0:20:28, thông tin từ cái
+0:20:25 - 0:20:31, encoder chúng ta sẽ đưa vào cái decoder
+0:20:28 - 0:20:33, để giúp cho chúng ta dự đoán các cái từ
+0:20:31 - 0:20:35, trong cái chuỗi của mình. Đó thì ở đây
+0:20:33 - 0:20:39, chúng ta thấy có ba cái dấu mũi tên
+0:20:35 - 0:20:42, tương ứng nó sẽ là Q, K và B.
+0:20:39 - 0:20:45, Trong đó thì chúng ta sẽ
+0:20:42 - 0:20:48, tương tác giữa Q cái query của mình nó
+0:20:45 - 0:20:51, sẽ đến từ
+0:20:48 - 0:20:53, nó sẽ đến từ cái decoder này. Còn K và B
+0:20:51 - 0:20:56, là hai cái mũi tên đến từ cái bước
+0:20:53 - 0:20:56, encoder.
+0:20:57 - 0:21:02, Rồi và cuối cùng là qua cái lớp linear
+0:21:00 - 0:21:06, và SC M thì hoàn toàn tương tự như cho
+0:21:02 - 0:21:08, cái biến thể AN đó là V của cái output
+0:21:06 - 0:21:12, này ha. output tại thời điểm này là
+0:21:08 - 0:21:15, decode đi tại thời điểm t sau đó là shop
+0:21:12 - 0:21:15, max
+0:21:16 - 0:21:22, thì nó sẽ ra được cái output xác suất.
+0:21:18 - 0:21:26, Như vậy thì chúng ta đã cùng lượt qua
+0:21:22 - 0:21:29, những cái biến thể khác nhau của
+0:21:26 - 0:21:32, cái mô hình mà cho cái loại dữ liệu dạng
+0:21:29 - 0:21:35, có thứ tự. Chúng ta đã thấy rằng
+0:21:32 - 0:21:37, Transformer là một mô hình sinh sau đẻ
+0:21:35 - 0:21:41, muộn và nó đã tận dụng được rất nhiều
+0:21:37 - 0:21:44, những cái thành tựu à của các cái mô
+0:21:41 - 0:21:47, hình trước đó. Bên cạnh về mặt kiến trúc
+0:21:44 - 0:21:52, thì Transformer còn à có nh sử dụng
+0:21:47 - 0:21:52, những cái ví dụ như là Optimizer
+0:21:52 - 0:22:00, là sử dụng Adam W.
+0:21:57 - 0:22:03, Thì đây là một cái optimizer mới cho chữ
+0:22:00 - 0:22:07, cái việc hội tụ tốt hơn. Rồi sử dụng các
+0:22:03 - 0:22:10, cái hàm kích hoạt rồi NOM cũng là hiện
+0:22:07 - 0:22:12, đại hơn sẽ giúp cho cái mạng Transformer
+0:22:10 - 0:22:14, có thể được huấn luyện tốt hơn và tổng
+0:22:12 - 0:22:18, quát hơn.
+0:22:14 - 0:22:20, Thì đó chính là sơ lược các cái mô hình
+0:22:18 - 0:22:23, học sâu trong cái loại dữ liệu là chuỗi
+0:22:20 - 0:22:26, và hy vọng rằng là chúng ta sẽ nắm bắt
+0:22:23 - 0:22:28, được những cái việc áp dụng trong cái
+0:22:26 - 0:22:31, giải quyết các cái vấn đề valising radi,
+0:22:28 - 0:22:34, vấn đề giải quyết vấn đề về overfitting
+0:22:31 - 0:22:38, vào để tiếp tục phát triển các cái mô
+0:22:34 - 0:22:38, hình học sau này. Đ

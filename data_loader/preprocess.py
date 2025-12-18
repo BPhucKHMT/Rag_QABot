@@ -316,6 +316,14 @@ class TranscriptPreprocessor:
                 skipped_count += 1
                 continue
 
+            # skip nếu đã qua rồi
+            output_file = processed_dir / f"{video_id}.txt"
+
+            if output_file.exists() and not force_refetch:
+                print(f"⏭️ Đã xử lý trước đó, bỏ qua")
+                skipped_count += 1
+                continue
+
             # 1. Kiểm tra lỗi
             is_corrupted, reason = self.validator.is_corrupted(text)
 

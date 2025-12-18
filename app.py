@@ -3,16 +3,15 @@ import streamlit as st
 import time
 import json
 import re
+import requests
 from datetime import datetime
 from pathlib import Path
-
-# ============ BACKEND AGENT ============
-from rag.lang_graph_rag import call_agent
-# ========================================
+from typing import Dict, List, Any
 
 # ============ CONFIGURATION ============
-CONVERSATIONS_DIR = "saved_conversations"
-Path(CONVERSATIONS_DIR).mkdir(exist_ok=True)
+API_BASE_URL = "http://localhost:8000"  # FastAPI backend
+CONVERSATIONS_DIR = "saved_conversations"  # Not used anymore (using MongoDB via API)
+Path(CONVERSATIONS_DIR).mkdir(exist_ok=True)  # Keep for backward compatibility
 
 # ============ UTILITIES ============
 def truncate_text(text, max_length=35):
@@ -89,67 +88,57 @@ def render_response(response):
     else:
         st.error(f"⚠️ Unknown response format: {type(response)}")
 
-# ============ SAVE/LOAD FUNCTIONS ============
-def save_conversation(convo_id: str):
-    """Lưu conversation ra file JSON (auto-save)"""
+# ============ API CLIENT FUNCTIONS ============
+def api_request(method: str, endpoint: str, **kwargs) -> Any:
+    """Generic API request wrapper with error handling"""
     try:
-        convo = st.session_state.conversations[convo_id]
-        filename = f"{CONVERSATIONS_DIR}/{convo_id}.json"
-        
-        # Convert messages to serializable format
-        serializable_messages = []
-        for msg in convo["messages"]:
-            content = msg["content"]
-            if isinstance(content, dict):
-                serializable_messages.append({"role": msg["role"], "content": content})
-            else:
-                serializable_messages.append({"role": msg["role"], "content": str(content)})
-        
-        data = {
-            "id": convo_id,
-            "title": convo["title"],
-            "messages": serializable_messages,
-            "created_at": convo.get("created_at", datetime.now().isoformat()),
-            "updated_at": datetime.now().isoformat()
-        }
-        
-        with open(filename, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-        
-        return True
-    except Exception as e:
-        return False
+        url = f"{API_BASE_URL}{endpoint}"
+        response = requests.request(method, url, timeout=60, **kwargs)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        st.error(f"API Error: {str(e)}")
+        return None
 
 def load_all_conversations():
-    """Load tất cả conversations từ folder"""
-    conversations = {}
-    if Path(CONVERSATIONS_DIR).exists():
-        for file in Path(CONVERSATIONS_DIR).glob("*.json"):
-            try:
-                with open(file, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    convo_id = data["id"]
-                    conversations[convo_id] = {
-                        "title": data["title"],
-                        "messages": data["messages"],
-                        "created_at": data.get("created_at"),
-                        "updated_at": data.get("updated_at")
-                    }
-            except:
-                pass
-    return conversations
+    """Load tất cả conversations từ API (MongoDB)"""
+    try:
+        data = api_request("GET", "/conversations")
+        if not data:
+            return {}
+        
+        conversations = {}
+        for item in data:
+            conversations[item["id"]] = {
+                "title": item["title"],
+                "messages": [],  # Will be loaded on demand
+                "created_at": item["created_at"],
+                "updated_at": item["updated_at"]
+            }
+        return conversations
+    except Exception as e:
+        st.error(f"Failed to load conversations: {e}")
+        return {}
+
+def load_conversation_messages(convo_id: str) -> List[Dict]:
+    """Load full message history for a conversation"""
+    try:
+        data = api_request("GET", f"/conversations/{convo_id}")
+        if data:
+            return data.get("messages", [])
+        return []
+    except Exception as e:
+        st.error(f"Failed to load messages: {e}")
+        return []
 
 def delete_conversation(convo_id: str):
-    """Xóa conversation"""
+    """Xóa conversation via API"""
     try:
-        # Xóa file
-        filename = f"{CONVERSATIONS_DIR}/{convo_id}.json"
-        if Path(filename).exists():
-            Path(filename).unlink()
-        
-        # Xóa khỏi session state
-        if convo_id in st.session_state.conversations:
-            del st.session_state.conversations[convo_id]
+        result = api_request("DELETE", f"/conversations/{convo_id}")
+        if result:
+            # Xóa khỏi session state
+            if convo_id in st.session_state.conversations:
+                del st.session_state.conversations[convo_id]
         
         # Reset current ID nếu đang active
         if st.session_state.current_conversation_id == convo_id:
@@ -164,31 +153,38 @@ def delete_conversation(convo_id: str):
         return False
 
 def reset_conversation(convo_id: str):
-    """Reset conversation về trạng thái ban đầu"""
+    """Reset conversation via API"""
     try:
-        st.session_state.conversations[convo_id] = {
-            "title": "Cuộc trò chuyện mới",
-            "messages": [{"role": "assistant", "content": "Bạn muốn hỏi gì hôm nay?"}],
-            "created_at": datetime.now().isoformat()
-        }
-        # Save after reset
-        save_conversation(convo_id)
-        return True
+        result = api_request("POST", f"/conversations/{convo_id}/reset")
+        if result:
+            # Update local state
+            st.session_state.conversations[convo_id] = {
+                "title": "Cuộc trò chuyện mới",
+                "messages": [{"role": "assistant", "content": "Bạn muốn hỏi gì hôm nay?"}],
+                "created_at": datetime.now().isoformat()
+            }
+            return True
+        return False
     except:
         return False
 
 # ============ SESSION MANAGEMENT ============
 def create_new_conversation():
-    """Tạo conversation mới"""
-    convo_id = f"chat_{int(time.time())}"
-    st.session_state.conversations[convo_id] = {
-        "title": "Cuộc trò chuyện mới",
-        "messages": [{"role": "assistant", "content": "Bạn muốn hỏi gì hôm nay?"}],
-        "created_at": datetime.now().isoformat()
-    }
-    st.session_state.current_conversation_id = convo_id
-    # Auto-save new conversation
-    save_conversation(convo_id)
+    """Tạo conversation mới via API"""
+    try:
+        result = api_request("POST", "/conversations", json={"title": "Cuộc trò chuyện mới"})
+        if result:
+            convo_id = result["id"]
+            st.session_state.conversations[convo_id] = {
+                "title": result["title"],
+                "messages": result["messages"],
+                "created_at": result["created_at"]
+            }
+            st.session_state.current_conversation_id = convo_id
+        else:
+            st.error("Failed to create conversation")
+    except Exception as e:
+        st.error(f"Error creating conversation: {e}")
 
 def set_current_conversation(convo_id):
     """Switch conversation"""
@@ -288,6 +284,9 @@ current_id = st.session_state.current_conversation_id
 
 if current_id and current_id in st.session_state.conversations:
     current_convo = st.session_state.conversations[current_id]
+    # Load full messages from API if not already loaded
+    if not current_convo.get("messages") or len(current_convo["messages"]) == 0:
+        current_convo["messages"] = load_conversation_messages(current_id)
     messages = current_convo["messages"]
     
     # Display messages
@@ -320,16 +319,33 @@ if current_id and current_id in st.session_state.conversations:
                 content = response_to_display_text(content)
             chat_history.append({"role": m["role"], "content": content})
         
-        # Call agent
+        # Call backend API for RAG response
         with st.chat_message("assistant"):
             with st.spinner("Bot đang suy nghĩ..."):
                 try:
-                    response = call_agent(chat_history)
-                    render_response(response)
-                    messages.append({"role": "assistant", "content": response})
+                    # Call /chat endpoint
+                    result = api_request(
+                        "POST",
+                        "/chat",
+                        json={
+                            "conversation_id": current_id,
+                            "messages": chat_history,
+                            "user_message": prompt
+                        }
+                    )
                     
-                    # Auto-save after each message
-                    save_conversation(current_id)
+                    if result:
+                        response = result["response"]
+                        render_response(response)
+                        messages.append({"role": "assistant", "content": response})
+                        
+                        # Update title if changed
+                        if current_convo["title"] == "Cuộc trò chuyện mới":
+                            current_convo["title"] = truncate_text(prompt)
+                    else:
+                        error_msg = "⚠️ Không thể kết nối với server"
+                        st.error(error_msg)
+                        messages.append({"role": "assistant", "content": error_msg})
                     
                 except Exception as e:
                     error_msg = f"⚠️ Có lỗi xảy ra: {str(e)}"
