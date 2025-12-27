@@ -1,4 +1,4 @@
-# 🤖 Hệ Thống Hỏi Đáp CS315 (RAG QABot)
+# 🤖 Hệ Thống Hỏi Đáp môn học tại UIT (RAG QABot)
 
 <!-- Logo hoặc hình minh họa nếu có -->
 <p align="center">
@@ -83,12 +83,12 @@ docker-compose up --build
 **.env.example** (bắt buộc điền trong `.env` thực tế):
 
 ```
-myAPIKey = ""
-googleAPIKey = ""
-YOUTUBE_API_KEY = ""
-mongodb_url = "mongodb://[username:password@]host:port/puq_qa_bot"
+myAPIKey = "" # Nếu muốn dùng text embedding openAI
+googleAPIKey = ""    #LLM gemini 2.5 flash
+YOUTUBE_API_KEY = "" # Nếu muốn update playlist youtube mới
+mongodb_url = "mongodb://[username:password@]host:port/puq_qa_bot" # hoặc database của bạn
 ```
-**config.yaml**: chỉ định playlist YouTube và tham số crawling
+**config.yaml**: chỉ định playlist YouTube và tham số crawling (Nếu muốn mở rộng thêm playlists của bạn)
 
 ```yaml
 playlists:
