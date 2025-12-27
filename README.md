@@ -5,6 +5,10 @@
   <img src="notebook_baseline/architecture.png" alt="Overall Framework" width="600"/>
 </p>
 
+<p align="center">
+  <img src="notebook_baseline/demo.png" alt="Demo" width="600"/>
+</p>
+
 ---
 
 ## 📝 Giới thiệu
