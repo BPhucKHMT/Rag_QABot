@@ -15,6 +15,9 @@
 
 **RAG QABot** là hệ thống hỏi đáp tự động cho các môn học như CS315 dựa trên mô hình Retrieval-Augmented Generation (RAG). Hệ thống sử dụng dữ liệu bài giảng từ YouTube, trích xuất, xử lý ngôn ngữ tự nhiên, tìm kiếm theo ngữ nghĩa và trả lời kèm nguồn tham khảo, tích hợp trực quan qua Streamlit Frontend & FastAPI Backend, dùng MongoDB làm lưu trữ hội thoại.
 
+#Video demo
+
+https://drive.google.com/drive/folders/1_6PtXlZj0lLyGii12wnmbnjpcjlRUbKs
 ---
 
 ## 📂 Cấu trúc dự án
