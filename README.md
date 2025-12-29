@@ -73,7 +73,16 @@ docker-compose up --build
 ```
 - FastAPI backend: http://localhost:8000
 - Streamlit UI: http://localhost:8501
+- 
+### 3. Chạy thủ công
 
+```bash
+- conda create -n QABot
+- conda activate QABot
+- pip install -r requirements.txt
+- FastAPI backend: uvicorn server:app --host 0.0.0.0 --port 8000 --reload
+- Streamlit UI: streamlit run app.py
+```
 ---
 
 ## 💡 Sử dụng
