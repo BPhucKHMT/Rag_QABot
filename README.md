@@ -74,7 +74,7 @@ docker-compose up --build
 - FastAPI backend: http://localhost:8000
 - Streamlit UI: http://localhost:8501
 - 
-### 4. Chạy thủ công
+### 4. Chạy thủ công (Nếu docker lỗi hoặc muốn đơn giản)
 
 ```bash
 - conda create -n QABot
