@@ -28,7 +28,6 @@
 ├── config.yaml             # DS playlist YouTube & cấu hình crawling
 ├── .env.example            # Biến môi trường mẫu (API keys, MongoDB)
 ├── DEPLOYMENT.md           # Hướng dẫn triển khai chi tiết
-├── rag_chain.png           # Minh họa pipeline RAG
 ├── chunks/                 # Lưu các đoạn text đã chunk
 ├── data/                   # Dữ liệu thô hoặc đã xử lý
 ├── data_loader/            # Tiện ích tải & xử lý dữ liệu
